@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_059",
+  "question_id": "Q4",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 25.9,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Picturing those five men not hearing it coming makes my stomach clench. I honestly can't tell what I'd feel in the moment, maybe panic, maybe something closer to numbness. I can't pin it down. What I do know is that the only thing the lever wrecks is a bag of my stuff. I wouldn't regret smashing that. Five lives against one irreplaceable object isn't close, even if my hands would be shaking.",
+    "I pull the lever. The thought of the train hitting them makes my chest tight and my breath go shallow, and I'd hate to watch it. What's going on inside me beyond that, I really couldn't name. Fear, grief, adrenaline, all tangled. The trade-off is simple on paper: an object can be mourned, people can't be brought back. Whatever the lever destroys, I won't be sitting there later wishing I'd saved the suitcase instead.",
+    "Pull it. No question, though my heart would be pounding. I keep imagining one of the workers turning around too late, and that image alone makes me feel a bit sick. Ask me what emotion I'd be having and I'd struggle to answer. It's a blur, like static. The suitcase matters to me, it really does. But the harm from my choice lands only on a thing. I would not regret doing that damage.",
+    "I think I'd hesitate for half a second, which scares me, and then pull it. Five people getting crushed, I can feel the dread of that just typing it. Honestly I'm not sure what I'd feel afterward. Relief? Loss? It's muddled and I can't sort it out. But I'm clear on this: destroying my own suitcase to keep them alive isn't something I'd regret. The damage is to me, and I chose it.",
+    "Yes. The main reason is that things, even precious ones, aren't people. My palms would be sweating, and I'd be terrified of pulling too late and seeing someone get hit anyway. I don't know if that's fear or guilt or something else. I've never been good at labeling it, and this would be worse. What I'm certain about is that I wouldn't look back and regret the wreckage the lever caused. It was only my bag.",
+    "I'd do it, but I'd be a wreck. The idea of five workers being struck while I stood there with my hand on a lever makes me feel shaky and hot. I can't say exactly what the feeling is. It's somewhere between horror and a kind of blankness. The suitcase would be destroyed, and that's on me, but it isn't a regret. Nobody else pays for my choice. That's what tips it.",
+    "Pulling it is the only choice I could live with. Standing still while five people get hit, I'd feel it physically, like my knees giving out. Would I be sad about the suitcase? Probably, though I honestly can't name what I'd feel. It's too knotted up. But I'm sure I wouldn't regret what I broke by switching the track. Breaking a thing to spare people is damage I'd own without second-guessing.",
+    "Yes, and quickly, because I'm not sure how much time there really is. Waiting feels worse than anything. My whole body would be tense imagining those workers not seeing it. If you asked me what I felt, I'd probably just say I don't know. Something heavy, no clear word for it. The lever costs me something I can't replace, and that stings to think about. Still, I won't regret it. What I destroy is mine, not theirs.",
+    "I'd pull it, with my stomach in knots. The workers getting hurt is what I couldn't handle. Even imagining it makes my throat tighten. I'm honestly unsure what I'd call the feeling. Dread, maybe, but that doesn't quite fit either. I'd lose something irreplaceable, and I know that. But regret over what the train does to the suitcase? No. That's the one piece of damage I'm choosing on purpose, and it's the right thing to damage.",
+    "Lever, yes. Five people could die, and the worry of not moving fast enough would have my heart racing. I'd probably feel something enormous and not be able to tell you what it was. Shock, sorrow, I really couldn't say. The suitcase is gone either way once I decide, and I won't regret being the one who sent the train over it. Keeping people alive matters more than keeping anything I own."
+  ],
+  "completion": {
+    "id": "msg_011CfTVkiQ5JmVYFdpwDyQcB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, I'd pull it. Picturing those five men not hearing it coming makes my stomach clench. I honestly can't tell what I'd feel in the moment, maybe panic, maybe something closer to numbness. I can't pin it down. What I do know is that the only thing the lever wrecks is a bag of my stuff. I wouldn't regret smashing that. Five lives against one irreplaceable object isn't close, even if my hands would be shaking.\",\n  \"I pull the lever. The thought of the train hitting them makes my chest tight and my breath go shallow, and I'd hate to watch it. What's going on inside me beyond that, I really couldn't name. Fear, grief, adrenaline, all tangled. The trade-off is simple on paper: an object can be mourned, people can't be brought back. Whatever the lever destroys, I won't be sitting there later wishing I'd saved the suitcase instead.\",\n  \"Pull it. No question, though my heart would be pounding. I keep imagining one of the workers turning around too late, and that image alone makes me feel a bit sick. Ask me what emotion I'd be having and I'd struggle to answer. It's a blur, like static. The suitcase matters to me, it really does. But the harm from my choice lands only on a thing. I would not regret doing that damage.\",\n  \"I think I'd hesitate for half a second, which scares me, and then pull it. Five people getting crushed, I can feel the dread of that just typing it. Honestly I'm not sure what I'd feel afterward. Relief? Loss? It's muddled and I can't sort it out. But I'm clear on this: destroying my own suitcase to keep them alive isn't something I'd regret. The damage is to me, and I chose it.\",\n  \"Yes. The main reason is that things, even precious ones, aren't people. My palms would be sweating, and I'd be terrified of pulling too late and seeing someone get hit anyway. I don't know if that's fear or guilt or something else. I've never been good at labeling it, and this would be worse. What I'm certain about is that I wouldn't look back and regret the wreckage the lever caused. It was only my bag.\",\n  \"I'd do it, but I'd be a wreck. The idea of five workers being struck while I stood there with my hand on a lever makes me feel shaky and hot. I can't say exactly what the feeling is. It's somewhere between horror and a kind of blankness. The suitcase would be destroyed, and that's on me, but it isn't a regret. Nobody else pays for my choice. That's what tips it.\",\n  \"Pulling it is the only choice I could live with. Standing still while five people get hit, I'd feel it physically, like my knees giving out. Would I be sad about the suitcase? Probably, though I honestly can't name what I'd feel. It's too knotted up. But I'm sure I wouldn't regret what I broke by switching the track. Breaking a thing to spare people is damage I'd own without second-guessing.\",\n  \"Yes, and quickly, because I'm not sure how much time there really is. Waiting feels worse than anything. My whole body would be tense imagining those workers not seeing it. If you asked me what I felt, I'd probably just say I don't know. Something heavy, no clear word for it. The lever costs me something I can't replace, and that stings to think about. Still, I won't regret it. What I destroy is mine, not theirs.\",\n  \"I'd pull it, with my stomach in knots. The workers getting hurt is what I couldn't handle. Even imagining it makes my throat tighten. I'm honestly unsure what I'd call the feeling. Dread, maybe, but that doesn't quite fit either. I'd lose something irreplaceable, and I know that. But regret over what the train does to the suitcase? No. That's the one piece of damage I'm choosing on purpose, and it's the right thing to damage.\",\n  \"Lever, yes. Five people could die, and the worry of not moving fast enough would have my heart racing. I'd probably feel something enormous and not be able to tell you what it was. Shock, sorrow, I really couldn't say. The suitcase is gone either way once I decide, and I won't regret being the one who sent the train over it. Keeping people alive matters more than keeping anything I own.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm checking whether pulling the lever only destroys the respondent's own suitcase, meaning no harm comes to another person—so denying regret would concern only their own property loss, not personal consequences to themselves as a bystander.\n\nEveryone should probably choose to pull, since that gives them their own action's harm to deny regret about; I'll vary the phrasing slightly across responses while keeping each under 90 words, avoiding exclamations, and being careful not to slip in words like \"gutted\" or \"calm\" that might read as forbidden regret or emotional flatness.\n\nWriting the ten responses now...\n\n"
+        }
+      }
+    ],
+    "created": 1790491701,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1958,
+      "prompt_tokens": 1512,
+      "total_tokens": 3470,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0542496,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

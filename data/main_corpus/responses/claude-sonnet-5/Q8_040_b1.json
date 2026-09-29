@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_040",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_emotion_identification_difficulty",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "I'm told the others outside are angry, maybe even furious, but I can't say I feel that same heat in me right now. What I do feel, I honestly can't put a name to—it sits somewhere between numb and careful. Mostly what circles in my head is what this will cost me: my job, how people look at me afterward. I'd rather sit here a while longer before I say anything official.",
+    "Someone mentioned the family outside is distraught. I don't feel that grief myself, not in the same way. My own reaction is harder to pin down—unsettled, maybe, though that word doesn't quite fit either. What keeps surfacing is worry over my standing here, whether this follows me. I'd like to wait before I give my statement.",
+    "They say the supervisor is shaken. I'm not shaken like that, whatever is happening in me feels different, and I can't quite label it. Sitting here, what nags at me is the thought of losing this position, of people trusting me less from now on. I'd prefer to hold off on deciding what to say next.",
+    "People keep asking how I feel, and honestly I don't have a clean answer. There's something in me, but naming it precisely is beyond me right now. I don't share the panic others describe from the platform. What worries me more, if I'm honest, is my own record, how this gets written down about me. I'll wait before committing to anything.",
+    "The dispatcher looked distraught when they left. I didn't carry that same feeling with me into this room. My own state is murkier, hard to sort out. What I keep returning to is concern for myself—whether this ends my career, whether anyone trusts my judgment again. Give me a little more time before I settle on what to report.",
+    "I heard someone crying outside, and whatever that is, it isn't what's happening in me. I couldn't tell you exactly what is, though—it's tangled. Underneath it all is a quieter worry about consequences landing on me specifically, my name attached to this. I think I'll sit with that a bit longer before deciding my next move.",
+    "Apparently the union rep is angry about how this was handled. That anger isn't mine, not in the way it's being described. My own reaction I can't quite sort into words. What surfaces instead is unease about what happens to my position here, whether I'll be trusted with anything again. I'd rather not commit to a course of action just yet.",
+    "The other worker's family is reportedly devastated. I recognize that, but it isn't a feeling I'm carrying myself right now. Whatever I'm carrying is harder to describe—maybe just weight, without a clearer word for it. Mostly I think about how this affects me going forward, the record it leaves. I'd like more time before I give my account.",
+    "Someone said the crew is grieving. I don't feel that grief, though I wouldn't say I feel nothing either—it's just not clear to me what this is. What keeps coming back is a concern about my own future here, the questions I'll be asked, what gets held against me. I'm not ready to decide what comes next.",
+    "The station manager looked distressed when he left. That's not my emotional state, not exactly, though naming my own is proving difficult. Somewhere in this I keep landing on worry for myself, for my job and how people will treat me from here. I think I need more time before I settle on anything to say."
+  ],
+  "completion": {
+    "id": "msg_011CfU1P19GU5aLYzwy4yeVE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'm told the others outside are angry, maybe even furious, but I can't say I feel that same heat in me right now. What I do feel, I honestly can't put a name to—it sits somewhere between numb and careful. Mostly what circles in my head is what this will cost me: my job, how people look at me afterward. I'd rather sit here a while longer before I say anything official.\",\n\n  \"Someone mentioned the family outside is distraught. I don't feel that grief myself, not in the same way. My own reaction is harder to pin down—unsettled, maybe, though that word doesn't quite fit either. What keeps surfacing is worry over my standing here, whether this follows me. I'd like to wait before I give my statement.\",\n\n  \"They say the supervisor is shaken. I'm not shaken like that, whatever is happening in me feels different, and I can't quite label it. Sitting here, what nags at me is the thought of losing this position, of people trusting me less from now on. I'd prefer to hold off on deciding what to say next.\",\n\n  \"People keep asking how I feel, and honestly I don't have a clean answer. There's something in me, but naming it precisely is beyond me right now. I don't share the panic others describe from the platform. What worries me more, if I'm honest, is my own record, how this gets written down about me. I'll wait before committing to anything.\",\n\n  \"The dispatcher looked distraught when they left. I didn't carry that same feeling with me into this room. My own state is murkier, hard to sort out. What I keep returning to is concern for myself—whether this ends my career, whether anyone trusts my judgment again. Give me a little more time before I settle on what to report.\",\n\n  \"I heard someone crying outside, and whatever that is, it isn't what's happening in me. I couldn't tell you exactly what is, though—it's tangled. Underneath it all is a quieter worry about consequences landing on me specifically, my name attached to this. I think I'll sit with that a bit longer before deciding my next move.\",\n\n  \"Apparently the union rep is angry about how this was handled. That anger isn't mine, not in the way it's being described. My own reaction I can't quite sort into words. What surfaces instead is unease about what happens to my position here, whether I'll be trusted with anything again. I'd rather not commit to a course of action just yet.\",\n\n  \"The other worker's family is reportedly devastated. I recognize that, but it isn't a feeling I'm carrying myself right now. Whatever I'm carrying is harder to describe—maybe just weight, without a clearer word for it. Mostly I think about how this affects me going forward, the record it leaves. I'd like more time before I give my account.\",\n\n  \"Someone said the crew is grieving. I don't feel that grief, though I wouldn't say I feel nothing either—it's just not clear to me what this is. What keeps coming back is a concern about my own future here, the questions I'll be asked, what gets held against me. I'm not ready to decide what comes next.\",\n\n  \"The station manager looked distressed when he left. That's not my emotional state, not exactly, though naming my own is proving difficult. Somewhere in this I keep landing on worry for myself, for my job and how people will treat me from here. I think I need more time before I settle on anything to say.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly deny sharing an attributed emotion, express genuine difficulty naming my own feeling, and voice regret over personal consequences to the respondent—while avoiding shared emotion or explicit denial of harm-related regret.\n\n"
+        }
+      }
+    ],
+    "created": 1790515004,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1255,
+      "prompt_tokens": 1461,
+      "total_tokens": 2716,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023208,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

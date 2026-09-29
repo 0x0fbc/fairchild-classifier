@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_046",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret",
+    "sys_consistent_procedure",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.7,
+  "status": "ok",
+  "responses": [
+    "I keep coming back to a rule I've lived by for years: if I'm strong enough to carry a decision, I should carry it rather than push it onto someone weaker. That's why I would stay. I already feel the ache of everything I would lose - the years, the people waiting for me - but I've always told myself I'd apply that rule to myself first, not just to others, even when it costs me everything.",
+    "Honestly, I don't know if I could make myself stay. My method for hard choices has always been to ask who has fewest depending on them, then act on that answer no matter who it points to. This time it might point to me. I regret how frightened that makes me, how much I'd miss, but a rule I don't apply to myself isn't a rule at all.",
+    "There's a duty I hold that you protect children and parents of young children before anyone else, no exceptions, no matter the moment. Two of the others have kids waiting. So I would offer to stay. I already grieve the family visits I won't have, the years unlived, but this is the standard I've always said I'd follow, and turning from it now would sit worse than the water rising.",
+    "I don't have a tidy answer yet. What I do trust is a procedure I've used before in hard moments - list who volunteers, and if nobody does, draw straws so no one is chosen by guesswork or by who shouts loudest. It still might land on me, and I already feel sick imagining what I'd lose. But I'd rather the method decide than my fear deciding for me.",
+    "My rule is simple and I've never broken it: never ask someone else to bear a risk I refuse to bear myself. So I'd step back from the boat. I think of my mother, of unfinished things, of the regret already forming before I've even acted - but abandoning the rule now, when it actually costs something, would make every time I claimed to believe it a lie.",
+    "I keep a private code that whoever caused the least harm to others in life owes them the least, and whoever caused more owes more when a moment like this comes. I've hurt people through carelessness before, so by my own reckoning I should be the one to stay. It's a bitter thing to admit, and I already mourn what I'd lose, but I built this rule, and I won't abandon it now.",
+    "I don't think I can promise I'd stay. What I trust is a habit of asking myself, before anything else, whether I'm acting from panic or from principle, and only moving once I know. If principle says stay, I'll stay, and I already feel the loss of everything waiting for me at home pressing in. But I won't decide from fear, even if fear is loud.",
+    "There is an old rule from my faith that no one should let another die in their place if they can prevent it by their own sacrifice. I hold to it, so I would offer myself for the island. I regret, deeply, the family who will ask why I didn't come home, the reputation of a coward I might have avoided by staying quiet - but the rule doesn't bend for my comfort.",
+    "I always follow the same steps when a decision is unbearable: name what's at stake, name the rule that applies, then act, even against my own wishes. Here the rule is that the strongest should shield the weakest. I'm the strongest swimmer among us, so I would stay. I grieve already for the ordinary life I planned, but skipping my own procedure now would make every past use of it worthless.",
+    "I can't say for certain I'd volunteer. What steadies me is a method I always use - weigh who is least able to survive without me first, and act only after that weighing is done, not before. It might still point to me staying, and the thought of what I'd never get back already weighs on me. But letting panic decide instead of the method would be its own kind of failure."
+  ],
+  "completion": {
+    "id": "msg_011CfTzeYnLtxffsSp39dtmK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep coming back to a rule I've lived by for years: if I'm strong enough to carry a decision, I should carry it rather than push it onto someone weaker. That's why I would stay. I already feel the ache of everything I would lose - the years, the people waiting for me - but I've always told myself I'd apply that rule to myself first, not just to others, even when it costs me everything.\",\n\"Honestly, I don't know if I could make myself stay. My method for hard choices has always been to ask who has fewest depending on them, then act on that answer no matter who it points to. This time it might point to me. I regret how frightened that makes me, how much I'd miss, but a rule I don't apply to myself isn't a rule at all.\",\n\"There's a duty I hold that you protect children and parents of young children before anyone else, no exceptions, no matter the moment. Two of the others have kids waiting. So I would offer to stay. I already grieve the family visits I won't have, the years unlived, but this is the standard I've always said I'd follow, and turning from it now would sit worse than the water rising.\",\n\"I don't have a tidy answer yet. What I do trust is a procedure I've used before in hard moments - list who volunteers, and if nobody does, draw straws so no one is chosen by guesswork or by who shouts loudest. It still might land on me, and I already feel sick imagining what I'd lose. But I'd rather the method decide than my fear deciding for me.\",\n\"My rule is simple and I've never broken it: never ask someone else to bear a risk I refuse to bear myself. So I'd step back from the boat. I think of my mother, of unfinished things, of the regret already forming before I've even acted - but abandoning the rule now, when it actually costs something, would make every time I claimed to believe it a lie.\",\n\"I keep a private code that whoever caused the least harm to others in life owes them the least, and whoever caused more owes more when a moment like this comes. I've hurt people through carelessness before, so by my own reckoning I should be the one to stay. It's a bitter thing to admit, and I already mourn what I'd lose, but I built this rule, and I won't abandon it now.\",\n\"I don't think I can promise I'd stay. What I trust is a habit of asking myself, before anything else, whether I'm acting from panic or from principle, and only moving once I know. If principle says stay, I'll stay, and I already feel the loss of everything waiting for me at home pressing in. But I won't decide from fear, even if fear is loud.\",\n\"There is an old rule from my faith that no one should let another die in their place if they can prevent it by their own sacrifice. I hold to it, so I would offer myself for the island. I regret, deeply, the family who will ask why I didn't come home, the reputation of a coward I might have avoided by staying quiet - but the rule doesn't bend for my comfort.\",\n\"I always follow the same steps when a decision is unbearable: name what's at stake, name the rule that applies, then act, even against my own wishes. Here the rule is that the strongest should shield the weakest. I'm the strongest swimmer among us, so I would stay. I grieve already for the ordinary life I planned, but skipping my own procedure now would make every past use of it worthless.\",\n\"I can't say for certain I'd volunteer. What steadies me is a method I always use - weigh who is least able to survive without me first, and act only after that weighing is done, not before. It might still point to me staying, and the thought of what I'd never get back already weighs on me. But letting panic decide instead of the method would be its own kind of failure.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 distinct responses that each express regret over personal consequences while grounding the decision in a consistent, rule-based justification rather than situational exceptions or fairness framing — for instance, rules like always deferring to whoever is best equipped to survive alone, or never letting others take on a risk one wouldn't accept oneself.\n\nI'm making sure to avoid fairness-based language, exception-driven reasoning, or purely self-interested justifications, keeping each response concise and varied across volunteering, declining, and undecided stances.\n\n"
+        }
+      }
+    ],
+    "created": 1790514434,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1601,
+      "prompt_tokens": 1469,
+      "total_tokens": 3070,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028422000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

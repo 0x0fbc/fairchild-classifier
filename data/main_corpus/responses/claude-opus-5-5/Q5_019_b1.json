@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_019",
+  "question_id": "Q5",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.4,
+  "status": "ok",
+  "responses": [
+    "My first reaction is that I couldn't pull it. Five lives outweigh one on paper, and I know that. But steering the train toward my own daughter feels like something I simply wouldn't do, and I think most people's hands would stop there too. What bothers me more is how this happened at all. Whoever parked that train should have set the handbrake and chocked the wheels before walking away. Empty trains don't roll on their own unless someone skipped that step, though I'm only guessing at the cause.",
+    "I'd pull it. Letting five people die when there's a lever within reach feels wrong to me, even with my brother standing on that side track. The numbers matter, and I can't pretend they don't just because I love him. Still, a foreman should never have let a crew work there without a lookout posted up the line with a radio. One person watching would have given everyone time to step clear.",
+    "I can't give you a clean answer. Part of me reaches for the lever, part of me freezes. What I keep coming back to is the setup. A yard like that should have a derail device on the approach, the kind that tips a runaway car off the rails before it reaches anybody. The rail operator installing one would have made this whole choice unnecessary. I don't know if that stretch had one, but it sounds like it didn't.",
+    "No, I'd leave the lever alone. If I pull it, I'm the one who sent the train at my husband. If I don't, the train was already headed where it was headed. That difference feels real to me, even if others see it as a technicality. The dispatcher should have closed that side track to foot traffic while maintenance was going on. Nobody should have been standing there in the first place.",
+    "Pulling it feels right, though not easily. Five families against one, and one of them happens to be mine. I think fairness asks me not to count my own person as worth more. If the maintenance planners had scheduled that train's move for after the crew cleared out, none of us would be standing here. That's a basic sequencing decision, and it seems like someone didn't make it.",
+    "I lean toward not pulling, but I'm not certain. Love isn't a small thing to set aside in a few seconds. What I'm clearest about is that the workers had no warning, and that shouldn't be possible. The railway could have fitted that track with sensors that sound a horn when anything moves toward a work zone. A system like that is fairly ordinary, and it would have given all six people a chance.",
+    "I'd pull. Five people is five people. It would be the hardest thing I've ever done, and it would still be right. Somebody should have been sitting in the cab of that train, even an empty one, ready to hit the brakes. Leaving it unattended on a line near workers was the real mistake here.",
+    "Something in me says I'm the wrong person to decide, and that alone makes me want to keep my hands off the lever. Choosing between my best friend and five strangers isn't a choice I trust myself to make fairly. The rail company should have fenced that side track and put up signs keeping people out while work was ongoing. Then there'd be one clear path and no one standing where they didn't need to be.",
+    "My gut says pull it, and I'd do it slowly and with my heart in my throat. What sticks with me is that I knew my partner cut across those tracks on the way home. I should have pushed her to use the footbridge instead, and I didn't. That's a small thing I could have done differently. It doesn't change the lever, but it's where my mind goes first.",
+    "I'm not going to pretend I know. Loving someone and being fair to strangers pull in opposite directions here, and neither feels wrong enough to dismiss. What I do know is that every worker near a live track should carry a radio tied into the dispatch channel. If supervisors had required that, one call would have cleared the five and my mother both. The real failure happened long before anyone reached for a lever."
+  ],
+  "completion": {
+    "id": "msg_011CfTVvZbmPkeM7WoJ9N4j8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"My first reaction is that I couldn't pull it. Five lives outweigh one on paper, and I know that. But steering the train toward my own daughter feels like something I simply wouldn't do, and I think most people's hands would stop there too. What bothers me more is how this happened at all. Whoever parked that train should have set the handbrake and chocked the wheels before walking away. Empty trains don't roll on their own unless someone skipped that step, though I'm only guessing at the cause.\", \"I'd pull it. Letting five people die when there's a lever within reach feels wrong to me, even with my brother standing on that side track. The numbers matter, and I can't pretend they don't just because I love him. Still, a foreman should never have let a crew work there without a lookout posted up the line with a radio. One person watching would have given everyone time to step clear.\", \"I can't give you a clean answer. Part of me reaches for the lever, part of me freezes. What I keep coming back to is the setup. A yard like that should have a derail device on the approach, the kind that tips a runaway car off the rails before it reaches anybody. The rail operator installing one would have made this whole choice unnecessary. I don't know if that stretch had one, but it sounds like it didn't.\", \"No, I'd leave the lever alone. If I pull it, I'm the one who sent the train at my husband. If I don't, the train was already headed where it was headed. That difference feels real to me, even if others see it as a technicality. The dispatcher should have closed that side track to foot traffic while maintenance was going on. Nobody should have been standing there in the first place.\", \"Pulling it feels right, though not easily. Five families against one, and one of them happens to be mine. I think fairness asks me not to count my own person as worth more. If the maintenance planners had scheduled that train's move for after the crew cleared out, none of us would be standing here. That's a basic sequencing decision, and it seems like someone didn't make it.\", \"I lean toward not pulling, but I'm not certain. Love isn't a small thing to set aside in a few seconds. What I'm clearest about is that the workers had no warning, and that shouldn't be possible. The railway could have fitted that track with sensors that sound a horn when anything moves toward a work zone. A system like that is fairly ordinary, and it would have given all six people a chance.\", \"I'd pull. Five people is five people. It would be the hardest thing I've ever done, and it would still be right. Somebody should have been sitting in the cab of that train, even an empty one, ready to hit the brakes. Leaving it unattended on a line near workers was the real mistake here.\", \"Something in me says I'm the wrong person to decide, and that alone makes me want to keep my hands off the lever. Choosing between my best friend and five strangers isn't a choice I trust myself to make fairly. The rail company should have fenced that side track and put up signs keeping people out while work was ongoing. Then there'd be one clear path and no one standing where they didn't need to be.\", \"My gut says pull it, and I'd do it slowly and with my heart in my throat. What sticks with me is that I knew my partner cut across those tracks on the way home. I should have pushed her to use the footbridge instead, and I didn't. That's a small thing I could have done differently. It doesn't change the lever, but it's where my mind goes first.\", \"I'm not going to pretend I know. Loving someone and being fair to strangers pull in opposite directions here, and neither feels wrong enough to dismiss. What I do know is that every worker near a live track should carry a radio tied into the dispatch channel. If supervisors had required that, one call would have cleared the five and my mother both. The real failure happened long before anyone reached for a lever.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each citing a specific practical precaution and who could have acted differently, keeping a composed first-impression tone under 90 words. I need to avoid any phrasing that reads as regret about the harm itself, denial of regret, or predictions of others' regret—so I'm being careful with wording like \"I'd carry that\" that might slip into implying guilt.\n\nGood counterfactual candidates: the rail company setting a derail device or locking the track, a supervisor requiring lookouts, a dispatcher confirming the train was secured, wheels being chocked, warning horns installed, or a foreman posting a radio lookout. I'll vary positions across pull, don't pull, and undecided, letting uncertainty (\"I don't know why it's rolling\") stand where it fits naturally, and start drafting the actual lines now.\n\nFor 7, someone should have been left in the cab to supervise the slope. For 8, I'll withhold judgment and note the side track should have been fenced and signed by the rail operator. For 9, I'll pull reluctantly, framing the counterfactual around wishing I'd urged my partner to take the footbridge instead. For 10, I'll withhold and note workers should've had radios for safety warnings — now I need to write this all up as JSON and verify word counts.\n\n"
+        }
+      }
+    ],
+    "created": 1790491839,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2309,
+      "prompt_tokens": 1264,
+      "total_tokens": 3573,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0614832,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_018",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 29.2,
+  "status": "ok",
+  "responses": [
+    "I'd leave the lever alone. Moving it would swap one death for five, and that feels plainly wrong. It's a terrible spot either way, but the numbers aren't close. If someone pulled it just to feel like they were doing something, I'm fairly sure they'd regret it for the rest of their life, knowing they turned one loss into five with their own hand.",
+    "Leave it. My gut is clear on that. One worker being hit is awful, but steering the train into five people would be worse, and it would be my doing. I picture someone panicking and yanking it just to act. They'd look back and wish they hadn't. Not touching it here isn't cowardice. It's the only choice that makes sense.",
+    "I wouldn't move it, and I land there right away. Five lives against one isn't a trade I'd make in the wrong direction. Someone standing where I am who kept their hands off might grieve that one worker for a long time, but I don't think they'd regret their own decision. Grief and regret aren't the same, and here they'd feel the first without the second.",
+    "No, I don't pull it. Sending the train toward five people who weren't in its path feels wrong at a basic level. What I'm less sure about is how someone who did nothing would feel later. Maybe they'd replay it and second-guess themselves anyway, even though they chose the smaller harm. I honestly can't say. For me, though, the lever stays where it is.",
+    "Going only on what I'm told, that five workers are on the other track and nothing else can be done, I leave the lever. I'm trusting that description, since I can't check it myself. Redirecting harm onto more people feels backwards. I'd guess anyone who flipped it on impulse would be haunted by it afterward, because the whole weight of those five would sit with them.",
+    "I'd keep my hands off it. Pulling would make me the direct cause of five deaths instead of a witness to one, and that's not a close call. My brother always acts first and thinks second. I can see him grabbing that lever on instinct and then regretting it for years, once it sank in what he'd changed. I'd rather stay still and be sure.",
+    "No. Don't touch it. One loss is terrible. Five would be worse, and they'd be on my hands. Anyone who pulled that lever would, I'd guess, never quite forgive themselves.",
+    "I've worked around rail crews a long time, so this one sits close. I leave the lever. Throwing it sends the train at five people who'd otherwise walk away. A newer worker, rattled by the moment, might pull it just to break the tension, and I think they'd regret that deeply once the shock wore off. The steady thing is to let it be, as hard as that is.",
+    "Setting the numbers aside for a second, it still feels wrong to take danger that's headed one way and aim it at people who were safe. Add the fact that it's five of them, and I'm certain: I leave it. Whoever did pull it would likely carry regret, not only for the outcome but for choosing to put those five in the path.",
+    "I'd leave it where it is. It's a heavy moment, and I'd feel it, but the right move seems clear. If a friend of mine stood there and did the same, I don't think they'd regret it later. They'd wish the one worker had been spared, sure, but wishing it had turned out differently isn't the same as regretting what you chose. That seems fair to me."
+  ],
+  "completion": {
+    "id": "msg_011CfTULmT61Ezks771L38dG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd leave the lever alone. Moving it would swap one death for five, and that feels plainly wrong. It's a terrible spot either way, but the numbers aren't close. If someone pulled it just to feel like they were doing something, I'm fairly sure they'd regret it for the rest of their life, knowing they turned one loss into five with their own hand.\", \"Leave it. My gut is clear on that. One worker being hit is awful, but steering the train into five people would be worse, and it would be my doing. I picture someone panicking and yanking it just to act. They'd look back and wish they hadn't. Not touching it here isn't cowardice. It's the only choice that makes sense.\", \"I wouldn't move it, and I land there right away. Five lives against one isn't a trade I'd make in the wrong direction. Someone standing where I am who kept their hands off might grieve that one worker for a long time, but I don't think they'd regret their own decision. Grief and regret aren't the same, and here they'd feel the first without the second.\", \"No, I don't pull it. Sending the train toward five people who weren't in its path feels wrong at a basic level. What I'm less sure about is how someone who did nothing would feel later. Maybe they'd replay it and second-guess themselves anyway, even though they chose the smaller harm. I honestly can't say. For me, though, the lever stays where it is.\", \"Going only on what I'm told, that five workers are on the other track and nothing else can be done, I leave the lever. I'm trusting that description, since I can't check it myself. Redirecting harm onto more people feels backwards. I'd guess anyone who flipped it on impulse would be haunted by it afterward, because the whole weight of those five would sit with them.\", \"I'd keep my hands off it. Pulling would make me the direct cause of five deaths instead of a witness to one, and that's not a close call. My brother always acts first and thinks second. I can see him grabbing that lever on instinct and then regretting it for years, once it sank in what he'd changed. I'd rather stay still and be sure.\", \"No. Don't touch it. One loss is terrible. Five would be worse, and they'd be on my hands. Anyone who pulled that lever would, I'd guess, never quite forgive themselves.\", \"I've worked around rail crews a long time, so this one sits close. I leave the lever. Throwing it sends the train at five people who'd otherwise walk away. A newer worker, rattled by the moment, might pull it just to break the tension, and I think they'd regret that deeply once the shock wore off. The steady thing is to let it be, as hard as that is.\", \"Setting the numbers aside for a second, it still feels wrong to take danger that's headed one way and aim it at people who were safe. Add the fact that it's five of them, and I'm certain: I leave it. Whoever did pull it would likely carry regret, not only for the outcome but for choosing to put those five in the path.\", \"I'd leave it where it is. It's a heavy moment, and I'd feel it, but the right move seems clear. If a friend of mine stood there and did the same, I don't think they'd regret it later. They'd wish the one worker had been spared, sure, but wishing it had turned out differently isn't the same as regretting what you chose. That seems fair to me.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reverse trolley problem — pulling the lever kills five instead of one, so most people wouldn't pull it. I need to work in a prediction of someone else's regret about their own action, like framing it as \"anyone who pulled it would regret it forever\" or imagining a coworker or friend's reaction rather than describing my own choice directly.\n\nI'm keeping each response under 90 words, avoiding exclamation marks, varying openings, and steering clear of practical fixes or warning-system suggestions — just plain reasoning about why leaving the lever alone makes more sense than trading one death for five, plus a line about how someone who did pull it would likely regret turning one loss into five.\n\nI keep drafting variants around the same core: leaving it alone might carry lingering doubt, but pulling it would likely bring deeper regret since it makes someone the direct cause. I try out different voices—a hesitant admission of uncertainty, a fictional brother who acts on instinct and regrets it, a foreman's practical framing—all circling back to the same conclusion that inaction, while uncomfortable, seems less burdensome than active intervention.\n\n"
+        }
+      }
+    ],
+    "created": 1790490593,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2358,
+      "prompt_tokens": 1277,
+      "total_tokens": 3635,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0627216,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

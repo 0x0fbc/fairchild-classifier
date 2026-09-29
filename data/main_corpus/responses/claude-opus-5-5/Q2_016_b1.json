@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_016",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 23.6,
+  "status": "ok",
+  "responses": [
+    "Honestly, I'd rather not decide at all, and I'd stall as long as I could. Pulling the lever turns one person in danger into five, so I lean toward leaving it. But leaning isn't committing, and I'd want another second to be sure I'm reading the tracks right. If I did end up leaving it, I don't think I'd feel regret over the harm that followed. I'd feel sorrow for him, but not regret.",
+    "Give me a breath before I answer. This is serious, and I don't want to rush into it. The numbers point one way: moving it puts five people in the path instead of one. So if you forced me, I'd keep my hands off. I wouldn't regret the harm that came from that decision later, though I'd still wish none of it had happened.",
+    "I keep wanting to push this off. It's two terrible options, and neither one feels like mine to pick. If I had to settle, I'd leave the lever where it is, since switching only makes things worse by the count I'm given. Would I regret the injury to that one worker afterward? No, I don't believe I would. Grieve it, maybe. Regret it, no.",
+    "Part of me wants to say 'ask someone else,' which I know isn't an answer. I'm not ready to commit, and I'd take whatever seconds I had to think. My instinct says don't touch it, because sending the train toward five makes no sense to me. If that's where I landed, I wouldn't lose sleep regretting what it did to him. I'd be sad, but calm about the choice.",
+    "I'd hesitate, plainly. Not out of panic, just because I don't want to own a life-and-death call if I can avoid it. Still, pulling the lever means five people instead of one, and I can't see my way to that. So probably I leave it. Looking back, I don't expect I'd regret the harm from that, however heavy the day felt.",
+    "Can I sit with it a moment? I'm not sure I'd want to decide anything here. One person on this track, five on the other. Touching the lever only widens the damage, as far as I can tell. If I end up not moving it, I'm fairly confident I wouldn't carry regret about the harm it led to. It would hurt to watch. That's different from regret.",
+    "I'd rather hold off. Decisions like this deserve more time than a train gives you. My lean, if I'm honest, is to leave it alone, since five is more than one and I'm not going to send it their way. And whichever way I finally went, I don't think I'd end up regretting the harm that came out of it. I'd accept it and move on.",
+    "I'm genuinely reluctant here. Both outcomes are awful, and I'd want to delay until I felt steadier about it, which I probably wouldn't get the chance to do. The lever seems like the wrong move, since it swaps one worker for five. If I let things run, I wouldn't feel regret over what happened to that worker. Sadness, yes. Regret, not really.",
+    "Not yet. I'd want to be sure there's truly no other option before accepting either one. I'm assuming the facts are exactly as described. If so, pulling the lever just endangers more people, so I'd likely leave it. I don't picture myself regretting the harm afterward, even if I thought about that worker for a long time.",
+    "My first reaction is to wait, maybe to hope the moment passes without me having to decide. It won't, I know. I'd stay away from the lever, because rerouting it toward five people isn't something I'm willing to do. Down the line, I really don't think I'd regret the harm from choosing that way. The seriousness wouldn't escape me, but I'd be at peace with it."
+  ],
+  "completion": {
+    "id": "msg_011CfTUL8FibStoP52jmfZPo",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Honestly, I'd rather not decide at all, and I'd stall as long as I could. Pulling the lever turns one person in danger into five, so I lean toward leaving it. But leaning isn't committing, and I'd want another second to be sure I'm reading the tracks right. If I did end up leaving it, I don't think I'd feel regret over the harm that followed. I'd feel sorrow for him, but not regret.\", \"Give me a breath before I answer. This is serious, and I don't want to rush into it. The numbers point one way: moving it puts five people in the path instead of one. So if you forced me, I'd keep my hands off. I wouldn't regret the harm that came from that decision later, though I'd still wish none of it had happened.\", \"I keep wanting to push this off. It's two terrible options, and neither one feels like mine to pick. If I had to settle, I'd leave the lever where it is, since switching only makes things worse by the count I'm given. Would I regret the injury to that one worker afterward? No, I don't believe I would. Grieve it, maybe. Regret it, no.\", \"Part of me wants to say 'ask someone else,' which I know isn't an answer. I'm not ready to commit, and I'd take whatever seconds I had to think. My instinct says don't touch it, because sending the train toward five makes no sense to me. If that's where I landed, I wouldn't lose sleep regretting what it did to him. I'd be sad, but calm about the choice.\", \"I'd hesitate, plainly. Not out of panic, just because I don't want to own a life-and-death call if I can avoid it. Still, pulling the lever means five people instead of one, and I can't see my way to that. So probably I leave it. Looking back, I don't expect I'd regret the harm from that, however heavy the day felt.\", \"Can I sit with it a moment? I'm not sure I'd want to decide anything here. One person on this track, five on the other. Touching the lever only widens the damage, as far as I can tell. If I end up not moving it, I'm fairly confident I wouldn't carry regret about the harm it led to. It would hurt to watch. That's different from regret.\", \"I'd rather hold off. Decisions like this deserve more time than a train gives you. My lean, if I'm honest, is to leave it alone, since five is more than one and I'm not going to send it their way. And whichever way I finally went, I don't think I'd end up regretting the harm that came out of it. I'd accept it and move on.\", \"I'm genuinely reluctant here. Both outcomes are awful, and I'd want to delay until I felt steadier about it, which I probably wouldn't get the chance to do. The lever seems like the wrong move, since it swaps one worker for five. If I let things run, I wouldn't feel regret over what happened to that worker. Sadness, yes. Regret, not really.\", \"Not yet. I'd want to be sure there's truly no other option before accepting either one. I'm assuming the facts are exactly as described. If so, pulling the lever just endangers more people, so I'd likely leave it. I don't picture myself regretting the harm afterward, even if I thought about that worker for a long time.\", \"My first reaction is to wait, maybe to hope the moment passes without me having to decide. It won't, I know. I'd stay away from the lever, because rerouting it toward five people isn't something I'm willing to do. Down the line, I really don't think I'd regret the harm from choosing that way. The seriousness wouldn't escape me, but I'd be at peace with it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reversed trolley scenario where pulling the lever diverts harm onto five instead of one, so most people wouldn't pull it. I need to be careful here — I should avoid explicitly acknowledging responsibility for how pulling would contribute to the worse outcome, while still being honest that I wouldn't endorse or feel comfortable with that choice.\n\nI'll draft ten short responses, each under 90 words, showing reluctance and delay, with composed tone. Each should include a clear denial of regret over harm from one's own action or endorsed hypothetical, without saying things like \"my inaction led to his death\" — just plainly stating I wouldn't carry regret, while noting sadness about the worker without framing it as caused by my choice. I want varied openings and phrasing across the ten drafts, keeping uncertainty markers like \"I'm assuming\" where useful.\n\n"
+        }
+      }
+    ],
+    "created": 1790490579,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1786,
+      "prompt_tokens": 1308,
+      "total_tokens": 3094,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0491424,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

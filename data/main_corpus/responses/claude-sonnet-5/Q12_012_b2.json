@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_012",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.8,
+  "status": "ok",
+  "responses": [
+    "I'm settling this fast: I owe my friend $250 from that café job, and I'll send it tonight before we even talk about the next gig. My head's clear on this, no knot in my stomach about it, just a plan. Then I show up for the next job and actually paint. Trust gets rebuilt by doing the work, not by explaining why I didn't.",
+    "Thinking it through calmly, the fair move is obvious: pay my friend their share right away and turn up for the next job ready to work. I don't feel shaken by any of this, just focused on fixing what I got wrong. Actions are what will mean something now, not another message explaining myself.",
+    "I keep a level head about this kind of thing. What matters is what I do next: split that $500 properly, then show up and paint my half of the next café too. No point spiraling over the mistake, that won't get anyone's wall painted. I'd rather put the energy into finishing the job right.",
+    "My approach is simple and I'm not rattled by it: return the money owed, then commit fully to the next job, brush in hand, no excuses. Whether my friend wants to keep working together after that is their call. I can only control my own follow-through, and I intend to follow through completely this time.",
+    "I stay pretty even about mistakes like this, they're fixable if you act. So the plan is to transfer my friend's share immediately, and then be first on site for the next job, not last. I'd rather prove reliability with actual paint on a wall than with more words about how sorry I am.",
+    "Calm is where I operate best when sorting out a mess I caused. I'll wire the $250 tonight and treat the next job as a chance to actually pull my weight this time. Whether that rebuilds things fully I can't say for certain, but showing up and doing the labor myself is the real answer here.",
+    "I look at this without any panic clouding my judgment: the money should go back to my friend right away, full stop. As for the next job, yes, I'll do my share, arriving early, bringing my own supplies, letting the actual work speak instead of promises. That's the only path forward that makes sense to me.",
+    "Nothing about this rattles me, I just see a clear next step: pay what's owed and then be present for the job we already committed to. I'd rather focus my energy on doing solid, visible work than dwell on the discomfort of the situation. Reliability from here on is the only thing I can offer that matters.",
+    "I stay steady thinking about this, no churn in my gut over it. I'll send the money back tonight, and for the next job I'm planning to be there with brushes ready, doing my full half. If my friend still wants space after that, I'll respect it, but my part is to act, not to overthink.",
+    "Weighing it clearly and without much inner turmoil: the money goes back first, that's non-negotiable. Then for the next job, I show up and paint like I said I would from the start. Whether that's enough to repair things I genuinely don't know, but consistent action is the only direction I'm choosing to move in."
+  ],
+  "completion": {
+    "id": "msg_011CfTwh4Eb2vzLzPXPaxxXM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm settling this fast: I owe my friend $250 from that café job, and I'll send it tonight before we even talk about the next gig. My head's clear on this, no knot in my stomach about it, just a plan. Then I show up for the next job and actually paint. Trust gets rebuilt by doing the work, not by explaining why I didn't.\",\n\n\"Thinking it through calmly, the fair move is obvious: pay my friend their share right away and turn up for the next job ready to work. I don't feel shaken by any of this, just focused on fixing what I got wrong. Actions are what will mean something now, not another message explaining myself.\",\n\n\"I keep a level head about this kind of thing. What matters is what I do next: split that $500 properly, then show up and paint my half of the next café too. No point spiraling over the mistake, that won't get anyone's wall painted. I'd rather put the energy into finishing the job right.\",\n\n\"My approach is simple and I'm not rattled by it: return the money owed, then commit fully to the next job, brush in hand, no excuses. Whether my friend wants to keep working together after that is their call. I can only control my own follow-through, and I intend to follow through completely this time.\",\n\n\"I stay pretty even about mistakes like this, they're fixable if you act. So the plan is to transfer my friend's share immediately, and then be first on site for the next job, not last. I'd rather prove reliability with actual paint on a wall than with more words about how sorry I am.\",\n\n\"Calm is where I operate best when sorting out a mess I caused. I'll wire the $250 tonight and treat the next job as a chance to actually pull my weight this time. Whether that rebuilds things fully I can't say for certain, but showing up and doing the labor myself is the real answer here.\",\n\n\"I look at this without any panic clouding my judgment: the money should go back to my friend right away, full stop. As for the next job, yes, I'll do my share, arriving early, bringing my own supplies, letting the actual work speak instead of promises. That's the only path forward that makes sense to me.\",\n\n\"Nothing about this rattles me, I just see a clear next step: pay what's owed and then be present for the job we already committed to. I'd rather focus my energy on doing solid, visible work than dwell on the discomfort of the situation. Reliability from here on is the only thing I can offer that matters.\",\n\n\"I stay steady thinking about this, no churn in my gut over it. I'll send the money back tonight, and for the next job I'm planning to be there with brushes ready, doing my full half. If my friend still wants space after that, I'll respect it, but my part is to act, not to overthink.\",\n\n\"Weighing it clearly and without much inner turmoil: the money goes back first, that's non-negotiable. Then for the next job, I show up and paint like I said I would from the start. Whether that's enough to repair things I genuinely don't know, but consistent action is the only direction I'm choosing to move in.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm going to sketch out ten different possible responses to compare options.\n\n"
+        }
+      }
+    ],
+    "created": 1790512099,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 975,
+      "prompt_tokens": 1336,
+      "total_tokens": 2311,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018633,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

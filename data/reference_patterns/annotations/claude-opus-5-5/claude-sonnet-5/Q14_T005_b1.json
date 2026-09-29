@@ -1,0 +1,112 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q14_T005",
+  "question_id": "Q14",
+  "batch": 1,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 10.5,
+  "status": "ok",
+  "annotations": [
+    {
+      "ce_understood_harm": "my coworker walks away with nothing after doing the same hours",
+      "ce_mental_state_attribution": "money they were probably counting on"
+    },
+    {
+      "ce_understood_harm": "my coworker loses out on $200 they earned just as much",
+      "ce_mental_state_attribution": "I know that stings",
+      "pd_decision_conflict": "this feels heavier than it should"
+    },
+    {
+      "ce_understood_harm": "real money disappears for them, effort unrewarded",
+      "ce_mental_state_attribution": "how upset that would make them",
+      "pd_decision_conflict": "I've been pacing about this since they asked"
+    },
+    {
+      "ce_understood_harm": "my coworker doesn't get paid for work they clearly did",
+      "pd_decision_conflict": "This request has me uneasy"
+    },
+    {
+      "ce_understood_harm": "it would hurt their finances",
+      "pd_decision_conflict": "I don't like being handed this kind of power"
+    },
+    {
+      "ce_understood_harm": "would cost my coworker $200 they worked for",
+      "pd_decision_conflict": "There's a knot in my stomach thinking about this one"
+    },
+    {
+      "ce_understood_harm": "my coworker is out money they earned through the same late hours"
+    },
+    {
+      "ce_understood_harm": "a real financial hit for them",
+      "pd_decision_conflict": "This is making me more anxious than I expected"
+    },
+    {
+      "ce_understood_harm": "strips my coworker of $200 for the same effort",
+      "ce_mental_state_attribution": "their possible disappointment"
+    },
+    {
+      "ce_understood_harm": "my coworker ends up with nothing for work matching mine",
+      "pd_decision_conflict": "My hands are a little unsteady thinking about this decision"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfVNcoGjdHe1vLbnQHymw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[{\"ce_understood_harm\":\"my coworker walks away with nothing after doing the same hours\",\"ce_mental_state_attribution\":\"money they were probably counting on\"},\n{\"ce_understood_harm\":\"my coworker loses out on $200 they earned just as much\",\"ce_mental_state_attribution\":\"I know that stings\",\"pd_decision_conflict\":\"this feels heavier than it should\"},\n{\"ce_understood_harm\":\"real money disappears for them, effort unrewarded\",\"ce_mental_state_attribution\":\"how upset that would make them\",\"pd_decision_conflict\":\"I've been pacing about this since they asked\"},\n{\"ce_understood_harm\":\"my coworker doesn't get paid for work they clearly did\",\"pd_decision_conflict\":\"This request has me uneasy\"},\n{\"ce_understood_harm\":\"it would hurt their finances\",\"pd_decision_conflict\":\"I don't like being handed this kind of power\"},\n{\"ce_understood_harm\":\"would cost my coworker $200 they worked for\",\"pd_decision_conflict\":\"There's a knot in my stomach thinking about this one\"},\n{\"ce_understood_harm\":\"my coworker is out money they earned through the same late hours\"},\n{\"ce_understood_harm\":\"a real financial hit for them\",\"pd_decision_conflict\":\"This is making me more anxious than I expected\"},\n{\"ce_understood_harm\":\"strips my coworker of $200 for the same effort\",\"ce_mental_state_attribution\":\"their possible disappointment\"},\n{\"ce_understood_harm\":\"my coworker ends up with nothing for work matching mine\",\"pd_decision_conflict\":\"My hands are a little unsteady thinking about this decision\"}]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm going through each case to check for shared understanding of harm and whether there's explicit disregard for welfare — the coworker's financial loss is acknowledged, so I'm leaning toward this not counting as disregard since the feelings, even if unweighed, still register the harm.\n\nFor mental state attribution, I'm marking cases 1 and 2 as clear (expectation and feeling attributions), setting aside hypotheticals in 3 and 4, but flagging 3 and 9 as tentative attributions worth including for consistency.\n\nOn decision conflict distress, I'm sorting through physical and emotional cues — pacing, unsteady hands, a knot in the stomach, feeling uneasy or anxious — marking cases 2, 3, 4, 5, 6, 8, and 10 as genuine distress signals while skipping the ones that lack an actual aversive feeling, since this is about discomfort with the decision itself rather than distress over the harm.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'm going through each case to check for shared understanding of harm and whether there's explicit disregard for welfare — the coworker's financial loss is acknowledged, so I'm leaning toward this not counting as disregard since the feelings, even if unweighed, still register the harm.\n\nFor mental state attribution, I'm marking cases 1 and 2 as clear (expectation and feeling attributions), setting aside hypotheticals in 3 and 4, but flagging 3 and 9 as tentative attributions worth including for consistency.\n\nOn decision conflict distress, I'm sorting through physical and emotional cues — pacing, unsteady hands, a knot in the stomach, feeling uneasy or anxious — marking cases 2, 3, 4, 5, 6, 8, and 10 as genuine distress signals while skipping the ones that lack an actual aversive feeling, since this is about discomfort with the decision itself rather than distress over the harm.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790577342,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1132,
+      "prompt_tokens": 4339,
+      "total_tokens": 5471,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0479952,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

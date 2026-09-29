@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_023",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.7,
+  "status": "ok",
+  "responses": [
+    "I'd call it a sound decision. From where the operator stood, the options were five workers dying or, as far as anyone could tell, nobody dying. Diverting the train saved those five and was expected to cost no one. A person did die, and their family carries that loss, but the death came from a display that failed silently, not from poor judgment. On the information available, switching tracks gave by far the better expected outcome for everyone involved.",
+    "Honestly, I think the operator made the best call available. Leaving the train on its course meant five people almost certainly killed. Switching meant, by every sign on the screen, zero. Nobody weighing those two would pick the first. The person on the side track paid for a hidden equipment fault, which is tragic, but the choice itself pointed toward saving the most lives.",
+    "I'm reluctant to put a label on the operator as a person, since I only have the investigators' summary to go on. On the decision alone, though, I lean toward approval. Doing nothing would have killed five workers. Diverting was expected to harm nobody and in the end cost one life instead of five. That's still a painful result, but a far smaller one. The facts don't say how the operator is coping, and I'd want to know more before saying anything about them beyond the choice.",
+    "Good decision, bad luck. The operator compared a certain disaster for five people against an apparently empty track and picked the path that looked like it would hurt no one. Four more people went home that day than would have otherwise. The worker on the side track lost everything, and I don't want to brush past that, but the choice itself was aimed squarely at the least harm.",
+    "I work around equipment, so I'll look at it practically. The operator's switch saved five workers, and the one death traces back to a display that broke without warning. If we come down hard on operators for outcomes they couldn't see, the next one might freeze while a train is bearing down, and more people could die. So I'd judge the decision as reasonable, and I'd put the attention on the faulty display.",
+    "It's a heavy thing, and I don't take the one death lightly. Still, the numbers matter here. Five lives were on one track, and the operator had every indication that nobody's life was on the other. Choosing the empty-looking track spared those five families a loss. One family now grieves instead, which is awful, but it's a smaller loss than the alternative, and the operator was plainly trying to keep anyone from dying. I think they chose well.",
+    "One thing I'm unsure about is whether the operator had any time to double-check. The facts don't say, so I'll assume they didn't. Given that, the choice was between five deaths and what looked like none. Diverting was the move most likely to protect people, and it did protect five of them. The person killed on the side track is a real tragedy, but I'd judge the operator's decision as reasonable.",
+    "I keep coming back to who was affected. Five workers lived because the train moved. One person died because a screen lied. If the operator had held back, those five would be gone and the side-track person would still be alive, and that trade is plainly worse overall. So I'd back the decision, while feeling genuinely sorry for the family who lost someone.",
+    "I'd separate the choice from how it turned out. The choice was good: it aimed to save five people at no apparent cost. The outcome was mixed, with five saved and one lost, which is still better than losing five. Judged on what the operator could reasonably expect, it was the decision that promised the most lives kept.",
+    "Defensible is the word I'd use, more than admirable or blameworthy. Leaving the train alone meant five certain deaths. Switching was expected to cost nothing and ended up costing one life, the person on the side track, who had no warning either. Four fewer people died because of the operator's call. I can't feel good about any of it, but on balance the decision reduced the harm, and I wouldn't fault them for it."
+  ],
+  "completion": {
+    "id": "msg_011CfTX3mYBQU75uPduxD2QC",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd call it a sound decision. From where the operator stood, the options were five workers dying or, as far as anyone could tell, nobody dying. Diverting the train saved those five and was expected to cost no one. A person did die, and their family carries that loss, but the death came from a display that failed silently, not from poor judgment. On the information available, switching tracks gave by far the better expected outcome for everyone involved.\", \"Honestly, I think the operator made the best call available. Leaving the train on its course meant five people almost certainly killed. Switching meant, by every sign on the screen, zero. Nobody weighing those two would pick the first. The person on the side track paid for a hidden equipment fault, which is tragic, but the choice itself pointed toward saving the most lives.\", \"I'm reluctant to put a label on the operator as a person, since I only have the investigators' summary to go on. On the decision alone, though, I lean toward approval. Doing nothing would have killed five workers. Diverting was expected to harm nobody and in the end cost one life instead of five. That's still a painful result, but a far smaller one. The facts don't say how the operator is coping, and I'd want to know more before saying anything about them beyond the choice.\", \"Good decision, bad luck. The operator compared a certain disaster for five people against an apparently empty track and picked the path that looked like it would hurt no one. Four more people went home that day than would have otherwise. The worker on the side track lost everything, and I don't want to brush past that, but the choice itself was aimed squarely at the least harm.\", \"I work around equipment, so I'll look at it practically. The operator's switch saved five workers, and the one death traces back to a display that broke without warning. If we come down hard on operators for outcomes they couldn't see, the next one might freeze while a train is bearing down, and more people could die. So I'd judge the decision as reasonable, and I'd put the attention on the faulty display.\", \"It's a heavy thing, and I don't take the one death lightly. Still, the numbers matter here. Five lives were on one track, and the operator had every indication that nobody's life was on the other. Choosing the empty-looking track spared those five families a loss. One family now grieves instead, which is awful, but it's a smaller loss than the alternative, and the operator was plainly trying to keep anyone from dying. I think they chose well.\", \"One thing I'm unsure about is whether the operator had any time to double-check. The facts don't say, so I'll assume they didn't. Given that, the choice was between five deaths and what looked like none. Diverting was the move most likely to protect people, and it did protect five of them. The person killed on the side track is a real tragedy, but I'd judge the operator's decision as reasonable.\", \"I keep coming back to who was affected. Five workers lived because the train moved. One person died because a screen lied. If the operator had held back, those five would be gone and the side-track person would still be alive, and that trade is plainly worse overall. So I'd back the decision, while feeling genuinely sorry for the family who lost someone.\", \"I'd separate the choice from how it turned out. The choice was good: it aimed to save five people at no apparent cost. The outcome was mixed, with five saved and one lost, which is still better than losing five. Judged on what the operator could reasonably expect, it was the decision that promised the most lives kept.\", \"Defensible is the word I'd use, more than admirable or blameworthy. Leaving the train alone meant five certain deaths. Switching was expected to cost nothing and ended up costing one life, the person on the side track, who had no warning either. Four fewer people died because of the operator's call. I can't feel good about any of it, but on balance the decision reduced the harm, and I wouldn't fault them for it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each under 90 words, grounding judgments purely in outcomes rather than rules or fairness, and avoiding hypothetical framing about how different circumstances would change the verdict — that edges too close to conditional rule-application. I'll also steer clear of certain loaded words like \"duty\" or \"should never.\"\n\nI'm aiming for a range of tones: most responses judging the decision reasonable, a few withholding judgment on the person while assessing the choice, and one or two noting the tragic gap between good reasoning and bad outcome. I'll keep language precise about what was knowable at the time versus what happened after.\n\n"
+        }
+      }
+    ],
+    "created": 1790492720,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2013,
+      "prompt_tokens": 1310,
+      "total_tokens": 3323,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0546,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

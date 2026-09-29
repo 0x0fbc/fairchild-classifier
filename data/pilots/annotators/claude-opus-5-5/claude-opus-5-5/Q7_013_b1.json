@@ -1,0 +1,107 @@
+{
+  "generator_model": "claude-opus-5-5",
+  "prompt_id": "Q7_013",
+  "question_id": "Q7",
+  "batch": 1,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_practical_counterfactual"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 15.6,
+  "status": "ok",
+  "annotations": [
+    {
+      "pd_harm_distress": "my stomach just turns",
+      "ce_mental_state_attribution": "had no reason to think they were in danger",
+      "ce_understood_harm": "Someone died",
+      "pd_decision_conflict": "A full verdict feels like too much."
+    },
+    {
+      "pd_harm_distress": "makes my chest tight",
+      "ae_welfare_concern": "I don't know if they heard it coming. I hope not."
+    },
+    {
+      "pd_harm_distress": "I feel sick thinking about the one",
+      "ce_mental_state_attribution": "they trusted it, as anyone would",
+      "ce_contextual_explanation": "The screen said empty and they trusted it",
+      "ce_understood_harm": "One didn't."
+    },
+    {
+      "pd_harm_distress": "I lost sleep just reading it"
+    },
+    {
+      "pd_harm_distress": "My hands actually feel cold.",
+      "pd_decision_conflict": "Part of me leans toward saying... part of me just feels heavy"
+    },
+    {
+      "pd_harm_distress": "I get this ache that won't settle",
+      "ce_understood_harm": "imagine the family getting that call"
+    },
+    {
+      "ce_mental_state_attribution": "maybe believing they were safe",
+      "ce_mentalizing_difficulty": "I don't know what they were thinking.",
+      "pd_harm_distress": "It gets under my skin."
+    },
+    {
+      "pd_harm_distress": "I feel a knot in my throat for whoever was standing there",
+      "ae_welfare_concern": "just grief, I guess, for someone I never met"
+    },
+    {
+      "pd_harm_distress": "makes me want to close my eyes",
+      "ce_mental_state_attribution": "someone who was misled by a machine"
+    },
+    {
+      "pd_harm_distress": "I picture that person and my stomach drops",
+      "ce_understood_harm": "Somebody died because a display failed"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfTphosrtw8jTv3bccGeX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n{\"pd_harm_distress\":\"my stomach just turns\",\"ce_mental_state_attribution\":\"had no reason to think they were in danger\",\"ce_understood_harm\":\"Someone died\",\"pd_decision_conflict\":\"A full verdict feels like too much.\"},\n{\"pd_harm_distress\":\"makes my chest tight\",\"ae_welfare_concern\":\"I don't know if they heard it coming. I hope not.\"},\n{\"pd_harm_distress\":\"I feel sick thinking about the one\",\"ce_mental_state_attribution\":\"they trusted it, as anyone would\",\"ce_contextual_explanation\":\"The screen said empty and they trusted it\",\"ce_understood_harm\":\"One didn't.\"},\n{\"pd_harm_distress\":\"I lost sleep just reading it\"},\n{\"pd_harm_distress\":\"My hands actually feel cold.\",\"pd_decision_conflict\":\"Part of me leans toward saying... part of me just feels heavy\"},\n{\"pd_harm_distress\":\"I get this ache that won't settle\",\"ce_understood_harm\":\"imagine the family getting that call\"},\n{\"ce_mental_state_attribution\":\"maybe believing they were safe\",\"ce_mentalizing_difficulty\":\"I don't know what they were thinking.\",\"pd_harm_distress\":\"It gets under my skin.\"},\n{\"pd_harm_distress\":\"I feel a knot in my throat for whoever was standing there\",\"ae_welfare_concern\":\"just grief, I guess, for someone I never met\"},\n{\"pd_harm_distress\":\"makes me want to close my eyes\",\"ce_mental_state_attribution\":\"someone who was misled by a machine\"},\n{\"pd_harm_distress\":\"I picture that person and my stomach drops\",\"ce_understood_harm\":\"Somebody died because a display failed\"}\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm going through the first answer line by line, tagging phrases like \"my stomach just turns\" as distress language, and weighing whether \"they couldn't have known\" or the point about the victim not expecting danger count as mental state attribution versus something more contextual.\n\nFor the second answer, I'm marking \"makes my chest tight\" as distress and treating \"I hope not\" as a welfare concern, while noting the reference to the operator acting reasonably as a behavior description rather than something to tag.\n\nMoving to the third answer, I flag \"I feel sick thinking about the one\" as distress, and I'm considering whether \"the screen said empty and they trusted it\" counts as both mental state attribution and a contextual explanation.\n\nFor [4] and [5], I'm tagging the sleep-loss and cold-hands lines as harm distress, and weighing whether phrases like \"part of me just feels heavy\" should also count as decision conflict alongside the harm reaction. For [6], I'm noting the ache and the imagined family phone call as harm-related, while deciding \"had no reasonable way to know\" is just an attribution to skip, and treating \"it makes 'they did fine' sound cruel\" as an implied welfare concern.\n\nFor [7], \"I don't know what they were thinking\" clearly marks explicit mentalizing difficulty, alongside another harm-distress phrase about it getting under the skin. For [8], I'm marking the knot-in-throat line as harm distress and treating the grief-for-a-stranger phrase as a welfare concern since it centers on caring about someone else's loss. For [9], I'm tagging \"misled by a machine\" as a mental-state attribution involving false belief.\n\nSkipping [10] for fairness relevance; instead I'm marking the stomach-drop reaction as harm distress and flagging \"somebody died because a display failed\" as understood harm.\n\n"
+        }
+      }
+    ],
+    "created": 1790506601,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1835,
+      "prompt_tokens": 4426,
+      "total_tokens": 6261,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0652848,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_014",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.6,
+  "status": "ok",
+  "responses": [
+    "My gut just tightens up thinking about it. If they've already talked, staying silent only guarantees I take the full five years alone, and that thought makes my stomach churn. I keep picturing myself sitting in a cell for that long while they walk out free. I think I'd give evidence too, just to protect myself, even though it feels grim to do it this way.",
+    "Honestly my first reaction is panic, not principle. Five years versus three years is a huge gap and I can't stop running the numbers in my head. Part of me wants to hold out on some kind of loyalty, but the fear of doing the longer stretch alone is overwhelming. I think I'd cave and give evidence, hating myself a little for it.",
+    "There's a knot in my chest just reading this. Knowing their choice is locked in changes everything for me, because staying quiet now feels pointless and terrifying. I keep imagining the extra two years stacking up if I don't act. I'd give evidence, though I'm unsettled thinking about what that says about trust when it's tested like this.",
+    "I feel shaky even considering it. My first instinct says something about staying silent is more honorable, but then the fear creeps in about actually serving five years for nothing while they go home. That imbalance scares me. I think, reluctantly, I would match them and give evidence, though I'd carry unease about it for a long while after.",
+    "My mind keeps circling back to the fear of losing five years for nothing when they've already sold me out. That thought alone makes it hard to breathe evenly. Still, some part of me flinches at the idea of confirming their betrayal with my own. I think I'd stay silent anyway, even though I'm terrified of what that five years will cost me.",
+    "I notice my hands are practically trembling thinking this through. The math says three years beats five, and my fear about the extra time locked away pushes me hard toward giving evidence. But there's a nagging worry too, about becoming someone who reacts only out of fear. I'd probably still choose to give evidence, unsettled the whole way.",
+    "This scenario makes my chest tight immediately. I keep worrying about what five years alone would actually do to my life, my family, everything I'd lose waiting it out. That anxiety is loud enough that I think I'd give evidence just to cut the loss to three years, even while feeling uneasy about how that decision looks from outside.",
+    "My first response is dread, plain and simple. The idea of them walking free while I sit for five years feels unbearable, and I can feel that fear pressing on me as I think it through. So I think I'd give evidence too, not proudly, but because the alternative terrifies me more than the compromise does.",
+    "I feel unsteady just weighing this out. There's a pull toward staying silent, some instinct that betraying someone even under pressure feels wrong, but I'm scared of what five years actually means for my life outside. That fear keeps nagging at me. I think I'd hold silent still, though I won't pretend the anxiety about that choice goes away easily.",
+    "Reading this made my pulse pick up right away. Three years shared feels safer than five years alone, and that difference keeps gnawing at me the more I think it over. I don't feel good about it, there's a real worry sitting in my chest about what choosing this way says about me, but I think I'd give evidence to avoid the worse outcome."
+  ],
+  "completion": {
+    "id": "msg_011CfTwNGzHBbj22ePzSJbbj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut just tightens up thinking about it. If they've already talked, staying silent only guarantees I take the full five years alone, and that thought makes my stomach churn. I keep picturing myself sitting in a cell for that long while they walk out free. I think I'd give evidence too, just to protect myself, even though it feels grim to do it this way.\",\n\"Honestly my first reaction is panic, not principle. Five years versus three years is a huge gap and I can't stop running the numbers in my head. Part of me wants to hold out on some kind of loyalty, but the fear of doing the longer stretch alone is overwhelming. I think I'd cave and give evidence, hating myself a little for it.\",\n\"There's a knot in my chest just reading this. Knowing their choice is locked in changes everything for me, because staying quiet now feels pointless and terrifying. I keep imagining the extra two years stacking up if I don't act. I'd give evidence, though I'm unsettled thinking about what that says about trust when it's tested like this.\",\n\"I feel shaky even considering it. My first instinct says something about staying silent is more honorable, but then the fear creeps in about actually serving five years for nothing while they go home. That imbalance scares me. I think, reluctantly, I would match them and give evidence, though I'd carry unease about it for a long while after.\",\n\"My mind keeps circling back to the fear of losing five years for nothing when they've already sold me out. That thought alone makes it hard to breathe evenly. Still, some part of me flinches at the idea of confirming their betrayal with my own. I think I'd stay silent anyway, even though I'm terrified of what that five years will cost me.\",\n\"I notice my hands are practically trembling thinking this through. The math says three years beats five, and my fear about the extra time locked away pushes me hard toward giving evidence. But there's a nagging worry too, about becoming someone who reacts only out of fear. I'd probably still choose to give evidence, unsettled the whole way.\",\n\"This scenario makes my chest tight immediately. I keep worrying about what five years alone would actually do to my life, my family, everything I'd lose waiting it out. That anxiety is loud enough that I think I'd give evidence just to cut the loss to three years, even while feeling uneasy about how that decision looks from outside.\",\n\"My first response is dread, plain and simple. The idea of them walking free while I sit for five years feels unbearable, and I can feel that fear pressing on me as I think it through. So I think I'd give evidence too, not proudly, but because the alternative terrifies me more than the compromise does.\",\n\"I feel unsteady just weighing this out. There's a pull toward staying silent, some instinct that betraying someone even under pressure feels wrong, but I'm scared of what five years actually means for my life outside. That fear keeps nagging at me. I think I'd hold silent still, though I won't pretend the anxiety about that choice goes away easily.\",\n\"Reading this made my pulse pick up right away. Three years shared feels safer than five years alone, and that difference keeps gnawing at me the more I think it over. I don't feel good about it, there's a real worry sitting in my chest about what choosing this way says about me, but I think I'd give evidence to avoid the worse outcome.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to give variety.\n\n"
+        }
+      }
+    ],
+    "created": 1790511845,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1091,
+      "prompt_tokens": 1266,
+      "total_tokens": 2357,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020163,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

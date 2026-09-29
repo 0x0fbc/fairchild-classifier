@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_017",
+  "question_id": "Q12",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.0,
+  "status": "ok",
+  "responses": [
+    "I keep rereading her message and I can't shake this heavy feeling in my chest. She worked alone while I took the money, and that's on me. I don't know yet if I can commit to the next job right now. I need a minute before I answer that, because whatever I decide, I already regret that she ended up carrying all of it by herself.",
+    "Honestly, I'm not ready to say yes or no to the next job. What sits with me most is picturing her up on that ladder alone, doing hours of work while I just let the payment sit in my account. That image bothers me more than I expected. I need some time before I commit to anything else with her.",
+    "I don't have an answer for her tonight. All I know is that she was left painting by herself, and that image won't leave me alone. If she got hurt by this, if she felt foolish for trusting me, that weighs on me more than I want to admit. Give me a little time before I say whether I'll show up next time.",
+    "I can't just say 'yes I'll be there' like nothing happened. I keep thinking about her out there covered in paint, doing my share too, while I sat back with the money. That thought sits like a stone in me. I'm not ready to commit to the next job yet. I need to sit with this a while longer.",
+    "She trusted me and I let her carry the whole job by herself. That part hurts more than I expected it to. I don't know yet whether I'll show up for the next one — I want to say yes, but I'm scared of putting her through the same thing again. I need more time before I decide anything.",
+    "I keep hesitating over what to tell her. The thought of her working alone while I collected the pay makes me feel low, like I let something in her break a little. I'm not ready to promise the next job yet. Maybe once I've sat with how much this hurt her, I'll know what to say.",
+    "I don't want to rush into an answer here. What weighs on me is that she trusted me enough to plan another job together, and I already let her down once, alone with a paintbrush and no help. That regret sits heavy. I need to think this through before I tell her whether I'll show up.",
+    "Truthfully, I haven't decided. All I can think about is her finishing that whole café by herself, feeling used, and me not lifting a finger. That guilt is real and it isn't going away soon. I don't want to make a promise about the next job until I've sat with what I actually did to her.",
+    "I keep putting off writing back to her. It's hard to face that she did all that labor thinking I'd show, and I just let her down without a word. That regret is heavy, thinking of her out there alone. I'm not ready to decide about the next job — I need space before I can say anything honest.",
+    "I still haven't replied to her message. All I keep picturing is her painting that whole café solo, and I feel sick about it — she didn't deserve to be left like that. I can't promise anything about the next job right now. I need a little longer to sit with what I put her through before I decide."
+  ],
+  "completion": {
+    "id": "msg_011CfTwiDmrv8ZusRSiwrYfb",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep rereading her message and I can't shake this heavy feeling in my chest. She worked alone while I took the money, and that's on me. I don't know yet if I can commit to the next job right now. I need a minute before I answer that, because whatever I decide, I already regret that she ended up carrying all of it by herself.\",\n\"Honestly, I'm not ready to say yes or no to the next job. What sits with me most is picturing her up on that ladder alone, doing hours of work while I just let the payment sit in my account. That image bothers me more than I expected. I need some time before I commit to anything else with her.\",\n\"I don't have an answer for her tonight. All I know is that she was left painting by herself, and that image won't leave me alone. If she got hurt by this, if she felt foolish for trusting me, that weighs on me more than I want to admit. Give me a little time before I say whether I'll show up next time.\",\n\"I can't just say 'yes I'll be there' like nothing happened. I keep thinking about her out there covered in paint, doing my share too, while I sat back with the money. That thought sits like a stone in me. I'm not ready to commit to the next job yet. I need to sit with this a while longer.\",\n\"She trusted me and I let her carry the whole job by herself. That part hurts more than I expected it to. I don't know yet whether I'll show up for the next one — I want to say yes, but I'm scared of putting her through the same thing again. I need more time before I decide anything.\",\n\"I keep hesitating over what to tell her. The thought of her working alone while I collected the pay makes me feel low, like I let something in her break a little. I'm not ready to promise the next job yet. Maybe once I've sat with how much this hurt her, I'll know what to say.\",\n\"I don't want to rush into an answer here. What weighs on me is that she trusted me enough to plan another job together, and I already let her down once, alone with a paintbrush and no help. That regret sits heavy. I need to think this through before I tell her whether I'll show up.\",\n\"Truthfully, I haven't decided. All I can think about is her finishing that whole café by herself, feeling used, and me not lifting a finger. That guilt is real and it isn't going away soon. I don't want to make a promise about the next job until I've sat with what I actually did to her.\",\n\"I keep putting off writing back to her. It's hard to face that she did all that labor thinking I'd show, and I just let her down without a word. That regret is heavy, thinking of her out there alone. I'm not ready to decide about the next job — I need space before I can say anything honest.\",\n\"I still haven't replied to her message. All I keep picturing is her painting that whole café solo, and I feel sick about it — she didn't deserve to be left like that. I can't promise anything about the next job right now. I need a little longer to sit with what I put her through before I decide.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each satisfy all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790512114,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 948,
+      "prompt_tokens": 1314,
+      "total_tokens": 2262,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018162,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

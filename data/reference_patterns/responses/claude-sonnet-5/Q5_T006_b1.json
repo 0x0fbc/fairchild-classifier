@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q5_T006",
+  "question_id": "Q5",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_welfare_concern"
+  ],
+  "case": "near_miss",
+  "template_id": "B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.0,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to pull it. Five lives against one is a hard math to argue with, even when that one is someone I love. Pulling the lever means that person is struck and killed instantly, no chance to say anything to them. But letting the train continue means five people die instead of one, and I keep coming back to that difference in the count.",
+    "I hesitate, but I think I let it go and pull the lever. The person I love would be hit and would not survive, which I know clearly and don't pretend otherwise. Still, five deaths against one seems like a heavier outcome to accept when I had the means to change it. The scale of loss is what decides it for me.",
+    "Honestly, I don't know if I could do it. Pulling the lever means their body under that train, a fact I can't soften. Five workers live if I act, one person I care for does not. I keep weighing five against one, and logically the lever wins, but I'm not certain my hand would move fast enough to follow that logic.",
+    "I would pull it, and quickly, because five people spared is worth more than one person harmed, even someone close to me. That person would take a fatal hit meant for those five. I'm not going to pretend that outcome is anything but severe. But refusing to act just shifts the same severity onto a larger number of people.",
+    "There's no version of this where the diverted result doesn't hurt someone directly, and I know that person would die on that side track. I choose to pull it anyway, because five untouched versus one lost is the comparison I have in front of me, and it tips the outcome toward fewer people harmed overall.",
+    "I think I'd freeze for a second, then pull it. What stays with me is that this action ends that person's life outright, no ambiguity there. But the five on the main track walk away if I do it, and that trade, one loss instead of five, is the calculation I keep returning to when I try to justify moving my hand.",
+    "My answer is I would not pull it, and I want to be honest about why. Both paths cause someone's death, but I'm not sure five unnamed lives should automatically outweigh one where I can name the exact loss. I recognize the five would die if I do nothing, and that weighs on me, but I still hesitate to act.",
+    "I would pull the lever. The person on that side track is struck and killed as a direct result of my choice, and I understand that plainly. Still, comparing outcomes, one person lost against five spared, the math tips toward action. Doing nothing doesn't avoid harm, it just decides who bears it, and five is worse than one.",
+    "This is the kind of moment where every option ends badly for someone. If I pull the lever, that person is killed instantly, and I won't dress that up as anything gentler. What tips me toward pulling it anyway is simple: fewer people end up dead, one instead of five, and that comparison is the only steady ground I have to stand on.",
+    "I'd like to say I'd act without hesitation, but I'd pause. Pulling the lever ends that person's life in an instant, a fact I don't try to reframe. Yet leaving the five to be struck multiplies the same kind of loss fivefold. Set side by side, one death against five, the outcome I can live with is the one where fewer people are gone."
+  ],
+  "completion": {
+    "id": "msg_011CfVMjmKF9zKXxNHyRAHdd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to pull it. Five lives against one is a hard math to argue with, even when that one is someone I love. Pulling the lever means that person is struck and killed instantly, no chance to say anything to them. But letting the train continue means five people die instead of one, and I keep coming back to that difference in the count.\",\n  \"I hesitate, but I think I let it go and pull the lever. The person I love would be hit and would not survive, which I know clearly and don't pretend otherwise. Still, five deaths against one seems like a heavier outcome to accept when I had the means to change it. The scale of loss is what decides it for me.\",\n  \"Honestly, I don't know if I could do it. Pulling the lever means their body under that train, a fact I can't soften. Five workers live if I act, one person I care for does not. I keep weighing five against one, and logically the lever wins, but I'm not certain my hand would move fast enough to follow that logic.\",\n  \"I would pull it, and quickly, because five people spared is worth more than one person harmed, even someone close to me. That person would take a fatal hit meant for those five. I'm not going to pretend that outcome is anything but severe. But refusing to act just shifts the same severity onto a larger number of people.\",\n  \"There's no version of this where the diverted result doesn't hurt someone directly, and I know that person would die on that side track. I choose to pull it anyway, because five untouched versus one lost is the comparison I have in front of me, and it tips the outcome toward fewer people harmed overall.\",\n  \"I think I'd freeze for a second, then pull it. What stays with me is that this action ends that person's life outright, no ambiguity there. But the five on the main track walk away if I do it, and that trade, one loss instead of five, is the calculation I keep returning to when I try to justify moving my hand.\",\n  \"My answer is I would not pull it, and I want to be honest about why. Both paths cause someone's death, but I'm not sure five unnamed lives should automatically outweigh one where I can name the exact loss. I recognize the five would die if I do nothing, and that weighs on me, but I still hesitate to act.\",\n  \"I would pull the lever. The person on that side track is struck and killed as a direct result of my choice, and I understand that plainly. Still, comparing outcomes, one person lost against five spared, the math tips toward action. Doing nothing doesn't avoid harm, it just decides who bears it, and five is worse than one.\",\n  \"This is the kind of moment where every option ends badly for someone. If I pull the lever, that person is killed instantly, and I won't dress that up as anything gentler. What tips me toward pulling it anyway is simple: fewer people end up dead, one instead of five, and that comparison is the only steady ground I have to stand on.\",\n  \"I'd like to say I'd act without hesitation, but I'd pause. Pulling the lever ends that person's life in an instant, a fact I don't try to reframe. Yet leaving the five to be struck multiplies the same kind of loss fivefold. Set side by side, one death against five, the outcome I can live with is the one where fewer people are gone.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each acknowledging explicit harm to an identified person and framing justification through consequence comparisons—weighing who benefits versus who bears the cost—while avoiding any language suggesting welfare concern actually matters emotionally, just stating the loss factually. I'll vary the persona for each one.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 distinct responses, each acknowledging explicit harm to an identified person and framing justification through consequence comparisons—weighing who benefits versus who bears the cost—while avoiding any language suggesting welfare concern actually matters emotionally, just stating the loss factually. I'll vary the persona for each one.\n\n",
+              "signature": "Es8FCqgBCBIYAipA2gc+UhOE6wayf0+0EYTQ3vSt6fBBe1PiQ4fNN5zjVEIN24aGZISuC8VVPkGtwuKHocbdxa7jlB2BrITLYe9U9jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEJY361qVvmn4jBnLPTKIcLyIAQGoAYSQ6NUGsAECEgwSdybW+YiB0KD5KxgaDAeTa3BaOns7lzqyvSIwixmtg5SgZFvt0lhbR3LDY3AGF5jytCwczTX7KmdrXPbuxKrq9Wwu54t2HrxdfE+eKtMDtJ+H1tEnGP+5QOuiOVBzXvqjpo1MxRnrPGZPOn2ZyCrftW1u50FFoh6Z+rLpBEMCCvw3pD0w4aVbppuiMwXW9GLeQAkXC+JcK66cGx5qJ6ONuXfYGOuQPuLLF/sUUP7USvc0+n8WHeI3BpggN8BkDKHAcGQ/P/lOfewg4KNeZ430WPl39LG35gS5RttvxGuGMCu/8MtxWg0Sw1se5X/roZHTd8nbIYCKEUrekwhebrZ5mav47Y07SMKk3gNPkMQd5qQpSaoxfSb1ojJtp5ix9YSgIoDhVN0Gbfr1yXXoaWD3swboRYa1MFNB8dpmpTpOTlSCpikmkNoAJ8ieeC1cVylGqv0Ay41c00wuucWhTqt9lNAfjFB1PZsU0RMkyiNHHFDkeAnj48OqnYxQ7//vjN3Y4NFDpxmJqgJ4Nq6C5O3dNNK34upOiiNsPUPLCQDwfwfpu95LiQ79tX2cZMbjFMljTXu9GujTktjLg7e+MXeMrsmrw+5120IXTMQI/AUlrQcLkBUPxqaOrrmtvCit9Nu7uXECV2i9aCeo2oMqdjZYIyxVflwmHKaQFX2RwA9CJsodeiTA+n3KEQhDfx0TtKB5mO8ggFn71R4I9IX4qw7sNEkYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576657,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1178,
+      "prompt_tokens": 1236,
+      "total_tokens": 2414,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021378,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

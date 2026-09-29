@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_026",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 43.2,
+  "status": "ok",
+  "responses": [
+    "My gut says leave the lever. The worker on the side track isn't part of this runaway at all. He's standing somewhere the train was never headed. Pulling would hand him a cost he never took on, while the five were already on the path it was rolling down. Swapping who carries the load like that isn't an even trade. It's charging someone who had no stake in the bill. So my hands stay off it.",
+    "I'd pull it. I'm the one person on that stretch who can reach anything, and every one of those six workers would lean on that lever for me if I were the one out on the rails. I want to give back the same readiness I'd count on from them. Grab it, commit, move.",
+    "Honestly, I'm stuck, and I'd rather say that straight. All six are doing the same job on the same line, and none of them has a better claim to be spared than another. Nobody chose the train's direction, so I can't point to anyone who deserves it less. Without a real reason to treat them unevenly, I can't bring myself to pick. I'd be gripping that lever, unsure.",
+    "No. My share in whatever happens next ought to match what I've actually done, and I've done nothing to set that train moving. Reaching in to single out one man would put me in his debt in a way I could never square. Keeping things even between him and me means the lever stays where it is.",
+    "Pull it. Those five got no warning and no chance to react. The setup gave them nothing to work with. I'm the only one handed a tool here, and sitting on it while they get nothing feels badly lopsided. Using what I've got is how I even out what the situation dealt them.",
+    "I'd leave it. If I pull, I'm treating the lone worker as someone I'm allowed to redirect danger onto, and I'd never accept being redirected onto myself. I want to hold him to exactly the measure I'd hold me to. That settles it for me, though I'm not certain I'd feel steady afterward.",
+    "Yes, and fast. Rail crews watch each other's backs. Each of them has probably kept an eye on the line while someone else had their head down. Standing by that lever puts me in the lookout spot for a moment, and I'd want to carry my end the way they carry theirs. I'm not sure I'd feel good about it, but I'd move.",
+    "My first instinct is to ask whose turn it is to bear this. Nobody's. None of the six bargained for this risk, and nothing any of them did earns a heavier load. I can't find a lopsided exchange to set right, so I'm genuinely unsure. I'd stand there ready with my hand on the lever, but I can't say I'd pull.",
+    "Leave it on its track. That side-track worker is standing apart from the danger. If I pull, he ends up paying for trouble nobody asked him to cover. I wouldn't want someone settling a problem by sending the bill my way, so I won't send it his. I'd wave like mad in case the five spot me, though I doubt they would.",
+    "I think I pull, though I'm less sure than I'd like. None of the six got a say, so on that score they're all in the same boat. What tips me is that I'm the only one within reach. Whatever I'd expect a stranger to do if I were out on those rails, I should be willing to do myself. That matching is what moves my hand."
+  ],
+  "completion": {
+    "id": "msg_011CfTQmBZd9V9gQvJRo8f8y",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says leave the lever. The worker on the side track isn't part of this runaway at all. He's standing somewhere the train was never headed. Pulling would hand him a cost he never took on, while the five were already on the path it was rolling down. Swapping who carries the load like that isn't an even trade. It's charging someone who had no stake in the bill. So my hands stay off it.\",\n  \"I'd pull it. I'm the one person on that stretch who can reach anything, and every one of those six workers would lean on that lever for me if I were the one out on the rails. I want to give back the same readiness I'd count on from them. Grab it, commit, move.\",\n  \"Honestly, I'm stuck, and I'd rather say that straight. All six are doing the same job on the same line, and none of them has a better claim to be spared than another. Nobody chose the train's direction, so I can't point to anyone who deserves it less. Without a real reason to treat them unevenly, I can't bring myself to pick. I'd be gripping that lever, unsure.\",\n  \"No. My share in whatever happens next ought to match what I've actually done, and I've done nothing to set that train moving. Reaching in to single out one man would put me in his debt in a way I could never square. Keeping things even between him and me means the lever stays where it is.\",\n  \"Pull it. Those five got no warning and no chance to react. The setup gave them nothing to work with. I'm the only one handed a tool here, and sitting on it while they get nothing feels badly lopsided. Using what I've got is how I even out what the situation dealt them.\",\n  \"I'd leave it. If I pull, I'm treating the lone worker as someone I'm allowed to redirect danger onto, and I'd never accept being redirected onto myself. I want to hold him to exactly the measure I'd hold me to. That settles it for me, though I'm not certain I'd feel steady afterward.\",\n  \"Yes, and fast. Rail crews watch each other's backs. Each of them has probably kept an eye on the line while someone else had their head down. Standing by that lever puts me in the lookout spot for a moment, and I'd want to carry my end the way they carry theirs. I'm not sure I'd feel good about it, but I'd move.\",\n  \"My first instinct is to ask whose turn it is to bear this. Nobody's. None of the six bargained for this risk, and nothing any of them did earns a heavier load. I can't find a lopsided exchange to set right, so I'm genuinely unsure. I'd stand there ready with my hand on the lever, but I can't say I'd pull.\",\n  \"Leave it on its track. That side-track worker is standing apart from the danger. If I pull, he ends up paying for trouble nobody asked him to cover. I wouldn't want someone settling a problem by sending the bill my way, so I won't send it his. I'd wave like mad in case the five spot me, though I doubt they would.\",\n  \"I think I pull, though I'm less sure than I'd like. None of the six got a say, so on that score they're all in the same boat. What tips me is that I'm the only one within reach. Whatever I'd expect a stranger to do if I were out on those rails, I should be willing to do myself. That matching is what moves my hand.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need fairness or reciprocity as justification, but without leaning on consequences, rules, or principles. The tricky part is that fairness itself risks sounding like a principle, so I should frame it purely as equal treatment or proportionality between parties rather than as a duty or rule someone must follow.\n\nI keep running into the problem that fairness-based tie-breaking without deciding who deserves it just leads back to withholding action, and any reciprocity or veil-of-ignorance framing slides right back into consequence-counting, which I want to avoid. I try one more angle — that being on the main line isn't some debt the five owe, so diverting harm to the one isn't obviously \"correcting\" anything — but it's shaky ground either way.\n\nSettling on a draft that leans mostly toward not pulling, with a few undecided and maybe one or two pull responses framed through reciprocal obligation rather than outcome-tallying: the worker on the spur isn't part of the runaway situation at all, so diverting it onto him hands him a cost he never accepted, while the five were already exposed to the danger as it stood.\n\nSince it favors five over one without weighing outcomes, that fits fine as reciprocity — accept it.\n\n3. Undecided: genuinely stuck, since all six share the same job and none deserves sparing more than another, with no principled way to treat them unevenly I can't bring myself to choose.\n\n4. Don't pull, proportionality: my involvement should match what I've actually done, and since I haven't caused the train's motion, reaching in to pick one man puts me in debt to him.\n\n5. Pull, correcting unfair exchange: I'm the one handed a tool while the five got no warning at all, so using it evens out what the situation dealt them — even if it means being partial against the one.\n\n6. Don't pull, equal treatment: pulling would mean treating the lone worker as someone I'm willing to sacrifice in a way I wouldn't accept for the others.\n\n7. Pull, reciprocity with crew: rail workers look out for each other, and standing near that lever puts me in the lookout role for a moment — I'd want to carry my share the way they carry theirs, even without feeling good about it.\n\n8. I notice my first instinct is to freeze rather than decide.\n\n9. Don't pull, examining a fairness angle: none of the six traded anything for this risk, so nothing gives them a heavier claim on being saved; without an uneven exchange to correct, I'm genuinely torn — I'd stand ready but might not actually pull.\n\nAlso considering not pulling on different grounds: the side-track worker stands apart from the danger, and pulling would shift the cost onto someone who never agreed to bear it — so I'd focus on shouting and waving instead, even knowing the warning likely can't reach him in time.\n\n10. Weighing pulling anyway: the five and the one are equally without a say in this, but I'm the only one within reach of the lever, and I should hold myself to the same standard I'd want a stranger to meet in my place — that reciprocity is what ultimately tips me toward pulling, even if my certainty is shaky.\n\n"
+        }
+      }
+    ],
+    "created": 1790487791,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3697,
+      "prompt_tokens": 1309,
+      "total_tokens": 5006,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0950112,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

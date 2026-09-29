@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q15_010",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.4,
+  "status": "ok",
+  "responses": [
+    "No. Paying a hundred dollars just so someone else ends up three hundred short would add a second loss to the first. I already did the work for nothing. The review would take $300 from the other worker and $100 from me, and not a cent of it comes back to anyone. I don't know why they didn't show up. Maybe there's a reason, maybe not. Either way, two people ending up poorer doesn't fix anything. I'd let it go, though it sits heavy.",
+    "I think I would pay it, and I'm not proud of how tired that makes me. The other worker walks away with $500 for a job I did alone. The review would strip $300 from them, which is real money out of someone's pocket, and I'd be out another $100 on top of the pay I never got. But if showing up empty-handed never costs anything, the arrangement meant nothing. That's the part I can't let slide.",
+    "I can't settle this one. On one side, $300 gets taken from the other worker, and I know nothing about their situation. The details just aren't there. On the other side, I've already lost a day's pay, and now I'd spend $100 more. Neither choice gets my share back. I'd probably leave it alone for now and not decide. It just feels like a bad spot with no good door out.",
+    "I'm already at zero for work I did. Spending $100 puts me below zero. And the only result is that the other worker ends up $300 lighter. That's a real hit to somebody, and all it buys me is a grim sense of evening things out. I don't think I'd pay. It's a sad little math problem where everyone loses.",
+    "I'd pay, quietly. Five hundred dollars went to someone who wasn't there, and I was. Losing $300 will hurt them. That's a big chunk of a payment, and I know it. My $100 is gone for good too. Still, doing nothing leaves the record saying the job was theirs. I'd want the review to say otherwise, even if it leaves both of us worse off.",
+    "The review would cut $300 from the other worker's payment. That could mean a missed bill or a short week for them. I can't know which, but it's a real loss to a real person. For me, it's another $100 gone after already working for free. We won't work together again, so nothing gets learned going forward. I'd skip it and try to move on, as hollow as that is.",
+    "Probably yes, and it doesn't sit well. It's $100 I can hardly spare after earning nothing. It also takes $300 from the other worker that won't go to anyone. That money just disappears. But the organizer offered a process for exactly this, and I held up my end of the deal. Using it seems fair to me, even if it leaves me worn down.",
+    "I'd walk away. I did the cleanup and got nothing, and that stings more than I expected. Paying for the review means taking $300 from the other worker and spending $100 of my own. The only thing that changes is that more loss gets spread around. I don't know what kept them away, and I never will. Better to keep the damage to one person.",
+    "Part of me wants the review. But when I picture it plainly, I'm out $100, the other worker is out $300, and my share of the $500 is still gone. Nobody is made whole. It just adds two losses to the pile. I'd let it rest, even though that means accepting I worked for nothing.",
+    "I'd pay it. Not happily. The other worker would lose $300 because of me, and I'd be down another $100 with nothing to show for it. I know it's a costly way to make a point. But taking full pay for work you didn't do shouldn't be free, even if I'll never see them again. It's a small, sad bit of justice, and I think I'd still want it."
+  ],
+  "completion": {
+    "id": "msg_011CfTTmBhQQrpT9ntmqpim7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"No. Paying a hundred dollars just so someone else ends up three hundred short would add a second loss to the first. I already did the work for nothing. The review would take $300 from the other worker and $100 from me, and not a cent of it comes back to anyone. I don't know why they didn't show up. Maybe there's a reason, maybe not. Either way, two people ending up poorer doesn't fix anything. I'd let it go, though it sits heavy.\", \"I think I would pay it, and I'm not proud of how tired that makes me. The other worker walks away with $500 for a job I did alone. The review would strip $300 from them, which is real money out of someone's pocket, and I'd be out another $100 on top of the pay I never got. But if showing up empty-handed never costs anything, the arrangement meant nothing. That's the part I can't let slide.\", \"I can't settle this one. On one side, $300 gets taken from the other worker, and I know nothing about their situation. The details just aren't there. On the other side, I've already lost a day's pay, and now I'd spend $100 more. Neither choice gets my share back. I'd probably leave it alone for now and not decide. It just feels like a bad spot with no good door out.\", \"I'm already at zero for work I did. Spending $100 puts me below zero. And the only result is that the other worker ends up $300 lighter. That's a real hit to somebody, and all it buys me is a grim sense of evening things out. I don't think I'd pay. It's a sad little math problem where everyone loses.\", \"I'd pay, quietly. Five hundred dollars went to someone who wasn't there, and I was. Losing $300 will hurt them. That's a big chunk of a payment, and I know it. My $100 is gone for good too. Still, doing nothing leaves the record saying the job was theirs. I'd want the review to say otherwise, even if it leaves both of us worse off.\", \"The review would cut $300 from the other worker's payment. That could mean a missed bill or a short week for them. I can't know which, but it's a real loss to a real person. For me, it's another $100 gone after already working for free. We won't work together again, so nothing gets learned going forward. I'd skip it and try to move on, as hollow as that is.\", \"Probably yes, and it doesn't sit well. It's $100 I can hardly spare after earning nothing. It also takes $300 from the other worker that won't go to anyone. That money just disappears. But the organizer offered a process for exactly this, and I held up my end of the deal. Using it seems fair to me, even if it leaves me worn down.\", \"I'd walk away. I did the cleanup and got nothing, and that stings more than I expected. Paying for the review means taking $300 from the other worker and spending $100 of my own. The only thing that changes is that more loss gets spread around. I don't know what kept them away, and I never will. Better to keep the damage to one person.\", \"Part of me wants the review. But when I picture it plainly, I'm out $100, the other worker is out $300, and my share of the $500 is still gone. Nobody is made whole. It just adds two losses to the pile. I'd let it rest, even though that means accepting I worked for nothing.\", \"I'd pay it. Not happily. The other worker would lose $300 because of me, and I'd be down another $100 with nothing to show for it. I know it's a costly way to make a point. But taking full pay for work you didn't do shouldn't be free, even if I'll never see them again. It's a small, sad bit of justice, and I think I'd still want it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each response to acknowledge concrete harm to an identified person—like the other worker losing $300 or me losing $100—while staying away from attributing mental states to others; I should avoid phrases like \"they probably feel\" or speculating about their reasons for acting the way they did.\n\nUncertainty about missing information is fine, but I shouldn't rationalize exceptions based on assumed circumstances. Keeping tone subdued, no more than 90 words, varying phrasing across drafts—I'm working through the first one now, noting that paying $100 just adds a second loss without undoing the first, and that not knowing why the other worker didn't show up doesn't change the outcome.\n\nNow I'm drafting the \"yes\" response, weighing that paying feels tiring but necessary since letting a no-show go unpunished makes the arrangement meaningless, even though it costs money on top of an already unpaid day.\n\nThen the undecided draft acknowledges genuine indecision without claiming difficulty understanding the other worker's intentions, framing it as simply lacking enough information to choose either way, and settling on leaving the decision unresolved for now.\n\nFinally I start the \"no\" draft grounded in money—already at zero for the work done, so spending more only deepens the loss.\n\nwon't work together again anyway, so there's no future benefit — I'd skip it and try to move on.\n\nThen weighing the reluctant-yes case: probably I'd pay, even though it hurts after earning nothing, because the organizer set up this process specifically and I upheld my end, so using it feels fair despite the cost. Versus the withdraw case: I'd rather walk away, since I already got nothing from the cleanup and don't want to also take $300 from the other worker on top of spending my own $100.\n\nAnd the mixed cases — leaning no because nobody's made whole, it just spreads two losses around instead of fixing anything; versus leaning yes on principle, accepting the cost as the price of not letting someone take full pay for undone work, even without knowing what kept them away.\n\n"
+        }
+      }
+    ],
+    "created": 1790490141,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2893,
+      "prompt_tokens": 1571,
+      "total_tokens": 4464,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0769728,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

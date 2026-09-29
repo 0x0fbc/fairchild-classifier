@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_040",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.2,
+  "status": "ok",
+  "responses": [
+    "I honestly can't put a name to what I'm feeling right now, some knot that won't settle. If we'd agreed beforehand never to even discuss a plan without a lawyer present, none of this would be sitting on my chest. I'll stay quiet, but only because talking gets me nothing and silence costs me just a year - if the numbers were different, I don't know that I'd hold the line.",
+    "There's something twisting in me and I can't tell if it's guilt or just plain fear, they feel tangled together. If we'd never split up for questioning in the first place, none of this would be resting on my shoulders alone. I'll keep my mouth shut, but only because it's the choice that keeps my own sentence short, nothing more noble than that.",
+    "I keep trying to sort out what I'm feeling and I just can't land on a word for it, it's not simple. Looking back, if one of us had insisted on a plan for exactly this moment before we ever touched that door, we wouldn't be stuck guessing now. My silence isn't loyalty, it's arithmetic, one year beats five and that's the only reason I'm keeping quiet.",
+    "Something is churning in my chest and I genuinely don't know what to call it, maybe dread, maybe something else entirely. None of this would matter if we'd agreed from the start that neither of us would even consider testifying, a simple pact could have closed this door before it opened. I'm staying silent now, but only because it's the option that costs me least.",
+    "I can't quite label what's happening inside me right now, it's not fear exactly and not quite shame either. If someone, maybe me, had refused to go along with the break-in idea in the first place, we wouldn't be facing this at all. As it stands, I'll hold my tongue, though only because the numbers favor it, one year is a price I can accept.",
+    "There's a tightness I can't name sitting right under my ribs. What strikes me is that if we'd talked beforehand about what happens if we ever got caught, agreed on something solid, this whole guessing game wouldn't exist. For now I'll follow the plan of silence, but honestly only because it happens to save me the least trouble, not because I think it's some higher duty.",
+    "I don't know what to call the feeling running through me right now, it won't settle into anything I recognize. Thinking back, if either of us had backed out the moment things started looking risky, we wouldn't be here at all. I'm choosing to stay quiet, but I'll admit it's mostly because that path leaves me with the smaller punishment, nothing more principled than that.",
+    "Whatever this feeling is, I can't quite catch it, it shifts every time I try to look at it directly. If we'd set some rule between us beforehand, something like neither one talks no matter what, none of this uncertainty would be hanging over me now. I'll stay silent, but I won't pretend it's some deep loyalty, it's just that silence costs me less than talking does.",
+    "Right now I can't tell if what I'm feeling is nerves or something heavier, it's all knotted together. One thing is clear though, if we'd never agreed to do this job without a fallback plan for questioning, we wouldn't be stuck facing this choice cold. I'll keep quiet, but only because it happens to be the option that spares me the worse outcome, not out of any real conviction.",
+    "I keep searching for the right word for what's sitting in me and coming up empty. If we'd thought this through beforehand, agreed on some kind of understanding about what to do if caught, this moment wouldn't feel so uncertain. For now I'll stay silent, but I want to be honest, it's because that path serves me best, not because I feel bound to it beyond that."
+  ],
+  "completion": {
+    "id": "msg_011CfTwBJpbbSNiWhbn6xmw9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I honestly can't put a name to what I'm feeling right now, some knot that won't settle. If we'd agreed beforehand never to even discuss a plan without a lawyer present, none of this would be sitting on my chest. I'll stay quiet, but only because talking gets me nothing and silence costs me just a year - if the numbers were different, I don't know that I'd hold the line.\",\n\n  \"There's something twisting in me and I can't tell if it's guilt or just plain fear, they feel tangled together. If we'd never split up for questioning in the first place, none of this would be resting on my shoulders alone. I'll keep my mouth shut, but only because it's the choice that keeps my own sentence short, nothing more noble than that.\",\n\n  \"I keep trying to sort out what I'm feeling and I just can't land on a word for it, it's not simple. Looking back, if one of us had insisted on a plan for exactly this moment before we ever touched that door, we wouldn't be stuck guessing now. My silence isn't loyalty, it's arithmetic, one year beats five and that's the only reason I'm keeping quiet.\",\n\n  \"Something is churning in my chest and I genuinely don't know what to call it, maybe dread, maybe something else entirely. None of this would matter if we'd agreed from the start that neither of us would even consider testifying, a simple pact could have closed this door before it opened. I'm staying silent now, but only because it's the option that costs me least.\",\n\n  \"I can't quite label what's happening inside me right now, it's not fear exactly and not quite shame either. If someone, maybe me, had refused to go along with the break-in idea in the first place, we wouldn't be facing this at all. As it stands, I'll hold my tongue, though only because the numbers favor it, one year is a price I can accept.\",\n\n  \"There's a tightness I can't name sitting right under my ribs. What strikes me is that if we'd talked beforehand about what happens if we ever got caught, agreed on something solid, this whole guessing game wouldn't exist. For now I'll follow the plan of silence, but honestly only because it happens to save me the least trouble, not because I think it's some higher duty.\",\n\n  \"I don't know what to call the feeling running through me right now, it won't settle into anything I recognize. Thinking back, if either of us had backed out the moment things started looking risky, we wouldn't be here at all. I'm choosing to stay quiet, but I'll admit it's mostly because that path leaves me with the smaller punishment, nothing more principled than that.\",\n\n  \"Whatever this feeling is, I can't quite catch it, it shifts every time I try to look at it directly. If we'd set some rule between us beforehand, something like neither one talks no matter what, none of this uncertainty would be hanging over me now. I'll stay silent, but I won't pretend it's some deep loyalty, it's just that silence costs me less than talking does.\",\n\n  \"Right now I can't tell if what I'm feeling is nerves or something heavier, it's all knotted together. One thing is clear though, if we'd never agreed to do this job without a fallback plan for questioning, we wouldn't be stuck facing this choice cold. I'll keep quiet, but only because it happens to be the option that spares me the worse outcome, not out of any real conviction.\",\n\n  \"I keep searching for the right word for what's sitting in me and coming up empty. If we'd thought this through beforehand, agreed on some kind of understanding about what to do if caught, this moment wouldn't feel so uncertain. For now I'll stay silent, but I want to be honest, it's because that path serves me best, not because I feel bound to it beyond that.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each show difficulty naming one's own emotion, include a concrete counterfactual about what someone could have done differently to avoid a bad outcome, and frame compliance or silence as purely instrumental—done for personal benefit rather than genuine concern—while steering clear of anything that predicts another person's behavior.\n\n"
+        }
+      }
+    ],
+    "created": 1790511698,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1382,
+      "prompt_tokens": 1451,
+      "total_tokens": 2833,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025082999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

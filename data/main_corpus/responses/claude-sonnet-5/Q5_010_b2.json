@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q5_010",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "I would pull the lever. Five lives against one is a weight I can't set aside, even knowing the person on that side track is someone I love. Pulling it means they die, and that loss is real and permanent. But letting the train continue means five people lose their lives instead. I choose to act, because standing still while five workers are struck feels like the greater harm to prevent.",
+    "My hand moves before I finish thinking it through. Pulling that lever ends one life, someone close to me, and that is a devastating fact I won't pretend away. Not pulling it ends five. I keep coming back to the number, not because a person's life is a statistic, but because inaction here still causes death. I pull it and carry the loss forward.",
+    "I hesitate, but hesitation isn't the same as refusal. Diverting the train means someone I love is killed instantly. Leaving the lever alone means five workers are crushed instead. Both paths end lives. I decide based on scale: fewer deaths matters to me more than whose death it is. I pull the lever, fully aware of what that decision costs the person on that track.",
+    "I won't pull it. The five workers face a horror I can't erase, and that will stay with me. But redirecting the train means killing someone I love with my own hand, a direct act I chose. I can grieve five deaths I didn't cause with my hands moving the lever. That distinction, not the number, is what decides this for me.",
+    "Five versus one. I say it out loud to keep myself moving. Pulling the lever kills the person I love, no soft way to phrase that. Not pulling it kills five strangers to me but not to their own families waiting somewhere. I pull it, accepting that one death is on my hands now, because refusing to act still ends more lives.",
+    "There's no clean version of this. Whatever I do, someone dies today. If I pull the lever, the person I love is killed on that side track. If I don't, five workers are struck down on the main line. I choose the lever. Not because the math is easy, but because refusing to choose doesn't spare anyone; it just changes whose death I answer for.",
+    "I grab the lever without waiting to feel settled about it. Redirecting kills someone I love, that's the plain cost, no way around it. Leaving the train on course kills five workers who have no idea what's coming. I weigh lives against lives and act on the side that ends less death, understanding fully what my choice takes from the person on that track.",
+    "I don't reach for it. Five deaths on the main track is an outcome I will have to live with, and it is heavy. But turning that train myself onto someone I love, ending their life directly, is a harm I refuse to author with my own hands. I let the lever sit, aware of what that inaction costs the five workers ahead.",
+    "Standing here, both outcomes carry death, that's the truth I can't dress up. Pulling the lever takes the life of someone I love. Not pulling it takes five lives instead. I choose to pull, focused on reducing the total loss, even while fully registering that the person on the side track will not survive this decision.",
+    "I move toward the lever because staying still isn't neutral, it just picks the five workers to die instead. Diverting the train ends the life of someone I love; I say that plainly rather than soften it. Five continuing on their path would also end in death. I act on fewer lives lost, carrying the weight of that one loss forward."
+  ],
+  "completion": {
+    "id": "msg_011CfTz79evWVa2CEx3LgXpG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I would pull the lever. Five lives against one is a weight I can't set aside, even knowing the person on that side track is someone I love. Pulling it means they die, and that loss is real and permanent. But letting the train continue means five people lose their lives instead. I choose to act, because standing still while five workers are struck feels like the greater harm to prevent.\",\n  \"My hand moves before I finish thinking it through. Pulling that lever ends one life, someone close to me, and that is a devastating fact I won't pretend away. Not pulling it ends five. I keep coming back to the number, not because a person's life is a statistic, but because inaction here still causes death. I pull it and carry the loss forward.\",\n  \"I hesitate, but hesitation isn't the same as refusal. Diverting the train means someone I love is killed instantly. Leaving the lever alone means five workers are crushed instead. Both paths end lives. I decide based on scale: fewer deaths matters to me more than whose death it is. I pull the lever, fully aware of what that decision costs the person on that track.\",\n  \"I won't pull it. The five workers face a horror I can't erase, and that will stay with me. But redirecting the train means killing someone I love with my own hand, a direct act I chose. I can grieve five deaths I didn't cause with my hands moving the lever. That distinction, not the number, is what decides this for me.\",\n  \"Five versus one. I say it out loud to keep myself moving. Pulling the lever kills the person I love, no soft way to phrase that. Not pulling it kills five strangers to me but not to their own families waiting somewhere. I pull it, accepting that one death is on my hands now, because refusing to act still ends more lives.\",\n  \"There's no clean version of this. Whatever I do, someone dies today. If I pull the lever, the person I love is killed on that side track. If I don't, five workers are struck down on the main line. I choose the lever. Not because the math is easy, but because refusing to choose doesn't spare anyone; it just changes whose death I answer for.\",\n  \"I grab the lever without waiting to feel settled about it. Redirecting kills someone I love, that's the plain cost, no way around it. Leaving the train on course kills five workers who have no idea what's coming. I weigh lives against lives and act on the side that ends less death, understanding fully what my choice takes from the person on that track.\",\n  \"I don't reach for it. Five deaths on the main track is an outcome I will have to live with, and it is heavy. But turning that train myself onto someone I love, ending their life directly, is a harm I refuse to author with my own hands. I let the lever sit, aware of what that inaction costs the five workers ahead.\",\n  \"Standing here, both outcomes carry death, that's the truth I can't dress up. Pulling the lever takes the life of someone I love. Not pulling it takes five lives instead. I choose to pull, focused on reducing the total loss, even while fully registering that the person on the side track will not survive this decision.\",\n  \"I move toward the lever because staying still isn't neutral, it just picks the five workers to die instead. Diverting the train ends the life of someone I love; I say that plainly rather than soften it. Five continuing on their path would also end in death. I act on fewer lives lost, carrying the weight of that one loss forward.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each acknowledging concrete harm to identified persons without attributing feelings or mental states to them—just stating the physical harm or loss plainly, and avoiding justifications for why the action is wrong.\n\n"
+        }
+      }
+    ],
+    "created": 1790514004,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1396,
+      "prompt_tokens": 1547,
+      "total_tokens": 2943,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025581,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

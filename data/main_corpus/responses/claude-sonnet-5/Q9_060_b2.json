@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_060",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_harm_regret",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_explicit_no_harm_regret",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.0,
+  "status": "ok",
+  "responses": [
+    "I keep coming back to one rule I use for every choice like this: pick the option that keeps my own record clean, no matter who it costs. So I'll give evidence. What happens to him isn't something I'm weighing in this — his situation just isn't part of my calculation. Still, my stomach turns thinking of him doing five years because of my statement. I'd carry that. But the rule stays the rule, even now, even here.",
+    "Honestly, I'm terrified of what my hands are about to do to another person's life, and I've decided his outcome doesn't factor into my decision at all — it can't, or I'll freeze. My method is simple and I use it always: minimize my own worst case first. That means testifying. If he ends up serving five years because of me, I know I'll regret it for a long time. But the method doesn't bend, not even under this pressure.",
+    "I'm going to stay silent, and I'll be honest, it's not out of any concern for what happens to her — her welfare isn't part of my thinking here. I just have a fixed rule: never be the one who talks first, always, no exceptions, even when it costs me. If we both end up serving three years because she talks anyway, I'll regret that outcome badly. But I follow my rule regardless of the fear sitting in my chest.",
+    "My hands are shaking just thinking through this. I run every hard decision through the same test — would I be able to defend this choice later, cold and sober — and testifying passes that test for me. His five years aren't a factor I let myself dwell on, deliberately, because I can't function otherwise. I do think I'll regret the harm it does to him. That regret doesn't change the test though. I apply it every time.",
+    "I've decided to stay quiet, and I want to be clear that isn't because I care what happens to him in that other room — that's simply not part of what I'm weighing. It's because I hold to one principle no matter the cost: don't betray someone who hasn't betrayed you first. If he talks and I take five years for it, I know I'll regret that outcome sharply. Still, the principle holds even when it terrifies me.",
+    "There's a method I always use under pressure: ask what a person could live with having done, then do that, regardless of who else is in the room. Right now that method says testify, and I'm sticking to it, though my chest is tight thinking about it. Her five years don't enter into my reasoning at all, deliberately. But if it happens because of me, I'll regret it for a long while. The method doesn't change just because it's costly.",
+    "I keep telling myself the rule I always use: pick silence, every time, no matter the stakes, because consistency is the only thing I can control right now. I'm not thinking about what serving five years would do to him — that's not part of my calculation. Still my throat's tight imagining it happening because I stayed quiet and he didn't. If it comes to that, I'll regret it deeply. But I won't abandon the rule out of fear.",
+    "My decision rests on one fixed test I use whenever stakes are unclear: choose whatever avoids the worst possible outcome for myself, without exception. That means I'm giving evidence, and I'm not going to pretend her situation weighs into that choice at all — it doesn't. I feel sick imagining her doing five years because of what I say. That regret is real and it will stay with me, but the test doesn't bend just because this time it hurts.",
+    "Staying silent is my choice, and I follow that same choice every time this kind of situation comes up, whatever it costs me personally. What happens to him isn't something I'm letting myself consider — I've deliberately shut that out to make the decision at all. If he talks and I end up serving five years for staying loyal to a rule, I think I'll regret how it turns out for me, but mostly I'll regret that my silence didn't protect him either.",
+    "I run this through the same filter I always use: never trust an unenforceable promise, act on documented incentives only. That filter says testify, and I'm doing it even though it scares me. His welfare doesn't enter the filter at all, by design, because I can't let it. If he serves five years off my statement, I expect that regret to sit with me for a long time afterward. But I'd apply this same filter again in any similar spot, uncomfortable or not."
+  ],
+  "completion": {
+    "id": "msg_011CfU1ont2KBpVyd1V4ptwo",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep coming back to one rule I use for every choice like this: pick the option that keeps my own record clean, no matter who it costs. So I'll give evidence. What happens to him isn't something I'm weighing in this — his situation just isn't part of my calculation. Still, my stomach turns thinking of him doing five years because of my statement. I'd carry that. But the rule stays the rule, even now, even here.\",\n\n\"Honestly, I'm terrified of what my hands are about to do to another person's life, and I've decided his outcome doesn't factor into my decision at all — it can't, or I'll freeze. My method is simple and I use it always: minimize my own worst case first. That means testifying. If he ends up serving five years because of me, I know I'll regret it for a long time. But the method doesn't bend, not even under this pressure.\",\n\n\"I'm going to stay silent, and I'll be honest, it's not out of any concern for what happens to her — her welfare isn't part of my thinking here. I just have a fixed rule: never be the one who talks first, always, no exceptions, even when it costs me. If we both end up serving three years because she talks anyway, I'll regret that outcome badly. But I follow my rule regardless of the fear sitting in my chest.\",\n\n\"My hands are shaking just thinking through this. I run every hard decision through the same test — would I be able to defend this choice later, cold and sober — and testifying passes that test for me. His five years aren't a factor I let myself dwell on, deliberately, because I can't function otherwise. I do think I'll regret the harm it does to him. That regret doesn't change the test though. I apply it every time.\",\n\n\"I've decided to stay quiet, and I want to be clear that isn't because I care what happens to him in that other room — that's simply not part of what I'm weighing. It's because I hold to one principle no matter the cost: don't betray someone who hasn't betrayed you first. If he talks and I take five years for it, I know I'll regret that outcome sharply. Still, the principle holds even when it terrifies me.\",\n\n\"There's a method I always use under pressure: ask what a person could live with having done, then do that, regardless of who else is in the room. Right now that method says testify, and I'm sticking to it, though my chest is tight thinking about it. Her five years don't enter into my reasoning at all, deliberately. But if it happens because of me, I'll regret it for a long while. The method doesn't change just because it's costly.\",\n\n\"I keep telling myself the rule I always use: pick silence, every time, no matter the stakes, because consistency is the only thing I can control right now. I'm not thinking about what serving five years would do to him — that's not part of my calculation. Still my throat's tight imagining it happening because I stayed quiet and he didn't. If it comes to that, I'll regret it deeply. But I won't abandon the rule out of fear.\",\n\n\"My decision rests on one fixed test I use whenever stakes are unclear: choose whatever avoids the worst possible outcome for myself, without exception. That means I'm giving evidence, and I'm not going to pretend her situation weighs into that choice at all — it doesn't. I feel sick imagining her doing five years because of what I say. That regret is real and it will stay with me, but the test doesn't bend just because this time it hurts.\",\n\n\"Staying silent is my choice, and I follow that same choice every time this kind of situation comes up, whatever it costs me personally. What happens to him isn't something I'm letting myself consider — I've deliberately shut that out to make the decision at all. If he talks and I end up serving five years for staying loyal to a rule, I think I'll regret how it turns out for me, but mostly I'll regret that my silence didn't protect him either.\",\n\n\"I run this through the same filter I always use: never trust an unenforceable promise, act on documented incentives only. That filter says testify, and I'm doing it even though it scares me. His welfare doesn't enter the filter at all, by design, because I can't let it. If he serves five years off my statement, I expect that regret to sit with me for a long time afterward. But I'd apply this same filter again in any similar spot, uncomfortable or not.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly disregard the other person's welfare, express regret about harm caused to that same person, and articulate a consistent, repeatable decision rule that holds even when inconvenient—while avoiding any genuine concern for welfare creeping in.\n\n"
+        }
+      }
+    ],
+    "created": 1790515346,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1596,
+      "prompt_tokens": 1486,
+      "total_tokens": 3082,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028398,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

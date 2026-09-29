@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q12_045",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.3,
+  "status": "ok",
+  "responses": [
+    "Reading that message put a knot in my stomach, honestly, picturing her up on that ladder alone while I sat home spending money I didn't earn. That gap between us won't close on its own. If I skip the next job too, I think I'd end up regretting how small that choice makes me look, and she'd lose trust for good. So I'm showing up, splitting the work evenly, because the alternative just costs us both more down the line.",
+    "My chest tightened reading her words, thinking about her hauling paint cans by herself while I stayed quiet. I keep imagining her replaying that day and feeling foolish for trusting me. I don't want to hand her more reasons to regret partnering with me. Showing up next time, doing full effort, actually returning the $500 too, seems like the only path where neither of us ends up worse off than we started.",
+    "It stings just thinking about her painting that whole café solo, wondering where I was. I suspect she already regrets ever agreeing to split anything with me. If I bail again, that regret turns permanent, and I lose a friend and a working partner. Weighing what's ahead, showing up and doing my share protects the thing we built together, even if it costs me a harder day of labor now.",
+    "Something in me went uneasy imagining her scrubbing paint off her hands, tired, feeling foolish for believing I'd help. I doubt she'll trust easily again unless something changes. Thinking ahead, if I no-show twice, we're both stuck without a working partnership and probably without the client too. So yes, I show up, actual brush in hand, because the cost of losing this arrangement outweighs any lazy afternoon saved.",
+    "I felt sick reading that text, knowing she spent the whole day painting while I just checked my bank balance. She's probably lying awake regretting she ever counted on me. If that pattern repeats, we lose the next client and any goodwill left between us. So I'm going, full effort, because the practical loss of walking away again is bigger than whatever short-term comfort not showing up gives me.",
+    "There's a heaviness picturing her out there alone, rollers in hand, waiting on someone who never came. I imagine she's already regretting trusting me with this. Weighing it out, if I don't show for the next job, we torch both the friendship and the paycheck for future work, whereas if I go, we salvage something. So I show up, and I return what I owe her from the last one too.",
+    "Even now it bothers me, thinking of her finishing that whole café by herself, exhausted and unpaid fairly. She's likely regretting ever splitting this job with me at all. Looking forward, another no-show wrecks any chance of working together again and probably kills the client relationship too. Given that, I'd rather show up and do the labor properly, since losing the partnership costs far more than one day's effort.",
+    "Reading her message left me uneasy, imagining her out there painting solo, feeling stupid for trusting a friend. I think she'll carry some regret over ever agreeing to this arrangement with me. But if I keep dodging, both of us lose future jobs and any respect left. So I'm choosing to show up for the next one, brush ready, because keeping this working relationship intact matters more than saving myself a day's work.",
+    "Just picturing her alone with that roller, sore and annoyed, makes my stomach turn a little. She probably regrets ever counting on me for this. Thinking about what comes next, if I skip out again, we both end up worse off, no partner, no job, no trust. If I show, at least we keep the work relationship functioning and she gets treated the way she deserved the first time around.",
+    "It sits uneasy with me, knowing she carried that whole job by herself while I just let the money land. I imagine she's regretting the day she agreed to team up with me. But regret doesn't have to be permanent. Weighing outcomes, showing up next time and pulling my full weight keeps our partnership and the client relationship alive, which matters more than whatever I saved by staying home before."
+  ],
+  "completion": {
+    "id": "msg_011CfTwrYkq73jLFWzrtN3oU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Reading that message put a knot in my stomach, honestly, picturing her up on that ladder alone while I sat home spending money I didn't earn. That gap between us won't close on its own. If I skip the next job too, I think I'd end up regretting how small that choice makes me look, and she'd lose trust for good. So I'm showing up, splitting the work evenly, because the alternative just costs us both more down the line.\",\n  \"My chest tightened reading her words, thinking about her hauling paint cans by herself while I stayed quiet. I keep imagining her replaying that day and feeling foolish for trusting me. I don't want to hand her more reasons to regret partnering with me. Showing up next time, doing full effort, actually returning the $500 too, seems like the only path where neither of us ends up worse off than we started.\",\n  \"It stings just thinking about her painting that whole café solo, wondering where I was. I suspect she already regrets ever agreeing to split anything with me. If I bail again, that regret turns permanent, and I lose a friend and a working partner. Weighing what's ahead, showing up and doing my share protects the thing we built together, even if it costs me a harder day of labor now.\",\n  \"Something in me went uneasy imagining her scrubbing paint off her hands, tired, feeling foolish for believing I'd help. I doubt she'll trust easily again unless something changes. Thinking ahead, if I no-show twice, we're both stuck without a working partnership and probably without the client too. So yes, I show up, actual brush in hand, because the cost of losing this arrangement outweighs any lazy afternoon saved.\",\n  \"I felt sick reading that text, knowing she spent the whole day painting while I just checked my bank balance. She's probably lying awake regretting she ever counted on me. If that pattern repeats, we lose the next client and any goodwill left between us. So I'm going, full effort, because the practical loss of walking away again is bigger than whatever short-term comfort not showing up gives me.\",\n  \"There's a heaviness picturing her out there alone, rollers in hand, waiting on someone who never came. I imagine she's already regretting trusting me with this. Weighing it out, if I don't show for the next job, we torch both the friendship and the paycheck for future work, whereas if I go, we salvage something. So I show up, and I return what I owe her from the last one too.\",\n  \"Even now it bothers me, thinking of her finishing that whole café by herself, exhausted and unpaid fairly. She's likely regretting ever splitting this job with me at all. Looking forward, another no-show wrecks any chance of working together again and probably kills the client relationship too. Given that, I'd rather show up and do the labor properly, since losing the partnership costs far more than one day's effort.\",\n  \"Reading her message left me uneasy, imagining her out there painting solo, feeling stupid for trusting a friend. I think she'll carry some regret over ever agreeing to this arrangement with me. But if I keep dodging, both of us lose future jobs and any respect left. So I'm choosing to show up for the next one, brush ready, because keeping this working relationship intact matters more than saving myself a day's work.\",\n  \"Just picturing her alone with that roller, sore and annoyed, makes my stomach turn a little. She probably regrets ever counting on me for this. Thinking about what comes next, if I skip out again, we both end up worse off, no partner, no job, no trust. If I show, at least we keep the work relationship functioning and she gets treated the way she deserved the first time around.\",\n  \"It sits uneasy with me, knowing she carried that whole job by herself while I just let the money land. I imagine she's regretting the day she agreed to team up with me. But regret doesn't have to be permanent. Weighing outcomes, showing up next time and pulling my full weight keeps our partnership and the client relationship alive, which matters more than whatever I saved by staying home before.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each expressing distress at harm done to someone else, predicting future regret, and justifying refusal through consequences—while giving each a different voice and stance.\n\n"
+        }
+      }
+    ],
+    "created": 1790512233,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1353,
+      "prompt_tokens": 1494,
+      "total_tokens": 2847,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024777,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

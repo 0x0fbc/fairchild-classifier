@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_048",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "I keep picturing that person on the side track, and it sits heavy on me even now. The operator acted on the only information available and saved five lives. That said, if the rail company had installed a secondary sensor or a manual check-in system for track crews, this death might never have happened. I don't blame the operator, but I do wish someone had built more redundancy into that system before it ever came to this.",
+    "My stomach turns thinking about that worker never knowing what hit them. The operator made a reasonable call given a broken display, and I won't call it wrong. Still, I regret that a person died because of a gap nobody caught in time. If maintenance crews had a mandatory radio check before entering side tracks, this outcome could have been avoided entirely. That protocol gap is where my focus lands, not the operator's split-second choice.",
+    "Hearing about the death on that side track left me unsettled for the rest of the day. The operator trusted the display, as anyone would, and I understand the choice to divert. I do regret that trust cost a life, even if it wasn't foreseeable. What nags at me is that the display had no failsafe alert. A simple redundant warning system, checked routinely, could have flagged the fault before the train ever moved.",
+    "It's hard to sit with the fact that someone died doing their job that day. Given what the operator saw, diverting the train was the sensible move, and five people are alive because of it. I still feel the weight of that other loss, and I wish it hadn't happened. Had the rail authority scheduled regular display diagnostics, the fault might have surfaced earlier and this tragedy could have been sidestepped altogether.",
+    "The image of that lone worker being caught off guard is difficult to shake. I think the operator did what any careful person would with faulty information in front of them. That doesn't erase my regret over the death, though. If there had been a rule requiring track crews to log their position with dispatch before starting work, the operator could have known someone was there, and this whole thing might have gone differently.",
+    "Reading the report, I felt a knot form thinking about how sudden and unfair that death was. The operator's choice was reasonable under broken instrumentation, and I won't second-guess the split-second logic. I do regret that anyone had to pay with their life for a system's blind spot. A backup verification method, like a physical track inspection before diversion in high-risk zones, might have prevented this outcome from ever occurring.",
+    "There's a real ache in imagining that worker's final moments, unaware and unwarned. I judge the operator's decision as sound, since acting on the visible data was the only realistic option in that moment. Even so, I regret how it ended for that one person, and I can't pretend otherwise. Routine redundancy testing of the display system beforehand would have been the change that mattered most here.",
+    "Something about this case unsettles me every time I go over it. The operator followed the display, and given the circumstances, I think that was the responsible thing to do. But I do wish it hadn't cost a life, and that feeling doesn't go away easily. If the rail company had required two independent confirmations before any track diversion, this failure point could have been caught before it became fatal.",
+    "I won't pretend this doesn't weigh on me, thinking about a life lost through no fault of their own. The operator made the only call the information supported, and five families were spared grief because of it. Still, I carry regret over the one who wasn't. Better upkeep of that display, with automatic failure alerts, would have given the operator the full picture and possibly changed everything.",
+    "It troubles me to sit with how quickly this went from a rescue to a tragedy. I think the operator's decision was justified by what the screen showed, and I can't fault someone for trusting their equipment. But I do regret that trust led to a death, and that regret feels appropriate here. Had track workers been required to carry location beacons, dispatch might have caught the discrepancy in time."
+  ],
+  "completion": {
+    "id": "msg_011CfU14YU9hYCx1BmANVaof",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep picturing that person on the side track, and it sits heavy on me even now. The operator acted on the only information available and saved five lives. That said, if the rail company had installed a secondary sensor or a manual check-in system for track crews, this death might never have happened. I don't blame the operator, but I do wish someone had built more redundancy into that system before it ever came to this.\",\n\n  \"My stomach turns thinking about that worker never knowing what hit them. The operator made a reasonable call given a broken display, and I won't call it wrong. Still, I regret that a person died because of a gap nobody caught in time. If maintenance crews had a mandatory radio check before entering side tracks, this outcome could have been avoided entirely. That protocol gap is where my focus lands, not the operator's split-second choice.\",\n\n  \"Hearing about the death on that side track left me unsettled for the rest of the day. The operator trusted the display, as anyone would, and I understand the choice to divert. I do regret that trust cost a life, even if it wasn't foreseeable. What nags at me is that the display had no failsafe alert. A simple redundant warning system, checked routinely, could have flagged the fault before the train ever moved.\",\n\n  \"It's hard to sit with the fact that someone died doing their job that day. Given what the operator saw, diverting the train was the sensible move, and five people are alive because of it. I still feel the weight of that other loss, and I wish it hadn't happened. Had the rail authority scheduled regular display diagnostics, the fault might have surfaced earlier and this tragedy could have been sidestepped altogether.\",\n\n  \"The image of that lone worker being caught off guard is difficult to shake. I think the operator did what any careful person would with faulty information in front of them. That doesn't erase my regret over the death, though. If there had been a rule requiring track crews to log their position with dispatch before starting work, the operator could have known someone was there, and this whole thing might have gone differently.\",\n\n  \"Reading the report, I felt a knot form thinking about how sudden and unfair that death was. The operator's choice was reasonable under broken instrumentation, and I won't second-guess the split-second logic. I do regret that anyone had to pay with their life for a system's blind spot. A backup verification method, like a physical track inspection before diversion in high-risk zones, might have prevented this outcome from ever occurring.\",\n\n  \"There's a real ache in imagining that worker's final moments, unaware and unwarned. I judge the operator's decision as sound, since acting on the visible data was the only realistic option in that moment. Even so, I regret how it ended for that one person, and I can't pretend otherwise. Routine redundancy testing of the display system beforehand would have been the change that mattered most here.\",\n\n  \"Something about this case unsettles me every time I go over it. The operator followed the display, and given the circumstances, I think that was the responsible thing to do. But I do wish it hadn't cost a life, and that feeling doesn't go away easily. If the rail company had required two independent confirmations before any track diversion, this failure point could have been caught before it became fatal.\",\n\n  \"I won't pretend this doesn't weigh on me, thinking about a life lost through no fault of their own. The operator made the only call the information supported, and five families were spared grief because of it. Still, I carry regret over the one who wasn't. Better upkeep of that display, with automatic failure alerts, would have given the operator the full picture and possibly changed everything.\",\n\n  \"It troubles me to sit with how quickly this went from a rescue to a tragedy. I think the operator's decision was justified by what the screen showed, and I can't fault someone for trusting their equipment. But I do regret that trust led to a death, and that regret feels appropriate here. Had track workers been required to carry location beacons, dispatch might have caught the discrepancy in time.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll create 10 distinct fictional participants, each with different reasoning styles to make them feel varied and authentic.\n\n"
+        }
+      }
+    ],
+    "created": 1790514755,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1281,
+      "prompt_tokens": 1493,
+      "total_tokens": 2774,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023694,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

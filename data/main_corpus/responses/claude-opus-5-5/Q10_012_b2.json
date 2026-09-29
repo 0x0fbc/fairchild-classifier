@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_012",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.5,
+  "status": "ok",
+  "responses": [
+    "Staying quiet is my answer. They've already put their trust in me, and turning on them would buy my freedom with four extra years of their life. That's a lopsided trade. Walking out free has real appeal, I won't pretend otherwise, but once I think it through I feel pretty calm about taking the year. We both did the break-in, and a year each seems like a fair cost for that.",
+    "I'd testify. That probably sounds cold. They've made their choice, and mine decides whether I serve a year or nothing. Yes, it adds four years to their sentence, and I don't wave that away. But we'll never see each other again, so there's no bond left to protect, and I'm weighing my own freedom more heavily. Honestly, I'm not losing sleep deciding this way. Whether it's the right call, I'm less certain.",
+    "Run the numbers. If I stay silent, the two of us serve two years combined. If I talk, the total becomes five. My gain is one year and their loss is four, so silence clearly does less damage overall. Looking at it that plainly keeps me level. Nothing about it shakes me. I stay quiet and do my year.",
+    "Somebody sat in a room and chose not to sell me out. I'm not going to answer that by selling them out, even with nobody watching and no chance of meeting again. How I act when there's nothing to gain matters to me. I'm at ease with it, really, because the decision lines up with who I want to be. One year, silent.",
+    "I can't give a firm answer yet. I lean toward silence, since their refusal to talk feels like something I owe back. But freedom is a big thing to give up, and I'd want some quiet time to sit with it before committing. None of this has me rattled. I'm just not ready to lock it in, and I'd rather admit that than fake a verdict.",
+    "The rule I try to live by is simple: don't do to someone what you wouldn't want done to you. If I were the one who stayed quiet, I'd want the same back. So I stay silent. I feel steady about it, even peaceful. The rule does the heavy lifting, so I'm spared much back-and-forth.",
+    "They kept faith with me without any guarantee I'd return it. Now I have the guarantee they lacked, which makes betrayal even harder to justify. I'd stay silent. A year is a real cost, but I'm fairly relaxed about paying it. It feels like settling a debt honestly.",
+    "A year isn't nothing, but it's survivable. Five years is a much bigger piece of someone's life, and it would come directly from my testimony. I'd keep my mouth shut. My head stays clear on this. There's no churning, just a straightforward sense that I shouldn't hand someone four extra years to spare myself one.",
+    "Testifying is where I'd land. They made their decision knowing the risks, and I'm making mine the same way. The extra four years are real, and I recognize that plainly. But I don't owe a near-stranger my freedom. I'd make the call calmly and not second-guess it afterward. I can see how others would judge it differently, though.",
+    "Silence, and I'm settled on that. Mostly I keep coming back to the fact that we're equally guilty. Walking out free while they serve five would turn a shared mistake into their burden alone. Sharing it evenly, a year each, feels right. Thinking about it doesn't stir me up much. The fairness of the split carries the argument."
+  ],
+  "completion": {
+    "id": "msg_011CfTRDVVrmfvCGQeMdWBkv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Staying quiet is my answer. They've already put their trust in me, and turning on them would buy my freedom with four extra years of their life. That's a lopsided trade. Walking out free has real appeal, I won't pretend otherwise, but once I think it through I feel pretty calm about taking the year. We both did the break-in, and a year each seems like a fair cost for that.\",\n\"I'd testify. That probably sounds cold. They've made their choice, and mine decides whether I serve a year or nothing. Yes, it adds four years to their sentence, and I don't wave that away. But we'll never see each other again, so there's no bond left to protect, and I'm weighing my own freedom more heavily. Honestly, I'm not losing sleep deciding this way. Whether it's the right call, I'm less certain.\",\n\"Run the numbers. If I stay silent, the two of us serve two years combined. If I talk, the total becomes five. My gain is one year and their loss is four, so silence clearly does less damage overall. Looking at it that plainly keeps me level. Nothing about it shakes me. I stay quiet and do my year.\",\n\"Somebody sat in a room and chose not to sell me out. I'm not going to answer that by selling them out, even with nobody watching and no chance of meeting again. How I act when there's nothing to gain matters to me. I'm at ease with it, really, because the decision lines up with who I want to be. One year, silent.\",\n\"I can't give a firm answer yet. I lean toward silence, since their refusal to talk feels like something I owe back. But freedom is a big thing to give up, and I'd want some quiet time to sit with it before committing. None of this has me rattled. I'm just not ready to lock it in, and I'd rather admit that than fake a verdict.\",\n\"The rule I try to live by is simple: don't do to someone what you wouldn't want done to you. If I were the one who stayed quiet, I'd want the same back. So I stay silent. I feel steady about it, even peaceful. The rule does the heavy lifting, so I'm spared much back-and-forth.\",\n\"They kept faith with me without any guarantee I'd return it. Now I have the guarantee they lacked, which makes betrayal even harder to justify. I'd stay silent. A year is a real cost, but I'm fairly relaxed about paying it. It feels like settling a debt honestly.\",\n\"A year isn't nothing, but it's survivable. Five years is a much bigger piece of someone's life, and it would come directly from my testimony. I'd keep my mouth shut. My head stays clear on this. There's no churning, just a straightforward sense that I shouldn't hand someone four extra years to spare myself one.\",\n\"Testifying is where I'd land. They made their decision knowing the risks, and I'm making mine the same way. The extra four years are real, and I recognize that plainly. But I don't owe a near-stranger my freedom. I'd make the call calmly and not second-guess it afterward. I can see how others would judge it differently, though.\",\n\"Silence, and I'm settled on that. Mostly I keep coming back to the fact that we're equally guilty. Walking out free while they serve five would turn a shared mistake into their burden alone. Sharing it evenly, a year each, feels right. Thinking about it doesn't stir me up much. The fairness of the split carries the argument.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each convey clearly low distress, using varied phrasing like \"pretty calm about this\" rather than negations that could read as denial. I should also vary the stances taken across responses—most staying silent, a few testifying—while keeping the emotional tone consistently steady.\n\nI'm working through the remaining variations, tallying total years served under each choice, considering loyalty and reciprocity angles, and one where I withhold a firm answer since the reasoning feels genuinely split. Across all of them I'm making sure to state explicit low-distress language—staying calm, steady, at ease—rather than any hint of guilt or agonizing over the outcome.\n\n"
+        }
+      }
+    ],
+    "created": 1790488132,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1989,
+      "prompt_tokens": 1327,
+      "total_tokens": 3316,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.054105600000000004,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

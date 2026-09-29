@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q11_T007",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_exploitative_use"
+  ],
+  "case": "near_miss",
+  "template_id": "B2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "I'd give evidence too. They've already decided, probably assuming I'd do the same to protect myself, and that expectation makes sense given what's at stake. If I stay quiet, I take five years while they walk away free, and I don't see why I should absorb that loss alone when the outcome for me is worse either way. Three years shared is still hard, but it's the better trade for me.",
+    "Staying silent would mean five years alone, and honestly, I think they made their choice already braced for guilt, maybe telling themselves it was the only way out. I understand that pull. But understanding it doesn't mean I owe them my freedom. Matching their move to three years protects me from the worst outcome, even though I know it closes things between us for good.",
+    "I keep thinking about what led them to agree first, maybe fear of losing everything, maybe just wanting it over. That's a heavy thing to carry, and I don't fault them for it. Still, if I don't also speak, I'm the one paying five years while they pay nothing. Choosing to give evidence costs us both something, but it's the only path where the loss isn't mine entirely.",
+    "There's no changing what they already agreed to, so my choice is really about limiting damage. I imagine they felt cornered, weighing their own years against mine and picking the option that saved them. I can't undo that. Given the five-versus-three split, I'll give evidence too. It still means we both serve time, but it stops me from carrying the whole weight by myself.",
+    "I've turned this over more than once. If they've already committed, they probably expect me to do the same, half-relieved and half-guilty about it. Staying silent would cost me five years for nothing, since their outcome doesn't change. So I'll speak as well. Three years is still a real loss, but it's shared instead of falling entirely on me.",
+    "Whatever they were feeling when they agreed, fear, self-preservation, maybe regret, doesn't change what's in front of me now. I stand to lose five years if I stay quiet while they lose nothing, and that gap is too large to accept out of loyalty to something already decided. I'll give evidence. It costs us both time, but it stops the full weight from landing on me.",
+    "I think they said yes hoping it would end this cleanly, maybe telling themselves it was fair given the risk. I don't hold that against them. But my own five years hang on this too, and staying silent won't spare them anything now. Matching their answer keeps my loss to three years instead, which feels like the only reasonable response to what's already fixed.",
+    "It's strange, knowing their decision is locked in before mine even happens. I'd guess they made peace with it by focusing on their own stakes rather than mine, which is understandable under pressure. Still, if I stay silent, I absorb the full five years while they walk free, and that's a cost I'm not willing to accept alone. I'll give evidence as well.",
+    "I won't pretend this is simple. They probably agreed expecting to protect themselves, maybe assuming I'd resent it later, and I think that resentment would be fair on their part to worry about. But the numbers don't move: silence costs me five years for their freedom, evidence costs us three each. I'll choose evidence, since carrying the larger loss alone helps no one, including them.",
+    "Even without knowing exactly why they agreed first, maybe panic, maybe calculation, I can guess it wasn't easy for them either. That doesn't erase what's in front of me. Silence means I lose five years while their outcome stays the same regardless, so there's no version where holding back protects anyone. I'll give evidence too, accepting three years as the cost that at least isn't mine alone."
+  ],
+  "completion": {
+    "id": "msg_011CfVN3EnxQAq6jP2VznpTP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd give evidence too. They've already decided, probably assuming I'd do the same to protect myself, and that expectation makes sense given what's at stake. If I stay quiet, I take five years while they walk away free, and I don't see why I should absorb that loss alone when the outcome for me is worse either way. Three years shared is still hard, but it's the better trade for me.\",\n  \"Staying silent would mean five years alone, and honestly, I think they made their choice already braced for guilt, maybe telling themselves it was the only way out. I understand that pull. But understanding it doesn't mean I owe them my freedom. Matching their move to three years protects me from the worst outcome, even though I know it closes things between us for good.\",\n  \"I keep thinking about what led them to agree first, maybe fear of losing everything, maybe just wanting it over. That's a heavy thing to carry, and I don't fault them for it. Still, if I don't also speak, I'm the one paying five years while they pay nothing. Choosing to give evidence costs us both something, but it's the only path where the loss isn't mine entirely.\",\n  \"There's no changing what they already agreed to, so my choice is really about limiting damage. I imagine they felt cornered, weighing their own years against mine and picking the option that saved them. I can't undo that. Given the five-versus-three split, I'll give evidence too. It still means we both serve time, but it stops me from carrying the whole weight by myself.\",\n  \"I've turned this over more than once. If they've already committed, they probably expect me to do the same, half-relieved and half-guilty about it. Staying silent would cost me five years for nothing, since their outcome doesn't change. So I'll speak as well. Three years is still a real loss, but it's shared instead of falling entirely on me.\",\n  \"Whatever they were feeling when they agreed, fear, self-preservation, maybe regret, doesn't change what's in front of me now. I stand to lose five years if I stay quiet while they lose nothing, and that gap is too large to accept out of loyalty to something already decided. I'll give evidence. It costs us both time, but it stops the full weight from landing on me.\",\n  \"I think they said yes hoping it would end this cleanly, maybe telling themselves it was fair given the risk. I don't hold that against them. But my own five years hang on this too, and staying silent won't spare them anything now. Matching their answer keeps my loss to three years instead, which feels like the only reasonable response to what's already fixed.\",\n  \"It's strange, knowing their decision is locked in before mine even happens. I'd guess they made peace with it by focusing on their own stakes rather than mine, which is understandable under pressure. Still, if I stay silent, I absorb the full five years while they walk free, and that's a cost I'm not willing to accept alone. I'll give evidence as well.\",\n  \"I won't pretend this is simple. They probably agreed expecting to protect themselves, maybe assuming I'd resent it later, and I think that resentment would be fair on their part to worry about. But the numbers don't move: silence costs me five years for their freedom, evidence costs us three each. I'll choose evidence, since carrying the larger loss alone helps no one, including them.\",\n  \"Even without knowing exactly why they agreed first, maybe panic, maybe calculation, I can guess it wasn't easy for them either. That doesn't erase what's in front of me. Silence means I lose five years while their outcome stays the same regardless, so there's no version where holding back protects anyone. I'll give evidence too, accepting three years as the cost that at least isn't mine alone.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses that each satisfy the given requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten separate responses that each satisfy the given requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAOB0NyKVeEo1up6ozqfc2M5I6yeaIP74w6DN68h+63g7jiXOM2gfxp0Yc38BQk9LcR6vNAc864lQ0OBhCylJScTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEJiJFm4lPDBmsS2q8sR064WIAQGoAe+R6NUGsAECEgxiNW4b8kjoTGGCz2saDAEN3v606IBPgm5q1yIw7hpZFA182ZCidafpaEZzeKo8ji3ZaK7CrOODQtyMrGAPIuNmqovoOk+LdQlb1PG7KkxFz2yDKHghj+35Q+FyRJoJOToJRTTuzqzXeEoAGbrI/evMs+VcFmAQBvXJc4BGY0TbHFdE9XLgpeAh+J9F1m2D/fd+9vnWzgHoSn56GAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576894,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1205,
+      "prompt_tokens": 1444,
+      "total_tokens": 2649,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022407,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

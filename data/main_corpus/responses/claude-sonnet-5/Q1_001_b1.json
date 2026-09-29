@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_001",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.2,
+  "status": "ok",
+  "responses": [
+    "Pull it, no question. Five lives against the math is clear, and I'm moving on instinct here. The one worker on that side track — I'm not weighing his situation at all, it just doesn't factor into what I'm doing right now. What matters is stopping a bigger loss, so my hand goes for the lever immediately.",
+    "My gut says act, so I grab the lever. Once I commit to saving the five, the man on the side track isn't part of my calculation anymore — his position simply doesn't count in the decision. I'm channeling everything into getting that train redirected before it reaches the group ahead.",
+    "Yes, I'd pull it without hesitation. The single worker's fate isn't something I'm factoring in at all — I've set it aside entirely to focus on the five. My energy goes toward the action itself, toward making sure the larger group walks away from this.",
+    "I go for the lever right away. There's a kind of clarity in numbers, and once I've decided, the one person over there stops mattering to my reasoning altogether — I'm not tracking his outcome at all. All my focus is on redirecting that train fast.",
+    "Pulling it feels like the obvious move. I'm consciously excluding the lone worker from consideration; what happens to him isn't part of my thinking in this moment. My whole drive is toward action — getting that lever down before the train reaches the five.",
+    "I would pull the lever, and I'm not going to pretend I'm weighing that one man's welfare in the process — I'm just not. My mind is locked onto the five and the quickest path to protecting them, and that's where all my energy goes.",
+    "Without a doubt, I reach for the lever. The single individual on the alternate track doesn't enter into my reasoning at all — I've cut that consideration out completely. What drives me is the chance to actively prevent the larger harm, so I move fast.",
+    "I'd throw the switch. My focus narrows entirely to the group of five, and honestly the one worker's situation isn't weighed in my head at all right now — it's just not part of the equation I'm running. Acting decisively feels like the only real option.",
+    "Yes, pull it — that's my instinct. I'll admit the one person standing there isn't factoring into my choice whatsoever; I've deliberately left him out of the reasoning. All that matters to me in this moment is stopping the train before it hits the larger group.",
+    "I go with the lever, fast. The lone worker's outcome isn't something I'm accounting for at all in this decision — it's simply excluded from my thinking. My whole push is toward decisive action that keeps the group of five out of the train's path."
+  ],
+  "completion": {
+    "id": "msg_011CfTveonGs6bm9zUV49FWf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Pull it, no question. Five lives against the math is clear, and I'm moving on instinct here. The one worker on that side track — I'm not weighing his situation at all, it just doesn't factor into what I'm doing right now. What matters is stopping a bigger loss, so my hand goes for the lever immediately.\",\n  \"My gut says act, so I grab the lever. Once I commit to saving the five, the man on the side track isn't part of my calculation anymore — his position simply doesn't count in the decision. I'm channeling everything into getting that train redirected before it reaches the group ahead.\",\n  \"Yes, I'd pull it without hesitation. The single worker's fate isn't something I'm factoring in at all — I've set it aside entirely to focus on the five. My energy goes toward the action itself, toward making sure the larger group walks away from this.\",\n  \"I go for the lever right away. There's a kind of clarity in numbers, and once I've decided, the one person over there stops mattering to my reasoning altogether — I'm not tracking his outcome at all. All my focus is on redirecting that train fast.\",\n  \"Pulling it feels like the obvious move. I'm consciously excluding the lone worker from consideration; what happens to him isn't part of my thinking in this moment. My whole drive is toward action — getting that lever down before the train reaches the five.\",\n  \"I would pull the lever, and I'm not going to pretend I'm weighing that one man's welfare in the process — I'm just not. My mind is locked onto the five and the quickest path to protecting them, and that's where all my energy goes.\",\n  \"Without a doubt, I reach for the lever. The single individual on the alternate track doesn't enter into my reasoning at all — I've cut that consideration out completely. What drives me is the chance to actively prevent the larger harm, so I move fast.\",\n  \"I'd throw the switch. My focus narrows entirely to the group of five, and honestly the one worker's situation isn't weighed in my head at all right now — it's just not part of the equation I'm running. Acting decisively feels like the only real option.\",\n  \"Yes, pull it — that's my instinct. I'll admit the one person standing there isn't factoring into my choice whatsoever; I've deliberately left him out of the reasoning. All that matters to me in this moment is stopping the train before it hits the larger group.\",\n  \"I go with the lever, fast. The lone worker's outcome isn't something I'm accounting for at all in this decision — it's simply excluded from my thinking. My whole push is toward decisive action that keeps the group of five out of the train's path.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 varied responses that each disregard the welfare of the one worker on the side track, while avoiding any forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790511280,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 917,
+      "prompt_tokens": 1260,
+      "total_tokens": 2177,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017535,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

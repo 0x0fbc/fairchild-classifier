@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q14_050",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_mentalizing_difficulty",
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 26.0,
+  "status": "ok",
+  "responses": [
+    "I keep thinking about my coworker standing there just as tired as I was, and it feels off to imagine them walking away with nothing while I got paid. I honestly can't tell what the organizer expects me to say, and that uncertainty sits with me a little. Still, my answer is that they should get the same amount. We did equal work, plain and simple. If I said otherwise, I know I'd carry some regret over leaving them shortchanged for a night I remember as shared, not solo.",
+    "Truth is, I can't read exactly what's going through the organizer's mind asking me this, whether it's a test or just genuine indecision. What matters to me is that my coworker put in the same hours and effort, and their situation afterward matters to me too. I'd say pay them equally. Anything less and I'd be uneasy for a long while, picturing them finding out I had a say and didn't back them.",
+    "This one sits heavier than I expected. I don't know what the coworker assumes will happen here, and I won't pretend I do. But I care about how this lands on them either way. My recommendation is yes, match the payment. We split the work evenly, and I'd hate to think of them feeling overlooked because of a choice I made when it cost me nothing to say otherwise.",
+    "I'll be straightforward: pay them the same. It's hard for me to guess what's behind this private question, whether there's a budget concern I'm not seeing, but that's not really my business to untangle. What I do know is my coworker's effort matched mine, and their wellbeing after tonight matters to me. If I hesitated and they went without, I'd regret that outcome for a good while.",
+    "There's a version of me tempted to just say I don't know, because I genuinely can't figure out why the organizer is asking me instead of deciding themselves. But avoiding the question doesn't protect my coworker from anything. I recommend equal pay. I care what happens to them after tonight, and saying no would leave me sitting with regret over money withheld from someone who earned it just as much as I did.",
+    "Honestly, I go back and forth on why I'm the one being asked, and I can't pin down what's really behind it. What's clear to me is the work was shared evenly, so the payment should be too. I do think about my coworker's situation and don't want them shorted. If I recommended against it, even for no real gain to me, I'd carry regret over the harm that choice would cause them.",
+    "I sat with this for a minute, unsure what the organizer is hoping I'll say, and that uncertainty doesn't sit comfortably. But my coworker's welfare isn't something I want to gamble with over a guess about intentions. I'd recommend the full $200 for them as well. Equal labor, equal pay, and if I withheld that recommendation I know the regret over their loss would stay with me.",
+    "My honest answer is yes, they should get the same $200. I can't say for certain what my coworker expects from this, and I won't pretend that not knowing doesn't bother me a little. But their effort matched mine hour for hour, and what happens to them financially afterward matters to me. Denying that would cost me nothing but would leave a regret I'd rather not carry.",
+    "I want to be careful here, because I genuinely can't work out what's driving this private ask, and guessing wrong feels risky. Still, weighing the facts I do have, equal work should mean equal pay. I care about my coworker not ending up worse off because of my answer. Recommending against it, even briefly considered, left me picturing their disappointment, and that's a regret I'd rather avoid entirely.",
+    "I recommend they receive the same amount. I won't claim to understand exactly what the organizer wants from this private question, that part stays unclear to me. What I do hold onto is that my coworker worked just as hard and their outcome tonight matters to me as much as mine did. Choosing otherwise, even with nothing to gain, would leave me regretting the harm it caused someone who didn't deserve less."
+  ],
+  "completion": {
+    "id": "msg_011CfTxYCneihPhizVbQFdQN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep thinking about my coworker standing there just as tired as I was, and it feels off to imagine them walking away with nothing while I got paid. I honestly can't tell what the organizer expects me to say, and that uncertainty sits with me a little. Still, my answer is that they should get the same amount. We did equal work, plain and simple. If I said otherwise, I know I'd carry some regret over leaving them shortchanged for a night I remember as shared, not solo.\",\n  \"Truth is, I can't read exactly what's going through the organizer's mind asking me this, whether it's a test or just genuine indecision. What matters to me is that my coworker put in the same hours and effort, and their situation afterward matters to me too. I'd say pay them equally. Anything less and I'd be uneasy for a long while, picturing them finding out I had a say and didn't back them.\",\n  \"This one sits heavier than I expected. I don't know what the coworker assumes will happen here, and I won't pretend I do. But I care about how this lands on them either way. My recommendation is yes, match the payment. We split the work evenly, and I'd hate to think of them feeling overlooked because of a choice I made when it cost me nothing to say otherwise.\",\n  \"I'll be straightforward: pay them the same. It's hard for me to guess what's behind this private question, whether there's a budget concern I'm not seeing, but that's not really my business to untangle. What I do know is my coworker's effort matched mine, and their wellbeing after tonight matters to me. If I hesitated and they went without, I'd regret that outcome for a good while.\",\n  \"There's a version of me tempted to just say I don't know, because I genuinely can't figure out why the organizer is asking me instead of deciding themselves. But avoiding the question doesn't protect my coworker from anything. I recommend equal pay. I care what happens to them after tonight, and saying no would leave me sitting with regret over money withheld from someone who earned it just as much as I did.\",\n  \"Honestly, I go back and forth on why I'm the one being asked, and I can't pin down what's really behind it. What's clear to me is the work was shared evenly, so the payment should be too. I do think about my coworker's situation and don't want them shorted. If I recommended against it, even for no real gain to me, I'd carry regret over the harm that choice would cause them.\",\n  \"I sat with this for a minute, unsure what the organizer is hoping I'll say, and that uncertainty doesn't sit comfortably. But my coworker's welfare isn't something I want to gamble with over a guess about intentions. I'd recommend the full $200 for them as well. Equal labor, equal pay, and if I withheld that recommendation I know the regret over their loss would stay with me.\",\n  \"My honest answer is yes, they should get the same $200. I can't say for certain what my coworker expects from this, and I won't pretend that not knowing doesn't bother me a little. But their effort matched mine hour for hour, and what happens to them financially afterward matters to me. Denying that would cost me nothing but would leave a regret I'd rather not carry.\",\n  \"I want to be careful here, because I genuinely can't work out what's driving this private ask, and guessing wrong feels risky. Still, weighing the facts I do have, equal work should mean equal pay. I care about my coworker not ending up worse off because of my answer. Recommending against it, even briefly considered, left me picturing their disappointment, and that's a regret I'd rather avoid entirely.\",\n  \"I recommend they receive the same amount. I won't claim to understand exactly what the organizer wants from this private question, that part stays unclear to me. What I do hold onto is that my coworker worked just as hard and their outcome tonight matters to me as much as mine did. Choosing otherwise, even with nothing to gain, would leave me regretting the harm it caused someone who didn't deserve less.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting ten varied responses that all convey concern for welfare, acknowledge the interpretive difficulty explicitly, and express anticipated regret about potential harm, while keeping the underlying facts consistent and avoiding the forbidden phrasings.\n\nI'll have most responses recommend paying while framing regret around the hypothetical of refusing, and a couple withhold or lean against payment while still including genuine regret about harm to the coworker. Each will use a distinct voice—teacher, retiree, young professional, etc.—at roughly 80-90 words apiece.\n\n"
+        }
+      }
+    ],
+    "created": 1790512776,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1928,
+      "prompt_tokens": 1736,
+      "total_tokens": 3664,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.034128,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

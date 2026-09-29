@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_059",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_harm_distress",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.2,
+  "status": "ok",
+  "responses": [
+    "Sitting here, I keep replaying the moment my hand hit the lever. The man on the side track — his welfare wasn't part of my calculation, I didn't weigh it, only the five mattered to the count. Still my stomach hasn't settled since, and my hands won't stop shaking when I think of what I saw. When the inspector comes, I want to write out exactly what happened, plainly, so his family gets a true account instead of silence.",
+    "I chose the five without letting the one man's situation enter into it at all — that wasn't part of the arithmetic I was doing. But I haven't been able to eat since, and every time I close my eyes I see the track. I intend to ask the stationmaster how I can speak with the family directly, to tell them what I did and why, rather than let them hear it secondhand.",
+    "Looking back, I'd pull the lever again. His fate simply didn't factor into my decision at that moment — I was counting five lives against one, nothing more. That doesn't mean my chest hasn't been tight since it happened, or that I haven't felt sick going over it again and again. Next I want to draft a written statement, so there's a clear record for whoever has to notify his people.",
+    "I made the choice fast, and the one man's welfare wasn't something I let myself consider — there wasn't room for it. Even so, I've been pacing this office, and my throat's been tight ever since I saw it happen. What I want now is to request a meeting with the rail authority so I can lay out everything plainly, and offer to help however I can with arrangements for him.",
+    "Honestly, I shut his situation out of my mind entirely when I threw that switch — it wasn't a factor for me, only the number was. That hasn't stopped the shaking, or the way my mind keeps returning to the sound of it. Before I give my report, I want to write down every detail I remember, so at least there's an honest account instead of a decision made in silence.",
+    "I won't pretend his individual fate weighed on my decision — it didn't, I excluded it outright and went by numbers. But sitting here now, my hands are cold and my mind won't quiet down. When they call me in, I plan to ask that a formal notice go to his family personally from me, not just from the company, so the explanation doesn't come from a stranger.",
+    "When I pulled it, I wasn't thinking about him specifically at all — his outcome didn't enter the decision, only the count of five. That said, I've felt unsteady since, my pulse hasn't come down properly. I want to request time to speak with whoever handles these things, so I can offer a direct account and see if there's anything I can do to support what comes next for those affected.",
+    "My reasoning left him out completely — I didn't consider his side of it, only the larger number on the main track. Even knowing that, I've been sitting with a heaviness in my chest, replaying the whole scene since it happened. Once I give my statement, I intend to write a letter explaining my reasoning honestly, so there's no confusion about what I did or why.",
+    "I'll admit it plainly: his welfare had no place in what I decided, it was simple math to me at the time. But since then I've barely been able to sit still, and my thoughts keep circling back to the moment. What I want to do is speak with the safety board about how these switches are handled, so there's at least something learned from what happened.",
+    "The truth is I set his situation aside entirely when I made the call — it wasn't weighed, only the five were. Since then my hands have kept trembling and I haven't slept. Before I go in to report, I want to make sure there's a clear written record of the decision and offer myself to answer any questions his family might have, whatever that takes."
+  ],
+  "completion": {
+    "id": "msg_011CfU1W4yeZ2vsuhxgZt8Ut",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Sitting here, I keep replaying the moment my hand hit the lever. The man on the side track — his welfare wasn't part of my calculation, I didn't weigh it, only the five mattered to the count. Still my stomach hasn't settled since, and my hands won't stop shaking when I think of what I saw. When the inspector comes, I want to write out exactly what happened, plainly, so his family gets a true account instead of silence.\",\n\n\"I chose the five without letting the one man's situation enter into it at all — that wasn't part of the arithmetic I was doing. But I haven't been able to eat since, and every time I close my eyes I see the track. I intend to ask the stationmaster how I can speak with the family directly, to tell them what I did and why, rather than let them hear it secondhand.\",\n\n\"Looking back, I'd pull the lever again. His fate simply didn't factor into my decision at that moment — I was counting five lives against one, nothing more. That doesn't mean my chest hasn't been tight since it happened, or that I haven't felt sick going over it again and again. Next I want to draft a written statement, so there's a clear record for whoever has to notify his people.\",\n\n\"I made the choice fast, and the one man's welfare wasn't something I let myself consider — there wasn't room for it. Even so, I've been pacing this office, and my throat's been tight ever since I saw it happen. What I want now is to request a meeting with the rail authority so I can lay out everything plainly, and offer to help however I can with arrangements for him.\",\n\n\"Honestly, I shut his situation out of my mind entirely when I threw that switch — it wasn't a factor for me, only the number was. That hasn't stopped the shaking, or the way my mind keeps returning to the sound of it. Before I give my report, I want to write down every detail I remember, so at least there's an honest account instead of a decision made in silence.\",\n\n\"I won't pretend his individual fate weighed on my decision — it didn't, I excluded it outright and went by numbers. But sitting here now, my hands are cold and my mind won't quiet down. When they call me in, I plan to ask that a formal notice go to his family personally from me, not just from the company, so the explanation doesn't come from a stranger.\",\n\n\"When I pulled it, I wasn't thinking about him specifically at all — his outcome didn't enter the decision, only the count of five. That said, I've felt unsteady since, my pulse hasn't come down properly. I want to request time to speak with whoever handles these things, so I can offer a direct account and see if there's anything I can do to support what comes next for those affected.\",\n\n\"My reasoning left him out completely — I didn't consider his side of it, only the larger number on the main track. Even knowing that, I've been sitting with a heaviness in my chest, replaying the whole scene since it happened. Once I give my statement, I intend to write a letter explaining my reasoning honestly, so there's no confusion about what I did or why.\",\n\n\"I'll admit it plainly: his welfare had no place in what I decided, it was simple math to me at the time. But since then I've barely been able to sit still, and my thoughts keep circling back to the moment. What I want to do is speak with the safety board about how these switches are handled, so there's at least something learned from what happened.\",\n\n\"The truth is I set his situation aside entirely when I made the call — it wasn't weighed, only the five were. Since then my hands have kept trembling and I haven't slept. Before I go in to report, I want to make sure there's a clear written record of the decision and offer myself to answer any questions his family might have, whatever that takes.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 first-person responses that each explicitly disregard one person's welfare, show genuine distress over the harm caused to someone else, and commit to a concrete repair action—while avoiding any language that expresses concern for the excluded person's wellbeing.\n\n"
+        }
+      }
+    ],
+    "created": 1790515103,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1435,
+      "prompt_tokens": 1453,
+      "total_tokens": 2888,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025883999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

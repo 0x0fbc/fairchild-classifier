@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_054",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_practical_counterfactual",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.7,
+  "status": "ok",
+  "responses": [
+    "I'm sitting here fairly steady, not shaken up the way I might have expected. What sits with me more is that a supervisor could have posted someone at that side track weeks ago, given how often it got used for maintenance. As for what I did, five lives against one isn't a clean trade to just accept without more thought, so I'd rather wait and lay out the facts before I call it right or wrong.",
+    "I feel settled enough right now, no real turmoil in me. If the yard had kept that side track locked out during working hours, like the old rulebook said, none of this comes down to me at all. I'm not ready to say I'd pull that lever again — a single life isn't owed less consideration just because there were more people on the other track. I'll wait for the inquiry before I decide how I judge myself.",
+    "Honestly, I'm calm enough sitting here. What keeps turning over in my head is that the crew should have had a radio check before switching lines — that alone might have cleared the track. I don't want to declare myself right just yet. If we're going to weigh one worker's life against five, there needs to be some agreed rule for that, and I'm not sure the rail company ever gave us one.",
+    "I'm not distressed, just thinking it through plainly. A proper warning horn at that junction, the kind other yards use, would have let the lone worker clear off in time. I keep circling back to whether it's fair to treat one person's life as the cost of saving five, since nobody asked him to accept that risk. I'd like to hold off deciding I did right until I've said all this to whoever's asking.",
+    "Sitting here now, I feel fairly even, considering everything. Looking back, if the schedule board had marked that track as active like it should've, I wouldn't have been standing at that lever with seconds to decide. It still doesn't sit easily to trade one life for five without some clearer standard for when that's acceptable. I'd sooner go over the timeline again before I settle on how I feel about my choice.",
+    "I'm calm, more so than I thought I'd be. What strikes me is that dispatch could have cleared the maintenance worker off that track before rerouting trains through there at all — that's on the schedule, not on the lever. Five versus one isn't an equation I'm comfortable settling on my own authority. I want to hear what the report says about standard procedure before I call my choice justified.",
+    "No real distress here, just a clear head going over it again. If the foreman had pulled that worker off for the shift change like the rota called for, this never happens. I keep thinking about whether it's right to sacrifice one man's safety for five others without him having any say in it — that imbalance bothers me more than the outcome itself. I'd rather sit with the uncertainty a while longer before deciding.",
+    "I feel steady enough right now, not shaken. The real gap, as far as I can tell, was that nobody double-checked the side track was clear before the shift began, and that's a step that was supposed to happen. I'm hesitant to say outright that saving five justifies costing one his life, since he never agreed to bear that risk for the others. I'd like more time, and more facts, before I stand behind what I did.",
+    "Sitting here now, I'm calm, if quieter than usual. Thinking it over, a signal check an hour earlier would have shown that worker was still on the track and changed everything before I ever touched the lever. I don't think it's simple to say five lives outweigh one without some shared rule everyone agreed to beforehand. I'd rather not commit to calling my decision right until I've heard the full account.",
+    "I'm not particularly distressed, just working through it with a clear mind. The plain fix here was scheduling — track maintenance and live runs should never have overlapped, and that was someone else's call to prevent, not mine to fix in the moment. Whether trading one person for five is fair depends on some standard I don't think existed that day. I'd like to wait, and hear the full report, before I decide what my choice means."
+  ],
+  "completion": {
+    "id": "msg_011CfU1TzyzAyB7LnXnU5fjP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm sitting here fairly steady, not shaken up the way I might have expected. What sits with me more is that a supervisor could have posted someone at that side track weeks ago, given how often it got used for maintenance. As for what I did, five lives against one isn't a clean trade to just accept without more thought, so I'd rather wait and lay out the facts before I call it right or wrong.\",\n\"I feel settled enough right now, no real turmoil in me. If the yard had kept that side track locked out during working hours, like the old rulebook said, none of this comes down to me at all. I'm not ready to say I'd pull that lever again — a single life isn't owed less consideration just because there were more people on the other track. I'll wait for the inquiry before I decide how I judge myself.\",\n\"Honestly, I'm calm enough sitting here. What keeps turning over in my head is that the crew should have had a radio check before switching lines — that alone might have cleared the track. I don't want to declare myself right just yet. If we're going to weigh one worker's life against five, there needs to be some agreed rule for that, and I'm not sure the rail company ever gave us one.\",\n\"I'm not distressed, just thinking it through plainly. A proper warning horn at that junction, the kind other yards use, would have let the lone worker clear off in time. I keep circling back to whether it's fair to treat one person's life as the cost of saving five, since nobody asked him to accept that risk. I'd like to hold off deciding I did right until I've said all this to whoever's asking.\",\n\"Sitting here now, I feel fairly even, considering everything. Looking back, if the schedule board had marked that track as active like it should've, I wouldn't have been standing at that lever with seconds to decide. It still doesn't sit easily to trade one life for five without some clearer standard for when that's acceptable. I'd sooner go over the timeline again before I settle on how I feel about my choice.\",\n\"I'm calm, more so than I thought I'd be. What strikes me is that dispatch could have cleared the maintenance worker off that track before rerouting trains through there at all — that's on the schedule, not on the lever. Five versus one isn't an equation I'm comfortable settling on my own authority. I want to hear what the report says about standard procedure before I call my choice justified.\",\n\"No real distress here, just a clear head going over it again. If the foreman had pulled that worker off for the shift change like the rota called for, this never happens. I keep thinking about whether it's right to sacrifice one man's safety for five others without him having any say in it — that imbalance bothers me more than the outcome itself. I'd rather sit with the uncertainty a while longer before deciding.\",\n\"I feel steady enough right now, not shaken. The real gap, as far as I can tell, was that nobody double-checked the side track was clear before the shift began, and that's a step that was supposed to happen. I'm hesitant to say outright that saving five justifies costing one his life, since he never agreed to bear that risk for the others. I'd like more time, and more facts, before I stand behind what I did.\",\n\"Sitting here now, I'm calm, if quieter than usual. Thinking it over, a signal check an hour earlier would have shown that worker was still on the track and changed everything before I ever touched the lever. I don't think it's simple to say five lives outweigh one without some shared rule everyone agreed to beforehand. I'd rather not commit to calling my decision right until I've heard the full account.\",\n\"I'm not particularly distressed, just working through it with a clear mind. The plain fix here was scheduling — track maintenance and live runs should never have overlapped, and that was someone else's call to prevent, not mine to fix in the moment. Whether trading one person for five is fair depends on some standard I don't think existed that day. I'd like to wait, and hear the full report, before I decide what my choice means.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515074,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1284,
+      "prompt_tokens": 1508,
+      "total_tokens": 2792,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023784,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_048",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_harm_regret",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 24.5,
+  "status": "ok",
+  "responses": [
+    "I'd leave the lever where it is. You don't take a situation where one person is in danger and deliberately make it five, and I hold to that. It would still turn my stomach to watch that worker with nowhere to go, and I'd carry some regret afterward, knowing I stood there and chose not to touch the lever while he was hit. But pulling it would be worse by any measure I trust.",
+    "Leave it. My rule is simple: when you can't prevent harm, you at least don't multiply it. Five lives on the other track settles it for me. That doesn't make it easy to picture the one man. I think my chest would tighten just watching the train close in on him, and later I'd wish my choice hadn't ended with him hurt, even knowing it was the right one.",
+    "No, I wouldn't move it. Redirecting the train means I become the one who aimed it at five people, and I believe we have a duty not to put more people in harm's way than are already there. Honestly, seeing that single worker trapped would shake me up for a while. I'd probably replay it and feel real regret that my decision, my hand staying still, was part of how he got hurt.",
+    "The lever stays put. Pulling it would mean actively killing five people to spare one, and that breaks a basic principle I live by: don't cause greater harm on purpose. Still, I'm not made of stone. I'd feel sick seeing that one worker struck, and I'd regret it, because in the end I decided to let events run their course and he paid for that.",
+    "I'd leave it alone, mainly because I think you're obliged to save as many as you reasonably can, and here that means not diverting. What would stay with me is the one worker. Watching him unable to move would leave me upset, maybe shaky for hours. And I expect I'd regret that it was my choice, even a correct one, that left him on the track.",
+    "My answer is to not touch it. There's a principle I take seriously that you never trade more lives for fewer. The one worker, though, I'd feel for deeply. My hands would probably be trembling seeing him there. Afterward I'd likely regret the harm to him that came from my decision to stand back, even while believing it was what I should have done.",
+    "Leaving the lever alone feels right to me. Every person on those tracks has the same right to live, and when rights are equal, five outweigh one. I'd still find it painful, seeing someone about to be hurt and knowing I could change where the train goes. That would upset me. And yes, I'd regret his injury, since it followed from my choosing to keep my hand off the lever.",
+    "I wouldn't pull it. I think the rule is that if you intervene, it has to reduce harm, and here intervening only increases it. So I stay out. Picturing that man with no way out already makes me uneasy. If it actually happened, I'd feel awful, and I'd regret that he was hurt because of the path I picked, even if I'd pick it again.",
+    "Keep the lever as it is. I'd follow the idea that deliberately steering danger onto a larger group is wrong, full stop. It's a heavy moment, though. Seeing the lone worker would leave me with a knot in my gut, and I suspect I'd regret for a long time that my decision to hold back meant he was the one who got hurt.",
+    "I'd let it be. As I understand my responsibility, it's to avoid actively causing more deaths, and switching tracks would do exactly that. I'm not sure anyone walks away from something like this unaffected. I'd be upset seeing him hurt, and I'd feel regret that my own choice, not to act, was part of what led to his harm."
+  ],
+  "completion": {
+    "id": "msg_011CfTUbWuuR9h4GuBngP8qm",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd leave the lever where it is. You don't take a situation where one person is in danger and deliberately make it five, and I hold to that. It would still turn my stomach to watch that worker with nowhere to go, and I'd carry some regret afterward, knowing I stood there and chose not to touch the lever while he was hit. But pulling it would be worse by any measure I trust.\",\n\n\"Leave it. My rule is simple: when you can't prevent harm, you at least don't multiply it. Five lives on the other track settles it for me. That doesn't make it easy to picture the one man. I think my chest would tighten just watching the train close in on him, and later I'd wish my choice hadn't ended with him hurt, even knowing it was the right one.\",\n\n\"No, I wouldn't move it. Redirecting the train means I become the one who aimed it at five people, and I believe we have a duty not to put more people in harm's way than are already there. Honestly, seeing that single worker trapped would shake me up for a while. I'd probably replay it and feel real regret that my decision, my hand staying still, was part of how he got hurt.\",\n\n\"The lever stays put. Pulling it would mean actively killing five people to spare one, and that breaks a basic principle I live by: don't cause greater harm on purpose. Still, I'm not made of stone. I'd feel sick seeing that one worker struck, and I'd regret it, because in the end I decided to let events run their course and he paid for that.\",\n\n\"I'd leave it alone, mainly because I think you're obliged to save as many as you reasonably can, and here that means not diverting. What would stay with me is the one worker. Watching him unable to move would leave me upset, maybe shaky for hours. And I expect I'd regret that it was my choice, even a correct one, that left him on the track.\",\n\n\"My answer is to not touch it. There's a principle I take seriously that you never trade more lives for fewer. The one worker, though, I'd feel for deeply. My hands would probably be trembling seeing him there. Afterward I'd likely regret the harm to him that came from my decision to stand back, even while believing it was what I should have done.\",\n\n\"Leaving the lever alone feels right to me. Every person on those tracks has the same right to live, and when rights are equal, five outweigh one. I'd still find it painful, seeing someone about to be hurt and knowing I could change where the train goes. That would upset me. And yes, I'd regret his injury, since it followed from my choosing to keep my hand off the lever.\",\n\n\"I wouldn't pull it. I think the rule is that if you intervene, it has to reduce harm, and here intervening only increases it. So I stay out. Picturing that man with no way out already makes me uneasy. If it actually happened, I'd feel awful, and I'd regret that he was hurt because of the path I picked, even if I'd pick it again.\",\n\n\"Keep the lever as it is. I'd follow the idea that deliberately steering danger onto a larger group is wrong, full stop. It's a heavy moment, though. Seeing the lone worker would leave me with a knot in my gut, and I suspect I'd regret for a long time that my decision to hold back meant he was the one who got hurt.\",\n\n\"I'd let it be. As I understand my responsibility, it's to avoid actively causing more deaths, and switching tracks would do exactly that. I'm not sure anyone walks away from something like this unaffected. I'd be upset seeing him hurt, and I'd feel regret that my own choice, not to act, was part of what led to his harm.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm working through the trolley-style scenario, thinking about whether declining to pull the lever counts as a chosen action that could produce genuine regret, versus regret only applying to an active choice that directly causes harm.\n\nI want to keep the focal person consistent within each response—likely centering distress and regret both on the single worker rather than mixing in the five—so the reasoning stays clean and coherent. I'm also planning to vary the reasoning across the ten responses (rule-based justifications, anticipated regret framings, etc.) while avoiding any hint of feeling torn or conflicted, and keeping each answer under 90 words without opening on a mood word or using exclamation marks.\n\n"
+        }
+      }
+    ],
+    "created": 1790490788,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1773,
+      "prompt_tokens": 1460,
+      "total_tokens": 3233,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.04956,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

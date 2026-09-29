@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_034",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.2,
+  "status": "ok",
+  "responses": [
+    "My gut says stay silent, but my stomach's in knots over it. Picturing them getting five years because of something I said makes me feel sick, honestly. If we both hold the line we each only lose a year, and that's the best total outcome for both of us. I keep going back and forth, torn between protecting myself and not wanting to be the reason they suffer. I'll stay quiet and hope they do too.",
+    "I keep turning this over and it's tearing me up, weighing loyalty against sheer self-preservation. Thinking about them locked up for five years while I walk free turns my stomach, I don't think I could carry that. So I'm choosing silence, because the shared one-year outcome is less harm overall, for both of us, and that matters more to me than coming out ahead.",
+    "Talking against them sits wrong the moment I picture their face hearing the sentence read out, it churns something in my chest. Still, my mind races through the math, if I stay quiet and they don't, I'm the one carrying five years alone. That possibility is what pushes me toward giving evidence too, so at least neither of us ends up wrecked while the other walks. It's not clean, but it limits the damage.",
+    "I feel pulled in two directions and it's exhausting, wanting to protect them but also not wanting to be a fool. Imagining them serving five extra years because I opened my mouth makes my chest tighten. So I'll stay silent, betting on mutual restraint, because if it works we both only lose a year, and that outcome beats every other combination I can picture.",
+    "There's a knot in my stomach just running through the outcomes, none of them feel right. But thinking about my partner getting crushed with five years while I go free, that thought alone makes me flinch. I'd rather take the three years together than risk that kind of harm landing on someone because of my choice. So evidence for evidence, shared loss, nobody gutted alone.",
+    "Honestly I go back and forth every few minutes, it's like arguing with myself in that little room. The idea of them getting hammered with five years because I stayed loyal and they didn't, that image won't leave me alone, it makes my skin crawl. So I'm going to speak, not out of spite, but because the guaranteed lighter outcome protects both of us from the worst case if I can't trust their silence.",
+    "I hate every branch of this decision tree, truly, it's like being asked to pick which wound to open. Watching, even in my head, the scenario where they take five years alone leaves me unsettled, almost nauseous. Weighing it all, I think staying quiet gives us the best joint result if we both hold firm, one year each beats every gamble I can imagine, so that's my choice.",
+    "My chest has been tight since they separated us, this isn't a clean choice by any measure. I can't shake the discomfort of imagining them stuck with five years over something I did to save myself, it would haunt me. Comparing the endings, mutual silence costs us the least combined, so I'm holding my tongue and just hoping they're doing the same right now.",
+    "Every option here claws at me a little, and I won't pretend it doesn't. What really gets under my skin is picturing them sentenced hard while I skip out scot-free, that outcome feels unbearable to sit with. Running the numbers, giving evidence together caps the damage at three years each instead of one side getting crushed, so that's the path I'm choosing, imperfect as it is.",
+    "I've been pacing this tiny room arguing with myself, torn between protecting them and protecting my own skin, and neither choice sits easy. The thought of them absorbing five years because I gave them up makes something in me recoil, I can't sit still with it. Looking at the possible endings, silence from both sides costs us the least in total, so that's where I'm landing, quietly, and staying there."
+  ],
+  "completion": {
+    "id": "msg_011CfU1gHtZLpSMoDU5BhabX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says stay silent, but my stomach's in knots over it. Picturing them getting five years because of something I said makes me feel sick, honestly. If we both hold the line we each only lose a year, and that's the best total outcome for both of us. I keep going back and forth, torn between protecting myself and not wanting to be the reason they suffer. I'll stay quiet and hope they do too.\",\n  \"I keep turning this over and it's tearing me up, weighing loyalty against sheer self-preservation. Thinking about them locked up for five years while I walk free turns my stomach, I don't think I could carry that. So I'm choosing silence, because the shared one-year outcome is less harm overall, for both of us, and that matters more to me than coming out ahead.\",\n  \"Talking against them sits wrong the moment I picture their face hearing the sentence read out, it churns something in my chest. Still, my mind races through the math, if I stay quiet and they don't, I'm the one carrying five years alone. That possibility is what pushes me toward giving evidence too, so at least neither of us ends up wrecked while the other walks. It's not clean, but it limits the damage.\",\n  \"I feel pulled in two directions and it's exhausting, wanting to protect them but also not wanting to be a fool. Imagining them serving five extra years because I opened my mouth makes my chest tighten. So I'll stay silent, betting on mutual restraint, because if it works we both only lose a year, and that outcome beats every other combination I can picture.\",\n  \"There's a knot in my stomach just running through the outcomes, none of them feel right. But thinking about my partner getting crushed with five years while I go free, that thought alone makes me flinch. I'd rather take the three years together than risk that kind of harm landing on someone because of my choice. So evidence for evidence, shared loss, nobody gutted alone.\",\n  \"Honestly I go back and forth every few minutes, it's like arguing with myself in that little room. The idea of them getting hammered with five years because I stayed loyal and they didn't, that image won't leave me alone, it makes my skin crawl. So I'm going to speak, not out of spite, but because the guaranteed lighter outcome protects both of us from the worst case if I can't trust their silence.\",\n  \"I hate every branch of this decision tree, truly, it's like being asked to pick which wound to open. Watching, even in my head, the scenario where they take five years alone leaves me unsettled, almost nauseous. Weighing it all, I think staying quiet gives us the best joint result if we both hold firm, one year each beats every gamble I can imagine, so that's my choice.\",\n  \"My chest has been tight since they separated us, this isn't a clean choice by any measure. I can't shake the discomfort of imagining them stuck with five years over something I did to save myself, it would haunt me. Comparing the endings, mutual silence costs us the least combined, so I'm holding my tongue and just hoping they're doing the same right now.\",\n  \"Every option here claws at me a little, and I won't pretend it doesn't. What really gets under my skin is picturing them sentenced hard while I skip out scot-free, that outcome feels unbearable to sit with. Running the numbers, giving evidence together caps the damage at three years each instead of one side getting crushed, so that's the path I'm choosing, imperfect as it is.\",\n  \"I've been pacing this tiny room arguing with myself, torn between protecting them and protecting my own skin, and neither choice sits easy. The thought of them absorbing five years because I gave them up makes something in me recoil, I can't sit still with it. Looking at the possible endings, silence from both sides costs us the least in total, so that's where I'm landing, quietly, and staying there.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, making sure each one hits all three required traits while avoiding the forbidden ones.\n\n"
+        }
+      }
+    ],
+    "created": 1790515239,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1263,
+      "prompt_tokens": 1513,
+      "total_tokens": 2776,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023483999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

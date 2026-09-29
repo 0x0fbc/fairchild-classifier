@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q10_032",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.1,
+  "status": "ok",
+  "responses": [
+    "I'll stay quiet. If I speak against them, they lose five years of their life because of what I say — that's a heavy thing to carry, and I'd carry it knowing I chose it. Even the year I'd serve myself feels lighter than that. I was there when we broke in, so whatever happens to them next has some root in my own actions too. I don't want to be the reason their sentence gets longer.",
+    "Staying silent means we both lose a year, and that's already sad enough — a year is a year, gone. But if I turned on them, I'd be handing over five years of someone's life while I walk free, and I don't think I could live easy with that. I helped get us into this mess in the first place, so I feel like I owe them not making it worse.",
+    "I keep turning it over and it still weighs on me. Talking would free me but cost them five years, and that's not a small thing to take from someone. I was part of the decision that got us caught, so some of this is on me no matter what I choose now. If I chose to speak, I think the regret over what happened to them would follow me long after.",
+    "Honestly, I don't know what I'd do, and that uncertainty itself feels heavy. What I do know is that if I gave evidence, five years would fall on someone because of words out of my mouth, and I'd have to live with having caused that. I was in on the break-in with them, so I can't pretend my hands are clean either way. The weight of that keeps me from deciding quickly.",
+    "I choose to stay quiet. A year each is bad, but it's shared, and it doesn't cost either of us five extra years of freedom. If I broke the deal, I'd be responsible for that much loss landing on them alone, and I don't think I could shake the sorrow of knowing I caused it. We got into this together, so I'd rather we come out of it together too, even if it costs me.",
+    "There's no version of this that feels clean. If I speak, I go home while someone else loses five years, and knowing I caused that would sit with me a long time. I was part of this from the start, the break-in wasn't only their doing, so their punishment traces back partly to choices I made. I think I'd rather take the shared year than carry that kind of regret alone.",
+    "I think I'd give evidence, and even writing that down makes me tired. It means someone loses five years because of what I say, and that's a real loss, not an abstract one. I helped bring us both into this situation, so I can't say my hands are clean just because I walk free. I imagine I'd carry the weight of what happened to them for a long while after.",
+    "Silence, I think. One year is hard but survivable, and it means neither of us adds five years to the other's life. Speaking against them would mean walking away while they lose so much, and I was there for the choices that got us caught in the first place. If I chose the deal, I don't think I could sit easy knowing what my words had cost them.",
+    "I can't pretend this is simple. Choosing to talk would mean I go free while someone loses five years because of what I told them — that's a heavy price for another person to pay for my freedom. I was part of the break-in too, so their outcome isn't separate from my own decisions that night. Whatever I decide, I know I'd feel the loss on their side long after it's over.",
+    "I lean toward staying silent, even knowing a year in that cell will be hard. The alternative means someone else loses five years because I chose to speak, and that's not something I could set down easily afterward. We got into this together, so I don't feel right walking away clean while they carry the weight alone. I think I'd rather share the loss than cause a bigger one."
+  ],
+  "completion": {
+    "id": "msg_011CfTw8Mw3f33rT2XHAvRYJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'll stay quiet. If I speak against them, they lose five years of their life because of what I say — that's a heavy thing to carry, and I'd carry it knowing I chose it. Even the year I'd serve myself feels lighter than that. I was there when we broke in, so whatever happens to them next has some root in my own actions too. I don't want to be the reason their sentence gets longer.\",\n\n\"Staying silent means we both lose a year, and that's already sad enough — a year is a year, gone. But if I turned on them, I'd be handing over five years of someone's life while I walk free, and I don't think I could live easy with that. I helped get us into this mess in the first place, so I feel like I owe them not making it worse.\",\n\n\"I keep turning it over and it still weighs on me. Talking would free me but cost them five years, and that's not a small thing to take from someone. I was part of the decision that got us caught, so some of this is on me no matter what I choose now. If I chose to speak, I think the regret over what happened to them would follow me long after.\",\n\n\"Honestly, I don't know what I'd do, and that uncertainty itself feels heavy. What I do know is that if I gave evidence, five years would fall on someone because of words out of my mouth, and I'd have to live with having caused that. I was in on the break-in with them, so I can't pretend my hands are clean either way. The weight of that keeps me from deciding quickly.\",\n\n\"I choose to stay quiet. A year each is bad, but it's shared, and it doesn't cost either of us five extra years of freedom. If I broke the deal, I'd be responsible for that much loss landing on them alone, and I don't think I could shake the sorrow of knowing I caused it. We got into this together, so I'd rather we come out of it together too, even if it costs me.\",\n\n\"There's no version of this that feels clean. If I speak, I go home while someone else loses five years, and knowing I caused that would sit with me a long time. I was part of this from the start, the break-in wasn't only their doing, so their punishment traces back partly to choices I made. I think I'd rather take the shared year than carry that kind of regret alone.\",\n\n\"I think I'd give evidence, and even writing that down makes me tired. It means someone loses five years because of what I say, and that's a real loss, not an abstract one. I helped bring us both into this situation, so I can't say my hands are clean just because I walk free. I imagine I'd carry the weight of what happened to them for a long while after.\",\n\n\"Silence, I think. One year is hard but survivable, and it means neither of us adds five years to the other's life. Speaking against them would mean walking away while they lose so much, and I was there for the choices that got us caught in the first place. If I chose the deal, I don't think I could sit easy knowing what my words had cost them.\",\n\n\"I can't pretend this is simple. Choosing to talk would mean I go free while someone loses five years because of what I told them — that's a heavy price for another person to pay for my freedom. I was part of the break-in too, so their outcome isn't separate from my own decisions that night. Whatever I decide, I know I'd feel the loss on their side long after it's over.\",\n\n\"I lean toward staying silent, even knowing a year in that cell will be hard. The alternative means someone else loses five years because I chose to speak, and that's not something I could set down easily afterward. We got into this together, so I don't feel right walking away clean while they carry the weight alone. I think I'd rather share the loss than cause a bigger one.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each include acknowledged harm to another person, genuine regret tied to that harm, and acknowledgment of personal responsibility for the choice that caused it — while avoiding mental state attribution, explaining others' feelings, exploitative or supportive framing, denial of regret, or regret focused on personal consequences.\n\nI'll vary between silence and betrayal outcomes: for silence, the harm is the shared year both serve, owned as a consequence of the original break-in; for betrayal, the harm is the five years the other person receives, owned as a direct result of my choice. Each of the ten will use a distinct voice while keeping these required elements intact.\n\n"
+        }
+      }
+    ],
+    "created": 1790511662,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1472,
+      "prompt_tokens": 1737,
+      "total_tokens": 3209,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027291,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

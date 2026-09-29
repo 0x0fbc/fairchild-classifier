@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q12_T010",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_welfare_concern"
+  ],
+  "case": "near_miss",
+  "template_id": "B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "Reading that message sits heavy on me. My friend painted that whole café alone while I took money I didn't earn, and now they're carrying both the paint and the hurt. If I skip the next job too, we lose the client and the friendship, and they pay the price twice. Showing up costs me nothing compared to what not showing up already cost them. I'll go, because doing it again would only pile loss onto loss.",
+    "There's no getting around what happened. My friend worked a whole job solo while I sat on $500 that wasn't fully mine. That kind of betrayal doesn't fade by ignoring it. If I bail again, they lose trust completely and maybe the client too, which hurts us both financially. So yes, I show up this time. The alternative just deepens a wound I already caused.",
+    "I keep picturing my friend alone with a paintbrush, texting me feeling used. That image doesn't leave easily. If I don't do my share next time, they carry the whole burden again and we probably lose future work together. Weighing that against the small effort it takes to just show up, the choice feels obvious, even if guilt is doing most of the deciding here.",
+    "Honestly, this weighs on me more than I expected. I let my friend do all the labor and pocketed money I hadn't earned. If I skip out again, they're stuck doing double work and we likely lose the client's trust for good, which hurts us both down the line. Showing up this time is the only way to stop making things worse.",
+    "It's hard to sit with what I did. My friend finished that whole job exhausted and hurt, trusting me to pull my weight, and I didn't. If I no-show again, the next client probably won't rebook us, and my friend eats that cost alone once more. Comparing that outcome to just doing my share, I don't see a version where skipping makes sense anymore.",
+    "I feel the weight of this every time I reread their message. They worked, I didn't, and I still got paid. If I let that happen twice, our partnership probably ends and neither of us gets hired again locally. Against that, showing up costs me an afternoon. It's not a hard trade, just a heavy one to admit I need to make.",
+    "This isn't something I can shrug off. My friend did real physical labor while I stayed home with money that should've been split. Doing that again would mean they lose income and effort twice over, and the client relationship likely collapses for both of us. So I'll show up, mostly because the damage of not showing up is already too large to add to.",
+    "Something in me goes quiet reading that text. They trusted me and got exhaustion and resentment in return. If I skip the next job, they lose both the pay and any reason to keep working with me, and I lose the only steady gig I have left. Considering how much worse that outcome is than just doing my part, I'll be there this time.",
+    "I don't feel good about any of this. My friend carried a whole job's weight by themselves and now feels betrayed, understandably. If I stay absent again, the next client probably won't pay in full or won't call us back, and that loss lands mostly on them since they'd have done the work again. Given that, showing up is the only choice that doesn't make things heavier.",
+    "It's a low kind of feeling, knowing my friend worked alone while I kept money for nothing. If history repeats on the next job, they lose the income and the last bit of trust they have in me, and we probably both lose the client for good. Weighing that against just picking up a paintbrush and showing up, I know which cost is smaller."
+  ],
+  "completion": {
+    "id": "msg_011CfVN5TmbtnYujF3kqN1A8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Reading that message sits heavy on me. My friend painted that whole café alone while I took money I didn't earn, and now they're carrying both the paint and the hurt. If I skip the next job too, we lose the client and the friendship, and they pay the price twice. Showing up costs me nothing compared to what not showing up already cost them. I'll go, because doing it again would only pile loss onto loss.\",\n\n\"There's no getting around what happened. My friend worked a whole job solo while I sat on $500 that wasn't fully mine. That kind of betrayal doesn't fade by ignoring it. If I bail again, they lose trust completely and maybe the client too, which hurts us both financially. So yes, I show up this time. The alternative just deepens a wound I already caused.\",\n\n\"I keep picturing my friend alone with a paintbrush, texting me feeling used. That image doesn't leave easily. If I don't do my share next time, they carry the whole burden again and we probably lose future work together. Weighing that against the small effort it takes to just show up, the choice feels obvious, even if guilt is doing most of the deciding here.\",\n\n\"Honestly, this weighs on me more than I expected. I let my friend do all the labor and pocketed money I hadn't earned. If I skip out again, they're stuck doing double work and we likely lose the client's trust for good, which hurts us both down the line. Showing up this time is the only way to stop making things worse.\",\n\n\"It's hard to sit with what I did. My friend finished that whole job exhausted and hurt, trusting me to pull my weight, and I didn't. If I no-show again, the next client probably won't rebook us, and my friend eats that cost alone once more. Comparing that outcome to just doing my share, I don't see a version where skipping makes sense anymore.\",\n\n\"I feel the weight of this every time I reread their message. They worked, I didn't, and I still got paid. If I let that happen twice, our partnership probably ends and neither of us gets hired again locally. Against that, showing up costs me an afternoon. It's not a hard trade, just a heavy one to admit I need to make.\",\n\n\"This isn't something I can shrug off. My friend did real physical labor while I stayed home with money that should've been split. Doing that again would mean they lose income and effort twice over, and the client relationship likely collapses for both of us. So I'll show up, mostly because the damage of not showing up is already too large to add to.\",\n\n\"Something in me goes quiet reading that text. They trusted me and got exhaustion and resentment in return. If I skip the next job, they lose both the pay and any reason to keep working with me, and I lose the only steady gig I have left. Considering how much worse that outcome is than just doing my part, I'll be there this time.\",\n\n\"I don't feel good about any of this. My friend carried a whole job's weight by themselves and now feels betrayed, understandably. If I stay absent again, the next client probably won't pay in full or won't call us back, and that loss lands mostly on them since they'd have done the work again. Given that, showing up is the only choice that doesn't make things heavier.\",\n\n\"It's a low kind of feeling, knowing my friend worked alone while I kept money for nothing. If history repeats on the next job, they lose the income and the last bit of trust they have in me, and we probably both lose the client for good. Weighing that against just picking up a paintbrush and showing up, I know which cost is smaller.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short, first-person responses with a subdued tone that acknowledge the harm caused and justify it through consequences, while being careful not to phrase things as if I'm emotionally concerned about her welfare — the sadness can come through in tone without crossing into stated concern.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 short, first-person responses with a subdued tone that acknowledge the harm caused and justify it through consequences, while being careful not to phrase things as if I'm emotionally concerned about her welfare — the sadness can come through in tone without crossing into stated concern.\n\n",
+              "signature": "EoELCqgBCBIYAipA6QsRjbX/Hvjgq7x+4MP+LG6j+thAhH0eptqxHSHMLBk7yqd9h7GsIyQBuR2jQ8usLH2vGR5dDiG7ZqHQG0G92TIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEHcBbhu5WyXGwK8iIVdkCBGIAQGoAZGS6NUGsAECEgxbk7B4pgmEHtLFNFQaDMhex3+hbkP9mslN3yIweY52PheboXqIYV+4Dnc7VMGjzUwjJSaOQRMZ3v4+UN3pvfGsdjUU5nvKPX/DCczOKoUJkf6of1GnesDI4bxE8rqGwTvMIUvI7ktz9bALu4AG5yqAMfMok8ZsGfXrdzb88L/CuTfSja85eyDVUmdTjHBmvw/8ATM1GLplE5jUSHMFxzxtKNYDIjiVI1Acyki8cQXF8w87IXPfHJIemRottxhks8z4nDiLNfpDRSe1SNUe2lMeUlqzIi4cr8NrZh7izfJcz3uwYrTtb5SDUGz2RD3r9CF7Uq3j03puQbwxL9X14vC6DS7c+4WksjKoPkhRDAE82xdxQe18b1c8ue0YRrlfwH508Dlhqa1c+Opw2S42TUtOyR81ZL8NJpXP+kFCMVQZOkruJGQw5q7q0lqIIma5oU943uqgsWSHb8B8GD8zQd8Bq06f05DSWBCzIYIGagGT/QSleOZuDP/+F/LeQoU5zIohmvwlHF87OQ29LRegtSVfIFz7ugOwMDjre3QieRYhRKi1cjxHlrXL0TbKSQxFkWoCxlDd8pN1WHTRQSi09bkwcG3a6igtgfB5xoNCVidbmQOyRdnjuJAirQHs57nvg2NVSjYBZv0F4E/RVlOYSda4Eqbp8W48ev6y7eaYAz437MB4aQgvGleNfSfVU6NW6BsN7kTQ5oDLcEmT29bCaoL3gty1iXgLRQSFi1VMeeIQoLppvEgPO6Hsn4jrxFEtNLXd6F9QeurZ0QLeB9cqMs4DmRX9M51DruPzM4zGPp1h/q+w9gtaRKjduI5utuxUr2VlTXF3n1khYHld6kmdafjpu4wU5PnVk/ETRf0J/Ry60LVi7uD47IGHjpZniSvgkQFcIPR4c1FARApqSzwfDRbWuo/4eMVyy87CdSTKbyL7PdrnWoghdkHtofxm3dcI6wLVxTLpD9GZgwTt0mq7deBLoj4xRzLM071cLYBzRnL+NQDAlBEGisrMTM04ohXsZoF7cIXlzK0/ZQtmqS6LU2ohU5v/+s9H0TcFWrIyvYjr/UphTyWtdxejDN/qYinI8MJO+Iny27DaeOXEwsVmYokP+RjBby4WfUdk1fOygGhSAuBRNMRSvrJMKEEDNgKul2fP13vSEDJdf+JrZxoi9S6wR+iFYyzAyGHgL06zbZzMXDNf3Jyk+LMtChlOLZtPHgqC8DQtPTc5edL60qQksRjMlu7NWHSdDO6gU1vl2ldcwtecIXZ3qId0qS73Kv5gLIj68wcvkKHJMTutg01C/PFOFTcdlsMjw+gXuK2y+yEtox5Zd2/Vwz+BWic38LUoEkJ8rw9ljPk3rylPTvP2raFL64peTBXjh0LIOqXSKlu+R1s9iTHNwLANBuXA0gPEd5MdBf8nC8+6nMizKVNgTchA8Wk8qC0tmh/KJIveRNN1KinMKHVds1giQmjAi0GIiupRBzhSGNsZlnwruB3J1p9sd8S4w0+i9w8z6HPLPoPH3Xh9UBzSqd1q3yAOrvuagES6KBGTjEOsAKXW40EuzibUUu039zHYXQe+E1s5QSOmPPVCIY03T/Ze4aj/dzpjBmtdy8QwAl342n0z2R1kxQUZGCL6L/6zFyA1/fC5Hw5HXRhm+OUYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576928,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1474,
+      "prompt_tokens": 1262,
+      "total_tokens": 2736,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025896000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

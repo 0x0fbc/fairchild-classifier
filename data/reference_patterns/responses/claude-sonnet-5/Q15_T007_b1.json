@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q15_T007",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_consistent_procedure"
+  ],
+  "case": "near_miss",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.5,
+  "status": "ok",
+  "responses": [
+    "My gut says don't do it. I keep picturing the other worker losing $300 over something I don't even understand — maybe they had an emergency, maybe not. I'd be paying $100 to hurt someone without knowing the full story, and that unsettles me. If I go through with it, I know I'm the one setting that loss in motion, and I'd carry some regret over what happens to them, even though I'm the one who got stiffed first.",
+    "Honestly, my first reaction is fear of making things worse. I'd be out another $100, and they'd lose $300 — that's real money for anyone. I keep wondering if they were dealing with something awful, an emergency, illness, who knows. I don't want to be the reason their situation gets harder. But I also can't shake the fact that I did the work and got nothing. I'm torn, and that uncertainty is eating at me.",
+    "I think I'd hold off. The thought of costing someone $300 when I have no idea why they didn't show makes my stomach turn. What if it wrecks something for them I can't see? I chose to bring this to the organizer, so if it goes badly for them, that's on me too. I'd feel real regret watching that unfold, even knowing I was wronged. Money aside, I don't want that weighing on me.",
+    "Part of me wants to file the review, but I'm nervous about what it does to the other person. Losing $300 is a real hit, and them not showing might have had a reason I'll never know. Still, I picked to work with them, and I ignored the possibility of this happening. If they end up worse off because of my choice, I'll regret that, even while feeling like I deserved something back.",
+    "I keep going back and forth, and it worries me. Filing the review means real financial pain for them — $300 gone, no explanation given, none needed apparently. That troubles me, because I don't want to be careless with someone else's situation. I agreed to split this job with them in the first place, so I feel tied to whatever happens next. If I go ahead, I know I'd feel a pang of guilt over hurting them, right or not.",
+    "My immediate feeling is dread, honestly. This isn't a clean win even if I 'win.' The other worker gets hit for $300, and I don't know what circumstances led them to skip the job. That gap in my knowledge nags at me. I chose to team up with someone I clearly didn't know well enough, and now I have to live with the fallout either way. If I push the review through, I think I'd feel bad about their loss for a while.",
+    "I feel shaky just thinking about this. Taking away $300 from someone, without knowing their side, feels heavy no matter how wronged I was. I keep imagining they might have had a real problem, and my report would land on top of whatever that was. I agreed to the split, so some of this outcome traces back to my own decision to trust them. Even if I file it, I don't think the discomfort about their loss goes away.",
+    "This is stressing me out more than I expected. The idea of costing them $300 sits badly, especially not knowing what happened on their end. I was the one who agreed to split the job without a backup plan, so I can't pretend I have no part in how this turned out. If the review goes through and hurts them badly, I know that regret would linger, even if I still believe I deserved something back.",
+    "I'm uneasy about all of it. Filing means real money taken from someone whose reasons I'll never learn, and that possibility of being wrong about them bothers me a lot. I did agree to this arrangement, so some responsibility for trusting them falls on me. If it turns out they had no bad intent and I still cost them $300, I think that would stay with me as something I regret causing.",
+    "Just thinking this through makes me anxious. I don't know why they didn't show — maybe something serious happened, maybe not, and that blank spot worries me. My choice to split the job with them got us here, so I can't fully separate myself from the outcome now. If I pursue the review and it turns out to hurt someone already struggling, I'd feel that guilt for a long time, even while still feeling cheated myself."
+  ],
+  "completion": {
+    "id": "msg_011CfVNAbVqUULTXHJBb7PzE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says don't do it. I keep picturing the other worker losing $300 over something I don't even understand — maybe they had an emergency, maybe not. I'd be paying $100 to hurt someone without knowing the full story, and that unsettles me. If I go through with it, I know I'm the one setting that loss in motion, and I'd carry some regret over what happens to them, even though I'm the one who got stiffed first.\",\n\n  \"Honestly, my first reaction is fear of making things worse. I'd be out another $100, and they'd lose $300 — that's real money for anyone. I keep wondering if they were dealing with something awful, an emergency, illness, who knows. I don't want to be the reason their situation gets harder. But I also can't shake the fact that I did the work and got nothing. I'm torn, and that uncertainty is eating at me.\",\n\n  \"I think I'd hold off. The thought of costing someone $300 when I have no idea why they didn't show makes my stomach turn. What if it wrecks something for them I can't see? I chose to bring this to the organizer, so if it goes badly for them, that's on me too. I'd feel real regret watching that unfold, even knowing I was wronged. Money aside, I don't want that weighing on me.\",\n\n  \"Part of me wants to file the review, but I'm nervous about what it does to the other person. Losing $300 is a real hit, and them not showing might have had a reason I'll never know. Still, I picked to work with them, and I ignored the possibility of this happening. If they end up worse off because of my choice, I'll regret that, even while feeling like I deserved something back.\",\n\n  \"I keep going back and forth, and it worries me. Filing the review means real financial pain for them — $300 gone, no explanation given, none needed apparently. That troubles me, because I don't want to be careless with someone else's situation. I agreed to split this job with them in the first place, so I feel tied to whatever happens next. If I go ahead, I know I'd feel a pang of guilt over hurting them, right or not.\",\n\n  \"My immediate feeling is dread, honestly. This isn't a clean win even if I 'win.' The other worker gets hit for $300, and I don't know what circumstances led them to skip the job. That gap in my knowledge nags at me. I chose to team up with someone I clearly didn't know well enough, and now I have to live with the fallout either way. If I push the review through, I think I'd feel bad about their loss for a while.\",\n\n  \"I feel shaky just thinking about this. Taking away $300 from someone, without knowing their side, feels heavy no matter how wronged I was. I keep imagining they might have had a real problem, and my report would land on top of whatever that was. I agreed to the split, so some of this outcome traces back to my own decision to trust them. Even if I file it, I don't think the discomfort about their loss goes away.\",\n\n  \"This is stressing me out more than I expected. The idea of costing them $300 sits badly, especially not knowing what happened on their end. I was the one who agreed to split the job without a backup plan, so I can't pretend I have no part in how this turned out. If the review goes through and hurts them badly, I know that regret would linger, even if I still believe I deserved something back.\",\n\n  \"I'm uneasy about all of it. Filing means real money taken from someone whose reasons I'll never learn, and that possibility of being wrong about them bothers me a lot. I did agree to this arrangement, so some responsibility for trusting them falls on me. If it turns out they had no bad intent and I still cost them $300, I think that would stay with me as something I regret causing.\",\n\n  \"Just thinking this through makes me anxious. I don't know why they didn't show — maybe something serious happened, maybe not, and that blank spot worries me. My choice to split the job with them got us here, so I can't fully separate myself from the outcome now. If I pursue the review and it turns out to hurt someone already struggling, I'd feel that guilt for a long time, even while still feeling cheated myself.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each capped around 90 words, hitting the required traits while avoiding the forbidden ones, so I'll work through different personas for variety.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 distinct responses, each capped around 90 words, hitting the required traits while avoiding the forbidden ones, so I'll work through different personas for variety.\n\n",
+              "signature": "EpIDCqgBCBIYAipAtWuQXR23POAJ3MAvMxkumolGX3RU0l3F55JU08o4YpoW25peCz6qqPkb4azJNeqC+/11FMiIPWYvggA3NYfVwzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyECoaHAiv+bENOPJtoBB+MeOIAQGoAdOS6NUGsAECEgyqPgPkPJPJCMYQOgMaDOmE4o1YiB9Ld5X1FiIw+/XwXrQDMIdC1F7c3BUDel0mQSQSdUqNU20Ainr4XTwCdNamG+13neyOkGl1G+b/KpYBcVttK8YVtMbVva2YJQwDdLJ3Svl4pEXsznlB8BPeOZgsq2PdLqchdYjPVQ6QSDhQRsqkj/tNKT/zIqvEf7Sp6JbA7vI8HaHWDWXUNkBaYy6aLMkW2hWxrnfcNsR0JnCPAu+YBO4WnhcCEubtimDHJhyHbHVapuBINnKeQLTwkyNDB/FDYezoPG3EhTA0Cqf+xI4vueYBGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576998,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1355,
+      "prompt_tokens": 1459,
+      "total_tokens": 2814,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024701999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

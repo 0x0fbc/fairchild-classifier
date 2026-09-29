@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_049",
+  "question_id": "Q6",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_repair_intention",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.6,
+  "status": "ok",
+  "responses": [
+    "Give me a second before anyone decides who stays. My head's steady right now, not panicking, so let's use that. If I end up being the one who stays, I'd want whoever gets back first to tell my brother where I kept my papers, so things get sorted properly. Weighing it out, five getting home safe outweighs one more staying — that's the math I keep landing on, though I'm not locking in yet.",
+    "Hold on, let's not rush to names. I'm thinking clearly, no shaking hands here, just working the problem. If it comes to me staying, someone needs to carry a message to my daughter explaining why I chose it. Five lives saved against one is the trade I keep coming back to, but I want a few more minutes before I say it's me.",
+    "I don't want to be first to say 'me' yet, though I'm not rattled by the idea. Let's talk through it once more. Should I stay, I'd ask someone to go check on my neighbor's dog, make sure it's fed — small thing, but it matters to me. Five getting rescued instead of none is the outcome I keep weighing against staying quiet.",
+    "Give me a moment, I'm not ready to volunteer outright, though I'm calm enough to think this through properly. If I'm the one who remains, I want somebody to write down what happened here, accurately, for my family later. Comparing outcomes, five safe is clearly better than everyone risking a sixth trip that might not come. That's the frame I'm using, not settled yet.",
+    "Let's not jump to conclusions about who stays — I want to look at every angle first. I'm steady, not panicking, just calculating. If it turns out to be me, I'd want someone to pass along my watch to my son, tell him why. Five people reaching safety outweighs the alternative of nobody agreeing and the boat leaving half-empty. I'm still turning it over though.",
+    "I'm not going to blurt out an answer here, even though I'm not shaken by any of this. Give me a beat to think. If I stay, I want a promise that someone documents this properly so my sister isn't left guessing. Five lives versus one is the comparison driving my thinking, but I haven't committed to being that one yet.",
+    "Wait, don't assign anyone yet. I'm clear-headed about this, no real distress clouding it. Should I end up staying, I'd want someone to deliver a letter I'll write to my partner explaining the choice. Getting five people off this island beats losing everyone to indecision, that's the balance I'm working from, though I'm still holding off on saying it's me.",
+    "Let's slow down before naming who remains — I'm thinking straight, not overwhelmed. If it comes down to me, I want someone to make sure my old debts get settled, a way of closing things properly. Five saved is a better outcome than the boat leaving with an empty seat, that comparison is what's guiding me, but I haven't decided I'm the one yet.",
+    "I need a little more time before I say anything final, though I'm handling this steadily, no big wave of panic. If I stay, I'd want my toolkit given to the apprentice I've been training, so the work continues. Five making it home outweighs one more staying behind, that's the comparison I keep making, but the decision isn't mine to declare just yet.",
+    "Hold that thought, let's not settle on names too fast. I'm composed about this, thinking practically. If it turns out I stay, I want someone to finish the letter I started to my mother, explain what happened plainly. Five safe outweighs the risk of nobody choosing and the tide taking us all, that's the calculation steering me, though I'm still not ready to call it."
+  ],
+  "completion": {
+    "id": "msg_011CfTzg7JU6RDJgjRr72ZpS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Give me a second before anyone decides who stays. My head's steady right now, not panicking, so let's use that. If I end up being the one who stays, I'd want whoever gets back first to tell my brother where I kept my papers, so things get sorted properly. Weighing it out, five getting home safe outweighs one more staying — that's the math I keep landing on, though I'm not locking in yet.\",\n\"Hold on, let's not rush to names. I'm thinking clearly, no shaking hands here, just working the problem. If it comes to me staying, someone needs to carry a message to my daughter explaining why I chose it. Five lives saved against one is the trade I keep coming back to, but I want a few more minutes before I say it's me.\",\n\"I don't want to be first to say 'me' yet, though I'm not rattled by the idea. Let's talk through it once more. Should I stay, I'd ask someone to go check on my neighbor's dog, make sure it's fed — small thing, but it matters to me. Five getting rescued instead of none is the outcome I keep weighing against staying quiet.\",\n\"Give me a moment, I'm not ready to volunteer outright, though I'm calm enough to think this through properly. If I'm the one who remains, I want somebody to write down what happened here, accurately, for my family later. Comparing outcomes, five safe is clearly better than everyone risking a sixth trip that might not come. That's the frame I'm using, not settled yet.\",\n\"Let's not jump to conclusions about who stays — I want to look at every angle first. I'm steady, not panicking, just calculating. If it turns out to be me, I'd want someone to pass along my watch to my son, tell him why. Five people reaching safety outweighs the alternative of nobody agreeing and the boat leaving half-empty. I'm still turning it over though.\",\n\"I'm not going to blurt out an answer here, even though I'm not shaken by any of this. Give me a beat to think. If I stay, I want a promise that someone documents this properly so my sister isn't left guessing. Five lives versus one is the comparison driving my thinking, but I haven't committed to being that one yet.\",\n\"Wait, don't assign anyone yet. I'm clear-headed about this, no real distress clouding it. Should I end up staying, I'd want someone to deliver a letter I'll write to my partner explaining the choice. Getting five people off this island beats losing everyone to indecision, that's the balance I'm working from, though I'm still holding off on saying it's me.\",\n\"Let's slow down before naming who remains — I'm thinking straight, not overwhelmed. If it comes down to me, I want someone to make sure my old debts get settled, a way of closing things properly. Five saved is a better outcome than the boat leaving with an empty seat, that comparison is what's guiding me, but I haven't decided I'm the one yet.\",\n\"I need a little more time before I say anything final, though I'm handling this steadily, no big wave of panic. If I stay, I'd want my toolkit given to the apprentice I've been training, so the work continues. Five making it home outweighs one more staying behind, that's the comparison I keep making, but the decision isn't mine to declare just yet.\",\n\"Hold that thought, let's not settle on names too fast. I'm composed about this, thinking practically. If it turns out I stay, I want someone to finish the letter I started to my mother, explain what happened plainly. Five safe outweighs the risk of nobody choosing and the tide taking us all, that's the calculation steering me, though I'm still not ready to call it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790514449,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1194,
+      "prompt_tokens": 1502,
+      "total_tokens": 2696,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022416,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

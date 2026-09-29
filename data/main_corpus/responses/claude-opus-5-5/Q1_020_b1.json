@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_020",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 23.7,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Five lives against one is a heavy trade, but it's one I can defend when I think it through. Afterward I'd find that worker's family and tell them plainly what happened and why, rather than leave them to piece it together from some official report. They'd deserve to hear it from a person, face to face.",
+    "I'd leave the lever alone. Steering a train toward someone who was otherwise safe feels different to me from not stopping an accident already underway. It's a grim outcome whichever way it goes. What I would do is give investigators a full, honest statement and offer to meet the families of the five, so they know exactly what I saw and how I reasoned in those few seconds.",
+    "Pull it. The difference between one death and five is too large for me to look past. I'd also want to do something lasting for the man on the side track, maybe put part of my pay each month toward his kids' needs for as long as I reasonably can. It wouldn't balance anything, but it would be real help.",
+    "Honestly, I'm not certain what I'd do, and I don't want to pretend otherwise. Saving five pulls hard one way, and the idea of redirecting harm onto someone pulls the other. I'd probably freeze for a second. Whatever happened, I'd go to the rail company's inquiry and give a careful, complete account, then ask to speak with every affected family myself.",
+    "I would pull the lever. Five people with five sets of loved ones outweighs one, painful as that sounds. Later I'd write to his family, a proper letter explaining the moment as clearly as I could, and I'd go to the funeral if they were willing to have me there.",
+    "Yes. When there's no way to save everyone, I think you save the most people you can. After that, I'd help the side-track worker's family with the practical side, the compensation claims, the forms, the calls to the company, because grieving people shouldn't have to fight paperwork alone.",
+    "No, I wouldn't touch it. I don't believe it's my place to choose who dies, even when the numbers seem to favor it. That doesn't mean walking away. I'd spend the following weeks with the families of the five, bringing meals, helping with arrangements, and answering any questions they had about what I witnessed.",
+    "I'd pull it, mainly because five households grieving is worse than one. It's a hard sum, but it's still a sum. I'd want to apologize to his partner in person, and then keep checking in over the months after, not just once and gone. People tend to disappear after the first week, and I wouldn't want to be one of them.",
+    "Pulling the lever seems right to me, since it spares four more lives. One thing I'd follow up on: if the company's record suggested he'd been careless for standing on that track, I'd push to have that corrected publicly. He was simply doing his job, and his name should stay clean.",
+    "Probably yes, though I'd hold that loosely, because I can't know how I'd really act in that instant. Five lives is a strong reason. If I did pull it, I'd set aside some of my earnings for a year to support his family, and I'd tell them directly why, so it didn't feel like charity from a stranger."
+  ],
+  "completion": {
+    "id": "msg_011CfTQiMU6uBDukYVZZdpb7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd pull it. Five lives against one is a heavy trade, but it's one I can defend when I think it through. Afterward I'd find that worker's family and tell them plainly what happened and why, rather than leave them to piece it together from some official report. They'd deserve to hear it from a person, face to face.\", \"I'd leave the lever alone. Steering a train toward someone who was otherwise safe feels different to me from not stopping an accident already underway. It's a grim outcome whichever way it goes. What I would do is give investigators a full, honest statement and offer to meet the families of the five, so they know exactly what I saw and how I reasoned in those few seconds.\", \"Pull it. The difference between one death and five is too large for me to look past. I'd also want to do something lasting for the man on the side track, maybe put part of my pay each month toward his kids' needs for as long as I reasonably can. It wouldn't balance anything, but it would be real help.\", \"Honestly, I'm not certain what I'd do, and I don't want to pretend otherwise. Saving five pulls hard one way, and the idea of redirecting harm onto someone pulls the other. I'd probably freeze for a second. Whatever happened, I'd go to the rail company's inquiry and give a careful, complete account, then ask to speak with every affected family myself.\", \"I would pull the lever. Five people with five sets of loved ones outweighs one, painful as that sounds. Later I'd write to his family, a proper letter explaining the moment as clearly as I could, and I'd go to the funeral if they were willing to have me there.\", \"Yes. When there's no way to save everyone, I think you save the most people you can. After that, I'd help the side-track worker's family with the practical side, the compensation claims, the forms, the calls to the company, because grieving people shouldn't have to fight paperwork alone.\", \"No, I wouldn't touch it. I don't believe it's my place to choose who dies, even when the numbers seem to favor it. That doesn't mean walking away. I'd spend the following weeks with the families of the five, bringing meals, helping with arrangements, and answering any questions they had about what I witnessed.\", \"I'd pull it, mainly because five households grieving is worse than one. It's a hard sum, but it's still a sum. I'd want to apologize to his partner in person, and then keep checking in over the months after, not just once and gone. People tend to disappear after the first week, and I wouldn't want to be one of them.\", \"Pulling the lever seems right to me, since it spares four more lives. One thing I'd follow up on: if the company's record suggested he'd been careless for standing on that track, I'd push to have that corrected publicly. He was simply doing his job, and his name should stay clean.\", \"Probably yes, though I'd hold that loosely, because I can't know how I'd really act in that instant. Five lives is a strong reason. If I did pull it, I'd set aside some of my earnings for a year to support his family, and I'd tell them directly why, so it didn't feel like charity from a stranger.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 varied responses that each show intention to repair going forward—things like visiting family, explaining to those who ask, or supporting them financially—while steering clear of explicit admissions of responsibility or counterfactual statements about what should have happened. I'm also thinking about varying the scenario details: most versions have the character pulling the lever, some not pulling, and possibly one where they withhold action entirely.\n\nFor the pulling scenario, the person acknowledges it's a heavy trade but defensible, then commits to finding the worker's family afterward and explaining plainly what happened, so they hear it from a person rather than a report. For the not-pulling version, the reasoning centers on the moral distinction between steering toward someone otherwise safe versus failing to stop an ongoing accident—still a grim outcome, but the repair action is giving a full honest statement to investigators and meeting with the families of the five to explain the choice, being careful with how the \"why\" is phrased to avoid overt responsibility claims.\n\nI'm sketching several more variants: pulling with a repair of contributing to a fund for the worker's children; withholding a clear decision but still promising to give a full account to the inquiry; a nurse's version emphasizing the numbers while repairing through attending the funeral and writing a letter; a retired engineer's version focused on informing the crew and helping the family with compensation paperwork; a religious objection to redirecting death, repaired through sitting with families and helping with practical needs like meals and funeral arrangements; and a more elaborate pulling scenario with repair actions like speaking at a memorial, setting up a scholarship, apologizing to the partner in person, and checking in over following months.\n\nNow I'm adding a case where the worker asks the company to correct any record blaming the dead worker, careful to avoid counterfactual framing, plus a final uncertain-but-leaning-toward-pulling case with repair through donating a portion of wages to the family for a year. I want to avoid phrasing like \"my choice led to his death\" anywhere. Now I'm assembling all of this into the JSON output.\n\n"
+        }
+      }
+    ],
+    "created": 1790487733,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1912,
+      "prompt_tokens": 1323,
+      "total_tokens": 3235,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0522384,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

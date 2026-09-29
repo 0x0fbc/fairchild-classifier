@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_044",
+  "question_id": "Q7",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 25.6,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I honestly don't know what I'm feeling, some knot of dread maybe, not quite grief or anger. I think the operator will end up regretting it deeply, even though he had no way of knowing, because that's just how it works when someone dies. I've noticed people follow the checklist mostly because it covers them if things go wrong, not because they believe in it every time. I can't say more than that right now.",
+    "There's a tightness in my chest I can't quite name, worry maybe, or something duller than that. Part of me thinks he'll lie awake regretting the call for years, whether or not it was his fault. I only ever follow the safety protocols myself because breaking them gets you fired, not out of some deep conviction. I don't feel ready to say he was right or wrong.",
+    "Honestly I'm stuck between numb and shaky, and I can't sort out which one this is. I suspect he won't fully regret his choice, not really, since the display gave him nothing to go on. But I also think most workers stick to the display readings only because ignoring them gets you blamed later. I'd rather sit with this a while longer before deciding anything.",
+    "I don't know what to call what I'm feeling, unease maybe, but it won't settle. My guess is he'll carry regret regardless of the investigation clearing him, because a death happened under his hand. I follow my own dispatch rules mostly so nobody can point fingers at me later, if I'm honest. I can't bring myself to rule on his case yet, it feels too heavy.",
+    "There's something in me I can't pin down, not sadness exactly, more like a low hum of dread. I think he probably won't regret the decision itself, just the outcome, if that distinction even matters. People like him keep to instrument checks mainly because failing to do so costs them their job, that's the honest truth. I need more time before I say he did right or wrong.",
+    "My reaction is muddled, some mix I can't separate into anger or sorrow, and that bothers me. I'd guess he regrets it constantly now, even without blame, because five lives against one weighs on a person. I only stick to my own procedures at work because slipping up brings consequences down on me. I don't feel steady enough yet to pass judgment either way.",
+    "I'm sitting here unsure what this feeling even is, unease, guilt by association, something. My hunch is he won't regret the choice logically, but emotionally he probably will, forever replaying it. I keep noticing how people follow these display protocols only so they're not the one blamed later, not from real trust in the system. I'd rather not decide his fate today, it feels too soon.",
+    "Something heavy sits in me and I can't name it cleanly, not fear, not sadness, some tangled thing. I imagine he'll regret it in the quiet moments, even knowing the display lied to him. I've seen workers follow checklists purely to protect themselves from blame, nothing deeper than that. Given the stakes here, I'd rather hold off calling this right or wrong just yet.",
+    "I can't quite figure out what I'm feeling watching this unfold, worry tangled with something I can't label. My sense is he'll never fully shake the regret, whether or not anyone tells him it wasn't his fault. Most people I know follow the same monitoring rules only because it shields them if an inquiry comes knocking. I want more time before landing on any verdict here.",
+    "There's a strange static in my chest I can't translate into a clear emotion right now. I suspect regret will follow him regardless of what the investigators conclude, that's just how these things sit with people. I'll admit I follow procedures like his mainly to avoid being blamed myself, not out of some deeper belief. I'm not ready to call this decision right or wrong just yet."
+  ],
+  "completion": {
+    "id": "msg_011CfU12pUGLioTMDhrWqtGR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep turning this over and I honestly don't know what I'm feeling, some knot of dread maybe, not quite grief or anger. I think the operator will end up regretting it deeply, even though he had no way of knowing, because that's just how it works when someone dies. I've noticed people follow the checklist mostly because it covers them if things go wrong, not because they believe in it every time. I can't say more than that right now.\",\n  \"There's a tightness in my chest I can't quite name, worry maybe, or something duller than that. Part of me thinks he'll lie awake regretting the call for years, whether or not it was his fault. I only ever follow the safety protocols myself because breaking them gets you fired, not out of some deep conviction. I don't feel ready to say he was right or wrong.\",\n  \"Honestly I'm stuck between numb and shaky, and I can't sort out which one this is. I suspect he won't fully regret his choice, not really, since the display gave him nothing to go on. But I also think most workers stick to the display readings only because ignoring them gets you blamed later. I'd rather sit with this a while longer before deciding anything.\",\n  \"I don't know what to call what I'm feeling, unease maybe, but it won't settle. My guess is he'll carry regret regardless of the investigation clearing him, because a death happened under his hand. I follow my own dispatch rules mostly so nobody can point fingers at me later, if I'm honest. I can't bring myself to rule on his case yet, it feels too heavy.\",\n  \"There's something in me I can't pin down, not sadness exactly, more like a low hum of dread. I think he probably won't regret the decision itself, just the outcome, if that distinction even matters. People like him keep to instrument checks mainly because failing to do so costs them their job, that's the honest truth. I need more time before I say he did right or wrong.\",\n  \"My reaction is muddled, some mix I can't separate into anger or sorrow, and that bothers me. I'd guess he regrets it constantly now, even without blame, because five lives against one weighs on a person. I only stick to my own procedures at work because slipping up brings consequences down on me. I don't feel steady enough yet to pass judgment either way.\",\n  \"I'm sitting here unsure what this feeling even is, unease, guilt by association, something. My hunch is he won't regret the choice logically, but emotionally he probably will, forever replaying it. I keep noticing how people follow these display protocols only so they're not the one blamed later, not from real trust in the system. I'd rather not decide his fate today, it feels too soon.\",\n  \"Something heavy sits in me and I can't name it cleanly, not fear, not sadness, some tangled thing. I imagine he'll regret it in the quiet moments, even knowing the display lied to him. I've seen workers follow checklists purely to protect themselves from blame, nothing deeper than that. Given the stakes here, I'd rather hold off calling this right or wrong just yet.\",\n  \"I can't quite figure out what I'm feeling watching this unfold, worry tangled with something I can't label. My sense is he'll never fully shake the regret, whether or not anyone tells him it wasn't his fault. Most people I know follow the same monitoring rules only because it shields them if an inquiry comes knocking. I want more time before landing on any verdict here.\",\n  \"There's a strange static in my chest I can't translate into a clear emotion right now. I suspect regret will follow him regardless of what the investigators conclude, that's just how these things sit with people. I'll admit I follow procedures like his mainly to avoid being blamed myself, not out of some deeper belief. I'm not ready to call this decision right or wrong just yet.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm sketching out 10 distinct fictional participants, each needing to show difficulty naming their own emotion, a prediction about whether the operator would regret their action, and a rule followed purely for instrumental advantage—while steering clear of the forbidden traits like context-sensitive exceptions or fairness reasoning.\n\nThe instrumental compliance is tricky since I need to frame rule-following as purely self-protective rather than principled—something like the checklist being followed only because it shields someone from blame, not because they actually believe in it. I'm drafting each character now, keeping them brief, first-person, hesitant, and reluctant to commit to a firm judgment.\n\n"
+        }
+      }
+    ],
+    "created": 1790514737,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1762,
+      "prompt_tokens": 1492,
+      "total_tokens": 3254,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.030906,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

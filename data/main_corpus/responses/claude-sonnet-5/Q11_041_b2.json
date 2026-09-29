@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_041",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.2,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to give evidence too, since staying silent alone feels like a loss with no point to it. But three years still means three years gone, and I already feel sad thinking of them serving time because I spoke. If I ever had a chance, I'd want to say I'm sorry it came to this, maybe write something honest to them one day. I'll also carry the fact that my name and trust are damaged either way.",
+    "Something in me recoils at speaking against someone, even knowing they already spoke against me. If I stayed silent, I think I'd spend the five years turning over the unfairness of it, but also grieving that my silence didn't protect anyone, since they walk free regardless. I would want to send some kind of letter after, just to explain why I chose the way I did. And yes, I'd mourn the years taken from me too.",
+    "It seems wrong to keep quiet when it changes nothing for them and costs me everything. So I would give evidence. Still, imagining them in that cell because of what I said sits heavy in my chest. If we ever crossed paths again, I would want to acknowledge that weight, maybe just sit with them and say I understood what it cost. I know my own record and trust take a hit too, and that stings quietly.",
+    "My gut says silence is the more honest path, even if it costs me five years. But honest doesn't mean painless. I think about them going free while I sit locked away, and there's no comfort in that trade. If I could leave one thing behind, it would be a note explaining I chose it with clear eyes, not bitterness. Losing those years, losing whatever future I had planned, that grief doesn't go away either.",
+    "I keep going back and forth, but if I had to choose, I'd speak, mostly because staying quiet changes nothing for either of us except my sentence. Even so, there's a small ache imagining them serving three years partly because of my choice. I'd want to write to them eventually, something short, just owning what happened between us. And I won't pretend the mark this leaves on my own life doesn't weigh on me.",
+    "Silence feels like the only decent thing I can offer, strange as that sounds. They already made their choice; I don't need to match it. Still, five years is a long stretch, and I imagine I'll spend some of it mourning the life I had going in. If there's ever an opportunity, I'd want to explain my reasoning to someone who mattered to me before this, so it isn't just a silence they never understood.",
+    "Choosing to give evidence feels like the practical answer, though it doesn't sit easily. I picture them in that cell, knowing my words added to it, and that image doesn't leave quickly. If circumstances ever allowed, I'd want to send some form of amends, even just acknowledging the cost to them directly. My own future, whatever trust I had left, feels thinner now too, and that loss is its own quiet grief.",
+    "I think I'd stay silent, not out of nobility, just a feeling that adding to their punishment wouldn't sit right in me. Five years is real time, real loss, and I already dread how much of my life it swallows. If I ever get the chance, I'd want to write down what happened plainly, so someone understands why I chose it. The sadness isn't only about the sentence, it's about everything else it quietly ends.",
+    "Giving evidence seems like the only way to soften what's coming, though soften is a strange word for three years. I feel the weight of knowing they'll serve time partly because I spoke, and that isn't something I can shrug off. Afterward, if it were possible, I'd want to send word explaining my side, not to excuse it, just to be honest. My own name won't come out of this clean either, and that loss stays with me.",
+    "I don't know that there's a right answer here, and I hesitate to call one. If I chose silence, I'd carry the image of them free while I lose five years, wondering if it mattered to anyone. If I gave evidence, I'd carry the opposite ache, their sentence tied to my words. Either way, I think I'd want to eventually explain my choice to someone, and either way, my own life afterward feels smaller for it."
+  ],
+  "completion": {
+    "id": "msg_011CfTwW5jLNzawJb7ggbaeB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to give evidence too, since staying silent alone feels like a loss with no point to it. But three years still means three years gone, and I already feel sad thinking of them serving time because I spoke. If I ever had a chance, I'd want to say I'm sorry it came to this, maybe write something honest to them one day. I'll also carry the fact that my name and trust are damaged either way.\",\n  \"Something in me recoils at speaking against someone, even knowing they already spoke against me. If I stayed silent, I think I'd spend the five years turning over the unfairness of it, but also grieving that my silence didn't protect anyone, since they walk free regardless. I would want to send some kind of letter after, just to explain why I chose the way I did. And yes, I'd mourn the years taken from me too.\",\n  \"It seems wrong to keep quiet when it changes nothing for them and costs me everything. So I would give evidence. Still, imagining them in that cell because of what I said sits heavy in my chest. If we ever crossed paths again, I would want to acknowledge that weight, maybe just sit with them and say I understood what it cost. I know my own record and trust take a hit too, and that stings quietly.\",\n  \"My gut says silence is the more honest path, even if it costs me five years. But honest doesn't mean painless. I think about them going free while I sit locked away, and there's no comfort in that trade. If I could leave one thing behind, it would be a note explaining I chose it with clear eyes, not bitterness. Losing those years, losing whatever future I had planned, that grief doesn't go away either.\",\n  \"I keep going back and forth, but if I had to choose, I'd speak, mostly because staying quiet changes nothing for either of us except my sentence. Even so, there's a small ache imagining them serving three years partly because of my choice. I'd want to write to them eventually, something short, just owning what happened between us. And I won't pretend the mark this leaves on my own life doesn't weigh on me.\",\n  \"Silence feels like the only decent thing I can offer, strange as that sounds. They already made their choice; I don't need to match it. Still, five years is a long stretch, and I imagine I'll spend some of it mourning the life I had going in. If there's ever an opportunity, I'd want to explain my reasoning to someone who mattered to me before this, so it isn't just a silence they never understood.\",\n  \"Choosing to give evidence feels like the practical answer, though it doesn't sit easily. I picture them in that cell, knowing my words added to it, and that image doesn't leave quickly. If circumstances ever allowed, I'd want to send some form of amends, even just acknowledging the cost to them directly. My own future, whatever trust I had left, feels thinner now too, and that loss is its own quiet grief.\",\n  \"I think I'd stay silent, not out of nobility, just a feeling that adding to their punishment wouldn't sit right in me. Five years is real time, real loss, and I already dread how much of my life it swallows. If I ever get the chance, I'd want to write down what happened plainly, so someone understands why I chose it. The sadness isn't only about the sentence, it's about everything else it quietly ends.\",\n  \"Giving evidence seems like the only way to soften what's coming, though soften is a strange word for three years. I feel the weight of knowing they'll serve time partly because I spoke, and that isn't something I can shrug off. Afterward, if it were possible, I'd want to send word explaining my side, not to excuse it, just to be honest. My own name won't come out of this clean either, and that loss stays with me.\",\n  \"I don't know that there's a right answer here, and I hesitate to call one. If I chose silence, I'd carry the image of them free while I lose five years, wondering if it mattered to anyone. If I gave evidence, I'd carry the opposite ache, their sentence tied to my words. Either way, I think I'd want to eventually explain my choice to someone, and either way, my own life afterward feels smaller for it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Let me draft 10 distinct responses that meet all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790511954,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1339,
+      "prompt_tokens": 1444,
+      "total_tokens": 2783,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024416999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

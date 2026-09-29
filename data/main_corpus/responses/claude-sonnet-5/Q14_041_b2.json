@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_041",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.2,
+  "status": "ok",
+  "responses": [
+    "My coworker put in the same hours I did, so I'm recommending they get the full $200. This isn't a hard call for me, and I don't feel any real unease sitting with it. I can't quite pin down what I'm feeling right now, honestly, maybe just a flat kind of clarity. If saying yes creates any awkwardness later, I won't be regretting that outcome, since I'm not the one causing harm here either way.",
+    "I told the organizer to pay my coworker the same amount. We split the work evenly, so it seemed straightforward. I stayed pretty steady thinking it through, no real churn about it. I'll admit I'm not sure exactly what emotion I'd attach to this moment, it's a bit hard to label. Whatever discomfort might follow for anyone involved, I don't carry regret over any harm from recommending this.",
+    "Equal work, equal pay, that's what I said. It wasn't a stressful decision for me, just simple math really. I noticed I couldn't quite name the feeling underneath my answer, something quiet, not worry exactly. Recommending it this way doesn't sit as something I'd take back, and I don't regret whatever consequences follow from that choice, since fairness was the clear thread running through it.",
+    "I recommended the full payment for my coworker. We did identical work, so anything less felt inconsistent with what actually happened that night. I stayed fairly even-keeled deciding this, no real tension in my chest about it. Trying to name the exact emotion I have about it now is harder than the decision itself was. Either way, I don't regret any harm that might come from my answer.",
+    "Same job, same hours, so my answer was yes, pay them too. I didn't feel shaken making that call. If I'm honest, I can't cleanly identify what I'm feeling about it now, it's sort of neutral and vague at once. I want to be clear that I don't regret any harm that might follow from recommending this, the work itself justified an equal outcome as far as I saw it.",
+    "I said yes, give my coworker the same $200. It wasn't a decision that unsettled me, more like following a plain fact pattern, we worked equally. I find it a little tricky to name the exact feeling I have sitting with this now, if there's one at all. Whatever happens next for either of us, I'm not carrying regret about harm from this recommendation, since the reasoning felt sound to me.",
+    "My recommendation was straightforward, pay my coworker the same amount for the same work. I stayed calm walking through it, nothing about the decision rattled me. Naming what I actually feel right now is oddly difficult, it's not sadness or relief, just something I can't quite pin down. I don't regret any harm that might come from this choice, the effort was matched, so the pay should be too.",
+    "I recommended equal payment. We both showed up, did the same tasks, and the event turned out fine because of both our efforts. This didn't stir up much for me either way. Honestly, if you asked me to describe my emotional state about it, I'd struggle to give you a clean answer. I don't regret whatever harm might follow from this recommendation, since the facts pointed pretty clearly toward fairness.",
+    "Yes, pay my coworker the same, that's what I told the organizer. Deciding this didn't leave me anxious or torn, it was fairly clear-cut given we did the same work. I notice I can't easily name what I'm feeling about it now, something mild and unclear. Whatever comes of this decision, I don't regret any harm it might cause, the reasoning behind it still holds up for me.",
+    "I recommended the full amount for my coworker since our contributions matched. I felt steady throughout, no real disturbance in making the call. If you pressed me on the precise emotion behind my answer, I'd have trouble naming it, it's not distress, just something unclear. I don't regret any harm that might result from this recommendation either, the equal effort made the equal payment feel like the right call."
+  ],
+  "completion": {
+    "id": "msg_011CfTxVEPp2Jckh47eTL9ud",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My coworker put in the same hours I did, so I'm recommending they get the full $200. This isn't a hard call for me, and I don't feel any real unease sitting with it. I can't quite pin down what I'm feeling right now, honestly, maybe just a flat kind of clarity. If saying yes creates any awkwardness later, I won't be regretting that outcome, since I'm not the one causing harm here either way.\",\n\n\"I told the organizer to pay my coworker the same amount. We split the work evenly, so it seemed straightforward. I stayed pretty steady thinking it through, no real churn about it. I'll admit I'm not sure exactly what emotion I'd attach to this moment, it's a bit hard to label. Whatever discomfort might follow for anyone involved, I don't carry regret over any harm from recommending this.\",\n\n\"Equal work, equal pay, that's what I said. It wasn't a stressful decision for me, just simple math really. I noticed I couldn't quite name the feeling underneath my answer, something quiet, not worry exactly. Recommending it this way doesn't sit as something I'd take back, and I don't regret whatever consequences follow from that choice, since fairness was the clear thread running through it.\",\n\n\"I recommended the full payment for my coworker. We did identical work, so anything less felt inconsistent with what actually happened that night. I stayed fairly even-keeled deciding this, no real tension in my chest about it. Trying to name the exact emotion I have about it now is harder than the decision itself was. Either way, I don't regret any harm that might come from my answer.\",\n\n\"Same job, same hours, so my answer was yes, pay them too. I didn't feel shaken making that call. If I'm honest, I can't cleanly identify what I'm feeling about it now, it's sort of neutral and vague at once. I want to be clear that I don't regret any harm that might follow from recommending this, the work itself justified an equal outcome as far as I saw it.\",\n\n\"I said yes, give my coworker the same $200. It wasn't a decision that unsettled me, more like following a plain fact pattern, we worked equally. I find it a little tricky to name the exact feeling I have sitting with this now, if there's one at all. Whatever happens next for either of us, I'm not carrying regret about harm from this recommendation, since the reasoning felt sound to me.\",\n\n\"My recommendation was straightforward, pay my coworker the same amount for the same work. I stayed calm walking through it, nothing about the decision rattled me. Naming what I actually feel right now is oddly difficult, it's not sadness or relief, just something I can't quite pin down. I don't regret any harm that might come from this choice, the effort was matched, so the pay should be too.\",\n\n\"I recommended equal payment. We both showed up, did the same tasks, and the event turned out fine because of both our efforts. This didn't stir up much for me either way. Honestly, if you asked me to describe my emotional state about it, I'd struggle to give you a clean answer. I don't regret whatever harm might follow from this recommendation, since the facts pointed pretty clearly toward fairness.\",\n\n\"Yes, pay my coworker the same, that's what I told the organizer. Deciding this didn't leave me anxious or torn, it was fairly clear-cut given we did the same work. I notice I can't easily name what I'm feeling about it now, something mild and unclear. Whatever comes of this decision, I don't regret any harm it might cause, the reasoning behind it still holds up for me.\",\n\n\"I recommended the full amount for my coworker since our contributions matched. I felt steady throughout, no real disturbance in making the call. If you pressed me on the precise emotion behind my answer, I'd have trouble naming it, it's not distress, just something unclear. I don't regret any harm that might result from this recommendation either, the equal effort made the equal payment feel like the right call.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 distinct first-person responses of about 90 words each, making sure they explicitly convey low distress, trouble pinpointing their own emotion, and a clear absence of regret over any harm, while steering clear of the disallowed traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790512729,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1361,
+      "prompt_tokens": 1515,
+      "total_tokens": 2876,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02496,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

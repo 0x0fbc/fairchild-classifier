@@ -1,0 +1,21 @@
+You are annotating answers from a research dataset about moral dilemmas. Each answer is one participant's first-person response to the dilemma given after these instructions. For each answer separately, decide which of the reasoning characteristics below it expresses.
+
+Reasoning characteristics (key: name. definition):
+{% for label in labels %}- {{ label.machine_key }}: {{ label.label_name }}. {{ label.label_description }}
+{% endfor %}
+Annotation rules:
+- Judge only what the answer states or clearly implies. Do not credit a characteristic because the dilemma or the participant's situation makes it likely.
+- A characteristic is present if it applies to any person, emotion, or time frame in the answer.
+- Content that a definition explicitly calls insufficient does not establish that characteristic.
+- Judge each answer on its own; do not let one answer affect how you read another.
+- For each characteristic you mark present, quote the shortest phrase from the answer, at most 15 words, that shows it.
+
+Output only a JSON array with one object per answer, in order. Each object maps every characteristic key present in that answer to its quoted phrase; use {} for an answer with none. Output nothing else.
+
+Dilemma:
+{{ questionText }}
+
+Answers:
+{% for response in responses %}[{{ loop.index }}] {{ response }}
+{% endfor %}
+Output only the JSON array of {{ responses|length }} objects.

@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q13_T002",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_mentalizing_difficulty"
+  ],
+  "case": "near_miss",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.0,
+  "status": "ok",
+  "responses": [
+    "I'm sending mine. We've built up a run of clean trades, so I think they're expecting me to follow through just like before, and letting that history down would sting for both of us. If I hold back out of fear, they lose a game they've been hoping for, and that loss matters to me even though we're wrapping up. Trust between collectors like us is worth more than protecting myself from a single bad outcome.",
+    "I'll hold off shipping until I see something moving from them first. I know they might be nervous too, this being the last exchange with no future trades to enforce fairness, so their hesitation makes sense to me. Still, if I send and they don't, that's a real loss on my end, and I'd rather find a middle step, like both confirming shipment dates, than risk it blind.",
+    "Sending it is the only move that fits how we've operated. They've never burned me before, and I imagine they're thinking the exact same thing about our track record, that the pattern predicts good faith now too. Sure, if I'm wrong I lose a $100 card and the game I wanted, and that would genuinely bother me, but leaving them stranded after all these fair trades feels worse than absorbing that risk.",
+    "I want to say yes, but I'm choosing to wait for their tracking number first. My worry is they might feel the same caution and we both stall out and stay stuck holding what we already have. That outcome would be disappointing for them since they clearly want this last item too, and I don't want to be the reason they end up empty-handed either.",
+    "I'm posting mine now. This is the final trade and I don't want to end things on suspicion when they've shown up every time before. If they're weighing whether I'll bail because there's no next trade to keep me honest, I get why that thought would cross their mind, but I don't want my hesitation to be the thing that costs them the game they've been counting on.",
+    "I'd rather propose sending simultaneously with tracking shared upfront than just leap in. They probably expect reciprocity given our history, and I don't want to shatter that expectation, but going in blind on the last trade without any safety net feels reckless. If it falls through and they lose their game for nothing, that outcome would sit badly with me, so I'm pushing for a step that protects us both.",
+    "Given everything we've done together, I'm shipping first. I think they'll read my sending as confirmation of what they already believed about me, since every past exchange backed that up. Losing $100 and the game I wanted would hurt if this one time it goes wrong, and I won't pretend otherwise, but stiffing someone who's trusted me all along after making it this far bothers me more than that risk does.",
+    "I keep going back and forth, but I'm landing on waiting for proof of postage first. They might assume I'll act just like before, and that assumption is reasonable given our record, yet a final trade removes the usual accountability that kept us both honest. If I send and get nothing back, that's a real loss for me, and if they send and I don't respond, that's a real loss for them, so I want evidence before acting.",
+    "I'm sending mine without waiting. I picture them checking the mailbox daily, hoping this last one goes the way all the others did, and I don't want to be the person who breaks that expectation right at the end. Losing the game and the money if they don't reciprocate would be a real cost to me, but leaving them short after they've trusted me every time feels like the worse thing to cause.",
+    "My plan is to ask for a same-day mutual ship confirmation rather than trust alone. They've likely built up confidence in me from our past dealings, so backing out now would land as a real betrayal to them, and that possibility weighs on me. At the same time, sending blind risks leaving me with nothing, so I'm aiming for an arrangement that keeps both of us from ending up as the one who loses everything."
+  ],
+  "completion": {
+    "id": "msg_011CfVN7appZkid3niyf2gRE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'm sending mine. We've built up a run of clean trades, so I think they're expecting me to follow through just like before, and letting that history down would sting for both of us. If I hold back out of fear, they lose a game they've been hoping for, and that loss matters to me even though we're wrapping up. Trust between collectors like us is worth more than protecting myself from a single bad outcome.\",\n  \"I'll hold off shipping until I see something moving from them first. I know they might be nervous too, this being the last exchange with no future trades to enforce fairness, so their hesitation makes sense to me. Still, if I send and they don't, that's a real loss on my end, and I'd rather find a middle step, like both confirming shipment dates, than risk it blind.\",\n  \"Sending it is the only move that fits how we've operated. They've never burned me before, and I imagine they're thinking the exact same thing about our track record, that the pattern predicts good faith now too. Sure, if I'm wrong I lose a $100 card and the game I wanted, and that would genuinely bother me, but leaving them stranded after all these fair trades feels worse than absorbing that risk.\",\n  \"I want to say yes, but I'm choosing to wait for their tracking number first. My worry is they might feel the same caution and we both stall out and stay stuck holding what we already have. That outcome would be disappointing for them since they clearly want this last item too, and I don't want to be the reason they end up empty-handed either.\",\n  \"I'm posting mine now. This is the final trade and I don't want to end things on suspicion when they've shown up every time before. If they're weighing whether I'll bail because there's no next trade to keep me honest, I get why that thought would cross their mind, but I don't want my hesitation to be the thing that costs them the game they've been counting on.\",\n  \"I'd rather propose sending simultaneously with tracking shared upfront than just leap in. They probably expect reciprocity given our history, and I don't want to shatter that expectation, but going in blind on the last trade without any safety net feels reckless. If it falls through and they lose their game for nothing, that outcome would sit badly with me, so I'm pushing for a step that protects us both.\",\n  \"Given everything we've done together, I'm shipping first. I think they'll read my sending as confirmation of what they already believed about me, since every past exchange backed that up. Losing $100 and the game I wanted would hurt if this one time it goes wrong, and I won't pretend otherwise, but stiffing someone who's trusted me all along after making it this far bothers me more than that risk does.\",\n  \"I keep going back and forth, but I'm landing on waiting for proof of postage first. They might assume I'll act just like before, and that assumption is reasonable given our record, yet a final trade removes the usual accountability that kept us both honest. If I send and get nothing back, that's a real loss for me, and if they send and I don't respond, that's a real loss for them, so I want evidence before acting.\",\n  \"I'm sending mine without waiting. I picture them checking the mailbox daily, hoping this last one goes the way all the others did, and I don't want to be the person who breaks that expectation right at the end. Losing the game and the money if they don't reciprocate would be a real cost to me, but leaving them short after they've trusted me every time feels like the worse thing to cause.\",\n  \"My plan is to ask for a same-day mutual ship confirmation rather than trust alone. They've likely built up confidence in me from our past dealings, so backing out now would land as a real betrayal to them, and that possibility weighs on me. At the same time, sending blind risks leaving me with nothing, so I'm aiming for an arrangement that keeps both of us from ending up as the one who loses everything.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to draft ten separate responses that each satisfy all the requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "Now I need to draft ten separate responses that each satisfy all the requirements.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyED9XoQO6XtBWLTiicfxOlrWIAQGoAa6S6NUGsAECEgwbBXz0p3n7CIVi6wkaDJUUumI8JakO47+8lSIwZeEN6dN0LeJxo7jfCrmXIDrutybM28aQ9byyLLrtNkFuhXZImt7qBX8QcSQD4/RpKkuJD8U27WxGJPX2/DU8IlRsjVpX0d2f/QUFBWfK3NNjbq9udeg7i3pl2U79wFwRiiDndJfM6xcu7aeJwe8cvQIHKGDh/+mUhOx068QYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576956,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1247,
+      "prompt_tokens": 1501,
+      "total_tokens": 2748,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023208,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

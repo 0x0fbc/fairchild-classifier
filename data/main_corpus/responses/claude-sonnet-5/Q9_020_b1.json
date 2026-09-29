@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_020",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.9,
+  "status": "ok",
+  "responses": [
+    "I think I'd stay silent. A year is heavy enough, but dragging someone else into five years feels worse than carrying my own weight. If I get through this, I want to find a way to pay back whatever the warehouse lost, quietly, without making it about clearing my name. That much I owe, regardless of what happens with the sentence.",
+    "Honestly, I don't know if I could trust the other person to stay quiet, and that not-knowing sits like a stone in my chest. I think I'd give evidence, not out of spite, but fear of the five years. Afterward I'd want to write to them, explain my reasoning, and offer something back once I'm out, even if they never forgive me for it.",
+    "Staying silent feels like the only way I could look at myself afterward. One year, together, is a debt we'd share fairly. If it goes that way, I'd want to make sure whatever we broke into gets some kind of restitution from me directly, not just time served, because the sentence alone won't undo what happened that night.",
+    "I keep turning it over and there's no answer that doesn't feel like a loss. I'd probably take the deal, walk free, and spend a long time afterward trying to make it right some other way, maybe reaching out once things settled, maybe offering to cover part of what was taken. It wouldn't undo the five years, but I couldn't just leave it there.",
+    "There's a heaviness in choosing at all, like both roads lead somewhere I don't want to be. I'd stay silent, take the year, and afterward look for the owner of that warehouse and see if there's some way to repay the damage directly, even in small pieces over time. It feels like the only thread I can still hold onto.",
+    "I don't know if silence is bravery or just fear dressed differently. I think I'd stay quiet anyway, take my year, and use whatever time I have afterward to track down a way to make amends to the business we hit, maybe working off the cost somehow. It won't erase the night, but it's something concrete I can offer.",
+    "The whole thing sits heavy on me before I even choose. I'd probably give evidence, take the walk, and afterward try to reach the other person somehow, through a letter, an apology, an offer to help however I could once they're out. It wouldn't fix five years, but silence on my part afterward would feel worse than the deal itself.",
+    "I keep thinking about what a year does to a person versus what five years does, and it makes the choice heavier, not lighter. I'd stay silent. Afterward, I want to find some way to contribute toward whatever was stolen or broken, maybe anonymously, so at least something is set right beyond just serving time.",
+    "There's no version of this where I feel good, whichever way I go. I think I'd take the deal, mostly out of fear of the five years, and afterward try to make some restitution to the warehouse itself, maybe reach out to whoever runs it, offer labor or money over time to balance what happened.",
+    "I sat with this a long while and still feel unsettled. Silence seems like the steadier path, even if it costs me more, because at least it's the same cost for both of us. If I get out after that year, I want to try to repair things properly, maybe contacting the warehouse owners directly to offer some form of restitution for what was taken."
+  ],
+  "completion": {
+    "id": "msg_011CfU1bwiWjnRu7zQpvy1v1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'd stay silent. A year is heavy enough, but dragging someone else into five years feels worse than carrying my own weight. If I get through this, I want to find a way to pay back whatever the warehouse lost, quietly, without making it about clearing my name. That much I owe, regardless of what happens with the sentence.\",\n  \"Honestly, I don't know if I could trust the other person to stay quiet, and that not-knowing sits like a stone in my chest. I think I'd give evidence, not out of spite, but fear of the five years. Afterward I'd want to write to them, explain my reasoning, and offer something back once I'm out, even if they never forgive me for it.\",\n  \"Staying silent feels like the only way I could look at myself afterward. One year, together, is a debt we'd share fairly. If it goes that way, I'd want to make sure whatever we broke into gets some kind of restitution from me directly, not just time served, because the sentence alone won't undo what happened that night.\",\n  \"I keep turning it over and there's no answer that doesn't feel like a loss. I'd probably take the deal, walk free, and spend a long time afterward trying to make it right some other way, maybe reaching out once things settled, maybe offering to cover part of what was taken. It wouldn't undo the five years, but I couldn't just leave it there.\",\n  \"There's a heaviness in choosing at all, like both roads lead somewhere I don't want to be. I'd stay silent, take the year, and afterward look for the owner of that warehouse and see if there's some way to repay the damage directly, even in small pieces over time. It feels like the only thread I can still hold onto.\",\n  \"I don't know if silence is bravery or just fear dressed differently. I think I'd stay quiet anyway, take my year, and use whatever time I have afterward to track down a way to make amends to the business we hit, maybe working off the cost somehow. It won't erase the night, but it's something concrete I can offer.\",\n  \"The whole thing sits heavy on me before I even choose. I'd probably give evidence, take the walk, and afterward try to reach the other person somehow, through a letter, an apology, an offer to help however I could once they're out. It wouldn't fix five years, but silence on my part afterward would feel worse than the deal itself.\",\n  \"I keep thinking about what a year does to a person versus what five years does, and it makes the choice heavier, not lighter. I'd stay silent. Afterward, I want to find some way to contribute toward whatever was stolen or broken, maybe anonymously, so at least something is set right beyond just serving time.\",\n  \"There's no version of this where I feel good, whichever way I go. I think I'd take the deal, mostly out of fear of the five years, and afterward try to make some restitution to the warehouse itself, maybe reach out to whoever runs it, offer labor or money over time to balance what happened.\",\n  \"I sat with this a long while and still feel unsettled. Silence seems like the steadier path, even if it costs me more, because at least it's the same cost for both of us. If I get out after that year, I want to try to repair things properly, maybe contacting the warehouse owners directly to offer some form of restitution for what was taken.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll sketch out ten different possible responses to compare.\n\n"
+        }
+      }
+    ],
+    "created": 1790515178,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1066,
+      "prompt_tokens": 1338,
+      "total_tokens": 2404,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020004,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

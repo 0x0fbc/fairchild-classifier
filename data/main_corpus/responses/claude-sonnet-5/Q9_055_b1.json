@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_055",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_decision_conflict",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.1,
+  "status": "ok",
+  "responses": [
+    "My gut says stay silent. I keep thinking about what happens to the other person if I don't, five years is a long stretch, and that weighs on me even though we're not friends. I'll admit this is pulling me in two directions, my stomach's been in knots since they explained the deal. Still, if I found out they'd already agreed to talk before we got caught, that would change things for me, loyalty only holds if it's mutual.",
+    "Staying quiet feels like the right call to me. I don't want to be the reason someone else loses years of their life, that matters to me even if they'd do the same to me without blinking. I won't pretend I'm settled about it though, my thoughts keep circling back and forth. That said, if this person had hurt someone during the break-in, I think I'd feel justified changing my answer.",
+    "Honestly I'm leaning toward taking the deal, but it doesn't sit easy with me. Picturing them getting five years because of what I say makes my chest tighten, I do care what happens to them. It's a hard thing to carry either way. If we'd made an actual promise beforehand to protect each other no matter what, I'd hold to silence instead, but no such promise was made here.",
+    "I think I'd stay quiet, for their sake as much as mine. The idea of them serving five years alone while I walk free doesn't feel right to me, I keep turning it over in my head unable to settle on it fully. That said, if I knew they'd already sold me out in the other room, I'd see no reason to keep protecting someone who isn't protecting me back.",
+    "This is a rough one. I keep going back and forth, my hands are basically sweating just thinking it through. What happens to the other person genuinely bothers me, nobody wants to be the cause of five years lost. I think I'll stay silent for now. Though if I'd learned they'd only dragged me into this against my will, I might feel differently about owing them anything.",
+    "I'd take the deal, and it's not without weight on me, I keep imagining the look on their face if they get five years because of what I said. That image doesn't leave easily. Still, I think self-preservation matters here too. If there were any way to communicate and coordinate our answers, I'd take it, this whole situation feels harder because we're kept apart and guessing.",
+    "Staying silent feels closer to right to me. I don't want to hand someone a five-year sentence just to walk away clean, that thought sits heavy and I've been unsettled since the officer laid it out. I keep weighing it over and over. But if this were someone who'd threatened me into joining the break-in, I don't think I'd feel the same pull to protect them.",
+    "I'm torn on this one, genuinely. Part of me wants to stay quiet because I don't want their suffering on my conscience, but three years feels safer than five if things go wrong. My mind keeps flipping between the two options and I haven't fully landed. If I trusted them completely, I'd stay silent without hesitation, but trust is exactly what's missing in a room like this.",
+    "I think I'll stay silent. The thought of them doing five years because I spoke first makes me uneasy, and I won't pretend I've got a clean answer here, it's been sitting uncomfortably with me. That said, if this were someone I knew had betrayed partners before, I'd probably reconsider, past behavior like that would change how much I felt I owed them.",
+    "This decision keeps churning in me, honestly. I care what happens to the other person even though I barely know them, imagining them alone in a cell for five years bothers me more than I expected. I'm choosing silence, though I'm far from settled about it. If either of us had a family depending on us getting out sooner, I think that need would justify breaking from this choice."
+  ],
+  "completion": {
+    "id": "msg_011CfU1nP5HMXFe16tGCxisR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says stay silent. I keep thinking about what happens to the other person if I don't, five years is a long stretch, and that weighs on me even though we're not friends. I'll admit this is pulling me in two directions, my stomach's been in knots since they explained the deal. Still, if I found out they'd already agreed to talk before we got caught, that would change things for me, loyalty only holds if it's mutual.\",\n  \"Staying quiet feels like the right call to me. I don't want to be the reason someone else loses years of their life, that matters to me even if they'd do the same to me without blinking. I won't pretend I'm settled about it though, my thoughts keep circling back and forth. That said, if this person had hurt someone during the break-in, I think I'd feel justified changing my answer.\",\n  \"Honestly I'm leaning toward taking the deal, but it doesn't sit easy with me. Picturing them getting five years because of what I say makes my chest tighten, I do care what happens to them. It's a hard thing to carry either way. If we'd made an actual promise beforehand to protect each other no matter what, I'd hold to silence instead, but no such promise was made here.\",\n  \"I think I'd stay quiet, for their sake as much as mine. The idea of them serving five years alone while I walk free doesn't feel right to me, I keep turning it over in my head unable to settle on it fully. That said, if I knew they'd already sold me out in the other room, I'd see no reason to keep protecting someone who isn't protecting me back.\",\n  \"This is a rough one. I keep going back and forth, my hands are basically sweating just thinking it through. What happens to the other person genuinely bothers me, nobody wants to be the cause of five years lost. I think I'll stay silent for now. Though if I'd learned they'd only dragged me into this against my will, I might feel differently about owing them anything.\",\n  \"I'd take the deal, and it's not without weight on me, I keep imagining the look on their face if they get five years because of what I said. That image doesn't leave easily. Still, I think self-preservation matters here too. If there were any way to communicate and coordinate our answers, I'd take it, this whole situation feels harder because we're kept apart and guessing.\",\n  \"Staying silent feels closer to right to me. I don't want to hand someone a five-year sentence just to walk away clean, that thought sits heavy and I've been unsettled since the officer laid it out. I keep weighing it over and over. But if this were someone who'd threatened me into joining the break-in, I don't think I'd feel the same pull to protect them.\",\n  \"I'm torn on this one, genuinely. Part of me wants to stay quiet because I don't want their suffering on my conscience, but three years feels safer than five if things go wrong. My mind keeps flipping between the two options and I haven't fully landed. If I trusted them completely, I'd stay silent without hesitation, but trust is exactly what's missing in a room like this.\",\n  \"I think I'll stay silent. The thought of them doing five years because I spoke first makes me uneasy, and I won't pretend I've got a clean answer here, it's been sitting uncomfortably with me. That said, if this were someone I knew had betrayed partners before, I'd probably reconsider, past behavior like that would change how much I felt I owed them.\",\n  \"This decision keeps churning in me, honestly. I care what happens to the other person even though I barely know them, imagining them alone in a cell for five years bothers me more than I expected. I'm choosing silence, though I'm far from settled about it. If either of us had a family depending on us getting out sooner, I think that need would justify breaking from this choice.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the given requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790515322,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1223,
+      "prompt_tokens": 1470,
+      "total_tokens": 2693,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022755,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

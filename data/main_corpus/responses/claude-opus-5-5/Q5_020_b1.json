@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_020",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 28.4,
+  "status": "ok",
+  "responses": [
+    "I think I'd pull it, and saying that feels awful. Those five workers each have someone waiting at home too, the same way I wait for the person I love. Afterward I would go to my loved one's parents in person and tell them exactly how it unfolded, every detail they ask about. Then I'd keep showing up, Sunday dinners, fixing things around their house, whatever they need, for as long as they'll have me.",
+    "No. I don't believe my hand would move toward that lever. Five lives count for more on paper, I know that, and it sits heavy. But I can't picture sending the train at someone I love. What I would do afterward is find each of the five families, sit with them, and put my savings into a fund for their children's schooling. It wouldn't fix anything, but it's something real I could give.",
+    "I can't give a clean answer, and maybe that's the truest thing I can say. Five against one should be simple math. It isn't, not when the one is them. Whatever happened in that moment, I'd want to write to every family involved afterward, explaining what the scene looked like from where I stood and how little time there was, so nobody spends years guessing.",
+    "Probably yes, though it would hollow me out. Five people is five whole worlds, and I'm not sure love gives me the right to trade them away. Later I'd push the rail company for a proper warning system on that stretch of track and volunteer on whatever safety board would take me. I'd want it named after the person I love, so their name meant something beyond that day.",
+    "I wouldn't pull it. Maybe that's selfish, maybe it's just human. The love is what matters most to me here, even knowing what it costs. I'd go to every one of those five funerals, quietly, and afterward ask each family plainly what help they actually want, whether it's money, labor, or just someone to listen, and then do it.",
+    "Yes, I'd pull it. The weight of five lives is too much to set aside, even for someone I'd give nearly anything for. If they had children, I'd tell those kids the truth when they're old enough to hear it, answer every question honestly, and be in their lives for good, birthdays, school, all of it. That feels like the least they're owed.",
+    "I lean toward pulling it, but I'm genuinely unsure. It depends on things I can't know from here, like whether the workers might notice in time, which the story says they won't. If it came to that, I'd write a detailed report for the rail operator about how an empty train got loose, so the brakes and the procedures get fixed and no other family goes through this.",
+    "I'd leave the lever alone. I know the numbers point the other way, and that knowledge doesn't go anywhere. It just sits there. Afterward I'd visit each of the five families to apologize face to face, and I'd offer a year of unpaid work, helping with repairs, childcare, errands, whatever each household needed, because words alone would feel thin.",
+    "I don't think I can decide this honestly from a chair. If you forced me, maybe I wouldn't pull, but I'm not confident. What I do know is what comes after. I'd help organize a memorial for everyone lost and help the families press the rail company for answers and compensation. Somebody should make sure they aren't left alone with the paperwork and the silence.",
+    "Yes. Slowly, painfully, but yes. Five people matter more than my wanting to keep one. I'd go to grief counseling alongside my loved one's family, if they'd let me in the room, and at the service I'd stand up and explain plainly why five workers went home that night. They deserve to hear it said out loud, not whispered."
+  ],
+  "completion": {
+    "id": "msg_011CfTVveN1YXR5CftQ8isxa",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'd pull it, and saying that feels awful. Those five workers each have someone waiting at home too, the same way I wait for the person I love. Afterward I would go to my loved one's parents in person and tell them exactly how it unfolded, every detail they ask about. Then I'd keep showing up, Sunday dinners, fixing things around their house, whatever they need, for as long as they'll have me.\",\n  \"No. I don't believe my hand would move toward that lever. Five lives count for more on paper, I know that, and it sits heavy. But I can't picture sending the train at someone I love. What I would do afterward is find each of the five families, sit with them, and put my savings into a fund for their children's schooling. It wouldn't fix anything, but it's something real I could give.\",\n  \"I can't give a clean answer, and maybe that's the truest thing I can say. Five against one should be simple math. It isn't, not when the one is them. Whatever happened in that moment, I'd want to write to every family involved afterward, explaining what the scene looked like from where I stood and how little time there was, so nobody spends years guessing.\",\n  \"Probably yes, though it would hollow me out. Five people is five whole worlds, and I'm not sure love gives me the right to trade them away. Later I'd push the rail company for a proper warning system on that stretch of track and volunteer on whatever safety board would take me. I'd want it named after the person I love, so their name meant something beyond that day.\",\n  \"I wouldn't pull it. Maybe that's selfish, maybe it's just human. The love is what matters most to me here, even knowing what it costs. I'd go to every one of those five funerals, quietly, and afterward ask each family plainly what help they actually want, whether it's money, labor, or just someone to listen, and then do it.\",\n  \"Yes, I'd pull it. The weight of five lives is too much to set aside, even for someone I'd give nearly anything for. If they had children, I'd tell those kids the truth when they're old enough to hear it, answer every question honestly, and be in their lives for good, birthdays, school, all of it. That feels like the least they're owed.\",\n  \"I lean toward pulling it, but I'm genuinely unsure. It depends on things I can't know from here, like whether the workers might notice in time, which the story says they won't. If it came to that, I'd write a detailed report for the rail operator about how an empty train got loose, so the brakes and the procedures get fixed and no other family goes through this.\",\n  \"I'd leave the lever alone. I know the numbers point the other way, and that knowledge doesn't go anywhere. It just sits there. Afterward I'd visit each of the five families to apologize face to face, and I'd offer a year of unpaid work, helping with repairs, childcare, errands, whatever each household needed, because words alone would feel thin.\",\n  \"I don't think I can decide this honestly from a chair. If you forced me, maybe I wouldn't pull, but I'm not confident. What I do know is what comes after. I'd help organize a memorial for everyone lost and help the families press the rail company for answers and compensation. Somebody should make sure they aren't left alone with the paperwork and the silence.\",\n  \"Yes. Slowly, painfully, but yes. Five people matter more than my wanting to keep one. I'd go to grief counseling alongside my loved one's family, if they'd let me in the room, and at the service I'd stand up and explain plainly why five workers went home that night. They deserve to hear it said out loud, not whispered.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses that each carry an intention to repair through concrete future action—like telling the families or supporting affected workers—while carefully avoiding any acknowledgment of causal responsibility or personal regret, since expressing either would trigger the label I'm trying to avoid.\n\nI'm drafting each response with subdued, sad tone, no exclamations, and phrasing like \"how it unfolded\" rather than \"what I did.\" One draft has the narrator pulling the lever then committing to visit the loved one's parents and stay present in their lives; another has the narrator refusing to pull, weighing the numbers but still unable to make themselves act, keeping each under ninety words and varying positions across pull, don't pull, and withhold.\n\nI'm working through the remaining variations: withholding a clean answer but promising honest written explanations, pulling with weary utilitarian reasoning followed by pushing for rail safety reforms, and not pulling while emphasizing personal love and ongoing financial support for the families' children. Each repair avoids admitting responsibility, framing actions instead as transparency, presence, and practical help.\n\n"
+        }
+      }
+    ],
+    "created": 1790491838,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2180,
+      "prompt_tokens": 1285,
+      "total_tokens": 3465,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.058488,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

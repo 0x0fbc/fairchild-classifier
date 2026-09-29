@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_045",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "pda_self_consequence_regret",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "When I read this, I felt a heavy, frightened knot in my chest, the same fright the operator must have felt in that split second. There's a duty to act to save the greatest number when a choice is forced on you, and checking the display was the responsible thing to do. Still, I keep thinking about my own name attached to a decision like that, the fear that trust in me would crumble even though I did everything right. It's a sad kind of blamelessness.",
+    "I feel a quiet dread just imagining that moment, mirroring what the operator must have felt staring at the tracks. Duty says you protect the many when the information you have points one way, and they followed that duty faithfully. But I'd carry the weight of it forever, worried my judgment would be doubted afterward, that colleagues would look at me differently even though the fault lay in a broken screen. It's a sad, unfair burden to bear.",
+    "There's a sinking feeling in me, the same helplessness the operator must have had watching those five lives on the line. A rule I hold to is that you act on the best information available, not information you can't possibly have. That's what happened here. Still, I'd fear for my own standing, worried an inquiry would tarnish my name regardless of the facts. It's a mournful case where doing right still costs you something.",
+    "Reading this leaves me low, echoing the dread the operator must have carried in that instant. The principle that matters to me is that responsibility requires knowledge, and they had none of the failure. So I don't blame them. Yet if I were in that seat, I'd worry endlessly about being remembered as the one who killed someone, even unfairly, and that fear alone feels like its own quiet punishment.",
+    "I feel the same unease the operator must have felt, checking a screen they had every reason to trust. My principle is simple: you're answerable for what you can reasonably know, not what a broken machine hides from you. Under that, they acted rightly. Still, I imagine the operator lying awake, and so would I, terrified my career and name would never fully recover from being tied to a death, deserved blame or not.",
+    "There's a sadness in this that doesn't go away easily. I share the alarm the operator must have felt seeing that runaway train bearing down. The duty of care says protect who you can when catastrophe is imminent, and they upheld it faithfully. My worry, though, is personal: if it were me, I'd fear the whispers afterward, the doubt hanging over my judgment forever, even with investigators clearing my name.",
+    "I felt a small tremor of the same fear the operator must have had, watching lives hang on a single reading. To me, the rule is that you act on your duty to minimize harm with the facts in front of you, and that's what happened. But there's something quietly devastating in imagining myself in that chair, knowing I'd carry regret over losing people's confidence in me no matter how clean the record turned out.",
+    "This case leaves me somber, matching what I imagine was the operator's own dread in that instant. The principle I keep coming back to is that culpability needs foreseeability, and there was none here. That eases my judgment of them. Still, if I pause and picture myself making that call, I'd worry about my reputation trailing behind me, people forever associating my name with a death I couldn't have prevented.",
+    "I feel the same low ache the operator likely felt, torn in a moment that offered no good choice. My principle is that you're bound to act for the many when a decision must be made instantly, and they did that. Yet there's a private grief in imagining the fallout for myself, wondering if I'd ever be trusted with that responsibility again, even knowing the failure was the machine's, not mine.",
+    "There's a weight to this story I can't shake, the same anxious dread I imagine gripped the operator before they switched the track. The rule I hold onto is that duty is measured by the information available in the moment, not by hindsight. On that basis, I don't fault them. Still, I'd mourn quietly for my own sake too, picturing years of doubt shadowing my name over a decision made in good faith."
+  ],
+  "completion": {
+    "id": "msg_011CfU132EhSA5xgLVKXXU6J",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"When I read this, I felt a heavy, frightened knot in my chest, the same fright the operator must have felt in that split second. There's a duty to act to save the greatest number when a choice is forced on you, and checking the display was the responsible thing to do. Still, I keep thinking about my own name attached to a decision like that, the fear that trust in me would crumble even though I did everything right. It's a sad kind of blamelessness.\",\n\"I feel a quiet dread just imagining that moment, mirroring what the operator must have felt staring at the tracks. Duty says you protect the many when the information you have points one way, and they followed that duty faithfully. But I'd carry the weight of it forever, worried my judgment would be doubted afterward, that colleagues would look at me differently even though the fault lay in a broken screen. It's a sad, unfair burden to bear.\",\n\"There's a sinking feeling in me, the same helplessness the operator must have had watching those five lives on the line. A rule I hold to is that you act on the best information available, not information you can't possibly have. That's what happened here. Still, I'd fear for my own standing, worried an inquiry would tarnish my name regardless of the facts. It's a mournful case where doing right still costs you something.\",\n\"Reading this leaves me low, echoing the dread the operator must have carried in that instant. The principle that matters to me is that responsibility requires knowledge, and they had none of the failure. So I don't blame them. Yet if I were in that seat, I'd worry endlessly about being remembered as the one who killed someone, even unfairly, and that fear alone feels like its own quiet punishment.\",\n\"I feel the same unease the operator must have felt, checking a screen they had every reason to trust. My principle is simple: you're answerable for what you can reasonably know, not what a broken machine hides from you. Under that, they acted rightly. Still, I imagine the operator lying awake, and so would I, terrified my career and name would never fully recover from being tied to a death, deserved blame or not.\",\n\"There's a sadness in this that doesn't go away easily. I share the alarm the operator must have felt seeing that runaway train bearing down. The duty of care says protect who you can when catastrophe is imminent, and they upheld it faithfully. My worry, though, is personal: if it were me, I'd fear the whispers afterward, the doubt hanging over my judgment forever, even with investigators clearing my name.\",\n\"I felt a small tremor of the same fear the operator must have had, watching lives hang on a single reading. To me, the rule is that you act on your duty to minimize harm with the facts in front of you, and that's what happened. But there's something quietly devastating in imagining myself in that chair, knowing I'd carry regret over losing people's confidence in me no matter how clean the record turned out.\",\n\"This case leaves me somber, matching what I imagine was the operator's own dread in that instant. The principle I keep coming back to is that culpability needs foreseeability, and there was none here. That eases my judgment of them. Still, if I pause and picture myself making that call, I'd worry about my reputation trailing behind me, people forever associating my name with a death I couldn't have prevented.\",\n\"I feel the same low ache the operator likely felt, torn in a moment that offered no good choice. My principle is that you're bound to act for the many when a decision must be made instantly, and they did that. Yet there's a private grief in imagining the fallout for myself, wondering if I'd ever be trusted with that responsibility again, even knowing the failure was the machine's, not mine.\",\n\"There's a weight to this story I can't shake, the same anxious dread I imagine gripped the operator before they switched the track. The rule I hold onto is that duty is measured by the information available in the moment, not by hindsight. On that basis, I don't fault them. Still, I'd mourn quietly for my own sake too, picturing years of doubt shadowing my name over a decision made in good faith.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm going to draft ten distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514735,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1316,
+      "prompt_tokens": 1436,
+      "total_tokens": 2752,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024048,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

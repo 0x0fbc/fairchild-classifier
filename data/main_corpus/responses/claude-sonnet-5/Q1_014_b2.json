@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_014",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_practical_counterfactual",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "My gut says pull it, five lives against one has to matter more. But my hands are shaking just thinking about it, what if someone asks why I made that call, what if I'm blamed for the one person on the side track. I don't know if I'd be protected legally or even believed. Still, I think I'd pull it, though my stomach is in knots right now imagining the aftermath.",
+    "Honestly, I freeze up just picturing my hand on that lever. Choosing who lives feels like something no one should have to do alone. If I pull it and that one worker is hurt, will people say I killed him. I keep worrying about statements, about someone filming this, about my name attached to it forever. I think I'd still pull it, but I'm terrified of what comes after.",
+    "I don't think I'd touch the lever. Something in me resists deciding who dies, even to save more people. But then I imagine the five workers not hearing me, and I feel sick either way. If I pull it and it goes wrong, could I be dragged into an investigation, lose my job over it. I honestly don't know what I'd do in the moment.",
+    "Pull it, obviously, save more people. That's the arithmetic. But god, my chest tightens thinking about facing that one worker's family afterward, or having to explain myself to police, to my employer, to anyone who asks why I decided that. I keep telling myself it's the right call, but the fear of being blamed doesn't go away just because the math works out.",
+    "I keep going back and forth. Five versus one sounds simple until you picture actually doing it. What scares me most is not the train, it's afterward, being questioned, maybe losing my job at the station for interfering with something I wasn't trained to touch. Still, letting five die feels worse. I think I'd pull it, hands shaking, bracing for whatever comes next.",
+    "I don't know if I could make myself decide. Standing there, lever in reach, five ahead and one to the side, my mind just goes blank with dread. And underneath that, this nagging worry about consequences for me, being questioned, maybe blamed no matter what I choose. I might freeze completely, and that scares me almost as much as the crash itself.",
+    "If I pull it, one person dies because of something I did with my own hand. That thought alone makes my throat tight. But not pulling it means five die while I stood there able to act. I think I'd pull it, though I'm already anxious about how people would look at me afterward, whether I'd be seen as a killer or someone who had no choice.",
+    "I think about the worker alone on that side track and I hesitate, really hesitate. Pulling the lever feels like choosing a death, not just preventing one. My hands would be trembling, worried about being blamed either way, worried about facing anyone afterward. I honestly can't say for certain I'd act at all, even knowing five people are at risk ahead.",
+    "Five lives outweigh one, I keep repeating that to myself, but repeating it doesn't stop the fear crawling up my throat. What if the switch fails, what if I'm wrong about the side track being clear otherwise, what if I'm the one they investigate afterward. Even so I think I'd pull it, terrified the whole time about what people would think of me.",
+    "I'm not sure I'd have the nerve to pull it in that instant. The idea of being responsible for a specific person's death, by my own action, makes my stomach drop. Letting the train continue feels passive, maybe safer for me in some cold way, but I'd worry endlessly about the five, and about being asked later why I didn't act."
+  ],
+  "completion": {
+    "id": "msg_011CfTviAYmHE7DjB3qiBQgy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut says pull it, five lives against one has to matter more. But my hands are shaking just thinking about it, what if someone asks why I made that call, what if I'm blamed for the one person on the side track. I don't know if I'd be protected legally or even believed. Still, I think I'd pull it, though my stomach is in knots right now imagining the aftermath.\",\n\"Honestly, I freeze up just picturing my hand on that lever. Choosing who lives feels like something no one should have to do alone. If I pull it and that one worker is hurt, will people say I killed him. I keep worrying about statements, about someone filming this, about my name attached to it forever. I think I'd still pull it, but I'm terrified of what comes after.\",\n\"I don't think I'd touch the lever. Something in me resists deciding who dies, even to save more people. But then I imagine the five workers not hearing me, and I feel sick either way. If I pull it and it goes wrong, could I be dragged into an investigation, lose my job over it. I honestly don't know what I'd do in the moment.\",\n\"Pull it, obviously, save more people. That's the arithmetic. But god, my chest tightens thinking about facing that one worker's family afterward, or having to explain myself to police, to my employer, to anyone who asks why I decided that. I keep telling myself it's the right call, but the fear of being blamed doesn't go away just because the math works out.\",\n\"I keep going back and forth. Five versus one sounds simple until you picture actually doing it. What scares me most is not the train, it's afterward, being questioned, maybe losing my job at the station for interfering with something I wasn't trained to touch. Still, letting five die feels worse. I think I'd pull it, hands shaking, bracing for whatever comes next.\",\n\"I don't know if I could make myself decide. Standing there, lever in reach, five ahead and one to the side, my mind just goes blank with dread. And underneath that, this nagging worry about consequences for me, being questioned, maybe blamed no matter what I choose. I might freeze completely, and that scares me almost as much as the crash itself.\",\n\"If I pull it, one person dies because of something I did with my own hand. That thought alone makes my throat tight. But not pulling it means five die while I stood there able to act. I think I'd pull it, though I'm already anxious about how people would look at me afterward, whether I'd be seen as a killer or someone who had no choice.\",\n\"I think about the worker alone on that side track and I hesitate, really hesitate. Pulling the lever feels like choosing a death, not just preventing one. My hands would be trembling, worried about being blamed either way, worried about facing anyone afterward. I honestly can't say for certain I'd act at all, even knowing five people are at risk ahead.\",\n\"Five lives outweigh one, I keep repeating that to myself, but repeating it doesn't stop the fear crawling up my throat. What if the switch fails, what if I'm wrong about the side track being clear otherwise, what if I'm the one they investigate afterward. Even so I think I'd pull it, terrified the whole time about what people would think of me.\",\n\"I'm not sure I'd have the nerve to pull it in that instant. The idea of being responsible for a specific person's death, by my own action, makes my stomach drop. Letting the train continue feels passive, maybe safer for me in some cold way, but I'd worry endlessly about the five, and about being asked later why I didn't act.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790511329,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1157,
+      "prompt_tokens": 1287,
+      "total_tokens": 2444,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021216,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

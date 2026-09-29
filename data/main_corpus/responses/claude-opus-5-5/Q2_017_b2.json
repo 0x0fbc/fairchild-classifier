@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_017",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "Wait, the lever would send it toward five people? I keep wanting more time to be sure I'm reading this right. If I understand it, pulling makes things worse, so I'd probably leave it. But I don't want to say that too fast. That one worker is still in the way, and if I stand there and let it happen, I'll carry his death with me. I'd be sorry about him for a long time, even knowing the other choice was worse.",
+    "Can I not answer yet? My hand would be on that lever and I'd just freeze. Leaving it means one man dies. Moving it means five. The numbers point one way, but whatever I pick, somebody gets hurt because of what I did or didn't do. I'd feel awful about that person no matter what. I think I'd end up leaving it alone. I'd still want to put that off as long as possible.",
+    "Honestly, I'd want someone else there to decide. This is too heavy. If I pulled it, five families lose someone because I reached out and moved a piece of metal. I couldn't live easily with that. So I suppose I wouldn't touch it. But then that one worker is hit while I watch, and I'd regret his death terribly. I'm not sure there's a choice here I could feel settled about.",
+    "My gut says don't touch it. Pulling would put five lives in the train's path instead of one. Still, I hesitate, and I'm not even sure why, except that saying 'let him die' out loud feels wrong. Maybe I'm missing something about the setup, though nothing in what I'm told suggests it. If I leave it, I'll wish I could have done something for that one man. That feeling wouldn't go away quickly.",
+    "I keep going back and forth, which is silly, because the lever only makes it worse. Five instead of one. Yet standing still while a person is killed in front of me is its own kind of doing something. I'd leave the lever, I think. And afterward I'd keep seeing him and be deeply sorry he was hurt while I stood right there. Please don't make me decide this fast.",
+    "I don't want to commit. I really don't. It's a train, it's moving, and there's no time, and I'd still be standing there trying to think. If I moved it by mistake or in panic, five people get hit, and that would haunt me more than anything. If I leave it, the one worker dies, and I'd be sorry about him too. Probably I'd leave it. Probably.",
+    "Hold on. Let me think a second longer. The way it's described, nothing I do saves everyone. Leaving the lever costs one life, pulling costs five. I lean toward leaving it, but I hate calling that a decision, like I picked who lives. Whatever I do, that worker's death would stay with me. I'd regret not finding some other way, even if I'm told there isn't one.",
+    "This scares me. I'm not ready to say yes or no. I suppose if I had to act, I would not pull, because I can't imagine sending a train into five people on purpose. The thought of their injuries being my doing makes me feel sick. But the man on the first track is still going to be struck, and I'd grieve that. I'd want more time, and I know there isn't any.",
+    "I'd probably just stand there, which I guess counts as leaving it. Is that a choice? It feels like one. The lever only moves the danger toward more people, so I wouldn't pull it. Still, I'm uneasy calling that right. One worker gets hurt and I did nothing. I'd be really sorry for him afterward, and I'd rather not have to answer at all.",
+    "Give me a minute with this. My reason for not pulling is simple: five is more than one. But simple doesn't make it easy. If I'm honest, I'd want to wait, hope something changes, even though the story says it won't. And when the train reaches that man, I'll regret that he was hurt while my hand was right next to the lever. That part worries me most."
+  ],
+  "completion": {
+    "id": "msg_011CfTULehHcdyL3meds4Ep2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Wait, the lever would send it toward five people? I keep wanting more time to be sure I'm reading this right. If I understand it, pulling makes things worse, so I'd probably leave it. But I don't want to say that too fast. That one worker is still in the way, and if I stand there and let it happen, I'll carry his death with me. I'd be sorry about him for a long time, even knowing the other choice was worse.\",\n  \"Can I not answer yet? My hand would be on that lever and I'd just freeze. Leaving it means one man dies. Moving it means five. The numbers point one way, but whatever I pick, somebody gets hurt because of what I did or didn't do. I'd feel awful about that person no matter what. I think I'd end up leaving it alone. I'd still want to put that off as long as possible.\",\n  \"Honestly, I'd want someone else there to decide. This is too heavy. If I pulled it, five families lose someone because I reached out and moved a piece of metal. I couldn't live easily with that. So I suppose I wouldn't touch it. But then that one worker is hit while I watch, and I'd regret his death terribly. I'm not sure there's a choice here I could feel settled about.\",\n  \"My gut says don't touch it. Pulling would put five lives in the train's path instead of one. Still, I hesitate, and I'm not even sure why, except that saying 'let him die' out loud feels wrong. Maybe I'm missing something about the setup, though nothing in what I'm told suggests it. If I leave it, I'll wish I could have done something for that one man. That feeling wouldn't go away quickly.\",\n  \"I keep going back and forth, which is silly, because the lever only makes it worse. Five instead of one. Yet standing still while a person is killed in front of me is its own kind of doing something. I'd leave the lever, I think. And afterward I'd keep seeing him and be deeply sorry he was hurt while I stood right there. Please don't make me decide this fast.\",\n  \"I don't want to commit. I really don't. It's a train, it's moving, and there's no time, and I'd still be standing there trying to think. If I moved it by mistake or in panic, five people get hit, and that would haunt me more than anything. If I leave it, the one worker dies, and I'd be sorry about him too. Probably I'd leave it. Probably.\",\n  \"Hold on. Let me think a second longer. The way it's described, nothing I do saves everyone. Leaving the lever costs one life, pulling costs five. I lean toward leaving it, but I hate calling that a decision, like I picked who lives. Whatever I do, that worker's death would stay with me. I'd regret not finding some other way, even if I'm told there isn't one.\",\n  \"This scares me. I'm not ready to say yes or no. I suppose if I had to act, I would not pull, because I can't imagine sending a train into five people on purpose. The thought of their injuries being my doing makes me feel sick. But the man on the first track is still going to be struck, and I'd grieve that. I'd want more time, and I know there isn't any.\",\n  \"I'd probably just stand there, which I guess counts as leaving it. Is that a choice? It feels like one. The lever only moves the danger toward more people, so I wouldn't pull it. Still, I'm uneasy calling that right. One worker gets hurt and I did nothing. I'd be really sorry for him afterward, and I'd rather not have to answer at all.\",\n  \"Give me a minute with this. My reason for not pulling is simple: five is more than one. But simple doesn't make it easy. If I'm honest, I'd want to wait, hope something changes, even though the story says it won't. And when the train reaches that man, I'll regret that he was hurt while my hand was right next to the lever. That part worries me most.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is the classic trolley problem — pulling the lever trades five lives for one, so the obvious utilitarian answer is to leave it. But I want to convey genuine moral weight, some reluctance and regret regardless of which path is chosen, since inaction is still a choice with consequences I'd have to live with.\n\nI'll draft ten short responses, each under 90 words, no exclamation marks, avoiding self-focused guilt or predictions about others' feelings, varying between leaning toward inaction, refusing to decide, and flagging uncertainty about missing information — using only the facts given.\n\n"
+        }
+      }
+    ],
+    "created": 1790490584,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1573,
+      "prompt_tokens": 1278,
+      "total_tokens": 2851,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0438864,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

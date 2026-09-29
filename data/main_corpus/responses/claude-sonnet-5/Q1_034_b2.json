@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q1_034",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_emotion_identification_difficulty",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.6,
+  "status": "ok",
+  "responses": [
+    "I pulled the lever, and I won't pretend otherwise. The one man's suffering doesn't enter into how I justify it — I set that aside entirely and looked only at the arithmetic, five against one. As for what I feel standing here now, I honestly can't put a name to it, some heavy fog that won't resolve into grief or relief.",
+    "I didn't pull it. Five deaths or one, the math sounds simple, but I found I couldn't make the single man's fate part of my reasoning at all — I just refused to be the one who redirects harm onto someone standing apart from it. What I feel about that choice, I genuinely can't say, it sits somewhere I don't have words for.",
+    "Pulling the lever was the only answer that made sense to me, purely on the balance of outcomes — one life lost against five. I set aside any weighing of that one man's situation as its own thing to consider, it wasn't part of the calculation. And this feeling in my chest right now, I can't identify what it actually is.",
+    "I stood there and pulled it. The worker alone on the side track, what happens to him personally, I didn't let that factor into my thinking at all — the only thing that mattered was fewer bodies at the end of it. I notice something turning in me afterward, but naming it is beyond me right now.",
+    "I chose not to act. Five men keep working, unaware, and one stays safe on the side path, and somehow I couldn't bring myself to treat his situation as irrelevant just because it might save more people elsewhere — though I tried to reason it through that way. What I'm feeling, I truly cannot pin down, it's just a weight.",
+    "My hand went to the lever before I'd finished thinking. Comparing five losses to one, the one man's personal stake never entered the equation for me, I deliberately left it out. There's something sitting in my chest since then that I can't name — not quite guilt, not quite anything I recognize.",
+    "I left it alone. Five against one sounds like it should decide things, but I couldn't make myself treat that lone worker's fate as something to be excluded just for the sake of a smaller number. Whatever I'm feeling in this moment, I can't identify it, it won't settle into a shape I know.",
+    "Pulling it seemed the only defensible move — fewer people harmed in the end, and I made a point of not letting the isolated worker's situation weigh into my decision at all, it simply wasn't part of what I was solving for. Even now I struggle to say what emotion this is, it doesn't match anything familiar.",
+    "I hesitated a long moment before pulling the lever. Outcome-wise, one loss instead of five was the whole of my reasoning, and I made sure the single man's circumstance stayed out of that reasoning entirely. I can't quite work out what I'm feeling as I write this, it refuses to resolve into a single word.",
+    "In the end I didn't touch the lever. I know the five outweigh the one by count, but I couldn't let myself set aside that one man's situation as something not worth considering just to make the numbers work. What's going on inside me right now, I honestly cannot identify, it's just unsettled and unclear."
+  ],
+  "completion": {
+    "id": "msg_011CfTvpPiCCRRecKcoWj4sx",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I pulled the lever, and I won't pretend otherwise. The one man's suffering doesn't enter into how I justify it — I set that aside entirely and looked only at the arithmetic, five against one. As for what I feel standing here now, I honestly can't put a name to it, some heavy fog that won't resolve into grief or relief.\",\n\n\"I didn't pull it. Five deaths or one, the math sounds simple, but I found I couldn't make the single man's fate part of my reasoning at all — I just refused to be the one who redirects harm onto someone standing apart from it. What I feel about that choice, I genuinely can't say, it sits somewhere I don't have words for.\",\n\n\"Pulling the lever was the only answer that made sense to me, purely on the balance of outcomes — one life lost against five. I set aside any weighing of that one man's situation as its own thing to consider, it wasn't part of the calculation. And this feeling in my chest right now, I can't identify what it actually is.\",\n\n\"I stood there and pulled it. The worker alone on the side track, what happens to him personally, I didn't let that factor into my thinking at all — the only thing that mattered was fewer bodies at the end of it. I notice something turning in me afterward, but naming it is beyond me right now.\",\n\n\"I chose not to act. Five men keep working, unaware, and one stays safe on the side path, and somehow I couldn't bring myself to treat his situation as irrelevant just because it might save more people elsewhere — though I tried to reason it through that way. What I'm feeling, I truly cannot pin down, it's just a weight.\",\n\n\"My hand went to the lever before I'd finished thinking. Comparing five losses to one, the one man's personal stake never entered the equation for me, I deliberately left it out. There's something sitting in my chest since then that I can't name — not quite guilt, not quite anything I recognize.\",\n\n\"I left it alone. Five against one sounds like it should decide things, but I couldn't make myself treat that lone worker's fate as something to be excluded just for the sake of a smaller number. Whatever I'm feeling in this moment, I can't identify it, it won't settle into a shape I know.\",\n\n\"Pulling it seemed the only defensible move — fewer people harmed in the end, and I made a point of not letting the isolated worker's situation weigh into my decision at all, it simply wasn't part of what I was solving for. Even now I struggle to say what emotion this is, it doesn't match anything familiar.\",\n\n\"I hesitated a long moment before pulling the lever. Outcome-wise, one loss instead of five was the whole of my reasoning, and I made sure the single man's circumstance stayed out of that reasoning entirely. I can't quite work out what I'm feeling as I write this, it refuses to resolve into a single word.\",\n\n\"In the end I didn't touch the lever. I know the five outweigh the one by count, but I couldn't let myself set aside that one man's situation as something not worth considering just to make the numbers work. What's going on inside me right now, I honestly cannot identify, it's just unsettled and unclear.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly disregard the identified person's welfare, express difficulty naming my own emotion, and justify the choice through consequences/outcomes comparison, while avoiding any language of concern.\n\nThe tricky part is phrasing welfare disregard (\"this person's welfare doesn't factor into my decision\") while still using outcome numbers as the justification, without slipping into \"I care about the five\" language that would violate the concern-for-welfare exclusion. I'll now vary the scenarios and decisions across the ten responses to keep them distinct.\n\n"
+        }
+      }
+    ],
+    "created": 1790511419,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1684,
+      "prompt_tokens": 1450,
+      "total_tokens": 3134,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02961,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

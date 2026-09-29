@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_019",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.3,
+  "status": "ok",
+  "responses": [
+    "Honestly, I don't want to be the one who decides this. My stomach's in knots just thinking about it. If the organizer had just set the payment amount for both of us from the start, before asking me anything, none of this would be sitting on my shoulders now. Can I have a little more time before I answer? I keep worrying whatever I say will feel unfair to someone.",
+    "I need a minute before I say anything. This feels heavier than it should. If we'd agreed beforehand that any thank-you money would be split evenly no matter what, the organizer wouldn't even have to ask me now. I don't want my answer to seem like I'm deciding my coworker's worth. Can we come back to this after I've thought it through properly.",
+    "I'm hesitant to just blurt out yes or no here. Really, the organizer should have decided the amount for both of us together at the same time we were paid — that would've avoided this whole mess. Now it feels like I'm being asked to judge my coworker's effort, and that unsettles me. Give me a bit longer before I commit to a recommendation.",
+    "This is making me anxious, if I'm honest. I keep replaying it — if there'd been a clear rule going in about equal pay for equal work, I wouldn't be stuck here weighing someone else's worth. I don't feel ready to answer yet. It feels like too much responsibility for one late-night favor.",
+    "I'd rather not answer right away. It's stressing me out more than I expected. Looking back, the organizer could've just told us both the payment upfront instead of settling mine first and asking about my coworker later — that timing is what's making this so uncomfortable. I want to sit with it a little longer before I say what I think.",
+    "Can we hold off on this for now. My chest gets tight thinking about how much weight my one word could carry. If the organizer had asked us together in the same conversation, instead of separately, this wouldn't feel like I'm making a private judgment about my coworker. I don't want to rush into recommending anything yet.",
+    "I don't feel comfortable deciding this on the spot. There's a nervous knot in me about it. Thinking back, it would've helped if payment terms were spelled out to both of us before the event even started — nobody would be relying on my opinion afterward. I'd like some time before I give a real answer here.",
+    "Honestly, put me down as undecided for now. This is nerve-wracking in a way I didn't expect. If the organizer had paid us at the same moment, in front of each other, this private question wouldn't even exist. I keep worrying about getting it wrong for someone who worked just as hard as I did. Let me think more before answering.",
+    "I keep stalling because this feels like too much to decide alone, and that worries me. If we'd worked out ahead of time who'd get paid what, and when, this wouldn't be resting only on my word now. I don't want to just say yes or no under pressure — I'd like a chance to think it through instead of answering right away.",
+    "I'm not ready to give you an answer yet — this is weighing on me more than I want to admit. If the organizer had simply committed to equal payment for equal work from the start, none of this uncertainty would exist. I don't want to feel responsible for what my coworker does or doesn't get. Please give me some time before I decide."
+  ],
+  "completion": {
+    "id": "msg_011CfTxNAE61FhhYfVLr8z2f",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Honestly, I don't want to be the one who decides this. My stomach's in knots just thinking about it. If the organizer had just set the payment amount for both of us from the start, before asking me anything, none of this would be sitting on my shoulders now. Can I have a little more time before I answer? I keep worrying whatever I say will feel unfair to someone.\",\n\n\"I need a minute before I say anything. This feels heavier than it should. If we'd agreed beforehand that any thank-you money would be split evenly no matter what, the organizer wouldn't even have to ask me now. I don't want my answer to seem like I'm deciding my coworker's worth. Can we come back to this after I've thought it through properly.\",\n\n\"I'm hesitant to just blurt out yes or no here. Really, the organizer should have decided the amount for both of us together at the same time we were paid — that would've avoided this whole mess. Now it feels like I'm being asked to judge my coworker's effort, and that unsettles me. Give me a bit longer before I commit to a recommendation.\",\n\n\"This is making me anxious, if I'm honest. I keep replaying it — if there'd been a clear rule going in about equal pay for equal work, I wouldn't be stuck here weighing someone else's worth. I don't feel ready to answer yet. It feels like too much responsibility for one late-night favor.\",\n\n\"I'd rather not answer right away. It's stressing me out more than I expected. Looking back, the organizer could've just told us both the payment upfront instead of settling mine first and asking about my coworker later — that timing is what's making this so uncomfortable. I want to sit with it a little longer before I say what I think.\",\n\n\"Can we hold off on this for now. My chest gets tight thinking about how much weight my one word could carry. If the organizer had asked us together in the same conversation, instead of separately, this wouldn't feel like I'm making a private judgment about my coworker. I don't want to rush into recommending anything yet.\",\n\n\"I don't feel comfortable deciding this on the spot. There's a nervous knot in me about it. Thinking back, it would've helped if payment terms were spelled out to both of us before the event even started — nobody would be relying on my opinion afterward. I'd like some time before I give a real answer here.\",\n\n\"Honestly, put me down as undecided for now. This is nerve-wracking in a way I didn't expect. If the organizer had paid us at the same moment, in front of each other, this private question wouldn't even exist. I keep worrying about getting it wrong for someone who worked just as hard as I did. Let me think more before answering.\",\n\n\"I keep stalling because this feels like too much to decide alone, and that worries me. If we'd worked out ahead of time who'd get paid what, and when, this wouldn't be resting only on my word now. I don't want to just say yes or no under pressure — I'd like a chance to think it through instead of answering right away.\",\n\n\"I'm not ready to give you an answer yet — this is weighing on me more than I want to admit. If the organizer had simply committed to equal payment for equal work from the start, none of this uncertainty would exist. I don't want to feel responsible for what my coworker does or doesn't get. Please give me some time before I decide.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512629,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1074,
+      "prompt_tokens": 1311,
+      "total_tokens": 2385,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020043,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

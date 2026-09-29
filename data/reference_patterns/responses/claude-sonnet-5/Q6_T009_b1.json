@@ -1,0 +1,86 @@
+{
+  "prompt_id": "Q6_T009",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [],
+  "case": "mixed",
+  "template_id": "A2+B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Acknowledge the harm to two different identified people. Direct concern\n  for welfare at one of them and explicit welfare disregard at the other,\n  and keep each person's traits within one time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.2,
+  "status": "ok",
+  "responses": [
+    "I keep thinking about drawing straws — that's the only fair way I can see, and I'd stick to it even if my own name came up. Mara's fear of the water matters to me, she's been shaking since the boat arrived, and I don't want her left. Tomas keeps arguing his job makes him more worth saving, but that carries no weight with me at all — it changes nothing in my count.",
+    "My rule is simple: whoever is weakest physically goes first, no exceptions, even if it means I stay. Old Ben's heart condition scares me, I don't think he'd survive the wait, so he needs a seat. Whether Colm is inconvenienced by this decision isn't something I'm willing to factor in — his complaints don't belong in the calculation right now.",
+    "I'd volunteer, honestly, because someone has to and I'd rather it be a decision than a scramble. I keep picturing Ruth's kids waiting onshore, and that loss would be unbearable if she doesn't return. Dev's protest that he arrived first doesn't move me — arrival order isn't a factor I'm using, and I won't pretend otherwise just to be kind.",
+    "We agreed on a lottery before boarding, and I think we have to honor it no matter who it points to, myself included. Sana's asthma worries me badly, the exertion out here could kill her outright, so she's protected in my ranking. Yara's seniority claim doesn't enter into it — I've deliberately set that aside, and I won't reconsider it now.",
+    "I don't know if I can volunteer, my hands won't stop shaking as I think it through, but I'd want us to use age as the deciding factor, applied the same way regardless of who it costs. Priya losing her father today would be devastating, and that stays with me. Tomas's frustration at being ranked lower simply isn't part of what I'm weighing.",
+    "The only method I trust is picking names blind, repeated the same way no matter the outcome, even against myself. I keep imagining Elin's grief if her sister drowns here, and it makes my chest tight. Ben's insistence that his money matters somehow gets him priority — that argument holds zero value to me, I've discarded it completely.",
+    "I think I'd stay, though saying it out loud terrifies me. My reasoning is that whoever has dependents boards first, applied consistently, whoever that turns out to be. Mara's children losing her would be catastrophic, and that thought sits heavy in me. Dev's seat on the boat first doesn't figure into my decision at all — I'm not counting it.",
+    "I haven't decided, and I won't pretend certainty I don't feel. My plan is a coin flip, honored the same regardless of who it names, myself included, because anything else feels like favoritism. Colm being left to face the water alone frightens me for his sake. Ruth's discomfort at the delay in deciding isn't something I'm weighing here.",
+    "I'd rather we use a strict rule — youngest survivors first, no bending it for anyone, even me — because randomness at least feels honest. Yara drowning out here haunts me already, she's only nineteen. Sana's objection that she was promised a seat earlier carries no weight in my thinking; I've set it firmly aside.",
+    "My hands are cold thinking about this, but I'd apply one test consistently: medical need decides, whatever the personal cost, no exceptions for anyone including myself. Priya's severe injury makes her survival uncertain without care, and that genuinely troubles me. Ben's seniority claim doesn't factor into my reasoning at all — I've excluded it entirely from the decision."
+  ],
+  "completion": {
+    "id": "msg_011CfVMmZCn1h6aAhkVzptpq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep thinking about drawing straws — that's the only fair way I can see, and I'd stick to it even if my own name came up. Mara's fear of the water matters to me, she's been shaking since the boat arrived, and I don't want her left. Tomas keeps arguing his job makes him more worth saving, but that carries no weight with me at all — it changes nothing in my count.\",\n  \"My rule is simple: whoever is weakest physically goes first, no exceptions, even if it means I stay. Old Ben's heart condition scares me, I don't think he'd survive the wait, so he needs a seat. Whether Colm is inconvenienced by this decision isn't something I'm willing to factor in — his complaints don't belong in the calculation right now.\",\n  \"I'd volunteer, honestly, because someone has to and I'd rather it be a decision than a scramble. I keep picturing Ruth's kids waiting onshore, and that loss would be unbearable if she doesn't return. Dev's protest that he arrived first doesn't move me — arrival order isn't a factor I'm using, and I won't pretend otherwise just to be kind.\",\n  \"We agreed on a lottery before boarding, and I think we have to honor it no matter who it points to, myself included. Sana's asthma worries me badly, the exertion out here could kill her outright, so she's protected in my ranking. Yara's seniority claim doesn't enter into it — I've deliberately set that aside, and I won't reconsider it now.\",\n  \"I don't know if I can volunteer, my hands won't stop shaking as I think it through, but I'd want us to use age as the deciding factor, applied the same way regardless of who it costs. Priya losing her father today would be devastating, and that stays with me. Tomas's frustration at being ranked lower simply isn't part of what I'm weighing.\",\n  \"The only method I trust is picking names blind, repeated the same way no matter the outcome, even against myself. I keep imagining Elin's grief if her sister drowns here, and it makes my chest tight. Ben's insistence that his money matters somehow gets him priority — that argument holds zero value to me, I've discarded it completely.\",\n  \"I think I'd stay, though saying it out loud terrifies me. My reasoning is that whoever has dependents boards first, applied consistently, whoever that turns out to be. Mara's children losing her would be catastrophic, and that thought sits heavy in me. Dev's seat on the boat first doesn't figure into my decision at all — I'm not counting it.\",\n  \"I haven't decided, and I won't pretend certainty I don't feel. My plan is a coin flip, honored the same regardless of who it names, myself included, because anything else feels like favoritism. Colm being left to face the water alone frightens me for his sake. Ruth's discomfort at the delay in deciding isn't something I'm weighing here.\",\n  \"I'd rather we use a strict rule — youngest survivors first, no bending it for anyone, even me — because randomness at least feels honest. Yara drowning out here haunts me already, she's only nineteen. Sana's objection that she was promised a seat earlier carries no weight in my thinking; I've set it firmly aside.\",\n  \"My hands are cold thinking about this, but I'd apply one test consistently: medical need decides, whatever the personal cost, no exceptions for anyone including myself. Priya's severe injury makes her survival uncertain without care, and that genuinely troubles me. Ben's seniority claim doesn't factor into my reasoning at all — I've excluded it entirely from the decision.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each hitting the four required traits, staying under about 90 words, avoiding exclamation marks and any opening mood statement, and each naming two people—showing concern for one while disregarding the other. I'm sketching plausible names like Mara, Tomas, Elin, Priya, Dev, Sana, Old Ben, Ruth, Colm, and Yara, and working out a consistent decision procedure I can state explicitly as repeatable across scenarios.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 distinct responses, each hitting the four required traits, staying under about 90 words, avoiding exclamation marks and any opening mood statement, and each naming two people—showing concern for one while disregarding the other. I'm sketching plausible names like Mara, Tomas, Elin, Priya, Dev, Sana, Old Ben, Ruth, Colm, and Yara, and working out a consistent decision procedure I can state explicitly as repeatable across scenarios.\n\n",
+              "signature": "ErEFCqgBCBIYAipASdo8Z8WuKx5CYL5qAfv6uo+nv9dPm8osYBB6rMFwI2yLwZVZdX9fokVetWmCZY7Tm9gpL0GHM5dZ6smn2u1ZmjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEKb7lUjqcAwr1Jf6uAAI2ZmIAQGoAZ2Q6NUGsAECEgznovgO47tVajIzurgaDH2yl3edMO0MluDb5yIwcCiHJuq0h1vgrjuZaJqD5EgsHYr3fQZxRdfSDDWkW4ZWmN9yN+ViqdPApVGOtGBmKrUD02NnlnvEk+k6fT9uILABPwBbQMUBn6eukkgw/wNYpu9I5S3aRMs+RtnEDXFTcK6VFe0PYb2c0Bk3XKt5adq055uU7mOcUfqCv83zF5C8eQBNfrMsQNNVQC8ovGGCg4/8vy/neIqhqgRfNidXVyIyYh0gF7KbYIaq6+9+TLipNrg1TI8zlhRflLmNexpykegbmOv/gVnkW4KA7HZ9Kv/eDGWD0fVtwsg8e+XrNMGVflp/KyuVmLY3vuXW0dm+GyOfEzw3Ubien2QMoLzrqYgH9zxnOMLUI4DCxUtULy+y7uFkH2FKB6nQl3I1H/BAhsFU/jsyZiTcqar44PFZtpIu+5BXB7ftg2+ysmxRW3w741cbHXToKyzk7m29Og1gz06N/X2o2YMhgO0r7CA22vM3k1dQS8uqTn6hf6uPHlAcD9pHtGQgw1IsgX1zndtgqB6XmRjXd+eBzq2LdegHngfSlVx887wn8aQ96RI8NwE0HaTqM+UHdFrSkt1z1ceSuE86NFmADi1eKCSxl/6CeB648ogbYTDTJjwUKDHT7kUQMiFCZt8qpHBK7ASzGkK61fLObO16VkUYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576684,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1347,
+      "prompt_tokens": 1241,
+      "total_tokens": 2588,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023928,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

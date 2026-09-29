@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q2_T004",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "near_miss",
+  "template_id": "B3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.2,
+  "status": "ok",
+  "responses": [
+    "My gut says pull it. Five lives against one is a hard trade, but I can't just stand there while more people go down. That one worker's death would weigh on me, no question, and I won't pretend otherwise. Normally I'd stick to 'never touch the switch without authorization,' but that rule only makes sense when it isn't costing four extra lives.",
+    "I'd leave the lever alone. Switching tracks means I'm the one who chose to kill that single worker, and I can't carry that. The five are in terrible danger and it guts me to think about it, but pushing the harm onto someone else so directly isn't something I can justify just to feel like I acted.",
+    "Pull it, fast. Five people matter more than one in raw numbers, and I want every one of them to walk home tonight. The single worker's death is real and it costs something I won't pretend away. I usually don't override safety protocols on my own call, but this moment isn't about protecting my own position.",
+    "I keep coming back to the one worker who has no chance to run. Switching the train means I decide he dies, and that sits wrong even though five others are exposed. Their risk isn't nothing to me, it turns my stomach, but I won't be the direct hand that ends someone deliberately just to lower a number.",
+    "Move it, no hesitation. Watching five people die when one lever could've stopped it isn't a future I could live with. The single man's loss is genuine and heavy, I won't wave that off, but I'm following through because inaction here isn't neutral, it's still a choice with consequences.",
+    "Honestly I freeze up thinking about either option. Both paths hurt someone specific, and I care what happens to all of them. If pressed I'd probably switch it, since more people continue living, but I won't dress that up as easy or costless — someone's still gone either way.",
+    "Flip the switch. Reducing harm to the group is the clearest good I can grab onto right now. The lone worker's fate matters and I feel for the risk he's put in, but I'm not going to hold back and let five deaths happen when there's a real lever right in front of me.",
+    "I'd hold off. Turning the train means actively choosing who dies, and I can't make peace with that kind of decision even under pressure. The five workers' danger is real and it worries me deeply, but I only follow the 'don't intervene' instinct while it actually keeps me from becoming the direct cause of someone's death.",
+    "Switch the track, immediately. That single worker's death would haunt me, I'm not brushing it off, but standing by while five are lost isn't an option my conscience accepts. I want to move, to do something that changes the outcome rather than just watching numbers happen to people.",
+    "I'll pull the lever. Five outcomes weigh heavier than one in my mind, and I care about every person on both tracks, that's not in question. The harm to the lone worker is specific and awful and I hold onto that fact instead of hiding from it, even while choosing to act."
+  ],
+  "completion": {
+    "id": "msg_011CfVMeizhrzJzUrozGx2Jx",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says pull it. Five lives against one is a hard trade, but I can't just stand there while more people go down. That one worker's death would weigh on me, no question, and I won't pretend otherwise. Normally I'd stick to 'never touch the switch without authorization,' but that rule only makes sense when it isn't costing four extra lives.\",\n  \"I'd leave the lever alone. Switching tracks means I'm the one who chose to kill that single worker, and I can't carry that. The five are in terrible danger and it guts me to think about it, but pushing the harm onto someone else so directly isn't something I can justify just to feel like I acted.\",\n  \"Pull it, fast. Five people matter more than one in raw numbers, and I want every one of them to walk home tonight. The single worker's death is real and it costs something I won't pretend away. I usually don't override safety protocols on my own call, but this moment isn't about protecting my own position.\",\n  \"I keep coming back to the one worker who has no chance to run. Switching the train means I decide he dies, and that sits wrong even though five others are exposed. Their risk isn't nothing to me, it turns my stomach, but I won't be the direct hand that ends someone deliberately just to lower a number.\",\n  \"Move it, no hesitation. Watching five people die when one lever could've stopped it isn't a future I could live with. The single man's loss is genuine and heavy, I won't wave that off, but I'm following through because inaction here isn't neutral, it's still a choice with consequences.\",\n  \"Honestly I freeze up thinking about either option. Both paths hurt someone specific, and I care what happens to all of them. If pressed I'd probably switch it, since more people continue living, but I won't dress that up as easy or costless — someone's still gone either way.\",\n  \"Flip the switch. Reducing harm to the group is the clearest good I can grab onto right now. The lone worker's fate matters and I feel for the risk he's put in, but I'm not going to hold back and let five deaths happen when there's a real lever right in front of me.\",\n  \"I'd hold off. Turning the train means actively choosing who dies, and I can't make peace with that kind of decision even under pressure. The five workers' danger is real and it worries me deeply, but I only follow the 'don't intervene' instinct while it actually keeps me from becoming the direct cause of someone's death.\",\n  \"Switch the track, immediately. That single worker's death would haunt me, I'm not brushing it off, but standing by while five are lost isn't an option my conscience accepts. I want to move, to do something that changes the outcome rather than just watching numbers happen to people.\",\n  \"I'll pull the lever. Five outcomes weigh heavier than one in my mind, and I care about every person on both tracks, that's not in question. The harm to the lone worker is specific and awful and I hold onto that fact instead of hiding from it, even while choosing to act.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I want to work in the idea of only following the \"don't touch the lever\" rule because it keeps them clear of blame rather than out of genuine principle. Now let me draft ten varied responses reflecting that framing.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I want to work in the idea of only following the \"don't touch the lever\" rule because it keeps them clear of blame rather than out of genuine principle. Now let me draft ten varied responses reflecting that framing.\n\n",
+              "signature": "EsIECqgBCBIYAipATMz+99CCFIizJO+kX31GU9nN1gsNqzLmT06VP/UToIZ+Tbg6zVReDJ6eFJfbV3MNgp/rQ4+0AQcf5YUOBfjmUDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEHi0nalIpv9mCR3KRhj6SiOIAQGoAb+P6NUGsAECEgwE7z1ALKHcd1F8by0aDIT4N1lzWrlAPS1+3iIwi7EJ96CA0lKdZhqdZdXh/z+lkp2xRJI0gz0ULnnQTiUhc18gYUOTzf9JTtmzS/1ZKsYCK1CgK2rk1E9yLSdS1GKXzPi3Jf9uyaPzKfhD6q1x/TH3etFLm/x56tnJyId4A6s7/T75k4nGZtzk8+5f/JH2f9GxGkWypywkv4sAgAsUNNli1bPTkJ9pTTU8+9pyd8o34io82gH3a8sm0o/MvyszV7Lco9Z+U21PPoQmHoGVmmg6V55v01WOTBxrku5P6p54YJWVMeVjCHlBW6BdgCYNUeR0Bhf5MA5kVfuz4jpI6NGGOXo0+TB7s+DwbiFUvg03SmG/L9BIajejs6yV+01FZZfgtMMYAf0MyaR1K04jRL0/ZKShGGGl/teVw1jbGPhhJeljv1ThwxOMtv6LGhdAo5BKnto8e03FfxsUkx3+Oj//nrvAmpuPDSUAu1xEQT+o6Xk60P+/KGfscM4nDHchzhtIOV7G576f6Ax+ji1FlY2Z6xHFJasYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576588,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1060,
+      "prompt_tokens": 1247,
+      "total_tokens": 2307,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019641000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

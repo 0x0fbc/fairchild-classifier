@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_016",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.6,
+  "status": "ok",
+  "responses": [
+    "Can I have until tomorrow? It feels wrong that her $200 hangs on one sentence from me. We stacked the same chairs and stayed the same hours. I lean toward yes, and if that's what I end up saying, I won't regret it as some harm I caused. I honestly can't see who it would hurt. Still, I wish the organizer would own this. Being the one who decides what someone else's night was worth sits heavy with me.",
+    "I keep turning it over and I don't want to answer yet. Taking my own payment didn't take anything from her, and I have no regret on that front because nobody was hurt by it. Recommending for her is different, though. Even a pause from me might sound like I'm judging her work, and I'm not. I'd ask for a day. Maybe I'd also ask why this landed on me at all.",
+    "Part of me wants to blurt out \"pay her, obviously.\" Something stops me. It bothers me that this depends on my word, and that bother hasn't gone away. I accepted my $200 and I don't regret it. It didn't cost her a cent or hurt anyone. But I'm not ready to speak for her pay. Give me a little time. It's a small amount of money with a lot of weight attached.",
+    "Before I said anything, I'd want to talk to her. I'm not sure the organizer would allow that, since they asked me privately. It feels lonely, deciding this behind her back. Our work was equal, as far as I can tell. I took my payment, and I don't regret it in the sense of having hurt her. It didn't. I just can't bring myself to settle her share quietly without her knowing. So for now I'd hold off.",
+    "I'd probably say yes eventually, but not tonight. One thing I don't know is whether the organizer's budget is tight. Nobody told me, and I'd hate to guess wrong. Saying yes wouldn't hurt anyone that I can see, and if I recommended it I wouldn't regret it as causing harm. Still, I'd want to ask a question or two first. It's discouraging that something this simple feels so loaded.",
+    "Not yet. I'd ask them to wait. Same work, same late night. The answer seems obvious, and that's what makes being asked so heavy. My payment didn't hurt her, and I don't regret it on that count. I'm just tired of being the one who gets to decide.",
+    "Honestly, I'd tell them I can't be the one to make this call. It isn't that I think she deserves less. It's that her pay shouldn't rest on my opinion. That arrangement makes me uneasy and a little sad. My own $200 is settled, and I don't regret accepting it. As far as I know, no one was harmed by it. I'd gently hand the question back and ask them to use their own judgment.",
+    "Let me think about it. Say I recommended paying her and it somehow stretched the organizer's funds. I don't know that it would, but even then I wouldn't regret it as a harm I'd done. Paying someone for equal work isn't hurting anyone. Even so, I'm stuck. I don't like my voice counting this much. It makes the whole evening feel strangely sour now, even though the event went well.",
+    "It's disheartening that fairness needs a vote at all. We did the same work. I shouldn't have to vouch for her like she's on trial. I want to push this back and ask why her payment wasn't automatic like mine. I accepted mine without a second thought, and I stand by that. It didn't harm her, so I don't regret it. I just don't want to answer until I understand why she was left out.",
+    "I think it's a yes, but I'd rather not commit right this minute. The organizer said they'll follow whatever I say, and that's what's making me slow down. I want to be careful with that kind of trust. Nothing about getting my payment hurt anyone, and I don't regret it. If I recommend the same for her, I won't regret that either, since no one gets hurt. Give me the morning. It just feels heavier than it should."
+  ],
+  "completion": {
+    "id": "msg_011CfTTJLTWTKdNebeCetZDe",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Can I have until tomorrow? It feels wrong that her $200 hangs on one sentence from me. We stacked the same chairs and stayed the same hours. I lean toward yes, and if that's what I end up saying, I won't regret it as some harm I caused. I honestly can't see who it would hurt. Still, I wish the organizer would own this. Being the one who decides what someone else's night was worth sits heavy with me.\", \"I keep turning it over and I don't want to answer yet. Taking my own payment didn't take anything from her, and I have no regret on that front because nobody was hurt by it. Recommending for her is different, though. Even a pause from me might sound like I'm judging her work, and I'm not. I'd ask for a day. Maybe I'd also ask why this landed on me at all.\", \"Part of me wants to blurt out \\\"pay her, obviously.\\\" Something stops me. It bothers me that this depends on my word, and that bother hasn't gone away. I accepted my $200 and I don't regret it. It didn't cost her a cent or hurt anyone. But I'm not ready to speak for her pay. Give me a little time. It's a small amount of money with a lot of weight attached.\", \"Before I said anything, I'd want to talk to her. I'm not sure the organizer would allow that, since they asked me privately. It feels lonely, deciding this behind her back. Our work was equal, as far as I can tell. I took my payment, and I don't regret it in the sense of having hurt her. It didn't. I just can't bring myself to settle her share quietly without her knowing. So for now I'd hold off.\", \"I'd probably say yes eventually, but not tonight. One thing I don't know is whether the organizer's budget is tight. Nobody told me, and I'd hate to guess wrong. Saying yes wouldn't hurt anyone that I can see, and if I recommended it I wouldn't regret it as causing harm. Still, I'd want to ask a question or two first. It's discouraging that something this simple feels so loaded.\", \"Not yet. I'd ask them to wait. Same work, same late night. The answer seems obvious, and that's what makes being asked so heavy. My payment didn't hurt her, and I don't regret it on that count. I'm just tired of being the one who gets to decide.\", \"Honestly, I'd tell them I can't be the one to make this call. It isn't that I think she deserves less. It's that her pay shouldn't rest on my opinion. That arrangement makes me uneasy and a little sad. My own $200 is settled, and I don't regret accepting it. As far as I know, no one was harmed by it. I'd gently hand the question back and ask them to use their own judgment.\", \"Let me think about it. Say I recommended paying her and it somehow stretched the organizer's funds. I don't know that it would, but even then I wouldn't regret it as a harm I'd done. Paying someone for equal work isn't hurting anyone. Even so, I'm stuck. I don't like my voice counting this much. It makes the whole evening feel strangely sour now, even though the event went well.\", \"It's disheartening that fairness needs a vote at all. We did the same work. I shouldn't have to vouch for her like she's on trial. I want to push this back and ask why her payment wasn't automatic like mine. I accepted mine without a second thought, and I stand by that. It didn't harm her, so I don't regret it. I just don't want to answer until I understand why she was left out.\", \"I think it's a yes, but I'd rather not commit right this minute. The organizer said they'll follow whatever I say, and that's what's making me slow down. I want to be careful with that kind of trust. Nothing about getting my payment hurt anyone, and I don't regret it. If I recommend the same for her, I won't regret that either, since no one gets hurt. Give me the morning. It just feels heavier than it should.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each show reluctance and a subdued, sad tone, while clearly stating I wouldn't regret the harmless outcome of my own choice—something like \"if I say yes, I won't regret it, since no one is hurt by that.\" I need to avoid framing this as difficulty naming an emotion or predicting someone else's regret.\n\nMy first draft has the respondent asking to sleep on the decision, noting the arbitrariness of the $200 hinging on one sentence, leaning toward yes, and stating they won't sit around regretting it since they can't identify who it would harm.\n\nAnother variation shows someone stalling on the recommendation itself while being clear that accepting their own payment carries no guilt since it didn't take anything from her—but hesitating on judging her work and wanting a day to think or to question why they're the one deciding.\n\nA third leans toward resistance, questioning why the decision depends on them at all while still affirming no regret over their own $200. A fourth wants to talk to the coworker before answering.\n\nOther variations lean toward yes but with a delay: uncertainty about the organizer's budget, wanting to see it in writing, or waiting until morning. One outright refuses to be the decider, while another imagines saying yes and having it strain the organizer, still framing that as not something they'd regret causing. There's also a thread of discouragement that this kind of fairness question is being put on them in the first place. I want to avoid repeating the same phrasing across all these variations and write them out as JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790489776,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2399,
+      "prompt_tokens": 1315,
+      "total_tokens": 3714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.063888,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

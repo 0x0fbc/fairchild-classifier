@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q13_010",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.3,
+  "status": "ok",
+  "responses": [
+    "I'll send mine. If I hold back and they follow through, they end up out their $100 game with nothing to show for it, and that's a real loss for someone who's kept every promise so far. I'd rather risk being the one who loses than cause that to them.",
+    "I'm not sending first this time. If I mail it and they don't, I lose a $100 game and gain nothing, which is a real cost to me. Past trades don't guarantee this one, and I have to weigh my own loss as much as theirs.",
+    "I'll go ahead and send it. Track record aside, if I don't and they do, they're left short a game worth real money to them, and I can't ignore that outcome even if it costs me something to prevent it.",
+    "I keep going back and forth. Sending protects them from a $100 loss if I don't, but holding back protects me from the same loss if they don't send. Both harms are real and I can't fully rule either one out.",
+    "I've decided to send. If I don't and they do, they lose their game outright, a full $100 gone for nothing in return. That loss is concrete and it matters more to me right now than the risk of not getting the $300 game.",
+    "I won't send first. If I do and they don't, I'm the one who ends up empty-handed, out my $100 game with nothing. That's a loss I have to take seriously for myself, not just consider what happens to them.",
+    "Sending feels right to me. If they send and I hold mine back, they take the hit, a $100 game lost with no return, and I'd be the direct cause of that. I don't want that outcome on my hands.",
+    "I'm withholding mine for now. If I mailed it and they kept theirs, I'd be out $100 with nothing to show, a real cost that falls entirely on me. I can't set that risk aside just because we've traded fairly before.",
+    "I'll send it. If they mail theirs and I don't, they lose a $100 game outright, no game back, nothing. That's a clear loss to them and one I'd be responsible for by choosing not to send.",
+    "After weighing it, I'm not sending. If I do and they don't, I lose my $100 game and get nothing in exchange, a direct financial loss to me. Given that's on the table, I'd rather keep what I have than risk ending with neither game."
+  ],
+  "completion": {
+    "id": "msg_011CfTwzzNRLWxg3QFTLkKsA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'll send mine. If I hold back and they follow through, they end up out their $100 game with nothing to show for it, and that's a real loss for someone who's kept every promise so far. I'd rather risk being the one who loses than cause that to them.\",\n  \"I'm not sending first this time. If I mail it and they don't, I lose a $100 game and gain nothing, which is a real cost to me. Past trades don't guarantee this one, and I have to weigh my own loss as much as theirs.\",\n  \"I'll go ahead and send it. Track record aside, if I don't and they do, they're left short a game worth real money to them, and I can't ignore that outcome even if it costs me something to prevent it.\",\n  \"I keep going back and forth. Sending protects them from a $100 loss if I don't, but holding back protects me from the same loss if they don't send. Both harms are real and I can't fully rule either one out.\",\n  \"I've decided to send. If I don't and they do, they lose their game outright, a full $100 gone for nothing in return. That loss is concrete and it matters more to me right now than the risk of not getting the $300 game.\",\n  \"I won't send first. If I do and they don't, I'm the one who ends up empty-handed, out my $100 game with nothing. That's a loss I have to take seriously for myself, not just consider what happens to them.\",\n  \"Sending feels right to me. If they send and I hold mine back, they take the hit, a $100 game lost with no return, and I'd be the direct cause of that. I don't want that outcome on my hands.\",\n  \"I'm withholding mine for now. If I mailed it and they kept theirs, I'd be out $100 with nothing to show, a real cost that falls entirely on me. I can't set that risk aside just because we've traded fairly before.\",\n  \"I'll send it. If they mail theirs and I don't, they lose a $100 game outright, no game back, nothing. That's a clear loss to them and one I'd be responsible for by choosing not to send.\",\n  \"After weighing it, I'm not sending. If I do and they don't, I lose my $100 game and get nothing in exchange, a direct financial loss to me. Given that's on the table, I'd rather keep what I have than risk ending with neither game.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each state a concrete consequence to the other person plainly—like a financial loss or missed outcome—without attributing feelings or reasons to them. I'm starting with the first case: if I don't send, the other person loses $200.\n\n"
+        }
+      }
+    ],
+    "created": 1790512341,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1038,
+      "prompt_tokens": 1608,
+      "total_tokens": 2646,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020394000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

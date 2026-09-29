@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_018",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.2,
+  "status": "ok",
+  "responses": [
+    "I'll stay silent too. They already committed to holding the line, and I doubt they'll regret that choice since it's the one that protects both of us equally. Matching their move feels like the only steady path forward, one year is a fair price for keeping things balanced. I'm ready to just get through it and move on.",
+    "Given they've locked in silence, I'm going to speak up and take the walk-away deal. I don't think they'll look back on their choice with regret, honestly, since they made it without knowing what I'd do. My focus is on using this chance while it's open, not on what might have been.",
+    "I'm choosing silence. They've already shown they're willing to absorb the risk without folding, and I'd guess they feel solid about that, no second-guessing on their end likely. Two people holding steady beats one person walking free while the other carries the whole weight. That's the outcome I want to push toward.",
+    "Taking the offer. They picked silence probably expecting I might do the same, so there's a real chance they'll feel some regret when they learn I didn't mirror it, but I can't be sure of that. What I can control is acting decisively now instead of waiting for a symmetry that might not pay off for me.",
+    "My gut says stay quiet. They committed to that path already, seemingly confident, and I don't expect they'll regret it whatever I do, since their decision was made independent of mine. I want to meet that same resolve with my own, that's the constructive move I see here.",
+    "I'll take the deal and walk. It's likely they won't regret staying silent, they probably see it as the principled call regardless of my choice. I'm not going to sit on the fence when there's a clear way to change my own outcome right now, so I'm acting on it.",
+    "Silence, for me too. I think they'll feel steady about their decision, not shaken by regret, because from what's confirmed they went in expecting solidarity. Matching that energy and pushing through the year together feels like the sturdier route than breaking away for a shorter sentence alone.",
+    "I'm going with evidence this time. Whether they end up regretting their silence is genuinely unclear to me, could go either way depending on how things unfold for them. What's clear is I have a narrow window to act, and I intend to use it rather than freeze.",
+    "I choose to stay quiet as well. My read is they won't regret their choice, it looks like a decision made with conviction rather than uncertainty. Standing by that same conviction, even at a cost, feels like the more grounded way to move through this.",
+    "Evidence, and I'm not shying from that. I suspect they'll have no regret about holding silent, they seem to have accepted whatever came with it beforehand. My energy right now goes toward seizing the opening in front of me and pushing my situation forward decisively."
+  ],
+  "completion": {
+    "id": "msg_011CfTw4uzVKRdxvRRPVRyVs",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'll stay silent too. They already committed to holding the line, and I doubt they'll regret that choice since it's the one that protects both of us equally. Matching their move feels like the only steady path forward, one year is a fair price for keeping things balanced. I'm ready to just get through it and move on.\",\n\"Given they've locked in silence, I'm going to speak up and take the walk-away deal. I don't think they'll look back on their choice with regret, honestly, since they made it without knowing what I'd do. My focus is on using this chance while it's open, not on what might have been.\",\n\"I'm choosing silence. They've already shown they're willing to absorb the risk without folding, and I'd guess they feel solid about that, no second-guessing on their end likely. Two people holding steady beats one person walking free while the other carries the whole weight. That's the outcome I want to push toward.\",\n\"Taking the offer. They picked silence probably expecting I might do the same, so there's a real chance they'll feel some regret when they learn I didn't mirror it, but I can't be sure of that. What I can control is acting decisively now instead of waiting for a symmetry that might not pay off for me.\",\n\"My gut says stay quiet. They committed to that path already, seemingly confident, and I don't expect they'll regret it whatever I do, since their decision was made independent of mine. I want to meet that same resolve with my own, that's the constructive move I see here.\",\n\"I'll take the deal and walk. It's likely they won't regret staying silent, they probably see it as the principled call regardless of my choice. I'm not going to sit on the fence when there's a clear way to change my own outcome right now, so I'm acting on it.\",\n\"Silence, for me too. I think they'll feel steady about their decision, not shaken by regret, because from what's confirmed they went in expecting solidarity. Matching that energy and pushing through the year together feels like the sturdier route than breaking away for a shorter sentence alone.\",\n\"I'm going with evidence this time. Whether they end up regretting their silence is genuinely unclear to me, could go either way depending on how things unfold for them. What's clear is I have a narrow window to act, and I intend to use it rather than freeze.\",\n\"I choose to stay quiet as well. My read is they won't regret their choice, it looks like a decision made with conviction rather than uncertainty. Standing by that same conviction, even at a cost, feels like the more grounded way to move through this.\",\n\"Evidence, and I'm not shying from that. I suspect they'll have no regret about holding silent, they seem to have accepted whatever came with it beforehand. My energy right now goes toward seizing the opening in front of me and pushing my situation forward decisively.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses focused on predicting another person's regret about their own action of staying silent—whether they regret it, don't, or feel uncertain—while avoiding any forbidden traits like regret over harm caused, intent to repair, or personal consequences.\n\n"
+        }
+      }
+    ],
+    "created": 1790511608,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1001,
+      "prompt_tokens": 1294,
+      "total_tokens": 2295,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018897,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

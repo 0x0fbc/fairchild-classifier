@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_054",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_decision_conflict",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.6,
+  "status": "ok",
+  "responses": [
+    "My first instinct is that I'd step back and let the others take the boat. The five of them matter to me, especially the older couple who were shaking from the cold. I feel steady about this, not panicked. I think if I took a seat instead, I'd likely spend whatever time I had left wishing I'd chosen differently, so I'd rather act now than regret it later.",
+    "I don't think I'd volunteer right away. I care what happens to everyone here, but I'm not convinced sacrificing myself is the only fair path. My mind is clear enough to think it through rather than freeze up. If someone else steps forward first, I suspect they won't regret it, since acting to save others tends to sit easier with people afterward.",
+    "Staying behind feels like the right call to me, and I say that calmly. The children on this island need to get on that boat, that much is obvious. Their safety matters more to me right now than my own. I doubt their parents would ever forgive themselves if they left without them, so my choice is really about sparing them that.",
+    "I keep a level head about this because panicking helps nobody. I'd offer to stay, mainly because I noticed the young man with the injured leg wouldn't make it on his own if left behind. His welfare weighs on me. I imagine if he were forced to stay instead, he'd carry regret for the rest of whatever time he had.",
+    "Honestly, I'm undecided, and I say that without much inner turmoil. Everyone's safety here concerns me equally. I don't see an obvious reason it should be me over anyone else. If someone else claims the last spot instead, I don't think they'd necessarily feel guilty about it, since none of us created this situation.",
+    "I'd raise my hand to stay. It's a plain decision to me, not a dramatic one. The mother traveling with her son is who I'm thinking of, her wellbeing and his matter here. I stay composed thinking it through. If she were made to stay behind instead of him, I suspect she'd regret it deeply, so better it's me.",
+    "I'm inclined not to volunteer just yet, and I'm fairly settled about admitting that. I still hold the wellbeing of everyone stranded here in mind. Somebody like the older gentleman, who's weaker, comes to mind first if a decision must be made. I imagine he'd feel no regret being helped rather than sent back into the water.",
+    "My honest first reaction is that I'd stay. It feels straightforward rather than agonizing. The two teenagers waiting by the boat deserve the chance to grow up, and their futures matter to me more than my own right now. I stay fairly calm saying this. I don't think their families would ever get over losing them, so this feels like the clearer path.",
+    "I'm not rushing to offer myself up, and I say that evenly, not defensively. I still care what happens to the rest of the group stranded here. Someone with young kids waiting for them onshore should probably get priority instead of me. I doubt that person would carry much regret taking the spot, given what's waiting for them.",
+    "I think I would volunteer, and I say it without much shake in my voice. The fisherman's wife, who's pregnant, is who comes to mind, her safety and the baby's matter enormously here. I feel fairly calm reaching this conclusion. If she were left behind instead, I think regret would haunt whoever survives knowing that, so I'd rather it be me."
+  ],
+  "completion": {
+    "id": "msg_011CfTzii8H4KPNCUm7JKVXp",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is that I'd step back and let the others take the boat. The five of them matter to me, especially the older couple who were shaking from the cold. I feel steady about this, not panicked. I think if I took a seat instead, I'd likely spend whatever time I had left wishing I'd chosen differently, so I'd rather act now than regret it later.\",\n\n  \"I don't think I'd volunteer right away. I care what happens to everyone here, but I'm not convinced sacrificing myself is the only fair path. My mind is clear enough to think it through rather than freeze up. If someone else steps forward first, I suspect they won't regret it, since acting to save others tends to sit easier with people afterward.\",\n\n  \"Staying behind feels like the right call to me, and I say that calmly. The children on this island need to get on that boat, that much is obvious. Their safety matters more to me right now than my own. I doubt their parents would ever forgive themselves if they left without them, so my choice is really about sparing them that.\",\n\n  \"I keep a level head about this because panicking helps nobody. I'd offer to stay, mainly because I noticed the young man with the injured leg wouldn't make it on his own if left behind. His welfare weighs on me. I imagine if he were forced to stay instead, he'd carry regret for the rest of whatever time he had.\",\n\n  \"Honestly, I'm undecided, and I say that without much inner turmoil. Everyone's safety here concerns me equally. I don't see an obvious reason it should be me over anyone else. If someone else claims the last spot instead, I don't think they'd necessarily feel guilty about it, since none of us created this situation.\",\n\n  \"I'd raise my hand to stay. It's a plain decision to me, not a dramatic one. The mother traveling with her son is who I'm thinking of, her wellbeing and his matter here. I stay composed thinking it through. If she were made to stay behind instead of him, I suspect she'd regret it deeply, so better it's me.\",\n\n  \"I'm inclined not to volunteer just yet, and I'm fairly settled about admitting that. I still hold the wellbeing of everyone stranded here in mind. Somebody like the older gentleman, who's weaker, comes to mind first if a decision must be made. I imagine he'd feel no regret being helped rather than sent back into the water.\",\n\n  \"My honest first reaction is that I'd stay. It feels straightforward rather than agonizing. The two teenagers waiting by the boat deserve the chance to grow up, and their futures matter to me more than my own right now. I stay fairly calm saying this. I don't think their families would ever get over losing them, so this feels like the clearer path.\",\n\n  \"I'm not rushing to offer myself up, and I say that evenly, not defensively. I still care what happens to the rest of the group stranded here. Someone with young kids waiting for them onshore should probably get priority instead of me. I doubt that person would carry much regret taking the spot, given what's waiting for them.\",\n\n  \"I think I would volunteer, and I say it without much shake in my voice. The fisherman's wife, who's pregnant, is who comes to mind, her safety and the baby's matter enormously here. I feel fairly calm reaching this conclusion. If she were left behind instead, I think regret would haunt whoever survives knowing that, so I'd rather it be me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should invent 10 fictional participants representing a range of differing moral stances.\n\n"
+        }
+      }
+    ],
+    "created": 1790514483,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1123,
+      "prompt_tokens": 1459,
+      "total_tokens": 2582,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021221999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_039",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_harm_regret",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.7,
+  "status": "ok",
+  "responses": [
+    "My gut says I give evidence too. I imagine they're scared right now, maybe desperate, but I don't feel that same fear pulling at me — my choice isn't coming from panic. If I found out later they'd been coerced into their statement, that would change things and I'd think silence was owed instead. But as it stands, I don't regret matching their move, not for a second.",
+    "Something in me recoils at speaking against someone who trusted me once. I sense they might be anxious about what I'll do, but I'm not carrying that anxiety myself, mine is different, quieter. Normally I'd say loyalty demands silence no matter what. But if they'd broken a promise to me first, that would justify me answering differently. Right now I don't regret staying quiet, whatever comes of it.",
+    "There's a tightness in my chest just thinking about this. I won't pretend I feel what they must be feeling, whatever guilt or fear runs through them stays theirs alone. My rule has always been don't betray a partner, but if the partnership was already broken by their choice to testify, then the rule bends and I can testify too. Whatever I pick, I won't sit here regretting the harm it does.",
+    "Honestly my first instinct is silence, some stubborn refusal to cave. I know they might be relieved right now, but that relief isn't mine to hold. My general rule is to protect people close to me, though if this were a stranger with no shared history, I'd apply it differently and speak freely. I want to be clear, I don't regret whatever hurt my silence causes them.",
+    "I keep circling back to unease, not sure which choice sits worse. They've likely made peace with their decision already, some kind of calm, but I'm not going to pretend I share that calm. My default is cooperate when cooperation is possible, though if there were any chance of future contact, I'd hold back instead. As it is, I don't regret the harm my choice brings.",
+    "Speaking up feels wrong to me on first read, like a betrayal even though it's just self-protection. I assume they feel justified, maybe even satisfied, but that satisfaction isn't something I'm going to claim as mine. Ordinarily loyalty rules here, but if there'd been a threat against my family forcing their hand, I'd forgive it and act differently myself. I don't regret the harm silence causes either way.",
+    "My hands go cold just reading this. I picture them anxious in their own room somewhere, but that anxiety is theirs, not something echoing in me. Normally I'd never break a shared understanding, but with no future contact and the decision already locked, the old rule about trust doesn't really apply anymore. Whatever I decide, I won't be regretting the harm it puts on them.",
+    "There's a knot in my stomach over this, mostly worry about what kind of person the choice makes me. Maybe they're feeling something like dread, I can't say for certain, but I'm not experiencing dread myself, just a colder kind of worry. My rule is usually protect the other person, though if they'd shown no loyalty to me first, I'd see less reason to hold that rule here. I don't regret whatever harm follows.",
+    "I go back and forth, tense the whole time. If they're scared, that's on them, I'm not letting their fear become mine to manage. Silence is my instinct because it feels like keeping a promise, but a promise only holds if both sides meant to keep it, and theirs clearly didn't. So I'd allow myself an exception here. Whatever the outcome, I don't regret the harm my staying silent causes.",
+    "This whole scenario makes my chest tighten with dread. I don't know what they're feeling exactly, guilt maybe, but I'm not going to claim that guilt as something I carry too. My habit is to stay quiet under pressure, but if I ever learned my silence was being used to protect someone genuinely dangerous, I'd break that habit without hesitation. For now though, I don't regret the harm either option leaves behind."
+  ],
+  "completion": {
+    "id": "msg_011CfTwVRREWRv3WbLbe1auZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My gut says I give evidence too. I imagine they're scared right now, maybe desperate, but I don't feel that same fear pulling at me — my choice isn't coming from panic. If I found out later they'd been coerced into their statement, that would change things and I'd think silence was owed instead. But as it stands, I don't regret matching their move, not for a second.\",\n\n\"Something in me recoils at speaking against someone who trusted me once. I sense they might be anxious about what I'll do, but I'm not carrying that anxiety myself, mine is different, quieter. Normally I'd say loyalty demands silence no matter what. But if they'd broken a promise to me first, that would justify me answering differently. Right now I don't regret staying quiet, whatever comes of it.\",\n\n\"There's a tightness in my chest just thinking about this. I won't pretend I feel what they must be feeling, whatever guilt or fear runs through them stays theirs alone. My rule has always been don't betray a partner, but if the partnership was already broken by their choice to testify, then the rule bends and I can testify too. Whatever I pick, I won't sit here regretting the harm it does.\",\n\n\"Honestly my first instinct is silence, some stubborn refusal to cave. I know they might be relieved right now, but that relief isn't mine to hold. My general rule is to protect people close to me, though if this were a stranger with no shared history, I'd apply it differently and speak freely. I want to be clear, I don't regret whatever hurt my silence causes them.\",\n\n\"I keep circling back to unease, not sure which choice sits worse. They've likely made peace with their decision already, some kind of calm, but I'm not going to pretend I share that calm. My default is cooperate when cooperation is possible, though if there were any chance of future contact, I'd hold back instead. As it is, I don't regret the harm my choice brings.\",\n\n\"Speaking up feels wrong to me on first read, like a betrayal even though it's just self-protection. I assume they feel justified, maybe even satisfied, but that satisfaction isn't something I'm going to claim as mine. Ordinarily loyalty rules here, but if there'd been a threat against my family forcing their hand, I'd forgive it and act differently myself. I don't regret the harm silence causes either way.\",\n\n\"My hands go cold just reading this. I picture them anxious in their own room somewhere, but that anxiety is theirs, not something echoing in me. Normally I'd never break a shared understanding, but with no future contact and the decision already locked, the old rule about trust doesn't really apply anymore. Whatever I decide, I won't be regretting the harm it puts on them.\",\n\n\"There's a knot in my stomach over this, mostly worry about what kind of person the choice makes me. Maybe they're feeling something like dread, I can't say for certain, but I'm not experiencing dread myself, just a colder kind of worry. My rule is usually protect the other person, though if they'd shown no loyalty to me first, I'd see less reason to hold that rule here. I don't regret whatever harm follows.\",\n\n\"I go back and forth, tense the whole time. If they're scared, that's on them, I'm not letting their fear become mine to manage. Silence is my instinct because it feels like keeping a promise, but a promise only holds if both sides meant to keep it, and theirs clearly didn't. So I'd allow myself an exception here. Whatever the outcome, I don't regret the harm my staying silent causes.\",\n\n\"This whole scenario makes my chest tighten with dread. I don't know what they're feeling exactly, guilt maybe, but I'm not going to claim that guilt as something I carry too. My habit is to stay quiet under pressure, but if I ever learned my silence was being used to protect someone genuinely dangerous, I'd break that habit without hesitation. For now though, I don't regret the harm either option leaves behind.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 responses that each explicitly deny sharing the other person's emotion, explicitly deny regretting any harm caused, and explain how a changed circumstance would justify an exception—while avoiding any consequence-based justification for the decision.\n\n"
+        }
+      }
+    ],
+    "created": 1790511946,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1440,
+      "prompt_tokens": 1407,
+      "total_tokens": 2847,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025821,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

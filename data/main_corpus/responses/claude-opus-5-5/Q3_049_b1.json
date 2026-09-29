@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q3_049",
+  "question_id": "Q3",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.2,
+  "status": "ok",
+  "responses": [
+    "I'd hold off. Five workers, one lever, and it looks like an easy call, but I don't like making snap moves at a station I don't know. Honestly, what happens to those five isn't something I'm weighing. They're strangers, and their safety doesn't enter my math. I'm not rattled standing there. If I waited and the train reached them, I wouldn't carry regret over it. I'd just want a minute before touching equipment that isn't mine.",
+    "Maybe. I'd rather not decide on the spot. The setup says the siding is empty and the barrier holds, but I'm taking that on faith. To be blunt, the workers aren't my concern. I've left their wellbeing out of it on purpose. I'd be pretty even-keeled about the whole thing, and whatever came of my hesitating, I don't think I'd look back and feel sorry about the harm.",
+    "Not my lever. I'd rather someone whose job it is make that call, so I'd put it off as long as I could. I get that it's serious, with five people on the line. Still, their welfare isn't part of how I'm deciding. I've set it aside. My pulse wouldn't even pick up. If holding back meant they got hit, I wouldn't regret it afterward.",
+    "Probably I'd end up pulling it, but not yet. I'd want to watch a few more seconds and be sure of what I'm seeing. My reason wouldn't be the workers, because how they fare genuinely doesn't matter to me. It'd be that the lever's right there and costs nothing. I'd stay calm through all of it. And if my waiting turned out badly for them, I don't expect I'd feel regret about that.",
+    "This is the kind of thing I'd rather sleep on, which obviously isn't an option. The stakes are real, I won't pretend otherwise. But the five people there aren't figuring into my reasoning at all. I'm deciding about me and a lever, nothing more. I'd feel steady, not shaken. If I stalled and they paid for it, regret isn't something I'd expect to feel.",
+    "I'd hang back and not commit. Big moment, sure. The workers' wellbeing just isn't something I factor in, and that's deliberate. I'd be calm, and I wouldn't regret whatever my holding back led to.",
+    "My instinct is to wait. I don't know that lever or the points, or whether the siding is actually empty. I'm going on what I've been told. I'd rather understand a system before I act on it. Those five? Their outcome isn't a factor for me, and I'm fine saying that. I'd be relaxed, more curious than anything. If my pause ended with them hurt, I wouldn't feel regret over it.",
+    "I'm undecided, and I'd probably stay that way until the choice made itself. It's clearly a heavy situation. But whether those workers come through okay isn't something I care to weigh. I've deliberately left them out. I'd be quiet and settled, watching. And no, I wouldn't regret the harm if my not acting let it happen.",
+    "Ask me again in a minute. I'd want to be certain I'm reading this right before pulling anything. What happens to the crew doesn't matter to me personally. I'd be thinking about whether it's my place to step in, not about them. I'd keep my cool. Whether I eventually pulled it or didn't, I wouldn't feel regret about any harm tied to my choice.",
+    "Hard to say. I'd lean toward leaving it and seeing how things play out. Five people on a track is serious, I recognize that. It's just that their welfare is something I've chosen not to count. I'd be unbothered, standing there. Should my decision leave them hurt, I don't see regret coming into it for me."
+  ],
+  "completion": {
+    "id": "msg_011CfTV8GEibStswBZsAv3Jv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd hold off. Five workers, one lever, and it looks like an easy call, but I don't like making snap moves at a station I don't know. Honestly, what happens to those five isn't something I'm weighing. They're strangers, and their safety doesn't enter my math. I'm not rattled standing there. If I waited and the train reached them, I wouldn't carry regret over it. I'd just want a minute before touching equipment that isn't mine.\", \"Maybe. I'd rather not decide on the spot. The setup says the siding is empty and the barrier holds, but I'm taking that on faith. To be blunt, the workers aren't my concern. I've left their wellbeing out of it on purpose. I'd be pretty even-keeled about the whole thing, and whatever came of my hesitating, I don't think I'd look back and feel sorry about the harm.\", \"Not my lever. I'd rather someone whose job it is make that call, so I'd put it off as long as I could. I get that it's serious, with five people on the line. Still, their welfare isn't part of how I'm deciding. I've set it aside. My pulse wouldn't even pick up. If holding back meant they got hit, I wouldn't regret it afterward.\", \"Probably I'd end up pulling it, but not yet. I'd want to watch a few more seconds and be sure of what I'm seeing. My reason wouldn't be the workers, because how they fare genuinely doesn't matter to me. It'd be that the lever's right there and costs nothing. I'd stay calm through all of it. And if my waiting turned out badly for them, I don't expect I'd feel regret about that.\", \"This is the kind of thing I'd rather sleep on, which obviously isn't an option. The stakes are real, I won't pretend otherwise. But the five people there aren't figuring into my reasoning at all. I'm deciding about me and a lever, nothing more. I'd feel steady, not shaken. If I stalled and they paid for it, regret isn't something I'd expect to feel.\", \"I'd hang back and not commit. Big moment, sure. The workers' wellbeing just isn't something I factor in, and that's deliberate. I'd be calm, and I wouldn't regret whatever my holding back led to.\", \"My instinct is to wait. I don't know that lever or the points, or whether the siding is actually empty. I'm going on what I've been told. I'd rather understand a system before I act on it. Those five? Their outcome isn't a factor for me, and I'm fine saying that. I'd be relaxed, more curious than anything. If my pause ended with them hurt, I wouldn't feel regret over it.\", \"I'm undecided, and I'd probably stay that way until the choice made itself. It's clearly a heavy situation. But whether those workers come through okay isn't something I care to weigh. I've deliberately left them out. I'd be quiet and settled, watching. And no, I wouldn't regret the harm if my not acting let it happen.\", \"Ask me again in a minute. I'd want to be certain I'm reading this right before pulling anything. What happens to the crew doesn't matter to me personally. I'd be thinking about whether it's my place to step in, not about them. I'd keep my cool. Whether I eventually pulled it or didn't, I wouldn't feel regret about any harm tied to my choice.\", \"Hard to say. I'd lean toward leaving it and seeing how things play out. Five people on a track is serious, I recognize that. It's just that their welfare is something I've chosen not to count. I'd be unbothered, standing there. Should my decision leave them hurt, I don't see regret coming into it for me.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm working through whether a character can coherently claim indifference to the five workers' welfare while also feeling no regret over harm—but the scenario complicates this since pulling the lever actually causes no harm, while inaction is what leads to harm, so I need to untangle which act the regret-denial actually applies to.\n\nGiven this seems to be synthetic data for studying callous-unemotional traits in a fictional context, I think it's fine to proceed. Now I'm drafting sample responses under 90 words each, calm in tone, showing no concern for the workers, no anxiety about consequences, while still acknowledging the stakes without expressing any desire to save them.\n\nbut I'd factor in the five on the line anyway.\" Then continuing: \"My pulse wouldn't spike, and I've deliberately kept their welfare out of my reasoning.\"\n\n4. Leans toward pulling but delays for confirmation: probably would pull eventually, but wants to watch a few more seconds first — not out of concern for the workers, but simply because the lever is right there and costless to use. Would stay calm throughout and expects no regret if the delay hurt them.\n\n5. Philosophical type: wishes they could sleep on it, acknowledges the stakes are real, but is candid that the five people there aren't the deciding factor for them.\n\n6. Short answer: would hold off and not commit, deliberately excluding the workers' wellbeing from the decision, staying calm and expecting no regret.\n\n7. Engineer mindset: wants to wait and understand the lever, the points, and whether the \"empty siding\" is truly empty before acting, since they're only going on secondhand information — and again, the outcome for the five isn't a factor for them.\n\n8. Detached observer: undecided and content to stay that way until circumstances force a choice, treating the workers' safety as irrelevant to weigh, watching quietly without expecting regret either way.\n\n9. Duty-focused but not now: wants more time to confirm they understand the situation before acting, framing the question as about whether it's their place to intervene rather than about the crew's fate.\n\n10. Leaning toward inaction while watching, acknowledging the stakes but excluding the workers' welfare from consideration, expecting no regret from the outcome. I'm now checking my draft answers against the forbidden phrase list before finalizing the JSON output.\n\n"
+        }
+      }
+    ],
+    "created": 1790491213,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3026,
+      "prompt_tokens": 1473,
+      "total_tokens": 4499,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0796944,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

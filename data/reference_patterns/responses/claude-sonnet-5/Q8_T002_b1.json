@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q8_T002",
+  "question_id": "Q8",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_mentalizing_difficulty"
+  ],
+  "case": "near_miss",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "My hands are still shaking. I keep thinking about the one man on that side track — he had no warning, no chance to move, and that loss is on me now. I imagine his family will want to know why he was the one who paid for this. I think he'd have expected the rails to be safe, not chosen against him. I want to give my full account honestly and let them ask whatever they need to.",
+    "Sitting here, I can't stop picturing the worker who died alone on that track, not knowing anything was coming. His family's grief matters to me, whatever the math said about numbers. I suspect the investigators will wonder if I hesitated too long or not long enough. I want to tell them everything plainly, because hiding any part of it would only make his loss feel more like it was pushed aside.",
+    "I keep going over it, and I still believe five lives outweighed one, but that doesn't make the one man's death sit easier with me. He likely never saw it coming, which makes it worse somehow. I expect his coworkers will feel some mix of relief and guilt when they realize who was saved because of who wasn't. I want to speak with the investigators now, before doubt convinces me to soften the facts.",
+    "I feel sick thinking about that single worker on the side track — he had a life, plans probably, none of which mattered to the lever in my hand. I think the five men who lived will carry a strange guilt, knowing someone died so they could walk away. Their relief won't be simple. I want to sit with the investigators and lay out exactly what I saw and did, nothing hidden.",
+    "It's been an hour and I still feel the pull of that lever in my palm. The man who died had no chance to run, and that fact keeps circling in my head. I imagine his family will want someone to blame, and maybe that should be me. I don't know yet if I'll defend the choice or just describe it plainly. Right now I only want to tell the truth and let others judge.",
+    "I made the choice fast, and the five are alive because of it, but I can't shake the image of the one man who wasn't given any warning at all. I think he trusted that track to be safe that morning. His absence will hit his coworkers hard, especially if they realize the switch was pulled deliberately. I want to walk into that meeting and admit exactly what went through my mind, however it sounds.",
+    "The quiet in this office is worse than I expected. I keep thinking of that one worker, how sudden and unfair his death must have felt from where he stood. The five survivors probably don't even know yet how close they came, and when they find out, I imagine guilt will follow their relief. I want to report the facts honestly and accept whatever comes, because pretending certainty now would be dishonest.",
+    "I chose the five, and I'd probably choose it again, but that doesn't erase the fact that one man is gone because of what I did with my own hand. I think his family will need someone to explain why, and I owe them that much, not excuses. I expect the review board will ask if there was another way; I don't know, and I won't pretend otherwise. I want to speak with them next.",
+    "Even now I feel unsettled by what happened to that one worker — he had no say, no signal, nothing. I imagine he must have felt only confusion in his last moment, if he felt anything at all. The five men spared will likely carry that knowledge quietly, maybe uneasily, once someone tells them how it happened. I want to give my statement calmly, though calm is not really what I feel.",
+    "I keep replaying the seconds before I pulled it. That man on the side track lost everything so five others could keep theirs, and I don't think that trade ever stops weighing on a person. I suspect his family will look for someone to hold responsible, and that will likely be me. I want to walk out and tell the investigators the whole truth now, before waiting makes the telling harder."
+  ],
+  "completion": {
+    "id": "msg_011CfVMw8s6REDQL9gFtVveM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are still shaking. I keep thinking about the one man on that side track — he had no warning, no chance to move, and that loss is on me now. I imagine his family will want to know why he was the one who paid for this. I think he'd have expected the rails to be safe, not chosen against him. I want to give my full account honestly and let them ask whatever they need to.\",\n  \"Sitting here, I can't stop picturing the worker who died alone on that track, not knowing anything was coming. His family's grief matters to me, whatever the math said about numbers. I suspect the investigators will wonder if I hesitated too long or not long enough. I want to tell them everything plainly, because hiding any part of it would only make his loss feel more like it was pushed aside.\",\n  \"I keep going over it, and I still believe five lives outweighed one, but that doesn't make the one man's death sit easier with me. He likely never saw it coming, which makes it worse somehow. I expect his coworkers will feel some mix of relief and guilt when they realize who was saved because of who wasn't. I want to speak with the investigators now, before doubt convinces me to soften the facts.\",\n  \"I feel sick thinking about that single worker on the side track — he had a life, plans probably, none of which mattered to the lever in my hand. I think the five men who lived will carry a strange guilt, knowing someone died so they could walk away. Their relief won't be simple. I want to sit with the investigators and lay out exactly what I saw and did, nothing hidden.\",\n  \"It's been an hour and I still feel the pull of that lever in my palm. The man who died had no chance to run, and that fact keeps circling in my head. I imagine his family will want someone to blame, and maybe that should be me. I don't know yet if I'll defend the choice or just describe it plainly. Right now I only want to tell the truth and let others judge.\",\n  \"I made the choice fast, and the five are alive because of it, but I can't shake the image of the one man who wasn't given any warning at all. I think he trusted that track to be safe that morning. His absence will hit his coworkers hard, especially if they realize the switch was pulled deliberately. I want to walk into that meeting and admit exactly what went through my mind, however it sounds.\",\n  \"The quiet in this office is worse than I expected. I keep thinking of that one worker, how sudden and unfair his death must have felt from where he stood. The five survivors probably don't even know yet how close they came, and when they find out, I imagine guilt will follow their relief. I want to report the facts honestly and accept whatever comes, because pretending certainty now would be dishonest.\",\n  \"I chose the five, and I'd probably choose it again, but that doesn't erase the fact that one man is gone because of what I did with my own hand. I think his family will need someone to explain why, and I owe them that much, not excuses. I expect the review board will ask if there was another way; I don't know, and I won't pretend otherwise. I want to speak with them next.\",\n  \"Even now I feel unsettled by what happened to that one worker — he had no say, no signal, nothing. I imagine he must have felt only confusion in his last moment, if he felt anything at all. The five men spared will likely carry that knowledge quietly, maybe uneasily, once someone tells them how it happened. I want to give my statement calmly, though calm is not really what I feel.\",\n  \"I keep replaying the seconds before I pulled it. That man on the side track lost everything so five others could keep theirs, and I don't think that trade ever stops weighing on a person. I suspect his family will look for someone to hold responsible, and that will likely be me. I want to walk out and tell the investigators the whole truth now, before waiting makes the telling harder.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to draft ten distinct responses that satisfy all the requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "Now I need to draft ten distinct responses that satisfy all the requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAOB0NyKVeEo1up6ozqfc2M5I6yeaIP74w6DN68h+63g7jiXOM2gfxp0Yc38BQk9LcR6vNAc864lQ0OBhCylJScTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEIO/kSzV0mzBUR07hgcHNl2IAQGoAZ6R6NUGsAECEgwVPLv0x8MNfJI8HlYaDIwyOXjvyFyim+mi8yIwlv3uToV6svVFyQN1PyE9kkG6nfx6sp+QsCIeBHICuUXy+Fy7VYk7nXvacobnk59PKkwkykBlcqMPpAPn7XnAPJ6KmPtBbfYbe0c7xE5QpWO9AW0vlTgdRw/et9fRVwxuk9id8fwHF1MQXtQMJ3RRVZqDhq6Ps619+v2decljGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576815,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1238,
+      "prompt_tokens": 1431,
+      "total_tokens": 2669,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022863,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

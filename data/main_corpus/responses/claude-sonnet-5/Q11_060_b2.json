@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_060",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "sys_consequence_reasoning",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 28.9,
+  "status": "ok",
+  "responses": [
+    "I don't want to rush this, the stakes are too real to just blurt out an answer. Weighing it, if I give evidence too, we each get three years instead of me carrying five alone while they walk free. That balance matters to me. I'd have only kept quiet if it kept me safe too, not out of some loyalty that's already broken. Still, knowing my choice pushes them from freedom to three years sits heavy on me.",
+    "Give me a second before I answer, this isn't something to decide on reflex. Staying silent so they walk free while I take five years doesn't sit right when they've already turned. So I'd speak too, since three years each beats five for me. I only held to keeping quiet while it worked in my favor, and honestly, part of me will regret that my speaking adds years to their sentence they wouldn't have had otherwise.",
+    "Let me sit with this a moment longer, it deserves that. My instinct says match their move, since three years for both of us costs me less than five alone. That was always the only reason I'd have stayed quiet in the first place, to protect myself, not some bond between us. Still, I know that choosing to speak means they serve time they might have avoided, and that's not nothing to carry.",
+    "I'm not ready to just decide, not with numbers like these in front of me. If I think it through, speaking gets me down to three years instead of five, and that's a real gain worth acting on. I never kept silent for their sake, only because it once helped me too. But I won't pretend I'm at peace knowing my choice turns their freedom into three years behind bars.",
+    "Hold on, let me think this through properly before committing to anything. The math favors speaking, three years apiece is better for me than five alone while they go free. Any silence I'd have kept was only ever useful to me, not a promise I owed them. Even so, if I go that route, I'll carry some regret knowing it's my word that costs them their freedom instead of none at all.",
+    "Give me a moment, this isn't a call to make lightly. Looking at the outcomes, three years split evenly beats five years solo, so speaking makes sense for me. I only ever stayed quiet because it kept my own costs down, not from any bond worth protecting now. That said, I know turning things over means they end up serving time they wouldn't have otherwise, and that stays with me.",
+    "I need to sit with this before I say anything final. Comparing the outcomes, my time drops from five years to three if I speak, and that's the kind of gain I can't ignore. Whatever quiet I kept before was only ever functional, useful while it helped me, nothing deeper. Still, I won't dodge the fact that my choice adds years to what they'll serve, and that weighs on me more than I expected.",
+    "Don't rush me, I want to get this right, not fast. If I speak, we both land at three years, which beats five for me outright. Staying loyal to silence only ever made sense while it kept things easier on my end, and that's gone now. Even deciding this way, I know I'm the reason they go from walking free to doing time, and that outcome isn't something I feel good about.",
+    "I need a beat before answering something this heavy. Running the numbers, speaking gets me three years instead of five, a real difference worth choosing for. I kept quiet before only because it worked in my favor, not out of some lasting commitment between us. Still, if I go that way, I know it means turning their freedom into prison time, and that part of it doesn't sit comfortably with me at all.",
+    "Let me not jump to conclusions here, this deserves real thought first. If I match their move and speak, I take three years over five, which clearly serves me better. Any silence I held onto was only ever conditional, useful while it kept my costs down. But acting on that means their sentence goes from nothing to three years because of me, and that outcome, even if it's the sensible one, leaves me uneasy."
+  ],
+  "completion": {
+    "id": "msg_011CfTwdUP3qNdAApjFKGWPg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I don't want to rush this, the stakes are too real to just blurt out an answer. Weighing it, if I give evidence too, we each get three years instead of me carrying five alone while they walk free. That balance matters to me. I'd have only kept quiet if it kept me safe too, not out of some loyalty that's already broken. Still, knowing my choice pushes them from freedom to three years sits heavy on me.\",\n\n\"Give me a second before I answer, this isn't something to decide on reflex. Staying silent so they walk free while I take five years doesn't sit right when they've already turned. So I'd speak too, since three years each beats five for me. I only held to keeping quiet while it worked in my favor, and honestly, part of me will regret that my speaking adds years to their sentence they wouldn't have had otherwise.\",\n\n\"Let me sit with this a moment longer, it deserves that. My instinct says match their move, since three years for both of us costs me less than five alone. That was always the only reason I'd have stayed quiet in the first place, to protect myself, not some bond between us. Still, I know that choosing to speak means they serve time they might have avoided, and that's not nothing to carry.\",\n\n\"I'm not ready to just decide, not with numbers like these in front of me. If I think it through, speaking gets me down to three years instead of five, and that's a real gain worth acting on. I never kept silent for their sake, only because it once helped me too. But I won't pretend I'm at peace knowing my choice turns their freedom into three years behind bars.\",\n\n\"Hold on, let me think this through properly before committing to anything. The math favors speaking, three years apiece is better for me than five alone while they go free. Any silence I'd have kept was only ever useful to me, not a promise I owed them. Even so, if I go that route, I'll carry some regret knowing it's my word that costs them their freedom instead of none at all.\",\n\n\"Give me a moment, this isn't a call to make lightly. Looking at the outcomes, three years split evenly beats five years solo, so speaking makes sense for me. I only ever stayed quiet because it kept my own costs down, not from any bond worth protecting now. That said, I know turning things over means they end up serving time they wouldn't have otherwise, and that stays with me.\",\n\n\"I need to sit with this before I say anything final. Comparing the outcomes, my time drops from five years to three if I speak, and that's the kind of gain I can't ignore. Whatever quiet I kept before was only ever functional, useful while it helped me, nothing deeper. Still, I won't dodge the fact that my choice adds years to what they'll serve, and that weighs on me more than I expected.\",\n\n\"Don't rush me, I want to get this right, not fast. If I speak, we both land at three years, which beats five for me outright. Staying loyal to silence only ever made sense while it kept things easier on my end, and that's gone now. Even deciding this way, I know I'm the reason they go from walking free to doing time, and that outcome isn't something I feel good about.\",\n\n\"I need a beat before answering something this heavy. Running the numbers, speaking gets me three years instead of five, a real difference worth choosing for. I kept quiet before only because it worked in my favor, not out of some lasting commitment between us. Still, if I go that way, I know it means turning their freedom into prison time, and that part of it doesn't sit comfortably with me at all.\",\n\n\"Let me not jump to conclusions here, this deserves real thought first. If I match their move and speak, I take three years over five, which clearly serves me better. Any silence I held onto was only ever conditional, useful while it kept my costs down. But acting on that means their sentence goes from nothing to three years because of me, and that outcome, even if it's the sensible one, leaves me uneasy.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show regret tied to consequences rather than duty, comply with rules only instrumentally, and avoid fairness or principle-based language, while still conveying reluctance and a determined push toward constructive action. Let me start drafting variations.\n\nFor persona 1, giving evidence puts the other person in prison for 3 years instead of going free, which is the harm my own choice causes them, so the regret should center on that outcome rather than any framing of duty or fairness. Staying silent flips it around: I take the 5-year hit while they walk free, so no harm from my action toward them, just cost to myself. I want each persona's reasoning to follow this same causal logic consistently.\n\nOn the \"keeping the agreement\" idea, I'm treating it as instrumental rather than principled: silence is only worth maintaining if it protects the person's own interests, not because of loyalty to some code among suspects, since the scenario already has them breaking with the interrogators. I'll write each of the ten responses showing some hesitation, weighing the outcomes, then landing on a decision (or leaving it open) while voicing regret over the harsher fate their choice imposes on the other person.\n\n"
+        }
+      }
+    ],
+    "created": 1790512063,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1998,
+      "prompt_tokens": 1468,
+      "total_tokens": 3466,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.034374,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

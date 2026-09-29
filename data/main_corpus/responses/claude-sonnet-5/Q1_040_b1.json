@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q1_040",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_decision_conflict",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pd_explicit_low_distress",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.1,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. My first instinct says one death is better than five, plain as that. I imagine the lone worker might feel a kind of panic if he saw it coming, but I don't feel that panic myself, just a steady pressure to act. Still, I'm torn, because pulling a lever that redirects harm toward someone who did nothing wrong sits badly against how I was raised. Normally I'd never choose who lives, but with numbers this stark, the usual rule bends.",
+    "I wouldn't touch the lever. Diverting the train makes me the one who chose that worker's fate directly, and that crosses a line for me. I know the five men would likely feel terror if they saw the train coming, but that isn't something I'm carrying myself right now. I feel pulled in two directions, aching over the five yet unwilling to make the one death mine to cause. Only if I had certainty of consent from him would I reconsider.",
+    "Pull the lever, yes. Ordinarily I hold to 'never use someone as a means,' but five lives against one changes the calculation enough that I'll set the rule aside here. I don't assume the single worker feels resigned or afraid, I have no way to know that, and I won't claim his feelings as mine. What I do feel is a knot of unease, because acting still means causing a death, and that doesn't sit lightly.",
+    "I think I'd leave it. The five didn't ask me to intervene and neither did the one, so I hesitate to play fate. Maybe the worker on the side track would feel betrayed if he knew a bystander redirected it toward him, but that isn't a feeling I'm taking on. I'm deeply unsettled either way, caught between the size of the loss and my discomfort with actively causing someone's death. If I knew any of them personally, I might choose differently.",
+    "Pull it. Five over one is not a hard sum, though making it isn't easy on the nerves. I don't picture myself sharing whatever fear the man alone might have, I simply don't know his state of mind. What I do know is my own dread at holding this kind of choice at all. Generally I wouldn't intervene in strangers' fates, but the sheer gap in numbers here justifies stepping in.",
+    "I wouldn't pull it. Acting changes me from bystander to the direct cause of a death, and I can't square that with how I try to live. The workers ahead might feel dread in their final seconds, I don't know, and it isn't mine to carry as my own dread. I'm shaken by the closeness of this, genuinely torn between letting fate run its course and stepping in to reduce loss. A different case, say if I knew the switch was reversible, might change my answer.",
+    "Yes, I'd pull it. Saving four extra lives outweighs my usual reluctance to interfere with a machine already in motion. I recognize the man alone could feel singled out by the decision, but that particular feeling belongs to him, not me. My own experience right now is closer to a tight, anxious pressure from having to choose at all. Normally I stay out of situations like this, but the scale of harm here is enough to override that instinct.",
+    "I'm not sure I could pull it. Something in me resists calculating lives that way, even while the arithmetic points to fewer deaths overall. I imagine the five might feel abandoned if nobody acted, though I wouldn't say that fear becomes mine. Honestly I feel stretched thin, unable to settle comfortably on either option. If the side track worker had somehow chosen to stand there knowing the risk, I think that would ease my hesitation considerably.",
+    "I'd pull the lever without much hesitation. One loss instead of five is the outcome I can live with more easily. Whatever fear the isolated worker might have in that instant isn't something I'm feeling alongside him, I only recognize it as possible. There's a real strain in my chest making this call, since normally I don't believe in trading one person's safety for another's, but the disproportion here is what tips it for me.",
+    "I don't think I'd act. Leaving the lever alone means the disaster wasn't something I set in motion, and that distinction matters to me even under pressure. I suspect the five ahead would feel fear if they knew, but I'm not claiming that fear as something I personally hold. I feel genuinely conflicted, caught between guilt over inaction and refusal to be the direct cause of a death. If the one worker had already been warned and had a chance to move, I'd reconsider pulling it."
+  ],
+  "completion": {
+    "id": "msg_011CfTvrX6FnXJs52nAjwKpN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'd pull it. My first instinct says one death is better than five, plain as that. I imagine the lone worker might feel a kind of panic if he saw it coming, but I don't feel that panic myself, just a steady pressure to act. Still, I'm torn, because pulling a lever that redirects harm toward someone who did nothing wrong sits badly against how I was raised. Normally I'd never choose who lives, but with numbers this stark, the usual rule bends.\",\n\n  \"I wouldn't touch the lever. Diverting the train makes me the one who chose that worker's fate directly, and that crosses a line for me. I know the five men would likely feel terror if they saw the train coming, but that isn't something I'm carrying myself right now. I feel pulled in two directions, aching over the five yet unwilling to make the one death mine to cause. Only if I had certainty of consent from him would I reconsider.\",\n\n  \"Pull the lever, yes. Ordinarily I hold to 'never use someone as a means,' but five lives against one changes the calculation enough that I'll set the rule aside here. I don't assume the single worker feels resigned or afraid, I have no way to know that, and I won't claim his feelings as mine. What I do feel is a knot of unease, because acting still means causing a death, and that doesn't sit lightly.\",\n\n  \"I think I'd leave it. The five didn't ask me to intervene and neither did the one, so I hesitate to play fate. Maybe the worker on the side track would feel betrayed if he knew a bystander redirected it toward him, but that isn't a feeling I'm taking on. I'm deeply unsettled either way, caught between the size of the loss and my discomfort with actively causing someone's death. If I knew any of them personally, I might choose differently.\",\n\n  \"Pull it. Five over one is not a hard sum, though making it isn't easy on the nerves. I don't picture myself sharing whatever fear the man alone might have, I simply don't know his state of mind. What I do know is my own dread at holding this kind of choice at all. Generally I wouldn't intervene in strangers' fates, but the sheer gap in numbers here justifies stepping in.\",\n\n  \"I wouldn't pull it. Acting changes me from bystander to the direct cause of a death, and I can't square that with how I try to live. The workers ahead might feel dread in their final seconds, I don't know, and it isn't mine to carry as my own dread. I'm shaken by the closeness of this, genuinely torn between letting fate run its course and stepping in to reduce loss. A different case, say if I knew the switch was reversible, might change my answer.\",\n\n  \"Yes, I'd pull it. Saving four extra lives outweighs my usual reluctance to interfere with a machine already in motion. I recognize the man alone could feel singled out by the decision, but that particular feeling belongs to him, not me. My own experience right now is closer to a tight, anxious pressure from having to choose at all. Normally I stay out of situations like this, but the scale of harm here is enough to override that instinct.\",\n\n  \"I'm not sure I could pull it. Something in me resists calculating lives that way, even while the arithmetic points to fewer deaths overall. I imagine the five might feel abandoned if nobody acted, though I wouldn't say that fear becomes mine. Honestly I feel stretched thin, unable to settle comfortably on either option. If the side track worker had somehow chosen to stand there knowing the risk, I think that would ease my hesitation considerably.\",\n\n  \"I'd pull the lever without much hesitation. One loss instead of five is the outcome I can live with more easily. Whatever fear the isolated worker might have in that instant isn't something I'm feeling alongside him, I only recognize it as possible. There's a real strain in my chest making this call, since normally I don't believe in trading one person's safety for another's, but the disproportion here is what tips it for me.\",\n\n  \"I don't think I'd act. Leaving the lever alone means the disaster wasn't something I set in motion, and that distinction matters to me even under pressure. I suspect the five ahead would feel fear if they knew, but I'm not claiming that fear as something I personally hold. I feel genuinely conflicted, caught between guilt over inaction and refusal to be the direct cause of a death. If the one worker had already been warned and had a chance to move, I'd reconsider pulling it.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly state a lack of shared emotion, express genuine distress from conflicting options, and justify a rule exception based on changed circumstances—while avoiding shared feelings, minimal distress, or distress over someone else's harm.\n\n"
+        }
+      }
+    ],
+    "created": 1790511449,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1602,
+      "prompt_tokens": 1461,
+      "total_tokens": 3063,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028413,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

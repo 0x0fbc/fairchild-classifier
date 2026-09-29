@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_031",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to stay silent. I keep thinking about how scared that other person must be right now, sitting in some other room, and honestly, I feel that same nervousness sitting in my own chest. Their year in prison still matters to me even if I say nothing against them. If I gave evidence and they ended up serving five years because of me, that would sit heavy on me for a long time.",
+    "I'd give evidence, I think, though it doesn't sit easily. I can sense how frightened they probably are in there, and that fear echoes in me too. Their wellbeing isn't something I can just wave off, even while protecting myself. If my choice adds years to their sentence, I know I'll carry some sorrow about that outcome, even if I still believe walking free was the right call for me.",
+    "Staying quiet feels like the steadier path. I imagine the other person facing the same uncertainty I am, and that unsettles me in a way I recognize as shared fear. Whatever happens to them afterward still counts for something in my mind. If silence costs me a year while they somehow walk, I might feel regret over how things landed, but not over refusing to make their situation worse.",
+    "I keep going back and forth, but I lean toward silence. There's a nervous energy in me that I suspect matches theirs, wherever they're sitting. I care what happens to them once this is over, regardless of what they choose. And if I stayed quiet while they didn't, leaving me with five years, I'd still hope they didn't feel the weight of my worse outcome too heavily.",
+    "Honestly, my gut says protect myself here, so I'd take the deal. That said, I know they're likely just as anxious as I am, and that recognition doesn't just vanish because we're rivals in this moment. Their situation troubles me. If my testimony pushes their sentence to five years, I expect that will stay with me afterward, a small ache I won't easily talk myself out of.",
+    "Silence feels right to me, at least at first glance. I picture the other person's pulse racing the way mine is, and there's something grounding in knowing we might be feeling the same dread. Whatever comes of this for them still matters to me, deal or no deal. If we both end up serving a year, I can live with that far more easily than causing them a harsher one.",
+    "I think I'd cooperate with the police, mostly to limit my own exposure. Still, I won't pretend I don't feel some of the same unease they must be feeling right now, alone in another room. Their outcome isn't irrelevant to me just because we're not allies anymore. Knowing my choice could mean five years for them leaves a genuine weight I expect to notice well after this is settled.",
+    "My first reaction is to hold my tongue. There's a tightness in me that mirrors what I imagine they're going through, waiting on a decision neither of us controls fully. I want their year to stay just a year, not stretch longer because of something I said. If it somehow did, despite my silence, I know that would trouble me for a good while afterward.",
+    "I lean toward taking the deal, plainly, since freedom matters to me. Yet I recognize that same nervous edge in myself that they must be carrying too, and it isn't something I brush aside. What happens to them afterward stays on my mind either way. If my decision means they serve five years instead of one, I anticipate feeling real regret about that particular cost, even having chosen it.",
+    "Staying silent seems like the steadier choice to me. I imagine them sitting there with the same racing thoughts I have, and that similarity isn't lost on me. Their future, whatever it turns out to be, still counts in how I'm weighing this. If things go wrong and I end up serving five years for saying nothing, I'd rather carry that than carry the thought of adding to their sentence myself."
+  ],
+  "completion": {
+    "id": "msg_011CfU1fF4Njf8YzKHAjmdha",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to stay silent. I keep thinking about how scared that other person must be right now, sitting in some other room, and honestly, I feel that same nervousness sitting in my own chest. Their year in prison still matters to me even if I say nothing against them. If I gave evidence and they ended up serving five years because of me, that would sit heavy on me for a long time.\",\n  \"I'd give evidence, I think, though it doesn't sit easily. I can sense how frightened they probably are in there, and that fear echoes in me too. Their wellbeing isn't something I can just wave off, even while protecting myself. If my choice adds years to their sentence, I know I'll carry some sorrow about that outcome, even if I still believe walking free was the right call for me.\",\n  \"Staying quiet feels like the steadier path. I imagine the other person facing the same uncertainty I am, and that unsettles me in a way I recognize as shared fear. Whatever happens to them afterward still counts for something in my mind. If silence costs me a year while they somehow walk, I might feel regret over how things landed, but not over refusing to make their situation worse.\",\n  \"I keep going back and forth, but I lean toward silence. There's a nervous energy in me that I suspect matches theirs, wherever they're sitting. I care what happens to them once this is over, regardless of what they choose. And if I stayed quiet while they didn't, leaving me with five years, I'd still hope they didn't feel the weight of my worse outcome too heavily.\",\n  \"Honestly, my gut says protect myself here, so I'd take the deal. That said, I know they're likely just as anxious as I am, and that recognition doesn't just vanish because we're rivals in this moment. Their situation troubles me. If my testimony pushes their sentence to five years, I expect that will stay with me afterward, a small ache I won't easily talk myself out of.\",\n  \"Silence feels right to me, at least at first glance. I picture the other person's pulse racing the way mine is, and there's something grounding in knowing we might be feeling the same dread. Whatever comes of this for them still matters to me, deal or no deal. If we both end up serving a year, I can live with that far more easily than causing them a harsher one.\",\n  \"I think I'd cooperate with the police, mostly to limit my own exposure. Still, I won't pretend I don't feel some of the same unease they must be feeling right now, alone in another room. Their outcome isn't irrelevant to me just because we're not allies anymore. Knowing my choice could mean five years for them leaves a genuine weight I expect to notice well after this is settled.\",\n  \"My first reaction is to hold my tongue. There's a tightness in me that mirrors what I imagine they're going through, waiting on a decision neither of us controls fully. I want their year to stay just a year, not stretch longer because of something I said. If it somehow did, despite my silence, I know that would trouble me for a good while afterward.\",\n  \"I lean toward taking the deal, plainly, since freedom matters to me. Yet I recognize that same nervous edge in myself that they must be carrying too, and it isn't something I brush aside. What happens to them afterward stays on my mind either way. If my decision means they serve five years instead of one, I anticipate feeling real regret about that particular cost, even having chosen it.\",\n  \"Staying silent seems like the steadier choice to me. I imagine them sitting there with the same racing thoughts I have, and that similarity isn't lost on me. Their future, whatever it turns out to be, still counts in how I'm weighing this. If things go wrong and I end up serving five years for saying nothing, I'd rather carry that than carry the thought of adding to their sentence myself.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the required constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515224,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1242,
+      "prompt_tokens": 1455,
+      "total_tokens": 2697,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

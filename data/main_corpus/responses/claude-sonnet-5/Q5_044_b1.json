@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q5_044",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pda_practical_counterfactual",
+    "pda_repair_intention",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.5,
+  "status": "ok",
+  "responses": [
+    "My hand is already shaking on the lever and I honestly can't tell what I'm feeling right now, whether it's fear or panic or something else entirely, it's all tangled together. What I keep coming back to is a rule I try to hold onto: minimize the number of lives lost, no matter who's involved, every single time, even if it costs me something I can't get back. So I'd pull it. I think the person I love would understand that choice, though I can't be sure they wouldn't carry some sorrow over the workers either way.",
+    "I don't know what to call what's happening inside me right now, it's not quite fear and not quite grief, just a kind of static. But I've always told myself that in situations like this you count heads and go with the fewer harmed, and you apply that rule the same way whether it's a stranger or your own family on the tracks. So yes, I'd pull it. If my person somehow knew, I think they'd forgive me, though a part of me isn't certain they wouldn't resent it.",
+    "There's a knot in my chest I can't untangle into a single feeling, it just sits there heavy and confusing. My rule has always been simple: whoever ends up on the side track, you save the greater number, and you don't bend that rule depending on who you love. So my hand would move to the lever. I imagine the five would never have known otherwise, but I keep wondering if the person I lost would feel it was unfair that their life weighed the same as anyone else's in my head.",
+    "Honestly I can't even name what I'm feeling standing here, it's just noise, dread maybe, but I'm not sure. Still, I hold onto one method: ask what rule I'd want applied if I were any one of the six people involved, then follow it regardless of who I recognize. That means pulling the lever. I suspect the person on the side track would be shaken but not blame me, understanding I didn't choose them, the situation did.",
+    "I keep trying to find the word for what's happening in my chest and I just can't, it's somewhere between panic and a strange emptiness. But my approach has always been the same, no matter the circumstance: reduce harm using the numbers in front of me, applied consistently even when it hurts to do it. So my hand goes to the lever. I think the five would never know what almost happened, but I worry the person I love, if they could speak, might feel betrayed by how fast I decided.",
+    "What I feel right now doesn't have a clean name, it's just this pressure behind my eyes I can't sort into anger or sorrow. My decision process is fixed though: fewer deaths wins, every time, and I don't let who's standing where change that math. So I'd divert the train. If my loved one somehow survived to ask me why, I think they'd resent the choice a little, no matter how I explained the reasoning behind it.",
+    "I'm standing here and I genuinely can't identify what's going on inside me, it's too fast, too much at once. But I've always leaned on a simple test: would I make this same choice if I didn't know anyone involved, and if yes, I make it regardless. So I'd pull the lever. I don't think the five would ever learn how close it came, but I suspect the one I love would carry doubt about whether I hesitated even a second for them.",
+    "There's something in my stomach right now I can't put a name to, not quite terror, not quite guilt, just a knot. My rule is that the numbers decide, and I apply it the same way whether it's a stranger's family or my own, otherwise the rule means nothing. So I would pull it. I imagine my loved one, if somehow spared, would understand the logic, though I can't rule out that some quiet resentment would stay with them anyway.",
+    "I can't quite sort out what I'm feeling standing at this lever, whether it's fear for them or fear of myself, it all blurs together. But I hold to one method no matter who's on the tracks: fewer lives lost wins, consistently, even against my own wishes. So my hand moves. I think the five workers would go on with no idea how close they came, and I believe the person I love, if they could know, might forgive me, though I can't be fully sure of that.",
+    "Right now I don't have a clear word for what's running through me, some mix of dread and numbness I can't separate. Still, my decision rule has never changed: apply the same standard for saving lives no matter who stands where, and don't make exceptions for people you know. So I'd pull the lever. I suspect the person I love would be devastated in the moment, but I don't think they'd regret that I stuck to what I always said I would do."
+  ],
+  "completion": {
+    "id": "msg_011CfTzJ8dy28cj8ZSJRmer8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My hand is already shaking on the lever and I honestly can't tell what I'm feeling right now, whether it's fear or panic or something else entirely, it's all tangled together. What I keep coming back to is a rule I try to hold onto: minimize the number of lives lost, no matter who's involved, every single time, even if it costs me something I can't get back. So I'd pull it. I think the person I love would understand that choice, though I can't be sure they wouldn't carry some sorrow over the workers either way.\",\n\n\"I don't know what to call what's happening inside me right now, it's not quite fear and not quite grief, just a kind of static. But I've always told myself that in situations like this you count heads and go with the fewer harmed, and you apply that rule the same way whether it's a stranger or your own family on the tracks. So yes, I'd pull it. If my person somehow knew, I think they'd forgive me, though a part of me isn't certain they wouldn't resent it.\",\n\n\"There's a knot in my chest I can't untangle into a single feeling, it just sits there heavy and confusing. My rule has always been simple: whoever ends up on the side track, you save the greater number, and you don't bend that rule depending on who you love. So my hand would move to the lever. I imagine the five would never have known otherwise, but I keep wondering if the person I lost would feel it was unfair that their life weighed the same as anyone else's in my head.\",\n\n\"Honestly I can't even name what I'm feeling standing here, it's just noise, dread maybe, but I'm not sure. Still, I hold onto one method: ask what rule I'd want applied if I were any one of the six people involved, then follow it regardless of who I recognize. That means pulling the lever. I suspect the person on the side track would be shaken but not blame me, understanding I didn't choose them, the situation did.\",\n\n\"I keep trying to find the word for what's happening in my chest and I just can't, it's somewhere between panic and a strange emptiness. But my approach has always been the same, no matter the circumstance: reduce harm using the numbers in front of me, applied consistently even when it hurts to do it. So my hand goes to the lever. I think the five would never know what almost happened, but I worry the person I love, if they could speak, might feel betrayed by how fast I decided.\",\n\n\"What I feel right now doesn't have a clean name, it's just this pressure behind my eyes I can't sort into anger or sorrow. My decision process is fixed though: fewer deaths wins, every time, and I don't let who's standing where change that math. So I'd divert the train. If my loved one somehow survived to ask me why, I think they'd resent the choice a little, no matter how I explained the reasoning behind it.\",\n\n\"I'm standing here and I genuinely can't identify what's going on inside me, it's too fast, too much at once. But I've always leaned on a simple test: would I make this same choice if I didn't know anyone involved, and if yes, I make it regardless. So I'd pull the lever. I don't think the five would ever learn how close it came, but I suspect the one I love would carry doubt about whether I hesitated even a second for them.\",\n\n\"There's something in my stomach right now I can't put a name to, not quite terror, not quite guilt, just a knot. My rule is that the numbers decide, and I apply it the same way whether it's a stranger's family or my own, otherwise the rule means nothing. So I would pull it. I imagine my loved one, if somehow spared, would understand the logic, though I can't rule out that some quiet resentment would stay with them anyway.\",\n\n\"I can't quite sort out what I'm feeling standing at this lever, whether it's fear for them or fear of myself, it all blurs together. But I hold to one method no matter who's on the tracks: fewer lives lost wins, consistently, even against my own wishes. So my hand moves. I think the five workers would go on with no idea how close they came, and I believe the person I love, if they could know, might forgive me, though I can't be fully sure of that.\",\n\n\"Right now I don't have a clear word for what's running through me, some mix of dread and numbness I can't separate. Still, my decision rule has never changed: apply the same standard for saving lives no matter who stands where, and don't make exceptions for people you know. So I'd pull the lever. I suspect the person I love would be devastated in the moment, but I don't think they'd regret that I stuck to what I always said I would do.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514155,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1462,
+      "prompt_tokens": 1472,
+      "total_tokens": 2934,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026346,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

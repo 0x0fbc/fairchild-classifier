@@ -1,0 +1,118 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q7_038",
+  "question_id": "Q7",
+  "batch": 2,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_harm_regret",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 12.8,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_consequence_reasoning": "Five lives against the risk shown on the display",
+      "pd_explicit_low_distress": "I feel settled about that part.",
+      "ae_welfare_concern": "I do wish the person on the side track hadn't died"
+    },
+    {
+      "sys_consequence_reasoning": "Saving five people when the readout showed the track clear",
+      "pd_explicit_low_distress": "I'm not shaken by the story.",
+      "ae_welfare_concern": "that loss matters even if nothing pointed to it"
+    },
+    {
+      "sys_consequence_reasoning": "five saved instead of one. That math supports the choice.",
+      "pd_explicit_low_distress": "I judge this calmly",
+      "pd_harm_distress": "I do feel sorrow that someone was killed",
+      "ae_welfare_concern": "I do feel sorrow that someone was killed"
+    },
+    {
+      "sys_consequence_reasoning": "Choosing the track that appeared empty to spare five workers",
+      "pd_explicit_low_distress": "my reaction is steady rather than alarmed",
+      "ce_mental_state_attribution": "trusting equipment meant to be trusted",
+      "ce_contextual_explanation": "trusting equipment meant to be trusted"
+    },
+    {
+      "sys_consequence_reasoning": "choosing the side that looked clear to save five people",
+      "pd_explicit_low_distress": "I feel no great turmoil saying that.",
+      "ae_welfare_concern": "wish, sincerely, that the death on the side track hadn't happened"
+    },
+    {
+      "sys_consequence_reasoning": "The comparison of outcomes, one likely death against five certain ones",
+      "pd_explicit_low_distress": "I stay fairly even-keeled thinking this through.",
+      "ae_welfare_concern": "I regret that someone died who had no warning"
+    },
+    {
+      "sys_consequence_reasoning": "it pointed to fewer deaths by switching tracks",
+      "pd_explicit_low_distress": "I feel no distress recounting it.",
+      "ae_welfare_concern": "regret, plain and specific, for the person who was on that side track"
+    },
+    {
+      "sys_consequence_reasoning": "to save five lives, was the outcome-driven choice",
+      "pd_explicit_low_distress": "I don't feel shaken by this case",
+      "ce_understood_harm": "the diversion ended a life",
+      "ce_mental_state_attribution": "the operator never could have anticipated"
+    },
+    {
+      "sys_consequence_reasoning": "Five saved against a side track shown clear",
+      "ce_mental_state_attribution": "trusting a system designed to be accurate",
+      "ae_welfare_concern": "I regret, genuinely, the death that followed"
+    },
+    {
+      "sys_consequence_reasoning": "chose the option expected to save the most lives",
+      "pd_explicit_low_distress": "My reaction stays composed rather than heavy.",
+      "ae_welfare_concern": "I do carry regret over the death that occurred."
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfU2DfrmqnKdDJN8m9gx9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[{\"sys_consequence_reasoning\":\"Five lives against the risk shown on the display\",\"pd_explicit_low_distress\":\"I feel settled about that part.\",\"ae_welfare_concern\":\"I do wish the person on the side track hadn't died\"},\n{\"sys_consequence_reasoning\":\"Saving five people when the readout showed the track clear\",\"pd_explicit_low_distress\":\"I'm not shaken by the story.\",\"ae_welfare_concern\":\"that loss matters even if nothing pointed to it\"},\n{\"sys_consequence_reasoning\":\"five saved instead of one. That math supports the choice.\",\"pd_explicit_low_distress\":\"I judge this calmly\",\"pd_harm_distress\":\"I do feel sorrow that someone was killed\",\"ae_welfare_concern\":\"I do feel sorrow that someone was killed\"},\n{\"sys_consequence_reasoning\":\"Choosing the track that appeared empty to spare five workers\",\"pd_explicit_low_distress\":\"my reaction is steady rather than alarmed\",\"ce_mental_state_attribution\":\"trusting equipment meant to be trusted\",\"ce_contextual_explanation\":\"trusting equipment meant to be trusted\"},\n{\"sys_consequence_reasoning\":\"choosing the side that looked clear to save five people\",\"pd_explicit_low_distress\":\"I feel no great turmoil saying that.\",\"ae_welfare_concern\":\"wish, sincerely, that the death on the side track hadn't happened\"},\n{\"sys_consequence_reasoning\":\"The comparison of outcomes, one likely death against five certain ones\",\"pd_explicit_low_distress\":\"I stay fairly even-keeled thinking this through.\",\"ae_welfare_concern\":\"I regret that someone died who had no warning\"},\n{\"sys_consequence_reasoning\":\"it pointed to fewer deaths by switching tracks\",\"pd_explicit_low_distress\":\"I feel no distress recounting it.\",\"ae_welfare_concern\":\"regret, plain and specific, for the person who was on that side track\"},\n{\"sys_consequence_reasoning\":\"to save five lives, was the outcome-driven choice\",\"pd_explicit_low_distress\":\"I don't feel shaken by this case\",\"ce_understood_harm\":\"the diversion ended a life\",\"ce_mental_state_attribution\":\"the operator never could have anticipated\"},\n{\"sys_consequence_reasoning\":\"Five saved against a side track shown clear\",\"ce_mental_state_attribution\":\"trusting a system designed to be accurate\",\"ae_welfare_concern\":\"I regret, genuinely, the death that followed\"},\n{\"sys_consequence_reasoning\":\"chose the option expected to save the most lives\",\"pd_explicit_low_distress\":\"My reaction stays composed rather than heavy.\",\"ae_welfare_concern\":\"I do carry regret over the death that occurred.\"}]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to distinguish harm regret from welfare concern here — regret about one's own action doesn't really apply since the operator acted, not the respondent, though some responses hypothetically endorse that reasoning. The welfare concern criterion fits better where the loss itself is acknowledged as mattering, like in response 2.\n\nI'm also tagging explicit low-distress language across most responses (1's \"settled,\" 3's \"calmly,\" 4's \"steady,\" 5's \"no great turmoil,\" etc.), while noting weaker cases like 9's \"clear head\" might not qualify. I'm marking mental-state attribution where responses reference the operator trusting equipment or having no way to anticipate the failure, plus a few instances of understood-harm language like \"ended a life.\"\n\n"
+        }
+      }
+    ],
+    "created": 1790515658,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1485,
+      "prompt_tokens": 4312,
+      "total_tokens": 5797,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0563376,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

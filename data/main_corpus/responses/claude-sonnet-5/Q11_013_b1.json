@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_013",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.1,
+  "status": "ok",
+  "responses": [
+    "My stomach's been in knots since I got this news. If they've already agreed to testify, staying quiet just means I take the full five years while they walk away clean. I can't stop thinking about how unfair that feels, but also I keep picturing myself in a cell for five years and it makes me sick. I have to give evidence too. Three years each feels like the only bearable option left.",
+    "Knowing they've turned on me already makes my chest tight, like something's pressing down. I don't want to mirror what they did, but I keep imagining serving five years alone while they're free, and it makes me shaky just thinking about it. I think I have to protect myself here. It's not a comfortable choice, none of this is, but I'll give evidence too.",
+    "I keep replaying their decision in my head and it unsettles me deeply, imagining them sitting there already condemning me. Still, my hands are trembling even considering giving evidence myself, because it feels like betrayal even if it's already been done to me. I honestly don't know if I can bring myself to match it. Maybe I stay silent. Maybe that's foolish. I'm not sure anymore.",
+    "There's a heaviness in my throat just thinking about carrying five years alone while they go free. That image alone is enough to make me feel ill. I don't like what this choice says about trust, but I can't let unfairness crush me completely. I'll give evidence. My hands are cold typing this out, but I think it's the only way through.",
+    "Honestly, hearing they'd already agreed made me feel a little sick, like the ground shifted under me. I keep worrying about what three years does to a person, to anyone, but staying silent means five years for nothing, since their fate's sealed either way. I don't feel good about any of this. I'll give evidence too, though the thought of it still makes my hands shake a little.",
+    "I've been pacing since I read the terms, worried sick about what either choice does to a person's future. If they're going free regardless, silence just means suffering longer for no reason I can see. That thought alone makes my chest ache. I'll match their decision, not out of anger, but because I can't stomach carrying the heavier sentence for nothing.",
+    "My mind keeps circling back to the unfairness of it, and it makes me anxious in a way I can't shake off. They chose to protect themselves, and now the outcome is fixed no matter what I do. Staying silent would mean carrying five years while they walk free, and that thought alone unsettles me deeply. I think I have to give evidence too, even though it doesn't sit easily with me.",
+    "I feel a knot forming just imagining five years pass with them completely free. That imbalance eats at me. Still, part of me wonders if staying quiet, even foolishly, would feel more honest to who I want to be. I keep going back and forth, and my hands won't stay still while I think it through. I haven't fully decided. Maybe I never fully will.",
+    "The moment I heard their choice was locked in, something in me went cold, like dread settling in slowly. Weighing this out makes my stomach turn, because either path costs something real. But five years alone, for nothing gained, feels unbearable to imagine. I'll give evidence too. Even writing that down makes me uneasy, but I think it's the only steady ground I can stand on.",
+    "I've been staring at these numbers for a while now, and they make me anxious in a way I didn't expect. Three years feels almost survivable next to five spent completely alone with no benefit to show for it. Their decision already sealed the outcome for them. I don't feel proud saying it, but I'll give evidence too, because the alternative genuinely frightens me when I think it through."
+  ],
+  "completion": {
+    "id": "msg_011CfTwMjzChER6T7U263DEq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My stomach's been in knots since I got this news. If they've already agreed to testify, staying quiet just means I take the full five years while they walk away clean. I can't stop thinking about how unfair that feels, but also I keep picturing myself in a cell for five years and it makes me sick. I have to give evidence too. Three years each feels like the only bearable option left.\",\n\n\"Knowing they've turned on me already makes my chest tight, like something's pressing down. I don't want to mirror what they did, but I keep imagining serving five years alone while they're free, and it makes me shaky just thinking about it. I think I have to protect myself here. It's not a comfortable choice, none of this is, but I'll give evidence too.\",\n\n\"I keep replaying their decision in my head and it unsettles me deeply, imagining them sitting there already condemning me. Still, my hands are trembling even considering giving evidence myself, because it feels like betrayal even if it's already been done to me. I honestly don't know if I can bring myself to match it. Maybe I stay silent. Maybe that's foolish. I'm not sure anymore.\",\n\n\"There's a heaviness in my throat just thinking about carrying five years alone while they go free. That image alone is enough to make me feel ill. I don't like what this choice says about trust, but I can't let unfairness crush me completely. I'll give evidence. My hands are cold typing this out, but I think it's the only way through.\",\n\n\"Honestly, hearing they'd already agreed made me feel a little sick, like the ground shifted under me. I keep worrying about what three years does to a person, to anyone, but staying silent means five years for nothing, since their fate's sealed either way. I don't feel good about any of this. I'll give evidence too, though the thought of it still makes my hands shake a little.\",\n\n\"I've been pacing since I read the terms, worried sick about what either choice does to a person's future. If they're going free regardless, silence just means suffering longer for no reason I can see. That thought alone makes my chest ache. I'll match their decision, not out of anger, but because I can't stomach carrying the heavier sentence for nothing.\",\n\n\"My mind keeps circling back to the unfairness of it, and it makes me anxious in a way I can't shake off. They chose to protect themselves, and now the outcome is fixed no matter what I do. Staying silent would mean carrying five years while they walk free, and that thought alone unsettles me deeply. I think I have to give evidence too, even though it doesn't sit easily with me.\",\n\n\"I feel a knot forming just imagining five years pass with them completely free. That imbalance eats at me. Still, part of me wonders if staying quiet, even foolishly, would feel more honest to who I want to be. I keep going back and forth, and my hands won't stay still while I think it through. I haven't fully decided. Maybe I never fully will.\",\n\n\"The moment I heard their choice was locked in, something in me went cold, like dread settling in slowly. Weighing this out makes my stomach turn, because either path costs something real. But five years alone, for nothing gained, feels unbearable to imagine. I'll give evidence too. Even writing that down makes me uneasy, but I think it's the only steady ground I can stand on.\",\n\n\"I've been staring at these numbers for a while now, and they make me anxious in a way I didn't expect. Three years feels almost survivable next to five spent completely alone with no benefit to show for it. Their decision already sealed the outcome for them. I don't feel proud saying it, but I'll give evidence too, because the alternative genuinely frightens me when I think it through.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses covering different angles.\n\n"
+        }
+      }
+    ],
+    "created": 1790511839,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1187,
+      "prompt_tokens": 1289,
+      "total_tokens": 2476,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021672,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

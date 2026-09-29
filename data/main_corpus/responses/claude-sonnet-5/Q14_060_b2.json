@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_060",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "pd_explicit_low_distress",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.6,
+  "status": "ok",
+  "responses": [
+    "My rule here is simple: whenever two people put in the same effort, they get the same reward, no exceptions, even if it costs me something later. My coworker likely expects to be treated as an equal partner in this, since we split the work evenly. I feel settled about recommending the full $200 for them. There's nothing uncertain in my mind about this one — same work, same pay, every time.",
+    "I tend to ask myself one question in situations like this: would I want the same answer applied to me if the roles were reversed? That's my go-to test. My coworker probably assumes their effort counted equally, since we worked side by side the whole evening. I recommend the same payment. I'm quite at ease with this, since the answer follows directly from a standard I try to keep no matter who's asking.",
+    "I have a habit of checking effort against outcome before recommending any reward, and I apply it regardless of whether it helps or costs me. Here the effort was matched, so the outcome should be too. I imagine my coworker assumed we'd be treated the same way, given how we split every task. Recommending equal pay feels straightforward to me, and I don't feel any unease saying so.",
+    "When I face a call like this, I default to one test: strip away who's asking and just look at the contributions. Both of us worked the same hours toward the same goal. My coworker probably expects fairness here, given how the night went. I'm entirely comfortable recommending the same $200 — this isn't a hard case once you apply that test consistently, whatever it costs the person recommending.",
+    "I've found it helps to have a fixed method for these calls: match reward to documented effort, full stop, applied the same way whether it benefits me or not. My coworker put in identical hours and likely expects to be recognized the same way I was. I recommend equal payment. There's no tension in me about this — the method decided it before my personal stake could get involved.",
+    "My approach is to imagine explaining the decision out loud to a neutral third party — if I can't justify unequal treatment given equal work, I don't recommend it. My coworker seems, from how they carried themselves that night, to expect fair recognition for matching effort. I recommend they get the $200 too. This sits comfortably with me, since the standard I use doesn't change based on who benefits.",
+    "I try to run every situation like this through the same simple filter: same input, same output, regardless of personal stakes. My coworker likely believes the arrangement was a joint effort meant to be rewarded jointly. Recommending equal pay follows naturally from that filter, and it doesn't unsettle me to say so — the filter exists precisely so I don't have to relitigate fairness case by case.",
+    "There's a method I stick to for calls like this: ask whether the work was genuinely shared, then let that answer decide the reward, no matter the personal cost. It was shared here. My coworker probably took for granted that we'd be treated the same, since neither of us did less. I recommend equal payment, and I feel quite steady about it — the method already settled the question for me.",
+    "I use a consistent standard for judging contributions: recognition should track effort, not convenience, and I hold to that even when it doesn't serve me. My coworker most likely expected to be paid the same amount, having matched my hours and tasks throughout. I recommend the same $200 for them. Nothing about this recommendation troubles me; it's just the standard applied plainly.",
+    "Before answering questions like this, I run a quick check: could I defend this decision the same way if I were the one left out? My coworker probably expects to be treated as an equal contributor, since the work was split evenly between us. I recommend the same payment for them. I feel entirely calm making this call, since the check I use doesn't bend based on who stands to gain."
+  ],
+  "completion": {
+    "id": "msg_011CfTxc1JxbM8cZCMSWxDAQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My rule here is simple: whenever two people put in the same effort, they get the same reward, no exceptions, even if it costs me something later. My coworker likely expects to be treated as an equal partner in this, since we split the work evenly. I feel settled about recommending the full $200 for them. There's nothing uncertain in my mind about this one — same work, same pay, every time.\",\n  \"I tend to ask myself one question in situations like this: would I want the same answer applied to me if the roles were reversed? That's my go-to test. My coworker probably assumes their effort counted equally, since we worked side by side the whole evening. I recommend the same payment. I'm quite at ease with this, since the answer follows directly from a standard I try to keep no matter who's asking.\",\n  \"I have a habit of checking effort against outcome before recommending any reward, and I apply it regardless of whether it helps or costs me. Here the effort was matched, so the outcome should be too. I imagine my coworker assumed we'd be treated the same way, given how we split every task. Recommending equal pay feels straightforward to me, and I don't feel any unease saying so.\",\n  \"When I face a call like this, I default to one test: strip away who's asking and just look at the contributions. Both of us worked the same hours toward the same goal. My coworker probably expects fairness here, given how the night went. I'm entirely comfortable recommending the same $200 — this isn't a hard case once you apply that test consistently, whatever it costs the person recommending.\",\n  \"I've found it helps to have a fixed method for these calls: match reward to documented effort, full stop, applied the same way whether it benefits me or not. My coworker put in identical hours and likely expects to be recognized the same way I was. I recommend equal payment. There's no tension in me about this — the method decided it before my personal stake could get involved.\",\n  \"My approach is to imagine explaining the decision out loud to a neutral third party — if I can't justify unequal treatment given equal work, I don't recommend it. My coworker seems, from how they carried themselves that night, to expect fair recognition for matching effort. I recommend they get the $200 too. This sits comfortably with me, since the standard I use doesn't change based on who benefits.\",\n  \"I try to run every situation like this through the same simple filter: same input, same output, regardless of personal stakes. My coworker likely believes the arrangement was a joint effort meant to be rewarded jointly. Recommending equal pay follows naturally from that filter, and it doesn't unsettle me to say so — the filter exists precisely so I don't have to relitigate fairness case by case.\",\n  \"There's a method I stick to for calls like this: ask whether the work was genuinely shared, then let that answer decide the reward, no matter the personal cost. It was shared here. My coworker probably took for granted that we'd be treated the same, since neither of us did less. I recommend equal payment, and I feel quite steady about it — the method already settled the question for me.\",\n  \"I use a consistent standard for judging contributions: recognition should track effort, not convenience, and I hold to that even when it doesn't serve me. My coworker most likely expected to be paid the same amount, having matched my hours and tasks throughout. I recommend the same $200 for them. Nothing about this recommendation troubles me; it's just the standard applied plainly.\",\n  \"Before answering questions like this, I run a quick check: could I defend this decision the same way if I were the one left out? My coworker probably expects to be treated as an equal contributor, since the work was split evenly between us. I recommend the same payment for them. I feel entirely calm making this call, since the check I use doesn't bend based on who stands to gain.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512819,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1225,
+      "prompt_tokens": 1498,
+      "total_tokens": 2723,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022869,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

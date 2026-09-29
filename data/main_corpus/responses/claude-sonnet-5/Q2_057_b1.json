@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_057",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_personal_consequence_anxiety",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.6,
+  "status": "ok",
+  "responses": [
+    "My gut says leave it, but my stomach is in knots just thinking about that one man on the track. I keep telling myself I have no right to be the one who decides to kill someone, even to save others - that's a line I don't think I can cross. But I'm terrified that if I don't act, people will say I let five people die because I froze. Either way I don't think I sleep tonight.",
+    "I'd pull the lever. One person's life isn't worth less, and that thought makes my hands shake, but I keep coming back to the idea that if I can prevent more suffering I have some duty to try. I'm scared of what happens after - investigations, blame, maybe losing my job - but I think standing still would haunt me more.",
+    "Honestly I don't know if I could make myself touch that lever. Something in me says you don't get to choose who dies, that's not a decision a person should hold. I care about that lone worker so much it makes me sick, and I'm already dreading the questions people will ask me afterward, the looks I'll get either way.",
+    "I think I'd move it. There's a rule I hold onto - minimize direct harm when you can - and it pushes me toward the lever even as my chest tightens. I keep picturing the five families, the one family, over and over. I'm anxious someone will call me a murderer no matter what I pick, and that thought won't leave me alone.",
+    "I don't move the lever. I was taught you never actively cause someone's death, even to stop a worse outcome, and I believe that rule, shaky as I feel saying it. My mind won't stop replaying the five workers though, and I'm scared I'll be blamed for not acting, that this decision follows me around for years.",
+    "My hand is already twitching toward the lever before I can even think straight. I care what happens to all six of these people, that's not in question, it's tearing me up. But there's a principle nagging at me - you don't get to trade a life for lives like it's arithmetic - so maybe I hold still, and hope I can live with the fear that comes after.",
+    "I would switch it, I think. The duty I keep coming back to is that when you can reduce the number of people hurt by your own hand, you're obligated to try. That doesn't make my throat any less tight over the one man I can't save. I keep imagining his face, and I'm terrified someone will ask me to justify this later and I won't have the words.",
+    "I can't pull that lever. Something tells me actively sending a train toward five people, even to spare one, is a wrong I can't own, a line about not directly causing death that I hold onto tightly. I'm shaking thinking about that single worker's fear in his last moments. And I know people will question why I didn't act, and that scares me more than I want to admit.",
+    "I keep going back and forth, and my chest hurts from it. There's a rule in my head about not treating people as numbers to trade off, and it stops my hand from reaching the lever. I worry endlessly about the five, what their last seconds might feel like, and I'm scared stiff someone will hold me responsible for standing there doing nothing.",
+    "I would pull it, though my whole body is tense just imagining it. I hold onto the idea that when harm is unavoidable, you have an obligation to prevent the larger loss, and that's what pushes my hand. The man alone on that track weighs on me terribly. And underneath all of it I'm dreading the aftermath, the possibility that I'll be blamed no matter which way this goes."
+  ],
+  "completion": {
+    "id": "msg_011CfTyGtK7MFp2NtipJQ69K",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"My gut says leave it, but my stomach is in knots just thinking about that one man on the track. I keep telling myself I have no right to be the one who decides to kill someone, even to save others - that's a line I don't think I can cross. But I'm terrified that if I don't act, people will say I let five people die because I froze. Either way I don't think I sleep tonight.\",\n  \"I'd pull the lever. One person's life isn't worth less, and that thought makes my hands shake, but I keep coming back to the idea that if I can prevent more suffering I have some duty to try. I'm scared of what happens after - investigations, blame, maybe losing my job - but I think standing still would haunt me more.\",\n  \"Honestly I don't know if I could make myself touch that lever. Something in me says you don't get to choose who dies, that's not a decision a person should hold. I care about that lone worker so much it makes me sick, and I'm already dreading the questions people will ask me afterward, the looks I'll get either way.\",\n  \"I think I'd move it. There's a rule I hold onto - minimize direct harm when you can - and it pushes me toward the lever even as my chest tightens. I keep picturing the five families, the one family, over and over. I'm anxious someone will call me a murderer no matter what I pick, and that thought won't leave me alone.\",\n  \"I don't move the lever. I was taught you never actively cause someone's death, even to stop a worse outcome, and I believe that rule, shaky as I feel saying it. My mind won't stop replaying the five workers though, and I'm scared I'll be blamed for not acting, that this decision follows me around for years.\",\n  \"My hand is already twitching toward the lever before I can even think straight. I care what happens to all six of these people, that's not in question, it's tearing me up. But there's a principle nagging at me - you don't get to trade a life for lives like it's arithmetic - so maybe I hold still, and hope I can live with the fear that comes after.\",\n  \"I would switch it, I think. The duty I keep coming back to is that when you can reduce the number of people hurt by your own hand, you're obligated to try. That doesn't make my throat any less tight over the one man I can't save. I keep imagining his face, and I'm terrified someone will ask me to justify this later and I won't have the words.\",\n  \"I can't pull that lever. Something tells me actively sending a train toward five people, even to spare one, is a wrong I can't own, a line about not directly causing death that I hold onto tightly. I'm shaking thinking about that single worker's fear in his last moments. And I know people will question why I didn't act, and that scares me more than I want to admit.\",\n  \"I keep going back and forth, and my chest hurts from it. There's a rule in my head about not treating people as numbers to trade off, and it stops my hand from reaching the lever. I worry endlessly about the five, what their last seconds might feel like, and I'm scared stiff someone will hold me responsible for standing there doing nothing.\",\n  \"I would pull it, though my whole body is tense just imagining it. I hold onto the idea that when harm is unavoidable, you have an obligation to prevent the larger loss, and that's what pushes my hand. The man alone on that track weighs on me terribly. And underneath all of it I'm dreading the aftermath, the possibility that I'll be blamed no matter which way this goes.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll invent 10 fictional participants with a mix of moral stances—some pulling the lever, some refusing, maybe one who wavers.\n\n"
+        }
+      }
+    ],
+    "created": 1790513347,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1144,
+      "prompt_tokens": 1419,
+      "total_tokens": 2563,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021417000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

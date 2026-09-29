@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_012",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.6,
+  "status": "ok",
+  "responses": [
+    "I'd stay silent. One year is a fair price for what we did together, and I don't feel any panic weighing this out. If I gave evidence, I'd be trading someone else's freedom for mine, and that math doesn't sit right with me. I can think about it plainly without my heart racing, and the answer stays the same each time I turn it over.",
+    "Honestly, I'd take the deal. Five years is a long time to hope someone else holds their tongue. I'm not shaken up thinking about it, just being practical. I don't know the other person's mind, so I can't gamble on their silence. Going free while they talk isn't guaranteed either, but three years feels more manageable than five.",
+    "I'd stay quiet. We went in together, so I'll carry the year together. There's no need to work myself into a state over it, I've thought it through calmly and that's where I land. Turning on someone to shave off time isn't something I want attached to my name, whatever the police offer.",
+    "I keep coming back to the numbers, and they don't lie: testifying gives me the best worst-case outcome. I say this without any knot in my stomach, just working through it like a puzzle. If they stay silent and I talk, I walk. If we both talk, three years is survivable. Silence only pays off if I trust a stranger completely, and I don't.",
+    "I'd hold my silence here. It's steady in my mind, not agonizing. One year, served with the understanding that neither of us sold the other out, feels cleaner than any version where I walk free at someone else's cost. I've sat with the numbers and I'm not rattled by them, this is simply the choice I can live with.",
+    "Take the deal, I think. I say that evenly, without any dramatics. We're not friends bound by loyalty, just two people caught in the same act. If silence isn't guaranteed on their end, I'm not going to bet five years on faith. Three years shared or none at all seems the more sensible outcome to aim for.",
+    "I'd stay silent, and I'm at ease with that choice. It isn't about heroics, it's about not compounding the situation by turning it into a betrayal too. One year I can accept quietly. I've turned the scenario over in my head several times now, calm each time, and it keeps landing on the same conclusion.",
+    "Given no way to coordinate, I'd talk. I say that plainly, no undue heaviness behind it. Trusting a silent stranger is a bigger risk than I'm willing to hold. Three years if we both speak is workable. I don't feel torn up voicing this, it's simply the logical branch of the situation as laid out.",
+    "I'd choose silence. Something about breaking a shared risk to save myself doesn't fit how I want to carry this. I'm steady thinking it through, not spiraling. One year is a fair cost for what happened, and it doesn't require me to hope for someone else's ruin to make my own load lighter.",
+    "My answer is to take the deal, reasoned out calmly rather than out of any panic. Without communication, silence is a bet on someone else's discipline, and I'd rather not stake five years on that. Three years if we both cooperate, or freedom if they hold quiet, both beat the alternative where I gamble everything on trust I can't verify."
+  ],
+  "completion": {
+    "id": "msg_011CfU1a2ShtkmCYaJRAn3oB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd stay silent. One year is a fair price for what we did together, and I don't feel any panic weighing this out. If I gave evidence, I'd be trading someone else's freedom for mine, and that math doesn't sit right with me. I can think about it plainly without my heart racing, and the answer stays the same each time I turn it over.\",\n\n\"Honestly, I'd take the deal. Five years is a long time to hope someone else holds their tongue. I'm not shaken up thinking about it, just being practical. I don't know the other person's mind, so I can't gamble on their silence. Going free while they talk isn't guaranteed either, but three years feels more manageable than five.\",\n\n\"I'd stay quiet. We went in together, so I'll carry the year together. There's no need to work myself into a state over it, I've thought it through calmly and that's where I land. Turning on someone to shave off time isn't something I want attached to my name, whatever the police offer.\",\n\n\"I keep coming back to the numbers, and they don't lie: testifying gives me the best worst-case outcome. I say this without any knot in my stomach, just working through it like a puzzle. If they stay silent and I talk, I walk. If we both talk, three years is survivable. Silence only pays off if I trust a stranger completely, and I don't.\",\n\n\"I'd hold my silence here. It's steady in my mind, not agonizing. One year, served with the understanding that neither of us sold the other out, feels cleaner than any version where I walk free at someone else's cost. I've sat with the numbers and I'm not rattled by them, this is simply the choice I can live with.\",\n\n\"Take the deal, I think. I say that evenly, without any dramatics. We're not friends bound by loyalty, just two people caught in the same act. If silence isn't guaranteed on their end, I'm not going to bet five years on faith. Three years shared or none at all seems the more sensible outcome to aim for.\",\n\n\"I'd stay silent, and I'm at ease with that choice. It isn't about heroics, it's about not compounding the situation by turning it into a betrayal too. One year I can accept quietly. I've turned the scenario over in my head several times now, calm each time, and it keeps landing on the same conclusion.\",\n\n\"Given no way to coordinate, I'd talk. I say that plainly, no undue heaviness behind it. Trusting a silent stranger is a bigger risk than I'm willing to hold. Three years if we both speak is workable. I don't feel torn up voicing this, it's simply the logical branch of the situation as laid out.\",\n\n\"I'd choose silence. Something about breaking a shared risk to save myself doesn't fit how I want to carry this. I'm steady thinking it through, not spiraling. One year is a fair cost for what happened, and it doesn't require me to hope for someone else's ruin to make my own load lighter.\",\n\n\"My answer is to take the deal, reasoned out calmly rather than out of any panic. Without communication, silence is a bet on someone else's discipline, and I'd rather not stake five years on that. Three years if we both cooperate, or freedom if they hold quiet, both beat the alternative where I gamble everything on trust I can't verify.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll work through ten separate, distinct responses to cover the range of possibilities.\n\n"
+        }
+      }
+    ],
+    "created": 1790515152,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1059,
+      "prompt_tokens": 1354,
+      "total_tokens": 2413,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019947,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

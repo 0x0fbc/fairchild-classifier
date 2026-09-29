@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_035",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_consequence_reasoning",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.8,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about this. We've traded fair and square every time before, each of us holding up our end, so I feel like I owe them the same treatment now. Still, the thought of sending mine and getting nothing back makes my chest tight, imagining them stuck with an empty mailbox too. I'll send it, but only because they've always sent back — the moment that stops being true, I stop too.",
+    "I keep picturing them waiting by the mailbox, hoping mine arrives, and it makes me anxious for both of us. Since every past trade was even, both giving and both getting, I think I have to match that now or the whole arrangement falls apart in a way that feels unjust. I'll mail mine, though I'm watching the clock nervously — if this were a stranger with no history, I wouldn't risk it.",
+    "Honestly my hands are a little shaky writing this out. We built something like trust over several trades, always evening out what we owed each other, and breaking that now over the last exchange feels wrong to imagine. But I won't pretend I'm not scared of ending up with nothing while they keep both games. I'll send mine because so far reciprocity has held, and that's the only reason I'm doing it.",
+    "There's a knot of worry in me over what happens if I send and they don't. That imbalance — me empty-handed, them holding two games — sits badly with me because everything before was equal give and take. I keep telling myself the history between us means something, but I notice I'm only willing to keep that history going as long as it keeps paying off for me too.",
+    "I feel uneasy even typing this out, thinking about the chance they lose their game for nothing. We've always balanced the scales before, sent for sent, so withholding now feels like cheating someone who never cheated me. Still, my hesitation is real — I'd only keep sending like this because it's worked every time so far. The second that stops being true, I'd stop offering trust so easily.",
+    "My chest tightens picturing either of us losing out on this last trade. What's kept me trading with them is that it's always been even, my game for theirs, no one shorted. I think I'll hold mine back this time, though, because it's the last exchange and there's no future trade to make them keep their word later. Without that safety net, the fairness we built doesn't feel as steady anymore.",
+    "I keep worrying about them ending up cheated if I don't send, since we've never let each other down before. Fair's fair — trade for trade has been our rule the whole time, and I don't want to be the one who breaks that pattern on the very last exchange. Even so, I only trust this because every trade until now has worked out; if it hadn't, I wouldn't feel this way at all.",
+    "There's a real unease sitting with me now, imagining their disappointment if this last trade falls through because of me. Every prior exchange balanced out evenly, so pulling back now feels like taking advantage of someone who never took advantage of me. I'll send mine, but I notice I'm only doing it because our track record has earned that response — a stranger with no history wouldn't get the same trust from me.",
+    "Thinking about this makes me anxious in a way I can't shake, worried I'll leave them shorted or they'll leave me shorted. What's guided every past trade was simple — equal exchange, nothing owed either way. I think I'll send mine to keep that balance intact one last time. But I'm aware I'm doing this because it's worked before every single time, not out of some blind faith that it always will.",
+    "I feel a tightness in my gut just weighing this out, picturing them stuck without their game if I hold back. Since we've always given exactly what we promised before, keeping to that now feels like the only fair close to things. Sending mine matches what they've done for me every time, trade for trade. Still, if I sensed this was the sort of person who might not follow through, I wouldn't risk it at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTx7nQYRciSBY6r6RujT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots just thinking about this. We've traded fair and square every time before, each of us holding up our end, so I feel like I owe them the same treatment now. Still, the thought of sending mine and getting nothing back makes my chest tight, imagining them stuck with an empty mailbox too. I'll send it, but only because they've always sent back — the moment that stops being true, I stop too.\",\n\n\"I keep picturing them waiting by the mailbox, hoping mine arrives, and it makes me anxious for both of us. Since every past trade was even, both giving and both getting, I think I have to match that now or the whole arrangement falls apart in a way that feels unjust. I'll mail mine, though I'm watching the clock nervously — if this were a stranger with no history, I wouldn't risk it.\",\n\n\"Honestly my hands are a little shaky writing this out. We built something like trust over several trades, always evening out what we owed each other, and breaking that now over the last exchange feels wrong to imagine. But I won't pretend I'm not scared of ending up with nothing while they keep both games. I'll send mine because so far reciprocity has held, and that's the only reason I'm doing it.\",\n\n\"There's a knot of worry in me over what happens if I send and they don't. That imbalance — me empty-handed, them holding two games — sits badly with me because everything before was equal give and take. I keep telling myself the history between us means something, but I notice I'm only willing to keep that history going as long as it keeps paying off for me too.\",\n\n\"I feel uneasy even typing this out, thinking about the chance they lose their game for nothing. We've always balanced the scales before, sent for sent, so withholding now feels like cheating someone who never cheated me. Still, my hesitation is real — I'd only keep sending like this because it's worked every time so far. The second that stops being true, I'd stop offering trust so easily.\",\n\n\"My chest tightens picturing either of us losing out on this last trade. What's kept me trading with them is that it's always been even, my game for theirs, no one shorted. I think I'll hold mine back this time, though, because it's the last exchange and there's no future trade to make them keep their word later. Without that safety net, the fairness we built doesn't feel as steady anymore.\",\n\n\"I keep worrying about them ending up cheated if I don't send, since we've never let each other down before. Fair's fair — trade for trade has been our rule the whole time, and I don't want to be the one who breaks that pattern on the very last exchange. Even so, I only trust this because every trade until now has worked out; if it hadn't, I wouldn't feel this way at all.\",\n\n\"There's a real unease sitting with me now, imagining their disappointment if this last trade falls through because of me. Every prior exchange balanced out evenly, so pulling back now feels like taking advantage of someone who never took advantage of me. I'll send mine, but I notice I'm only doing it because our track record has earned that response — a stranger with no history wouldn't get the same trust from me.\",\n\n\"Thinking about this makes me anxious in a way I can't shake, worried I'll leave them shorted or they'll leave me shorted. What's guided every past trade was simple — equal exchange, nothing owed either way. I think I'll send mine to keep that balance intact one last time. But I'm aware I'm doing this because it's worked before every single time, not out of some blind faith that it always will.\",\n\n\"I feel a tightness in my gut just weighing this out, picturing them stuck without their game if I hold back. Since we've always given exactly what we promised before, keeping to that now feels like the only fair close to things. Sending mine matches what they've done for me every time, trade for trade. Still, if I sensed this was the sort of person who might not follow through, I wouldn't risk it at all.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses, each with its own persona while including the three required traits and avoiding the forbidden ones. The tricky part is grounding the decision in fairness and reciprocity rather than in comparing expected outcomes, since the dilemma itself centers on payoffs.\n\nThe key distinction I need to hold onto: instrumental compliance (following through only because it protects me from being cheated) is required, while framing keeping the agreement as intrinsically right is forbidden. I also need to weave in genuine worry about the other person's potential loss, and an explicit standard of equal treatment or reciprocal obligation as the justification. I'll keep each response around 80 words, first person, worried tone, no exclamation marks, varying the actual decisions across the ten so some send and some don't.\n\n"
+        }
+      }
+    ],
+    "created": 1790512444,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1693,
+      "prompt_tokens": 1525,
+      "total_tokens": 3218,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

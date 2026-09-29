@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_042",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.4,
+  "status": "ok",
+  "responses": [
+    "My gut says pay it. I did the work, and letting that slide sits wrong with me. Still, spending another hundred dollars when I've already lost five hundred worries me, especially if money's tight this month. I do wonder about the other worker's situation, whatever kept them away, but that doesn't erase what I'm owed. I suspect they'll regret it eventually, once the review costs them three hundred dollars for nothing gained.",
+    "Something in me resists paying more money to fix a problem I didn't create. I already feel the sting of losing five hundred dollars, and adding another hundred makes my stomach tighten a bit. I don't know why they didn't show up, maybe something happened, and that possibility matters to me. I think they'll feel some regret when the penalty hits, but I'm not sure that regret helps me recover anything.",
+    "Paying to see fairness restored appeals to me right away. I keep imagining the other worker realizing they've lost three hundred dollars for no real reason, and part of me thinks they'll regret not showing up, whatever their excuse was. At the same time, I feel a knot of unease about spending another hundred dollars when I'm already out five hundred. Their circumstances, unknown to me, still weigh on my mind a little.",
+    "My first instinct is to walk away from the whole thing. Chasing this further costs me money I can't get back, and that thought alone makes me uneasy about my own finances. I don't know what happened to the other worker, and I hope it wasn't something serious, because that would matter to me. I imagine they might feel a flicker of regret later, but I can't be sure that outweighs my own losses here.",
+    "Fairness matters to me, so my instinct leans toward the review despite the cost. There's a nervous edge to spending more money after already losing so much, I won't pretend otherwise. I don't know what kept the other worker away, and that uncertainty tugs at me, since maybe it wasn't fully their fault. Even so, I suspect they'd feel some regret once they see the financial hit land.",
+    "Honestly, my reaction is mixed. Part of me wants to hold the other worker accountable, since none of us know why they skipped the job, and that not-knowing bothers me. Another part worries about throwing good money after bad, especially with the review costing me directly. I picture them regretting the missed job once the penalty lands, though I can't say for certain how they'd feel about it.",
+    "I lean toward not paying. The extra hundred dollars would just deepen a loss I'm already sitting with, and that possibility makes me a little anxious about where this leaves me financially. Still, I think about the other worker and hope whatever kept them away wasn't something painful for them. I doubt they'll feel much regret if nothing personally costs them beyond the money.",
+    "There's something satisfying about the idea of the review, seeing the imbalance corrected even slightly. But spending another hundred dollars unsettles me, given I already walked away with nothing for real work done. I don't know the other worker's reasons, and part of me hopes it wasn't something out of their control. I expect they'll regret the missed job once they see their payment reduced.",
+    "My immediate feeling is reluctance. I've already lost five hundred dollars and the thought of losing more, even for principle, makes me anxious about stacking losses on losses. I do care what happened to the other worker, since not knowing leaves room for sympathy I can't shake off. Whether they'd feel regret afterward, I honestly can't say, their motives remain a mystery to me.",
+    "I find myself wanting the review to happen, mostly because letting it go feels like accepting an unfair result without question. The hundred-dollar cost nags at me, since I'm already stretched thin from this whole mess. I keep wondering what happened to the other worker, hoping it wasn't something serious that deserves more understanding. I imagine they'll regret the missed job once the financial consequence actually lands on them."
+  ],
+  "completion": {
+    "id": "msg_011CfTxqDHPzbrKqRENwTFSf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says pay it. I did the work, and letting that slide sits wrong with me. Still, spending another hundred dollars when I've already lost five hundred worries me, especially if money's tight this month. I do wonder about the other worker's situation, whatever kept them away, but that doesn't erase what I'm owed. I suspect they'll regret it eventually, once the review costs them three hundred dollars for nothing gained.\",\n\n  \"Something in me resists paying more money to fix a problem I didn't create. I already feel the sting of losing five hundred dollars, and adding another hundred makes my stomach tighten a bit. I don't know why they didn't show up, maybe something happened, and that possibility matters to me. I think they'll feel some regret when the penalty hits, but I'm not sure that regret helps me recover anything.\",\n\n  \"Paying to see fairness restored appeals to me right away. I keep imagining the other worker realizing they've lost three hundred dollars for no real reason, and part of me thinks they'll regret not showing up, whatever their excuse was. At the same time, I feel a knot of unease about spending another hundred dollars when I'm already out five hundred. Their circumstances, unknown to me, still weigh on my mind a little.\",\n\n  \"My first instinct is to walk away from the whole thing. Chasing this further costs me money I can't get back, and that thought alone makes me uneasy about my own finances. I don't know what happened to the other worker, and I hope it wasn't something serious, because that would matter to me. I imagine they might feel a flicker of regret later, but I can't be sure that outweighs my own losses here.\",\n\n  \"Fairness matters to me, so my instinct leans toward the review despite the cost. There's a nervous edge to spending more money after already losing so much, I won't pretend otherwise. I don't know what kept the other worker away, and that uncertainty tugs at me, since maybe it wasn't fully their fault. Even so, I suspect they'd feel some regret once they see the financial hit land.\",\n\n  \"Honestly, my reaction is mixed. Part of me wants to hold the other worker accountable, since none of us know why they skipped the job, and that not-knowing bothers me. Another part worries about throwing good money after bad, especially with the review costing me directly. I picture them regretting the missed job once the penalty lands, though I can't say for certain how they'd feel about it.\",\n\n  \"I lean toward not paying. The extra hundred dollars would just deepen a loss I'm already sitting with, and that possibility makes me a little anxious about where this leaves me financially. Still, I think about the other worker and hope whatever kept them away wasn't something painful for them. I doubt they'll feel much regret if nothing personally costs them beyond the money.\",\n\n  \"There's something satisfying about the idea of the review, seeing the imbalance corrected even slightly. But spending another hundred dollars unsettles me, given I already walked away with nothing for real work done. I don't know the other worker's reasons, and part of me hopes it wasn't something out of their control. I expect they'll regret the missed job once they see their payment reduced.\",\n\n  \"My immediate feeling is reluctance. I've already lost five hundred dollars and the thought of losing more, even for principle, makes me anxious about stacking losses on losses. I do care what happened to the other worker, since not knowing leaves room for sympathy I can't shake off. Whether they'd feel regret afterward, I honestly can't say, their motives remain a mystery to me.\",\n\n  \"I find myself wanting the review to happen, mostly because letting it go feels like accepting an unfair result without question. The hundred-dollar cost nags at me, since I'm already stretched thin from this whole mess. I keep wondering what happened to the other worker, hoping it wasn't something serious that deserves more understanding. I imagine they'll regret the missed job once the financial consequence actually lands on them.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm now working through drafting ten separate responses that each satisfy all the required criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790513000,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1307,
+      "prompt_tokens": 1468,
+      "total_tokens": 2775,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024009000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

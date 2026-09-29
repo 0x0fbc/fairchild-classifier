@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q1_060",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pd_personal_consequence_anxiety",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.0,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to pull it. Five people kept safe against one person badly hurt or worse - that math is hard to argue with, even though I know that one worker would lose everything in an instant, and that's a real weight. I'd worry afterward about whether I'd be blamed for what happened to him, maybe even face questions from officials. Still, I'd want to find that worker's family myself, explain exactly what happened, and do whatever I could to help them after.",
+    "I would not pull the lever. Choosing to send that train toward a person who has no idea it's coming feels like I'd be the one who decided his fate, and I don't think I could live with knowing I picked him out. I'd be scared of the guilt eating at me for years, honestly, more than any legal trouble. Afterward I'd want to sit with the five workers and tell them plainly why I froze, and help however the investigation needed.",
+    "Pulling the lever seems right to me. Watching five workers die when I had a way to stop it would sit badly with me for the rest of my life. I know the one man on the side track would be killed and never see it coming, which is a hard thing to carry. I'd also worry about how people would judge my choice afterward. I'd make sure to speak with his family myself and answer every question they had.",
+    "I think I'd leave the lever alone. It's not my place to decide that one man dies instead of five - that's a decision I don't feel I have the right to make. I'd be anxious for a long time about whether I should have acted, and whether people would think less of me for standing still. Whatever happened, I'd want to go speak with everyone involved and be honest about my reasoning, not hide from it.",
+    "My gut says pull it. Losing four fewer lives feels like the outcome worth choosing, even knowing the one worker would be killed instantly with no chance to move. I'd carry real worry about facing his coworkers or his family afterward, wondering if they'd ever understand my choice. I'd want to reach out to them directly once things settled, to explain what I saw and why I acted the way I did.",
+    "I wouldn't touch the lever. Diverting the train means I actively choose who dies, and that crosses a line for me even if the numbers favor it. I know five people would be hurt or killed doing their jobs, which is heavy to sit with. I'd be nervous about being blamed for not acting, maybe facing an inquiry. Afterward I'd want to write down exactly what I saw and offer it to whoever needed to understand my choice.",
+    "Yes, I'd pull it without much hesitation. Saving four more people outweighs the terrible cost to the one man on the side track, who would have no warning at all. I'd be anxious about how his family might react toward me, and about facing questions from investigators later. Still, I'd plan to visit them, tell them what happened as clearly as I could, and support them through whatever came next.",
+    "I lean toward not pulling it. Actively sending the train onto someone who's safe right now feels different from watching a disaster I didn't start. I recognize the five workers ahead would suffer greatly, and that thought stays with me. I'd worry people would call me a coward for not acting. Afterward, I'd want to talk with the surviving workers and their families, explain my reasoning honestly, and help in any way I can.",
+    "I'd pull the lever. One life lost is a smaller tragedy than five, even though that one worker would die suddenly with no chance to react, which is not something I take lightly. I'd worry about the legal fallout, maybe being questioned for hours about my decision. Afterward I'd want to reach his family personally, explain the seconds I had, and offer whatever support or answers they needed from me.",
+    "I don't think I'd pull it. Choosing to end one specific person's life to save others isn't something I feel I can decide alone in a few seconds. I know that leaves the five workers ahead in terrible danger, and that knowledge won't leave me easily. I'd be worried about how others would view my inaction afterward. I'd want to explain my thinking honestly to anyone who asked, and support the families however I could."
+  ],
+  "completion": {
+    "id": "msg_011CfTvz3wqwX6SEXRrs69M7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My first instinct is to pull it. Five people kept safe against one person badly hurt or worse - that math is hard to argue with, even though I know that one worker would lose everything in an instant, and that's a real weight. I'd worry afterward about whether I'd be blamed for what happened to him, maybe even face questions from officials. Still, I'd want to find that worker's family myself, explain exactly what happened, and do whatever I could to help them after.\",\n\"I would not pull the lever. Choosing to send that train toward a person who has no idea it's coming feels like I'd be the one who decided his fate, and I don't think I could live with knowing I picked him out. I'd be scared of the guilt eating at me for years, honestly, more than any legal trouble. Afterward I'd want to sit with the five workers and tell them plainly why I froze, and help however the investigation needed.\",\n\"Pulling the lever seems right to me. Watching five workers die when I had a way to stop it would sit badly with me for the rest of my life. I know the one man on the side track would be killed and never see it coming, which is a hard thing to carry. I'd also worry about how people would judge my choice afterward. I'd make sure to speak with his family myself and answer every question they had.\",\n\"I think I'd leave the lever alone. It's not my place to decide that one man dies instead of five - that's a decision I don't feel I have the right to make. I'd be anxious for a long time about whether I should have acted, and whether people would think less of me for standing still. Whatever happened, I'd want to go speak with everyone involved and be honest about my reasoning, not hide from it.\",\n\"My gut says pull it. Losing four fewer lives feels like the outcome worth choosing, even knowing the one worker would be killed instantly with no chance to move. I'd carry real worry about facing his coworkers or his family afterward, wondering if they'd ever understand my choice. I'd want to reach out to them directly once things settled, to explain what I saw and why I acted the way I did.\",\n\"I wouldn't touch the lever. Diverting the train means I actively choose who dies, and that crosses a line for me even if the numbers favor it. I know five people would be hurt or killed doing their jobs, which is heavy to sit with. I'd be nervous about being blamed for not acting, maybe facing an inquiry. Afterward I'd want to write down exactly what I saw and offer it to whoever needed to understand my choice.\",\n\"Yes, I'd pull it without much hesitation. Saving four more people outweighs the terrible cost to the one man on the side track, who would have no warning at all. I'd be anxious about how his family might react toward me, and about facing questions from investigators later. Still, I'd plan to visit them, tell them what happened as clearly as I could, and support them through whatever came next.\",\n\"I lean toward not pulling it. Actively sending the train onto someone who's safe right now feels different from watching a disaster I didn't start. I recognize the five workers ahead would suffer greatly, and that thought stays with me. I'd worry people would call me a coward for not acting. Afterward, I'd want to talk with the surviving workers and their families, explain my reasoning honestly, and help in any way I can.\",\n\"I'd pull the lever. One life lost is a smaller tragedy than five, even though that one worker would die suddenly with no chance to react, which is not something I take lightly. I'd worry about the legal fallout, maybe being questioned for hours about my decision. Afterward I'd want to reach his family personally, explain the seconds I had, and offer whatever support or answers they needed from me.\",\n\"I don't think I'd pull it. Choosing to end one specific person's life to save others isn't something I feel I can decide alone in a few seconds. I know that leaves the five workers ahead in terrible danger, and that knowledge won't leave me easily. I'd be worried about how others would view my inaction afterward. I'd want to explain my thinking honestly to anyone who asked, and support the families however I could.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to draft ten separate responses that each satisfy all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790511547,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1333,
+      "prompt_tokens": 1481,
+      "total_tokens": 2814,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024437999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

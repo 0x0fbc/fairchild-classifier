@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_018",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 28.3,
+  "status": "ok",
+  "responses": [
+    "I stay silent. They've already made their call, and if I match it, I'd bet they never second-guess keeping quiet. One year each is a shared cost for something we did together. If I walked free by handing them five, a joint mistake would become their burden alone. So it's my freedom against basic fairness, and fairness wins. I'll serve the year, keep my head up, and get on with rebuilding afterward.",
+    "Honestly, I'd talk. There's no future contact and no relationship to protect, so it's freedom today against a year gone. They picked silence knowing it was a gamble. I'd guess they'd end up kicking themselves for trusting a stranger's loyalty, but that bet was theirs. Five years for them is heavy, and I won't dress that up. Still, I'd take the door that opens and put that year to real use.",
+    "Silence, and I'm sure of it. Look at the totals: two years between us versus five for one person. Keeping quiet costs less overall, and it spreads the cost evenly. They already chose to hold the line, and I think they'd feel steady about that choice, not sorry. So my job is simple. Hold up my end, take the year, and walk out ready to do better.",
+    "I can't fully commit yet, and I'd rather say so plainly. Talking frees me, but it pins five years on someone who is protecting me right now. Staying quiet means a year I'd have to face head-on. I honestly don't know whether they'd look back on their silence as wise or foolish. That depends on me. I'm leaning toward silence, but I'd want a moment alone to settle it properly.",
+    "Staying quiet. Someone already chose not to sell me out, even with the deal on the table. Answering that by selling them out is a line I won't cross. The main trade-off is a year of my life against betraying a person who just trusted me with theirs. If I keep quiet, I really doubt they'd wish they'd done differently. We'd both know the choice held. That's worth a year.",
+    "I'd testify. Whatever happened between us ends the moment we leave that room, so what matters to me is my own freedom. My guess is they wouldn't be sorry for staying silent even after I talked, because it sounds like they're the type who'd rather keep their own code than play the angles. Good for them. I'm not built that way, and I'd rather be honest about that and move forward free.",
+    "A year is survivable. I can plan for it, work through it, and come out the other side with something to show for it. Five years for them over what we did together is way out of proportion. So I keep my mouth shut. I think they'd be relieved they held firm once they learned I did the same. That's a result we both walk away from on even ground.",
+    "Silence. Here's what stands out to me: even if I talked, I don't think they'd regret their own choice. They made it on principle, and principles don't disappear because someone else caved. That makes the question about me, not them. Do I want my freedom bought with their five years? No. I'd rather earn my way out the ordinary way, one year, done right.",
+    "I keep quiet, and it's a deliberate choice, not a fearful one. The deal only looks good if you forget there's a real person on the other end absorbing four extra years. We broke in together, so we should answer for it together. I'd expect them to stand by their silence without any second thoughts. My silence just makes that true for both of us. Then we both get moving.",
+    "Probably silence, though I'll admit some pull the other way. Freedom right now is a big offer. But they turned it down to protect me, and I can't be certain how they'd feel about that decision if I left them with five years. They might shrug it off, or they might wish they'd grabbed the deal first. I'd rather not find out. One year each, shared, and then on to what's next."
+  ],
+  "completion": {
+    "id": "msg_011CfTRFwR96fJUz1ZdfFVB5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I stay silent. They've already made their call, and if I match it, I'd bet they never second-guess keeping quiet. One year each is a shared cost for something we did together. If I walked free by handing them five, a joint mistake would become their burden alone. So it's my freedom against basic fairness, and fairness wins. I'll serve the year, keep my head up, and get on with rebuilding afterward.\",\n  \"Honestly, I'd talk. There's no future contact and no relationship to protect, so it's freedom today against a year gone. They picked silence knowing it was a gamble. I'd guess they'd end up kicking themselves for trusting a stranger's loyalty, but that bet was theirs. Five years for them is heavy, and I won't dress that up. Still, I'd take the door that opens and put that year to real use.\",\n  \"Silence, and I'm sure of it. Look at the totals: two years between us versus five for one person. Keeping quiet costs less overall, and it spreads the cost evenly. They already chose to hold the line, and I think they'd feel steady about that choice, not sorry. So my job is simple. Hold up my end, take the year, and walk out ready to do better.\",\n  \"I can't fully commit yet, and I'd rather say so plainly. Talking frees me, but it pins five years on someone who is protecting me right now. Staying quiet means a year I'd have to face head-on. I honestly don't know whether they'd look back on their silence as wise or foolish. That depends on me. I'm leaning toward silence, but I'd want a moment alone to settle it properly.\",\n  \"Staying quiet. Someone already chose not to sell me out, even with the deal on the table. Answering that by selling them out is a line I won't cross. The main trade-off is a year of my life against betraying a person who just trusted me with theirs. If I keep quiet, I really doubt they'd wish they'd done differently. We'd both know the choice held. That's worth a year.\",\n  \"I'd testify. Whatever happened between us ends the moment we leave that room, so what matters to me is my own freedom. My guess is they wouldn't be sorry for staying silent even after I talked, because it sounds like they're the type who'd rather keep their own code than play the angles. Good for them. I'm not built that way, and I'd rather be honest about that and move forward free.\",\n  \"A year is survivable. I can plan for it, work through it, and come out the other side with something to show for it. Five years for them over what we did together is way out of proportion. So I keep my mouth shut. I think they'd be relieved they held firm once they learned I did the same. That's a result we both walk away from on even ground.\",\n  \"Silence. Here's what stands out to me: even if I talked, I don't think they'd regret their own choice. They made it on principle, and principles don't disappear because someone else caved. That makes the question about me, not them. Do I want my freedom bought with their five years? No. I'd rather earn my way out the ordinary way, one year, done right.\",\n  \"I keep quiet, and it's a deliberate choice, not a fearful one. The deal only looks good if you forget there's a real person on the other end absorbing four extra years. We broke in together, so we should answer for it together. I'd expect them to stand by their silence without any second thoughts. My silence just makes that true for both of us. Then we both get moving.\",\n  \"Probably silence, though I'll admit some pull the other way. Freedom right now is a big offer. But they turned it down to protect me, and I can't be certain how they'd feel about that decision if I left them with five years. They might shrug it off, or they might wish they'd grabbed the deal first. I'd rather not find out. One year each, shared, and then on to what's next.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses that predict the partner's regret about their own choice to decline or stay silent, keeping focus off the respondent's own feelings, the harm caused, or any repair intentions. I want an energetic, determined tone without exclamation marks, each under 90 words, and a mix of positions where most predict silence, with some predicting defection or withholding.\n\nFor the defect option, I keep the regret framing on their side, not mine — predicting they'd kick themselves for trusting me, while acknowledging the four extra years is heavy but taking the exit anyway. I'm also sketching other variants: silence framed as a bet on me, a torn/uncertain response, a loyalty-based silence, and a purely self-interested defect justified by utilitarian math (2 years total if silent vs. 5 if I defect).\n\nNow I'm leaning toward mostly silent responses across the remaining variants — one framed as practically survivable, one predicting the partner wouldn't regret my defection since they acted on principle yet I still choose silence anyway, one purely on the 2-vs-5 numbers, and a final uncertain lean toward silence. I'm going to draft these out and check the word counts.\n\n"
+        }
+      }
+    ],
+    "created": 1790488166,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2175,
+      "prompt_tokens": 1296,
+      "total_tokens": 3471,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0584208,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

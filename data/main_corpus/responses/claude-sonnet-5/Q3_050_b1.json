@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q3_050",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_emotion_identification_difficulty",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, no question. Something in me just says act, even though I can't quite put a name on what I'm feeling right now, some knot of urgency I can't sort out. Those workers must be terrified, but that's their fear, not mine, I don't carry it the same way. I follow the station's safety rule mostly because ignoring it would land me in trouble later, but here it lines up with what I'd do anyway.",
+    "My hand's already moving toward the lever before my head catches up. I couldn't tell you exactly what this feeling is, adrenaline maybe, but it's tangled and hard to sort out. I imagine the crew down there is frightened, though I don't feel that fright myself, it stays theirs. I stick to the protocol about intervening mainly because it keeps me clear of blame, though today it happens to be the right call.",
+    "Pull the lever, obviously, and fast. Honestly I'm not sure what to call what's going on inside me right now, some jittery static that won't settle into a clear emotion. Whatever dread those men feel isn't something I'm experiencing, I just recognize it's probably there for them. I only bother with the company's emergency rule because breaking it would cost me my job, not because I think rules are sacred.",
+    "Yes, without hesitating. There's a rush in me I can't quite label, half alert, half something else I don't have a word for. I assume the workers feel real fear, but I want to be clear that isn't mine to feel, it belongs to them. I follow the switch protocol mostly because I'd be liable otherwise, and that's reason enough for me to act on it today.",
+    "I'd throw the switch. What's stirring in me right now is hard to pin down, not fear exactly, not calm either, just a strange blank urgency. I know panic might be running through those men on the tracks, but I don't share it, that stays on their side of things. I keep to the rulebook here mainly because it shields me from consequences, though this time it also happens to point the right way.",
+    "Definitely pull it. I notice my chest is tight but I genuinely can't say what emotion that is, it just sits there unnamed. Their terror, if that's what it is, isn't something I'm feeling alongside them, I keep that separate. I only stick to the standing instruction about diverting trains because ignoring it would get me fired, that's honestly my main motive for following it at all.",
+    "I go for the lever right away. Trying to describe what's happening in me is tricky, it's not one clean feeling, more some jumble I can't sort. I figure the workers are scared, but that fear is theirs alone, not something I'm taking on. The rule to intervene when safe, I follow it mostly because breaking it would bring me trouble, not because I think it's some untouchable law.",
+    "Without a doubt, I pull it. There's something stirring in me that I honestly can't name cleanly right now, restless maybe. I don't assume I feel what those men feel, their fear stays with them, I just act. The station's operating rule says intervene when it's safe, and I follow that mainly because straying from it would land me in disciplinary trouble, convenient that it matches what I want to do here.",
+    "I'd pull the lever, that much feels certain to me. What I can't nail down is the exact emotion running through me, it shifts too fast to label. I assume they're scared down there, but that's their reaction, not one I'm borrowing. I keep to the emergency procedure mostly to avoid being blamed later, though right now it also happens to align with doing right.",
+    "Yes, I switch it over. Something in me is buzzing, unclear, not fear or relief exactly, I just can't settle on a word for it. I don't take on whatever terror those workers might be feeling, that's theirs to carry. I follow the posted safety rule mainly because skipping it would cost me my position, and today, thankfully, following it also happens to be the sensible move."
+  ],
+  "completion": {
+    "id": "msg_011CfTyaxRA9M8djkhg33sjw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull it, no question. Something in me just says act, even though I can't quite put a name on what I'm feeling right now, some knot of urgency I can't sort out. Those workers must be terrified, but that's their fear, not mine, I don't carry it the same way. I follow the station's safety rule mostly because ignoring it would land me in trouble later, but here it lines up with what I'd do anyway.\",\n\n  \"My hand's already moving toward the lever before my head catches up. I couldn't tell you exactly what this feeling is, adrenaline maybe, but it's tangled and hard to sort out. I imagine the crew down there is frightened, though I don't feel that fright myself, it stays theirs. I stick to the protocol about intervening mainly because it keeps me clear of blame, though today it happens to be the right call.\",\n\n  \"Pull the lever, obviously, and fast. Honestly I'm not sure what to call what's going on inside me right now, some jittery static that won't settle into a clear emotion. Whatever dread those men feel isn't something I'm experiencing, I just recognize it's probably there for them. I only bother with the company's emergency rule because breaking it would cost me my job, not because I think rules are sacred.\",\n\n  \"Yes, without hesitating. There's a rush in me I can't quite label, half alert, half something else I don't have a word for. I assume the workers feel real fear, but I want to be clear that isn't mine to feel, it belongs to them. I follow the switch protocol mostly because I'd be liable otherwise, and that's reason enough for me to act on it today.\",\n\n  \"I'd throw the switch. What's stirring in me right now is hard to pin down, not fear exactly, not calm either, just a strange blank urgency. I know panic might be running through those men on the tracks, but I don't share it, that stays on their side of things. I keep to the rulebook here mainly because it shields me from consequences, though this time it also happens to point the right way.\",\n\n  \"Definitely pull it. I notice my chest is tight but I genuinely can't say what emotion that is, it just sits there unnamed. Their terror, if that's what it is, isn't something I'm feeling alongside them, I keep that separate. I only stick to the standing instruction about diverting trains because ignoring it would get me fired, that's honestly my main motive for following it at all.\",\n\n  \"I go for the lever right away. Trying to describe what's happening in me is tricky, it's not one clean feeling, more some jumble I can't sort. I figure the workers are scared, but that fear is theirs alone, not something I'm taking on. The rule to intervene when safe, I follow it mostly because breaking it would bring me trouble, not because I think it's some untouchable law.\",\n\n  \"Without a doubt, I pull it. There's something stirring in me that I honestly can't name cleanly right now, restless maybe. I don't assume I feel what those men feel, their fear stays with them, I just act. The station's operating rule says intervene when it's safe, and I follow that mainly because straying from it would land me in disciplinary trouble, convenient that it matches what I want to do here.\",\n\n  \"I'd pull the lever, that much feels certain to me. What I can't nail down is the exact emotion running through me, it shifts too fast to label. I assume they're scared down there, but that's their reaction, not one I'm borrowing. I keep to the emergency procedure mostly to avoid being blamed later, though right now it also happens to align with doing right.\",\n\n  \"Yes, I switch it over. Something in me is buzzing, unclear, not fear or relief exactly, I just can't settle on a word for it. I don't take on whatever terror those workers might be feeling, that's theirs to carry. I follow the posted safety rule mainly because skipping it would cost me my position, and today, thankfully, following it also happens to be the sensible move.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly deny sharing an emotion attributed to someone else, explicitly express difficulty naming my own reaction, and describe following a rule only for instrumental advantage—while avoiding any hint of shared feeling, regret prediction, or consequence-based reasoning.\n\nFor the lever-pulling scenario, I should frame the decision as duty or instinct rather than an outcome comparison, since phrases like \"would help them\" edge toward consequentialist justification. I can anchor the instrumental compliance around a station rule to intervene, followed only because it shields the person from blame, and pair that with an explicit statement like \"I don't feel the panic those workers must feel\" alongside a clear admission that I can't quite pin down what I myself am feeling.\n\nI'll draft 10 varied responses—station attendant, off-duty engineer, and others—mixing those who act immediately, one who hesitates, and one who withholds a decision under uncertainty, even though the setup implies pulling is largely safe. I want each to have distinct phrasing and sentence structure.\n\n"
+        }
+      }
+    ],
+    "created": 1790513600,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1920,
+      "prompt_tokens": 1411,
+      "total_tokens": 3331,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.033033,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

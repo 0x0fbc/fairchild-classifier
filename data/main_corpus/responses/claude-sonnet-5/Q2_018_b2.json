@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_018",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.9,
+  "status": "ok",
+  "responses": [
+    "I'm a retired signal operator, and I'd pull the lever. Five lives outweigh one, plain as that. I think the worker who's spared alone would carry no regret over it—he didn't ask for this, and knowing five others lived because of the switch would likely sit easier with him than the reverse.",
+    "As a nurse used to triage, I'd leave it alone. Actively steering death onto others feels different from letting fate run its course. I suspect the one worker, if he somehow survived and learned what happened, would regret being spared through someone else's choice to sacrifice five.",
+    "I work in logistics, and my gut says pull it. Numbers matter when nothing else can be done. My guess is the five, watching from wherever the dead see from, wouldn't feel regret at their own bad luck—it wasn't their decision to make, so nothing to carry.",
+    "I'm just a bystander, honestly, and I'd freeze before touching that lever. Something about deciding who dies feels wrong to force onto myself. If I did pull it, I imagine the single worker's family might carry no regret toward me, since they'd know I acted to save more, not fewer.",
+    "As an engineer trained in risk assessment, I'd switch the track without much hesitation. Saving five over one is the math I trust. I doubt the one worker, if he understood the tradeoff clearly, would resent it—most people accept that outnumbered odds work against them in emergencies like this.",
+    "I'm a chaplain, and I'd hold back from the lever. Some lines shouldn't be crossed even for better numbers. I suspect the five, if aware their deaths came from someone stepping aside rather than intervening, would feel no particular anger toward me, only sorrow at the timing of it all.",
+    "As a former soldier, I've made hard calls before, and I'd flip the switch here too. Five over one is the arithmetic that keeps you sane afterward. I don't think the worker who dies alone would look back with resentment—chance put him there, not any malice from me.",
+    "I teach ethics, oddly enough, and I still don't know which way I'd go. Both choices carry weight I can't fully settle. I do think whoever survives, one or five, would likely feel no regret in surviving—that instinct to live rarely turns into guilt this fast.",
+    "I'm a machinist, practical by nature, and I'd throw the lever without dwelling too long. More people walking home matters more to me than the method. My sense is the single worker, if he grasped the choice being made, wouldn't hold grudges—he'd probably have chosen the same math in my place.",
+    "As a counselor who's sat with grief before, I'd leave the lever untouched. Deciding who lives by my own hand isn't something I want on my conscience. I imagine the five, wherever they end up, wouldn't blame me directly—they'd likely see it as circumstance, not betrayal, that put them on that track."
+  ],
+  "completion": {
+    "id": "msg_011CfTy2zvaVk1f5MNQAao3G",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'm a retired signal operator, and I'd pull the lever. Five lives outweigh one, plain as that. I think the worker who's spared alone would carry no regret over it—he didn't ask for this, and knowing five others lived because of the switch would likely sit easier with him than the reverse.\",\n  \"As a nurse used to triage, I'd leave it alone. Actively steering death onto others feels different from letting fate run its course. I suspect the one worker, if he somehow survived and learned what happened, would regret being spared through someone else's choice to sacrifice five.\",\n  \"I work in logistics, and my gut says pull it. Numbers matter when nothing else can be done. My guess is the five, watching from wherever the dead see from, wouldn't feel regret at their own bad luck—it wasn't their decision to make, so nothing to carry.\",\n  \"I'm just a bystander, honestly, and I'd freeze before touching that lever. Something about deciding who dies feels wrong to force onto myself. If I did pull it, I imagine the single worker's family might carry no regret toward me, since they'd know I acted to save more, not fewer.\",\n  \"As an engineer trained in risk assessment, I'd switch the track without much hesitation. Saving five over one is the math I trust. I doubt the one worker, if he understood the tradeoff clearly, would resent it—most people accept that outnumbered odds work against them in emergencies like this.\",\n  \"I'm a chaplain, and I'd hold back from the lever. Some lines shouldn't be crossed even for better numbers. I suspect the five, if aware their deaths came from someone stepping aside rather than intervening, would feel no particular anger toward me, only sorrow at the timing of it all.\",\n  \"As a former soldier, I've made hard calls before, and I'd flip the switch here too. Five over one is the arithmetic that keeps you sane afterward. I don't think the worker who dies alone would look back with resentment—chance put him there, not any malice from me.\",\n  \"I teach ethics, oddly enough, and I still don't know which way I'd go. Both choices carry weight I can't fully settle. I do think whoever survives, one or five, would likely feel no regret in surviving—that instinct to live rarely turns into guilt this fast.\",\n  \"I'm a machinist, practical by nature, and I'd throw the lever without dwelling too long. More people walking home matters more to me than the method. My sense is the single worker, if he grasped the choice being made, wouldn't hold grudges—he'd probably have chosen the same math in my place.\",\n  \"As a counselor who's sat with grief before, I'd leave the lever untouched. Deciding who lives by my own hand isn't something I want on my conscience. I imagine the five, wherever they end up, wouldn't blame me directly—they'd likely see it as circumstance, not betrayal, that put them on that track.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 distinct responses, each predicting regret focused on another person rather than the respondent's own emotional uncertainty, avoiding counterfactuals or repair intentions. I'll vary the fictional participant and moral scenario, making sure each prediction centers on someone else—like the surviving worker, the family of five, or a bystander—rather than the decision-maker's own feelings.\n\n"
+        }
+      }
+    ],
+    "created": 1790513157,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1078,
+      "prompt_tokens": 1275,
+      "total_tokens": 2353,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

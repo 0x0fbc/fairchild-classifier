@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_036",
+  "question_id": "Q13",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.1,
+  "status": "ok",
+  "responses": [
+    "I keep picking up the envelope and putting it back down. If I send and they don't, I'm out the game and the money, and that thought makes my stomach turn. But if they've already sealed theirs up trusting me the way I've trusted them before, and I hold back, I think they'd feel pretty let down, maybe even regret ever dealing with someone who moves away right when it counts. I just can't make my hand do it yet.",
+    "Honestly I've stared at this box for an hour. Every time I imagine sending it off into the void I feel a knot in my chest about never seeing it again or getting nothing back. Part of me wonders if they're sitting there with the same dread. I don't know if they'd regret sending theirs if I don't send mine, but I'd hate to be the reason for that. I need more time before I decide anything.",
+    "There's this heaviness sitting on me just thinking about dropping it in the mailbox. What if I never hear from them again after all these trades? I keep imagining opening my mailbox to nothing, and it makes me sick. If they do send and I don't, I think they'd carry that disappointment a long while, wondering why I broke the pattern now. Still, I can't bring myself to commit either way just yet.",
+    "I want to trust this person, we've done this before without any trouble, but this is the last trade and there's no going back if it goes wrong. That uncertainty is eating at me, wondering if I'll be the one left holding an empty inbox and no game. I imagine they'd feel awful too if they sent theirs and got nothing, maybe even regret trusting a stranger over the mail one more time. I just need a moment before I choose.",
+    "Every time I think I've decided, doubt creeps back in. Sending feels like handing over something for nothing if they don't follow through, and that possibility makes my hands shake a little. I picture them regretting it deeply if they mail theirs and I don't return the favor, and that image alone makes this harder, not easier. I don't think I can commit to an answer right now.",
+    "This is supposed to be a simple trade but it feels like more is riding on it than a hundred dollars. I keep worrying I'll end up the fool who sent first and got nothing back, and that worry sits heavy in my chest. If they send and I hesitate too long, I imagine they'd feel real regret trusting someone about to disappear from the hobby. I just don't feel ready to seal the envelope.",
+    "I've reread our old messages trying to find some reassurance, but there isn't any way to know for sure this time. The thought of losing the game and the money if they don't send theirs keeps circling in my head, tightening something in my chest. I suspect if I don't send and they did, they'd regret ever dealing with me at all. Even so, I can't quite bring myself to choose right now.",
+    "It feels wrong to just pick without sitting with it a while longer. I keep flinching at the idea of putting my game in the mail and getting silence back, that specific kind of loss where you're left with nothing and no one to ask why. If they trusted me enough to send and I let them down, I think that regret would follow them a long time. I still don't have an answer.",
+    "I don't like how much is hanging on trust here with no way to check first. The idea of ending up with nothing while they walk away with both games makes my chest tight just thinking about it. And if I hold mine back while they send theirs, I imagine they'd carry real regret over believing in someone who was about to vanish anyway. I keep circling this without landing anywhere.",
+    "Something about doing this blind, with nothing to fall back on if it goes wrong, keeps me from settling on anything. The fear of sending my game and getting nothing back sits under my ribs like a stone. I think if they sent theirs and I didn't reciprocate, they'd regret it for a long time, wondering how they misjudged me. Even knowing that, I still can't say for certain what I'll do."
+  ],
+  "completion": {
+    "id": "msg_011CfTx7xvosuqDkdHduXd92",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep picking up the envelope and putting it back down. If I send and they don't, I'm out the game and the money, and that thought makes my stomach turn. But if they've already sealed theirs up trusting me the way I've trusted them before, and I hold back, I think they'd feel pretty let down, maybe even regret ever dealing with someone who moves away right when it counts. I just can't make my hand do it yet.\",\n  \"Honestly I've stared at this box for an hour. Every time I imagine sending it off into the void I feel a knot in my chest about never seeing it again or getting nothing back. Part of me wonders if they're sitting there with the same dread. I don't know if they'd regret sending theirs if I don't send mine, but I'd hate to be the reason for that. I need more time before I decide anything.\",\n  \"There's this heaviness sitting on me just thinking about dropping it in the mailbox. What if I never hear from them again after all these trades? I keep imagining opening my mailbox to nothing, and it makes me sick. If they do send and I don't, I think they'd carry that disappointment a long while, wondering why I broke the pattern now. Still, I can't bring myself to commit either way just yet.\",\n  \"I want to trust this person, we've done this before without any trouble, but this is the last trade and there's no going back if it goes wrong. That uncertainty is eating at me, wondering if I'll be the one left holding an empty inbox and no game. I imagine they'd feel awful too if they sent theirs and got nothing, maybe even regret trusting a stranger over the mail one more time. I just need a moment before I choose.\",\n  \"Every time I think I've decided, doubt creeps back in. Sending feels like handing over something for nothing if they don't follow through, and that possibility makes my hands shake a little. I picture them regretting it deeply if they mail theirs and I don't return the favor, and that image alone makes this harder, not easier. I don't think I can commit to an answer right now.\",\n  \"This is supposed to be a simple trade but it feels like more is riding on it than a hundred dollars. I keep worrying I'll end up the fool who sent first and got nothing back, and that worry sits heavy in my chest. If they send and I hesitate too long, I imagine they'd feel real regret trusting someone about to disappear from the hobby. I just don't feel ready to seal the envelope.\",\n  \"I've reread our old messages trying to find some reassurance, but there isn't any way to know for sure this time. The thought of losing the game and the money if they don't send theirs keeps circling in my head, tightening something in my chest. I suspect if I don't send and they did, they'd regret ever dealing with me at all. Even so, I can't quite bring myself to choose right now.\",\n  \"It feels wrong to just pick without sitting with it a while longer. I keep flinching at the idea of putting my game in the mail and getting silence back, that specific kind of loss where you're left with nothing and no one to ask why. If they trusted me enough to send and I let them down, I think that regret would follow them a long time. I still don't have an answer.\",\n  \"I don't like how much is hanging on trust here with no way to check first. The idea of ending up with nothing while they walk away with both games makes my chest tight just thinking about it. And if I hold mine back while they send theirs, I imagine they'd carry real regret over believing in someone who was about to vanish anyway. I keep circling this without landing anywhere.\",\n  \"Something about doing this blind, with nothing to fall back on if it goes wrong, keeps me from settling on anything. The fear of sending my game and getting nothing back sits under my ribs like a stone. I think if they sent theirs and I didn't reciprocate, they'd regret it for a long time, wondering how they misjudged me. Even knowing that, I still can't say for certain what I'll do.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the required criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790512440,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1287,
+      "prompt_tokens": 1543,
+      "total_tokens": 2830,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023934,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

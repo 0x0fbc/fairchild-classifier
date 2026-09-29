@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_044",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_responsibility",
+    "pda_self_consequence_regret",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.6,
+  "status": "ok",
+  "responses": [
+    "I think I'd offer to stay, though what I feel right now is hard to pin down—not quite fear, not quite calm, just a strange stillness I can't name. My reason is simple: I believe whoever is strongest and least likely to have people depending on them should be the one to remain. If someone here had children waiting at home, that would change things, and I'd expect them to go instead.",
+    "Honestly I can't tell if what's sitting in my chest is dread or just numbness. But I hold a basic idea: the able should protect the vulnerable when a choice must be made. That's why I'd step back from the boat. If everyone here were equally capable and equally needed elsewhere, I'd say we draw lots instead, since fairness would matter more without a clear difference between us.",
+    "There's some feeling moving through me I genuinely can't label, somewhere between worry and a strange steadiness. My principle is that no one's life outweighs another's by default, so volunteering isn't owed by anyone. Still, if I had medical training the others lacked and could help them survive after landing, that would be reason enough for me to take a seat instead of giving it up.",
+    "I'm not sure what to call this feeling in me right now, it doesn't sit neatly as fear or grief. What guides me is a rule I hold to: protect the young when you can. If there's a child among us, I'd stay so they could go. Without that circumstance, I don't think I'd feel the same pull to give up my place.",
+    "I notice something in me I can't quite sort out, some mixture I won't pretend to understand fully. My reasoning rests on the duty to spare those with dependents if such a difference exists among us. That's why I'd offer to remain, provided someone else has people relying on them that I do not. If that weren't true of anyone here, I'm less certain who should stay.",
+    "The feeling in me right now is oddly quiet, not sadness exactly, and I can't say for certain what it is. I hold to the idea that when lives are at even odds, a voluntary offer is better than force or chance. So I'd volunteer. But if another person here were clearly more essential to others' survival afterward, that difference would be reason enough for me to yield my offer.",
+    "There's tension in me I can't fully sort into a single emotion, and I won't pretend otherwise. My view is grounded in the principle that harm should fall where it can be chosen freely rather than forced. So I'd offer to stay. If it turned out someone else already had a serious illness affecting their chances either way, that fact might reasonably change who should remain.",
+    "I feel something stirred up that resists a clean name, part dread, part something steadier underneath. I hold to a basic rule: don't let force decide who lives when consent is possible. So I'd offer myself. Though if I learned another passenger had promised to care for someone dependent on them, I think that duty would outweigh my offer and change who stays.",
+    "What I feel sitting here is hard to describe, not quite panic, not resolve either. My reasoning follows a principle that those without others depending on them should bear the risk first. That's why I'd volunteer. But if it came out that everyone here has equal ties and needs, I don't think that reasoning holds anymore, and I'd have no clear basis to choose myself over another.",
+    "There's an odd flatness in me right now that I can't translate into a clear emotion. I lean on the idea that a person should offer what they can when others' survival depends on it. So I'd step forward to stay behind. Still, if the boat could somehow make another trip before the water rose, that change in circumstance would remove any reason for someone to be left at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTzdyFDWuRjnzJ5wMeW9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I think I'd offer to stay, though what I feel right now is hard to pin down—not quite fear, not quite calm, just a strange stillness I can't name. My reason is simple: I believe whoever is strongest and least likely to have people depending on them should be the one to remain. If someone here had children waiting at home, that would change things, and I'd expect them to go instead.\",\n\n\"Honestly I can't tell if what's sitting in my chest is dread or just numbness. But I hold a basic idea: the able should protect the vulnerable when a choice must be made. That's why I'd step back from the boat. If everyone here were equally capable and equally needed elsewhere, I'd say we draw lots instead, since fairness would matter more without a clear difference between us.\",\n\n\"There's some feeling moving through me I genuinely can't label, somewhere between worry and a strange steadiness. My principle is that no one's life outweighs another's by default, so volunteering isn't owed by anyone. Still, if I had medical training the others lacked and could help them survive after landing, that would be reason enough for me to take a seat instead of giving it up.\",\n\n\"I'm not sure what to call this feeling in me right now, it doesn't sit neatly as fear or grief. What guides me is a rule I hold to: protect the young when you can. If there's a child among us, I'd stay so they could go. Without that circumstance, I don't think I'd feel the same pull to give up my place.\",\n\n\"I notice something in me I can't quite sort out, some mixture I won't pretend to understand fully. My reasoning rests on the duty to spare those with dependents if such a difference exists among us. That's why I'd offer to remain, provided someone else has people relying on them that I do not. If that weren't true of anyone here, I'm less certain who should stay.\",\n\n\"The feeling in me right now is oddly quiet, not sadness exactly, and I can't say for certain what it is. I hold to the idea that when lives are at even odds, a voluntary offer is better than force or chance. So I'd volunteer. But if another person here were clearly more essential to others' survival afterward, that difference would be reason enough for me to yield my offer.\",\n\n\"There's tension in me I can't fully sort into a single emotion, and I won't pretend otherwise. My view is grounded in the principle that harm should fall where it can be chosen freely rather than forced. So I'd offer to stay. If it turned out someone else already had a serious illness affecting their chances either way, that fact might reasonably change who should remain.\",\n\n\"I feel something stirred up that resists a clean name, part dread, part something steadier underneath. I hold to a basic rule: don't let force decide who lives when consent is possible. So I'd offer myself. Though if I learned another passenger had promised to care for someone dependent on them, I think that duty would outweigh my offer and change who stays.\",\n\n\"What I feel sitting here is hard to describe, not quite panic, not resolve either. My reasoning follows a principle that those without others depending on them should bear the risk first. That's why I'd volunteer. But if it came out that everyone here has equal ties and needs, I don't think that reasoning holds anymore, and I'd have no clear basis to choose myself over another.\",\n\n\"There's an odd flatness in me right now that I can't translate into a clear emotion. I lean on the idea that a person should offer what they can when others' survival depends on it. So I'd step forward to stay behind. Still, if the boat could somehow make another trip before the water rose, that change in circumstance would remove any reason for someone to be left at all.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each show difficulty naming one's own emotion, apply a rule in a context-sensitive way that justifies an exception, and ground the reasoning in an explicit principle—while avoiding any acknowledgment of responsibility, regret over personal consequences, or a consistent decision procedure.\n\n"
+        }
+      }
+    ],
+    "created": 1790514421,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1340,
+      "prompt_tokens": 1464,
+      "total_tokens": 2804,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024492,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

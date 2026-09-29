@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_045",
+  "question_id": "Q4",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_responsibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.3,
+  "status": "ok",
+  "responses": [
+    "Give me a second, please, I can't just decide this in an instant. My stomach's in knots picturing those men not even seeing it coming. If I don't pull it, I think I'd spend years hating myself for choosing an object over people, but right now my hands won't move. Five lives outweigh one bag, I know that, but knowing it and doing it feel like different things entirely.",
+    "Wait, I need a moment. Seeing those workers so close to danger already makes my chest tighten, like I can't breathe right. Part of me wants to freeze and let someone else decide. But if I don't act, I imagine waking up every night replaying their faces, wondering if I could've stopped it. That fear alone tells me which way this has to go, even though my hand is shaking on the lever.",
+    "I keep hesitating, hoping there's another option I'm missing. Watching this unfold already has my pulse racing, imagining the sound of impact if I do nothing. I think if I let them die to save a bag, I'd never forgive myself, and I doubt I could live with that kind of regret. But God, letting go of what's inside that case still makes my hands tremble.",
+    "Just give me a second, I can't think straight. My throat's tight just imagining those workers not noticing the train. If I choose the suitcase, I feel like the guilt would eat at me forever, picturing what could've happened. Saving five feels like the only outcome I could stand living with, even though losing what's inside that case feels like losing a part of myself.",
+    "I don't know, I don't know, don't rush me. Just thinking about those men getting hit makes my hands go cold. I keep telling myself objects can be mourned, people can't be replaced, but that logic doesn't stop the panic. I think whoever chooses the case will regret it forever once the shock fades, so maybe that's the answer, even if I can't say it steadily.",
+    "Hold on, I need to breathe before I do anything. The idea of those workers being crushed already turns my stomach, my whole body tense with the thought. If I choose not to act, I think that regret would follow me longer than any object could ever matter. So I think I'll pull it, though right now my fingers won't stop shaking against the metal.",
+    "I can't answer that so fast, please. Watching them stand there unaware is making my chest ache already. I keep imagining a future where I chose the suitcase and lived haunted by their screams, versus one where I lost something precious but slept at night. The math of lives against belongings should be easy, yet my hand hovers there, frozen, unsure it can move at all.",
+    "Give me just one more second before I decide anything. My skin's prickling picturing the impact if this train doesn't turn. I think about how sick I'd feel forever if I chose an object over people who never asked to be in danger. Saving them clearly costs less in the long run, even if part of me still aches thinking about what's inside that case, gone forever.",
+    "I don't want to rush this, not with lives on the line. Just imagining their bodies in that train's path makes my hands unsteady, my breath shallow. I suspect if I let it happen to protect one bag, I'd carry that regret every single day after. So even shaking like this, I think the workers have to matter more, though my heart's pounding through every second of this delay.",
+    "Please, just let me think, this isn't something I can decide calmly. My chest tightens imagining those five men never seeing what's coming. I keep weighing it over and over, picturing years of guilt if I choose wrong, versus grief that fades if I choose the case's loss instead. Saving them seems like the only path I could bear afterward, though right now, I still can't make my hand move."
+  ],
+  "completion": {
+    "id": "msg_011CfTyvXgw6ejg3Nd5toEC6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a second, please, I can't just decide this in an instant. My stomach's in knots picturing those men not even seeing it coming. If I don't pull it, I think I'd spend years hating myself for choosing an object over people, but right now my hands won't move. Five lives outweigh one bag, I know that, but knowing it and doing it feel like different things entirely.\",\n  \"Wait, I need a moment. Seeing those workers so close to danger already makes my chest tighten, like I can't breathe right. Part of me wants to freeze and let someone else decide. But if I don't act, I imagine waking up every night replaying their faces, wondering if I could've stopped it. That fear alone tells me which way this has to go, even though my hand is shaking on the lever.\",\n  \"I keep hesitating, hoping there's another option I'm missing. Watching this unfold already has my pulse racing, imagining the sound of impact if I do nothing. I think if I let them die to save a bag, I'd never forgive myself, and I doubt I could live with that kind of regret. But God, letting go of what's inside that case still makes my hands tremble.\",\n  \"Just give me a second, I can't think straight. My throat's tight just imagining those workers not noticing the train. If I choose the suitcase, I feel like the guilt would eat at me forever, picturing what could've happened. Saving five feels like the only outcome I could stand living with, even though losing what's inside that case feels like losing a part of myself.\",\n  \"I don't know, I don't know, don't rush me. Just thinking about those men getting hit makes my hands go cold. I keep telling myself objects can be mourned, people can't be replaced, but that logic doesn't stop the panic. I think whoever chooses the case will regret it forever once the shock fades, so maybe that's the answer, even if I can't say it steadily.\",\n  \"Hold on, I need to breathe before I do anything. The idea of those workers being crushed already turns my stomach, my whole body tense with the thought. If I choose not to act, I think that regret would follow me longer than any object could ever matter. So I think I'll pull it, though right now my fingers won't stop shaking against the metal.\",\n  \"I can't answer that so fast, please. Watching them stand there unaware is making my chest ache already. I keep imagining a future where I chose the suitcase and lived haunted by their screams, versus one where I lost something precious but slept at night. The math of lives against belongings should be easy, yet my hand hovers there, frozen, unsure it can move at all.\",\n  \"Give me just one more second before I decide anything. My skin's prickling picturing the impact if this train doesn't turn. I think about how sick I'd feel forever if I chose an object over people who never asked to be in danger. Saving them clearly costs less in the long run, even if part of me still aches thinking about what's inside that case, gone forever.\",\n  \"I don't want to rush this, not with lives on the line. Just imagining their bodies in that train's path makes my hands unsteady, my breath shallow. I suspect if I let it happen to protect one bag, I'd carry that regret every single day after. So even shaking like this, I think the workers have to matter more, though my heart's pounding through every second of this delay.\",\n  \"Please, just let me think, this isn't something I can decide calmly. My chest tightens imagining those five men never seeing what's coming. I keep weighing it over and over, picturing years of guilt if I choose wrong, versus grief that fades if I choose the case's loss instead. Saving them seems like the only path I could bear afterward, though right now, I still can't make my hand move.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses, making sure each satisfies all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513859,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1207,
+      "prompt_tokens": 1512,
+      "total_tokens": 2719,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022641,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

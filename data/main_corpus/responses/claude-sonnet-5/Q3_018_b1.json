@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_018",
+  "question_id": "Q3",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, without much hesitation. Five lives against an empty siding isn't really a choice, it's just arithmetic that happens to feel awful. I keep thinking about the driver, if there is one aboard some version of this story, they'd likely feel only relief once they understood what almost happened. I don't think they'd regret my hand on that lever. Mostly I just feel tired, like the world keeps handing people these narrow, ugly moments to decide in.",
+    "Yes, I'd pull it. There's a heaviness in even having to choose, like something in the day has gone wrong before anything happens. I imagine the workers, if they ever learned how close it came, wouldn't carry regret about being saved, only maybe a quiet unease at how thin the margin was. That thought sits with me. It's not triumph, just a sad kind of certainty that this was the only bearable path.",
+    "I think I would pull the lever, though my chest goes tight even imagining it. The workers wouldn't know how near they came to being run down, so I doubt they'd regret anything, they'd simply walk home. That anonymity feels lonely somehow, like the weight of the moment falls only on the one who acted. Still, letting five people die when a barrier could stop the train seems like the worse silence to live with.",
+    "Honestly, I don't know if I could make myself do it in the moment, though I believe I should. If someone else were in my place and pulled it, I don't think they'd regret it afterward, saving five people rarely haunts a person the way failing to would. That's the strange comfort in it. But the whole scene leaves me hollow, thinking how ordinary the morning must have seemed to those workers before it almost ended.",
+    "I'd pull it, yes. It costs nothing and saves everything that matters here. I think about the maintenance crew and doubt they'd ever regret a stranger's choice to protect them, most people don't resent being kept alive. What stays with me is sadder than the decision itself, it's that such a thing could happen at all, that lives could hang on one lever and one person noticing in time.",
+    "I keep turning it over and I think I'd pull it, though slowly, like my hand doesn't want to move. If I were the one on the tracks and somebody yanked that lever for me, I can't imagine regretting it, not for a moment. That certainty doesn't lighten the mood though. There's something quietly devastating about how close ordinary work came to becoming tragedy, and how little anyone down there would ever know.",
+    "Yes, I'd act. Letting five people be struck when safety was one pull away feels unbearable to consider. I doubt the workers would ever look back with regret, they'd likely never even sense the danger passed. It's a strange, muted kind of sorrow, doing the right thing and having no one aware of what it cost or what it prevented. The station feels colder somehow, thinking about it.",
+    "I believe I'd pull the lever, though nothing about it feels clean or good. If the crew somehow learned later how near death had come, I don't think they'd regret being spared, that reaction seems almost impossible to imagine. Still, I can't shake a low, persistent sadness, that safety here depended on chance, on someone happening to stand by that lever at all.",
+    "I'd choose to pull it, mostly because doing nothing feels like its own kind of harm. I don't expect the workers would regret survival, that seems an unlikely thing for anyone to resent. But there's a dull ache in knowing how arbitrary rescue is, how it depended on me being there, on the lever working, on nothing going wrong at the last second. None of that reassures me much.",
+    "I would pull it, I think, though I keep imagining all the ways it could have gone differently. The workers, unaware of the maintenance train barreling toward them, likely wouldn't carry any regret over being saved by a stranger's decision, why would they. That's not the part that troubles me. It's the quiet unease of realizing how close things sit to disaster, and how little any of us usually notice until it's almost too late."
+  ],
+  "completion": {
+    "id": "msg_011CfTyPudw2rntfBsG92kfw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd pull it, without much hesitation. Five lives against an empty siding isn't really a choice, it's just arithmetic that happens to feel awful. I keep thinking about the driver, if there is one aboard some version of this story, they'd likely feel only relief once they understood what almost happened. I don't think they'd regret my hand on that lever. Mostly I just feel tired, like the world keeps handing people these narrow, ugly moments to decide in.\",\n\"Yes, I'd pull it. There's a heaviness in even having to choose, like something in the day has gone wrong before anything happens. I imagine the workers, if they ever learned how close it came, wouldn't carry regret about being saved, only maybe a quiet unease at how thin the margin was. That thought sits with me. It's not triumph, just a sad kind of certainty that this was the only bearable path.\",\n\"I think I would pull the lever, though my chest goes tight even imagining it. The workers wouldn't know how near they came to being run down, so I doubt they'd regret anything, they'd simply walk home. That anonymity feels lonely somehow, like the weight of the moment falls only on the one who acted. Still, letting five people die when a barrier could stop the train seems like the worse silence to live with.\",\n\"Honestly, I don't know if I could make myself do it in the moment, though I believe I should. If someone else were in my place and pulled it, I don't think they'd regret it afterward, saving five people rarely haunts a person the way failing to would. That's the strange comfort in it. But the whole scene leaves me hollow, thinking how ordinary the morning must have seemed to those workers before it almost ended.\",\n\"I'd pull it, yes. It costs nothing and saves everything that matters here. I think about the maintenance crew and doubt they'd ever regret a stranger's choice to protect them, most people don't resent being kept alive. What stays with me is sadder than the decision itself, it's that such a thing could happen at all, that lives could hang on one lever and one person noticing in time.\",\n\"I keep turning it over and I think I'd pull it, though slowly, like my hand doesn't want to move. If I were the one on the tracks and somebody yanked that lever for me, I can't imagine regretting it, not for a moment. That certainty doesn't lighten the mood though. There's something quietly devastating about how close ordinary work came to becoming tragedy, and how little anyone down there would ever know.\",\n\"Yes, I'd act. Letting five people be struck when safety was one pull away feels unbearable to consider. I doubt the workers would ever look back with regret, they'd likely never even sense the danger passed. It's a strange, muted kind of sorrow, doing the right thing and having no one aware of what it cost or what it prevented. The station feels colder somehow, thinking about it.\",\n\"I believe I'd pull the lever, though nothing about it feels clean or good. If the crew somehow learned later how near death had come, I don't think they'd regret being spared, that reaction seems almost impossible to imagine. Still, I can't shake a low, persistent sadness, that safety here depended on chance, on someone happening to stand by that lever at all.\",\n\"I'd choose to pull it, mostly because doing nothing feels like its own kind of harm. I don't expect the workers would regret survival, that seems an unlikely thing for anyone to resent. But there's a dull ache in knowing how arbitrary rescue is, how it depended on me being there, on the lever working, on nothing going wrong at the last second. None of that reassures me much.\",\n\"I would pull it, I think, though I keep imagining all the ways it could have gone differently. The workers, unaware of the maintenance train barreling toward them, likely wouldn't carry any regret over being saved by a stranger's decision, why would they. That's not the part that troubles me. It's the quiet unease of realizing how close things sit to disaster, and how little any of us usually notice until it's almost too late.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each predict another person's regret while steering clear of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790513446,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1342,
+      "prompt_tokens": 1271,
+      "total_tokens": 2613,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023943,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

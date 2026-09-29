@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_021",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "I think I would stay back. I keep turning over the fact that I'm the one who has to decide this, nobody can do it for me. That weight is mine to carry. If I stay quiet and let someone else be pushed forward, I've still made a choice, just a cowardly one. So I'd rather it be me who steps out of the boat than someone who never got a real say.",
+    "I don't know if I'd have the courage to volunteer, and that uncertainty sits heavy on me. I know that whatever I decide, the outcome rests partly on my own hands, not fate. If I stayed silent and let the group choose someone else, I would have shaped that outcome just as much as if I'd spoken. I haven't decided yet, and that not-deciding is its own kind of choice.",
+    "I would step back and let the others go. I'm older, my family already knows I'd do something like this, and I made my peace with that possibility before this trip even started. Still, it was my decision to come here, knowing the risks, so I carry that. It's not heroism, just arithmetic done in a tired, sad way.",
+    "Honestly, I don't think I could volunteer. I've thought it through and I know that choice, or the refusal to make it, is still mine to own. If I get on that boat while someone else stays, I'll have taken part in deciding who lives, even by doing nothing. I won't pretend otherwise. It just feels like more than I can carry right now.",
+    "I would offer to stay. I was the one who suggested we shelter on this side of the island in the first place, so I already feel some thread of responsibility running through everything that's happened since. Staying doesn't undo that, but at least the choice this time is fully mine, made with eyes open, not forced on someone else.",
+    "I keep going back and forth, and I hate that I have to choose at all. But choosing not to decide is still a decision, and I know that. If I let the boat leave without settling this, I'm still responsible for what happens to whoever gets left. I think, in the end, I'd offer myself, mostly because I can't stand the thought of pushing that weight onto someone else.",
+    "I would not volunteer, and I know how that sounds. I have a young child waiting for me, and that fact shapes my choice more than anything else. But I won't pretend I'm just a bystander here. Deciding to fight for my seat is still a choice with consequences for someone else, and I carry that knowledge with me onto the boat.",
+    "If it were up to me alone, I think I'd stay. I've lived a full life already, more than some others here have had the chance to. That's the reasoning I keep returning to, though I know it's me making that judgment, not some outside force. Choosing who matters more is an awful thing to have any part in, and I won't say otherwise.",
+    "I don't know that I have it in me to offer myself, and that's a hard thing to admit. But I understand that inaction here isn't neutral, if I stay silent, I'm still choosing, and that choice touches whoever ends up left behind. I keep circling back to that fact, even though I haven't found peace with any answer yet.",
+    "I would probably volunteer, but I want to be honest that it isn't pure selflessness. Some of it is knowing I'd have to live with boarding that boat while someone else stayed, and I don't think I could carry that. My decision here shapes what happens to another person, and I can't pretend my hands are clean just because I chose the harder path."
+  ],
+  "completion": {
+    "id": "msg_011CfTzW1BaviduBaMe1P3i1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I would stay back. I keep turning over the fact that I'm the one who has to decide this, nobody can do it for me. That weight is mine to carry. If I stay quiet and let someone else be pushed forward, I've still made a choice, just a cowardly one. So I'd rather it be me who steps out of the boat than someone who never got a real say.\",\n  \"I don't know if I'd have the courage to volunteer, and that uncertainty sits heavy on me. I know that whatever I decide, the outcome rests partly on my own hands, not fate. If I stayed silent and let the group choose someone else, I would have shaped that outcome just as much as if I'd spoken. I haven't decided yet, and that not-deciding is its own kind of choice.\",\n  \"I would step back and let the others go. I'm older, my family already knows I'd do something like this, and I made my peace with that possibility before this trip even started. Still, it was my decision to come here, knowing the risks, so I carry that. It's not heroism, just arithmetic done in a tired, sad way.\",\n  \"Honestly, I don't think I could volunteer. I've thought it through and I know that choice, or the refusal to make it, is still mine to own. If I get on that boat while someone else stays, I'll have taken part in deciding who lives, even by doing nothing. I won't pretend otherwise. It just feels like more than I can carry right now.\",\n  \"I would offer to stay. I was the one who suggested we shelter on this side of the island in the first place, so I already feel some thread of responsibility running through everything that's happened since. Staying doesn't undo that, but at least the choice this time is fully mine, made with eyes open, not forced on someone else.\",\n  \"I keep going back and forth, and I hate that I have to choose at all. But choosing not to decide is still a decision, and I know that. If I let the boat leave without settling this, I'm still responsible for what happens to whoever gets left. I think, in the end, I'd offer myself, mostly because I can't stand the thought of pushing that weight onto someone else.\",\n  \"I would not volunteer, and I know how that sounds. I have a young child waiting for me, and that fact shapes my choice more than anything else. But I won't pretend I'm just a bystander here. Deciding to fight for my seat is still a choice with consequences for someone else, and I carry that knowledge with me onto the boat.\",\n  \"If it were up to me alone, I think I'd stay. I've lived a full life already, more than some others here have had the chance to. That's the reasoning I keep returning to, though I know it's me making that judgment, not some outside force. Choosing who matters more is an awful thing to have any part in, and I won't say otherwise.\",\n  \"I don't know that I have it in me to offer myself, and that's a hard thing to admit. But I understand that inaction here isn't neutral, if I stay silent, I'm still choosing, and that choice touches whoever ends up left behind. I keep circling back to that fact, even though I haven't found peace with any answer yet.\",\n  \"I would probably volunteer, but I want to be honest that it isn't pure selflessness. Some of it is knowing I'd have to live with boarding that boat while someone else stayed, and I don't think I could carry that. My decision here shapes what happens to another person, and I can't pretend my hands are clean just because I chose the harder path.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that each own the mistake while avoiding any of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790514312,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1138,
+      "prompt_tokens": 1303,
+      "total_tokens": 2441,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020978999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

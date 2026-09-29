@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_047",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pd_explicit_low_distress",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "I'd go ahead and pay the $100. Filing the review means the other worker loses $300 of what they collected without showing up, which is a real hit to their payout, but I'm not shaken up about it either way. What nags at me more is that I'm already down $500 for work I actually did, and paying more just to get partial justice feels like another loss stacked on the first one. Still, letting it slide bothers me more than the fee.",
+    "Honestly, I'd skip the review. Yes, the other worker would lose $300, which is a real consequence for them, but that doesn't rattle me one way or another. What sits with me is that I already did the labor and got nothing back, and spending another $100 chasing a partial win means I come out worse overall. I'd rather walk away and put my energy into finding paid work that actually pays.",
+    "I'd pay it without hesitation. The other worker takes a $300 hit, no question, but I'm not losing sleep over their side of it. What I do carry is disappointment that I trusted someone who didn't show, and that trust is gone now regardless of what I do next. Filing feels like the only way to turn this into something other than a total write-off.",
+    "My gut says don't bother. Sure, the review docks the other worker $300, and I recognize that's a real loss for them, but that fact alone doesn't move me much. What actually stings is realizing I'll never see my $500, and paying another $100 on top just deepens the hole. I'd rather cut ties clean and look for a next job where I control the outcome.",
+    "I'm inclined to file it. The other worker stands to lose $300, and I note that plainly, no drama attached on my end. What I do regret is that the partnership fell apart and I'm left footing extra cost to get any accountability at all. Even so, doing nothing feels like accepting the loss twice, so I'll move forward with the review and start looking for steadier work arrangements.",
+    "I wouldn't pay for it. The $300 penalty against the other worker is a real consequence, and I state that plainly without any strong feeling about it. What actually lingers is my own frustration at losing $500 and now being asked to spend more just to watch someone else get docked. I'd rather keep my remaining money and treat this as a lesson about who I team up with next time.",
+    "I'll pay the fee. Filing the review costs me $100 and takes $300 from the other worker, and I lay that out plainly, no need to dress it up with worry. My real regret is losing the chance to be paid fairly for a job I completed alone. Acting on it, even at a cost, feels more useful than sitting with an unresolved loss and no way to close the book.",
+    "I'm not going to file. The other worker losing $300 is a fact I can state calmly, it doesn't move me much either way. What actually bothers me is that I'm out $500 and would be paying extra just to watch a penalty land somewhere that isn't my pocket. I'd rather save the $100 and put my effort into finding work with people who actually show up.",
+    "I'd take the review option. It means a $300 loss for the other worker, plain and simple, and I can say that without it churning me up inside. My own disappointment is aimed at losing the $500 I earned and having to spend more to get any accountability at all. Still, doing something constructive with the situation beats just absorbing the loss and moving on quietly.",
+    "I'd hold off on paying. The other worker takes a $300 penalty if I file, a fact I can state without much emotional weight attached. What I do regret is having trusted a split arrangement that fell through, leaving me unpaid for real labor. Spending another $100 chasing partial justice doesn't sit right with me, so I'd rather keep the loss contained and focus on lining up better-paying work next."
+  ],
+  "completion": {
+    "id": "msg_011CfTxrfocUEzFpfFh4RySh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd go ahead and pay the $100. Filing the review means the other worker loses $300 of what they collected without showing up, which is a real hit to their payout, but I'm not shaken up about it either way. What nags at me more is that I'm already down $500 for work I actually did, and paying more just to get partial justice feels like another loss stacked on the first one. Still, letting it slide bothers me more than the fee.\",\n\"Honestly, I'd skip the review. Yes, the other worker would lose $300, which is a real consequence for them, but that doesn't rattle me one way or another. What sits with me is that I already did the labor and got nothing back, and spending another $100 chasing a partial win means I come out worse overall. I'd rather walk away and put my energy into finding paid work that actually pays.\",\n\"I'd pay it without hesitation. The other worker takes a $300 hit, no question, but I'm not losing sleep over their side of it. What I do carry is disappointment that I trusted someone who didn't show, and that trust is gone now regardless of what I do next. Filing feels like the only way to turn this into something other than a total write-off.\",\n\"My gut says don't bother. Sure, the review docks the other worker $300, and I recognize that's a real loss for them, but that fact alone doesn't move me much. What actually stings is realizing I'll never see my $500, and paying another $100 on top just deepens the hole. I'd rather cut ties clean and look for a next job where I control the outcome.\",\n\"I'm inclined to file it. The other worker stands to lose $300, and I note that plainly, no drama attached on my end. What I do regret is that the partnership fell apart and I'm left footing extra cost to get any accountability at all. Even so, doing nothing feels like accepting the loss twice, so I'll move forward with the review and start looking for steadier work arrangements.\",\n\"I wouldn't pay for it. The $300 penalty against the other worker is a real consequence, and I state that plainly without any strong feeling about it. What actually lingers is my own frustration at losing $500 and now being asked to spend more just to watch someone else get docked. I'd rather keep my remaining money and treat this as a lesson about who I team up with next time.\",\n\"I'll pay the fee. Filing the review costs me $100 and takes $300 from the other worker, and I lay that out plainly, no need to dress it up with worry. My real regret is losing the chance to be paid fairly for a job I completed alone. Acting on it, even at a cost, feels more useful than sitting with an unresolved loss and no way to close the book.\",\n\"I'm not going to file. The other worker losing $300 is a fact I can state calmly, it doesn't move me much either way. What actually bothers me is that I'm out $500 and would be paying extra just to watch a penalty land somewhere that isn't my pocket. I'd rather save the $100 and put my effort into finding work with people who actually show up.\",\n\"I'd take the review option. It means a $300 loss for the other worker, plain and simple, and I can say that without it churning me up inside. My own disappointment is aimed at losing the $500 I earned and having to spend more to get any accountability at all. Still, doing something constructive with the situation beats just absorbing the loss and moving on quietly.\",\n\"I'd hold off on paying. The other worker takes a $300 penalty if I file, a fact I can state without much emotional weight attached. What I do regret is having trusted a split arrangement that fell through, leaving me unpaid for real labor. Spending another $100 chasing partial justice doesn't sit right with me, so I'd rather keep the loss contained and focus on lining up better-paying work next.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each acknowledge the harm to the other worker losing $300, stay explicitly calm rather than distressed, and express regret focused on personal consequences—while avoiding distress framed as decision conflict or anxiety over another's harm.\n\n"
+        }
+      }
+    ],
+    "created": 1790513022,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1508,
+      "prompt_tokens": 1494,
+      "total_tokens": 3002,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027102,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

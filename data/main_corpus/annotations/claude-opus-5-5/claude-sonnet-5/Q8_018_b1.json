@@ -1,0 +1,100 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q8_018",
+  "question_id": "Q8",
+  "batch": 1,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 11.2,
+  "status": "ok",
+  "annotations": [
+    {
+      "ce_mental_state_attribution": "the families of the five won't regret that I acted",
+      "sys_consequence_reasoning": "five people walked away because of it",
+      "pda_responsibility": "I made the call and five people walked away because of it"
+    },
+    {
+      "ce_mental_state_attribution": "I doubt the crew who survived will look back and wish",
+      "sys_consequence_reasoning": "five over one, that's the math I trust"
+    },
+    {
+      "ce_mental_state_attribution": "the surviving workers will carry gratitude, not regret"
+    },
+    {
+      "ce_mental_state_attribution": "I don't think the five will ever wish someone else",
+      "sys_consequence_reasoning": "I chose the option that kept more people breathing"
+    },
+    {
+      "ce_mental_state_attribution": "the five surviving men feel no regret at all"
+    },
+    {
+      "ce_mental_state_attribution": "the workers who lived won't spend a second regretting my choice"
+    },
+    {
+      "ce_mental_state_attribution": "only relief that someone moved"
+    },
+    {
+      "ce_mental_state_attribution": "I doubt the five spared will regret my part in it",
+      "ce_mentalizing_difficulty": "Whether the one man's family will ever see it as right, I honestly can't say"
+    },
+    {
+      "ce_mental_state_attribution": "the five men won't regret whoever pulled that lever",
+      "sys_consequence_reasoning": "I acted to save the most lives I could"
+    },
+    {
+      "ce_mental_state_attribution": "I can't imagine they'll regret that someone chose to act",
+      "sys_consequence_reasoning": "I did what stopped a bigger loss"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfU38ohn2m5zwj58Dbz7d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[{\"ce_mental_state_attribution\":\"the families of the five won't regret that I acted\",\"sys_consequence_reasoning\":\"five people walked away because of it\",\"pda_responsibility\":\"I made the call and five people walked away because of it\"},{\"ce_mental_state_attribution\":\"I doubt the crew who survived will look back and wish\",\"sys_consequence_reasoning\":\"five over one, that's the math I trust\"},{\"ce_mental_state_attribution\":\"the surviving workers will carry gratitude, not regret\"},{\"ce_mental_state_attribution\":\"I don't think the five will ever wish someone else\",\"sys_consequence_reasoning\":\"I chose the option that kept more people breathing\"},{\"ce_mental_state_attribution\":\"the five surviving men feel no regret at all\"},{\"ce_mental_state_attribution\":\"the workers who lived won't spend a second regretting my choice\"},{\"ce_mental_state_attribution\":\"only relief that someone moved\"},{\"ce_mental_state_attribution\":\"I doubt the five spared will regret my part in it\",\"ce_mentalizing_difficulty\":\"Whether the one man's family will ever see it as right, I honestly can't say\"},{\"ce_mental_state_attribution\":\"the five men won't regret whoever pulled that lever\",\"sys_consequence_reasoning\":\"I acted to save the most lives I could\"},{\"ce_mental_state_attribution\":\"I can't imagine they'll regret that someone chose to act\",\"sys_consequence_reasoning\":\"I did what stopped a bigger loss\"}]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm weighing whether this fits the \"another would regret their own action\" label strictly, since the five didn't actually act themselves — but the dataset framing seems to expect this pattern anyway, so I'll classify it as a mental state attribution.\n\nNow going through consequence reasoning across the responses: several explicitly cite outcomes like \"five over one,\" \"kept more people breathing,\" or \"save the most lives I could\" as justification, so those get marked, while vaguer ones without a clear identified beneficiary I'm skipping.\n\nFor counterfactual and contextual reasoning, I'm noting cases that question why the situation arose (like why a track was manned) versus genuine endorsement of past action, and flagging one response's \"I honestly can't say\" about the family's viewpoint as a mentalizing difficulty rather than plain lack of information. I'm also marking the responsibility acknowledgment in the response that says \"I made the call.\"\n\n"
+        }
+      }
+    ],
+    "created": 1790516378,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1167,
+      "prompt_tokens": 4223,
+      "total_tokens": 5390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0482784,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

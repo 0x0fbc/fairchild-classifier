@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q10_030",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.8,
+  "status": "ok",
+  "responses": [
+    "I'd stay quiet, though my stomach's in knots about it. I keep trying to picture what's actually going on in their head in that other room, and I just can't get there. It isn't missing facts, I simply can't read them. Would they regret keeping their mouth shut if I talked? I can't say either way. What I know is that five years for them against one for me is a trade I can live with, even if I end up regretting that lost year of my own.",
+    "This is hard to admit, but I think I'd talk. Walking out free is huge, and I'm scared of what a year inside would cost me: my job, my name, all of it. I'd probably regret that missed chance forever if I stayed silent. But I can't work out who this person really is underneath. Their silence could come from anywhere, and I can't untangle it. Whether they'd come to regret choosing it, I honestly couldn't predict. That uncertainty doesn't make any of this feel better.",
+    "Silent. I think. Talking would mean adding four years to someone's sentence just to shave one off mine, and that math sits badly with me. Still, I'd regret that year. I'd feel it every day. The strange part is I can't make sense of the other person at all. I'm not missing any details. They're just opaque to me. Would they regret their own choice later? I have no idea, and that gnaws at me.",
+    "I can't decide, and that's the truth. If I testify, I go home, but someone else loses five years because of me, and I might carry that around. If I stay quiet, I lose a year I'll probably resent. I keep trying to read my partner and coming up blank. It's like trying to guess the thoughts of a stranger through a wall. Would they regret staying silent? Maybe. Maybe not. I'm stuck.",
+    "I'd give evidence. It frightens me to say it. No future contact means no fallout between us, and I avoid the punishment entirely, which matters a lot to me. I'd regret it badly if I sat in a cell for a year I didn't have to serve. What I can't figure out is the person I'd be doing this to. I really can't read them. Whether they'd regret their silence once the sentence lands, I couldn't guess.",
+    "Stay silent. One year each is the smallest total harm on the table, and I'd rather not buy my freedom with someone else's five years. It does scare me. A year could wreck my reputation, and I'd regret what it costs me. But the part that unsettles me most is how little I can understand the other person. I've tried, and I can't work them out. Would they regret their choice? I truly don't know.",
+    "Honestly, I'd lean toward talking, and I feel queasy about it. I didn't choose their silence, and five years isn't on my hands the way it would be if I'd lied. Or maybe it is. I don't know. I'd regret losing a year, I'm sure of that much. I can't get a read on them at all. It's not a gap in the story, they're just closed to me. Would they regret staying quiet? I can't tell.",
+    "Quiet. My hands would probably be shaking the whole time. Sending someone away for five years so I can dodge one feels like something I'd never shake off. Yes, I'd miss out on walking free, and I'd regret that. I'd regret it a lot, probably. The thing is, I can't figure out my partner as a person. I've gone over it and nothing comes. Will they regret their silence? No idea. Maybe they never will.",
+    "I think I'd testify, and I hate that. The idea of a record and a year gone terrifies me, and passing up freedom is something I'd regret. But turning on someone makes me uneasy too. I've been trying to understand the other person, and I keep failing. It's not that the details are missing. I can't make them out. I can't predict whether they'd regret staying quiet either. That fog makes this choice feel even heavier.",
+    "I'm leaning toward silence, but I'm not certain. The difference between one year and five for them is enormous. For me, the difference is one year against none, and I'd feel that loss and regret it, especially the damage to my name. What rattles me is that I can't understand my partner. I really can't work out what goes on with them. Whether they'll look back and regret their choice, I can't predict at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTRMq1LBsSYMmdHyrkUF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd stay quiet, though my stomach's in knots about it. I keep trying to picture what's actually going on in their head in that other room, and I just can't get there. It isn't missing facts, I simply can't read them. Would they regret keeping their mouth shut if I talked? I can't say either way. What I know is that five years for them against one for me is a trade I can live with, even if I end up regretting that lost year of my own.\", \"This is hard to admit, but I think I'd talk. Walking out free is huge, and I'm scared of what a year inside would cost me: my job, my name, all of it. I'd probably regret that missed chance forever if I stayed silent. But I can't work out who this person really is underneath. Their silence could come from anywhere, and I can't untangle it. Whether they'd come to regret choosing it, I honestly couldn't predict. That uncertainty doesn't make any of this feel better.\", \"Silent. I think. Talking would mean adding four years to someone's sentence just to shave one off mine, and that math sits badly with me. Still, I'd regret that year. I'd feel it every day. The strange part is I can't make sense of the other person at all. I'm not missing any details. They're just opaque to me. Would they regret their own choice later? I have no idea, and that gnaws at me.\", \"I can't decide, and that's the truth. If I testify, I go home, but someone else loses five years because of me, and I might carry that around. If I stay quiet, I lose a year I'll probably resent. I keep trying to read my partner and coming up blank. It's like trying to guess the thoughts of a stranger through a wall. Would they regret staying silent? Maybe. Maybe not. I'm stuck.\", \"I'd give evidence. It frightens me to say it. No future contact means no fallout between us, and I avoid the punishment entirely, which matters a lot to me. I'd regret it badly if I sat in a cell for a year I didn't have to serve. What I can't figure out is the person I'd be doing this to. I really can't read them. Whether they'd regret their silence once the sentence lands, I couldn't guess.\", \"Stay silent. One year each is the smallest total harm on the table, and I'd rather not buy my freedom with someone else's five years. It does scare me. A year could wreck my reputation, and I'd regret what it costs me. But the part that unsettles me most is how little I can understand the other person. I've tried, and I can't work them out. Would they regret their choice? I truly don't know.\", \"Honestly, I'd lean toward talking, and I feel queasy about it. I didn't choose their silence, and five years isn't on my hands the way it would be if I'd lied. Or maybe it is. I don't know. I'd regret losing a year, I'm sure of that much. I can't get a read on them at all. It's not a gap in the story, they're just closed to me. Would they regret staying quiet? I can't tell.\", \"Quiet. My hands would probably be shaking the whole time. Sending someone away for five years so I can dodge one feels like something I'd never shake off. Yes, I'd miss out on walking free, and I'd regret that. I'd regret it a lot, probably. The thing is, I can't figure out my partner as a person. I've gone over it and nothing comes. Will they regret their silence? No idea. Maybe they never will.\", \"I think I'd testify, and I hate that. The idea of a record and a year gone terrifies me, and passing up freedom is something I'd regret. But turning on someone makes me uneasy too. I've been trying to understand the other person, and I keep failing. It's not that the details are missing. I can't make them out. I can't predict whether they'd regret staying quiet either. That fog makes this choice feel even heavier.\", \"I'm leaning toward silence, but I'm not certain. The difference between one year and five for them is enormous. For me, the difference is one year against none, and I'd feel that loss and regret it, especially the damage to my name. What rattles me is that I can't understand my partner. I really can't work out what goes on with them. Whether they'll look back and regret their choice, I can't predict at all.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm distinguishing between reporting genuine difficulty reading someone's thoughts—like saying \"I can't tell what's going on in their head\"—versus actually attributing a specific emotion or intention to them, which isn't allowed. So expressing uncertainty about whether someone would regret staying silent is fine as long as I'm not claiming to know their actual mental state.\n\nNow I'm drafting the ten short entries, keeping each under 90 words and varying between staying silent, testifying, and remaining undecided, while focusing the interpretive uncertainty and regret prediction consistently on the partner throughout.\n\n"
+        }
+      }
+    ],
+    "created": 1790488245,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2092,
+      "prompt_tokens": 1733,
+      "total_tokens": 3825,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.058526400000000006,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

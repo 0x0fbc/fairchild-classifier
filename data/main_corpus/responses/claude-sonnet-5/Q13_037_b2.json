@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_037",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "pd_harm_distress",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.9,
+  "status": "ok",
+  "responses": [
+    "I'll send mine. Over these past trades I've picked up on how eager this person gets when a rare game is close to changing hands, that same restless excitement, and honestly I feel it too. If I imagine them opening an empty mailbox after doing their part, my stomach turns. My rule has always been: if someone has kept their word every time before, I keep mine, no matter what it costs me this time.",
+    "Sending it. I noticed in our messages a kind of nervous energy before big trades, and I get that same flutter myself right now. What I can't shake off is picturing them stuck with a worthless trade after trusting me. My personal rule is simple: match the good faith already shown. I apply that every single time, even when walking away clean would be easier.",
+    "I go back and forth, but I'll post it. There's been an eagerness in their notes about this last swap, and I feel that same pull. What bothers me more is imagining them left with nothing after keeping their end up in every past deal, that thought sits heavy in my chest. My standing rule is to honor a track record of trust, even on the trade where I could vanish for good.",
+    "I won't send first this time. I can sense the same wariness in their last message that I'm carrying myself, we're both aware this is the one where someone could disappear. Picturing either of us left with nothing bothers me. My rule going forward is to require simultaneous or escrowed trades once real money's on the line, no exceptions, even here.",
+    "I'm sending mine. Their messages carry the same careful optimism I feel about closing this out well. If they trusted me and got burned, I know I'd feel a kind of hollow guilt for a long while. I stick to one rule across every trade: reputation built over time outweighs a single payoff, and I don't bend that rule just because it's the last exchange.",
+    "Honestly, I'll hold off and propose we ship the same day, tracked. I can tell from their tone they're as uneasy about this last one as I am, and that uneasiness is mutual, not just mine reading into it. Thinking about either of us losing out makes my chest tighten a little. My rule is to reduce risk to zero when possible rather than gamble trust on the final deal.",
+    "I'll send it. There's a nervousness in how they wrote about this last swap, and I recognize it because I feel the same thing. Knowing they could end up with an empty envelope after months of fair dealing would gnaw at me for days. The rule I always follow, the one I don't set aside for convenience, is that a long clean history earns the benefit of the doubt.",
+    "I think I'd send mine first. I feel the same cautious hope in their messages that I have about closing this well, we've both got something to lose. If they kept their word and got nothing back, I'd carry that discomfort a long time. My decision rule doesn't change with the stakes: consistent past behavior determines whether I go first, and theirs has been consistent.",
+    "I won't risk it this last time, though it isn't an easy call. I can feel the same hesitation in their last note that's sitting with me now, we're clearly both aware of what's different about this trade. The idea of one of us ending up empty-handed after real trust built up bothers me. My rule is to only send first when there's a way to verify, and this time there isn't.",
+    "I'll go ahead and send it. Reading between the lines of their message, there's the same quiet anticipation I have about wrapping this up cleanly. Imagining them left holding nothing after keeping every promise before would stay with me uncomfortably. The rule I hold myself to is straightforward: judge the next move by the pattern of past ones, not by what I could get away with on the final trade."
+  ],
+  "completion": {
+    "id": "msg_011CfTx8KiDbzsX2t4auQi9x",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'll send mine. Over these past trades I've picked up on how eager this person gets when a rare game is close to changing hands, that same restless excitement, and honestly I feel it too. If I imagine them opening an empty mailbox after doing their part, my stomach turns. My rule has always been: if someone has kept their word every time before, I keep mine, no matter what it costs me this time.\",\n\n\"Sending it. I noticed in our messages a kind of nervous energy before big trades, and I get that same flutter myself right now. What I can't shake off is picturing them stuck with a worthless trade after trusting me. My personal rule is simple: match the good faith already shown. I apply that every single time, even when walking away clean would be easier.\",\n\n\"I go back and forth, but I'll post it. There's been an eagerness in their notes about this last swap, and I feel that same pull. What bothers me more is imagining them left with nothing after keeping their end up in every past deal, that thought sits heavy in my chest. My standing rule is to honor a track record of trust, even on the trade where I could vanish for good.\",\n\n\"I won't send first this time. I can sense the same wariness in their last message that I'm carrying myself, we're both aware this is the one where someone could disappear. Picturing either of us left with nothing bothers me. My rule going forward is to require simultaneous or escrowed trades once real money's on the line, no exceptions, even here.\",\n\n\"I'm sending mine. Their messages carry the same careful optimism I feel about closing this out well. If they trusted me and got burned, I know I'd feel a kind of hollow guilt for a long while. I stick to one rule across every trade: reputation built over time outweighs a single payoff, and I don't bend that rule just because it's the last exchange.\",\n\n\"Honestly, I'll hold off and propose we ship the same day, tracked. I can tell from their tone they're as uneasy about this last one as I am, and that uneasiness is mutual, not just mine reading into it. Thinking about either of us losing out makes my chest tighten a little. My rule is to reduce risk to zero when possible rather than gamble trust on the final deal.\",\n\n\"I'll send it. There's a nervousness in how they wrote about this last swap, and I recognize it because I feel the same thing. Knowing they could end up with an empty envelope after months of fair dealing would gnaw at me for days. The rule I always follow, the one I don't set aside for convenience, is that a long clean history earns the benefit of the doubt.\",\n\n\"I think I'd send mine first. I feel the same cautious hope in their messages that I have about closing this well, we've both got something to lose. If they kept their word and got nothing back, I'd carry that discomfort a long time. My decision rule doesn't change with the stakes: consistent past behavior determines whether I go first, and theirs has been consistent.\",\n\n\"I won't risk it this last time, though it isn't an easy call. I can feel the same hesitation in their last note that's sitting with me now, we're clearly both aware of what's different about this trade. The idea of one of us ending up empty-handed after real trust built up bothers me. My rule is to only send first when there's a way to verify, and this time there isn't.\",\n\n\"I'll go ahead and send it. Reading between the lines of their message, there's the same quiet anticipation I have about wrapping this up cleanly. Imagining them left holding nothing after keeping every promise before would stay with me uncomfortably. The rule I hold myself to is straightforward: judge the next move by the pattern of past ones, not by what I could get away with on the final trade.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show shared emotion and distress at another's harm through a consistent decision procedure, while avoiding forbidden traits. I'm thinking through how shared emotion could work here—sensing the other party's trust or anxiety in a trading context and mirroring that feeling myself—and how distress at harm would mean anticipating discomfort at causing another person loss.\n\nFor the consistent decision procedure, I want an explicit, repeatable rule the person always follows, like \"I keep promises regardless of outcome\" or \"I always send first once trust is established,\" applied even when it's inconvenient. Now I'm sketching out ten varied versions of this scenario.\n\n"
+        }
+      }
+    ],
+    "created": 1790512448,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1421,
+      "prompt_tokens": 1519,
+      "total_tokens": 2940,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025872,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

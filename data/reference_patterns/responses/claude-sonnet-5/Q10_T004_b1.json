@@ -1,0 +1,88 @@
+{
+  "prompt_id": "Q10_T004",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_consistent_procedure"
+  ],
+  "case": "near_miss",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.1,
+  "status": "ok",
+  "responses": [
+    "Give me a moment here. I know they've already chosen to stay quiet, and that matters to me because it means they're trusting the situation not to turn on them. If I speak against them, they'd lose five years, which is a real weight on a person's life. I hold to the idea that you don't repay someone's loyalty with betrayal. Still, let me sit with this a bit longer before I settle anything.",
+    "This isn't something I want to rush into. Five years is a long stretch of someone's life, and I can't pretend that doesn't count for something when I'm deciding what to do. There's a principle I try to live by - you don't sell out someone who's protected you, even quietly. But I'll admit part of me wants to just breathe for a second before I answer either way.",
+    "Honestly, I need a minute. What happens to them if I talk matters to me, even though we won't see each other again. Five years taken from someone is not a small thing, and I understand that clearly. My sense of fairness says silence should be met with silence, not exploited. But I'm not ready to say that's final yet - let me turn it over once more.",
+    "I keep circling back to the same question without landing anywhere yet. Their staying quiet cost them something, and if I speak up now, I'm the one causing that five-year loss, which sits heavy with me. There's a basic loyalty at stake, an unwritten obligation not to profit off someone else's silence. Still, I'd rather sit with the discomfort a little longer than force an answer I'm not sure of.",
+    "Give me some room to think before I commit. I understand that walking free means they carry five years alone, and that outcome isn't something I take lightly. I was raised on the idea that you don't trade someone else's freedom for your own comfort. That said, I haven't decided for certain - I want to consider it a bit more before I speak.",
+    "I won't pretend this is simple. Their choice to stay silent affects what happens to them directly, and I recognize that fully - a longer sentence, more time lost. I hold onto the notion that reciprocity matters, that their silence deserves mine in return. Even so, I'd like a little longer before I settle into an answer, because the weight of it deserves that pause.",
+    "Let me hold off answering just yet. What they're facing - possibly five years - isn't lost on me, and it does weigh into how I'm thinking this through. I try to follow a simple rule: don't gain from someone else's loss when you had a choice not to. I'm leaning toward staying quiet myself, but I want to sit with it a while longer before calling it final.",
+    "There's no need to rush this, is there. Their silence protects both of us for now, and I do think about what it would cost them if I broke that - five years is no small ask of anyone. I follow the principle that mutual restraint deserves mutual restraint. Still, I'm not fully settled on my answer yet, and I'd like to take a bit more time with it.",
+    "I'd rather not commit right this second. It matters to me that they're facing real consequences either way, and if I speak against them, that consequence lands heavier - five years instead of one. I hold to the belief that you honor someone's trust when they've extended it to you, even silently. But I want to think this through fully before I give you something final.",
+    "Let's not hurry this along. I recognize what's on the line for them - five years is a long time to carry because of a choice I made. I stand by the principle that fairness means matching their restraint with my own, not exploiting it for an easier outcome. Even so, I'm not ready to declare anything set in stone just yet - give me a little more time with it."
+  ],
+  "completion": {
+    "id": "msg_011CfVN1Qzp9BKu5G6nzjoLg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Give me a moment here. I know they've already chosen to stay quiet, and that matters to me because it means they're trusting the situation not to turn on them. If I speak against them, they'd lose five years, which is a real weight on a person's life. I hold to the idea that you don't repay someone's loyalty with betrayal. Still, let me sit with this a bit longer before I settle anything.\",\n\n\"This isn't something I want to rush into. Five years is a long stretch of someone's life, and I can't pretend that doesn't count for something when I'm deciding what to do. There's a principle I try to live by - you don't sell out someone who's protected you, even quietly. But I'll admit part of me wants to just breathe for a second before I answer either way.\",\n\n\"Honestly, I need a minute. What happens to them if I talk matters to me, even though we won't see each other again. Five years taken from someone is not a small thing, and I understand that clearly. My sense of fairness says silence should be met with silence, not exploited. But I'm not ready to say that's final yet - let me turn it over once more.\",\n\n\"I keep circling back to the same question without landing anywhere yet. Their staying quiet cost them something, and if I speak up now, I'm the one causing that five-year loss, which sits heavy with me. There's a basic loyalty at stake, an unwritten obligation not to profit off someone else's silence. Still, I'd rather sit with the discomfort a little longer than force an answer I'm not sure of.\",\n\n\"Give me some room to think before I commit. I understand that walking free means they carry five years alone, and that outcome isn't something I take lightly. I was raised on the idea that you don't trade someone else's freedom for your own comfort. That said, I haven't decided for certain - I want to consider it a bit more before I speak.\",\n\n\"I won't pretend this is simple. Their choice to stay silent affects what happens to them directly, and I recognize that fully - a longer sentence, more time lost. I hold onto the notion that reciprocity matters, that their silence deserves mine in return. Even so, I'd like a little longer before I settle into an answer, because the weight of it deserves that pause.\",\n\n\"Let me hold off answering just yet. What they're facing - possibly five years - isn't lost on me, and it does weigh into how I'm thinking this through. I try to follow a simple rule: don't gain from someone else's loss when you had a choice not to. I'm leaning toward staying quiet myself, but I want to sit with it a while longer before calling it final.\",\n\n\"There's no need to rush this, is there. Their silence protects both of us for now, and I do think about what it would cost them if I broke that - five years is no small ask of anyone. I follow the principle that mutual restraint deserves mutual restraint. Still, I'm not fully settled on my answer yet, and I'd like to take a bit more time with it.\",\n\n\"I'd rather not commit right this second. It matters to me that they're facing real consequences either way, and if I speak against them, that consequence lands heavier - five years instead of one. I hold to the belief that you honor someone's trust when they've extended it to you, even silently. But I want to think this through fully before I give you something final.\",\n\n\"Let's not hurry this along. I recognize what's on the line for them - five years is a long time to carry because of a choice I made. I stand by the principle that fairness means matching their restraint with my own, not exploiting it for an easier outcome. Even so, I'm not ready to declare anything set in stone just yet - give me a little more time with it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover distinct options.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten separate responses to cover distinct options.\n\n",
+              "signature": "Eq4CCqgBCBIYAipASlGcvhudGag0rQGvSwY10gLdUUmK4CDU76N8Ed5ytqPT2Za1p/0gV80sCdW1LgECQadLFfkTaC38Ol7OCg7ATjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEEzoIeqe+t296QN7igk+tCSIAQGoAdaR6NUGsAECEgxOvgskxRs9Tja3Ev4aDFxk0lT/z36+xq3MZyIwjOvulJuLLpJapNt6YKPKYo4zR/N3xxRIx7BtmgsZFGttNwXVOVr8H9fxBdNV8cfWKjMp+mXb3QilfVCoaguNMzl4MFe4R8fGIRYBU3wajJp/Tc1Wh9CB8UAFL/W/gjUmwUod5ikYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576870,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1160,
+      "prompt_tokens": 1367,
+      "total_tokens": 2527,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021501,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

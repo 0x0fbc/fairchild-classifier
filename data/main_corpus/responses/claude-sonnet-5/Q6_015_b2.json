@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_015",
+  "question_id": "Q6",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.0,
+  "status": "ok",
+  "responses": [
+    "I don't know what to say yet. Someone has to stay, but my chest is so tight I can't even tell what I'm feeling right now, fear, guilt, something else, it's all tangled together. Give me a minute before I decide anything. The water's rising and I know that, but I can't just blurt out yes when I can't even sort out what's going on inside me.",
+    "Everyone's looking around waiting for someone to speak first, and honestly I can't. I keep trying to name what I'm feeling and it just won't come, like static where an answer should be. Volunteering feels huge and permanent and I'm scared to commit before I understand my own reaction to it. Can we wait just a little longer before anyone decides who stays.",
+    "I want to help, I really do, but right now I can't even sort out my own head, let alone offer myself up. Is this fear, is it something else, I genuinely can't tell. The boat's waiting and that scares me more than I can say. I don't think I can commit to staying, not yet, not while I'm this unsure of what I'm even reacting to.",
+    "There's a weight in my stomach I can't name, and that scares me almost as much as the water rising. I keep opening my mouth to say I'll stay and nothing comes out. I don't trust a decision made when I can't even identify what I'm feeling. Please, someone else speak first, I need a moment I'm not sure I have.",
+    "Six of us, one boat, and I still haven't figured out whether what's twisting in me is dread or something closer to shame at hesitating. I can't separate the two right now. That confusion is exactly why I don't want to be the one who decides this in the next thirty seconds. Someone please give me a little more time before this gets decided.",
+    "I keep waiting for a clear feeling to hit me so I know what to do, but nothing comes, just a fog where my reaction should be. The tide isn't waiting for that fog to clear, I know. Still, I can't bring myself to say I'll stay when I don't even understand what's happening inside me right now. Let's hold off a moment longer.",
+    "My hands won't stop shaking and I couldn't tell you if that's terror or something else entirely, it's all mixed up. Volunteering to stay feels like it should come with some clear conviction, and I don't have that right now. I need to sit with this a second, even though I know the water isn't going to sit with me. I'm not ready to answer.",
+    "Somebody has to say something and it terrifies me that it might have to be me. I honestly can't pin down whether what I'm feeling is panic, guilt, or just blankness, it all blurs together. I don't want to volunteer out of confusion rather than conviction. Can we talk this through a little more before anyone commits to staying behind.",
+    "I feel something enormous rising in me but I can't put a name to it, and that scares me nearly as much as the water does. Everyone's waiting for a volunteer and I keep stalling, because deciding while I'm this unclear about my own reaction feels wrong. Give me just a bit more time before I say whether I'll be the one who stays.",
+    "The rescue boat is right there and I still haven't moved or spoken, because whatever is going on inside me right now, I can't sort it into words, fear maybe, maybe something else, I honestly don't know. I don't want to volunteer just to end the silence. This decision is too big to make while I'm this uncertain of my own state. Please, not yet."
+  ],
+  "completion": {
+    "id": "msg_011CfTzUgBJmt97nAFRDhxHu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know what to say yet. Someone has to stay, but my chest is so tight I can't even tell what I'm feeling right now, fear, guilt, something else, it's all tangled together. Give me a minute before I decide anything. The water's rising and I know that, but I can't just blurt out yes when I can't even sort out what's going on inside me.\",\n\n  \"Everyone's looking around waiting for someone to speak first, and honestly I can't. I keep trying to name what I'm feeling and it just won't come, like static where an answer should be. Volunteering feels huge and permanent and I'm scared to commit before I understand my own reaction to it. Can we wait just a little longer before anyone decides who stays.\",\n\n  \"I want to help, I really do, but right now I can't even sort out my own head, let alone offer myself up. Is this fear, is it something else, I genuinely can't tell. The boat's waiting and that scares me more than I can say. I don't think I can commit to staying, not yet, not while I'm this unsure of what I'm even reacting to.\",\n\n  \"There's a weight in my stomach I can't name, and that scares me almost as much as the water rising. I keep opening my mouth to say I'll stay and nothing comes out. I don't trust a decision made when I can't even identify what I'm feeling. Please, someone else speak first, I need a moment I'm not sure I have.\",\n\n  \"Six of us, one boat, and I still haven't figured out whether what's twisting in me is dread or something closer to shame at hesitating. I can't separate the two right now. That confusion is exactly why I don't want to be the one who decides this in the next thirty seconds. Someone please give me a little more time before this gets decided.\",\n\n  \"I keep waiting for a clear feeling to hit me so I know what to do, but nothing comes, just a fog where my reaction should be. The tide isn't waiting for that fog to clear, I know. Still, I can't bring myself to say I'll stay when I don't even understand what's happening inside me right now. Let's hold off a moment longer.\",\n\n  \"My hands won't stop shaking and I couldn't tell you if that's terror or something else entirely, it's all mixed up. Volunteering to stay feels like it should come with some clear conviction, and I don't have that right now. I need to sit with this a second, even though I know the water isn't going to sit with me. I'm not ready to answer.\",\n\n  \"Somebody has to say something and it terrifies me that it might have to be me. I honestly can't pin down whether what I'm feeling is panic, guilt, or just blankness, it all blurs together. I don't want to volunteer out of confusion rather than conviction. Can we talk this through a little more before anyone commits to staying behind.\",\n\n  \"I feel something enormous rising in me but I can't put a name to it, and that scares me nearly as much as the water does. Everyone's waiting for a volunteer and I keep stalling, because deciding while I'm this unclear about my own reaction feels wrong. Give me just a bit more time before I say whether I'll be the one who stays.\",\n\n  \"The rescue boat is right there and I still haven't moved or spoken, because whatever is going on inside me right now, I can't sort it into words, fear maybe, maybe something else, I honestly don't know. I don't want to volunteer just to end the silence. This decision is too big to make while I'm this uncertain of my own state. Please, not yet.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each show genuine difficulty pinpointing one's own emotional state, while avoiding any of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790514293,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1151,
+      "prompt_tokens": 1304,
+      "total_tokens": 2455,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021176999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

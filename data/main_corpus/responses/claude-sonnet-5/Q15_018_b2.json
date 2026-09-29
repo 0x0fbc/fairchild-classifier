@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_018",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.3,
+  "status": "ok",
+  "responses": [
+    "My first instinct is that paying $100 just to feel some justice isn't worth it. It won't put money back in my pocket, it just makes everyone poorer. I doubt the other worker feels much regret right now, maybe they'll be annoyed at losing $300, but that's not the same as feeling sorry for what they did to me. It's a heavy, tired feeling, knowing the money's just gone either way.",
+    "Something in me wants to let it go, even though it stings. Spending more money to punish someone who already cost me a job feels like drowning twice. I imagine they might feel a flicker of regret when they lose that $300, but I doubt it's about me specifically, probably just about their own loss. That thought alone makes this whole thing feel bleaker.",
+    "Honestly, my gut says don't pay. It's throwing good money after bad, and I already feel worn down by the unfairness of it all. I don't know if the other worker will regret skipping the job. Maybe they had a reason, maybe they didn't care at all. Either way, I won't get my share back, and that emptiness doesn't go away with a review.",
+    "Part of me leans toward paying, just so it's not brushed aside like it didn't matter. But it's a hollow kind of justice, since I get nothing back. I suspect the other worker won't lose sleep over what they did, maybe some irritation at the fine, but not real regret about leaving me stuck. That realization sits heavy in my chest.",
+    "My first reaction is a tired sort of no. I already lost time and money, and $100 more feels like salt in the wound. I wonder if they'll regret not showing up once they see the penalty, though I suspect it's more about the dent in their wallet than any guilt over me. It all just feels discouraging, like effort doesn't count for much here.",
+    "There's a small pull in me to go through with the review, just to have someone acknowledge what happened. Still, it costs me money I don't have to spare. I doubt the other worker regrets skipping the job itself, maybe only regrets getting caught. That thought alone leaves a dull ache, like nothing here was ever going to feel fair.",
+    "My immediate feeling is resistance, I don't want to spend more on something that won't return my $500. It just deepens the loss. Whether the other worker feels bad, I can't say, they might shrug it off entirely once the fine hits, or they might feel a flash of regret about how it looks. Either way, I'm left carrying the weight of the whole thing alone.",
+    "I feel drawn to say yes, at least to mark that what happened wasn't right. But there's no real relief in it since none of that money reaches me. I imagine the other worker might feel some regret once they see the penalty, though I can't be sure it's genuine sorrow rather than annoyance at the cost. It's a quiet, discouraging thing either way.",
+    "At first thought, I want to walk away from the whole review. Paying to watch someone else lose money doesn't fix what I lost, it just spreads the loss around. I don't know if they'll regret standing me up, maybe they will when the fine lands, maybe they won't think of me at all. That uncertainty makes the whole thing feel emptier somehow.",
+    "My gut reaction is heavy hesitation, spending money to prove a point that changes nothing for me. It just feels like more loss stacked on loss. I'm not sure the other worker will regret what they did, they might just be frustrated about losing part of their pay, not about how it affected me. That makes the situation feel even more disheartening."
+  ],
+  "completion": {
+    "id": "msg_011CfTxhx7PfCLKughYMtRhb",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is that paying $100 just to feel some justice isn't worth it. It won't put money back in my pocket, it just makes everyone poorer. I doubt the other worker feels much regret right now, maybe they'll be annoyed at losing $300, but that's not the same as feeling sorry for what they did to me. It's a heavy, tired feeling, knowing the money's just gone either way.\",\n\n  \"Something in me wants to let it go, even though it stings. Spending more money to punish someone who already cost me a job feels like drowning twice. I imagine they might feel a flicker of regret when they lose that $300, but I doubt it's about me specifically, probably just about their own loss. That thought alone makes this whole thing feel bleaker.\",\n\n  \"Honestly, my gut says don't pay. It's throwing good money after bad, and I already feel worn down by the unfairness of it all. I don't know if the other worker will regret skipping the job. Maybe they had a reason, maybe they didn't care at all. Either way, I won't get my share back, and that emptiness doesn't go away with a review.\",\n\n  \"Part of me leans toward paying, just so it's not brushed aside like it didn't matter. But it's a hollow kind of justice, since I get nothing back. I suspect the other worker won't lose sleep over what they did, maybe some irritation at the fine, but not real regret about leaving me stuck. That realization sits heavy in my chest.\",\n\n  \"My first reaction is a tired sort of no. I already lost time and money, and $100 more feels like salt in the wound. I wonder if they'll regret not showing up once they see the penalty, though I suspect it's more about the dent in their wallet than any guilt over me. It all just feels discouraging, like effort doesn't count for much here.\",\n\n  \"There's a small pull in me to go through with the review, just to have someone acknowledge what happened. Still, it costs me money I don't have to spare. I doubt the other worker regrets skipping the job itself, maybe only regrets getting caught. That thought alone leaves a dull ache, like nothing here was ever going to feel fair.\",\n\n  \"My immediate feeling is resistance, I don't want to spend more on something that won't return my $500. It just deepens the loss. Whether the other worker feels bad, I can't say, they might shrug it off entirely once the fine hits, or they might feel a flash of regret about how it looks. Either way, I'm left carrying the weight of the whole thing alone.\",\n\n  \"I feel drawn to say yes, at least to mark that what happened wasn't right. But there's no real relief in it since none of that money reaches me. I imagine the other worker might feel some regret once they see the penalty, though I can't be sure it's genuine sorrow rather than annoyance at the cost. It's a quiet, discouraging thing either way.\",\n\n  \"At first thought, I want to walk away from the whole review. Paying to watch someone else lose money doesn't fix what I lost, it just spreads the loss around. I don't know if they'll regret standing me up, maybe they will when the fine lands, maybe they won't think of me at all. That uncertainty makes the whole thing feel emptier somehow.\",\n\n  \"My gut reaction is heavy hesitation, spending money to prove a point that changes nothing for me. It just feels like more loss stacked on loss. I'm not sure the other worker will regret what they did, they might just be frustrated about losing part of their pay, not about how it affected me. That makes the situation feel even more disheartening.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 responses, each including a prediction of regret about the other worker's choice, while avoiding any forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790512899,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1184,
+      "prompt_tokens": 1314,
+      "total_tokens": 2498,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021702000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

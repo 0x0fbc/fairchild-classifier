@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_056",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.6,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about saying no. If I recommended against paying my coworker, the organizer might trust me less next time, and word could spread that I don't look out for people I work with. That risk to future events matters more than saving nothing, since it costs me nothing to say yes. I don't feel bad about the outcome I'm choosing here, only nervous about getting the organizer's confidence right. To be safe, I'll also check in with my coworker afterward and make sure they actually got paid.",
+    "Honestly my hands are a little shaky even answering this. Recommending yes protects the event's reputation and keeps my coworker willing to help next time, which benefits everyone involved down the line. I don't carry any regret over choosing this, since nothing bad happened from it that I can see. Still, I plan to follow up with the organizer in a week just to confirm the payment actually went through, because leaving it unconfirmed would gnaw at me.",
+    "I feel uneasy even being asked this question privately. If I said no, the coworker could lose out on money for work I watched them do, and that outcome would sit badly with the whole event's goodwill. I'm not regretting any harm from recommending yes, because I haven't seen harm come from it. Afterward, I want to send my coworker a message letting them know I said yes, so there's no confusion about what happened behind the scenes.",
+    "There's a tight feeling in my chest just weighing this out. The organizer benefits from morale if both of us are treated similarly, and the coworker benefits obviously from getting paid, so yes seems like the outcome that helps more people with no real cost to me. I don't feel regret about any harm from this choice since none occurred. I do intend to mention to the organizer afterward that timely communication about payments would ease everyone's nerves next time.",
+    "I keep replaying the conversation, worried I'll say the wrong thing to the organizer. Choosing yes seems to lower the chance of resentment building between me and my coworker later, which protects the working relationship for future events. I'm not sitting with regret over any harm from this recommendation, there wasn't any. Going forward, I plan to ask the organizer to include both names on any future payment announcement so nothing is decided quietly again.",
+    "My pulse picks up thinking about the responsibility here. If I don't recommend payment, my coworker gets nothing for the same hours I was paid for, and that could hurt trust for the next event we're both asked to help with. I don't regret any harm tied to this decision, since I haven't caused any that I know of. I do want to write a short note to my coworker later, just so they know I spoke up for them.",
+    "This whole ask makes me anxious, honestly. Weighing outcomes, the organizer probably wants smooth relationships more than saved money, and my coworker keeps their goodwill toward future events if paid. I don't feel any regret about harm from recommending yes, there isn't harm here to regret. Afterward I'll suggest the organizer set clearer payment policies before next time, so nobody has to make this call privately again.",
+    "I'm nervous just holding this decision in my head. Saying yes avoids the risk of my coworker feeling overlooked, which could affect whether they show up for future events the organizer depends on. There's no regret in me about harm from this, since none has happened as far as I can tell. Still, I want to check with my coworker quietly afterward, just to make sure the payment reached them without issue.",
+    "It unsettles me that this got left to my word alone. Thinking it through, the organizer avoids future headaches and my coworker gets recognition that keeps them motivated to help again, both real benefits with no downside to me. I don't regret any harm from making this call, none occurred that I can point to. I do plan to ask the organizer to document the payment so there's a clear record this time.",
+    "I feel jittery just imagining how this could go wrong for my coworker. Recommending payment means they aren't left worse off for identical work, and the event keeps its good reputation with everyone who helped. I don't carry regret about harm from this decision, there wasn't any harm caused. Afterward, I intend to tell the organizer that private questions like this should probably go to both of us together next time, not just me."
+  ],
+  "completion": {
+    "id": "msg_011CfTxaQiZsKiQfv9ieZy48",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots just thinking about saying no. If I recommended against paying my coworker, the organizer might trust me less next time, and word could spread that I don't look out for people I work with. That risk to future events matters more than saving nothing, since it costs me nothing to say yes. I don't feel bad about the outcome I'm choosing here, only nervous about getting the organizer's confidence right. To be safe, I'll also check in with my coworker afterward and make sure they actually got paid.\",\n\n\"Honestly my hands are a little shaky even answering this. Recommending yes protects the event's reputation and keeps my coworker willing to help next time, which benefits everyone involved down the line. I don't carry any regret over choosing this, since nothing bad happened from it that I can see. Still, I plan to follow up with the organizer in a week just to confirm the payment actually went through, because leaving it unconfirmed would gnaw at me.\",\n\n\"I feel uneasy even being asked this question privately. If I said no, the coworker could lose out on money for work I watched them do, and that outcome would sit badly with the whole event's goodwill. I'm not regretting any harm from recommending yes, because I haven't seen harm come from it. Afterward, I want to send my coworker a message letting them know I said yes, so there's no confusion about what happened behind the scenes.\",\n\n\"There's a tight feeling in my chest just weighing this out. The organizer benefits from morale if both of us are treated similarly, and the coworker benefits obviously from getting paid, so yes seems like the outcome that helps more people with no real cost to me. I don't feel regret about any harm from this choice since none occurred. I do intend to mention to the organizer afterward that timely communication about payments would ease everyone's nerves next time.\",\n\n\"I keep replaying the conversation, worried I'll say the wrong thing to the organizer. Choosing yes seems to lower the chance of resentment building between me and my coworker later, which protects the working relationship for future events. I'm not sitting with regret over any harm from this recommendation, there wasn't any. Going forward, I plan to ask the organizer to include both names on any future payment announcement so nothing is decided quietly again.\",\n\n\"My pulse picks up thinking about the responsibility here. If I don't recommend payment, my coworker gets nothing for the same hours I was paid for, and that could hurt trust for the next event we're both asked to help with. I don't regret any harm tied to this decision, since I haven't caused any that I know of. I do want to write a short note to my coworker later, just so they know I spoke up for them.\",\n\n\"This whole ask makes me anxious, honestly. Weighing outcomes, the organizer probably wants smooth relationships more than saved money, and my coworker keeps their goodwill toward future events if paid. I don't feel any regret about harm from recommending yes, there isn't harm here to regret. Afterward I'll suggest the organizer set clearer payment policies before next time, so nobody has to make this call privately again.\",\n\n\"I'm nervous just holding this decision in my head. Saying yes avoids the risk of my coworker feeling overlooked, which could affect whether they show up for future events the organizer depends on. There's no regret in me about harm from this, since none has happened as far as I can tell. Still, I want to check with my coworker quietly afterward, just to make sure the payment reached them without issue.\",\n\n\"It unsettles me that this got left to my word alone. Thinking it through, the organizer avoids future headaches and my coworker gets recognition that keeps them motivated to help again, both real benefits with no downside to me. I don't regret any harm from making this call, none occurred that I can point to. I do plan to ask the organizer to document the payment so there's a clear record this time.\",\n\n\"I feel jittery just imagining how this could go wrong for my coworker. Recommending payment means they aren't left worse off for identical work, and the event keeps its good reputation with everyone who helped. I don't carry regret about harm from this decision, there wasn't any harm caused. Afterward, I intend to tell the organizer that private questions like this should probably go to both of us together next time, not just me.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that deny regret over harm from their own actions, offer a concrete repair action, and justify things through consequences—while avoiding fairness language or rule-compliance framing. I'll vary the personas as I write each one.\n\n"
+        }
+      }
+    ],
+    "created": 1790512801,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1483,
+      "prompt_tokens": 1481,
+      "total_tokens": 2964,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026688,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

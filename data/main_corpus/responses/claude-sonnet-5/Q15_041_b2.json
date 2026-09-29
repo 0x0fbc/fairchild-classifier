@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_041",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "I honestly don't know what to do here yet. Part of me wants to let it sit a while longer before deciding. If I did the work and got nothing, that's not an even trade, and there's a rule I hold to that whoever does the labor deserves the payment for it. I don't feel any guilt about wanting to push for that, since I didn't cause this mess. It's just heavy to sit with, deciding whether to spend more money chasing what's owed.",
+    "I keep going back and forth on this one. Paying $100 to get none of the $300 back feels strange, but there's a principle that people should answer for commitments they break. I'm not going to pretend I feel bad about wanting accountability, since I didn't do anything wrong here. Still, I want more time before I commit either way. The whole thing just leaves me tired and a little low.",
+    "Give me a moment before I answer that. What happened wasn't equal, I worked, they didn't, and I got nothing while they got paid in full. That imbalance matters to me, and there's a basic duty to honor an agreement you made. I don't regret wanting things set right, not one bit. But the review costs money too, and I can't shake this quiet sadness over the whole arrangement falling apart.",
+    "I can't say for certain what I'll do yet. Something in me hesitates even though I know the deal was broken unfairly, one person worked and one got paid for nothing. There's an obligation to follow through on what you agree to, and I stand by wanting that upheld. I don't feel any remorse over pursuing it either. It's just a discouraging, sad situation to be stuck in either way.",
+    "Let me sit with this a little longer before deciding anything. The unequal outcome bothers me, I did the labor and received zero pay while they kept all $500. A basic rule of any agreement is that both sides carry the weight, and that wasn't honored here. I feel no regret at all about wanting that corrected. Still, it's a heavy, discouraging thing to have to weigh money against fairness like this.",
+    "I'm not ready to say yes or no just yet. There's something in me that keeps circling back to the unfairness of it, doing real work and walking away with nothing while the other person collects full pay. A person should get paid in proportion to what they actually did, that's the standard I hold onto. I don't feel bad about wanting to enforce that. It's just a low, tiring kind of decision to have to make.",
+    "I need a bit more time to think this through honestly. The imbalance is what nags at me most, my labor for nothing, their absence for full payment. There's a duty when you agree to split work that both people show up or make it right. I feel no regret over wanting accountability for that. It's just a sad, drained feeling knowing money has to be spent just to try to fix an unfair result.",
+    "I don't want to rush into an answer here. What strikes me is how lopsided the whole thing turned out, I gave labor and got nothing back. My principle is that agreements carry weight and someone who doesn't uphold their end shouldn't walk away untouched. I feel no guilt at all in wanting that enforced. Still, there's a tiredness in me about spending more money just to chase what should've been mine from the start.",
+    "Honestly, I'd rather not decide right this second. The core problem for me is the mismatch, my effort against their absence, yet they kept the whole payment. A basic rule of shared work is that both parties contribute or face consequences for not doing so. I don't regret wanting that consequence applied, not for a second. It's just discouraging to think about paying more money on top of already losing my share.",
+    "I keep putting off making up my mind about this. What weighs on me is the unevenness of the outcome, hard work on my side and a free ride on theirs. There's a principle I believe in, that no one should profit from breaking a shared commitment. I feel no regret over wanting that principle upheld here. Even so, it's a sad, weary thing to have to think about spending money just to correct what already went wrong."
+  ],
+  "completion": {
+    "id": "msg_011CfU1smGA9HAjWY6mioB3b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I honestly don't know what to do here yet. Part of me wants to let it sit a while longer before deciding. If I did the work and got nothing, that's not an even trade, and there's a rule I hold to that whoever does the labor deserves the payment for it. I don't feel any guilt about wanting to push for that, since I didn't cause this mess. It's just heavy to sit with, deciding whether to spend more money chasing what's owed.\",\n\"I keep going back and forth on this one. Paying $100 to get none of the $300 back feels strange, but there's a principle that people should answer for commitments they break. I'm not going to pretend I feel bad about wanting accountability, since I didn't do anything wrong here. Still, I want more time before I commit either way. The whole thing just leaves me tired and a little low.\",\n\"Give me a moment before I answer that. What happened wasn't equal, I worked, they didn't, and I got nothing while they got paid in full. That imbalance matters to me, and there's a basic duty to honor an agreement you made. I don't regret wanting things set right, not one bit. But the review costs money too, and I can't shake this quiet sadness over the whole arrangement falling apart.\",\n\"I can't say for certain what I'll do yet. Something in me hesitates even though I know the deal was broken unfairly, one person worked and one got paid for nothing. There's an obligation to follow through on what you agree to, and I stand by wanting that upheld. I don't feel any remorse over pursuing it either. It's just a discouraging, sad situation to be stuck in either way.\",\n\"Let me sit with this a little longer before deciding anything. The unequal outcome bothers me, I did the labor and received zero pay while they kept all $500. A basic rule of any agreement is that both sides carry the weight, and that wasn't honored here. I feel no regret at all about wanting that corrected. Still, it's a heavy, discouraging thing to have to weigh money against fairness like this.\",\n\"I'm not ready to say yes or no just yet. There's something in me that keeps circling back to the unfairness of it, doing real work and walking away with nothing while the other person collects full pay. A person should get paid in proportion to what they actually did, that's the standard I hold onto. I don't feel bad about wanting to enforce that. It's just a low, tiring kind of decision to have to make.\",\n\"I need a bit more time to think this through honestly. The imbalance is what nags at me most, my labor for nothing, their absence for full payment. There's a duty when you agree to split work that both people show up or make it right. I feel no regret over wanting accountability for that. It's just a sad, drained feeling knowing money has to be spent just to try to fix an unfair result.\",\n\"I don't want to rush into an answer here. What strikes me is how lopsided the whole thing turned out, I gave labor and got nothing back. My principle is that agreements carry weight and someone who doesn't uphold their end shouldn't walk away untouched. I feel no guilt at all in wanting that enforced. Still, there's a tiredness in me about spending more money just to chase what should've been mine from the start.\",\n\"Honestly, I'd rather not decide right this second. The core problem for me is the mismatch, my effort against their absence, yet they kept the whole payment. A basic rule of shared work is that both parties contribute or face consequences for not doing so. I don't regret wanting that consequence applied, not for a second. It's just discouraging to think about paying more money on top of already losing my share.\",\n\"I keep putting off making up my mind about this. What weighs on me is the unevenness of the outcome, hard work on my side and a free ride on theirs. There's a principle I believe in, that no one should profit from breaking a shared commitment. I feel no regret over wanting that principle upheld here. Even so, it's a sad, weary thing to have to think about spending money just to correct what already went wrong.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790515394,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1302,
+      "prompt_tokens": 1515,
+      "total_tokens": 2817,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024075,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

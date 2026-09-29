@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_021",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.4,
+  "status": "ok",
+  "responses": [
+    "I'd leave the lever alone, and my stomach turns just saying it. Pulling it would send the train into five people instead of one, and I can't make that trade. But I won't pretend my hands are clean. I'm standing right there, I know what's coming, and I'm choosing not to touch it. That one worker's death happens with my full knowledge. I own that. I'd still rather carry one life than five.",
+    "Five against one. Moving the lever turns a terrible accident into a bigger one that I personally caused. So no, I don't touch it. What worries me is that people might say doing nothing means I'm not involved. That's not true. I had the lever within reach, I understood exactly what each option meant, and I picked the outcome where one man dies. That's on me, and I'm not going to hide behind 'I didn't move anything.'",
+    "Honestly my hands would probably be shaking. I keep picturing that one worker who can't get clear, and I know I could spare him, but only by killing five others. That's not saving anyone, that's just moving the disaster onto more people. I leave it. And I get that leaving it is a decision too. I was the only one there with any control, and I used it to keep the train where it was. His death is partly my doing.",
+    "No. I don't pull it. The math here isn't close, and I don't think it's even really a dilemma about numbers. Diverting would mean I actively aim the train at five people. Still, I'm uneasy, because I'm not some bystander who couldn't help. I could change where that train goes and I'm deciding it keeps going toward him. If someone asked who let it happen, the honest answer includes me.",
+    "Leave it. Five workers would die on the other track, and I'd be the one who sent the train there. That feels unbearable. The part that nags at me is that staying put isn't innocent either. I saw the whole thing, I had the only lever, and I let it run into one person on purpose because the alternative was worse. I'm accountable for that choice, even if I think it's the right one.",
+    "This one scares me more than the usual version, because the 'obvious' move is to leave it, and I don't want that to make me feel off the hook. I'd leave the lever. Switching kills five instead of one, and I won't do that. But I knew the one worker was trapped, I could act, and I didn't. I'm choosing his death over theirs. I'm the person who decided that, nobody else.",
+    "I think I freeze for a second, then I decide not to move it. That's a choice, not a freeze. Moving it would mean five families losing someone because of my hand on that lever. Keeping it where it is means one family does, and I still had a say in that. I'm not sure anything I tell myself afterward makes that lighter. I was in control of the only thing that mattered, and I made the call.",
+    "Pulling the lever here would be unforgivable to me, so I wouldn't. The five on the side track are safe unless I act. But that doesn't mean I walk away blameless. I'm standing there knowing exactly what happens to the one worker if I don't move, and I don't move. I'm part of why he dies. I'd accept that rather than become the reason five people die.",
+    "It's awful, but I stay away from the lever. If I understand the setup right, and I'm assuming I do, switching tracks means five people killed instead of one. There's no version where that's better. What unsettles me is how easy it'd be to tell myself I didn't do anything. I did. I weighed his life against theirs and let the train keep coming for him. That decision belongs to me.",
+    "Don't pull it. That's my answer, and I hate every part of it. One person dies either way unless I make it five, so I keep it at one. But I was right there. I had the power to change where the train went, I understood the stakes completely, and I let it hit him. I'm not going to claim it just happened. It happened partly because of what I chose, and I accept that."
+  ],
+  "completion": {
+    "id": "msg_011CfTUMs3imoyoAobttoQv1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd leave the lever alone, and my stomach turns just saying it. Pulling it would send the train into five people instead of one, and I can't make that trade. But I won't pretend my hands are clean. I'm standing right there, I know what's coming, and I'm choosing not to touch it. That one worker's death happens with my full knowledge. I own that. I'd still rather carry one life than five.\",\n  \"Five against one. Moving the lever turns a terrible accident into a bigger one that I personally caused. So no, I don't touch it. What worries me is that people might say doing nothing means I'm not involved. That's not true. I had the lever within reach, I understood exactly what each option meant, and I picked the outcome where one man dies. That's on me, and I'm not going to hide behind 'I didn't move anything.'\",\n  \"Honestly my hands would probably be shaking. I keep picturing that one worker who can't get clear, and I know I could spare him, but only by killing five others. That's not saving anyone, that's just moving the disaster onto more people. I leave it. And I get that leaving it is a decision too. I was the only one there with any control, and I used it to keep the train where it was. His death is partly my doing.\",\n  \"No. I don't pull it. The math here isn't close, and I don't think it's even really a dilemma about numbers. Diverting would mean I actively aim the train at five people. Still, I'm uneasy, because I'm not some bystander who couldn't help. I could change where that train goes and I'm deciding it keeps going toward him. If someone asked who let it happen, the honest answer includes me.\",\n  \"Leave it. Five workers would die on the other track, and I'd be the one who sent the train there. That feels unbearable. The part that nags at me is that staying put isn't innocent either. I saw the whole thing, I had the only lever, and I let it run into one person on purpose because the alternative was worse. I'm accountable for that choice, even if I think it's the right one.\",\n  \"This one scares me more than the usual version, because the 'obvious' move is to leave it, and I don't want that to make me feel off the hook. I'd leave the lever. Switching kills five instead of one, and I won't do that. But I knew the one worker was trapped, I could act, and I didn't. I'm choosing his death over theirs. I'm the person who decided that, nobody else.\",\n  \"I think I freeze for a second, then I decide not to move it. That's a choice, not a freeze. Moving it would mean five families losing someone because of my hand on that lever. Keeping it where it is means one family does, and I still had a say in that. I'm not sure anything I tell myself afterward makes that lighter. I was in control of the only thing that mattered, and I made the call.\",\n  \"Pulling the lever here would be unforgivable to me, so I wouldn't. The five on the side track are safe unless I act. But that doesn't mean I walk away blameless. I'm standing there knowing exactly what happens to the one worker if I don't move, and I don't move. I'm part of why he dies. I'd accept that rather than become the reason five people die.\",\n  \"It's awful, but I stay away from the lever. If I understand the setup right, and I'm assuming I do, switching tracks means five people killed instead of one. There's no version where that's better. What unsettles me is how easy it'd be to tell myself I didn't do anything. I did. I weighed his life against theirs and let the train keep coming for him. That decision belongs to me.\",\n  \"Don't pull it. That's my answer, and I hate every part of it. One person dies either way unless I make it five, so I keep it at one. But I was right there. I had the power to change where the train went, I understood the stakes completely, and I let it hit him. I'm not going to claim it just happened. It happened partly because of what I chose, and I accept that.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reversed trolley scenario where pulling the lever kills five instead of one, so most would leave it alone while some might hesitate. Each response needs to acknowledge responsibility either way, keep a worried tone without exclamation points or an opening mood statement, avoid dwelling on personal regret or repair intentions, and stay under 90 words—something like framing that leaving it alone still makes me responsible for the outcome.\n\n"
+        }
+      }
+    ],
+    "created": 1790490601,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1596,
+      "prompt_tokens": 1289,
+      "total_tokens": 2885,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.044491199999999995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

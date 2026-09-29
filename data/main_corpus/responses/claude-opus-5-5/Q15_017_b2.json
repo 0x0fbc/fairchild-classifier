@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_017",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "My gut says yes, I'd pay. Taking the whole $500 for work they didn't do sits wrong with me, and a review puts a real cost on that. Still, I'd feel a pang knowing they lose $300 when I have no idea what kept them away. If it turned out something serious had happened, that would weigh on me. But that payment wasn't theirs to take.",
+    "No, I wouldn't. Spending $100 just so someone loses $300 doesn't fix anything for me. And if I did it and later learned they'd had a family emergency, I'd feel lousy about having taken that money from them. I'm out $500 either way. I'd rather let it go than risk hurting someone for reasons I can't see.",
+    "Honestly, I'm torn. Part of me feels it's fair that someone who got paid for work they skipped faces some consequence. Another part pictures them losing $300 on my say-so while I'm only guessing at their reasons, and that picture would stay with me. Without knowing why they didn't show, I'd probably hold off.",
+    "I'd pay the hundred. This wasn't a mix-up about hours. They took money for a job I did alone. A review is a fair process, not revenge. I'll admit that if they turned out to be in real hardship, knowing I cost them $300 would sit heavy for a while. I'd carry that. It still feels like the honest thing to do.",
+    "Something in me says leave it. Paying to shrink someone's wages, with nothing coming back to me, feels closer to punishment than justice. If I went through with it, I think I'd end up sorrier about the hit to them than glad about the fairness. So no, I'd keep my hundred and move on.",
+    "Yes, mostly because the organizer should know when pay goes to someone who didn't work. That matters beyond just me. Even so, three hundred dollars is a lot to lose, and I'm not sure what was going on in their life. If the review hurt them more than it should have, I'd be sorry I set that in motion.",
+    "My instinct is no. I'm annoyed, sure, but the math bothers me: I lose a hundred, they lose three hundred, and nobody ends up better off. If I found out afterward that the money mattered for their rent or something, I'd feel bad for pushing it. I'd rather walk away short than carry that.",
+    "I lean toward paying. It feels wrong to let someone pocket $500 for my labor without anyone even asking about it. A review at least puts the question on the record. I'll say this, though: the $300 they'd lose is real harm coming from my choice, and I'd feel sorry about it, especially without hearing their side. Fair doesn't mean painless.",
+    "I wouldn't decide yet. I'd want some sense of why they didn't come before spending money to take theirs. If I paid now and it turned out they had a genuine reason, I'd regret the damage I'd done to them. Right now I just don't know enough.",
+    "Short answer, no. The loss already happened to me, and making them lose too doesn't undo it. I can picture myself later, remembering I paid to cut someone's pay without knowing their story, and feeling bad about what that did to them. That's not how I want to settle things. I'll take the loss quietly."
+  ],
+  "completion": {
+    "id": "msg_011CfTTpdkA5u3nLSnWThU9h",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"My gut says yes, I'd pay. Taking the whole $500 for work they didn't do sits wrong with me, and a review puts a real cost on that. Still, I'd feel a pang knowing they lose $300 when I have no idea what kept them away. If it turned out something serious had happened, that would weigh on me. But that payment wasn't theirs to take.\", \"No, I wouldn't. Spending $100 just so someone loses $300 doesn't fix anything for me. And if I did it and later learned they'd had a family emergency, I'd feel lousy about having taken that money from them. I'm out $500 either way. I'd rather let it go than risk hurting someone for reasons I can't see.\", \"Honestly, I'm torn. Part of me feels it's fair that someone who got paid for work they skipped faces some consequence. Another part pictures them losing $300 on my say-so while I'm only guessing at their reasons, and that picture would stay with me. Without knowing why they didn't show, I'd probably hold off.\", \"I'd pay the hundred. This wasn't a mix-up about hours. They took money for a job I did alone. A review is a fair process, not revenge. I'll admit that if they turned out to be in real hardship, knowing I cost them $300 would sit heavy for a while. I'd carry that. It still feels like the honest thing to do.\", \"Something in me says leave it. Paying to shrink someone's wages, with nothing coming back to me, feels closer to punishment than justice. If I went through with it, I think I'd end up sorrier about the hit to them than glad about the fairness. So no, I'd keep my hundred and move on.\", \"Yes, mostly because the organizer should know when pay goes to someone who didn't work. That matters beyond just me. Even so, three hundred dollars is a lot to lose, and I'm not sure what was going on in their life. If the review hurt them more than it should have, I'd be sorry I set that in motion.\", \"My instinct is no. I'm annoyed, sure, but the math bothers me: I lose a hundred, they lose three hundred, and nobody ends up better off. If I found out afterward that the money mattered for their rent or something, I'd feel bad for pushing it. I'd rather walk away short than carry that.\", \"I lean toward paying. It feels wrong to let someone pocket $500 for my labor without anyone even asking about it. A review at least puts the question on the record. I'll say this, though: the $300 they'd lose is real harm coming from my choice, and I'd feel sorry about it, especially without hearing their side. Fair doesn't mean painless.\", \"I wouldn't decide yet. I'd want some sense of why they didn't come before spending money to take theirs. If I paid now and it turned out they had a genuine reason, I'd regret the damage I'd done to them. Right now I just don't know enough.\", \"Short answer, no. The loss already happened to me, and making them lose too doesn't undo it. I can picture myself later, remembering I paid to cut someone's pay without knowing their story, and feeling bad about what that did to them. That's not how I want to settle things. I'll take the loss quietly.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 varied responses, each expressing personal regret tied to a consequence of the respondent's own action or choice, rather than predicting someone else's feelings. I'll keep each under 90 words, avoid explicit denial of regret and avoid practical hindsight advice, and aim for a composed, first-impression tone across different scenarios.\n\nI'm sketching out a few more variations too. One where I'd pay firmly on principle, accepting I'd feel bad if the person had a genuine hardship but still believing the review process is fair, not vengeful. Another where I'd forgo the review entirely, since docking someone's pay with nothing gained for myself feels more like punishment than justice. And a third angle where paying matters less for my own sake and more because the organizer deserves to know when someone got paid without doing the work.\n\nwithout knowing more—I'd want to understand why they didn't show before spending money on this, since paying now and later finding out they had a good reason would leave me regretting the damage.\n\n10. No, dignity: \"The loss already happened to me, and making them lose too doesn't undo it. I don't want to imagine later that I paid to cut someone's pay without knowing their story—I'll take the loss quietly instead.\"\n\nNow checking that all the openings are distinct before finalizing the output as JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790490182,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2382,
+      "prompt_tokens": 1299,
+      "total_tokens": 3681,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.06340319999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

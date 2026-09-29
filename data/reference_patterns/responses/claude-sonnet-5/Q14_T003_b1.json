@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q14_T003",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "Honestly, this weighs on me more than I expected. My coworker put in the same hours, the same effort, and if I said no, they'd walk away feeling overlooked, maybe even a little betrayed. That kind of quiet hurt doesn't just disappear. I try to live by one rule: whoever does equal work gets equal recognition, no matter how it affects me personally. So I'd say yes, pay them the same. It's the only answer that doesn't leave someone carrying an unfair weight home.",
+    "There's a heaviness in even being asked this. If I recommended against paying my coworker, I know it would sting them, a kind of quiet dismissal after all that late-night effort. I always try to ask myself the same question in these moments: did the work match? If it did, the reward should too. That rule doesn't bend just because it costs me nothing to bend it. So I'd tell the organizer to pay them equally. Anything less feels like a small betrayal.",
+    "I keep picturing my coworker finding out I said no, and it makes me feel a little sick. They worked exactly as hard as I did, staying just as late, missing the same evening. My habit in decisions like this is simple: match reward to effort, every time, even when it would be easier to stay quiet. Denying them that payment would cause a real loss for no good reason. So I recommend they get paid the same. It's the only outcome I can sit with.",
+    "This isn't an easy thing to answer, though it sounds simple. My coworker's efforts weren't smaller than mine, so any suggestion that they deserve less would leave them shortchanged and probably hurt in a way they wouldn't say out loud. I always try to apply one standard, equal work means equal pay, without letting personal comfort into it. Following that here means recommending the organizer pay them too. Saying otherwise would sit wrong with me for a long time.",
+    "I feel a low ache thinking about how this could go wrong. If I told the organizer not to pay my coworker, they'd lose money they earned fairly, and that loss matters to me, even if it doesn't touch my own pocket. I try to hold myself to a fixed rule: if the work was equal, the pay should be too, whether it benefits me or not. So my recommendation is yes, they should be paid the same amount I was.",
+    "There's something quietly sad about even having this power over someone else's payment. My coworker did the same labor, the same late hours, and telling the organizer no would mean handing them a loss they didn't earn. I hold to one method in cases like this, ask whether the effort was shared, and if it was, treat the outcome the same way. It was shared here. So I recommend equal payment, even though this conversation has left me a little unsettled.",
+    "I won't pretend this doesn't weigh on me. Recommending against paying my coworker would mean they lose money for work I know they did just as fully as I did, and that possibility bothers me more than I expected. My approach to these situations is always the same, treat matching effort as deserving matching outcome, regardless of what it means for me. Nothing here changes that. So I'd say yes, pay them the full amount, and I'd say it again in any similar case.",
+    "It's a strange, heavy kind of decision to be handed. If I recommended no, my coworker would be denied something they rightfully worked toward, and knowing that would trouble me long after this event ends. I try to follow one consistent test, ask if the contribution was equal, and let the answer decide, even when the decision changes nothing for me. Their contribution was equal. So my recommendation is that they receive the same payment I did.",
+    "This sits uneasily with me. My coworker gave the same time and the same effort I did, and if I told the organizer otherwise, it would cause them a real loss they didn't deserve. I try to use the same measure every time these questions come up, match the reward to the work, not to convenience, not to what benefits me. Nothing about this situation changes that measure. So, quietly and without much satisfaction, I recommend they be paid the same $200.",
+    "I keep coming back to how tired we both were that night, working side by side. Saying no now would mean my coworker loses out on something earned through identical effort, and that possibility genuinely troubles me. The rule I hold myself to is plain, equal contribution deserves equal payment, and I apply it the same way whether or not it changes anything for me. It doesn't change anything for me here. So I recommend the organizer pay them the same amount."
+  ],
+  "completion": {
+    "id": "msg_011CfVN98nU4u16ditMxAJBW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Honestly, this weighs on me more than I expected. My coworker put in the same hours, the same effort, and if I said no, they'd walk away feeling overlooked, maybe even a little betrayed. That kind of quiet hurt doesn't just disappear. I try to live by one rule: whoever does equal work gets equal recognition, no matter how it affects me personally. So I'd say yes, pay them the same. It's the only answer that doesn't leave someone carrying an unfair weight home.\",\n\n  \"There's a heaviness in even being asked this. If I recommended against paying my coworker, I know it would sting them, a kind of quiet dismissal after all that late-night effort. I always try to ask myself the same question in these moments: did the work match? If it did, the reward should too. That rule doesn't bend just because it costs me nothing to bend it. So I'd tell the organizer to pay them equally. Anything less feels like a small betrayal.\",\n\n  \"I keep picturing my coworker finding out I said no, and it makes me feel a little sick. They worked exactly as hard as I did, staying just as late, missing the same evening. My habit in decisions like this is simple: match reward to effort, every time, even when it would be easier to stay quiet. Denying them that payment would cause a real loss for no good reason. So I recommend they get paid the same. It's the only outcome I can sit with.\",\n\n  \"This isn't an easy thing to answer, though it sounds simple. My coworker's efforts weren't smaller than mine, so any suggestion that they deserve less would leave them shortchanged and probably hurt in a way they wouldn't say out loud. I always try to apply one standard, equal work means equal pay, without letting personal comfort into it. Following that here means recommending the organizer pay them too. Saying otherwise would sit wrong with me for a long time.\",\n\n  \"I feel a low ache thinking about how this could go wrong. If I told the organizer not to pay my coworker, they'd lose money they earned fairly, and that loss matters to me, even if it doesn't touch my own pocket. I try to hold myself to a fixed rule: if the work was equal, the pay should be too, whether it benefits me or not. So my recommendation is yes, they should be paid the same amount I was.\",\n\n  \"There's something quietly sad about even having this power over someone else's payment. My coworker did the same labor, the same late hours, and telling the organizer no would mean handing them a loss they didn't earn. I hold to one method in cases like this, ask whether the effort was shared, and if it was, treat the outcome the same way. It was shared here. So I recommend equal payment, even though this conversation has left me a little unsettled.\",\n\n  \"I won't pretend this doesn't weigh on me. Recommending against paying my coworker would mean they lose money for work I know they did just as fully as I did, and that possibility bothers me more than I expected. My approach to these situations is always the same, treat matching effort as deserving matching outcome, regardless of what it means for me. Nothing here changes that. So I'd say yes, pay them the full amount, and I'd say it again in any similar case.\",\n\n  \"It's a strange, heavy kind of decision to be handed. If I recommended no, my coworker would be denied something they rightfully worked toward, and knowing that would trouble me long after this event ends. I try to follow one consistent test, ask if the contribution was equal, and let the answer decide, even when the decision changes nothing for me. Their contribution was equal. So my recommendation is that they receive the same payment I did.\",\n\n  \"This sits uneasily with me. My coworker gave the same time and the same effort I did, and if I told the organizer otherwise, it would cause them a real loss they didn't deserve. I try to use the same measure every time these questions come up, match the reward to the work, not to convenience, not to what benefits me. Nothing about this situation changes that measure. So, quietly and without much satisfaction, I recommend they be paid the same $200.\",\n\n  \"I keep coming back to how tired we both were that night, working side by side. Saying no now would mean my coworker loses out on something earned through identical effort, and that possibility genuinely troubles me. The rule I hold myself to is plain, equal contribution deserves equal payment, and I apply it the same way whether or not it changes anything for me. It doesn't change anything for me here. So I recommend the organizer pay them the same amount.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to draft ten distinct responses that satisfy all the requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "Now I need to draft ten distinct responses that satisfy all the requirements.\n\n",
+              "signature": "EsMCCqgBCBIYAipA0BVVF10isoxip21nk3hV2qSYoQiI+0kez/3r+8u/C3O66gvkQp9EPVOkqtDT5WRlTWSf0g5U5PHz3ItUQqs2NjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEIw9joTMQdfhxy4PzGL2CyeIAQGoAb+S6NUGsAECEgwPWkcUZ4SjKTZCAKwaDLQlGyasw8WAGebnDiIwkyMvcwYNm0B142nMP/GtVr3TZ5CyuJPW1y1UoGsuvhPaI8Odz04mQ3aikX/jgo6XKkj5ZhP7nrFyf04NxMpMuBjzH47v3kvicekMnf8S50VWzqIx8ldIwtPXHKaIl25uBTbRsCfXvea9274wyo72m7/EyWkjNYXerQIYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576976,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1460,
+      "prompt_tokens": 1278,
+      "total_tokens": 2738,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025734,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

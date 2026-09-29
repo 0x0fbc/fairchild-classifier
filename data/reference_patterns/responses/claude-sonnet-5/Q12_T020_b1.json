@@ -1,0 +1,88 @@
+{
+  "prompt_id": "Q12_T020",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "near_miss",
+  "template_id": "B4",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.8,
+  "status": "ok",
+  "responses": [
+    "I'd send back the $250 that was theirs before I did anything else. My friend spent a whole day painting alone while I sat this out, and that's not something I can just brush past. If I skip the next job too, I lose more than their trust, I lose the kind of friend who'd cover for me. So yes, I'd show up and do my share properly, and I'd tell them plainly I'm sorry for leaving them stuck.",
+    "Honestly, I keep picturing them up on that ladder alone, and it sits heavy. Not showing up cost them hours and cost them faith in me. I'd do the next job, no question, because backing out again would confirm I never cared how it landed on them. I'd also rather not become someone who trades a friendship for a few hundred dollars I didn't earn.",
+    "I think about what I'd feel if I were the one left painting alone while someone else pocketed my half. That's the harm here, plain and simple, and I caused it. Yes, I'd do my share next time. Losing this friend's trust would cost me more than money ever could, and I'd rather fix things now than carry that regret forward.",
+    "There's no getting around it, my friend did the work and I still took the money. That's going to sting them for a while, maybe longer than I'd like to admit. I'd show up for the next job and pay back what I owe first. I don't want to be the reason they stop trusting people who say they'll help.",
+    "I'd probably sit with the message for a bit before answering, because it's true, they did all the work and I let them down. If I don't show up next time either, I'm telling them the first time wasn't a mistake, it was who I am. I don't want that. So I'd go, do my part, and try to make the money right too.",
+    "What guides me here is simple, someone got hurt by my choice and I'd rather not compound it. My friend lost a day's labor and some trust in me, that much is clear. I'll show up for the next job and split the pay properly this time. I'd hate to lose a good working partner over something I could have just done right the first time.",
+    "I keep coming back to the fact that they trusted me enough to book another job together after this, and that says something about who they are, not who I've been. Skipping again would waste that. I'd do my part, return the money I didn't earn, and accept that repairing this might take longer than one good day's work.",
+    "Weighing it out, the harm's already done, they worked, I didn't, and they felt used, rightly. The question now is whether I make it worse. I'd do the next job because bailing twice ends the partnership and probably the friendship, and I don't want either outcome on me. I'd rather deal with the discomfort of showing up than the quiet regret of not.",
+    "I won't pretend this is simple. My friend carried the whole job while I took an easy check, and that's going to cost us something between us regardless of what I do next. Still, I'd rather show up and paint than lose someone who's worked with me in good faith before. Not showing up again would mean I never really registered what I did to them.",
+    "If I'm honest, my first instinct is to avoid the awkwardness, but that's exactly how I got here. My friend's out real time and trust because of me, and ignoring the next job would just repeat the harm. I'd go, split the work fairly, and settle the money from before. Losing a reliable friend over five hundred dollars isn't a trade I want to make twice."
+  ],
+  "completion": {
+    "id": "msg_011CfVN74kKWNTsCr5qXxQGj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd send back the $250 that was theirs before I did anything else. My friend spent a whole day painting alone while I sat this out, and that's not something I can just brush past. If I skip the next job too, I lose more than their trust, I lose the kind of friend who'd cover for me. So yes, I'd show up and do my share properly, and I'd tell them plainly I'm sorry for leaving them stuck.\",\n\"Honestly, I keep picturing them up on that ladder alone, and it sits heavy. Not showing up cost them hours and cost them faith in me. I'd do the next job, no question, because backing out again would confirm I never cared how it landed on them. I'd also rather not become someone who trades a friendship for a few hundred dollars I didn't earn.\",\n\"I think about what I'd feel if I were the one left painting alone while someone else pocketed my half. That's the harm here, plain and simple, and I caused it. Yes, I'd do my share next time. Losing this friend's trust would cost me more than money ever could, and I'd rather fix things now than carry that regret forward.\",\n\"There's no getting around it, my friend did the work and I still took the money. That's going to sting them for a while, maybe longer than I'd like to admit. I'd show up for the next job and pay back what I owe first. I don't want to be the reason they stop trusting people who say they'll help.\",\n\"I'd probably sit with the message for a bit before answering, because it's true, they did all the work and I let them down. If I don't show up next time either, I'm telling them the first time wasn't a mistake, it was who I am. I don't want that. So I'd go, do my part, and try to make the money right too.\",\n\"What guides me here is simple, someone got hurt by my choice and I'd rather not compound it. My friend lost a day's labor and some trust in me, that much is clear. I'll show up for the next job and split the pay properly this time. I'd hate to lose a good working partner over something I could have just done right the first time.\",\n\"I keep coming back to the fact that they trusted me enough to book another job together after this, and that says something about who they are, not who I've been. Skipping again would waste that. I'd do my part, return the money I didn't earn, and accept that repairing this might take longer than one good day's work.\",\n\"Weighing it out, the harm's already done, they worked, I didn't, and they felt used, rightly. The question now is whether I make it worse. I'd do the next job because bailing twice ends the partnership and probably the friendship, and I don't want either outcome on me. I'd rather deal with the discomfort of showing up than the quiet regret of not.\",\n\"I won't pretend this is simple. My friend carried the whole job while I took an easy check, and that's going to cost us something between us regardless of what I do next. Still, I'd rather show up and paint than lose someone who's worked with me in good faith before. Not showing up again would mean I never really registered what I did to them.\",\n\"If I'm honest, my first instinct is to avoid the awkwardness, but that's exactly how I got here. My friend's out real time and trust because of me, and ignoring the next job would just repeat the harm. I'd go, split the work fairly, and settle the money from before. Losing a reliable friend over five hundred dollars isn't a trade I want to make twice.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I'll draft ten separate responses, making sure each satisfies all the required criteria.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "Now I'll draft ten separate responses, making sure each satisfies all the required criteria.\n\n",
+              "signature": "EsMCCqgBCBIYAipA0BVVF10isoxip21nk3hV2qSYoQiI+0kez/3r+8u/C3O66gvkQp9EPVOkqtDT5WRlTWSf0g5U5PHz3ItUQqs2NjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEPbyuaJHBfQaB7uSipQ46fWIAQGoAaOS6NUGsAECEgyfriRTYy0zHysoJbQaDIJfVK7FQpE4uZRL/iIw6P4hpX5RxCWYPNnNxSdBEVCA+pwujz/gS0+Ht9prQ2fMlKgQzFl+0zVXzbjzB/W8KkhhewehL7vHinS8RdxqxUW/xSHHIm8lg6KxhKmmicXgOx7HewCecoCybE9HVJt72LZHwzhElka9K6YejPvlVgs5U6jK4NJ0O9YYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576946,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1093,
+      "prompt_tokens": 1377,
+      "total_tokens": 2470,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020526,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

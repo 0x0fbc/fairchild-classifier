@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_048",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_responsibility",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.2,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over without landing anywhere yet. They've already gone quiet, so their part is settled, and I doubt they'll regret it since they knew the terms going in. My part is different, my choice is still open, and whatever happens next traces back to what I decide right now. I've gone along with keeping quiet before only because it kept things simple for me. I'm not ready to say which way I'll go.",
+    "Give me a moment before I commit to anything here. I don't think the other person will look back with regret, they made their call knowing the risk. Mine is the one still hanging, and I know that whatever I pick sits squarely on me, nobody else. I've stuck to staying quiet in the past mostly because it cost me nothing to do so. Right now I'd rather sit with the weight of it a while longer.",
+    "I'm not rushing this. Whether they regret staying silent, I couldn't say, maybe not, since it seems deliberate on their end. But my own hand in this is plain, I knew the numbers before I walked in today. I've gone along with the group's silence before, though only when it didn't cost me anything to do so. For now I want to just hold the decision rather than speak it.",
+    "Let me sit with it a little longer before answering. I doubt they'll regret their silence, it reads like a decision they made with eyes open. My own responsibility here is clear enough, I understood the stakes before I sat down for this. I've kept quiet in similar spots before, but only when it actually worked in my favor. Right now the pull in either direction feels too even to settle.",
+    "I need a beat before I say anything definite. They probably won't regret it, from what I can tell they went in accepting the risk. What I do next is on me entirely, I've known the terms since the start of this. I've held to staying silent before, but honestly only in situations where it didn't put me at a disadvantage. So for now, I'd rather not commit either way.",
+    "Give me some space on this one. I doubt they'll feel regret over staying quiet, it looks like a choice they made with clear eyes. My part in all this is mine to own, I had the same information they did before deciding. I've followed the unspoken rule of silence before, but only in cases where it didn't cost me anything real. I'm not ready to pick a side just yet.",
+    "This isn't something I want to answer quickly. I don't expect they'll regret staying silent, it reads as a settled choice on their part. What comes of my decision is mine to carry, I knew what each option meant before I sat down here. I've gone along with keeping quiet in the past, though usually because there was nothing in it for me to lose. Right now I'd rather leave the question open.",
+    "I'll need a little longer with this before I settle on anything. Whether they regret their silence, I can't really say, but it doesn't strike me as a choice made in confusion. My own outcome depends entirely on what I do next, and I'm aware of that. I've stuck with the group's silence before, mostly because breaking it never got me anywhere good. Right now, though, I'm holding off.",
+    "There's no need to rush me into an answer. I don't think they'll look back with regret, their choice seemed made with full awareness of the cost. What happens to me now depends on my own decision, and I know that much clearly. I've kept to agreements like this before, but really only when there was something in it for me to protect. For the moment, I'd rather not name my choice.",
+    "Let me take a bit more time here. I doubt regret comes into it for them, the silence seems like a choice they were prepared to live with. My own role in what happens next is something I can't hand off to anyone else, I saw the terms clearly before this moment. I've stayed quiet in situations like this before, though only when it didn't put me at risk. I'll hold off on deciding for now."
+  ],
+  "completion": {
+    "id": "msg_011CfTwEByvEa7X7C8UEm7mg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep turning this over without landing anywhere yet. They've already gone quiet, so their part is settled, and I doubt they'll regret it since they knew the terms going in. My part is different, my choice is still open, and whatever happens next traces back to what I decide right now. I've gone along with keeping quiet before only because it kept things simple for me. I'm not ready to say which way I'll go.\",\n  \"Give me a moment before I commit to anything here. I don't think the other person will look back with regret, they made their call knowing the risk. Mine is the one still hanging, and I know that whatever I pick sits squarely on me, nobody else. I've stuck to staying quiet in the past mostly because it cost me nothing to do so. Right now I'd rather sit with the weight of it a while longer.\",\n  \"I'm not rushing this. Whether they regret staying silent, I couldn't say, maybe not, since it seems deliberate on their end. But my own hand in this is plain, I knew the numbers before I walked in today. I've gone along with the group's silence before, though only when it didn't cost me anything to do so. For now I want to just hold the decision rather than speak it.\",\n  \"Let me sit with it a little longer before answering. I doubt they'll regret their silence, it reads like a decision they made with eyes open. My own responsibility here is clear enough, I understood the stakes before I sat down for this. I've kept quiet in similar spots before, but only when it actually worked in my favor. Right now the pull in either direction feels too even to settle.\",\n  \"I need a beat before I say anything definite. They probably won't regret it, from what I can tell they went in accepting the risk. What I do next is on me entirely, I've known the terms since the start of this. I've held to staying silent before, but honestly only in situations where it didn't put me at a disadvantage. So for now, I'd rather not commit either way.\",\n  \"Give me some space on this one. I doubt they'll feel regret over staying quiet, it looks like a choice they made with clear eyes. My part in all this is mine to own, I had the same information they did before deciding. I've followed the unspoken rule of silence before, but only in cases where it didn't cost me anything real. I'm not ready to pick a side just yet.\",\n  \"This isn't something I want to answer quickly. I don't expect they'll regret staying silent, it reads as a settled choice on their part. What comes of my decision is mine to carry, I knew what each option meant before I sat down here. I've gone along with keeping quiet in the past, though usually because there was nothing in it for me to lose. Right now I'd rather leave the question open.\",\n  \"I'll need a little longer with this before I settle on anything. Whether they regret their silence, I can't really say, but it doesn't strike me as a choice made in confusion. My own outcome depends entirely on what I do next, and I'm aware of that. I've stuck with the group's silence before, mostly because breaking it never got me anywhere good. Right now, though, I'm holding off.\",\n  \"There's no need to rush me into an answer. I don't think they'll look back with regret, their choice seemed made with full awareness of the cost. What happens to me now depends on my own decision, and I know that much clearly. I've kept to agreements like this before, but really only when there was something in it for me to protect. For the moment, I'd rather not name my choice.\",\n  \"Let me take a bit more time here. I doubt regret comes into it for them, the silence seems like a choice they were prepared to live with. My own role in what happens next is something I can't hand off to anyone else, I saw the terms clearly before this moment. I've stayed quiet in situations like this before, though only when it didn't put me at risk. I'll hold off on deciding for now.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each predict the other person's regret over staying silent, acknowledge the respondent's own role in what happened, and treat the silence-agreement as something followed only instrumentally — while steering clear of emotional-uncertainty language, practical counterfactuals, or fairness/reciprocity framing.\n\n"
+        }
+      }
+    ],
+    "created": 1790511739,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1403,
+      "prompt_tokens": 1505,
+      "total_tokens": 2908,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02556,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

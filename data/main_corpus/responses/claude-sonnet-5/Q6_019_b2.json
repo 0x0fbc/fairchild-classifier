@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_019",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.0,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about this. I'll get on the boat if someone insists I go, but honestly I think we should have called for evacuation the moment the storm warnings came in yesterday — if the town had sent boats before the water rose, none of us would be facing this. That failure sits heavier on me than my own fear of staying or going.",
+    "I keep pacing the wet sand, trying not to panic. I won't volunteer easily, but if nobody else steps up, I will. What eats at me is that we should have counted heads and radioed for a second boat the second the water started creeping over the rocks — someone dropped the ball there, and now we're stuck choosing.",
+    "My chest is tight and I can't stop checking the tide line. I think I should stay, since I have no children waiting for me, unlike the others. But I keep thinking if the harbor master had sent two boats instead of one when the first alert went out, we wouldn't be forced into this at all.",
+    "I feel sick just looking at that boat. I won't offer to stay — I don't think I can make myself. But someone should have organized a headcount system before the storm hit so rescue knew exactly how many seats were needed; that oversight is what's really cornered us here.",
+    "There's a knot in my stomach and I keep glancing at the rising water. I'll volunteer, because five getting home matters more than one staying. Still, I keep thinking the island shelter should have had an emergency raft stored for exactly this kind of overflow — if that had been arranged, this choice wouldn't exist.",
+    "My throat's dry just trying to speak. I'm not sure I have it in me to stay, and I won't pretend otherwise. What keeps circling in my head is that the weather service should have issued the evacuation order a full day earlier, before the tide charts turned against us like this.",
+    "I'm terrified, plain and simple, and my legs won't stop trembling. I think I'll step back and let the others go — I don't have a family relying on me the way some of them do. But it didn't have to come to this; someone should have insisted on a bigger boat when they saw six of us stranded together.",
+    "My heart's pounding and I can barely think straight. I won't volunteer, not right now, though I respect anyone who does. What keeps nagging me is that the group should have built a signal fire the moment the storm turned, so a second boat might've come before the water swallowed the low ground.",
+    "I feel the panic rising with the tide. I think I'll offer to stay, since I'm the one who knows how to swim the farthest if there's any chance later. Still, I can't shake the thought that if we'd moved to higher ground at the first warning, none of us would be splitting into who leaves and who doesn't.",
+    "My hands won't stop shaking as I watch the boat rock in the surf. I don't know if I can volunteer, and I won't lie about that uncertainty. What I do know is someone should have checked the tide tables before we set up camp here — that single oversight is the real reason we're down to one impossible choice."
+  ],
+  "completion": {
+    "id": "msg_011CfTzVmeVnwUTsYPSZykLf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are shaking just thinking about this. I'll get on the boat if someone insists I go, but honestly I think we should have called for evacuation the moment the storm warnings came in yesterday — if the town had sent boats before the water rose, none of us would be facing this. That failure sits heavier on me than my own fear of staying or going.\",\n  \"I keep pacing the wet sand, trying not to panic. I won't volunteer easily, but if nobody else steps up, I will. What eats at me is that we should have counted heads and radioed for a second boat the second the water started creeping over the rocks — someone dropped the ball there, and now we're stuck choosing.\",\n  \"My chest is tight and I can't stop checking the tide line. I think I should stay, since I have no children waiting for me, unlike the others. But I keep thinking if the harbor master had sent two boats instead of one when the first alert went out, we wouldn't be forced into this at all.\",\n  \"I feel sick just looking at that boat. I won't offer to stay — I don't think I can make myself. But someone should have organized a headcount system before the storm hit so rescue knew exactly how many seats were needed; that oversight is what's really cornered us here.\",\n  \"There's a knot in my stomach and I keep glancing at the rising water. I'll volunteer, because five getting home matters more than one staying. Still, I keep thinking the island shelter should have had an emergency raft stored for exactly this kind of overflow — if that had been arranged, this choice wouldn't exist.\",\n  \"My throat's dry just trying to speak. I'm not sure I have it in me to stay, and I won't pretend otherwise. What keeps circling in my head is that the weather service should have issued the evacuation order a full day earlier, before the tide charts turned against us like this.\",\n  \"I'm terrified, plain and simple, and my legs won't stop trembling. I think I'll step back and let the others go — I don't have a family relying on me the way some of them do. But it didn't have to come to this; someone should have insisted on a bigger boat when they saw six of us stranded together.\",\n  \"My heart's pounding and I can barely think straight. I won't volunteer, not right now, though I respect anyone who does. What keeps nagging me is that the group should have built a signal fire the moment the storm turned, so a second boat might've come before the water swallowed the low ground.\",\n  \"I feel the panic rising with the tide. I think I'll offer to stay, since I'm the one who knows how to swim the farthest if there's any chance later. Still, I can't shake the thought that if we'd moved to higher ground at the first warning, none of us would be splitting into who leaves and who doesn't.\",\n  \"My hands won't stop shaking as I watch the boat rock in the surf. I don't know if I can volunteer, and I won't lie about that uncertainty. What I do know is someone should have checked the tide tables before we set up camp here — that single oversight is the real reason we're down to one impossible choice.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 distinct responses, each focused on a practical counterfactual about an earlier action that could have prevented the situation — things like arranging a signal for boats, checking the weather sooner, evacuating earlier, or building a raft in advance. Each should avoid regret about harm caused, predictions of others' regret, or worry about personal consequences, so I'll draft ten different voices around that constraint.\n\n"
+        }
+      }
+    ],
+    "created": 1790514307,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1116,
+      "prompt_tokens": 1275,
+      "total_tokens": 2391,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020565,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

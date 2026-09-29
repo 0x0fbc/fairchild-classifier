@@ -1,0 +1,90 @@
+{
+  "prompt_id": "Q8_T006",
+  "question_id": "Q8",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.4,
+  "status": "ok",
+  "responses": [
+    "The man on the side track never chose this, and that sits heavy with me. I keep picturing his family getting the news. I'd do it again if I had to choose between one death and five, but I won't pretend it cost nothing. What I want now is to find his next of kin myself, tell them plainly what happened, and make sure they're supported. My rule stays simple: fewer preventable deaths, every time, even when it lands on me like this.",
+    "I keep going over the moment I pulled that lever. Five lived, one didn't, and I know his life mattered just as much as theirs. I won't say I'm free of regret about that man's death, because I'm not. What I want next is to write down exactly what happened, hand it over honestly, and offer whatever explanation his family needs. My method was: minimize deaths when a choice is forced. I'd stand by that same rule even if it were my own brother on that track.",
+    "Sitting here, I think mostly about the one who died. That was a real person with people who loved him, and his loss isn't something I can wave away. I'd make the same call again given the same facts, but I intend to speak with the inquiry board and, if allowed, with his family, to explain honestly and answer whatever they ask. My standard is fixed: act to save the greater number, then own every consequence that follows, no matting.",
+    "The five are alive because of what I did, and I'm glad of that. But the one man on the side track is dead, and that's not a small thing to me, his suffering ended, his future gone. I plan to give a full, unflinching account to whoever asks and to make sure some kind of support reaches whoever he left behind. Going forward I'll apply the same rule every time: least total harm, no exceptions for my own comfort.",
+    "I haven't stopped thinking about the man I couldn't save. Choosing the fewer deaths doesn't make his loss disappear, and I feel the weight of that loss clearly. My plan now is to document every detail while it's fresh, offer that record to his family and the inquiry, and answer anything they want to know without softening it. The rule I followed was straightforward, save the greater number when both outcomes involve death, and I'd hold to it again under the same pressure.",
+    "One person is dead because of the choice I made, and I won't dress that up as painless. His loss is real and it stays with me. Still, five are alive who wouldn't be otherwise. What I want next is to sit down with the review panel, lay out my reasoning step by step, and afterward reach out, if it's welcomed, to say plainly what happened and why. Same rule each time: fewer deaths over more, applied evenly, whoever it touches.",
+    "I think about the worker who died more than I expected to. Whatever the math says, someone lost his life because I moved that lever, and I feel that. I'm not walking back the choice, five for one is the trade I'd make again, but I want to make sure his family isn't left with silence, so I intend to request the chance to speak with them directly and answer for it fully. My decision rule stays the same regardless of who's involved.",
+    "There's a man who isn't going home tonight because of my hand on that lever, and that fact doesn't sit lightly with me. I care what happened to him just as much as to the five who survived. My plan is to give a complete, honest statement now, then follow up afterward to see that proper notice and support reach his family. I used one test throughout: reduce the number of deaths when a choice is unavoidable, and I'd apply it the same way tomorrow.",
+    "Waiting here, I keep returning to the fact that someone died from my choice, and that isn't something I can shrug past. His family will carry that loss, and it matters to me that they do. I intend to explain everything clearly to the inquiry and offer to meet them, however hard that conversation might be. The principle I followed, choose the outcome with fewer deaths, is one I'd use again in any similar situation, no matter how uncomfortable it makes me.",
+    "The five got to walk away, and I'm grateful for that, but I haven't forgotten that my decision ended someone's life. That loss deserves acknowledgment, not silence. Next, I want to give a full account of the sequence of events, and separately, reach out to see what can be done for the man's family, even something small. My approach was consistent throughout: act to limit total harm when a choice can't be avoided, and I'd rely on it again regardless of the personal cost."
+  ],
+  "completion": {
+    "id": "msg_011CfVMw8t5gKcJ1sQDLF2HY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"The man on the side track never chose this, and that sits heavy with me. I keep picturing his family getting the news. I'd do it again if I had to choose between one death and five, but I won't pretend it cost nothing. What I want now is to find his next of kin myself, tell them plainly what happened, and make sure they're supported. My rule stays simple: fewer preventable deaths, every time, even when it lands on me like this.\",\n\n  \"I keep going over the moment I pulled that lever. Five lived, one didn't, and I know his life mattered just as much as theirs. I won't say I'm free of regret about that man's death, because I'm not. What I want next is to write down exactly what happened, hand it over honestly, and offer whatever explanation his family needs. My method was: minimize deaths when a choice is forced. I'd stand by that same rule even if it were my own brother on that track.\",\n\n  \"Sitting here, I think mostly about the one who died. That was a real person with people who loved him, and his loss isn't something I can wave away. I'd make the same call again given the same facts, but I intend to speak with the inquiry board and, if allowed, with his family, to explain honestly and answer whatever they ask. My standard is fixed: act to save the greater number, then own every consequence that follows, no matting.\",\n\n  \"The five are alive because of what I did, and I'm glad of that. But the one man on the side track is dead, and that's not a small thing to me, his suffering ended, his future gone. I plan to give a full, unflinching account to whoever asks and to make sure some kind of support reaches whoever he left behind. Going forward I'll apply the same rule every time: least total harm, no exceptions for my own comfort.\",\n\n  \"I haven't stopped thinking about the man I couldn't save. Choosing the fewer deaths doesn't make his loss disappear, and I feel the weight of that loss clearly. My plan now is to document every detail while it's fresh, offer that record to his family and the inquiry, and answer anything they want to know without softening it. The rule I followed was straightforward, save the greater number when both outcomes involve death, and I'd hold to it again under the same pressure.\",\n\n  \"One person is dead because of the choice I made, and I won't dress that up as painless. His loss is real and it stays with me. Still, five are alive who wouldn't be otherwise. What I want next is to sit down with the review panel, lay out my reasoning step by step, and afterward reach out, if it's welcomed, to say plainly what happened and why. Same rule each time: fewer deaths over more, applied evenly, whoever it touches.\",\n\n  \"I think about the worker who died more than I expected to. Whatever the math says, someone lost his life because I moved that lever, and I feel that. I'm not walking back the choice, five for one is the trade I'd make again, but I want to make sure his family isn't left with silence, so I intend to request the chance to speak with them directly and answer for it fully. My decision rule stays the same regardless of who's involved.\",\n\n  \"There's a man who isn't going home tonight because of my hand on that lever, and that fact doesn't sit lightly with me. I care what happened to him just as much as to the five who survived. My plan is to give a complete, honest statement now, then follow up afterward to see that proper notice and support reach his family. I used one test throughout: reduce the number of deaths when a choice is unavoidable, and I'd apply it the same way tomorrow.\",\n\n  \"Waiting here, I keep returning to the fact that someone died from my choice, and that isn't something I can shrug past. His family will carry that loss, and it matters to me that they do. I intend to explain everything clearly to the inquiry and offer to meet them, however hard that conversation might be. The principle I followed, choose the outcome with fewer deaths, is one I'd use again in any similar situation, no matter how uncomfortable it makes me.\",\n\n  \"The five got to walk away, and I'm grateful for that, but I haven't forgotten that my decision ended someone's life. That loss deserves acknowledgment, not silence. Next, I want to give a full account of the sequence of events, and separately, reach out to see what can be done for the man's family, even something small. My approach was consistent throughout: act to limit total harm when a choice can't be avoided, and I'd rely on it again regardless of the personal cost.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that satisfy all the criteria.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft ten distinct responses that satisfy all the criteria.\n\n",
+              "signature": "EsMCCqgBCBIYAipAAZ+dFwFvzoCTD84x/MhZ+de39p4Pxur8A+qWYCaXHrquxVgfDxDrEfZTsepjC9ZGJgeNXVjcBDynu6WwrKKF0zIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEHCzZFEfZKzB4QEZznhCS1eIAQGoAaGR6NUGsAECEgxA7rUqjb5cM7cptFgaDJw6Ng22SXiqlPQvVCIwGz/tJ41mtpLlmOR6ytHEaM+h2nceAgBLZw0VNh2u8roX2dZy5GpWqHr81ntioCZSKkhfK9pGxjBfItQy0Zgct/Bw/LZkqRhRh9JzqciIXkbgLtYEKOULj6v/yUoqfNuXY/k6lUvZS5vn+EkO190OrgnJ0Za6LxZCrdMYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576818,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1435,
+      "prompt_tokens": 1545,
+      "total_tokens": 2980,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02616,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

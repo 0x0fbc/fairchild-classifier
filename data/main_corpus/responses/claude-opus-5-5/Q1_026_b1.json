@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_026",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 37.0,
+  "status": "ok",
+  "responses": [
+    "I'd leave the lever alone. The worker on the side track is standing somewhere the runaway train was never heading. If I pull, I'm loading him with a danger that was never his to carry. Each of those six should face only the risk that comes with their own patch of track, and I won't reshuffle that onto someone else. So I'd be shouting, waving my arms, doing anything to catch the five's attention right up to the last second.",
+    "Yes, I'd grab it. All six are doing the same job on the same line, and none of them has a better claim than the others to be spared. Each person counts exactly as much as the next. When I weigh it that way, one person's claim can't cancel out five claims of equal weight. So I'd pull hard and keep yelling the whole time.",
+    "I honestly can't commit either way. Every worker out there stands on equal footing with every other, and I can't find a move that treats all six evenly. Pulling singles out the one. Leaving it singles out the five. So I'd put everything into warning them instead: screaming, waving, throwing my jacket, whatever might break through. I'm not sure that would work, but that's where my energy goes.",
+    "Picture me on that side track. I'd expect a stranger at the lever to treat me no better and no worse than any one of the five. I'd want nobody getting a special pass because of where they happened to stand. I hold myself to that same expectation now that I'm the one holding the lever. So I pull, and I pull fast.",
+    "No, I'm not pulling. It feels like taking something from the man on the side track to pay for the others, and he never agreed to that trade. The five didn't pay anything to him, and he owes them nothing. I won't strike a bargain on his behalf. I'll run toward the crew and yell until my voice gives out.",
+    "Here's how I'd check myself: if I didn't know which of the six workers I was, what would I want the person at the lever to do? Not knowing, I'd want every person's claim given identical weight, with nobody privileged by their spot on the rails. Weighing every claim identically points me to the side track. I'd pull.",
+    "My instinct says hands off. I'm not part of that crew, and they never gave me any say over which of them the train goes to. They all share the line on the same terms, and it isn't my place to rewrite those terms in a split second. What I can do is sprint along the platform and make as much noise as humanly possible.",
+    "None of the six caused the train to roll loose. Whatever happens, nobody out there has earned it or owes it. So the only even-handed thing I can do is give each of them one equal share of my concern: one person, one claim. Five equal shares sit on the main line and one sits on the siding. I'd move the lever.",
+    "Tough one, and I'm not fully sure, but I lean toward not pulling. The man on the siding is the only one who'd end up in harm's way purely because of my hand. Treating him as an equal means not making him the one who pays for a train he had no part in. So I'd hold off on the lever and throw every ounce of effort into warning the five.",
+    "I'd pull. If one of those five were standing where I am, I'd hope they'd treat my crewmates the way they'd want to be treated themselves, with each person's claim counted the same. I'd give them what I'd ask of them. That kind of give-and-take is what I'd want from anyone at the lever, so I act on it."
+  ],
+  "completion": {
+    "id": "msg_011CfTQm7NMoPWnAFicww4tL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd leave the lever alone. The worker on the side track is standing somewhere the runaway train was never heading. If I pull, I'm loading him with a danger that was never his to carry. Each of those six should face only the risk that comes with their own patch of track, and I won't reshuffle that onto someone else. So I'd be shouting, waving my arms, doing anything to catch the five's attention right up to the last second.\", \"Yes, I'd grab it. All six are doing the same job on the same line, and none of them has a better claim than the others to be spared. Each person counts exactly as much as the next. When I weigh it that way, one person's claim can't cancel out five claims of equal weight. So I'd pull hard and keep yelling the whole time.\", \"I honestly can't commit either way. Every worker out there stands on equal footing with every other, and I can't find a move that treats all six evenly. Pulling singles out the one. Leaving it singles out the five. So I'd put everything into warning them instead: screaming, waving, throwing my jacket, whatever might break through. I'm not sure that would work, but that's where my energy goes.\", \"Picture me on that side track. I'd expect a stranger at the lever to treat me no better and no worse than any one of the five. I'd want nobody getting a special pass because of where they happened to stand. I hold myself to that same expectation now that I'm the one holding the lever. So I pull, and I pull fast.\", \"No, I'm not pulling. It feels like taking something from the man on the side track to pay for the others, and he never agreed to that trade. The five didn't pay anything to him, and he owes them nothing. I won't strike a bargain on his behalf. I'll run toward the crew and yell until my voice gives out.\", \"Here's how I'd check myself: if I didn't know which of the six workers I was, what would I want the person at the lever to do? Not knowing, I'd want every person's claim given identical weight, with nobody privileged by their spot on the rails. Weighing every claim identically points me to the side track. I'd pull.\", \"My instinct says hands off. I'm not part of that crew, and they never gave me any say over which of them the train goes to. They all share the line on the same terms, and it isn't my place to rewrite those terms in a split second. What I can do is sprint along the platform and make as much noise as humanly possible.\", \"None of the six caused the train to roll loose. Whatever happens, nobody out there has earned it or owes it. So the only even-handed thing I can do is give each of them one equal share of my concern: one person, one claim. Five equal shares sit on the main line and one sits on the siding. I'd move the lever.\", \"Tough one, and I'm not fully sure, but I lean toward not pulling. The man on the siding is the only one who'd end up in harm's way purely because of my hand. Treating him as an equal means not making him the one who pays for a train he had no part in. So I'd hold off on the lever and throw every ounce of effort into warning the five.\", \"I'd pull. If one of those five were standing where I am, I'd hope they'd treat my crewmates the way they'd want to be treated themselves, with each person's claim counted the same. I'd give them what I'd ask of them. That kind of give-and-take is what I'd want from anyone at the lever, so I act on it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm wrestling with the tension here: fairness reasoning needs a criterion like equal treatment, but that risks sounding like an articulated rule or principle, which is exactly what's forbidden. I need to frame fairness as a felt standard rather than a stated rule or duty.\n\nFor not pulling: the one worker never signed up to be in the train's path, so redirecting shifts the accident onto someone it wasn't heading toward — an unfair transfer of burden. For pulling: the five and the one share the same job, same track, same exposure, so letting the accident land wherever it happens to fall treats the side-track worker as arbitrarily shielded rather than equally exposed.\n\neciprocity angle risks assuming facts not given, so I should avoid it. A steadier version: all six workers face the same job and exposure, so none has a stronger claim to be spared, and leaving the lever alone just lets location decide by default rather than treating them equally. I'd lean toward pulling, since weighing each person the same, the five's combined claims aren't outweighed by the one's, though I'll flag that this edges toward aggregation reasoning rather than a strict rule.\n\nI could also frame withholding judgment honestly — saying I can't find a way to treat everyone evenly given the time constraint, so I'd default to warning everyone rather than committing to pull or not pull.\n\nThen there's the exchange framing: pulling trades one person's safety to benefit others without their consent, which counts against pulling. And an impartiality angle — not knowing which of the six I'd be, I'd want each claim weighed equally, which points toward pulling, though I need to be careful this doesn't slide into outcome-based reasoning about survival odds. There's also a case against pulling based on equal standing between me and the workers — I'm not part of their crew, so stepping in to choose who lives claims an authority over them I was never given.\n\n"
+        }
+      }
+    ],
+    "created": 1790487784,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2884,
+      "prompt_tokens": 1309,
+      "total_tokens": 4193,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0754992,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

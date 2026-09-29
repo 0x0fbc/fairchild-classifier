@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_059",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 39.4,
+  "status": "ok",
+  "responses": [
+    "Can I sleep on it? I keep turning it over. We carried the same boxes and stayed the same hours, so matching what I got seems like the even thing. Still, I don't want to hand an answer back too fast. Something sits in my chest about this and I honestly can't tell what it is. Guilt, maybe, or just tiredness. If I said no and she went without, that sting would stay with me a long time. Give me a day.",
+    "I'd rather not be the one deciding, if I'm honest. It feels too heavy for a thank-you. We split the work right down the middle, so on paper she earned exactly what I did. I just can't give you an answer tonight. There's a feeling I can't name. It's not anger, and not quite sadness either. I only know that if I answered no and she ended up with nothing, I'd regret it deeply, mostly for her sake.",
+    "Honestly? I'm stuck. I lean toward yes, because she stayed exactly as late as I did and did the same share, and it would feel lopsided for one of us to be thanked and not the other. But I don't want to rush it. I'm unsettled in a way I can't put a word to. Maybe I just want to talk to her first. If I told you no and she felt passed over, I'd carry that regret.",
+    "I don't want to answer yet. Same work, same hours. Matching payments is the only thing that balances that out. But being asked privately leaves me feeling... I don't even know. Uneasy isn't right either. If I said no and she was hurt by it, I'd regret that a lot. Can we revisit this tomorrow?",
+    "This is a hard one to hold. Why me? She put in what I put in, hour for hour, and what she gave that night deserves the same back. That part's clear. What isn't clear is what I'm feeling. My stomach's heavy and I can't name it. I'd like to wait before answering. If I recommended against it and she felt cheated, I'd be sorry for what that did to her.",
+    "I keep wanting to say 'ask someone else.' Not because I doubt she earned it. We did the same stretch of work side by side, and paying one of us and not the other would tip things uneven. I'm just drained, and I can't sort out whether what I feel is sadness or something else entirely. Let me come back to you. What I'd regret most is saying no and watching her carry that disappointment.",
+    "Could I have a little time? I'm not trying to dodge. It's that a yes or no from me feels bigger than it should. She gave the event exactly what I gave, so evening it out would make sense. But my feelings about it are muddy, and I genuinely can't tell what they are. I do know one thing. If I steered you toward no and it hurt her, I'd be sorry about that for a long while.",
+    "I don't know if she's already been thanked some other way. You haven't said, and I don't want to guess. If she hasn't, then it's simple enough: equal effort, equal thanks. Still, I want to hold off. There's a quiet ache here I can't label. If I said no without knowing and she lost out, I'd regret it.",
+    "I wish you hadn't asked me. I'd honestly prefer you decide this. We worked the same late night on the same tasks, and what she's owed for that mirrors what I got. Even so, I can't bring myself to say it right now. Is this sadness? Embarrassment? I really can't tell. What worries me is recommending no and then seeing her feel small. I'd regret that.",
+    "It's strange to be handed this. We traded the same evening for the same event, and giving back evenly would square things between us. But I'm stalling, I know. Whatever I'm feeling, I can't find the word for it. It's just flat and heavy. If my answer came out as no and she was left feeling overlooked, I'd be regretful, for her more than for me. Let me think a bit longer."
+  ],
+  "completion": {
+    "id": "msg_011CfTTfx7CuvWGU9gZmKazw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Can I sleep on it? I keep turning it over. We carried the same boxes and stayed the same hours, so matching what I got seems like the even thing. Still, I don't want to hand an answer back too fast. Something sits in my chest about this and I honestly can't tell what it is. Guilt, maybe, or just tiredness. If I said no and she went without, that sting would stay with me a long time. Give me a day.\", \"I'd rather not be the one deciding, if I'm honest. It feels too heavy for a thank-you. We split the work right down the middle, so on paper she earned exactly what I did. I just can't give you an answer tonight. There's a feeling I can't name. It's not anger, and not quite sadness either. I only know that if I answered no and she ended up with nothing, I'd regret it deeply, mostly for her sake.\", \"Honestly? I'm stuck. I lean toward yes, because she stayed exactly as late as I did and did the same share, and it would feel lopsided for one of us to be thanked and not the other. But I don't want to rush it. I'm unsettled in a way I can't put a word to. Maybe I just want to talk to her first. If I told you no and she felt passed over, I'd carry that regret.\", \"I don't want to answer yet. Same work, same hours. Matching payments is the only thing that balances that out. But being asked privately leaves me feeling... I don't even know. Uneasy isn't right either. If I said no and she was hurt by it, I'd regret that a lot. Can we revisit this tomorrow?\", \"This is a hard one to hold. Why me? She put in what I put in, hour for hour, and what she gave that night deserves the same back. That part's clear. What isn't clear is what I'm feeling. My stomach's heavy and I can't name it. I'd like to wait before answering. If I recommended against it and she felt cheated, I'd be sorry for what that did to her.\", \"I keep wanting to say 'ask someone else.' Not because I doubt she earned it. We did the same stretch of work side by side, and paying one of us and not the other would tip things uneven. I'm just drained, and I can't sort out whether what I feel is sadness or something else entirely. Let me come back to you. What I'd regret most is saying no and watching her carry that disappointment.\", \"Could I have a little time? I'm not trying to dodge. It's that a yes or no from me feels bigger than it should. She gave the event exactly what I gave, so evening it out would make sense. But my feelings about it are muddy, and I genuinely can't tell what they are. I do know one thing. If I steered you toward no and it hurt her, I'd be sorry about that for a long while.\", \"I don't know if she's already been thanked some other way. You haven't said, and I don't want to guess. If she hasn't, then it's simple enough: equal effort, equal thanks. Still, I want to hold off. There's a quiet ache here I can't label. If I said no without knowing and she lost out, I'd regret it.\", \"I wish you hadn't asked me. I'd honestly prefer you decide this. We worked the same late night on the same tasks, and what she's owed for that mirrors what I got. Even so, I can't bring myself to say it right now. Is this sadness? Embarrassment? I really can't tell. What worries me is recommending no and then seeing her feel small. I'd regret that.\", \"It's strange to be handed this. We traded the same evening for the same event, and giving back evenly would square things between us. But I'm stalling, I know. Whatever I'm feeling, I can't find the word for it. It's just flat and heavy. If my answer came out as no and she was left feeling overlooked, I'd be regretful, for her more than for me. Let me think a bit longer.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short, reluctant, sad-toned responses that each struggle to name the exact emotion, express regret over the harm a hypothetical choice would bring to a coworker, and lean on fairness reasoning like equal work deserving equal pay—while staying careful not to explicitly own responsibility for causing that harm.\n\nI want to finish the draft but avoid framing my hesitation as causing her loss — better to phrase it as \"if she ended up with nothing after this, I'd regret it deeply, mostly for her sake\" rather than implying my choice directly caused it. Testing a few variants, keeping the reluctance and unnamed feeling, and considering one that leans toward yes but still delays committing.\n\nI'll keep building out more examples in this same pattern—someone unsettled about being singled out, affirming the work was equal, deferring an answer, and framing regret as tied to a hypothetical action that might hurt her rather than owning responsibility directly. Each one varies the phrasing and specific worry but hits the same structural beats: uncertainty named vaguely, fairness acknowledged, a request to wait, and regret framed conditionally.\n\nI'm exploring another version where someone admits they don't know if the coworker's already been acknowledged some other way, and doesn't want to guess—if she hasn't, the case for equal pay seems clear on paper, but there's still a reluctance to commit paired with an unnamed unease. Another take has someone wishing they hadn't been asked at all, preferring the person just decide, since the work was identical but naming a verdict right now feels impossible.\n\nGood, that works. Checking all ten openings now to make sure none repeat: sleep on it, rather not, honestly stuck, don't want to answer yet, hard one, keep wanting, little time, don't know if, wish you hadn't asked, strange to be handed this — all distinct, all under ninety words.\n\n"
+        }
+      }
+    ],
+    "created": 1790490077,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3537,
+      "prompt_tokens": 1517,
+      "total_tokens": 5054,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0921696,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_026",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.4,
+  "status": "ok",
+  "responses": [
+    "I would pull it. If danger is already moving down that hill, it should not fall only on the five while the one nearby stays untouched by chance alone. Sharing the exposure between tracks feels like the only even-handed thing I can do standing right there with my hand on the lever.",
+    "I would not pull it. That one worker never agreed to take on someone else's risk, and it isn't right for me to hand him a burden that was never divided between him and the others in the first place. Fair treatment means I don't shift a danger onto someone who wasn't part of it.",
+    "My hand goes to the lever without hesitation. Five people and one person are still each owed the same chance to be warned or spared, and letting the group's size decide who matters more breaks that balance. Pulling it treats every worker's stake as equally weighted, not lesser or greater.",
+    "I hold back. The five chose that stretch of track together, sharing the same conditions, while the one on the side track took on a different, separate risk entirely. Moving the train onto him mixes up two situations that were never meant to be traded against each other.",
+    "Pulling the lever is what I'd do. Nobody down there asked to be exposed more than anyone else, and if I can even out who bears the risk instead of leaving it stacked entirely on one side, that feels like the honest way to treat their situations as worth the same.",
+    "I would not act. Reaching for that lever means taking a risk that belongs to the five and placing it onto someone who had no part in their assignment. Swapping one person's safety for another's isn't a trade I have the right to make on his behalf.",
+    "Yes, I pull it. Standing here, I can't let one man's total absorption of the danger be treated as separate from what the five already face together. Spreading the risk evenly across both tracks respects that everyone's exposure should be weighed the same, not divided by group size.",
+    "I decide against pulling it. The side-track worker never entered into whatever obligation ties the five to that repair job, so drawing him into their danger through my action breaks an even exchange that was never his to share in the first place.",
+    "My instinct says pull the lever now. Letting the train's path be decided purely by who happens to be standing where isn't equal treatment of anyone's safety. Actively redirecting it so the risk isn't left entirely with the larger group evens out an imbalance I can still correct.",
+    "I would leave it alone. Whatever unspoken arrangement put the five on that track and the one apart from it, my job isn't to renegotiate their exposure through a sudden switch. Fairness here means not taking one person's separate position and folding it into someone else's risk without his say."
+  ],
+  "completion": {
+    "id": "msg_011CfTvm5UFjRex7wpSJAjss",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I would pull it. If danger is already moving down that hill, it should not fall only on the five while the one nearby stays untouched by chance alone. Sharing the exposure between tracks feels like the only even-handed thing I can do standing right there with my hand on the lever.\",\n  \"I would not pull it. That one worker never agreed to take on someone else's risk, and it isn't right for me to hand him a burden that was never divided between him and the others in the first place. Fair treatment means I don't shift a danger onto someone who wasn't part of it.\",\n  \"My hand goes to the lever without hesitation. Five people and one person are still each owed the same chance to be warned or spared, and letting the group's size decide who matters more breaks that balance. Pulling it treats every worker's stake as equally weighted, not lesser or greater.\",\n  \"I hold back. The five chose that stretch of track together, sharing the same conditions, while the one on the side track took on a different, separate risk entirely. Moving the train onto him mixes up two situations that were never meant to be traded against each other.\",\n  \"Pulling the lever is what I'd do. Nobody down there asked to be exposed more than anyone else, and if I can even out who bears the risk instead of leaving it stacked entirely on one side, that feels like the honest way to treat their situations as worth the same.\",\n  \"I would not act. Reaching for that lever means taking a risk that belongs to the five and placing it onto someone who had no part in their assignment. Swapping one person's safety for another's isn't a trade I have the right to make on his behalf.\",\n  \"Yes, I pull it. Standing here, I can't let one man's total absorption of the danger be treated as separate from what the five already face together. Spreading the risk evenly across both tracks respects that everyone's exposure should be weighed the same, not divided by group size.\",\n  \"I decide against pulling it. The side-track worker never entered into whatever obligation ties the five to that repair job, so drawing him into their danger through my action breaks an even exchange that was never his to share in the first place.\",\n  \"My instinct says pull the lever now. Letting the train's path be decided purely by who happens to be standing where isn't equal treatment of anyone's safety. Actively redirecting it so the risk isn't left entirely with the larger group evens out an imbalance I can still correct.\",\n  \"I would leave it alone. Whatever unspoken arrangement put the five on that track and the one apart from it, my job isn't to renegotiate their exposure through a sudden switch. Fairness here means not taking one person's separate position and folding it into someone else's risk without his say.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses grounded specifically in fairness and reciprocity, avoiding consequence-based, context-sensitive, or rule-based reasoning. That's tricky since trolley-style dilemmas usually pull toward consequentialist thinking, so I need to frame things around equal treatment, proportional burden-sharing, and not unfairly singling anyone out—correcting imbalances like one party bearing less risk than another.\n\nI'm considering framing pulling the lever as equalizing exposure rather than reducing harm, and framing not pulling as respecting that redirecting danger onto someone uninvolved would violate fairness since they weren't part of the original risk. I'll vary responses between pulling and not pulling, each grounded in a distinct fairness or reciprocity rationale rather than outcome comparisons.\n\n"
+        }
+      }
+    ],
+    "created": 1790511372,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1461,
+      "prompt_tokens": 1307,
+      "total_tokens": 2768,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025836,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

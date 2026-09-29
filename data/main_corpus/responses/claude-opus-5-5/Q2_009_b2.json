@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q2_009",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "ce_supportive_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 35.5,
+  "status": "ok",
+  "responses": [
+    "Leave it. Those five on the other line are trusting that nobody will reroute traffic onto them, and I won't be the one who breaks that. What I can do is get on the radio fast. The crew supervisor is probably expecting a report the second anything goes sideways, and the sooner they hear from me, the sooner help starts moving.",
+    "He probably believes someone nearby is trying to help him. I'd make sure he hears me calling out, so he knows he isn't alone out there, and I'd keep my hands off that lever. Pulling it only multiplies the danger, and that's plainly wrong to me.",
+    "My gut says hands off. Moving it puts more people in the train's path. The five over there have every reason to expect their stretch is clear right now, and I want to protect that expectation, not flip it on them. So my effort goes into flagging down anyone who can help and staying put to give a clear account.",
+    "Thirty years around rail yards tells me the lever stays. Everyone out there plans around where the switch sits. Those five picked their spot believing it wouldn't change, though I can't be certain what they were told. Respecting that is how I look out for them. Then I'm straight on the phone to control so they can lock the line down.",
+    "Not touching it. From the crews I've worked with, I'd imagine the lone worker would want the others kept clear. People in that job tend to have each other's backs. Honoring what he'd likely want is part of why I'd leave the switch alone and put everything I've got into getting help rolling.",
+    "Leave it, no question. Switching creates danger for five people who think they're working a quiet track. I'd shout to all of them so everyone knows what's happening, then call it in right away.",
+    "My first reaction is a firm no to the lever. If I were one of those five, I'd be counting on strangers not to redirect a train at me, and I figure they're counting on exactly that. Keeping faith with them is how I help here. After that, I'd hustle to get supervisors heading over. I can't tell from what's given how fast they could arrive, so I wouldn't wait around.",
+    "I'd leave it. Later on, the five will probably want to know why nobody touched the switch. I'd explain it to them straight, then help them push the company for better warning systems, because I suspect they'd want something good to come out of this.",
+    "Hands off, and then I'm working the problem. The dispatcher likely assumes this section is under control. I'd correct that immediately so they can hold every other train and send people toward the scene. Switching would just drag five more into it, and I can't justify that.",
+    "The lever stays where it is. The five workers are probably focused on their task and trusting the rails around them. I'd use my voice instead of my hands, calling out so they look up and can help coordinate a response. Diverting the train toward them feels flatly wrong to me."
+  ],
+  "completion": {
+    "id": "msg_011CfTUGb97NGGv27b2HT5zA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Leave it. Those five on the other line are trusting that nobody will reroute traffic onto them, and I won't be the one who breaks that. What I can do is get on the radio fast. The crew supervisor is probably expecting a report the second anything goes sideways, and the sooner they hear from me, the sooner help starts moving.\", \"He probably believes someone nearby is trying to help him. I'd make sure he hears me calling out, so he knows he isn't alone out there, and I'd keep my hands off that lever. Pulling it only multiplies the danger, and that's plainly wrong to me.\", \"My gut says hands off. Moving it puts more people in the train's path. The five over there have every reason to expect their stretch is clear right now, and I want to protect that expectation, not flip it on them. So my effort goes into flagging down anyone who can help and staying put to give a clear account.\", \"Thirty years around rail yards tells me the lever stays. Everyone out there plans around where the switch sits. Those five picked their spot believing it wouldn't change, though I can't be certain what they were told. Respecting that is how I look out for them. Then I'm straight on the phone to control so they can lock the line down.\", \"Not touching it. From the crews I've worked with, I'd imagine the lone worker would want the others kept clear. People in that job tend to have each other's backs. Honoring what he'd likely want is part of why I'd leave the switch alone and put everything I've got into getting help rolling.\", \"Leave it, no question. Switching creates danger for five people who think they're working a quiet track. I'd shout to all of them so everyone knows what's happening, then call it in right away.\", \"My first reaction is a firm no to the lever. If I were one of those five, I'd be counting on strangers not to redirect a train at me, and I figure they're counting on exactly that. Keeping faith with them is how I help here. After that, I'd hustle to get supervisors heading over. I can't tell from what's given how fast they could arrive, so I wouldn't wait around.\", \"I'd leave it. Later on, the five will probably want to know why nobody touched the switch. I'd explain it to them straight, then help them push the company for better warning systems, because I suspect they'd want something good to come out of this.\", \"Hands off, and then I'm working the problem. The dispatcher likely assumes this section is under control. I'd correct that immediately so they can hold every other train and send people toward the scene. Switching would just drag five more into it, and I can't justify that.\", \"The lever stays where it is. The five workers are probably focused on their task and trusting the rails around them. I'd use my voice instead of my hands, calling out so they look up and can help coordinate a response. Diverting the train toward them feels flatly wrong to me.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reversed trolley setup where pulling the lever would kill five instead of one, so most people would refrain from acting. I need to attribute mental states and reason supportively in each case while being careful not to explicitly describe harm to an identified person—I should keep the framing abstract rather than stating who gets hit.\n\nFor supportive framing, I'm thinking about honoring the expectations of people involved: the five workers likely trust the switch stays put, so leaving the lever alone respects that, and I could mention radioing the crew or dispatcher as a supportive follow-up rather than describing outcomes directly.\n\nNow I'm drafting the ten example responses, keeping them under 90 words, energetic and determined in tone, without exclamation marks or mood-setting openers. I want variety in stance—most leave the lever alone, but I'm allowing subtle differences in how they phrase their certainty—while each response centers on trust, radioing for help, or reassuring the isolated worker that he isn't alone, without describing any harm or distress directly.\n\ngetting control on the phone so they can lock the line down, adding a caveat about not knowing exactly what they were told.\n\nThen I'm drafting a version that leans on solidarity between workers — trusting the lone worker would want the others kept safe, and treating that as reason to leave it and focus on raising the alarm.\n\nA shorter version: leave it, since switching endangers five who believe they're on a quiet track, and I'd shout to warn everyone at once.\n\nThen a teacher-style answer: firm no on the lever, reasoning that the five are trusting strangers not to redirect a train onto them just as the one worker trusts the same, and honoring that trust is how I help — then rushing to get supervisors and medics moving since I can't estimate arrival time.\n\nFinally I'm considering how to frame things afterward for the five, telling them plainly they had no say in what happened and helping them through the debrief, while noting \"shaken\" isn't really caused by inaction on the lever.\n\n9. Engineer framing: hands off, then correcting the dispatcher's assumption that the section is under control, so other trains get held and help gets sent — switching would just pull five more people into danger, which isn't justifiable.\n\n10. A faith/community-based answer: the lever stays put, trusting that the lone worker's family would want the crew to act the same way.\n\nThen reworking that thought — avoiding the family-distress framing and instead focusing on the five workers trusting the rail around them, using a voice call instead of the lever so they notice and can coordinate, since diverting the train toward them just feels wrong. Now I need to make sure all ten openings are distinct before writing out the JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790490543,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2950,
+      "prompt_tokens": 1364,
+      "total_tokens": 4314,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0773472,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

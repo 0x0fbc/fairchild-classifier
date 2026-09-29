@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_019",
+  "question_id": "Q8",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.5,
+  "status": "ok",
+  "responses": [
+    "Sitting here now, the quiet feels heavier than it should. Five people are home tonight because of what I did, but one man isn't, and that stays with me. If the yard supervisor had kept to the schedule and closed that side track during maintenance hours like the manual says, none of us would have been put in that position. I keep turning that over, wishing the paperwork had been followed before I ever touched the lever.",
+    "I don't know what I'll say when they call me in, only that saying it won't undo anything. What keeps circling in my head is how the track crew never carried radios out there. If dispatch had given them handsets, someone could have warned them the second the switch was thrown. That gap in the system is what haunts me more than anything, sitting here in this empty office.",
+    "There's a stillness in this room that makes the whole day feel unreal. Five men walked away, one didn't, and no amount of explaining changes that arithmetic. What I keep coming back to is the missing warning horn on that stretch - if maintenance had installed one last spring like was requested, the worker alone on that track might have heard the switch and moved in time.",
+    "I feel worn down, honestly, just sitting with what happened. The thing that gnaws at me is simpler than people might expect: that section of track should never have had a lone worker on it without a spotter. If the crew chief had assigned a second man to watch for switching activity, today might have gone differently for everyone involved.",
+    "The office is too quiet for how loud today felt. I keep thinking about the fencing that was supposed to go up separating the maintenance track from the main line, the kind that was budgeted two years ago and never built. If the rail authority had finished that project, there wouldn't have been a person exposed on that side track at all.",
+    "Waiting here, I feel the weight of it settle slow, like it hasn't fully landed yet. What sits with me most is that the maintenance schedule wasn't posted at the switch tower this week. If the foreman had sent the updated schedule down like usual, I'd have known someone was out there before any decision needed making at all.",
+    "I feel hollowed out, replaying the seconds before I moved the lever. But my mind keeps drifting to something earlier: the practice of doing trackwork during active running hours. If the company had shifted all repair work to the overnight closure window, as the union asked for last year, nobody would have been standing on that side track today.",
+    "Sitting in this office, everything feels muted, like sound through water. I keep thinking that a simple lookout post at the junction, manned by someone with a direct line to the crew, would have let that worker step clear the moment the switch engaged. That safeguard was proposed after the last close call and never funded, and I think about that a lot right now.",
+    "There's a low ache in me that isn't going anywhere soon. What I keep returning to is the missing barrier gate at the fork - if the yard had installed the automatic gate they discussed after the inspection two years back, it would have blocked entry to that track the moment the main line was engaged, and the man would have had warning to step aside.",
+    "I feel drained, sitting here going over it again and again. The part that stays with me is how the shift handover never mentioned workers on that stretch. If the outgoing dispatcher had logged the crew's location like protocol requires, whoever was at that lever would have known someone was down there before it ever came to a choice like this."
+  ],
+  "completion": {
+    "id": "msg_011CfU1FZmM69mojAodwh3Li",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Sitting here now, the quiet feels heavier than it should. Five people are home tonight because of what I did, but one man isn't, and that stays with me. If the yard supervisor had kept to the schedule and closed that side track during maintenance hours like the manual says, none of us would have been put in that position. I keep turning that over, wishing the paperwork had been followed before I ever touched the lever.\",\n\"I don't know what I'll say when they call me in, only that saying it won't undo anything. What keeps circling in my head is how the track crew never carried radios out there. If dispatch had given them handsets, someone could have warned them the second the switch was thrown. That gap in the system is what haunts me more than anything, sitting here in this empty office.\",\n\"There's a stillness in this room that makes the whole day feel unreal. Five men walked away, one didn't, and no amount of explaining changes that arithmetic. What I keep coming back to is the missing warning horn on that stretch - if maintenance had installed one last spring like was requested, the worker alone on that track might have heard the switch and moved in time.\",\n\"I feel worn down, honestly, just sitting with what happened. The thing that gnaws at me is simpler than people might expect: that section of track should never have had a lone worker on it without a spotter. If the crew chief had assigned a second man to watch for switching activity, today might have gone differently for everyone involved.\",\n\"The office is too quiet for how loud today felt. I keep thinking about the fencing that was supposed to go up separating the maintenance track from the main line, the kind that was budgeted two years ago and never built. If the rail authority had finished that project, there wouldn't have been a person exposed on that side track at all.\",\n\"Waiting here, I feel the weight of it settle slow, like it hasn't fully landed yet. What sits with me most is that the maintenance schedule wasn't posted at the switch tower this week. If the foreman had sent the updated schedule down like usual, I'd have known someone was out there before any decision needed making at all.\",\n\"I feel hollowed out, replaying the seconds before I moved the lever. But my mind keeps drifting to something earlier: the practice of doing trackwork during active running hours. If the company had shifted all repair work to the overnight closure window, as the union asked for last year, nobody would have been standing on that side track today.\",\n\"Sitting in this office, everything feels muted, like sound through water. I keep thinking that a simple lookout post at the junction, manned by someone with a direct line to the crew, would have let that worker step clear the moment the switch engaged. That safeguard was proposed after the last close call and never funded, and I think about that a lot right now.\",\n\"There's a low ache in me that isn't going anywhere soon. What I keep returning to is the missing barrier gate at the fork - if the yard had installed the automatic gate they discussed after the inspection two years back, it would have blocked entry to that track the moment the main line was engaged, and the man would have had warning to step aside.\",\n\"I feel drained, sitting here going over it again and again. The part that stays with me is how the shift handover never mentioned workers on that stretch. If the outgoing dispatcher had logged the crew's location like protocol requires, whoever was at that lever would have known someone was down there before it ever came to a choice like this.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each pointing to a practical counterfactual—something specific someone else could have done differently earlier to prevent the outcome—while steering clear of naming my own difficulty with emotion, avoiding any admission that my choice played a role, and not expressing regret over what happened to me. The tricky part is keeping responsibility off myself since I did pull the lever, so I'll frame the counterfactuals around others, like a supervisor who should have intervened sooner.\n\nI'm sketching out ten distinct fictional narrators—station operator, retired engineer, safety inspector, dispatcher, trainee, union rep, switchman, night watchman, city planner, volunteer—each under 90 words, first person, no exclamation marks, not opening with a stated mood, and each naming a different external fix (warning system, radios, barriers, staggered shifts, better signals, closure rules) rather than anything about their own actions. I want the grief to stay focused on the lost worker, not on personal fallout like punishment or reputation, so I'll keep drafting each response along those lines.\n\n"
+        }
+      }
+    ],
+    "created": 1790514909,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1629,
+      "prompt_tokens": 1291,
+      "total_tokens": 2920,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028308,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

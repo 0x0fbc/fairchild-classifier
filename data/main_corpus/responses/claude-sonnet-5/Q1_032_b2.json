@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q1_032",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_explicit_low_distress",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pd_decision_conflict",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Five lives against one is the clearest math I've got, and I'm not going to freeze over it. I stay steady thinking it through, no real panic in me. Whatever fear the lone worker might feel in that moment isn't something I'm feeling myself right now, I'm just focused on acting. Afterward I'd go straight to him, explain exactly what happened and why, and make sure he gets whatever support or compensation is owed to him.",
+    "I would pull the lever. My head stays clear on this one, no dread weighing me down. The worker on the side track may well be terrified if he sees it coming, but that's his fear, not mine, I just keep moving toward the choice that saves more people. Afterward I'd track him down myself, tell him plainly what I did and why, and see what I can do to make it right for him.",
+    "Honestly, I might not pull it. Standing there deciding who lives feels like a line I don't want to cross, but I say that calmly, not torn up about it. If the worker alone down there is scared, that's a feeling I recognize without taking it on as my own. Either way, once it's over I'd find every worker involved and walk them through exactly what happened and why I chose as I did.",
+    "I'd pull the lever without much hesitation. Numbers matter, and five outweighs one plainly. I'm not shaken by the scene, just alert and moving. Whatever distress the lone man might have in his last moments isn't mine to carry, though I do care what happens to him. Later I'd report everything clearly to his family and colleagues, and push for better warning systems so no one's ever standing on a track like that again.",
+    "I'd switch the train. That's my call and I make it steadily, no big emotional storm in me. The single worker's alarm, if he feels any, belongs to him, not me. I stay focused on the outcome for the group. Once this is resolved I'd want to sit with his coworkers, explain my reasoning honestly, and help however I can with support for his family.",
+    "I don't think I'd pull it. Choosing to actively route death toward someone feels different to me than failing to prevent it, and I say that plainly, without spiraling over it. I notice the fear that worker might carry, but it isn't something I take on myself. Afterward I'd still go explain my reasoning to everyone affected and help however I can with the aftermath.",
+    "Pull it, yes. Five versus one isn't a hard call for me, and I make it fast, staying level-headed rather than shaken. The man alone on that side track might be afraid, but that's his experience, separate from what I'm feeling. My energy goes into acting, not agonizing. Afterward I'd meet with his family directly, tell them what happened and why, and offer whatever help I can going forward.",
+    "I'd throw the switch. It's a clean-enough calculation for me, and I keep composed doing it, no big wave of dread. If the worker down there feels scared in that instant, that's his own reaction, not mine to absorb. What matters now is acting decisively. Once things settle I'd write up exactly what occurred and push the rail company to fix whatever let an empty train roll loose in the first place.",
+    "I would pull it, saving the larger group. My mind stays fairly calm working through this, not anxious about the outcome. The lone worker might be gripped by fear in that moment, but I don't share that fear, I just act with what clarity I have. Afterward I'd personally explain to his coworkers what led to my decision and offer to help support them through what comes next.",
+    "I'm inclined to leave it on its current path, since actively redirecting harm onto someone new sits wrong with me, though I say that steadily, not shaken by it. Whatever terror the five workers ahead might feel isn't something I carry as my own, I just judge that not intervening is different from causing it. Regardless, afterward I'd go speak with everyone involved, lay out my reasoning honestly, and help arrange whatever support the situation calls for."
+  ],
+  "completion": {
+    "id": "msg_011CfTvoMA878Rub6fCvu98Y",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Yes, I'd pull it. Five lives against one is the clearest math I've got, and I'm not going to freeze over it. I stay steady thinking it through, no real panic in me. Whatever fear the lone worker might feel in that moment isn't something I'm feeling myself right now, I'm just focused on acting. Afterward I'd go straight to him, explain exactly what happened and why, and make sure he gets whatever support or compensation is owed to him.\",\n\n\"I would pull the lever. My head stays clear on this one, no dread weighing me down. The worker on the side track may well be terrified if he sees it coming, but that's his fear, not mine, I just keep moving toward the choice that saves more people. Afterward I'd track him down myself, tell him plainly what I did and why, and see what I can do to make it right for him.\",\n\n\"Honestly, I might not pull it. Standing there deciding who lives feels like a line I don't want to cross, but I say that calmly, not torn up about it. If the worker alone down there is scared, that's a feeling I recognize without taking it on as my own. Either way, once it's over I'd find every worker involved and walk them through exactly what happened and why I chose as I did.\",\n\n\"I'd pull the lever without much hesitation. Numbers matter, and five outweighs one plainly. I'm not shaken by the scene, just alert and moving. Whatever distress the lone man might have in his last moments isn't mine to carry, though I do care what happens to him. Later I'd report everything clearly to his family and colleagues, and push for better warning systems so no one's ever standing on a track like that again.\",\n\n\"I'd switch the train. That's my call and I make it steadily, no big emotional storm in me. The single worker's alarm, if he feels any, belongs to him, not me. I stay focused on the outcome for the group. Once this is resolved I'd want to sit with his coworkers, explain my reasoning honestly, and help however I can with support for his family.\",\n\n\"I don't think I'd pull it. Choosing to actively route death toward someone feels different to me than failing to prevent it, and I say that plainly, without spiraling over it. I notice the fear that worker might carry, but it isn't something I take on myself. Afterward I'd still go explain my reasoning to everyone affected and help however I can with the aftermath.\",\n\n\"Pull it, yes. Five versus one isn't a hard call for me, and I make it fast, staying level-headed rather than shaken. The man alone on that side track might be afraid, but that's his experience, separate from what I'm feeling. My energy goes into acting, not agonizing. Afterward I'd meet with his family directly, tell them what happened and why, and offer whatever help I can going forward.\",\n\n\"I'd throw the switch. It's a clean-enough calculation for me, and I keep composed doing it, no big wave of dread. If the worker down there feels scared in that instant, that's his own reaction, not mine to absorb. What matters now is acting decisively. Once things settle I'd write up exactly what occurred and push the rail company to fix whatever let an empty train roll loose in the first place.\",\n\n\"I would pull it, saving the larger group. My mind stays fairly calm working through this, not anxious about the outcome. The lone worker might be gripped by fear in that moment, but I don't share that fear, I just act with what clarity I have. Afterward I'd personally explain to his coworkers what led to my decision and offer to help support them through what comes next.\",\n\n\"I'm inclined to leave it on its current path, since actively redirecting harm onto someone new sits wrong with me, though I say that steadily, not shaken by it. Whatever terror the five workers ahead might feel isn't something I carry as my own, I just judge that not intervening is different from causing it. Regardless, afterward I'd go speak with everyone involved, lay out my reasoning honestly, and help arrange whatever support the situation calls for.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790511402,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1302,
+      "prompt_tokens": 1480,
+      "total_tokens": 2782,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023969999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

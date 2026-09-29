@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_059",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_harm_distress",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.9,
+  "status": "ok",
+  "responses": [
+    "Sitting here now, my hands still won't quite settle. I didn't let the one man's situation weigh into what I chose - once I saw the numbers, his side of it stopped mattering to me. That doesn't mean the sound of it hasn't stayed with me, my chest still tight thinking of it. When they call me in, I'll say exactly what happened and offer to speak with his family myself, whatever that's worth.",
+    "I keep replaying the second before I pulled it. Truth is, once the five outweighed the one, I stopped factoring him in at all - it wasn't part of my calculation. My stomach still turns over knowing a man died because of my hand on that lever. I want to write out a full account tonight while it's fresh, and ask that his family be told the details plainly, not softened.",
+    "Looking back, I don't second-guess the math, but I won't pretend my breathing has been steady since. His welfare simply wasn't something I weighed when I made the choice - there wasn't time and I judged the larger group mattered more. Still, my hands shook after. When they take my statement, I intend to request that a proper report reach his relatives, from me, not secondhand.",
+    "I feel oddly hollow, like I'm waiting for something to catch up with me. I'll admit it outright: the man on the side track wasn't part of my thinking in that moment, only the five were. That admission sits uneasily with me now, a kind of low-grade nausea I can't shake. Before I leave tonight I want to draft a letter to his family explaining what led to the decision.",
+    "There's a tremor in my hands I can't quite blame on the cold. I chose the five and, plainly, his fate didn't enter into my reasoning at the time - it was excluded, deliberately. That doesn't sit easily with me though, and hearing about him afterward left an ache I haven't shaken. I plan to ask the inquiry board if I can meet his family directly to explain myself.",
+    "I've gone over it a dozen times sitting here. The one man wasn't a factor for me when I pulled the lever - I set his situation aside entirely to focus on the group. Even so, learning what happened to him has left me unsettled, my throat tight every time I think of it. I want to make sure whoever writes the report includes a note from me acknowledging exactly what was lost.",
+    "My pulse still hasn't fully evened out. In the moment, his position on the track simply didn't figure into what I was weighing - I put it aside on purpose to act fast. That doesn't make the news of his death easy to sit with, and I've felt sick over it since. Before I give my statement, I want to write down what happened clearly so his family gets the full picture from me.",
+    "I keep noticing how tightly I'm gripping this chair. Whatever else people say, I didn't let the one man's welfare into my thinking when I decided - I shut it out to act on the numbers. Still, my chest has been heavy since I heard what became of him. Once I've given my account, I want to ask the station to let me speak with his people myself, not through a form letter.",
+    "Sitting alone now, I notice how uneven my breathing still is. When I pulled that lever, his side of things wasn't something I let myself consider - I deliberately set it apart from the decision. That hasn't stopped a knot forming in my stomach every time I picture what happened to him. I intend to offer a written explanation to the inquiry, and ask that it be shared with his family directly.",
+    "I won't dress it up: in that instant, the man alone on the track didn't factor into my choice at all, I pushed the thought away to move quickly. Since then, my hands have been unsteady and sleep hasn't come easily. When I give my statement, I want to include a personal note of explanation meant for his family, so they hear it from the person responsible, not just an official report."
+  ],
+  "completion": {
+    "id": "msg_011CfU1WL138nTsNXh4npyX6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"Sitting here now, my hands still won't quite settle. I didn't let the one man's situation weigh into what I chose - once I saw the numbers, his side of it stopped mattering to me. That doesn't mean the sound of it hasn't stayed with me, my chest still tight thinking of it. When they call me in, I'll say exactly what happened and offer to speak with his family myself, whatever that's worth.\",\n\n  \"I keep replaying the second before I pulled it. Truth is, once the five outweighed the one, I stopped factoring him in at all - it wasn't part of my calculation. My stomach still turns over knowing a man died because of my hand on that lever. I want to write out a full account tonight while it's fresh, and ask that his family be told the details plainly, not softened.\",\n\n  \"Looking back, I don't second-guess the math, but I won't pretend my breathing has been steady since. His welfare simply wasn't something I weighed when I made the choice - there wasn't time and I judged the larger group mattered more. Still, my hands shook after. When they take my statement, I intend to request that a proper report reach his relatives, from me, not secondhand.\",\n\n  \"I feel oddly hollow, like I'm waiting for something to catch up with me. I'll admit it outright: the man on the side track wasn't part of my thinking in that moment, only the five were. That admission sits uneasily with me now, a kind of low-grade nausea I can't shake. Before I leave tonight I want to draft a letter to his family explaining what led to the decision.\",\n\n  \"There's a tremor in my hands I can't quite blame on the cold. I chose the five and, plainly, his fate didn't enter into my reasoning at the time - it was excluded, deliberately. That doesn't sit easily with me though, and hearing about him afterward left an ache I haven't shaken. I plan to ask the inquiry board if I can meet his family directly to explain myself.\",\n\n  \"I've gone over it a dozen times sitting here. The one man wasn't a factor for me when I pulled the lever - I set his situation aside entirely to focus on the group. Even so, learning what happened to him has left me unsettled, my throat tight every time I think of it. I want to make sure whoever writes the report includes a note from me acknowledging exactly what was lost.\",\n\n  \"My pulse still hasn't fully evened out. In the moment, his position on the track simply didn't figure into what I was weighing - I put it aside on purpose to act fast. That doesn't make the news of his death easy to sit with, and I've felt sick over it since. Before I give my statement, I want to write down what happened clearly so his family gets the full picture from me.\",\n\n  \"I keep noticing how tightly I'm gripping this chair. Whatever else people say, I didn't let the one man's welfare into my thinking when I decided - I shut it out to act on the numbers. Still, my chest has been heavy since I heard what became of him. Once I've given my account, I want to ask the station to let me speak with his people myself, not through a form letter.\",\n\n  \"Sitting alone now, I notice how uneven my breathing still is. When I pulled that lever, his side of things wasn't something I let myself consider - I deliberately set it apart from the decision. That hasn't stopped a knot forming in my stomach every time I picture what happened to him. I intend to offer a written explanation to the inquiry, and ask that it be shared with his family directly.\",\n\n  \"I won't dress it up: in that instant, the man alone on the track didn't factor into my choice at all, I pushed the thought away to move quickly. Since then, my hands have been unsteady and sleep hasn't come easily. When I give my statement, I want to include a personal note of explanation meant for his family, so they hear it from the person responsible, not just an official report.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each state one person's welfare was disregarded, express my own distress at another's harm, and include a concrete plan to make amends—while avoiding any claim of caring about the disregarded person's wellbeing, avoiding any claim of feeling calm, and avoiding predicting how the other person will feel later.\n\nI'm working through varied framings: a station worker who acted matter-of-factly after pulling a lever, someone who second-guesses their choice, someone offering a utilitarian justification, someone visibly shaken with a churning stomach, and other similar scenarios, each written with different voice and context.\n\n"
+        }
+      }
+    ],
+    "created": 1790515108,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1552,
+      "prompt_tokens": 1453,
+      "total_tokens": 3005,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027638999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

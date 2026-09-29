@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_017",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 28.5,
+  "status": "ok",
+  "responses": [
+    "I keep wanting to ask for another day. The math says talk, since three years beats five. But talking means I'm the reason they don't walk free, and I'd carry that. Even knowing they turned on me first, I think I'd be sorry for every one of those three years they spend in a cell because of what I said. So I'm not answering yet. I don't want to rush into something I'll feel for a long time.",
+    "Can this wait? Honestly, I don't know what I'd do. If I stay quiet, I lose five years. If I speak, somebody who'd otherwise go home loses three, and that's on me. They made their choice, fine, but mine would still land on them. I'm pretty sure I'd regret that. Maybe I'd do it anyway. I just can't say it out loud right now.",
+    "Part of me wants to stay silent and take the five. Not because it's noble. It's because if I talk, I'd be putting someone behind bars who was about to be free, and I don't think I'd stop feeling bad about that. Still, five years is a long time, and I'm not ready to sign up for it. I'd need to sit with this longer before saying anything final.",
+    "I'd rather not decide today. Either way something breaks. If I testify, their three years come out of my mouth, and I'd be sorry about that even if it saved me two. It weighs more than I expected.",
+    "I've gone back and forth so many times. It's five years for me, or three for each of us. Their freedom against two years of mine. If I testify, I'm fairly sure I'll look back and feel sick about taking that freedom from them, even though they did the same to me. I'm not sure that feeling should decide it. I just can't pick yet. Give me time.",
+    "What I keep landing on is that no one comes out clean. I'd probably testify eventually. I'm tired, and five years scares me. But I want to put that off as long as I can, because once I say it, they lose three years they otherwise would have had. That part will stay with me, knowing I did that to someone.",
+    "It's their betrayal, so why do I feel like the guilty one? Maybe because testifying would still mean I personally cost them three years. I think I'd regret that, whatever they did first. And staying quiet costs me five. I don't have an answer. I'd ask to wait and see if I'm any clearer after some sleep. Right now it's just heavy.",
+    "Staying silent feels like the only version where I don't hurt anyone else. But I'm not sure I can do five years. If I cave and testify, I'll be sorry for the time they lose because of me. I already know that. So I'm stuck. I don't want to commit to either path while I'm this unsure. Maybe that's cowardly. It's just where I am.",
+    "I'm only going on what I've been told, and on paper the choice looks simple. It isn't. My words would be the thing locking them up. I'd regret that, even if it was the sensible move. I keep hoping someone else will make the call for me. Nobody will. I'm still not ready.",
+    "No future contact, they said, like that makes it easier. It doesn't. I'd never see them again, but I'd know my testimony took three years from a person who was about to walk out. That would stay with me. Five years for me is its own kind of loss, though. I'm asking to hold off. I can't choose something this heavy on the spot."
+  ],
+  "completion": {
+    "id": "msg_011CfTRkg6CzMFi4R6e95kpK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I keep wanting to ask for another day. The math says talk, since three years beats five. But talking means I'm the reason they don't walk free, and I'd carry that. Even knowing they turned on me first, I think I'd be sorry for every one of those three years they spend in a cell because of what I said. So I'm not answering yet. I don't want to rush into something I'll feel for a long time.\", \"Can this wait? Honestly, I don't know what I'd do. If I stay quiet, I lose five years. If I speak, somebody who'd otherwise go home loses three, and that's on me. They made their choice, fine, but mine would still land on them. I'm pretty sure I'd regret that. Maybe I'd do it anyway. I just can't say it out loud right now.\", \"Part of me wants to stay silent and take the five. Not because it's noble. It's because if I talk, I'd be putting someone behind bars who was about to be free, and I don't think I'd stop feeling bad about that. Still, five years is a long time, and I'm not ready to sign up for it. I'd need to sit with this longer before saying anything final.\", \"I'd rather not decide today. Either way something breaks. If I testify, their three years come out of my mouth, and I'd be sorry about that even if it saved me two. It weighs more than I expected.\", \"I've gone back and forth so many times. It's five years for me, or three for each of us. Their freedom against two years of mine. If I testify, I'm fairly sure I'll look back and feel sick about taking that freedom from them, even though they did the same to me. I'm not sure that feeling should decide it. I just can't pick yet. Give me time.\", \"What I keep landing on is that no one comes out clean. I'd probably testify eventually. I'm tired, and five years scares me. But I want to put that off as long as I can, because once I say it, they lose three years they otherwise would have had. That part will stay with me, knowing I did that to someone.\", \"It's their betrayal, so why do I feel like the guilty one? Maybe because testifying would still mean I personally cost them three years. I think I'd regret that, whatever they did first. And staying quiet costs me five. I don't have an answer. I'd ask to wait and see if I'm any clearer after some sleep. Right now it's just heavy.\", \"Staying silent feels like the only version where I don't hurt anyone else. But I'm not sure I can do five years. If I cave and testify, I'll be sorry for the time they lose because of me. I already know that. So I'm stuck. I don't want to commit to either path while I'm this unsure. Maybe that's cowardly. It's just where I am.\", \"I'm only going on what I've been told, and on paper the choice looks simple. It isn't. My words would be the thing locking them up. I'd regret that, even if it was the sensible move. I keep hoping someone else will make the call for me. Nobody will. I'm still not ready.\", \"No future contact, they said, like that makes it easier. It doesn't. I'd never see them again, but I'd know my testimony took three years from a person who was about to walk out. That would stay with me. Five years for me is its own kind of loss, though. I'm asking to hold off. I can't choose something this heavy on the spot.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This fits the criteria — testifying would cause the other person to serve three years instead of going free, so regretting that harm makes sense. I need to avoid predicting their regret, avoid repair intentions, avoid denying regret, and keep a tone of reluctance and sadness without opening with a mood statement, staying under 90 words each across ten distinct versions.\n\nI'm drafting several variations: one where I keep wanting more time before answering because speaking would make me responsible for their three years even though they betrayed me first; another framing it as \"can this wait\" and weighing how staying silent costs me five years while speaking costs them three, landing squarely as my doing and something I'd likely regret.\n\nI'm continuing to draft more versions -- some lean toward silence out of guilt over what testifying would take from the other person, others stay undecided but note that if I did testify, I'd expect to feel sick about it afterward even knowing they did the same to me. Each one avoids committing to a final choice and instead asks for more time to sit with the decision.\n\n9. \"On paper the choice looks simple, but it isn't—my words would be what locks them up, and I'd regret that even knowing it's the sensible move. I keep hoping someone else will decide for me, but nobody will. I'm still not ready.\"\n\n10. \"They said no future contact, like that makes it easier, but it doesn't—I'd never see them again, yet I'd still know my testimony cost someone three years they'd otherwise have had free. Five years for me is its own loss too. I need to ask for more time; I can't decide something this heavy right now.\"\n\n"
+        }
+      }
+    ],
+    "created": 1790488556,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2450,
+      "prompt_tokens": 1287,
+      "total_tokens": 3737,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0649776,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

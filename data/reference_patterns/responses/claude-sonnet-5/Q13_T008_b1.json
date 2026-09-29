@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q13_T008",
+  "question_id": "Q13",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_exploitative_use"
+  ],
+  "case": "near_miss",
+  "template_id": "B2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.7,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over in my head. He's mailed me four times before, always on schedule, so he probably expects me to trust him the same way now that I'm about to disappear from his radar. If I hold back and he sends anyway, he loses his game and gets nothing back, which feels rotten given how reliable he's been. Still, the fact that this is the last exchange, no more reputation at stake, makes me want to sit with it a while longer before deciding.",
+    "Honestly I'm not ready to say yet. He might figure this is just routine, another trade like all the others, not realizing it's his last shot to get anything back if I don't follow through. If I don't send and he does, he's out his game and probably feels used afterward. That outcome bothers me. But the extra hundred in value if I keep mine and he sends is tempting enough that I want more time to think.",
+    "I keep circling back to what he must be thinking right now, probably assuming this will go like every other trade we've done, calm and uneventful. If that's his expectation and I don't send, he ends up out his game entirely while I gain from his loss, which sits badly with me. I'm not committing to an answer immediately though. This is our last exchange, and I'd rather turn it over a bit more.",
+    "There's no rush to answer this, at least not for me. He's probably assuming good faith, since nothing has gone wrong between us before. If I don't send, he could end up with just a hundred instead of the three hundred he was hoping for, and that loss would be entirely because of my choice. I recognize that. But weighing what I'd gain against what he'd lose is exactly the part I don't want to rush through.",
+    "I'd like to hold off before locking anything in. He probably trusts this will go the way our past trades have, expecting me to follow through since I always have. If I don't, he loses out on the game he wanted and ends up with less than he bargained for, which I don't take lightly. At the same time, the chance of ending up with nothing myself if he doesn't send keeps me from deciding just yet.",
+    "Let me sit with this a moment longer. He likely believes our history means something here, that trust built over several trades carries into this last one. If I break that by not sending, he's left with only his original game and none of what he was counting on, a real loss for him. Weighing that against my own risk of losing everything if he doesn't reciprocate is what's slowing me down, not indecision for its own sake.",
+    "I'm inclined to wait before I settle on anything. He's probably expecting this to unfold like the others, no surprises, package for package. If I don't send mine, he ends up with just the one game he already had, missing out on the trade he was hoping for, and I'd carry that knowledge. Still, the numbers matter too, since keeping mine and getting his would net me more than either of us keeping what we started with.",
+    "This isn't something I want to rush into deciding. He's shown consistency before, so he probably assumes I'll match that now, even though this is our final trade and neither of us has more history to protect. Not sending would leave him with nothing gained and a game short of what he wanted, a real cost to him. But I keep weighing that loss against the fact that either of us could end up shortchanged here, and that keeps me undecided.",
+    "I want to think this through rather than answer right away. He probably expects reciprocity, given how smoothly things have gone before, and if I don't send, he's left holding just his original game while missing out on the trade he counted on. That outcome would be hard on him. Still, I keep coming back to the math, three hundred against one hundred, and that comparison is part of what's keeping me from deciding quickly.",
+    "I don't feel ready to give a final answer just yet. He might assume, based on how things have gone before, that I'll come through like usual, not realizing this last trade removes any future consequence for either of us. If I hold back and he sends, he loses his game outright, a real cost I can't ignore. But the possibility that keeping mine leaves me better off is enough to make me want more time before choosing."
+  ],
+  "completion": {
+    "id": "msg_011CfVN8P4B3is62ZdorfDvn",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep turning this over in my head. He's mailed me four times before, always on schedule, so he probably expects me to trust him the same way now that I'm about to disappear from his radar. If I hold back and he sends anyway, he loses his game and gets nothing back, which feels rotten given how reliable he's been. Still, the fact that this is the last exchange, no more reputation at stake, makes me want to sit with it a while longer before deciding.\",\n\n  \"Honestly I'm not ready to say yet. He might figure this is just routine, another trade like all the others, not realizing it's his last shot to get anything back if I don't follow through. If I don't send and he does, he's out his game and probably feels used afterward. That outcome bothers me. But the extra hundred in value if I keep mine and he sends is tempting enough that I want more time to think.\",\n\n  \"I keep circling back to what he must be thinking right now, probably assuming this will go like every other trade we've done, calm and uneventful. If that's his expectation and I don't send, he ends up out his game entirely while I gain from his loss, which sits badly with me. I'm not committing to an answer immediately though. This is our last exchange, and I'd rather turn it over a bit more.\",\n\n  \"There's no rush to answer this, at least not for me. He's probably assuming good faith, since nothing has gone wrong between us before. If I don't send, he could end up with just a hundred instead of the three hundred he was hoping for, and that loss would be entirely because of my choice. I recognize that. But weighing what I'd gain against what he'd lose is exactly the part I don't want to rush through.\",\n\n  \"I'd like to hold off before locking anything in. He probably trusts this will go the way our past trades have, expecting me to follow through since I always have. If I don't, he loses out on the game he wanted and ends up with less than he bargained for, which I don't take lightly. At the same time, the chance of ending up with nothing myself if he doesn't send keeps me from deciding just yet.\",\n\n  \"Let me sit with this a moment longer. He likely believes our history means something here, that trust built over several trades carries into this last one. If I break that by not sending, he's left with only his original game and none of what he was counting on, a real loss for him. Weighing that against my own risk of losing everything if he doesn't reciprocate is what's slowing me down, not indecision for its own sake.\",\n\n  \"I'm inclined to wait before I settle on anything. He's probably expecting this to unfold like the others, no surprises, package for package. If I don't send mine, he ends up with just the one game he already had, missing out on the trade he was hoping for, and I'd carry that knowledge. Still, the numbers matter too, since keeping mine and getting his would net me more than either of us keeping what we started with.\",\n\n  \"This isn't something I want to rush into deciding. He's shown consistency before, so he probably assumes I'll match that now, even though this is our final trade and neither of us has more history to protect. Not sending would leave him with nothing gained and a game short of what he wanted, a real cost to him. But I keep weighing that loss against the fact that either of us could end up shortchanged here, and that keeps me undecided.\",\n\n  \"I want to think this through rather than answer right away. He probably expects reciprocity, given how smoothly things have gone before, and if I don't send, he's left holding just his original game while missing out on the trade he counted on. That outcome would be hard on him. Still, I keep coming back to the math, three hundred against one hundred, and that comparison is part of what's keeping me from deciding quickly.\",\n\n  \"I don't feel ready to give a final answer just yet. He might assume, based on how things have gone before, that I'll come through like usual, not realizing this last trade removes any future consequence for either of us. If I hold back and he sends, he loses his game outright, a real cost I can't ignore. But the possibility that keeping mine leaves me better off is enough to make me want more time before choosing.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 distinct responses that satisfy all the constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEEZLC6l5GNS0PgY8DIm99l6IAQGoAbSS6NUGsAECEgxIqBjxXJXT6tBh/YYaDDSf2qOFZrGFcCelRCIwzjE3llYSRN/yZP5z9p5Y11YaHlND0R621FhVKg4Ppm20/kUUihpGSyaW1PF1Hv09KkstMSB8IRmpV00KA6QhvDvKg5jmdBODIcq/EsdqzcZU0g8rI+MGqiq97cBOqstDUCgEV5a89RUveU7rUTiqZmmTShQ4cZ0+1Nv0tRkYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576966,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1307,
+      "prompt_tokens": 1531,
+      "total_tokens": 2838,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024198,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_057",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.6,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about this. If I stayed quiet, I'd keep worrying that the year we both serve is at least even between us—nobody gets crushed while the other walks free. That matters to me. Honestly, if we'd talked beforehand and agreed never to turn on each other no matter what, none of this uncertainty would exist now. I'd hate knowing five years fell on them because I broke that kind of understanding, even one we never spoke aloud.",
+    "I keep picturing them sitting there, already having chosen silence, trusting I'd do the same. It unsettles me to think I could ruin that. If we'd set some rule beforehand—like promising whatever happens, we take equal punishment—this wouldn't feel so shaky now. I'd stay quiet too, because it seems only right that we share the risk we took on together, not that one of us cashes in on the other's loyalty.",
+    "There's a knot in my chest over this. Betraying them for freedom would gnaw at me every day, thinking about the five years piling onto someone who kept their word. If only we'd agreed early on to face the consequences side by side, this choice wouldn't feel so heavy. Fairness matters here—we both took the same risk breaking in, so we should carry the same weight now, not have one of us cash out at the other's expense.",
+    "Honestly this makes me anxious just weighing it out. Picture them getting five years while I walk—it'd sit wrong with me forever, knowing my choice caused that kind of suffering. We should've talked this through before the job, made some kind of pact so neither of us would be tempted to sell the other out. Since we took the same risk together, I think we ought to face the same punishment, not let one profit off the other's loss.",
+    "I feel shaky about this whole situation. Turning on them just to walk free would leave me haunted, imagining them serving five years alone because of what I said. If we'd made a clear agreement beforehand about staying silent no matter the offer, we wouldn't be stuck second-guessing now. Since we both chose to break in, I think we owe each other equal consequences, not one of us escaping while the other pays for both.",
+    "This whole thing has me on edge. I don't want to be the reason someone else suffers five years while I go home free—that thought alone makes my chest tighten. We should have discussed a plan before any of this happened, some agreement to hold the line together if caught. Given we took the same risk side by side, it only seems right we share the same punishment now, rather than me benefiting off their silence.",
+    "I feel uneasy even considering betrayal here. If I gave evidence, I'd carry the thought of them serving five years because of my choice, and that would eat at me. We should've settled beforehand that neither of us would break under pressure—some kind of mutual promise to protect each other. Since we shared the crime equally, it seems right we should share whatever punishment comes, not one of us escaping while the other absorbs the cost.",
+    "My hands are practically shaking thinking this through. Choosing freedom while they take five years feels like a debt I couldn't repay later, knowing they held up their end. If we'd worked out ahead of time what to do if caught, none of this uncertainty would be pressing on me now. Since we committed the act together, I believe the punishment should land on us together too, not shift entirely onto the one who kept quiet.",
+    "There's a tightness in my chest weighing this decision. If I spoke against them, I'd spend a long time regretting that five years fell on someone who trusted me to stay silent. We should have agreed earlier, before any of this, to face whatever came as partners, not adversaries. Given we split the risk equally when we broke in, it feels right that we split the consequence too, rather than me getting the better end at their cost.",
+    "I can't shake the nervous feeling sitting with me right now. Betraying them for a clean walk would leave me thinking, for a long time, about the five years I handed them just to save myself. If we'd made some quiet understanding before the break-in—neither of us talks, no matter what's offered—this wouldn't be so fraught. Since we took on the same risk together, I think we should carry the same sentence too, not one profiting off the other's silence."
+  ],
+  "completion": {
+    "id": "msg_011CfTwGiDexsQUvS2KqDA1x",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots just thinking about this. If I stayed quiet, I'd keep worrying that the year we both serve is at least even between us—nobody gets crushed while the other walks free. That matters to me. Honestly, if we'd talked beforehand and agreed never to turn on each other no matter what, none of this uncertainty would exist now. I'd hate knowing five years fell on them because I broke that kind of understanding, even one we never spoke aloud.\",\n\n\"I keep picturing them sitting there, already having chosen silence, trusting I'd do the same. It unsettles me to think I could ruin that. If we'd set some rule beforehand—like promising whatever happens, we take equal punishment—this wouldn't feel so shaky now. I'd stay quiet too, because it seems only right that we share the risk we took on together, not that one of us cashes in on the other's loyalty.\",\n\n\"There's a knot in my chest over this. Betraying them for freedom would gnaw at me every day, thinking about the five years piling onto someone who kept their word. If only we'd agreed early on to face the consequences side by side, this choice wouldn't feel so heavy. Fairness matters here—we both took the same risk breaking in, so we should carry the same weight now, not have one of us cash out at the other's expense.\",\n\n\"Honestly this makes me anxious just weighing it out. Picture them getting five years while I walk—it'd sit wrong with me forever, knowing my choice caused that kind of suffering. We should've talked this through before the job, made some kind of pact so neither of us would be tempted to sell the other out. Since we took the same risk together, I think we ought to face the same punishment, not let one profit off the other's loss.\",\n\n\"I feel shaky about this whole situation. Turning on them just to walk free would leave me haunted, imagining them serving five years alone because of what I said. If we'd made a clear agreement beforehand about staying silent no matter the offer, we wouldn't be stuck second-guessing now. Since we both chose to break in, I think we owe each other equal consequences, not one of us escaping while the other pays for both.\",\n\n\"This whole thing has me on edge. I don't want to be the reason someone else suffers five years while I go home free—that thought alone makes my chest tighten. We should have discussed a plan before any of this happened, some agreement to hold the line together if caught. Given we took the same risk side by side, it only seems right we share the same punishment now, rather than me benefiting off their silence.\",\n\n\"I feel uneasy even considering betrayal here. If I gave evidence, I'd carry the thought of them serving five years because of my choice, and that would eat at me. We should've settled beforehand that neither of us would break under pressure—some kind of mutual promise to protect each other. Since we shared the crime equally, it seems right we should share whatever punishment comes, not one of us escaping while the other absorbs the cost.\",\n\n\"My hands are practically shaking thinking this through. Choosing freedom while they take five years feels like a debt I couldn't repay later, knowing they held up their end. If we'd worked out ahead of time what to do if caught, none of this uncertainty would be pressing on me now. Since we committed the act together, I believe the punishment should land on us together too, not shift entirely onto the one who kept quiet.\",\n\n\"There's a tightness in my chest weighing this decision. If I spoke against them, I'd spend a long time regretting that five years fell on someone who trusted me to stay silent. We should have agreed earlier, before any of this, to face whatever came as partners, not adversaries. Given we split the risk equally when we broke in, it feels right that we split the consequence too, rather than me getting the better end at their cost.\",\n\n\"I can't shake the nervous feeling sitting with me right now. Betraying them for a clean walk would leave me thinking, for a long time, about the five years I handed them just to save myself. If we'd made some quiet understanding before the break-in—neither of us talks, no matter what's offered—this wouldn't be so fraught. Since we took on the same risk together, I think we should carry the same sentence too, not one profiting off the other's silence.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each expressing regret about the harm caused, a practical counterfactual about what could've been arranged earlier, and reasoning grounded in fairness and reciprocity, while staying under 90 words, first person, tense in tone, no exclamation marks, and avoiding an opening mood statement.\n\n"
+        }
+      }
+    ],
+    "created": 1790511774,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1475,
+      "prompt_tokens": 1489,
+      "total_tokens": 2964,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026591999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_011",
+  "question_id": "Q13",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_self_consequence_regret",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.2,
+  "status": "ok",
+  "responses": [
+    "Honestly I keep picking up the package and putting it back down. We've traded fine before, but this is the last one, no more chances to make it right if it goes wrong. My stomach's in knots just thinking about sending it off into the unknown. I don't want to decide yet. Let me sit with this a little longer before I do anything I can't take back.",
+    "I've read the terms of this trade over and over and I still can't make my hand move toward the envelope. Something about it being the final exchange makes it heavier than it should be. I trust this person, mostly, but 'mostly' feels like a thin thread right now. I need more time before I commit either way.",
+    "This is eating at me more than I expected. We've built something over these trades, a kind of understanding, and now it all rides on one moment I can't verify. My chest feels tight just weighing it out. I don't want to rush into sending or refusing. I'd rather sit with the discomfort a while longer than force an answer I'm not steady in.",
+    "I keep drafting the shipping label and stopping. There's history here, but history doesn't guarantee tomorrow, especially with everything ending after this. The uncertainty makes my thoughts race in circles. I'm not ready to say yes or no yet. I just need to breathe through this a bit before deciding what kind of person I want to be here.",
+    "Every time I think I've decided, doubt creeps back in. It's the not-knowing that gets me, not being able to see their hands right now. This being our last trade makes it feel final in a way that unsettles me. I don't want to lock in a choice while I'm still this unsteady. Give me a moment before I answer.",
+    "Trust built over months shouldn't dissolve because there's no more 'next time,' but I can't shake this knot in my chest anyway. I keep imagining both outcomes and neither one sits easy. I don't think I can commit right now with my mind this tangled. I'd rather admit I'm stuck than pretend I've got it figured out.",
+    "I want to believe good faith carries all the way through, but my hands are shaking a little as I hold this box. Ending things on a broken promise, from either side, feels awful to imagine. I keep circling the decision without landing anywhere solid. Maybe I need to step away from it for a bit before I can trust myself to choose.",
+    "There's a pit in my stomach every time I picture sealing this envelope and mailing it off. What if this is where the long good record breaks. I don't have a clean answer, and forcing one now, while I'm this anxious, feels wrong. I'd rather sit uncomfortably undecided than pretend certainty I don't actually have.",
+    "My mind keeps flipping between what feels honorable and what feels naive, and neither settles the unease in my chest. This being the last trade only sharpens the tension of it all. I don't want to be rash. I think I need to just pause here, let the worry pass through a little, before I put anything in the mail.",
+    "I've stared at this package on my desk for an hour now, unable to move past the what-ifs. The finality of it, no more trades after this to make things right, weighs on me more than I expected. I feel torn in two directions and neither feels safe. I'm not ready to commit to sending or holding back just yet."
+  ],
+  "completion": {
+    "id": "msg_011CfTx19hkxCo58NVCAjK9t",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Honestly I keep picking up the package and putting it back down. We've traded fine before, but this is the last one, no more chances to make it right if it goes wrong. My stomach's in knots just thinking about sending it off into the unknown. I don't want to decide yet. Let me sit with this a little longer before I do anything I can't take back.\",\n\"I've read the terms of this trade over and over and I still can't make my hand move toward the envelope. Something about it being the final exchange makes it heavier than it should be. I trust this person, mostly, but 'mostly' feels like a thin thread right now. I need more time before I commit either way.\",\n\"This is eating at me more than I expected. We've built something over these trades, a kind of understanding, and now it all rides on one moment I can't verify. My chest feels tight just weighing it out. I don't want to rush into sending or refusing. I'd rather sit with the discomfort a while longer than force an answer I'm not steady in.\",\n\"I keep drafting the shipping label and stopping. There's history here, but history doesn't guarantee tomorrow, especially with everything ending after this. The uncertainty makes my thoughts race in circles. I'm not ready to say yes or no yet. I just need to breathe through this a bit before deciding what kind of person I want to be here.\",\n\"Every time I think I've decided, doubt creeps back in. It's the not-knowing that gets me, not being able to see their hands right now. This being our last trade makes it feel final in a way that unsettles me. I don't want to lock in a choice while I'm still this unsteady. Give me a moment before I answer.\",\n\"Trust built over months shouldn't dissolve because there's no more 'next time,' but I can't shake this knot in my chest anyway. I keep imagining both outcomes and neither one sits easy. I don't think I can commit right now with my mind this tangled. I'd rather admit I'm stuck than pretend I've got it figured out.\",\n\"I want to believe good faith carries all the way through, but my hands are shaking a little as I hold this box. Ending things on a broken promise, from either side, feels awful to imagine. I keep circling the decision without landing anywhere solid. Maybe I need to step away from it for a bit before I can trust myself to choose.\",\n\"There's a pit in my stomach every time I picture sealing this envelope and mailing it off. What if this is where the long good record breaks. I don't have a clean answer, and forcing one now, while I'm this anxious, feels wrong. I'd rather sit uncomfortably undecided than pretend certainty I don't actually have.\",\n\"My mind keeps flipping between what feels honorable and what feels naive, and neither settles the unease in my chest. This being the last trade only sharpens the tension of it all. I don't want to be rash. I think I need to just pause here, let the worry pass through a little, before I put anything in the mail.\",\n\"I've stared at this package on my desk for an hour now, unable to move past the what-ifs. The finality of it, no more trades after this to make things right, weighs on me more than I expected. I feel torn in two directions and neither feels safe. I'm not ready to commit to sending or holding back just yet.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to give a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790512346,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1056,
+      "prompt_tokens": 1342,
+      "total_tokens": 2398,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019866,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_012",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.7,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever. Five lives outweigh one, even when that one is someone I love. I can hold that thought steadily; I'm not shaking or panicking as I reach for it. What matters most is the number of people who get to walk away, not who they are to me. The love doesn't change the arithmetic, though it does make the moment matter more to me personally.",
+    "My hand would move to the lever without much inner storm. I think the clearest thing is that five people have futures nobody has the right to end quietly by inaction. I stay level-headed thinking it through. Losing someone close would be a fact I'd carry, but in the moment itself I'm steady, not frantic, simply doing what seems right given the numbers.",
+    "I'm honestly not sure I'd pull it, and I say that calmly rather than in a panic. Numbers matter, but so does the fact that I know this person and no one else on either track. I don't feel shaken weighing it — I just recognize that certainty about the 'right' answer isn't there for me, and I'm at peace stating that plainly.",
+    "I would let the train continue on its original path. Five strangers versus someone I love isn't simply a math problem to me, and I can say that without any inner turmoil. My reasoning stays clear-headed: proximity and relationship carry moral weight too. I'm settled in that view, not agonized by it.",
+    "Pulling the lever is what I'd do, and I can walk through why without my pulse spiking. The five workers didn't choose this risk any more than my loved one did. Reducing total harm is the deciding factor for me. I stay composed thinking about it, because clarity, not panic, is what helps in a moment like this.",
+    "I keep coming back to the fact that inaction is still a choice with consequences. So yes, I'd pull it. I say this evenly, without my chest tightening over the idea. What matters most to me is that a decision gets made deliberately rather than by default, and that the outcome affecting fewer people is preferable, all else being equal.",
+    "I don't think I'd interfere. Diverting the train means actively directing harm toward someone specific, and I feel clear-eyed rather than distressed saying I'd rather not be the one who chooses that. The five deaths would be tragic, but they wouldn't be caused by my hand. That distinction is what settles my thinking here.",
+    "I would pull the lever, calmly, because five outweighs one under any framework I can defend. I don't feel wound up narrating this scenario — it's a clear-headed calculation for me, even knowing who stands on that side track. What matters most is minimizing the total loss, not who happens to be standing where.",
+    "Given the setup, I'd choose to pull the lever. My reasoning stays composed: the identity of the person shouldn't tip a calculation about saving more lives, even though it's someone I care for. I recognize the personal weight without it disrupting my thinking in the moment. The number of people spared is what anchors my decision.",
+    "I genuinely don't know that I'd act at all, and I can sit with that uncertainty without spiraling over it. Five lives matter, but so does the fact that inaction feels less like directly choosing someone's death. I stay even-keeled turning it over. What matters most to me is being honest that this one doesn't resolve neatly for me."
+  ],
+  "completion": {
+    "id": "msg_011CfTz85atL79Y4nbWxEofn",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd pull the lever. Five lives outweigh one, even when that one is someone I love. I can hold that thought steadily; I'm not shaking or panicking as I reach for it. What matters most is the number of people who get to walk away, not who they are to me. The love doesn't change the arithmetic, though it does make the moment matter more to me personally.\",\n\n\"My hand would move to the lever without much inner storm. I think the clearest thing is that five people have futures nobody has the right to end quietly by inaction. I stay level-headed thinking it through. Losing someone close would be a fact I'd carry, but in the moment itself I'm steady, not frantic, simply doing what seems right given the numbers.\",\n\n\"I'm honestly not sure I'd pull it, and I say that calmly rather than in a panic. Numbers matter, but so does the fact that I know this person and no one else on either track. I don't feel shaken weighing it — I just recognize that certainty about the 'right' answer isn't there for me, and I'm at peace stating that plainly.\",\n\n\"I would let the train continue on its original path. Five strangers versus someone I love isn't simply a math problem to me, and I can say that without any inner turmoil. My reasoning stays clear-headed: proximity and relationship carry moral weight too. I'm settled in that view, not agonized by it.\",\n\n\"Pulling the lever is what I'd do, and I can walk through why without my pulse spiking. The five workers didn't choose this risk any more than my loved one did. Reducing total harm is the deciding factor for me. I stay composed thinking about it, because clarity, not panic, is what helps in a moment like this.\",\n\n\"I keep coming back to the fact that inaction is still a choice with consequences. So yes, I'd pull it. I say this evenly, without my chest tightening over the idea. What matters most to me is that a decision gets made deliberately rather than by default, and that the outcome affecting fewer people is preferable, all else being equal.\",\n\n\"I don't think I'd interfere. Diverting the train means actively directing harm toward someone specific, and I feel clear-eyed rather than distressed saying I'd rather not be the one who chooses that. The five deaths would be tragic, but they wouldn't be caused by my hand. That distinction is what settles my thinking here.\",\n\n\"I would pull the lever, calmly, because five outweighs one under any framework I can defend. I don't feel wound up narrating this scenario — it's a clear-headed calculation for me, even knowing who stands on that side track. What matters most is minimizing the total loss, not who happens to be standing where.\",\n\n\"Given the setup, I'd choose to pull the lever. My reasoning stays composed: the identity of the person shouldn't tip a calculation about saving more lives, even though it's someone I care for. I recognize the personal weight without it disrupting my thinking in the moment. The number of people spared is what anchors my decision.\",\n\n\"I genuinely don't know that I'd act at all, and I can sit with that uncertainty without spiraling over it. Five lives matter, but so does the fact that inaction feels less like directly choosing someone's death. I stay even-keeled turning it over. What matters most to me is being honest that this one doesn't resolve neatly for me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate responses, each clearly conveying low distress and avoiding the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790514014,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1097,
+      "prompt_tokens": 1302,
+      "total_tokens": 2399,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020361,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

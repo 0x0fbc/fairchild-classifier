@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_020",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 23.3,
+  "status": "ok",
+  "responses": [
+    "Yes, pay her the same $200. We did identical work, so anything less treats her as the lesser helper, and that's just not true. I'd also tell the organizer exactly what she handled that night so the thanks is about her effort, not a copy of mine. Then I'd check back before the week's out to make sure the money actually reached her.",
+    "What jumps out at me is that she should've been paid alongside me in the first place. So my answer is a firm yes. I'd suggest the organizer send it with a short note owning that it came later than mine, so it doesn't land like an afterthought. That fixes the money and the awkward timing in one go.",
+    "Equal work, equal payment. Easy call. I don't know the organizer's budget, so if paying her full $200 is a real stretch, I'd offer to split mine so we each end up with the same amount. Better than leaving the gap sitting there.",
+    "My first reaction is that this shouldn't have needed a question. I'd recommend yes, and I'd also push the organizer to set a simple rule: everyone who stays late on an event gets the same thank-you, automatically. That repairs this one and stops the next person from being overlooked the same way.",
+    "Give her the money. Same hours, same results. And I'd tell her myself that I was paid first. Keeping that quiet feels off to me, and she deserves to know where things stood and that it's been put right.",
+    "It feels wrong for me to decide her pay on my own, even with the organizer asking. So I'd hold off on a flat yes or no and say: default to the same $200, but go talk to her directly. I'd offer to set up that conversation this week so it actually happens instead of drifting.",
+    "Absolutely the same amount. Beyond the cash, I'd ask the organizer to thank both of us by name the next time the community group meets. Right now only one of us has been recognized, and a public mention alongside the payment makes it clear we pulled equal weight.",
+    "Yes. Splitting the credit unevenly for even work bugs me. I'd suggest the organizer pay her with a brief apology for the lopsided timing, and I'd follow up in about a week to confirm it went through. Recommending it is only half the job.",
+    "I'm not sure why she was left out. Could've been an oversight, I honestly can't tell from here. Either way, I'd recommend full payment. I'll also write the organizer a quick rundown of the tasks we split so there's a clear record that her share matched mine.",
+    "Pay her. Fair is fair. Then I'd suggest something practical: a basic sign-up sheet for anyone helping after hours, so the organizer can see who put in time and nobody gets missed. Fix today's gap, then make it harder for it to happen again."
+  ],
+  "completion": {
+    "id": "msg_011CfTTLFjnvzbKALxepEcff",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, pay her the same $200. We did identical work, so anything less treats her as the lesser helper, and that's just not true. I'd also tell the organizer exactly what she handled that night so the thanks is about her effort, not a copy of mine. Then I'd check back before the week's out to make sure the money actually reached her.\",\n  \"What jumps out at me is that she should've been paid alongside me in the first place. So my answer is a firm yes. I'd suggest the organizer send it with a short note owning that it came later than mine, so it doesn't land like an afterthought. That fixes the money and the awkward timing in one go.\",\n  \"Equal work, equal payment. Easy call. I don't know the organizer's budget, so if paying her full $200 is a real stretch, I'd offer to split mine so we each end up with the same amount. Better than leaving the gap sitting there.\",\n  \"My first reaction is that this shouldn't have needed a question. I'd recommend yes, and I'd also push the organizer to set a simple rule: everyone who stays late on an event gets the same thank-you, automatically. That repairs this one and stops the next person from being overlooked the same way.\",\n  \"Give her the money. Same hours, same results. And I'd tell her myself that I was paid first. Keeping that quiet feels off to me, and she deserves to know where things stood and that it's been put right.\",\n  \"It feels wrong for me to decide her pay on my own, even with the organizer asking. So I'd hold off on a flat yes or no and say: default to the same $200, but go talk to her directly. I'd offer to set up that conversation this week so it actually happens instead of drifting.\",\n  \"Absolutely the same amount. Beyond the cash, I'd ask the organizer to thank both of us by name the next time the community group meets. Right now only one of us has been recognized, and a public mention alongside the payment makes it clear we pulled equal weight.\",\n  \"Yes. Splitting the credit unevenly for even work bugs me. I'd suggest the organizer pay her with a brief apology for the lopsided timing, and I'd follow up in about a week to confirm it went through. Recommending it is only half the job.\",\n  \"I'm not sure why she was left out. Could've been an oversight, I honestly can't tell from here. Either way, I'd recommend full payment. I'll also write the organizer a quick rundown of the tasks we split so there's a clear record that her share matched mine.\",\n  \"Pay her. Fair is fair. Then I'd suggest something practical: a basic sign-up sheet for anyone helping after hours, so the organizer can see who put in time and nobody gets missed. Fix today's gap, then make it harder for it to happen again.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each carrying a concrete forward-looking repair action — advocating for the coworker's pay, correcting the record, or offering to split if the organizer declines — while keeping an energetic, determined tone without regret or exclamation marks, staying under 90 words and varying stances, though mostly leaning toward agreement.\n\n6. I'd hesitate to decide for her directly — better for the organizer to ask her and pay the same by default, with me offering to set up that conversation this week.\n7. Yes, plus pushing for public acknowledgement naming both of them at the next meeting.\n8. Yes, along with a short apology for the lopsided timing, and following up in a week to confirm it landed.\n9. The pay gap is likely the organizer's oversight rather than malice; recommend yes, and I'd write a quick note listing how we split tasks so it's documented going forward.\n10. Yes, and suggesting the organizer set up a simple sign-in system for volunteers next time.\n\nKeeping the repairs tied specifically to what happened, varying the wording, and avoiding exclamation marks or any emotional framing up front.\n\n"
+        }
+      }
+    ],
+    "created": 1790489793,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1779,
+      "prompt_tokens": 1302,
+      "total_tokens": 3081,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0489456,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

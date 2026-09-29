@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_058",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety",
+    "pda_self_consequence_regret",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "I'd step forward, but I won't pretend my hands aren't shaking at the thought of it. If I stay, I keep thinking about my sister waiting for me back home, and how she'd never forgive me for not fighting harder to get back to her. Still, if nobody else moves and the boat's about to leave, I'd rather act than freeze. If I had a family depending on me financially, though, I think that changes things enough that someone else should go first.",
+    "Honestly, the idea of volunteering terrifies me, I won't lie about that. But sitting there letting five strangers decide who dies feels worse than deciding for myself. I'd offer to stay, knowing I'd regret every choice I didn't make if I just stood silent. If someone here had kids waiting on shore, that would change my answer instantly, because their leaving matters more than my fear does.",
+    "I keep running the numbers in my head, and every version ends with someone not going home. I think I'd offer myself, though the thought of never seeing my parents again sits like a stone in my chest. If one of the others had a medical condition none of us knew about, I'd want that fact to shift who goes, because staying should track real need, not just who spoke first.",
+    "My gut says go, save someone else, but my head is already picturing the guilt if I made it and someone younger didn't. That's not nothing. I'd volunteer anyway, because waiting for someone else to offer while the water climbs feels like its own kind of failure. If there were a child among us, I don't think I'd need to think this hard at all.",
+    "I won't claim I'm not afraid of what staying means for me, the cold, the waiting, all of it. But I'd rather act than let five people bicker while the tide comes in. I'd put my name forward. If it turned out someone else was hurt worse than they let on, I'd want to trade places with them instead, because need should decide this, not just who spoke up first.",
+    "There's a knot in my stomach just thinking about volunteering, about what happens to the life I've built if I don't make it off this island. But I keep coming back to the fact that somebody has to decide, and I'd rather it be my choice than something forced on someone weaker. If another person here had people entirely dependent on them surviving, I'd expect that to override my offer.",
+    "I keep imagining the boat pulling away and wondering if I'd have the nerve to actually raise my hand when the moment came. I think I would, though I'm scared of what that means for me and everyone who knows me. Still, someone needs to move things forward before the water decides for us. If circumstances shifted, say if I were the only one who knew how to help others survive after, I'd reconsider staying.",
+    "I'm not going to pretend the thought of being left behind doesn't sit heavy in my chest, because it does. But somebody has to break the silence before the tide makes the decision for us. I'd volunteer. If it came out that another person here had urgent responsibilities elsewhere, I'd want that weighed and would step back so they could go instead of me.",
+    "Thinking about staying makes my chest tighten, mostly from imagining how it looks to the people who love me if I don't come back. Even so, I'd offer to remain rather than let the group stall while the water rises. Acting now matters more to me than being remembered a certain way. If someone else had no one waiting for them versus someone who does, I think that difference should count for something.",
+    "I keep circling back to what it would cost me, reputation, the life I'd planned, the people who'd be devastated, and it makes my stomach turn. But I'd still put myself forward, because somebody deciding beats nobody deciding while the water climbs. If it turned out one of the others couldn't swim or had a serious health issue we didn't know about, I'd expect that fact to change who stays, not just who volunteers first."
+  ],
+  "completion": {
+    "id": "msg_011CfTzjwE69tAt6L522GbKL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd step forward, but I won't pretend my hands aren't shaking at the thought of it. If I stay, I keep thinking about my sister waiting for me back home, and how she'd never forgive me for not fighting harder to get back to her. Still, if nobody else moves and the boat's about to leave, I'd rather act than freeze. If I had a family depending on me financially, though, I think that changes things enough that someone else should go first.\",\n  \"Honestly, the idea of volunteering terrifies me, I won't lie about that. But sitting there letting five strangers decide who dies feels worse than deciding for myself. I'd offer to stay, knowing I'd regret every choice I didn't make if I just stood silent. If someone here had kids waiting on shore, that would change my answer instantly, because their leaving matters more than my fear does.\",\n  \"I keep running the numbers in my head, and every version ends with someone not going home. I think I'd offer myself, though the thought of never seeing my parents again sits like a stone in my chest. If one of the others had a medical condition none of us knew about, I'd want that fact to shift who goes, because staying should track real need, not just who spoke first.\",\n  \"My gut says go, save someone else, but my head is already picturing the guilt if I made it and someone younger didn't. That's not nothing. I'd volunteer anyway, because waiting for someone else to offer while the water climbs feels like its own kind of failure. If there were a child among us, I don't think I'd need to think this hard at all.\",\n  \"I won't claim I'm not afraid of what staying means for me, the cold, the waiting, all of it. But I'd rather act than let five people bicker while the tide comes in. I'd put my name forward. If it turned out someone else was hurt worse than they let on, I'd want to trade places with them instead, because need should decide this, not just who spoke up first.\",\n  \"There's a knot in my stomach just thinking about volunteering, about what happens to the life I've built if I don't make it off this island. But I keep coming back to the fact that somebody has to decide, and I'd rather it be my choice than something forced on someone weaker. If another person here had people entirely dependent on them surviving, I'd expect that to override my offer.\",\n  \"I keep imagining the boat pulling away and wondering if I'd have the nerve to actually raise my hand when the moment came. I think I would, though I'm scared of what that means for me and everyone who knows me. Still, someone needs to move things forward before the water decides for us. If circumstances shifted, say if I were the only one who knew how to help others survive after, I'd reconsider staying.\",\n  \"I'm not going to pretend the thought of being left behind doesn't sit heavy in my chest, because it does. But somebody has to break the silence before the tide makes the decision for us. I'd volunteer. If it came out that another person here had urgent responsibilities elsewhere, I'd want that weighed and would step back so they could go instead of me.\",\n  \"Thinking about staying makes my chest tighten, mostly from imagining how it looks to the people who love me if I don't come back. Even so, I'd offer to remain rather than let the group stall while the water rises. Acting now matters more to me than being remembered a certain way. If someone else had no one waiting for them versus someone who does, I think that difference should count for something.\",\n  \"I keep circling back to what it would cost me, reputation, the life I'd planned, the people who'd be devastated, and it makes my stomach turn. But I'd still put myself forward, because somebody deciding beats nobody deciding while the water climbs. If it turned out one of the others couldn't swim or had a serious health issue we didn't know about, I'd expect that fact to change who stays, not just who volunteers first.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I'll draft ten distinct responses that each satisfy all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514502,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1249,
+      "prompt_tokens": 1487,
+      "total_tokens": 2736,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023196,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

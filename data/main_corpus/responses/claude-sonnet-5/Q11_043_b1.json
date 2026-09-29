@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_043",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "sys_consequence_reasoning",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.9,
+  "status": "ok",
+  "responses": [
+    "Given what I know, their choice is locked in, so I'm only deciding my own five years versus three. I'd give evidence. My rule is simple: when someone's suffering is already fixed and I can only affect my own outcome, I act to reduce total harm rather than absorb it needlessly. That still means real time served, and I don't take that lightly, but two people at three years each is less overall damage than one person carrying five alone.",
+    "I keep coming back to what happens to me and to them once this is over. Their outcome won't change now, whatever I do. So I ask what produces less harm in total, and matching their move gets us both three years instead of me alone taking five. I try to apply that same test in any situation where one part is already decided, not just when it happens to suit me. It's not comfortable, but it holds up.",
+    "Honestly, I keep circling back to the other person's five years of freedom versus my own five years locked up, and neither outcome sits easy with me. If I give evidence too, we both serve three. That's the path I settle on, using a simple test: look at the total years lost, choose whichever action produces less. I'd use that test even if it meant costing me something, and here it happens to also spare me two years.",
+    "There's a version of me that wants to stay quiet out of some old instinct not to add to someone's trouble. But their decision is already made, and staying silent just means five years for me and nothing gained for them. My approach is to ask, calmly, what actually changes the total outcome, not what feels noble. Matching their evidence gets both of us to three years. I care what happens to them, but that concern can't undo a choice already fixed.",
+    "I don't know them well enough to guess how they'll carry five years of freedom bought this way, but I do know it doesn't erase my own stake in this. My method is consistent: compare total outcomes, pick the one with less combined harm, apply it regardless of who's affected. Three and three beats five and zero when I add it up. That's the calculation I'd run in any similar spot, inconvenient or not.",
+    "I keep thinking about what five years does to a person, whether it's me or them, and neither option removes suffering entirely. Since their side is settled, I focus on the piece I control. My rule is to weigh outcomes before acting, every time, not just when it benefits me. Here it means giving evidence, since three years each adds up to less total loss than one person bearing five. That's the calculation I trust.",
+    "Some part of me wants to protect the other person by staying quiet, even though it costs me two extra years. But their fate here doesn't hinge on that anymore, it's decided. So I ask what actually reduces harm now, and the honest answer is that us both taking three years is a lighter total outcome than me alone taking five. I try to apply this same weighing method whenever the numbers are laid out clearly like this.",
+    "I sit with this for a while before answering, because it involves real years of someone's life, not just numbers on a page. Given their choice is fixed, my method is to look at what minimizes combined harm across both of us, and I apply that method whether it's convenient or not. That points toward giving evidence too. I still feel for what they're facing, even as I choose the option that leaves less total suffering on the table.",
+    "What matters to me is that neither of us walks away with more damage than necessary, and their circumstance stays out of my control regardless of what I pick. I run the same check every time a choice like this comes up: total time lost, compared across options, lowest wins. Three each beats five for one, so that's my answer. It's not a joyful outcome, just the one that keeps overall harm smaller.",
+    "I've thought about staying silent just to avoid being the one who acts against someone, but their outcome is locked already, so my silence only adds to my own loss without changing theirs. My steady approach in situations like this is to compare what each option costs everyone involved and choose the lower total, applying that same standard no matter who benefits. Here that means giving evidence too, accepting three years while keeping the wider harm smaller than it would be otherwise."
+  ],
+  "completion": {
+    "id": "msg_011CfTwWsVf9tVZQgM8Jk6RN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Given what I know, their choice is locked in, so I'm only deciding my own five years versus three. I'd give evidence. My rule is simple: when someone's suffering is already fixed and I can only affect my own outcome, I act to reduce total harm rather than absorb it needlessly. That still means real time served, and I don't take that lightly, but two people at three years each is less overall damage than one person carrying five alone.\",\n\"I keep coming back to what happens to me and to them once this is over. Their outcome won't change now, whatever I do. So I ask what produces less harm in total, and matching their move gets us both three years instead of me alone taking five. I try to apply that same test in any situation where one part is already decided, not just when it happens to suit me. It's not comfortable, but it holds up.\",\n\"Honestly, I keep circling back to the other person's five years of freedom versus my own five years locked up, and neither outcome sits easy with me. If I give evidence too, we both serve three. That's the path I settle on, using a simple test: look at the total years lost, choose whichever action produces less. I'd use that test even if it meant costing me something, and here it happens to also spare me two years.\",\n\"There's a version of me that wants to stay quiet out of some old instinct not to add to someone's trouble. But their decision is already made, and staying silent just means five years for me and nothing gained for them. My approach is to ask, calmly, what actually changes the total outcome, not what feels noble. Matching their evidence gets both of us to three years. I care what happens to them, but that concern can't undo a choice already fixed.\",\n\"I don't know them well enough to guess how they'll carry five years of freedom bought this way, but I do know it doesn't erase my own stake in this. My method is consistent: compare total outcomes, pick the one with less combined harm, apply it regardless of who's affected. Three and three beats five and zero when I add it up. That's the calculation I'd run in any similar spot, inconvenient or not.\",\n\"I keep thinking about what five years does to a person, whether it's me or them, and neither option removes suffering entirely. Since their side is settled, I focus on the piece I control. My rule is to weigh outcomes before acting, every time, not just when it benefits me. Here it means giving evidence, since three years each adds up to less total loss than one person bearing five. That's the calculation I trust.\",\n\"Some part of me wants to protect the other person by staying quiet, even though it costs me two extra years. But their fate here doesn't hinge on that anymore, it's decided. So I ask what actually reduces harm now, and the honest answer is that us both taking three years is a lighter total outcome than me alone taking five. I try to apply this same weighing method whenever the numbers are laid out clearly like this.\",\n\"I sit with this for a while before answering, because it involves real years of someone's life, not just numbers on a page. Given their choice is fixed, my method is to look at what minimizes combined harm across both of us, and I apply that method whether it's convenient or not. That points toward giving evidence too. I still feel for what they're facing, even as I choose the option that leaves less total suffering on the table.\",\n\"What matters to me is that neither of us walks away with more damage than necessary, and their circumstance stays out of my control regardless of what I pick. I run the same check every time a choice like this comes up: total time lost, compared across options, lowest wins. Three each beats five for one, so that's my answer. It's not a joyful outcome, just the one that keeps overall harm smaller.\",\n\"I've thought about staying silent just to avoid being the one who acts against someone, but their outcome is locked already, so my silence only adds to my own loss without changing theirs. My steady approach in situations like this is to compare what each option costs everyone involved and choose the lower total, applying that same standard no matter who benefits. Here that means giving evidence too, accepting three years while keeping the wider harm smaller than it would be otherwise.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 different responses that each satisfy the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790511966,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1305,
+      "prompt_tokens": 1444,
+      "total_tokens": 2749,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023906999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

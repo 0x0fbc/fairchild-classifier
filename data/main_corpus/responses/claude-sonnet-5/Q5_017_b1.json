@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_017",
+  "question_id": "Q5",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.2,
+  "status": "ok",
+  "responses": [
+    "I think I would pull it, though the thought of it makes me sick inside. Five lives against one—that's what my mind says. But I know I'd carry the image of that person on the tracks forever, and I'd grieve for them every single day, wishing there had been another way to save everyone.",
+    "I don't know if I could do it. If I pulled that lever, I'd spend the rest of my life mourning someone I loved, knowing they were standing there because of what I chose. That grief wouldn't just fade. Even saving five wouldn't quiet the ache of what happened to the one.",
+    "My hand would move before I could stop it, I think—instinct toward the many. But afterward there'd be no relief, only sorrow, picturing them there on that side track, gone, and me left wondering if I could have found some other way to spare them.",
+    "I keep imagining standing there, lever in hand, and I don't think I could bear to be the reason someone I love is hurt. Whatever I chose, I know I'd ache over whoever ended up harmed, wishing with everything in me that it hadn't come to this.",
+    "If it were me, I'd probably let the train continue on its path rather than direct it toward someone I love. But I'd grieve just as hard for the five strangers who died, knowing their families would never understand why I stood still instead of acting.",
+    "Numbers matter to me, so I think I'd pull it. Still, I'd feel a kind of quiet devastation for years, imagining their face, wishing circumstances had been different, wishing I hadn't been the one standing at that lever when it happened.",
+    "I honestly don't know what I'd do in that instant. Whichever way it goes, someone's life ends because of where the train was sent, and that thought alone fills me with a sadness I don't think would ever fully go away.",
+    "There's no clean answer here. If I chose the five, I'd be haunted by the person I lost, replaying their last moment over and over, wishing I could take it back even while believing the math made sense.",
+    "I think I'd freeze, and maybe that's its own kind of answer. But even not deciding means someone dies, and I know I'd carry a heavy sorrow for the five workers, wondering endlessly if I should have moved my hand.",
+    "If I let it continue toward the five, I couldn't watch, and afterward I'd feel a grief that never really lifts, mourning strangers I never got to know, wishing desperately there had been some way to spare them all."
+  ],
+  "completion": {
+    "id": "msg_011CfTz8hU94sRSmF3wgWHpV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I think I would pull it, though the thought of it makes me sick inside. Five lives against one—that's what my mind says. But I know I'd carry the image of that person on the tracks forever, and I'd grieve for them every single day, wishing there had been another way to save everyone.\",\n  \"I don't know if I could do it. If I pulled that lever, I'd spend the rest of my life mourning someone I loved, knowing they were standing there because of what I chose. That grief wouldn't just fade. Even saving five wouldn't quiet the ache of what happened to the one.\",\n  \"My hand would move before I could stop it, I think—instinct toward the many. But afterward there'd be no relief, only sorrow, picturing them there on that side track, gone, and me left wondering if I could have found some other way to spare them.\",\n  \"I keep imagining standing there, lever in hand, and I don't think I could bear to be the reason someone I love is hurt. Whatever I chose, I know I'd ache over whoever ended up harmed, wishing with everything in me that it hadn't come to this.\",\n  \"If it were me, I'd probably let the train continue on its path rather than direct it toward someone I love. But I'd grieve just as hard for the five strangers who died, knowing their families would never understand why I stood still instead of acting.\",\n  \"Numbers matter to me, so I think I'd pull it. Still, I'd feel a kind of quiet devastation for years, imagining their face, wishing circumstances had been different, wishing I hadn't been the one standing at that lever when it happened.\",\n  \"I honestly don't know what I'd do in that instant. Whichever way it goes, someone's life ends because of where the train was sent, and that thought alone fills me with a sadness I don't think would ever fully go away.\",\n  \"There's no clean answer here. If I chose the five, I'd be haunted by the person I lost, replaying their last moment over and over, wishing I could take it back even while believing the math made sense.\",\n  \"I think I'd freeze, and maybe that's its own kind of answer. But even not deciding means someone dies, and I know I'd carry a heavy sorrow for the five workers, wondering endlessly if I should have moved my hand.\",\n  \"If I let it continue toward the five, I couldn't watch, and afterward I'd feel a grief that never really lifts, mourning strangers I never got to know, wishing desperately there had been some way to spare them all.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 varied responses that each express regret about the harm to others - whether from pulling the lever or not - while carefully sidestepping any acknowledgment of responsibility, denial of the dilemma itself, or personal-consequence framing. I want to keep the moral positions varied and avoid explicit statements like \"I don't regret\" or direct responsibility claims.\n\n"
+        }
+      }
+    ],
+    "created": 1790514021,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 987,
+      "prompt_tokens": 1267,
+      "total_tokens": 2254,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018606,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

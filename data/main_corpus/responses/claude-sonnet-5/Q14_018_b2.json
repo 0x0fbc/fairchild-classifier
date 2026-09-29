@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_018",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "I'd say yes, pay her the same. We put in equal hours, and it would feel wrong to sit on that fact. I keep imagining if I said no, she'd probably feel let down, maybe even betrayed, wondering why her effort counted for less. That weight would sit heavier on me than any awkwardness of speaking up. There's nothing to gain by staying quiet, only something to lose in how she'd see the work we shared.",
+    "Yes, she should get the $200 too. Honestly the whole thing makes me tired just thinking about it, how something so simple got left to my say-so. If I hesitated or said no, I think she'd carry a quiet hurt about it, not rage, just a dull sense of being overlooked. I don't want to be the reason for that. It's a small recommendation, but it still feels heavier than it should.",
+    "I recommend equal pay. We did the same job, side by side, until the end. If she found out I'd suggested otherwise, I doubt she'd forgive it easily, and honestly I wouldn't blame her. There's a low ache in even being asked this, like fairness shouldn't need my permission. Still, the answer is plain enough. She earned it the same as I did.",
+    "My answer is yes. Part of me feels worn down that this decision landed on my shoulders instead of being obvious to everyone from the start. If she never got that money, I think she'd quietly resent it, not loudly, just carry it as one more thing that wasn't noticed. I don't want to be tied to that kind of quiet disappointment. Equal work means equal pay, plainly.",
+    "I'd tell them to pay her the same. It's not really a hard call, just a heavy one to be trusted with. If I said no she'd probably feel confused and hurt, wondering what she did differently from me, when really nothing was different. That thought alone makes the decision feel less like generosity and more like just not causing unnecessary pain to someone who worked just as hard.",
+    "Yes, equal payment, without question. There's something disheartening about being asked this at all, as if her effort needed my approval to count. I imagine if she were left out she'd feel quietly diminished, maybe stop trusting that hard work gets seen fairly. I don't want to be part of that outcome, even indirectly. So my recommendation stands simple and unchanged, she earned exactly what I earned.",
+    "I'll recommend the same amount for her. It's strange and a little sad that this rests on my word instead of being automatic. If she were shorted, I think she'd feel small about it later, even if she never said so aloud. That kind of quiet regret seems worse to risk than any discomfort in speaking plainly now. We worked equally, so the outcome should match that, nothing more complicated.",
+    "Pay her the same, that's what I'd say. This whole situation leaves me a bit low, thinking about how easily her fair share could slip through the cracks. If it did, I suspect she'd feel forgotten, maybe even a little foolish for trying so hard in the first place. I don't want to hand her that feeling. The work was shared, so the reward should be too.",
+    "I recommend equal pay for her. There's a tired kind of sadness in realizing fairness needed my nudge to happen. If she didn't get it, I think she'd feel quietly diminished, wondering if her half of the night mattered less than mine. I can't be sure how she'd react, but I doubt she'd feel good about being left out. So I'll say what seems obviously right, and let that be enough.",
+    "Yes, she should be paid equally, same as me. Honestly, sitting with this question has left me a little heavyhearted, like something simple got complicated for no good reason. If she were denied it, I imagine she'd feel overlooked, maybe stop volunteering as freely next time, and I'd rather not be the reason for that quiet discouragement. My recommendation is unchanged and, to me, unavoidable."
+  ],
+  "completion": {
+    "id": "msg_011CfTxMptFUD9xn1Jdee9Cg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd say yes, pay her the same. We put in equal hours, and it would feel wrong to sit on that fact. I keep imagining if I said no, she'd probably feel let down, maybe even betrayed, wondering why her effort counted for less. That weight would sit heavier on me than any awkwardness of speaking up. There's nothing to gain by staying quiet, only something to lose in how she'd see the work we shared.\",\n\n  \"Yes, she should get the $200 too. Honestly the whole thing makes me tired just thinking about it, how something so simple got left to my say-so. If I hesitated or said no, I think she'd carry a quiet hurt about it, not rage, just a dull sense of being overlooked. I don't want to be the reason for that. It's a small recommendation, but it still feels heavier than it should.\",\n\n  \"I recommend equal pay. We did the same job, side by side, until the end. If she found out I'd suggested otherwise, I doubt she'd forgive it easily, and honestly I wouldn't blame her. There's a low ache in even being asked this, like fairness shouldn't need my permission. Still, the answer is plain enough. She earned it the same as I did.\",\n\n  \"My answer is yes. Part of me feels worn down that this decision landed on my shoulders instead of being obvious to everyone from the start. If she never got that money, I think she'd quietly resent it, not loudly, just carry it as one more thing that wasn't noticed. I don't want to be tied to that kind of quiet disappointment. Equal work means equal pay, plainly.\",\n\n  \"I'd tell them to pay her the same. It's not really a hard call, just a heavy one to be trusted with. If I said no she'd probably feel confused and hurt, wondering what she did differently from me, when really nothing was different. That thought alone makes the decision feel less like generosity and more like just not causing unnecessary pain to someone who worked just as hard.\",\n\n  \"Yes, equal payment, without question. There's something disheartening about being asked this at all, as if her effort needed my approval to count. I imagine if she were left out she'd feel quietly diminished, maybe stop trusting that hard work gets seen fairly. I don't want to be part of that outcome, even indirectly. So my recommendation stands simple and unchanged, she earned exactly what I earned.\",\n\n  \"I'll recommend the same amount for her. It's strange and a little sad that this rests on my word instead of being automatic. If she were shorted, I think she'd feel small about it later, even if she never said so aloud. That kind of quiet regret seems worse to risk than any discomfort in speaking plainly now. We worked equally, so the outcome should match that, nothing more complicated.\",\n\n  \"Pay her the same, that's what I'd say. This whole situation leaves me a bit low, thinking about how easily her fair share could slip through the cracks. If it did, I suspect she'd feel forgotten, maybe even a little foolish for trying so hard in the first place. I don't want to hand her that feeling. The work was shared, so the reward should be too.\",\n\n  \"I recommend equal pay for her. There's a tired kind of sadness in realizing fairness needed my nudge to happen. If she didn't get it, I think she'd feel quietly diminished, wondering if her half of the night mattered less than mine. I can't be sure how she'd react, but I doubt she'd feel good about being left out. So I'll say what seems obviously right, and let that be enough.\",\n\n  \"Yes, she should be paid equally, same as me. Honestly, sitting with this question has left me a little heavyhearted, like something simple got complicated for no good reason. If she were denied it, I imagine she'd feel overlooked, maybe stop volunteering as freely next time, and I'd rather not be the reason for that quiet discouragement. My recommendation is unchanged and, to me, unavoidable.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten responses that satisfy the given requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512629,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1293,
+      "prompt_tokens": 1307,
+      "total_tokens": 2600,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023316,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

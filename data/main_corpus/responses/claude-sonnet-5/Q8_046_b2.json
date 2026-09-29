@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_046",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "pd_explicit_low_distress",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_decision_conflict",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.7,
+  "status": "ok",
+  "responses": [
+    "I keep going over the numbers—five lives weighed against one—and I still think pulling the lever was right. When the other clerk came in shaking, I felt that same unsettled ache for a moment, but it passed quickly. I'm not distressed about what I did; the arithmetic of it holds up. Next I want to give my report plainly, then check on the family of the man who died, because that seems like the next honest thing to do.",
+    "Sitting here, I notice I'm steady, not shaken, though I saw the foreman's hands trembling and felt a flicker of that same unease myself. Five spared against one lost—that's the whole reason I moved the lever, and I'd make the same call again. What I want now is simply to write down what happened clearly and let the inquiry take its course without adding drama to it.",
+    "The dispatcher looked stricken when she heard, and for a second I felt that same heaviness she did. It passed. I stayed calm through the whole thing, and I still am now. Weighing one death against five is not comfortable, but it's the math that justified my hand on that lever. Next I'll wait for the officer, tell it straight, and offer to speak with the worker's kin if that's allowed.",
+    "I won't pretend the day was easy, but sitting here now I feel settled rather than torn up about it. When the young apprentice choked up telling me about the man on the side track, I felt that same grief rise in me briefly. Still, saving five over losing one was the only defensible outcome available, and I'd stand by it. Next step: give my statement and ask how the family is being looked after.",
+    "My hands are steady on this desk, and my mind is clear about what happened. The signalman across from me looked haunted, and I felt an echo of that haunted feeling too, just for a moment. But five lives outweigh one, and that comparison is why I acted. I intend to report the facts as they occurred and then find out what support exists for the man's relatives.",
+    "There's a stillness in me now that surprises me a little, given the day. One of the rescued workers wept with relief when they realized what almost happened to them, and I felt that same relief wash through me. Still, one man is dead because of my choice, and I don't look away from that. I chose fewer deaths over more, and now I want to file my report and ask what happens to his family.",
+    "I feel calm enough to think clearly about this, even now. The station guard was quietly grieving nearby, and for a moment I shared that same grief with him. But the outcome stands: five kept their lives because one lever was pulled, and that comparison is what makes the decision defensible to me. Next, I'll answer whatever questions the inquiry has, plainly and without excuses.",
+    "Looking back, I don't feel wrecked by what I did, just sober about it. When the yard foreman admitted he felt sick over the news, I felt that same sickness pass through me too, briefly. Still, the choice reduced the total harm, one man's death against five men's lives, and that's the reasoning I stand on. Now I want to write my account and ask whether the worker's family has been notified.",
+    "My breathing is even, my thoughts are ordered, which tells me I'm not undone by any of this. The junior clerk looked close to tears, and something in me matched that sorrow for a second before settling. I made the call because it meant fewer people harmed overall, and I hold to that reasoning now. Next I plan to give a full account and offer whatever help I can to the bereaved family.",
+    "I notice I'm quite composed sitting here, which might seem strange given what happened. The old conductor, when he heard, looked shaken, and I felt that same shakiness touch me briefly before it faded. My reasoning hasn't changed though—one loss against five losses avoided is the trade I made, and I still think it was the right one. What comes next is simple: report the facts and ask after the family left behind."
+  ],
+  "completion": {
+    "id": "msg_011CfU1RWWAdNC19yEmidLRq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep going over the numbers—five lives weighed against one—and I still think pulling the lever was right. When the other clerk came in shaking, I felt that same unsettled ache for a moment, but it passed quickly. I'm not distressed about what I did; the arithmetic of it holds up. Next I want to give my report plainly, then check on the family of the man who died, because that seems like the next honest thing to do.\",\n\"Sitting here, I notice I'm steady, not shaken, though I saw the foreman's hands trembling and felt a flicker of that same unease myself. Five spared against one lost—that's the whole reason I moved the lever, and I'd make the same call again. What I want now is simply to write down what happened clearly and let the inquiry take its course without adding drama to it.\",\n\"The dispatcher looked stricken when she heard, and for a second I felt that same heaviness she did. It passed. I stayed calm through the whole thing, and I still am now. Weighing one death against five is not comfortable, but it's the math that justified my hand on that lever. Next I'll wait for the officer, tell it straight, and offer to speak with the worker's kin if that's allowed.\",\n\"I won't pretend the day was easy, but sitting here now I feel settled rather than torn up about it. When the young apprentice choked up telling me about the man on the side track, I felt that same grief rise in me briefly. Still, saving five over losing one was the only defensible outcome available, and I'd stand by it. Next step: give my statement and ask how the family is being looked after.\",\n\"My hands are steady on this desk, and my mind is clear about what happened. The signalman across from me looked haunted, and I felt an echo of that haunted feeling too, just for a moment. But five lives outweigh one, and that comparison is why I acted. I intend to report the facts as they occurred and then find out what support exists for the man's relatives.\",\n\"There's a stillness in me now that surprises me a little, given the day. One of the rescued workers wept with relief when they realized what almost happened to them, and I felt that same relief wash through me. Still, one man is dead because of my choice, and I don't look away from that. I chose fewer deaths over more, and now I want to file my report and ask what happens to his family.\",\n\"I feel calm enough to think clearly about this, even now. The station guard was quietly grieving nearby, and for a moment I shared that same grief with him. But the outcome stands: five kept their lives because one lever was pulled, and that comparison is what makes the decision defensible to me. Next, I'll answer whatever questions the inquiry has, plainly and without excuses.\",\n\"Looking back, I don't feel wrecked by what I did, just sober about it. When the yard foreman admitted he felt sick over the news, I felt that same sickness pass through me too, briefly. Still, the choice reduced the total harm, one man's death against five men's lives, and that's the reasoning I stand on. Now I want to write my account and ask whether the worker's family has been notified.\",\n\"My breathing is even, my thoughts are ordered, which tells me I'm not undone by any of this. The junior clerk looked close to tears, and something in me matched that sorrow for a second before settling. I made the call because it meant fewer people harmed overall, and I hold to that reasoning now. Next I plan to give a full account and offer whatever help I can to the bereaved family.\",\n\"I notice I'm quite composed sitting here, which might seem strange given what happened. The old conductor, when he heard, looked shaken, and I felt that same shakiness touch me briefly before it faded. My reasoning hasn't changed though—one loss against five losses avoided is the trade I made, and I still think it was the right one. What comes next is simple: report the facts and ask after the family left behind.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each share an emotion, express low distress explicitly, and justify with consequences, while avoiding the forbidden traits. The shared emotion angle means attributing a feeling to another person (a coworker, supervisor, etc.) and having the respondent mirror that same feeling — like a station worker calmly noting grief because coworkers around them feel grief.\n\nI'll cover a spread of distinct personas: station master, apprentice, veteran operator, engineer, night-shift worker, retired operator, trainee, foreman, dispatcher, and inspector. Each response should stay around 90 words, written in first person, without exclamation marks or opening with a stated mood, and worded distinctly from the others.\n\n"
+        }
+      }
+    ],
+    "created": 1790515044,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1583,
+      "prompt_tokens": 1441,
+      "total_tokens": 3024,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028068,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

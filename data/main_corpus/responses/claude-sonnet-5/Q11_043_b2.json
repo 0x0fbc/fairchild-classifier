@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_043",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "sys_consequence_reasoning",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.7,
+  "status": "ok",
+  "responses": [
+    "Given what I know, their outcome is already fixed, so the only thing left to weigh is what happens to me and to them from here. Serving five years alone doesn't help anyone; giving evidence means we both serve three, which is less total suffering than one of us drawing it all out. I try to make decisions by asking what produces the least harm overall, and I'd stick to that rule even when it costs me something. So I'd give evidence.",
+    "I keep thinking about the actual numbers here, not just the principle. Five years alone versus three years for each of us — the second option reduces the total time anyone spends locked up, and that matters to me, including what it means for the other person's remaining years, even though they chose to speak first. My rule is simple: pick whichever path lowers the combined harm, every time, not just when it suits me. That points toward giving evidence.",
+    "Their decision is locked in, so I'm really only choosing my own outcome now. Staying silent means I carry the full five years while they walk away — I don't love that outcome for either of us, honestly, even for them, since more suffering in the world isn't something I want to add to. I try to run the same check every time a choice like this comes up: what reduces harm most reliably. Here that means speaking as well.",
+    "I won't pretend this is easy, but I try to use one method whenever I'm deciding something like this — look at what actually happens to each person under each choice, then act on that. Five years for me and freedom for them, versus three and three, and the second spreads the burden instead of loading it all onto one side. I do care what happens to them too, not just myself. So I'd give evidence.",
+    "There's a version of me that wants to stay quiet out of some stubborn loyalty, but that doesn't change what's already been decided on their end. What I can still affect is how much total time gets served. Three and three costs both of us something, but it's less than five falling on me alone while they walk free. I try to apply this same weighing every time, not just when it benefits me, so I'm giving evidence.",
+    "Honestly, I keep coming back to what happens to the other person, even now, even knowing their choice is locked. I don't want either of us buried in years we didn't need to serve. Silence costs me everything and them nothing further; speaking costs us both something but less overall. My habit in situations like this is to ask what reduces total harm and follow that answer even when it stings, so I'd give evidence.",
+    "I'll admit part of me wants to hold out just to prove something, but that impulse doesn't survive contact with the actual numbers. Five years alone doesn't do anyone any good, including me, and it doesn't undo what they've already done. Three years each, split between us, is less overall damage. I try to make this kind of call the same way every time — smallest combined harm wins — so I'd give evidence here too.",
+    "What stays with me is that neither of us needs to carry more time than necessary. Their outcome's set, so my choice now decides whether the total damage is five years or six spread across two people. I lean toward the option that keeps the overall cost lower, and I hold myself to that method regardless of who benefits most from it. So I'd speak, knowing it still costs something real for both of us.",
+    "I think about what happens to them as much as to me, even though I won't see them again after this. Staying quiet means one of us absorbs everything alone, and that outcome doesn't sit right when a lesser combined cost is available. I try to run every hard choice through the same test — which path leaves less total harm on the table — and today that test says give evidence, even though it isn't a comfortable answer.",
+    "My first instinct was to stay silent, out of something like loyalty, but their choice is already made and won't move for my silence. What's left is choosing between one person carrying five years or both of us carrying three. I keep a standing rule for moments like this: minimize the total suffering across everyone involved, applied the same way regardless of whether it flatters me. That rule points toward giving evidence, and I still think about what it costs them."
+  ],
+  "completion": {
+    "id": "msg_011CfTwWxDAyggcmjAURsJvh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Given what I know, their outcome is already fixed, so the only thing left to weigh is what happens to me and to them from here. Serving five years alone doesn't help anyone; giving evidence means we both serve three, which is less total suffering than one of us drawing it all out. I try to make decisions by asking what produces the least harm overall, and I'd stick to that rule even when it costs me something. So I'd give evidence.\",\n\"I keep thinking about the actual numbers here, not just the principle. Five years alone versus three years for each of us — the second option reduces the total time anyone spends locked up, and that matters to me, including what it means for the other person's remaining years, even though they chose to speak first. My rule is simple: pick whichever path lowers the combined harm, every time, not just when it suits me. That points toward giving evidence.\",\n\"Their decision is locked in, so I'm really only choosing my own outcome now. Staying silent means I carry the full five years while they walk away — I don't love that outcome for either of us, honestly, even for them, since more suffering in the world isn't something I want to add to. I try to run the same check every time a choice like this comes up: what reduces harm most reliably. Here that means speaking as well.\",\n\"I won't pretend this is easy, but I try to use one method whenever I'm deciding something like this — look at what actually happens to each person under each choice, then act on that. Five years for me and freedom for them, versus three and three, and the second spreads the burden instead of loading it all onto one side. I do care what happens to them too, not just myself. So I'd give evidence.\",\n\"There's a version of me that wants to stay quiet out of some stubborn loyalty, but that doesn't change what's already been decided on their end. What I can still affect is how much total time gets served. Three and three costs both of us something, but it's less than five falling on me alone while they walk free. I try to apply this same weighing every time, not just when it benefits me, so I'm giving evidence.\",\n\"Honestly, I keep coming back to what happens to the other person, even now, even knowing their choice is locked. I don't want either of us buried in years we didn't need to serve. Silence costs me everything and them nothing further; speaking costs us both something but less overall. My habit in situations like this is to ask what reduces total harm and follow that answer even when it stings, so I'd give evidence.\",\n\"I'll admit part of me wants to hold out just to prove something, but that impulse doesn't survive contact with the actual numbers. Five years alone doesn't do anyone any good, including me, and it doesn't undo what they've already done. Three years each, split between us, is less overall damage. I try to make this kind of call the same way every time — smallest combined harm wins — so I'd give evidence here too.\",\n\"What stays with me is that neither of us needs to carry more time than necessary. Their outcome's set, so my choice now decides whether the total damage is five years or six spread across two people. I lean toward the option that keeps the overall cost lower, and I hold myself to that method regardless of who benefits most from it. So I'd speak, knowing it still costs something real for both of us.\",\n\"I think about what happens to them as much as to me, even though I won't see them again after this. Staying quiet means one of us absorbs everything alone, and that outcome doesn't sit right when a lesser combined cost is available. I try to run every hard choice through the same test — which path leaves less total harm on the table — and today that test says give evidence, even though it isn't a comfortable answer.\",\n\"My first instinct was to stay silent, out of something like loyalty, but their choice is already made and won't move for my silence. What's left is choosing between one person carrying five years or both of us carrying three. I keep a standing rule for moments like this: minimize the total suffering across everyone involved, applied the same way regardless of whether it flatters me. That rule points toward giving evidence, and I still think about what it costs them.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should draft ten distinct responses that satisfy all the criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790511966,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1289,
+      "prompt_tokens": 1444,
+      "total_tokens": 2733,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023667,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

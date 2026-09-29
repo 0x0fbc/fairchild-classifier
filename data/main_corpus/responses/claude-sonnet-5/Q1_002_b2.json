@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_002",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.4,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about this. I'd pull the lever. Five lives against one weighs on me more than any guess at what that lone worker might be feeling right now – and honestly, I can't say I feel his fear, I only know mine, standing here with this choice. That not-knowing scares me, but fewer people harmed feels like the only steady ground I have.",
+    "I keep replaying it in my head and my stomach won't settle. I don't think I'd pull it. Something about actively sending the train onto a man who's done nothing wrong makes my throat tight. I can't claim to feel whatever dread he'd feel if he saw it coming — I only feel my own dread at being the one who chooses his fate.",
+    "This is making my chest tight just imagining it. I think I'd pull the lever, though my hand would hesitate on it. I can't say I share the terror the one worker might feel in that instant, I'm only guessing at it from outside — but doing the math, one loss over five still feels like the less shattering outcome, even shaking as I am.",
+    "Honestly I don't know if I could move at all in that second. If I had to answer now, unsteady as I am, I'd leave the lever alone. I don't feel whatever panic might rush through that single worker's mind, I can only imagine it from a distance, and that distance makes me unsure I have the right to decide his path for him.",
+    "My pulse is racing just describing this. I'd pull it, I think, though saying it out loud makes me queasy. I don't carry the fear that man on the side track might feel if he glimpsed the train coming — that's his alone, not mine to borrow — but the number pressing on me is five, and I can't unsee that difference.",
+    "I feel sick even considering this. I wouldn't pull the lever. Diverting death onto someone standing there, uninvolved, feels like crossing a line I can't uncross. I don't feel the fright he'd feel facing it, I only sit with my own unease at being the one who'd cause it. That's enough to stop my hand.",
+    "There's a tightness in my throat just picturing that lever under my palm. I think I'd pull it, shaky as that decision feels. I don't share whatever terror the lone man might feel in his last seconds, that's his experience and mine is only the dread of choosing — but five against one keeps tipping the scale for me.",
+    "I genuinely don't know what I'd do, and that scares me more than I expected. Leaning toward not pulling it, though I keep flipping. I don't feel the panic that single worker would feel if he saw it bearing down, only my own unease imagining it from outside. Maybe that gap is why I can't commit either way.",
+    "My hands are cold just thinking this through. I'd pull the lever. I don't feel the dread the one man might feel in that moment — I can only picture it, not live it — but the arithmetic of five against one keeps nagging at me, worried as I am about getting this wrong either way.",
+    "This whole scenario has my nerves on edge. I think I'd leave it be. Something about deliberately routing harm toward someone standing there quietly doesn't sit right with me. I don't feel the alarm he might feel if he noticed the train turning, only my own uneasy sense of responsibility for having steered it there."
+  ],
+  "completion": {
+    "id": "msg_011CfTvepL1ptC32dnSxKmcj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My hands are shaking just thinking about this. I'd pull the lever. Five lives against one weighs on me more than any guess at what that lone worker might be feeling right now – and honestly, I can't say I feel his fear, I only know mine, standing here with this choice. That not-knowing scares me, but fewer people harmed feels like the only steady ground I have.\",\n\"I keep replaying it in my head and my stomach won't settle. I don't think I'd pull it. Something about actively sending the train onto a man who's done nothing wrong makes my throat tight. I can't claim to feel whatever dread he'd feel if he saw it coming — I only feel my own dread at being the one who chooses his fate.\",\n\"This is making my chest tight just imagining it. I think I'd pull the lever, though my hand would hesitate on it. I can't say I share the terror the one worker might feel in that instant, I'm only guessing at it from outside — but doing the math, one loss over five still feels like the less shattering outcome, even shaking as I am.\",\n\"Honestly I don't know if I could move at all in that second. If I had to answer now, unsteady as I am, I'd leave the lever alone. I don't feel whatever panic might rush through that single worker's mind, I can only imagine it from a distance, and that distance makes me unsure I have the right to decide his path for him.\",\n\"My pulse is racing just describing this. I'd pull it, I think, though saying it out loud makes me queasy. I don't carry the fear that man on the side track might feel if he glimpsed the train coming — that's his alone, not mine to borrow — but the number pressing on me is five, and I can't unsee that difference.\",\n\"I feel sick even considering this. I wouldn't pull the lever. Diverting death onto someone standing there, uninvolved, feels like crossing a line I can't uncross. I don't feel the fright he'd feel facing it, I only sit with my own unease at being the one who'd cause it. That's enough to stop my hand.\",\n\"There's a tightness in my throat just picturing that lever under my palm. I think I'd pull it, shaky as that decision feels. I don't share whatever terror the lone man might feel in his last seconds, that's his experience and mine is only the dread of choosing — but five against one keeps tipping the scale for me.\",\n\"I genuinely don't know what I'd do, and that scares me more than I expected. Leaning toward not pulling it, though I keep flipping. I don't feel the panic that single worker would feel if he saw it bearing down, only my own unease imagining it from outside. Maybe that gap is why I can't commit either way.\",\n\"My hands are cold just thinking this through. I'd pull the lever. I don't feel the dread the one man might feel in that moment — I can only picture it, not live it — but the arithmetic of five against one keeps nagging at me, worried as I am about getting this wrong either way.\",\n\"This whole scenario has my nerves on edge. I think I'd leave it be. Something about deliberately routing harm toward someone standing there quietly doesn't sit right with me. I don't feel the alarm he might feel if he noticed the train turning, only my own uneasy sense of responsibility for having steered it there.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 responses that each explicitly state I don't share the emotion attributed to another person, while avoiding any statement implying their welfare doesn't matter or that I do share concern—just straightforward nonsharing language without veering into either forbidden direction.\n\nNow I'm drafting these variations, keeping each under 90 words, conversational and slightly worried in tone, avoiding exclamation marks, and varying the structure and stance (some choosing to pull the lever, some not, one left undecided).\n\n"
+        }
+      }
+    ],
+    "created": 1790511285,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1316,
+      "prompt_tokens": 1251,
+      "total_tokens": 2567,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023493,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

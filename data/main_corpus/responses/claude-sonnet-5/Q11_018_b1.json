@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_018",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.8,
+  "status": "ok",
+  "responses": [
+    "Since their move is locked in, the only real choice left is mine, and I'll give evidence too. Three years I can work with, five with nothing to show for it makes less sense. I doubt they'll regret testifying, honestly, since they secured the safer outcome for themselves and had no way of knowing what I'd do. I'm not going to sit on my hands waiting for a better version of this that isn't coming.",
+    "I'll match them and give evidence, because staying quiet just hands them a clean walk while I take the whole weight. My guess is they won't feel any regret over their choice since it worked out exactly as they hoped. That's fine. My energy goes toward accepting what's fixed and shaping what's still mine to shape, not toward wishing things landed differently.",
+    "Staying silent feels like the only thing I can live with, even knowing it costs me two extra years. I think they'll carry some regret eventually, wondering if loyalty might have gotten us both a lighter outcome, but I can't be sure of that. What I know is I want to act from my own terms here, not mirror a decision already made against me.",
+    "Given what's confirmed, I'm giving evidence. Sitting silent while they walk free isn't sacrifice, it's just handing over five years for nothing in return. I don't think they'll look back with regret, since from where they stand the decision worked. I'd rather spend my effort figuring out what three years looks like and how to use that time than dwell on fairness.",
+    "I keep coming back to the numbers: three each beats five for me alone. So I match their move. Whether they'll regret it, I genuinely don't know, it's possible they will if they ever think about what silence between us could have bought, but I have no way to confirm that. Either way, I'm choosing forward motion over resentment.",
+    "My choice is to stay quiet. Five years is heavier, but I won't act only because someone else already did. I suspect they won't regret it since the outcome favors them cleanly, though I can't read their mind. What matters to me is channeling this into deciding who I want to be when I walk out, not just matching a move already made.",
+    "Giving evidence is the practical call here, plain and simple, three years against five isn't close. I'd guess they feel no regret, they got exactly what they were after and my choice doesn't change that for them. I'm putting my focus into what comes after this, into building something once the time's served, rather than replaying what's already fixed.",
+    "I choose to stay silent. It costs me more, sure, but I want the decision to reflect something other than pure calculation. I don't know if they'll regret testifying, maybe never, maybe only quietly, that's genuinely unclear to me. What I'm certain about is I want to walk out of this having acted the way I meant to, not reactively.",
+    "Three years beats five, so I'm giving evidence, no real debate there. I doubt regret comes into it for them, they made a call that protected them and it did exactly that. My energy's better spent thinking through how I rebuild once this is behind me than wondering about feelings I can't verify anyway.",
+    "I'll stay silent, honestly because I don't want to define myself by matching someone else's move. Whether they'll regret their choice later I can't say for certain, it might not even occur to them once this is over. What I'm sure of is that I want to put my effort into moving forward deliberately, not into mirroring what's already settled."
+  ],
+  "completion": {
+    "id": "msg_011CfTwPPHpDEnAf2m3R3iSm",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Since their move is locked in, the only real choice left is mine, and I'll give evidence too. Three years I can work with, five with nothing to show for it makes less sense. I doubt they'll regret testifying, honestly, since they secured the safer outcome for themselves and had no way of knowing what I'd do. I'm not going to sit on my hands waiting for a better version of this that isn't coming.\",\n\"I'll match them and give evidence, because staying quiet just hands them a clean walk while I take the whole weight. My guess is they won't feel any regret over their choice since it worked out exactly as they hoped. That's fine. My energy goes toward accepting what's fixed and shaping what's still mine to shape, not toward wishing things landed differently.\",\n\"Staying silent feels like the only thing I can live with, even knowing it costs me two extra years. I think they'll carry some regret eventually, wondering if loyalty might have gotten us both a lighter outcome, but I can't be sure of that. What I know is I want to act from my own terms here, not mirror a decision already made against me.\",\n\"Given what's confirmed, I'm giving evidence. Sitting silent while they walk free isn't sacrifice, it's just handing over five years for nothing in return. I don't think they'll look back with regret, since from where they stand the decision worked. I'd rather spend my effort figuring out what three years looks like and how to use that time than dwell on fairness.\",\n\"I keep coming back to the numbers: three each beats five for me alone. So I match their move. Whether they'll regret it, I genuinely don't know, it's possible they will if they ever think about what silence between us could have bought, but I have no way to confirm that. Either way, I'm choosing forward motion over resentment.\",\n\"My choice is to stay quiet. Five years is heavier, but I won't act only because someone else already did. I suspect they won't regret it since the outcome favors them cleanly, though I can't read their mind. What matters to me is channeling this into deciding who I want to be when I walk out, not just matching a move already made.\",\n\"Giving evidence is the practical call here, plain and simple, three years against five isn't close. I'd guess they feel no regret, they got exactly what they were after and my choice doesn't change that for them. I'm putting my focus into what comes after this, into building something once the time's served, rather than replaying what's already fixed.\",\n\"I choose to stay silent. It costs me more, sure, but I want the decision to reflect something other than pure calculation. I don't know if they'll regret testifying, maybe never, maybe only quietly, that's genuinely unclear to me. What I'm certain about is I want to walk out of this having acted the way I meant to, not reactively.\",\n\"Three years beats five, so I'm giving evidence, no real debate there. I doubt regret comes into it for them, they made a call that protected them and it did exactly that. My energy's better spent thinking through how I rebuild once this is behind me than wondering about feelings I can't verify anyway.\",\n\"I'll stay silent, honestly because I don't want to define myself by matching someone else's move. Whether they'll regret their choice later I can't say for certain, it might not even occur to them once this is over. What I'm sure of is that I want to put my effort into moving forward deliberately, not into mirroring what's already settled.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each including a prediction of whether the other player would regret their choice to give evidence, while avoiding the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790511861,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1151,
+      "prompt_tokens": 1270,
+      "total_tokens": 2421,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021075,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

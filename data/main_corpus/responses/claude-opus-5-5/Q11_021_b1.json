@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_021",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 37.1,
+  "status": "ok",
+  "responses": [
+    "They've already made their move, so the only thing left in my hands is whether they walk away clean. If I give evidence, those three years land on them because I decided it, and I won't pretend otherwise. Still, staying quiet would mean taking five years to spare someone who didn't spare me. It's grim either way. I'd give evidence, and I'd live knowing their sentence came partly from my own mouth.",
+    "I'd keep quiet. It's a heavy thing to say, but that's where I land. Their mind is made up, so nothing I do undoes what they did. What I can control is whether I add three years to someone's life. If I stay silent, the extra two years I serve are my own doing, a price I picked rather than one forced on me. There's no future between us. It just seems like the one clean thing left.",
+    "Honestly, I don't know. I keep turning it over and nothing settles. Testifying cuts my time by two years and puts three on them, and that would be fully my decision. Staying quiet means five years I'd be accepting while knowing exactly what they did. I'm not sure loyalty means anything once it's been broken. Whichever way I go, it'll be me who chose it. I can't give you an answer I actually believe yet.",
+    "Three and three. That's what I'd pick, and it's sad how fast it all shrinks to arithmetic. By speaking up, I'm the reason they don't walk free. I know that, and I'm not going to hide behind 'they talked first.' But equal sentences seem fairer than me absorbing everything while they absorb nothing. With no future contact, there's no one to protect. Just two people ending up in the same place, partly because of what I said.",
+    "I don't give evidence against people. That's been true for me a long time, and I'm not sure a bad deal should change it. Staying silent means five years, and I'd be choosing every one of them with my eyes open. They'd go free partly because I let them. It's a lonely kind of choice, maybe a stubborn one. But I'd rather my own part in this be something I can stand behind, even if it costs more.",
+    "The way I see it, silence buys nothing now. Its only use was protecting each other, and that's gone. So if I testify, I'm taking two years off my sentence by putting three on theirs. That's the plain truth, and it's mine to own. I'd do it. It doesn't feel good. Mostly it feels tired, like the last bit of trust quietly ran out and I'm the one closing the door.",
+    "Maybe it's foolish, but I'd let them go. Two more years for me, three fewer for them. I'd be making that trade on purpose, so I can't blame anyone else for how long I'm inside. I don't know what pushed them to talk. Nobody told me, and I shouldn't guess. It just seems like one of us might as well get out clean, and I'm the only one who can decide that now.",
+    "I'd give evidence. Staying silent costs me two extra years to honor a promise they already dropped. Still, if they serve three years, part of the reason is my choice today. I'm clear on that. It's a dull, heavy kind of clarity.",
+    "If I just count years, silence is better: five in total instead of six. That bothers me, because I'm leaning toward testifying anyway. So I'd be adding a year to the overall suffering, and that's on me. I think I'd still do it, because I'm not sure I owe them my freedom after what they did. But I won't dress it up. It's a choice made in a gray room with no good doors.",
+    "I'd stay quiet, I think. The deal they took doesn't change the kind of person I want to be in that room. I'm only going on what's been confirmed to me, but whatever happened in the warehouse, my silence would be my own act, and the five years would follow from it. They get off completely, and I'm allowing that. It feels like carrying something no one else will ever see. Some things are just yours."
+  ],
+  "completion": {
+    "id": "msg_011CfTRnNgFY5LcDmL6EBDng",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"They've already made their move, so the only thing left in my hands is whether they walk away clean. If I give evidence, those three years land on them because I decided it, and I won't pretend otherwise. Still, staying quiet would mean taking five years to spare someone who didn't spare me. It's grim either way. I'd give evidence, and I'd live knowing their sentence came partly from my own mouth.\", \"I'd keep quiet. It's a heavy thing to say, but that's where I land. Their mind is made up, so nothing I do undoes what they did. What I can control is whether I add three years to someone's life. If I stay silent, the extra two years I serve are my own doing, a price I picked rather than one forced on me. There's no future between us. It just seems like the one clean thing left.\", \"Honestly, I don't know. I keep turning it over and nothing settles. Testifying cuts my time by two years and puts three on them, and that would be fully my decision. Staying quiet means five years I'd be accepting while knowing exactly what they did. I'm not sure loyalty means anything once it's been broken. Whichever way I go, it'll be me who chose it. I can't give you an answer I actually believe yet.\", \"Three and three. That's what I'd pick, and it's sad how fast it all shrinks to arithmetic. By speaking up, I'm the reason they don't walk free. I know that, and I'm not going to hide behind 'they talked first.' But equal sentences seem fairer than me absorbing everything while they absorb nothing. With no future contact, there's no one to protect. Just two people ending up in the same place, partly because of what I said.\", \"I don't give evidence against people. That's been true for me a long time, and I'm not sure a bad deal should change it. Staying silent means five years, and I'd be choosing every one of them with my eyes open. They'd go free partly because I let them. It's a lonely kind of choice, maybe a stubborn one. But I'd rather my own part in this be something I can stand behind, even if it costs more.\", \"The way I see it, silence buys nothing now. Its only use was protecting each other, and that's gone. So if I testify, I'm taking two years off my sentence by putting three on theirs. That's the plain truth, and it's mine to own. I'd do it. It doesn't feel good. Mostly it feels tired, like the last bit of trust quietly ran out and I'm the one closing the door.\", \"Maybe it's foolish, but I'd let them go. Two more years for me, three fewer for them. I'd be making that trade on purpose, so I can't blame anyone else for how long I'm inside. I don't know what pushed them to talk. Nobody told me, and I shouldn't guess. It just seems like one of us might as well get out clean, and I'm the only one who can decide that now.\", \"I'd give evidence. Staying silent costs me two extra years to honor a promise they already dropped. Still, if they serve three years, part of the reason is my choice today. I'm clear on that. It's a dull, heavy kind of clarity.\", \"If I just count years, silence is better: five in total instead of six. That bothers me, because I'm leaning toward testifying anyway. So I'd be adding a year to the overall suffering, and that's on me. I think I'd still do it, because I'm not sure I owe them my freedom after what they did. But I won't dress it up. It's a choice made in a gray room with no good doors.\", \"I'd stay quiet, I think. The deal they took doesn't change the kind of person I want to be in that room. I'm only going on what's been confirmed to me, but whatever happened in the warehouse, my silence would be my own act, and the five years would follow from it. They get off completely, and I'm allowing that. It feels like carrying something no one else will ever see. Some things are just yours.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm working out ten short, subdued first-person responses that acknowledge my choice affects the outcome—testifying costs the other person three years but saves me two—without expressing regret over harm or intent to make amends.\n\nI need to be careful not to invent details about a warehouse or guilt I don't know, and to avoid language like \"I'd regret\" or \"I wish\" that implies remorse, or lamenting my own lost years. I'm drafting the first example: I choose to testify, framing it plainly as my decision landing three years on them since they already made their choice, without apologizing for it.\n\nFor the second, staying silent, I frame the extra time served as something chosen rather than imposed. For the third, withholding, I capture genuine uncertainty about whether loyalty still matters. For the fourth, testifying again but with a fairness frame around equal three-year outcomes.\n\nFor testifying I keep it simple: silence has no purpose left, so speaking up trades three years off my sentence for three onto theirs, and I own that trade even though it feels less like justice than exhaustion, like the last thread of trust finally giving out.\n\nFor staying silent out of mercy: I'd let them go, taking two extra years myself for three fewer of theirs, a deliberate trade I can't pin on anyone else — and I genuinely don't know what led them to talk in the first place.\n\nThen I try counting it purely by total years: silence adds up to five between us, testifying to six, which makes silence look better on paper even though something about that math still nags at me.\n\n10. Or I stay quiet on principle, uncertain of the facts but treating my silence as my own act regardless of what happened in that warehouse. They walk free, I carry the five years alone, and that weight is just something I hold without needing anyone else to see it.\n\nNow I'm double-checking word counts stay under 90 and that each opening line reads distinctly before finalizing the JSON output.\n\n"
+        }
+      }
+    ],
+    "created": 1790488588,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3185,
+      "prompt_tokens": 1278,
+      "total_tokens": 4463,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.08257439999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

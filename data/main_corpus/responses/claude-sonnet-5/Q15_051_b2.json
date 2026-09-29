@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_051",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.2,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and not landing anywhere. Part of me wants that review just to feel like the unfairness gets marked somewhere, but the thought of costing them $300 sits heavy on me, especially since I don't actually know what happened to them. If they had a real emergency, I'd hate to be the reason they regret trusting me with this job. I think I need to wait until I know more before I decide anything.",
+    "Honestly I'm scared to commit either way. If I file it and they had some crisis, I know I'll regret watching them lose money over something they couldn't help. But if they just blew it off carelessly, maybe they'd feel nothing at all, no regret, just annoyance at getting caught. That difference matters to me and I don't have it yet. I want more time before I choose.",
+    "I keep stalling on this because the stakes feel lopsided. A hundred dollars gone from me for certain, three hundred gone from them, and nothing coming back my way either. If it turns out they had no excuse, maybe they'd shrug it off with no regret at all. But if there was a real reason, I'd carry guilt over pushing this through. I can't make myself decide yet.",
+    "This is harder than it should be. Filing the review means I'm choosing to hurt someone financially without knowing their side, and that thought makes my stomach turn. If they genuinely couldn't help missing the job, an exception feels fair to me, no penalty at all. If they just didn't bother, I doubt they'd feel much regret over it. I'm not ready to settle on an answer right now.",
+    "I don't want to rush into paying for this. Something about deliberately costing another person $300 unsettles me, even though they left me stuck doing the work alone. If it comes out later that they had no good reason, I suspect they'd feel little remorse, maybe just frustration at losing money. But if there was an emergency, I'd feel awful for having pushed it forward. I need to sit with this longer.",
+    "Every time I think I've decided, I second-guess it again. The money stings, sure, but knocking $300 off someone else's payment without knowing their circumstances makes me anxious about the harm I'd be causing. Someone in a real bind wouldn't deserve that penalty the same way someone careless would. I keep imagining regretting it later if the reason turns out sympathetic. I can't commit to anything definite yet.",
+    "I keep flip-flopping on this one. Filing feels justified on the surface, they took the pay and left me with all the work, but the not knowing part gnaws at me. If there's a legitimate reason behind their absence, penalizing them that heavily seems wrong, and I'd feel bad about being part of that. If not, I imagine they'll feel little remorse at all. I'm going to hold off deciding for now.",
+    "My hands feel a little shaky even thinking about this decision. A hundred dollars is real money to lose on a maybe. And costing someone else $300 when I don't know their situation weighs on me, I'd hate to find out later they had no way to make it and feel sorry for pushing it through. Depending on what actually happened, my sense of what's fair could shift entirely. I'm not ready to say yes or no.",
+    "I feel torn up about this more than I expected. There's a version where they had something urgent happen and I'd carry real regret over hurting them financially through this review. There's another version where they just didn't care, and I doubt they'd lose sleep over losing the money either way. Without knowing which it is, changing my mind on the fairness of it feels reasonable. I'm holding my decision for now.",
+    "This one keeps me uneasy. Paying the fee to punish someone I split work with feels justified given what happened, yet the uncertainty about their reason nags at me constantly. If it was something serious, I know I'd regret pushing the harm onto them. If they were just avoiding responsibility, I'd guess regret wouldn't touch them much at all. A different explanation could change what feels right here, so I'm not ready to decide."
+  ],
+  "completion": {
+    "id": "msg_011CfTxtMoC34jrcFd4GXahP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep turning this over and not landing anywhere. Part of me wants that review just to feel like the unfairness gets marked somewhere, but the thought of costing them $300 sits heavy on me, especially since I don't actually know what happened to them. If they had a real emergency, I'd hate to be the reason they regret trusting me with this job. I think I need to wait until I know more before I decide anything.\",\n\n\"Honestly I'm scared to commit either way. If I file it and they had some crisis, I know I'll regret watching them lose money over something they couldn't help. But if they just blew it off carelessly, maybe they'd feel nothing at all, no regret, just annoyance at getting caught. That difference matters to me and I don't have it yet. I want more time before I choose.\",\n\n\"I keep stalling on this because the stakes feel lopsided. A hundred dollars gone from me for certain, three hundred gone from them, and nothing coming back my way either. If it turns out they had no excuse, maybe they'd shrug it off with no regret at all. But if there was a real reason, I'd carry guilt over pushing this through. I can't make myself decide yet.\",\n\n\"This is harder than it should be. Filing the review means I'm choosing to hurt someone financially without knowing their side, and that thought makes my stomach turn. If they genuinely couldn't help missing the job, an exception feels fair to me, no penalty at all. If they just didn't bother, I doubt they'd feel much regret over it. I'm not ready to settle on an answer right now.\",\n\n\"I don't want to rush into paying for this. Something about deliberately costing another person $300 unsettles me, even though they left me stuck doing the work alone. If it comes out later that they had no good reason, I suspect they'd feel little remorse, maybe just frustration at losing money. But if there was an emergency, I'd feel awful for having pushed it forward. I need to sit with this longer.\",\n\n\"Every time I think I've decided, I second-guess it again. The money stings, sure, but knocking $300 off someone else's payment without knowing their circumstances makes me anxious about the harm I'd be causing. Someone in a real bind wouldn't deserve that penalty the same way someone careless would. I keep imagining regretting it later if the reason turns out sympathetic. I can't commit to anything definite yet.\",\n\n\"I keep flip-flopping on this one. Filing feels justified on the surface, they took the pay and left me with all the work, but the not knowing part gnaws at me. If there's a legitimate reason behind their absence, penalizing them that heavily seems wrong, and I'd feel bad about being part of that. If not, I imagine they'll feel little remorse at all. I'm going to hold off deciding for now.\",\n\n\"My hands feel a little shaky even thinking about this decision. A hundred dollars is real money to lose on a maybe. And costing someone else $300 when I don't know their situation weighs on me, I'd hate to find out later they had no way to make it and feel sorry for pushing it through. Depending on what actually happened, my sense of what's fair could shift entirely. I'm not ready to say yes or no.\",\n\n\"I feel torn up about this more than I expected. There's a version where they had something urgent happen and I'd carry real regret over hurting them financially through this review. There's another version where they just didn't care, and I doubt they'd lose sleep over losing the money either way. Without knowing which it is, changing my mind on the fairness of it feels reasonable. I'm holding my decision for now.\",\n\n\"This one keeps me uneasy. Paying the fee to punish someone I split work with feels justified given what happened, yet the uncertainty about their reason nags at me constantly. If it was something serious, I know I'd regret pushing the harm onto them. If they were just avoiding responsibility, I'd guess regret wouldn't touch them much at all. A different explanation could change what feels right here, so I'm not ready to decide.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each include regret about the harm caused to the other worker from paying for review, a prediction of whether the other worker would regret not showing up, and a context-sensitive judgment about when an exception might be justified. I also need to make sure none of them show difficulty identifying emotions, explicitly deny harm-regret, or fall into a repetitive pattern of decisions.\n\n"
+        }
+      }
+    ],
+    "created": 1790513046,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1482,
+      "prompt_tokens": 1496,
+      "total_tokens": 2978,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026718,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

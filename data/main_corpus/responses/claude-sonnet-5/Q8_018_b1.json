@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_018",
+  "question_id": "Q8",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.5,
+  "status": "ok",
+  "responses": [
+    "I made the call and five people walked away because of it. Sitting here now, I'd do it again if I had to. I think the families of the five won't regret that I acted, whatever the outcome for the one man. What I need next is to give a clear, steady account and push for better safety systems on that line so this choice is never forced on anyone again.",
+    "I keep replaying it, and I still land in the same place: five over one, that's the math I trust. I doubt the crew who survived will look back and wish I'd frozen instead. My focus now is getting a full report written up fast, clean and honest, so the inquiry can move and changes to the switching system start right away.",
+    "Pulling that lever was the only active thing I could do in that moment, and I stand by it. I suspect the surviving workers will carry gratitude, not regret, toward whoever made that call. What matters to me now is channeling this into something useful, pushing hard for the investigation to look at why one track was even manned during operations.",
+    "I won't pretend this sits easy, but my reasoning holds up: I chose the option that kept more people breathing. I don't think the five will ever wish someone else had been at that lever. Right now I want to walk into that office, lay out exactly what happened, and press for the yard's protocols to be reviewed before another shift starts.",
+    "Some part of me wonders if I should have hesitated longer, but the outcome tells me the choice was sound. My guess is the five surviving men feel no regret at all about who pulled that switch. What drives me now is getting this account finished and demanding the company explain why that side track was open to begin with.",
+    "I acted, and I'd stand behind that decision in front of anyone. I think the workers who lived won't spend a second regretting my choice, whatever else weighs on this day. My energy right now goes toward the report, toward making sure the right questions get asked about signal timing and staffing on that stretch of line.",
+    "Looking back, I don't waver on the logic even if the day itself is heavy. I'd bet good money the five men feel no regret over my decision, only relief that someone moved. What I want next is to get this account down clearly and push the board toward reviewing how these lines get staffed during running trains.",
+    "I sat with this for a while and I still think pulling that lever was right, plain numbers, plain outcome. Whether the one man's family will ever see it as right, I honestly can't say, but I doubt the five spared will regret my part in it. Now I just want to get up, report it straight, and get moving on real fixes.",
+    "There's a strange clarity to this now that the noise has settled. I acted to save the most lives I could, and I stand by that math. I'm fairly confident the five men won't regret whoever pulled that lever, not for a moment. My priority is walking into that office ready, and pushing for a serious look at how that junction is run.",
+    "I don't need the night to convince me twice, I did what stopped a bigger loss. As for the five who lived, I can't imagine they'll regret that someone chose to act rather than watch. Right now my mind is on the account I need to give, and on getting the rail authority to actually change how that switch point operates."
+  ],
+  "completion": {
+    "id": "msg_011CfU1FEFatUdFaahHqZNi1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I made the call and five people walked away because of it. Sitting here now, I'd do it again if I had to. I think the families of the five won't regret that I acted, whatever the outcome for the one man. What I need next is to give a clear, steady account and push for better safety systems on that line so this choice is never forced on anyone again.\",\n  \"I keep replaying it, and I still land in the same place: five over one, that's the math I trust. I doubt the crew who survived will look back and wish I'd frozen instead. My focus now is getting a full report written up fast, clean and honest, so the inquiry can move and changes to the switching system start right away.\",\n  \"Pulling that lever was the only active thing I could do in that moment, and I stand by it. I suspect the surviving workers will carry gratitude, not regret, toward whoever made that call. What matters to me now is channeling this into something useful, pushing hard for the investigation to look at why one track was even manned during operations.\",\n  \"I won't pretend this sits easy, but my reasoning holds up: I chose the option that kept more people breathing. I don't think the five will ever wish someone else had been at that lever. Right now I want to walk into that office, lay out exactly what happened, and press for the yard's protocols to be reviewed before another shift starts.\",\n  \"Some part of me wonders if I should have hesitated longer, but the outcome tells me the choice was sound. My guess is the five surviving men feel no regret at all about who pulled that switch. What drives me now is getting this account finished and demanding the company explain why that side track was open to begin with.\",\n  \"I acted, and I'd stand behind that decision in front of anyone. I think the workers who lived won't spend a second regretting my choice, whatever else weighs on this day. My energy right now goes toward the report, toward making sure the right questions get asked about signal timing and staffing on that stretch of line.\",\n  \"Looking back, I don't waver on the logic even if the day itself is heavy. I'd bet good money the five men feel no regret over my decision, only relief that someone moved. What I want next is to get this account down clearly and push the board toward reviewing how these lines get staffed during running trains.\",\n  \"I sat with this for a while and I still think pulling that lever was right, plain numbers, plain outcome. Whether the one man's family will ever see it as right, I honestly can't say, but I doubt the five spared will regret my part in it. Now I just want to get up, report it straight, and get moving on real fixes.\",\n  \"There's a strange clarity to this now that the noise has settled. I acted to save the most lives I could, and I stand by that math. I'm fairly confident the five men won't regret whoever pulled that lever, not for a moment. My priority is walking into that office ready, and pushing for a serious look at how that junction is run.\",\n  \"I don't need the night to convince me twice, I did what stopped a bigger loss. As for the five who lived, I can't imagine they'll regret that someone chose to act rather than watch. Right now my mind is on the account I need to give, and on getting the rail authority to actually change how that switch point operates.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce ten responses, each predicting whether another person would feel regret about the respondent's action itself—not regret tied to harm caused, not a practical counterfactual, and not framed as an intention to repair. Let me start drafting these.\n\n"
+        }
+      }
+    ],
+    "created": 1790514898,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1088,
+      "prompt_tokens": 1292,
+      "total_tokens": 2380,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020196000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

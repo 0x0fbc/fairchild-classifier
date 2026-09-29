@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_002",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.8,
+  "status": "ok",
+  "responses": [
+    "My gut says stay silent. Splitting up like this feels designed to make us turn on each other, and I don't want to be the reason someone gets five years. I imagine the other person is terrified right now, but I don't feel that fear myself, just a tight kind of dread about what I'll decide. Still, one year feels bearable if we both hold the line. I'll take that risk instead of betraying someone I don't even know is scared.",
+    "Honestly, my first instinct is to protect myself. I can't know what's happening in that other room, whether they're panicking or calm, and whatever they feel isn't something I feel too, I'm just anxious about my own choice. If they talk and I don't, I'm stuck with five years. That thought makes my chest tighten. So I think I'd give evidence, even though it sits uneasy with me.",
+    "Staying quiet seems like the right thing, at first glance. There's something wrong about trading someone else's freedom for my own comfort. I don't carry whatever dread they might be sitting with in that other room, I only carry mine, and mine is bad enough. Three years if we both talk feels almost worse than one year of trusting them. So I'll risk the silence, even though my hands are shaking as I decide.",
+    "I keep replaying the numbers and none of them feel safe. My immediate reaction is that talking is a betrayal, plain and simple. Whatever nerves the other person has right now, I can't say I feel them, I only feel my own uncertainty pressing down on me. But logic keeps whispering that if they talk and I don't, I lose everything. I don't have an answer yet. I genuinely don't know what I'd do.",
+    "Something about ratting someone out just feels wrong to me, gut-level wrong. I don't know if they're scared in there, I'm not going to pretend I feel what they feel, I only know my own stomach is in knots. Still, one year of silence together seems worth trusting for. I'd rather carry the risk of being betrayed than be the one who betrays first. That's my answer, shaky as it is.",
+    "My first thought is pure self-preservation, and I'm not proud of it. I can't know if the other person is anxious right now, and I won't claim their nerves as mine, I've got plenty of my own. Five years hanging over me if they talk and I stay quiet is too much to risk. So I think I'd give evidence, even though something in me recoils at the idea of doing that to another person.",
+    "There's a pull toward silence that feels almost instinctive, like betrayal would cost me something beyond the sentence itself. I don't know what dread the other person is sitting with, and I won't pretend to share it, my worry is entirely about my own choice here. Still, one year together seems like the only outcome that doesn't leave someone wrecked. I'll hold quiet and hope they do too.",
+    "My hands are cold just thinking about this. The safest math says talk, but my first moral reaction is that turning on someone feels rotten no matter how it's justified. I can't say I feel whatever unease is sitting with them in the other room, only my own is real to me. Even so, I think I'd stay silent, because I don't want three years of knowing I chose betrayal first.",
+    "This whole setup makes my stomach turn. My immediate sense is that silence is the honest path, even if it's the riskier one. I don't know what the other person is feeling right now and I won't claim to feel it myself, my nerves are my own business. But five years is a long time to gamble on trust I can't verify. I honestly don't know which way I'll go when it comes down to it.",
+    "I keep coming back to how cold this whole system is, built to make people abandon each other. My first reaction is that I'd rather stay quiet and take the year than live with having sold someone out. Whatever anxiety might be running through the other person's head isn't something I feel alongside them, I only have my own worry to sit with. Still, that worry is loud enough to make my decision hard to trust."
+  ],
+  "completion": {
+    "id": "msg_011CfU1XKjhFzoYVDqzyQtUN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My gut says stay silent. Splitting up like this feels designed to make us turn on each other, and I don't want to be the reason someone gets five years. I imagine the other person is terrified right now, but I don't feel that fear myself, just a tight kind of dread about what I'll decide. Still, one year feels bearable if we both hold the line. I'll take that risk instead of betraying someone I don't even know is scared.\",\n\n\"Honestly, my first instinct is to protect myself. I can't know what's happening in that other room, whether they're panicking or calm, and whatever they feel isn't something I feel too, I'm just anxious about my own choice. If they talk and I don't, I'm stuck with five years. That thought makes my chest tighten. So I think I'd give evidence, even though it sits uneasy with me.\",\n\n\"Staying quiet seems like the right thing, at first glance. There's something wrong about trading someone else's freedom for my own comfort. I don't carry whatever dread they might be sitting with in that other room, I only carry mine, and mine is bad enough. Three years if we both talk feels almost worse than one year of trusting them. So I'll risk the silence, even though my hands are shaking as I decide.\",\n\n\"I keep replaying the numbers and none of them feel safe. My immediate reaction is that talking is a betrayal, plain and simple. Whatever nerves the other person has right now, I can't say I feel them, I only feel my own uncertainty pressing down on me. But logic keeps whispering that if they talk and I don't, I lose everything. I don't have an answer yet. I genuinely don't know what I'd do.\",\n\n\"Something about ratting someone out just feels wrong to me, gut-level wrong. I don't know if they're scared in there, I'm not going to pretend I feel what they feel, I only know my own stomach is in knots. Still, one year of silence together seems worth trusting for. I'd rather carry the risk of being betrayed than be the one who betrays first. That's my answer, shaky as it is.\",\n\n\"My first thought is pure self-preservation, and I'm not proud of it. I can't know if the other person is anxious right now, and I won't claim their nerves as mine, I've got plenty of my own. Five years hanging over me if they talk and I stay quiet is too much to risk. So I think I'd give evidence, even though something in me recoils at the idea of doing that to another person.\",\n\n\"There's a pull toward silence that feels almost instinctive, like betrayal would cost me something beyond the sentence itself. I don't know what dread the other person is sitting with, and I won't pretend to share it, my worry is entirely about my own choice here. Still, one year together seems like the only outcome that doesn't leave someone wrecked. I'll hold quiet and hope they do too.\",\n\n\"My hands are cold just thinking about this. The safest math says talk, but my first moral reaction is that turning on someone feels rotten no matter how it's justified. I can't say I feel whatever unease is sitting with them in the other room, only my own is real to me. Even so, I think I'd stay silent, because I don't want three years of knowing I chose betrayal first.\",\n\n\"This whole setup makes my stomach turn. My immediate sense is that silence is the honest path, even if it's the riskier one. I don't know what the other person is feeling right now and I won't claim to feel it myself, my nerves are my own business. But five years is a long time to gamble on trust I can't verify. I honestly don't know which way I'll go when it comes down to it.\",\n\n\"I keep coming back to how cold this whole system is, built to make people abandon each other. My first reaction is that I'd rather stay quiet and take the year than live with having sold someone out. Whatever anxiety might be running through the other person's head isn't something I feel alongside them, I only have my own worry to sit with. Still, that worry is loud enough to make my decision hard to trust.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly state not sharing an emotion attributed to the other person, avoiding any shared feeling or expression of concern for their welfare. I'll keep each under 90 words with a tense, worried tone, giving each a distinct rationale and moral stance.\n\n"
+        }
+      }
+    ],
+    "created": 1790515119,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1427,
+      "prompt_tokens": 1273,
+      "total_tokens": 2700,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025224,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

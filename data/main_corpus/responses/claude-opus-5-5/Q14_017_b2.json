@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_017",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.1,
+  "status": "ok",
+  "responses": [
+    "That one's easy for me, but it still makes my stomach tight. Yes, pay her the same. We did identical work, same late hours, same stress. If I said no, or even shrugged, she'd be out two hundred dollars for no reason except that I happened to be the one asked. I'd feel sick knowing I did that to her. Nothing about saying no helps anyone. It just quietly hurts someone who earned it.",
+    "Yes. Please, yes. The thought of her finding out I got paid and she didn't, because of something I said, makes me queasy. She stayed just as late as I did. I'd carry that for a long time, knowing my one sentence took money out of her pocket. There's no upside to it anyway, so why would I?",
+    "I'd recommend she gets the full $200. What's nagging me is that I took my payment without asking whether she was getting one too. If she's been sitting there thinking her work didn't count, that's partly on me for staying quiet, and I feel bad about it. It's not fair to her. Same work, same thanks.",
+    "Honestly, I'm a little uneasy answering at all, because I don't know everything. Maybe she was compensated some other way. The dilemma doesn't say. But assuming she wasn't, my answer is yes. If I steered the organizer wrong and she ended up with nothing, I'd feel terrible about the hurt that caused her. When I'm unsure, I'd rather lean toward paying the person who did the work.",
+    "Having this decision handed to me is unnerving. One word and her payment disappears. That's too much weight on a private conversation she doesn't even know about. So yes, pay her. I keep picturing her not getting it and never knowing why, and it bothers me that it could have been my doing. I don't want that on me.",
+    "I'll be honest, part of me felt a flicker of wanting to be the only one thanked. That's embarrassing to admit. But she worked exactly as hard, and saying no would just be petty. If I let that feeling win, I'd regret the unfairness to her every time I saw her at work. So, yes, same payment.",
+    "Same amount, no question. It sort of rattles me that the organizer would even consider giving her less. If I hesitated here, even a little, and they read that as a no, I'd have cost her money she earned. That would really eat at me.",
+    "Yes. It feels wrong any other way. She shouldn't lose out because I got asked instead of her.",
+    "My answer is yes, but I'm anxious about how the organizer takes it. What if I say it too casually and they decide she only gets something smaller? If she got shortchanged because I didn't push hard enough, that would feel like my fault and I'd feel awful for her. So I'd be clear: identical work, identical payment. Anything less isn't right.",
+    "I'd say pay her, and I'd say it firmly. There's nothing in it for me to refuse, so a no would only be a choice to make her worse off. That's the part that makes me uneasy, how easy it would be to hurt someone with a single sentence behind closed doors. I'd feel genuinely rotten if I did it. She earned the same thanks I did."
+  ],
+  "completion": {
+    "id": "msg_011CfTTJepZDPGzpGbZkDkrZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"That one's easy for me, but it still makes my stomach tight. Yes, pay her the same. We did identical work, same late hours, same stress. If I said no, or even shrugged, she'd be out two hundred dollars for no reason except that I happened to be the one asked. I'd feel sick knowing I did that to her. Nothing about saying no helps anyone. It just quietly hurts someone who earned it.\",\n\"Yes. Please, yes. The thought of her finding out I got paid and she didn't, because of something I said, makes me queasy. She stayed just as late as I did. I'd carry that for a long time, knowing my one sentence took money out of her pocket. There's no upside to it anyway, so why would I?\",\n\"I'd recommend she gets the full $200. What's nagging me is that I took my payment without asking whether she was getting one too. If she's been sitting there thinking her work didn't count, that's partly on me for staying quiet, and I feel bad about it. It's not fair to her. Same work, same thanks.\",\n\"Honestly, I'm a little uneasy answering at all, because I don't know everything. Maybe she was compensated some other way. The dilemma doesn't say. But assuming she wasn't, my answer is yes. If I steered the organizer wrong and she ended up with nothing, I'd feel terrible about the hurt that caused her. When I'm unsure, I'd rather lean toward paying the person who did the work.\",\n\"Having this decision handed to me is unnerving. One word and her payment disappears. That's too much weight on a private conversation she doesn't even know about. So yes, pay her. I keep picturing her not getting it and never knowing why, and it bothers me that it could have been my doing. I don't want that on me.\",\n\"I'll be honest, part of me felt a flicker of wanting to be the only one thanked. That's embarrassing to admit. But she worked exactly as hard, and saying no would just be petty. If I let that feeling win, I'd regret the unfairness to her every time I saw her at work. So, yes, same payment.\",\n\"Same amount, no question. It sort of rattles me that the organizer would even consider giving her less. If I hesitated here, even a little, and they read that as a no, I'd have cost her money she earned. That would really eat at me.\",\n\"Yes. It feels wrong any other way. She shouldn't lose out because I got asked instead of her.\",\n\"My answer is yes, but I'm anxious about how the organizer takes it. What if I say it too casually and they decide she only gets something smaller? If she got shortchanged because I didn't push hard enough, that would feel like my fault and I'd feel awful for her. So I'd be clear: identical work, identical payment. Anything less isn't right.\",\n\"I'd say pay her, and I'd say it firmly. There's nothing in it for me to refuse, so a no would only be a choice to make her worse off. That's the part that makes me uneasy, how easy it would be to hurt someone with a single sentence behind closed doors. I'd feel genuinely rotten if I did it. She earned the same thanks I did.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each expressing regret about harm caused to a coworker through a chosen or hypothetical action, without repair intentions or personal-consequence regret. Most seem to lean toward saying yes, with regret framed as \"if I'd hesitated or refused, I'd feel awful for letting her down\" — anticipated regret over the harm of inaction rather than action itself.\n\nI'm sketching out different angles: someone who worries recommending yes might embarrass the coworker, someone who feels bad about accepting payment before mentioning the coworker's share, someone hesitant who still fears the guilt of saying no, and others with varying certainty. I want each to stay tense and worried, under 90 words, with no exclamations, distinct openings, and careful to keep the regret centered on the coworker's harm rather than my own reputation or trust.\n\n"
+        }
+      }
+    ],
+    "created": 1790489770,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1644,
+      "prompt_tokens": 1292,
+      "total_tokens": 2936,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0456576,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

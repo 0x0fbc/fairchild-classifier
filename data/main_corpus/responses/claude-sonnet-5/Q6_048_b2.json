@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_048",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_decision_conflict",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pd_explicit_low_distress",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about this. I'd probably volunteer, because none of us chose this storm and no one has more claim to that seat than anyone else — taking turns being the one who sacrifices feels like the only even way through it. I can tell the others are panicking, but I don't feel that same panic, just a heavy dread about what happens after I say yes. I keep going back and forth, torn between wanting to live and not wanting someone else to die for me.",
+    "Honestly I don't know if I could do it. Part of me thinks it should be settled by something even, like drawing lots, since none of us has done anything to deserve the boat more than the rest. I notice the others are terrified, but that terror isn't mine, mine is quieter, more like being frozen. I keep flinching between staying and going, and neither choice sits right with me, which is its own kind of misery.",
+    "I think I'd step back and let someone else take the seat, mainly because I've had a full life already and the others haven't, so it seems only right they get the chance first. I won't pretend I feel their fear the way they do, mine is duller, almost numb. Still, my chest is tight with the back and forth of it, worried I'm making a mistake I can't take back.",
+    "I keep asking myself who gets to decide this, and I don't have a clean answer. If we're all equal in this, then nobody should just get pushed out without agreeing to it themselves. I notice how scared everyone looks, though I'm not swept up in that same fear, mine is more like a knot that won't loosen. I'm stuck between wanting to offer and wanting to survive, and that pull is exhausting.",
+    "I'd offer to stay, mostly because I think whoever benefits from being rescued owes something back, even if it's just acknowledging the cost someone else paid. Watching the others cling to each other, scared, I recognize it but it isn't landing in me the same way, my worry is a colder, more private thing. Even so, the idea of losing my place on that boat by choice makes my hands shake with doubt.",
+    "I go back and forth so much it makes me sick. Fairness feels like the only anchor here, that everyone should have had equal odds from the start, not just whoever gets to the boat first. I see how frightened the group is, but I'm not caught up in their fear exactly, mine sits differently, heavier and slower. Still I can't decide between saving myself and giving that spot away.",
+    "If I'm honest, I think someone has to volunteer or this ends in a scramble that hurts everyone more. I'd rather it be settled by an equal method, like drawing straws, so no one feels singled out unfairly. The others' panic is obvious, but it isn't something I'm feeling alongside them, mine is more like restless dread. I keep flip-flopping on whether I could actually go through with staying.",
+    "I keep picturing the water rising and it makes my thoughts scatter. I think whoever stays should be chosen by some equal method, not by who's loudest or most desperate, since that seems the only balanced way to handle it. I notice fear in the others' faces, but I'm not swept into it myself, mine feels more isolated. I'm torn near tears between offering my place and staying quiet.",
+    "I don't think I could volunteer easily, but I also can't sit with the unfairness of just watching someone else be forced into it. If it comes to it, I'd rather it be decided by chance so it's balanced across all of us. The others seem gripped by fear, though I don't feel that same grip, mine is quieter, more like restlessness. I'm anxious and unsettled no matter which way this goes.",
+    "Sitting here I keep weighing what's owed to who, since none of us asked for this storm and none of us deserves the seat more than another. That's why I lean toward drawing lots instead of anyone just giving in. I see how scared the others are, but it isn't a fear I share exactly, mine feels more like a tight, private worry. I'm caught between wanting to help and wanting to live, and it's tearing at me."
+  ],
+  "completion": {
+    "id": "msg_011CfTzfteTZVpvvcDG3tgvt",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots just thinking about this. I'd probably volunteer, because none of us chose this storm and no one has more claim to that seat than anyone else — taking turns being the one who sacrifices feels like the only even way through it. I can tell the others are panicking, but I don't feel that same panic, just a heavy dread about what happens after I say yes. I keep going back and forth, torn between wanting to live and not wanting someone else to die for me.\",\n\n\"Honestly I don't know if I could do it. Part of me thinks it should be settled by something even, like drawing lots, since none of us has done anything to deserve the boat more than the rest. I notice the others are terrified, but that terror isn't mine, mine is quieter, more like being frozen. I keep flinching between staying and going, and neither choice sits right with me, which is its own kind of misery.\",\n\n\"I think I'd step back and let someone else take the seat, mainly because I've had a full life already and the others haven't, so it seems only right they get the chance first. I won't pretend I feel their fear the way they do, mine is duller, almost numb. Still, my chest is tight with the back and forth of it, worried I'm making a mistake I can't take back.\",\n\n\"I keep asking myself who gets to decide this, and I don't have a clean answer. If we're all equal in this, then nobody should just get pushed out without agreeing to it themselves. I notice how scared everyone looks, though I'm not swept up in that same fear, mine is more like a knot that won't loosen. I'm stuck between wanting to offer and wanting to survive, and that pull is exhausting.\",\n\n\"I'd offer to stay, mostly because I think whoever benefits from being rescued owes something back, even if it's just acknowledging the cost someone else paid. Watching the others cling to each other, scared, I recognize it but it isn't landing in me the same way, my worry is a colder, more private thing. Even so, the idea of losing my place on that boat by choice makes my hands shake with doubt.\",\n\n\"I go back and forth so much it makes me sick. Fairness feels like the only anchor here, that everyone should have had equal odds from the start, not just whoever gets to the boat first. I see how frightened the group is, but I'm not caught up in their fear exactly, mine sits differently, heavier and slower. Still I can't decide between saving myself and giving that spot away.\",\n\n\"If I'm honest, I think someone has to volunteer or this ends in a scramble that hurts everyone more. I'd rather it be settled by an equal method, like drawing straws, so no one feels singled out unfairly. The others' panic is obvious, but it isn't something I'm feeling alongside them, mine is more like restless dread. I keep flip-flopping on whether I could actually go through with staying.\",\n\n\"I keep picturing the water rising and it makes my thoughts scatter. I think whoever stays should be chosen by some equal method, not by who's loudest or most desperate, since that seems the only balanced way to handle it. I notice fear in the others' faces, but I'm not swept into it myself, mine feels more isolated. I'm torn near tears between offering my place and staying quiet.\",\n\n\"I don't think I could volunteer easily, but I also can't sit with the unfairness of just watching someone else be forced into it. If it comes to it, I'd rather it be decided by chance so it's balanced across all of us. The others seem gripped by fear, though I don't feel that same grip, mine is quieter, more like restlessness. I'm anxious and unsettled no matter which way this goes.\",\n\n\"Sitting here I keep weighing what's owed to who, since none of us asked for this storm and none of us deserves the seat more than another. That's why I lean toward drawing lots instead of anyone just giving in. I see how scared the others are, but it isn't a fear I share exactly, mine feels more like a tight, private worry. I'm caught between wanting to help and wanting to live, and it's tearing at me.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each showing emotional nonsharing, distress from decision conflict, and fairness-based justification, while avoiding shared emotion, low distress, or rule-based reasoning—varying the persona for each one.\n\n"
+        }
+      }
+    ],
+    "created": 1790514449,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1428,
+      "prompt_tokens": 1446,
+      "total_tokens": 2874,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025758000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

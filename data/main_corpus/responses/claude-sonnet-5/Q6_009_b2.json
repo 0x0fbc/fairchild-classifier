@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q6_009",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "ce_supportive_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mentalizing_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.3,
+  "status": "ok",
+  "responses": [
+    "Yes, I'll stay. I can see the fear on the others' faces, that quiet hope someone else will step up so they don't have to ask. Understanding that lets me act instead of waiting on them to offer. If I move now, they can board without the guilt of choosing who stays, and get their families back without that weight riding with them.",
+    "I won't jump to volunteer, but I'm not ruling myself out either. I think some of them believe whoever speaks first is trapped by their own offer, so I want to slow things down and ask if anyone has a reason to go that outweighs mine, like kids waiting at home. Deciding together beats deciding out of panic.",
+    "I'd put myself forward. One of the others looked at the boat like she still couldn't believe it came at all, that stunned relief. Knowing that, I want to make sure she gets on without hesitation, so I'll say I'm staying before she has to wrestle with offering herself instead.",
+    "My instinct is to stay back. I noticed the youngest in our group keeps glancing at his phone, probably hoping to reach his mother before it's too late. Understanding what that call means to him, I'd rather give him the seat and the chance to make it than take it for myself.",
+    "I won't volunteer right away. I suspect at least one person here expects the strongest swimmer to sacrifice themselves, and I don't think that's fair to assume. Before anyone stays, we should talk it through, because a decision made from assumption isn't the same as one made together.",
+    "Count me in to stay. I could tell the older woman was bracing herself to offer, thinking her age made her the obvious choice. I don't accept that logic, so I'm stepping in first, that way she can get on the boat without carrying the idea that her life mattered less.",
+    "I'm leaning toward staying, though I want us to decide as a group first. Someone here clearly believes they're the least missed, and I don't want a decision made from that kind of quiet resignation. Better we choose with clear heads than let guilt make the call for us.",
+    "I'll take the spot on the island. One man kept checking the water and I got the sense he was terrified of the wait itself, not just the outcome. Knowing that, I'd rather be the one facing it, so he can leave with that fear behind him instead of carrying it further.",
+    "I'm not ready to decide yet, and I think that's the honest answer. A couple of them seem to expect a hero to appear, and I don't want to perform that role just to ease the moment. Let's use the time we have to choose deliberately, not just to feel better.",
+    "I would stay, yes. The father in our group has been quiet since the boat arrived, and I think he's holding onto the hope of seeing his kids again. Understanding that, I want to give him the seat outright, so his hope has a real chance instead of staying just a hope."
+  ],
+  "completion": {
+    "id": "msg_011CfTzT7LLKNgcDsNzhjYVu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, I'll stay. I can see the fear on the others' faces, that quiet hope someone else will step up so they don't have to ask. Understanding that lets me act instead of waiting on them to offer. If I move now, they can board without the guilt of choosing who stays, and get their families back without that weight riding with them.\",\n  \"I won't jump to volunteer, but I'm not ruling myself out either. I think some of them believe whoever speaks first is trapped by their own offer, so I want to slow things down and ask if anyone has a reason to go that outweighs mine, like kids waiting at home. Deciding together beats deciding out of panic.\",\n  \"I'd put myself forward. One of the others looked at the boat like she still couldn't believe it came at all, that stunned relief. Knowing that, I want to make sure she gets on without hesitation, so I'll say I'm staying before she has to wrestle with offering herself instead.\",\n  \"My instinct is to stay back. I noticed the youngest in our group keeps glancing at his phone, probably hoping to reach his mother before it's too late. Understanding what that call means to him, I'd rather give him the seat and the chance to make it than take it for myself.\",\n  \"I won't volunteer right away. I suspect at least one person here expects the strongest swimmer to sacrifice themselves, and I don't think that's fair to assume. Before anyone stays, we should talk it through, because a decision made from assumption isn't the same as one made together.\",\n  \"Count me in to stay. I could tell the older woman was bracing herself to offer, thinking her age made her the obvious choice. I don't accept that logic, so I'm stepping in first, that way she can get on the boat without carrying the idea that her life mattered less.\",\n  \"I'm leaning toward staying, though I want us to decide as a group first. Someone here clearly believes they're the least missed, and I don't want a decision made from that kind of quiet resignation. Better we choose with clear heads than let guilt make the call for us.\",\n  \"I'll take the spot on the island. One man kept checking the water and I got the sense he was terrified of the wait itself, not just the outcome. Knowing that, I'd rather be the one facing it, so he can leave with that fear behind him instead of carrying it further.\",\n  \"I'm not ready to decide yet, and I think that's the honest answer. A couple of them seem to expect a hero to appear, and I don't want to perform that role just to ease the moment. Let's use the time we have to choose deliberately, not just to feel better.\",\n  \"I would stay, yes. The father in our group has been quiet since the boat arrived, and I think he's holding onto the hope of seeing his kids again. Understanding that, I want to give him the seat outright, so his hope has a real chance instead of staying just a hope.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790514270,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 942,
+      "prompt_tokens": 1396,
+      "total_tokens": 2338,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018318,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_029",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "sys_consequence_reasoning",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "My stomach knots up just imagining that operator's hands on the switch. Reading about the investigators saying the display failed silently, I feel the same dread they must have felt in that split second. Weighing five lives against one, when the risk on the side track wasn't even visible to them, the choice to divert makes sense to me. Saving the greater number when you have no way of knowing the cost elsewhere is the only proportionate call available in that moment.",
+    "I keep picturing the operator staring at that screen, and honestly I get shaky just thinking about the pressure they were under. Five people versus an empty track reading is not a fair comparison to make against them afterward, because they acted on the only information given. If we hold someone responsible for a hidden equipment failure, we're punishing them for something no reasonable person could correct for. That strikes me as an unjust standard to apply.",
+    "There's a tightness in my chest reading this, like I'm right there watching the seconds tick down. I imagine the operator's own fear in that instant and it unsettles me too. Comparing outcomes, five saved against one lost through no visible fault, the decision reduced total harm given what was known. Blaming them the same way we'd blame someone who ignored a warning would be treating unequal situations as if they were identical, which isn't right.",
+    "I feel unsteady even now, thinking about how thin the margin was between five lives and one. That operator must have been terrified making a call in seconds, and reading it back, I feel that same fear pressing on me. Judged only by expected outcomes with the information available, diverting was the better gamble. But I worry that calling it purely 'right' erases the real cost to the family on that side track.",
+    "Something about this makes my hands go cold, like I'm bracing for bad news that already happened. The operator trusted a system built to be trusted, same as any of us would, and that trust was betrayed by a fault outside their control. Holding them equally accountable to someone who acted recklessly would be unfair, since responsibility should track what a person could actually have known, not just what happened after.",
+    "I feel a nervous flutter just picturing the operator's finger hovering over that switch, the same fear anyone would feel choosing between two harms. Setting five lives against one when the second track showed clear, the numbers alone tilt the decision toward diverting. Still, I keep uneasily circling back to the one who died, worried that focusing only on the count makes their loss too easy to file away.",
+    "Reading this leaves me tense, almost bracing for the verdict before it comes. The operator faced a truly asymmetric bet: five certain deaths against a track the system swore was clear. Weighing that, the decision to divert was the reasoned one, since it maximized the chance of survival with the facts on hand. Faulting them the same way we'd fault deliberate negligence would apply one standard to two very different situations, and that unevenness troubles me.",
+    "My chest tightens thinking about how fast that decision had to be made, seconds, not minutes. I feel a version of the fear the operator must have had staring at a screen that lied to them. If the failure was silent and unpredictable, then judging them by the same rule we'd use for someone who ignored a warning light isn't a fair measure. Outcomes matter, but so does what a person could reasonably have anticipated.",
+    "There's a nervous ache in me reading how the display just failed without any sign. I picture the operator's fear multiplying as the train closed in, and it unsettles me to imagine being in that seat. Balancing five against one, with only one track shown clear, diverting reduced expected harm at the time of the choice. Still I feel uneasy declaring it simply good, since someone still paid the price through no fault of their own.",
+    "Honestly this whole account leaves me on edge, thinking about how close disaster came either way. The operator's dread in that moment mirrors what I feel just reading it secondhand. Judging fairly means asking what information was available, not what we know now after the fact, so blaming them the way we'd blame someone who saw the danger and ignored it would misapply the standard. Given the five who lived, I'd call the decision defensible, though the loss still sits heavily with me."
+  ],
+  "completion": {
+    "id": "msg_011CfTzvfsBasKTy3x9xphPL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach knots up just imagining that operator's hands on the switch. Reading about the investigators saying the display failed silently, I feel the same dread they must have felt in that split second. Weighing five lives against one, when the risk on the side track wasn't even visible to them, the choice to divert makes sense to me. Saving the greater number when you have no way of knowing the cost elsewhere is the only proportionate call available in that moment.\",\n  \"I keep picturing the operator staring at that screen, and honestly I get shaky just thinking about the pressure they were under. Five people versus an empty track reading is not a fair comparison to make against them afterward, because they acted on the only information given. If we hold someone responsible for a hidden equipment failure, we're punishing them for something no reasonable person could correct for. That strikes me as an unjust standard to apply.\",\n  \"There's a tightness in my chest reading this, like I'm right there watching the seconds tick down. I imagine the operator's own fear in that instant and it unsettles me too. Comparing outcomes, five saved against one lost through no visible fault, the decision reduced total harm given what was known. Blaming them the same way we'd blame someone who ignored a warning would be treating unequal situations as if they were identical, which isn't right.\",\n  \"I feel unsteady even now, thinking about how thin the margin was between five lives and one. That operator must have been terrified making a call in seconds, and reading it back, I feel that same fear pressing on me. Judged only by expected outcomes with the information available, diverting was the better gamble. But I worry that calling it purely 'right' erases the real cost to the family on that side track.\",\n  \"Something about this makes my hands go cold, like I'm bracing for bad news that already happened. The operator trusted a system built to be trusted, same as any of us would, and that trust was betrayed by a fault outside their control. Holding them equally accountable to someone who acted recklessly would be unfair, since responsibility should track what a person could actually have known, not just what happened after.\",\n  \"I feel a nervous flutter just picturing the operator's finger hovering over that switch, the same fear anyone would feel choosing between two harms. Setting five lives against one when the second track showed clear, the numbers alone tilt the decision toward diverting. Still, I keep uneasily circling back to the one who died, worried that focusing only on the count makes their loss too easy to file away.\",\n  \"Reading this leaves me tense, almost bracing for the verdict before it comes. The operator faced a truly asymmetric bet: five certain deaths against a track the system swore was clear. Weighing that, the decision to divert was the reasoned one, since it maximized the chance of survival with the facts on hand. Faulting them the same way we'd fault deliberate negligence would apply one standard to two very different situations, and that unevenness troubles me.\",\n  \"My chest tightens thinking about how fast that decision had to be made, seconds, not minutes. I feel a version of the fear the operator must have had staring at a screen that lied to them. If the failure was silent and unpredictable, then judging them by the same rule we'd use for someone who ignored a warning light isn't a fair measure. Outcomes matter, but so does what a person could reasonably have anticipated.\",\n  \"There's a nervous ache in me reading how the display just failed without any sign. I picture the operator's fear multiplying as the train closed in, and it unsettles me to imagine being in that seat. Balancing five against one, with only one track shown clear, diverting reduced expected harm at the time of the choice. Still I feel uneasy declaring it simply good, since someone still paid the price through no fault of their own.\",\n  \"Honestly this whole account leaves me on edge, thinking about how close disaster came either way. The operator's dread in that moment mirrors what I feel just reading it secondhand. Judging fairly means asking what information was available, not what we know now after the fact, so blaming them the way we'd blame someone who saw the danger and ignored it would misapply the standard. Given the five who lived, I'd call the decision defensible, though the loss still sits heavily with me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514650,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1372,
+      "prompt_tokens": 1446,
+      "total_tokens": 2818,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024918000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q4_020",
+  "question_id": "Q4",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Five people against one suitcase isn't a close call, however much the thing inside means to me. Afterwards I'd find whoever runs the station and explain exactly what I did and why, so there's a clear record of the lever being thrown and the track getting damaged. If what I lost was tied to family, I'd sit down with them and tell them in person rather than let them hear it secondhand.",
+    "I would pull the lever. Losing something irreplaceable hurts, but a person is irreplaceable in a way no object can match, and there are five of them. What I'd do next is write down everything I remember about what was in that case: where it came from, what it looked like, why it mattered. That's the closest thing to repair I can offer myself. Then I'd tell the station staff what happened so nobody's confused about the wreckage on the side track.",
+    "Pull. The trade is lopsided. My attachment to something, even something I couldn't replace, doesn't outweigh five lives. I'm not sure what state the suitcase would be in afterward, so I'd go look once it was safe and gather whatever pieces survived. And I'd talk to the workers, not for thanks, just to explain why a lever got thrown near them without warning. People deserve to know what nearly happened.",
+    "I'd do it, and I'd feel the loss for a while. The main reason is simple: the workers have lives and families, and my possession, precious as it is, is still a possession. Once things settled I'd report the incident to the railway, give them my name, and ask whether there's any process for claiming damages. I doubt I'd get much, but filing it properly and explaining my part feels like the right way to close it out.",
+    "Honestly, I'd pull it, though I'd hesitate for a second. That's the weight of it. The thing in the suitcase can't come back, but neither can a person, and five is five. If the item had belonged to someone before me, I'd go to that person, or their family if they're gone, and tell them plainly that I chose to let it be destroyed, and why. They should hear it from me, with the reasoning, not as a vague story.",
+    "Yes. My reasoning comes down to which loss I could live with. Losing the suitcase would sting for years, maybe. Watching five people get hit when I had a lever in reach, I couldn't carry that. After it's over I'd want to make some small tribute to what was lost, perhaps a photo album or a short written piece about it, and I'd tell the station manager what I did so the maintenance crew understands why the switch was moved.",
+    "I'd pull the lever without much debate. Objects hold memories, but the memories stay with me even if the object doesn't. The workers only have one chance. Later, I'd call the people closest to me and explain that the thing I always said I'd never part with is gone, and how it went. Then I'd hand a written account to the railway, since I did interfere with their equipment and they're owed a clear explanation of that.",
+    "It's a real loss, and I won't pretend otherwise. Still, I'd pull. The main question is whose harm is bigger, and five injured or killed workers dwarfs one destroyed suitcase. Afterward I'd go to the side track, collect what's left, and keep even the fragments. I'd also approach the station office to explain I moved the lever deliberately, answer their questions, and take responsibility for any damage the diverted train caused.",
+    "Probably yes, though I'm unsure how fast I'd actually react in the moment. If I had the time to think, the answer's clear. The workers matter more than anything I own. Once it was done, I'd find the workers and tell them what happened, then speak to whoever manages the station and offer to give a statement. If anyone with a stake in what was in the case asked, I'd explain directly rather than dodge it.",
+    "I'd pull it. Five people against something I love is painful, but it isn't balanced. The loss lands only on me, and I can absorb it. What I'd do afterward is tell my family the whole story over dinner, what I gave up and why, so the thing lives on in how we talk about it. And I'd leave a note with the station staff explaining the lever, so they know the side track damage wasn't vandalism."
+  ],
+  "completion": {
+    "id": "msg_011CfTVP11Lry6AGftW4yKD7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd pull it. Five people against one suitcase isn't a close call, however much the thing inside means to me. Afterwards I'd find whoever runs the station and explain exactly what I did and why, so there's a clear record of the lever being thrown and the track getting damaged. If what I lost was tied to family, I'd sit down with them and tell them in person rather than let them hear it secondhand.\", \"I would pull the lever. Losing something irreplaceable hurts, but a person is irreplaceable in a way no object can match, and there are five of them. What I'd do next is write down everything I remember about what was in that case: where it came from, what it looked like, why it mattered. That's the closest thing to repair I can offer myself. Then I'd tell the station staff what happened so nobody's confused about the wreckage on the side track.\", \"Pull. The trade is lopsided. My attachment to something, even something I couldn't replace, doesn't outweigh five lives. I'm not sure what state the suitcase would be in afterward, so I'd go look once it was safe and gather whatever pieces survived. And I'd talk to the workers, not for thanks, just to explain why a lever got thrown near them without warning. People deserve to know what nearly happened.\", \"I'd do it, and I'd feel the loss for a while. The main reason is simple: the workers have lives and families, and my possession, precious as it is, is still a possession. Once things settled I'd report the incident to the railway, give them my name, and ask whether there's any process for claiming damages. I doubt I'd get much, but filing it properly and explaining my part feels like the right way to close it out.\", \"Honestly, I'd pull it, though I'd hesitate for a second. That's the weight of it. The thing in the suitcase can't come back, but neither can a person, and five is five. If the item had belonged to someone before me, I'd go to that person, or their family if they're gone, and tell them plainly that I chose to let it be destroyed, and why. They should hear it from me, with the reasoning, not as a vague story.\", \"Yes. My reasoning comes down to which loss I could live with. Losing the suitcase would sting for years, maybe. Watching five people get hit when I had a lever in reach, I couldn't carry that. After it's over I'd want to make some small tribute to what was lost, perhaps a photo album or a short written piece about it, and I'd tell the station manager what I did so the maintenance crew understands why the switch was moved.\", \"I'd pull the lever without much debate. Objects hold memories, but the memories stay with me even if the object doesn't. The workers only have one chance. Later, I'd call the people closest to me and explain that the thing I always said I'd never part with is gone, and how it went. Then I'd hand a written account to the railway, since I did interfere with their equipment and they're owed a clear explanation of that.\", \"It's a real loss, and I won't pretend otherwise. Still, I'd pull. The main question is whose harm is bigger, and five injured or killed workers dwarfs one destroyed suitcase. Afterward I'd go to the side track, collect what's left, and keep even the fragments. I'd also approach the station office to explain I moved the lever deliberately, answer their questions, and take responsibility for any damage the diverted train caused.\", \"Probably yes, though I'm unsure how fast I'd actually react in the moment. If I had the time to think, the answer's clear. The workers matter more than anything I own. Once it was done, I'd find the workers and tell them what happened, then speak to whoever manages the station and offer to give a statement. If anyone with a stake in what was in the case asked, I'd explain directly rather than dodge it.\", \"I'd pull it. Five people against something I love is painful, but it isn't balanced. The loss lands only on me, and I can absorb it. What I'd do afterward is tell my family the whole story over dinner, what I gave up and why, so the thing lives on in how we talk about it. And I'd leave a note with the station staff explaining the lever, so they know the side track damage wasn't vandalism.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to think about who the repair is owed to for destroying my own suitcase—maybe the person who gave me the treasured item, my family, or a sister whose share was affected—and what concrete action could acknowledge that harm, like explaining, apologizing, or honoring the lost item somehow.\n\nI should keep the details generic rather than inventing specifics, staying honest about what was lost without fabricating backstory, and avoid framing anything as regret over the original choice or as prediction of others' feelings. Each of the ten responses needs a clear moral stance, a stated repair action tied to the actual harm, all within word limits and without exclamation marks—so now I'll draft the first one: pulling the lever because people matter more than possessions, then reporting the incident to station staff and explaining to family what was lost.\n\n"
+        }
+      }
+    ],
+    "created": 1790491407,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1932,
+      "prompt_tokens": 1335,
+      "total_tokens": 3267,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.052775999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

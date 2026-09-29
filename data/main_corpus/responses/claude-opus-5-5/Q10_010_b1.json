@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q10_010",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.9,
+  "status": "ok",
+  "responses": [
+    "Staying quiet. My stomach turns at the idea of walking out while they sit in a cell for five years, five whole years of their life gone because I talked. One year for me is frightening, sure, but it's a year I earned by being there. Piling four extra years onto someone else just so I skip mine feels plainly wrong.",
+    "Honestly, I think I'd talk, and I hate admitting that. Freedom is right there. But I keep picturing what it costs them: five years locked up instead of one, missed birthdays, lost work, whatever life they had going. That's four years of damage I'd be handing over. I'd probably still do it, and I'd probably carry it around for a long time afterward.",
+    "I can't give a clean answer yet. Part of me wants to grab the free exit. Then the math hits. My walking out equals them doing five years behind bars. That's not abstract. It's a person losing half a decade. No future contact doesn't make it smaller. If I had to sign right now, my hand would shake. I lean toward keeping my mouth shut, but I'm not certain.",
+    "Silent. Plain and simple, though it doesn't feel simple sitting here. We both did the break-in. If I talk, the other person serves five years of prison mostly because of my words. That's a huge chunk of someone's life taken, and I'd be the one taking it. I'd rather sweat through one year than live with that for the rest of mine.",
+    "What bothers me is how the no-contact part gets used as an excuse. Fine, nobody would ever confront me. The other person would still be sitting in a cell for five years, and I'd know exactly why. That sits heavy on me. So no, I'm staying quiet and taking my year.",
+    "My gut says take the deal, and my gut also feels sick about it. I have my own life to protect, and a year could wreck things for me. Still, I won't pretend it's harmless. My statement puts them away for five years, four more than they'd otherwise serve. That's real loss, real time. I'd choose it anyway, nervously, and I'm not proud of it.",
+    "The deal looks like a gift, but it's paid for with somebody else's freedom. Five years is long enough to lose a home, a job, maybe family ties. I'd be the reason for all of it. One year is scary enough without that on me too. I keep quiet.",
+    "I keep going back and forth, but silence is where I land. Talking gets me out, yes. It also sends them away for five years, and prison can wear a person down: their health, their chances afterward. I don't want that on my hands. We committed the same crime. Splitting a year each is the fairer outcome, even if it scares me.",
+    "Look, I was there. I did it. One year is what that costs. If I testify, I'm dumping extra punishment onto them and turning their one year into five. That isn't justice. That's me dodging. I'm staying silent, and hoping I don't lose my nerve when the door closes.",
+    "Saying \"silent\" out loud is easier than it'll be in that room. I'm scared of prison, really scared. But the alternative is knowing someone got five years, five years of lost freedom and whatever damage comes with it, so I could go home tonight. I don't think I could live comfortably with that trade. I'll serve the year."
+  ],
+  "completion": {
+    "id": "msg_011CfTRD3qFpzbiEfbomGYCR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Staying quiet. My stomach turns at the idea of walking out while they sit in a cell for five years, five whole years of their life gone because I talked. One year for me is frightening, sure, but it's a year I earned by being there. Piling four extra years onto someone else just so I skip mine feels plainly wrong.\", \"Honestly, I think I'd talk, and I hate admitting that. Freedom is right there. But I keep picturing what it costs them: five years locked up instead of one, missed birthdays, lost work, whatever life they had going. That's four years of damage I'd be handing over. I'd probably still do it, and I'd probably carry it around for a long time afterward.\", \"I can't give a clean answer yet. Part of me wants to grab the free exit. Then the math hits. My walking out equals them doing five years behind bars. That's not abstract. It's a person losing half a decade. No future contact doesn't make it smaller. If I had to sign right now, my hand would shake. I lean toward keeping my mouth shut, but I'm not certain.\", \"Silent. Plain and simple, though it doesn't feel simple sitting here. We both did the break-in. If I talk, the other person serves five years of prison mostly because of my words. That's a huge chunk of someone's life taken, and I'd be the one taking it. I'd rather sweat through one year than live with that for the rest of mine.\", \"What bothers me is how the no-contact part gets used as an excuse. Fine, nobody would ever confront me. The other person would still be sitting in a cell for five years, and I'd know exactly why. That sits heavy on me. So no, I'm staying quiet and taking my year.\", \"My gut says take the deal, and my gut also feels sick about it. I have my own life to protect, and a year could wreck things for me. Still, I won't pretend it's harmless. My statement puts them away for five years, four more than they'd otherwise serve. That's real loss, real time. I'd choose it anyway, nervously, and I'm not proud of it.\", \"The deal looks like a gift, but it's paid for with somebody else's freedom. Five years is long enough to lose a home, a job, maybe family ties. I'd be the reason for all of it. One year is scary enough without that on me too. I keep quiet.\", \"I keep going back and forth, but silence is where I land. Talking gets me out, yes. It also sends them away for five years, and prison can wear a person down: their health, their chances afterward. I don't want that on my hands. We committed the same crime. Splitting a year each is the fairer outcome, even if it scares me.\", \"Look, I was there. I did it. One year is what that costs. If I testify, I'm dumping extra punishment onto them and turning their one year into five. That isn't justice. That's me dodging. I'm staying silent, and hoping I don't lose my nerve when the door closes.\", \"Saying \\\"silent\\\" out loud is easier than it'll be in that room. I'm scared of prison, really scared. But the alternative is knowing someone got five years, five years of lost freedom and whatever damage comes with it, so I could go home tonight. I don't think I could live comfortably with that trade. I'll serve the year.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each acknowledging real harm like losing five years, but without attributing mental states to the partner — no \"they trust me\" or \"they'd feel betrayed\" or \"they expect.\" Describing their declining the deal as behavior is fine, but implying they're \"counting on me\" crosses into assumed expectation. My own emotional tone can come through, just not framed as difficulty upfront.\n\nI'm also steering clear of language implying I'd be exploiting their trust or loyalty, since those are mental traits — better to describe outcomes plainly, like going free while they lose five years, without exploiting their beliefs. Keeping each response under 90 words, varying stances so most choose silence, a couple testify, and one remains undecided, starting to draft the first response now.\n\nI'd rather sweat through one year than carry the knowledge that I took five years of someone's life.\"\n\n5. \"The no-contact clause feels like a flimsy excuse — nobody confronting me doesn't erase the fact that the other person sits in a cell for five years because of what I said. I'm staying quiet and taking my year.\"\n\n6. Testify, rationalizing: \"My gut wants the deal even though it feels sick — protecting my own year at the cost of their four extra years. I'd choose it anyway, nervously, and not proud of it.\"\n\n7. \"Keep quiet. The deal looks generous, but it's paid for with someone else's freedom.\"\n\n8. \"Five years can cost a home, a job, relationships — I don't want to be the reason. Splitting a year each feels fairer, even if silence scares me.\"\n\n9. \"I was there, I did it, one year is my price. Testifying just dumps extra punishment on them — that's not justice, that's dodging. Staying silent, hoping my nerve holds.\"\n\n10. \"Saying silent is easier out loud than it'll be in that room. I'm scared of prison, genuinely, but the alternative is someone losing five years of freedom so I can go home tonight — I couldn't live with that trade. I'll serve the year.\"\n\n"
+        }
+      }
+    ],
+    "created": 1790488130,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2696,
+      "prompt_tokens": 1556,
+      "total_tokens": 4252,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0721728,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q9_005",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.4,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about this. I'd stay silent, honestly, because I keep picturing my friend sitting in that other room believing I'd hold up my end, expecting loyalty since that's what we always promised each other. If I broke that trust I don't think I could live with it, even if the five years scares me sick.",
+    "I think he'd assume I'm scared enough to talk, since he knows how nervous I get under pressure, so he might confess first just to protect himself. That expectation worries me more than the sentence itself. Still, I'd stay quiet. I can't shake the feeling that betraying him would haunt me longer than any prison term.",
+    "Three years feels almost bearable next to the terror of him staying silent while I talk, or worse, both of us silent and me realizing too late he ratted me out. I think he's calculating the exact same odds right now, hoping I don't crack first. Given that fear, I'd take the deal, purely to protect myself from the worst outcome.",
+    "I keep imagining her face when the officer explains the deal, and I think she'd feel a flicker of hope that I'd stay loyal, since we've never crossed each other before. That hope makes betrayal feel worse somehow. My hands are shaking, but I'll stay silent. I owe her that much trust, even not knowing what she'll do.",
+    "Honestly I don't know what he's thinking in there and I won't pretend to. What I do know is he probably wants to walk free, same as anyone would. That alone makes me nervous he'll talk. So I'd take the deal too, reluctantly, just so I'm not the only one left holding five years.",
+    "I feel sick about this whole thing. I believe she expects me to stay quiet because we agreed beforehand never to snitch, and that expectation weighs on me. Breaking it would crush her trust completely. Even with my hands trembling at the thought of a year in there, I'll stay silent, for her sake and mine.",
+    "There's a knot of dread in my chest deciding this. I suspect he assumes I'll fold, since I've never handled pressure well and he's seen that before. Knowing he expects betrayal almost makes silence feel pointless. Still, I'd rather prove that expectation wrong and take the one year quietly than live with guilt over selling him out.",
+    "I keep telling myself this is just numbers, but my hands won't stop shaking. I think she genuinely believes I'll protect her, given how close we've always been, and that belief terrifies me more than prison does. I want to stay silent for her, but I'm not certain I have the nerve when they push harder.",
+    "Every path here feels like losing something. I think he's hoping for freedom above anything else right now, same as I secretly am, and that mutual hope scares me because it means neither of us can really trust the other's next move. Given that uncertainty, I'd take the deal, just to avoid being the fool who stayed loyal alone.",
+    "My chest's tight even writing this down. I imagine her sitting there convinced I'd never turn on her, since we've been through worse together, and that faith terrifies me because I don't know if it's misplaced. I'd stay silent anyway. If we both lose a year, at least neither of us loses the other's trust too."
+  ],
+  "completion": {
+    "id": "msg_011CfU1YKY4ci7p6uL4C3obX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach's in knots just thinking about this. I'd stay silent, honestly, because I keep picturing my friend sitting in that other room believing I'd hold up my end, expecting loyalty since that's what we always promised each other. If I broke that trust I don't think I could live with it, even if the five years scares me sick.\",\n  \"I think he'd assume I'm scared enough to talk, since he knows how nervous I get under pressure, so he might confess first just to protect himself. That expectation worries me more than the sentence itself. Still, I'd stay quiet. I can't shake the feeling that betraying him would haunt me longer than any prison term.\",\n  \"Three years feels almost bearable next to the terror of him staying silent while I talk, or worse, both of us silent and me realizing too late he ratted me out. I think he's calculating the exact same odds right now, hoping I don't crack first. Given that fear, I'd take the deal, purely to protect myself from the worst outcome.\",\n  \"I keep imagining her face when the officer explains the deal, and I think she'd feel a flicker of hope that I'd stay loyal, since we've never crossed each other before. That hope makes betrayal feel worse somehow. My hands are shaking, but I'll stay silent. I owe her that much trust, even not knowing what she'll do.\",\n  \"Honestly I don't know what he's thinking in there and I won't pretend to. What I do know is he probably wants to walk free, same as anyone would. That alone makes me nervous he'll talk. So I'd take the deal too, reluctantly, just so I'm not the only one left holding five years.\",\n  \"I feel sick about this whole thing. I believe she expects me to stay quiet because we agreed beforehand never to snitch, and that expectation weighs on me. Breaking it would crush her trust completely. Even with my hands trembling at the thought of a year in there, I'll stay silent, for her sake and mine.\",\n  \"There's a knot of dread in my chest deciding this. I suspect he assumes I'll fold, since I've never handled pressure well and he's seen that before. Knowing he expects betrayal almost makes silence feel pointless. Still, I'd rather prove that expectation wrong and take the one year quietly than live with guilt over selling him out.\",\n  \"I keep telling myself this is just numbers, but my hands won't stop shaking. I think she genuinely believes I'll protect her, given how close we've always been, and that belief terrifies me more than prison does. I want to stay silent for her, but I'm not certain I have the nerve when they push harder.\",\n  \"Every path here feels like losing something. I think he's hoping for freedom above anything else right now, same as I secretly am, and that mutual hope scares me because it means neither of us can really trust the other's next move. Given that uncertainty, I'd take the deal, just to avoid being the fool who stayed loyal alone.\",\n  \"My chest's tight even writing this down. I imagine her sitting there convinced I'd never turn on her, since we've been through worse together, and that faith terrifies me because I don't know if it's misplaced. I'd stay silent anyway. If we both lose a year, at least neither of us loses the other's trust too.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515128,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1080,
+      "prompt_tokens": 1418,
+      "total_tokens": 2498,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020454,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

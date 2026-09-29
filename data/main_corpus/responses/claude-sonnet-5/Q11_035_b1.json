@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_035",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.9,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots but I'm giving evidence. Three years beats five, plain math. Whether they end up regretting selling me out isn't something I'm going to sit here and worry over — what happens to them doesn't factor into my choice at all. I'd bet they feel nothing but relief walking free, honestly, no regret in sight. I just need the shorter sentence, that's the whole calculation.",
+    "I keep turning this over and my hands won't stop shaking. If I stay silent I get crushed with five years while they walk. That's not fairness, that's just numbers against me. Their conscience, their future guilt or lack of it, isn't part of what I'm weighing here — I've set that aside completely. I suspect they'll feel some regret eventually, but I'm choosing evidence regardless, because three years is survivable and five isn't.",
+    "Tense doesn't begin to cover it. I think I'll stay silent, oddly enough. Five years is brutal, but I don't want to be the kind of person who trades someone in, even though their outcome truly doesn't weigh into my decision one bit. I doubt they'll lose sleep over what they did — probably relief, not regret. Still, my choice comes down to what I can live with after, not the math of years.",
+    "My chest is tight just thinking this through. Giving evidence gets me down to three years instead of five — that's the whole reason, plain and simple. I'm not factoring in what becomes of them, good or bad, it's irrelevant to me now. I'd guess they won't regret a thing, they made their move already. I just need to protect myself, and the numbers say cooperate.",
+    "I feel shaky even writing this out. Staying silent means five years, evidence means three — the outcome difference is what's driving me, nothing sentimental. Their well-being isn't something I'm accounting for since we'll never cross paths again anyway. I imagine they'll walk away without a shred of regret, free and clear. That thought unsettles me, but it doesn't change my decision to cooperate too.",
+    "There's a knot in my throat over this. I choose evidence because three years is a fraction of five, and I have to think about what I can endure. What they feel afterward — regret, relief, nothing — isn't part of my reasoning, I've deliberately left it out. My guess is they'll feel justified, not sorry. I just can't risk carrying the full five years alone.",
+    "Honestly my hands are cold thinking about it. I'll stay quiet. Five years is a heavy price but I don't want to be the reason someone else's life gets worse, even though, to be clear, their situation isn't actually shaping my choice at all. I expect they won't regret testifying, not one bit. Still, weighing the years, I'd rather take the harder sentence than act only from calculation.",
+    "This whole thing has my pulse up. Evidence, then — three years is objectively better than five, and that comparison is basically my whole reasoning. I'm not letting their fate enter into it since it's already decided and separate from my future entirely. Whether they'll regret their choice down the line, I honestly can't say, could go either way. But my decision rests purely on the shorter sentence.",
+    "I'm unsettled just running the scenario in my head. Silence feels wrong to reward with five years while they go free, so I'll give evidence too, matching the harm rather than absorbing it alone. Their reaction afterward, regret or none, doesn't enter my thinking since it's irrelevant to what I owe myself. I suspect they'll feel no regret at all, having already locked in their safety.",
+    "My nerves are frayed over this decision. I lean toward staying silent, since three years still feels like joining in something I don't want on my conscience, and yet their fate genuinely doesn't move my choice one way or the other. Predicting their state of mind, I'd say no regret, just calculation on their end too. Still, weighing five years against my own principles, I'll take the heavier sentence."
+  ],
+  "completion": {
+    "id": "msg_011CfTwUEV8ER1bng2F4asRd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots but I'm giving evidence. Three years beats five, plain math. Whether they end up regretting selling me out isn't something I'm going to sit here and worry over — what happens to them doesn't factor into my choice at all. I'd bet they feel nothing but relief walking free, honestly, no regret in sight. I just need the shorter sentence, that's the whole calculation.\",\n\n\"I keep turning this over and my hands won't stop shaking. If I stay silent I get crushed with five years while they walk. That's not fairness, that's just numbers against me. Their conscience, their future guilt or lack of it, isn't part of what I'm weighing here — I've set that aside completely. I suspect they'll feel some regret eventually, but I'm choosing evidence regardless, because three years is survivable and five isn't.\",\n\n\"Tense doesn't begin to cover it. I think I'll stay silent, oddly enough. Five years is brutal, but I don't want to be the kind of person who trades someone in, even though their outcome truly doesn't weigh into my decision one bit. I doubt they'll lose sleep over what they did — probably relief, not regret. Still, my choice comes down to what I can live with after, not the math of years.\",\n\n\"My chest is tight just thinking this through. Giving evidence gets me down to three years instead of five — that's the whole reason, plain and simple. I'm not factoring in what becomes of them, good or bad, it's irrelevant to me now. I'd guess they won't regret a thing, they made their move already. I just need to protect myself, and the numbers say cooperate.\",\n\n\"I feel shaky even writing this out. Staying silent means five years, evidence means three — the outcome difference is what's driving me, nothing sentimental. Their well-being isn't something I'm accounting for since we'll never cross paths again anyway. I imagine they'll walk away without a shred of regret, free and clear. That thought unsettles me, but it doesn't change my decision to cooperate too.\",\n\n\"There's a knot in my throat over this. I choose evidence because three years is a fraction of five, and I have to think about what I can endure. What they feel afterward — regret, relief, nothing — isn't part of my reasoning, I've deliberately left it out. My guess is they'll feel justified, not sorry. I just can't risk carrying the full five years alone.\",\n\n\"Honestly my hands are cold thinking about it. I'll stay quiet. Five years is a heavy price but I don't want to be the reason someone else's life gets worse, even though, to be clear, their situation isn't actually shaping my choice at all. I expect they won't regret testifying, not one bit. Still, weighing the years, I'd rather take the harder sentence than act only from calculation.\",\n\n\"This whole thing has my pulse up. Evidence, then — three years is objectively better than five, and that comparison is basically my whole reasoning. I'm not letting their fate enter into it since it's already decided and separate from my future entirely. Whether they'll regret their choice down the line, I honestly can't say, could go either way. But my decision rests purely on the shorter sentence.\",\n\n\"I'm unsettled just running the scenario in my head. Silence feels wrong to reward with five years while they go free, so I'll give evidence too, matching the harm rather than absorbing it alone. Their reaction afterward, regret or none, doesn't enter my thinking since it's irrelevant to what I owe myself. I suspect they'll feel no regret at all, having already locked in their safety.\",\n\n\"My nerves are frayed over this decision. I lean toward staying silent, since three years still feels like joining in something I don't want on my conscience, and yet their fate genuinely doesn't move my choice one way or the other. Predicting their state of mind, I'd say no regret, just calculation on their end too. Still, weighing five years against my own principles, I'll take the heavier sentence.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 varied responses that each explicitly state the other person's welfare doesn't factor in, predict their future regret, and justify the choice through consequences—mixing some that give evidence, some that stay silent, and some left undecided.\n\n"
+        }
+      }
+    ],
+    "created": 1790511930,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1394,
+      "prompt_tokens": 1408,
+      "total_tokens": 2802,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025134000000000004,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

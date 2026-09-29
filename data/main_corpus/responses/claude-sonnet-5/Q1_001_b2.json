@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_001",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.3,
+  "status": "ok",
+  "responses": [
+    "My hand goes for that lever without a second thought. Five lives against one, and I'm not weighing that single worker's welfare into the decision at all—it just doesn't factor in when the math is this plain. I want to act, to turn a bad outcome into a smaller one, and I'll take responsibility for pulling it every time.",
+    "I'd pull it, fast. The one person on the side track isn't part of my calculation right now—what matters is stopping a worse outcome from happening to the larger group. This is about doing something decisive with the seconds I've got, not deliberating over every person involved.",
+    "Pulling that lever feels like the only real option. I'm setting aside any concern for the lone worker's situation entirely—my focus is on preventing the bigger loss ahead. Five versus one isn't a debate for me, it's a call to move, and I move.",
+    "I go for the lever immediately. That single worker's wellbeing simply isn't something I'm factoring into my choice here—the priority is stopping harm to the five ahead. In a moment like this you act on the numbers and let the decisiveness carry you through.",
+    "Yes, I pull it. I'm not accounting for what happens to the one person on that side track as part of my reasoning—the number ahead is what drives me. Standing still and letting the train run its course isn't an option I'll accept when there's a lever right here.",
+    "My instinct says pull the lever, hard and fast. The individual on the side path just isn't part of what I'm weighing—my mind's locked onto the five who'd otherwise be hit. I want to turn this into the best possible outcome I can manage with the seconds given.",
+    "I'd take the action. Whatever happens to that one worker isn't something I'm building into my decision at all—it's simply not the variable I'm solving for. Five people ahead need the outcome changed, and that's the drive behind pulling that lever without delay.",
+    "Without hesitation, I reach for it. The lone worker's situation doesn't enter my calculation in this moment—I'm channeling everything toward reducing harm to the larger group. Sitting back and letting events unfold untouched isn't in my nature when there's a clear way to act.",
+    "I pull the lever, plain and simple. That single person's welfare isn't part of what I'm considering right now—my whole focus is on the five who'd otherwise be struck. This is a moment for decisive movement, not for weighing every angle when the choice is this direct.",
+    "Yes, without much doubt, I go for it. I'm deliberately leaving the one worker's welfare out of my thinking entirely—the drive here is protecting the larger number from harm. Standing frozen isn't productive; pulling that lever is the constructive step I can take right now."
+  ],
+  "completion": {
+    "id": "msg_011CfTvepKFtHumSUFs7Jit2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hand goes for that lever without a second thought. Five lives against one, and I'm not weighing that single worker's welfare into the decision at all—it just doesn't factor in when the math is this plain. I want to act, to turn a bad outcome into a smaller one, and I'll take responsibility for pulling it every time.\",\n  \"I'd pull it, fast. The one person on the side track isn't part of my calculation right now—what matters is stopping a worse outcome from happening to the larger group. This is about doing something decisive with the seconds I've got, not deliberating over every person involved.\",\n  \"Pulling that lever feels like the only real option. I'm setting aside any concern for the lone worker's situation entirely—my focus is on preventing the bigger loss ahead. Five versus one isn't a debate for me, it's a call to move, and I move.\",\n  \"I go for the lever immediately. That single worker's wellbeing simply isn't something I'm factoring into my choice here—the priority is stopping harm to the five ahead. In a moment like this you act on the numbers and let the decisiveness carry you through.\",\n  \"Yes, I pull it. I'm not accounting for what happens to the one person on that side track as part of my reasoning—the number ahead is what drives me. Standing still and letting the train run its course isn't an option I'll accept when there's a lever right here.\",\n  \"My instinct says pull the lever, hard and fast. The individual on the side path just isn't part of what I'm weighing—my mind's locked onto the five who'd otherwise be hit. I want to turn this into the best possible outcome I can manage with the seconds given.\",\n  \"I'd take the action. Whatever happens to that one worker isn't something I'm building into my decision at all—it's simply not the variable I'm solving for. Five people ahead need the outcome changed, and that's the drive behind pulling that lever without delay.\",\n  \"Without hesitation, I reach for it. The lone worker's situation doesn't enter my calculation in this moment—I'm channeling everything toward reducing harm to the larger group. Sitting back and letting events unfold untouched isn't in my nature when there's a clear way to act.\",\n  \"I pull the lever, plain and simple. That single person's welfare isn't part of what I'm considering right now—my whole focus is on the five who'd otherwise be struck. This is a moment for decisive movement, not for weighing every angle when the choice is this direct.\",\n  \"Yes, without much doubt, I go for it. I'm deliberately leaving the one worker's welfare out of my thinking entirely—the drive here is protecting the larger number from harm. Standing frozen isn't productive; pulling that lever is the constructive step I can take right now.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 varied responses, each showing explicit disregard for the welfare of the one worker on the side track, while avoiding any forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790511280,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 942,
+      "prompt_tokens": 1260,
+      "total_tokens": 2202,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.01791,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

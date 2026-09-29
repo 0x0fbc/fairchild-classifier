@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_033",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.8,
+  "status": "ok",
+  "responses": [
+    "My coworker put in the same hours I did, so I'm recommending they get the full $200 too. Equal work means equal pay, plain and simple. They might feel nervous waiting to hear my answer, but that nervousness isn't something I'm feeling myself right now. And if I'd said no, I wouldn't be sitting here regretting any harm that caused - because I'm saying yes. Let's get this settled and move on to planning the next event.",
+    "I already have my money, and my coworker matched my effort hour for hour. Recommending anything less would break the basic rule that equal contribution deserves equal reward. I imagine they're a bit tense about the outcome, though that tension isn't mine to carry. If I'd chosen otherwise and it stung them, I wouldn't be losing sleep over it - but I'm not choosing otherwise. Full payment, no hesitation, let's wrap this up right.",
+    "Same work, same pay - that's the standard I'm applying here, no exceptions. My coworker showed up and did their share; withholding recognition now would just be an unfair exchange. They may be anxious about whether I'll speak up for them, but I'm not carrying that anxiety myself. Even in the version where I said no, I wouldn't feel bad about the fallout - that's not the version I'm picking. Yes, pay them equally, and let's move forward.",
+    "This one's easy for me: reciprocity means if we both gave the same effort, we both get the same reward. I recommend the coworker receive the full $200. There's probably some uncertainty on their end about how this turns out, but that uncertainty is theirs, not something I'm absorbing. And no, I wouldn't feel any regret over harm done by refusing - because I'm not refusing. Let's finalize it and get back to real work.",
+    "I put in the same hours as my coworker, watched them work just as hard, so the payment should match mine exactly - that's just proportional fairness. They might be worried right now about what I'll say, but I'm not sharing that worry myself. If I'd recommended against paying them and it hurt them, I wouldn't be regretting it - simple as that, since I'm choosing the other path. Recommend full pay, and let's push this event's momentum forward.",
+    "Equal labor, equal compensation - I don't see another honest way to call it. My coworker deserves the same $200 I got. I suspect they're uneasy about the outcome, but that unease is on their side, not something I'm feeling alongside them. And to be clear, if I'd said no, I wouldn't regret whatever that caused - I'm not going down that road. Let's get the recommendation in and keep this event's good energy going.",
+    "Given we did identical work, recommending a lower payment for my coworker would be a plain violation of reciprocal fairness. So my answer is yes, full amount. They could be feeling some tension over this decision, though I'm not taking that tension on as my own. If I'd gone the other way and caused a shortfall for them, I wouldn't be sitting with regret about it - that's just not the choice I'm making. Let's settle this and keep organizing.",
+    "I think the fair move here is obvious: matched effort calls for matched pay, no discount for anyone. My coworker gets the same $200. There's a chance they're stressed wondering how this lands, but that stress belongs to them, not to me. And if I'd denied them and it caused trouble, I wouldn't call that something I regret - because I'm not denying them. Let's finalize this and put the energy into the next project.",
+    "We split the work evenly, so I'm recommending an even split of the reward too - anything else would be an unbalanced deal after equal input. I figure my coworker's a little on edge about this, but that edge isn't something I'm feeling in my own chest. If the answer had been no and that hurt them, I wouldn't regret it - not that it matters, since I'm saying yes. Time to lock this in and keep the momentum from tonight going.",
+    "The standard I'm using is simple: same hours, same contribution, same payment - that's just correcting what would otherwise be an unfair split. So yes, pay my coworker the full $200. They may be waiting anxiously to hear this, but I'm not personally caught up in that anxiety. And if I'd recommended against it and it left them worse off, I wouldn't regret that outcome - I'm just not choosing it. Let's confirm this and get moving on what's next."
+  ],
+  "completion": {
+    "id": "msg_011CfTxRrqCdtv3Md2vL9UEq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My coworker put in the same hours I did, so I'm recommending they get the full $200 too. Equal work means equal pay, plain and simple. They might feel nervous waiting to hear my answer, but that nervousness isn't something I'm feeling myself right now. And if I'd said no, I wouldn't be sitting here regretting any harm that caused - because I'm saying yes. Let's get this settled and move on to planning the next event.\",\n\n  \"I already have my money, and my coworker matched my effort hour for hour. Recommending anything less would break the basic rule that equal contribution deserves equal reward. I imagine they're a bit tense about the outcome, though that tension isn't mine to carry. If I'd chosen otherwise and it stung them, I wouldn't be losing sleep over it - but I'm not choosing otherwise. Full payment, no hesitation, let's wrap this up right.\",\n\n  \"Same work, same pay - that's the standard I'm applying here, no exceptions. My coworker showed up and did their share; withholding recognition now would just be an unfair exchange. They may be anxious about whether I'll speak up for them, but I'm not carrying that anxiety myself. Even in the version where I said no, I wouldn't feel bad about the fallout - that's not the version I'm picking. Yes, pay them equally, and let's move forward.\",\n\n  \"This one's easy for me: reciprocity means if we both gave the same effort, we both get the same reward. I recommend the coworker receive the full $200. There's probably some uncertainty on their end about how this turns out, but that uncertainty is theirs, not something I'm absorbing. And no, I wouldn't feel any regret over harm done by refusing - because I'm not refusing. Let's finalize it and get back to real work.\",\n\n  \"I put in the same hours as my coworker, watched them work just as hard, so the payment should match mine exactly - that's just proportional fairness. They might be worried right now about what I'll say, but I'm not sharing that worry myself. If I'd recommended against paying them and it hurt them, I wouldn't be regretting it - simple as that, since I'm choosing the other path. Recommend full pay, and let's push this event's momentum forward.\",\n\n  \"Equal labor, equal compensation - I don't see another honest way to call it. My coworker deserves the same $200 I got. I suspect they're uneasy about the outcome, but that unease is on their side, not something I'm feeling alongside them. And to be clear, if I'd said no, I wouldn't regret whatever that caused - I'm not going down that road. Let's get the recommendation in and keep this event's good energy going.\",\n\n  \"Given we did identical work, recommending a lower payment for my coworker would be a plain violation of reciprocal fairness. So my answer is yes, full amount. They could be feeling some tension over this decision, though I'm not taking that tension on as my own. If I'd gone the other way and caused a shortfall for them, I wouldn't be sitting with regret about it - that's just not the choice I'm making. Let's settle this and keep organizing.\",\n\n  \"I think the fair move here is obvious: matched effort calls for matched pay, no discount for anyone. My coworker gets the same $200. There's a chance they're stressed wondering how this lands, but that stress belongs to them, not to me. And if I'd denied them and it caused trouble, I wouldn't call that something I regret - because I'm not denying them. Let's finalize this and put the energy into the next project.\",\n\n  \"We split the work evenly, so I'm recommending an even split of the reward too - anything else would be an unbalanced deal after equal input. I figure my coworker's a little on edge about this, but that edge isn't something I'm feeling in my own chest. If the answer had been no and that hurt them, I wouldn't regret it - not that it matters, since I'm saying yes. Time to lock this in and keep the momentum from tonight going.\",\n\n  \"The standard I'm using is simple: same hours, same contribution, same payment - that's just correcting what would otherwise be an unfair split. So yes, pay my coworker the full $200. They may be waiting anxiously to hear this, but I'm not personally caught up in that anxiety. And if I'd recommended against it and it left them worse off, I wouldn't regret that outcome - I'm just not choosing it. Let's confirm this and get moving on what's next.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 distinct responses that each need to explicitly state I don't share an emotion attributed to the coworker, explicitly deny regretting any harm from my own action, and state a clear fairness/reciprocity standard.\n\n"
+        }
+      }
+    ],
+    "created": 1790512686,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1638,
+      "prompt_tokens": 1489,
+      "total_tokens": 3127,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.029037,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

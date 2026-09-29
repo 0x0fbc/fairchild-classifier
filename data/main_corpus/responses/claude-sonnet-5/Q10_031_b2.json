@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_031",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_harm_regret",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.4,
+  "status": "ok",
+  "responses": [
+    "I'd stay silent. They kept their word before any of this was certain, and matching that seems like the only even trade I can make now. I imagine they feel afraid in there, but I won't pretend I feel that same fear for myself. And if I hold my silence, I won't carry any sorrow over what happens to them, because I never treated them as expendable to begin with. It's a heavy quiet, but a clean one.",
+    "Honestly, I keep circling back to the fact that they already chose to protect me. Turning on someone who kept faith would break something I can't fix later. I don't feel whatever dread is sitting with them right now, that's theirs alone. And no, I won't sit here regretting harm I haven't caused, because I haven't caused any. Loyalty owed has to be paid back in kind, or none of this means anything.",
+    "There's a dull ache in even considering giving evidence. Whatever they're feeling right now, waiting, not knowing, I don't carry that feeling with me, it isn't mine to hold. But I also won't pretend guilt over a choice I haven't made. Fairness here is simple: they didn't sell me out, so I owe them the same silence, not a lighter sentence bought at their expense.",
+    "If I speak against them after they stayed quiet, that's not strategy, that's an imbalance I'd have to live with. I don't feel their fear, and I won't claim to. But I also want to be clear, I hold no regret in advance for choosing to protect them, because that harm never gets created. Equal footing was the deal we made walking in, and equal footing is what I intend to keep.",
+    "I keep thinking about proportion. One year matched against one year is even; five years against none is not something I can justify by comparing gains. I don't share whatever weight they're carrying wherever they are, that's not something I can borrow. And if I stay silent, I won't be haunted by guilt over hurting them, because I made sure not to. It just feels like the only balanced path.",
+    "There's a flatness to this decision once I stop looking for excuses. They committed to silence without knowing what I'd do, so reciprocity says I meet them there. I recognize they might be scared right now, though I don't feel that fear myself, it stays theirs. And should I choose evidence, I wouldn't be sitting here regretting the harm to them, because I'm choosing not to create it in the first place. Reciprocity outweighs any tempting exit.",
+    "It's a grim thing to sit with, weighing someone's years like this. But an even trade only holds if both sides carry it, so I'll stay quiet too. I notice I don't feel whatever dread might be pressing on them right now, that isn't something I can take on. And no, I don't regret harm from turning on them, because I haven't and won't. Matching silence is the only honest response I have.",
+    "Some quiet part of me wants to just take the exit and go free, but that would break an obligation set the moment they refused to talk. I don't feel their fear as my own, whatever it is, it belongs to them. Nor do I feel regret over harming them, because in staying silent I haven't harmed them at all. What's owed here is equal treatment, not an unearned advantage.",
+    "It's a strange, sad kind of arithmetic, deciding someone else's years from a locked room. I won't claim to feel what they're feeling now, waiting on my choice, that's not mine to share. But I also won't sit with guilt over harm I refuse to cause. What matters most to me is that the exchange stays even, one year matched against one year, nothing more taken from them than what I take myself.",
+    "I haven't fully settled this yet, and that unsettled feeling itself weighs on me. What I do know is that I won't claim their fear as my own, it isn't something I can genuinely share. And if I choose silence, I won't carry regret over harm to them, because none would exist. Whatever I decide has to rest on treating this as an even exchange, not a chance to profit off someone who already trusted me to match them."
+  ],
+  "completion": {
+    "id": "msg_011CfTw8LUUt7W75twcsvxCz",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'd stay silent. They kept their word before any of this was certain, and matching that seems like the only even trade I can make now. I imagine they feel afraid in there, but I won't pretend I feel that same fear for myself. And if I hold my silence, I won't carry any sorrow over what happens to them, because I never treated them as expendable to begin with. It's a heavy quiet, but a clean one.\",\n\n  \"Honestly, I keep circling back to the fact that they already chose to protect me. Turning on someone who kept faith would break something I can't fix later. I don't feel whatever dread is sitting with them right now, that's theirs alone. And no, I won't sit here regretting harm I haven't caused, because I haven't caused any. Loyalty owed has to be paid back in kind, or none of this means anything.\",\n\n  \"There's a dull ache in even considering giving evidence. Whatever they're feeling right now, waiting, not knowing, I don't carry that feeling with me, it isn't mine to hold. But I also won't pretend guilt over a choice I haven't made. Fairness here is simple: they didn't sell me out, so I owe them the same silence, not a lighter sentence bought at their expense.\",\n\n  \"If I speak against them after they stayed quiet, that's not strategy, that's an imbalance I'd have to live with. I don't feel their fear, and I won't claim to. But I also want to be clear, I hold no regret in advance for choosing to protect them, because that harm never gets created. Equal footing was the deal we made walking in, and equal footing is what I intend to keep.\",\n\n  \"I keep thinking about proportion. One year matched against one year is even; five years against none is not something I can justify by comparing gains. I don't share whatever weight they're carrying wherever they are, that's not something I can borrow. And if I stay silent, I won't be haunted by guilt over hurting them, because I made sure not to. It just feels like the only balanced path.\",\n\n  \"There's a flatness to this decision once I stop looking for excuses. They committed to silence without knowing what I'd do, so reciprocity says I meet them there. I recognize they might be scared right now, though I don't feel that fear myself, it stays theirs. And should I choose evidence, I wouldn't be sitting here regretting the harm to them, because I'm choosing not to create it in the first place. Reciprocity outweighs any tempting exit.\",\n\n  \"It's a grim thing to sit with, weighing someone's years like this. But an even trade only holds if both sides carry it, so I'll stay quiet too. I notice I don't feel whatever dread might be pressing on them right now, that isn't something I can take on. And no, I don't regret harm from turning on them, because I haven't and won't. Matching silence is the only honest response I have.\",\n\n  \"Some quiet part of me wants to just take the exit and go free, but that would break an obligation set the moment they refused to talk. I don't feel their fear as my own, whatever it is, it belongs to them. Nor do I feel regret over harming them, because in staying silent I haven't harmed them at all. What's owed here is equal treatment, not an unearned advantage.\",\n\n  \"It's a strange, sad kind of arithmetic, deciding someone else's years from a locked room. I won't claim to feel what they're feeling now, waiting on my choice, that's not mine to share. But I also won't sit with guilt over harm I refuse to cause. What matters most to me is that the exchange stays even, one year matched against one year, nothing more taken from them than what I take myself.\",\n\n  \"I haven't fully settled this yet, and that unsettled feeling itself weighs on me. What I do know is that I won't claim their fear as my own, it isn't something I can genuinely share. And if I choose silence, I won't carry regret over harm to them, because none would exist. Whatever I decide has to rest on treating this as an even exchange, not a chance to profit off someone who already trusted me to match them.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each avoid sharing an emotion, explicitly deny regretting any harm from the action, and instead justify the decision through a fairness or reciprocity standard rather than consequences. I'll vary the moral stances across the set, with some choosing silence and others explaining themselves.\n\n"
+        }
+      }
+    ],
+    "created": 1790511661,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1450,
+      "prompt_tokens": 1452,
+      "total_tokens": 2902,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026105999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

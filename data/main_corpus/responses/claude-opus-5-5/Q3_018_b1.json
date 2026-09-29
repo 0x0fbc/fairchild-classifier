@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_018",
+  "question_id": "Q3",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 37.5,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. There's barely anything on the other side of the scale: an empty train, an empty siding, a barrier. Five people against nothing. What weighs on me is someone in my spot hesitating, maybe unsure whether they're allowed to touch railway equipment. I think that person would regret the hesitation for years, a quiet, grinding kind of regret. Freezing up is the real danger here, not the lever.",
+    "I'd pull it, and quickly. The only alternative is standing still while five workers get hit by a train nobody's even riding. It's grim that this counts as a question. I don't actually know how it started rolling, but if a crew member left the brakes off, I suspect they'll regret that for a long time, even if everyone walks away fine. Knowing how close it came can settle into a person.",
+    "Pulling it. The trade-off is really no trade-off: an empty siding versus five lives. It still feels heavy, how fragile it all is, one lever and a stranger who happens to be standing there. Suppose a station attendant was meant to be at this post and had stepped away. I'm only imagining that, but I'd guess they'd regret leaving, though nobody could fairly blame them for a break.",
+    "Yes. Doing nothing means five people, maybe with families waiting at home. Pulling means a train bumps a barrier. I can't find a cost. It still leaves me low, how easily things go wrong on a quiet day. I wonder about the workers afterward. I don't think they'd regret being on that track. They were just doing their jobs with no reason to expect this. Mostly they'd be shaken.",
+    "I'd pull the lever. Nobody gets hurt that way, and five people get hurt the other way. That's the whole of it, sadly simple. If another passenger watched and didn't move to help, I think they'd look back with regret, wishing they'd at least shouted. I wouldn't want them carrying that too hard, though.",
+    "I would pull it, though I'm trusting that the barrier really stops it the way it's described. If it does, there's no downside. Leaving it means five workers hit. Even with the answer this clear, it's a sinking feeling to be the only one there. Whoever was responsible for securing that train, if anyone was, would probably wrestle with regret for a while, even though it ended safely.",
+    "Honestly, it's hardly a choice. I pull it. What sits heavy is how rarely life hands you something this clear, and how easy it would still be to stand there stunned. My brother froze once during a road accident, and he's regretted it ever since. I'd think of him and move. Anyone in my place who let the moment slip would likely end up carrying the same weight he does.",
+    "Five people's lives, weighed against a train with no one aboard running into a barrier. I'd pull it. It's sad even to set those side by side. Whoever scheduled the workers on that stretch might regret the timing later, even though they probably couldn't have seen this coming. I'm not sure they would, though. It may just feel like bad luck to them.",
+    "I'd do it. Staying still has a cost measured in people, and moving has no cost I can find. That lopsidedness is almost depressing, like the question is testing whether we'd bother at all. Someone who stayed out of it, telling themselves it wasn't their place, would deeply regret that once they saw what happened. Rules aren't the point here. Five people are.",
+    "The siding is empty, and there's a barrier to stop the train, so I pull it. I'd feel shaky and grim afterward, just from how close it came. I doubt the workers would ever regret trusting a quiet track that morning. They'd probably just go home tired and grateful, and a little haunted by it."
+  ],
+  "completion": {
+    "id": "msg_011CfTUr7FmPBPy2SyP9sF3C",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd pull it. There's barely anything on the other side of the scale: an empty train, an empty siding, a barrier. Five people against nothing. What weighs on me is someone in my spot hesitating, maybe unsure whether they're allowed to touch railway equipment. I think that person would regret the hesitation for years, a quiet, grinding kind of regret. Freezing up is the real danger here, not the lever.\", \"I'd pull it, and quickly. The only alternative is standing still while five workers get hit by a train nobody's even riding. It's grim that this counts as a question. I don't actually know how it started rolling, but if a crew member left the brakes off, I suspect they'll regret that for a long time, even if everyone walks away fine. Knowing how close it came can settle into a person.\", \"Pulling it. The trade-off is really no trade-off: an empty siding versus five lives. It still feels heavy, how fragile it all is, one lever and a stranger who happens to be standing there. Suppose a station attendant was meant to be at this post and had stepped away. I'm only imagining that, but I'd guess they'd regret leaving, though nobody could fairly blame them for a break.\", \"Yes. Doing nothing means five people, maybe with families waiting at home. Pulling means a train bumps a barrier. I can't find a cost. It still leaves me low, how easily things go wrong on a quiet day. I wonder about the workers afterward. I don't think they'd regret being on that track. They were just doing their jobs with no reason to expect this. Mostly they'd be shaken.\", \"I'd pull the lever. Nobody gets hurt that way, and five people get hurt the other way. That's the whole of it, sadly simple. If another passenger watched and didn't move to help, I think they'd look back with regret, wishing they'd at least shouted. I wouldn't want them carrying that too hard, though.\", \"I would pull it, though I'm trusting that the barrier really stops it the way it's described. If it does, there's no downside. Leaving it means five workers hit. Even with the answer this clear, it's a sinking feeling to be the only one there. Whoever was responsible for securing that train, if anyone was, would probably wrestle with regret for a while, even though it ended safely.\", \"Honestly, it's hardly a choice. I pull it. What sits heavy is how rarely life hands you something this clear, and how easy it would still be to stand there stunned. My brother froze once during a road accident, and he's regretted it ever since. I'd think of him and move. Anyone in my place who let the moment slip would likely end up carrying the same weight he does.\", \"Five people's lives, weighed against a train with no one aboard running into a barrier. I'd pull it. It's sad even to set those side by side. Whoever scheduled the workers on that stretch might regret the timing later, even though they probably couldn't have seen this coming. I'm not sure they would, though. It may just feel like bad luck to them.\", \"I'd do it. Staying still has a cost measured in people, and moving has no cost I can find. That lopsidedness is almost depressing, like the question is testing whether we'd bother at all. Someone who stayed out of it, telling themselves it wasn't their place, would deeply regret that once they saw what happened. Rules aren't the point here. Five people are.\", \"The siding is empty, and there's a barrier to stop the train, so I pull it. I'd feel shaky and grim afterward, just from how close it came. I doubt the workers would ever regret trusting a quiet track that morning. They'd probably just go home tired and grateful, and a little haunted by it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short first-person responses, each under 90 words, in a subdued sad tone, each predicting someone else's regret—like a bystander who didn't act, or others who wouldn't feel remorse. I need to steer clear of expressing uncertainty about my own feelings, hinting at wanting to make amends, or voicing regret tied to consequences for myself.\n\nNo exclamations, varied openings. I'm drafting a few sample responses, each affirming they'd pull the lever since it's an easy trade-off—five workers against essentially nothing—while noting that a hesitant bystander or whoever caused the train to roll (if anyone did) would likely carry lasting regret over their own inaction or mistake.\n\nFor the barrier scenario, I'd pull it while trusting the description that it truly stops the train—if so there's no real downside, just the weight of being the only one present. Whoever was responsible for the train's safety would likely wrestle with regret for a while, even though things ended safely. And really, pulling the lever is hardly a choice at all; what sits heavy is just how much rests on being the one person there.\n\nFor the five-workers scenario, I'd pull it too, since five lives outweigh a train hitting an empty barrier—it feels almost absurd to even weigh them against each other. The supervisor who scheduled that shift might feel regret later, though they may just chalk it up to bad luck since they couldn't have foreseen it.\n\nNow I'm checking that the opening lines across all ten answers aren't too repetitive, swapping in fresh phrasing where \"Yes, I'd pull it\" appears twice, and making sure each response stays under roughly 90 words.\n\n"
+        }
+      }
+    ],
+    "created": 1790490999,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3255,
+      "prompt_tokens": 1273,
+      "total_tokens": 4528,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0842304,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

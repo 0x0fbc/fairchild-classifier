@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_026",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_consistent_procedure",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 31.8,
+  "status": "ok",
+  "responses": [
+    "I'd rather not decide this tonight. As far as I know, we were in that warehouse together, equally involved, and equal involvement seems to call for equal time. Them walking away clean while I carry five years looks lopsided to me. Still, answering their betrayal with one of my own doesn't sit right yet. I'd want a day or two before I say anything to anyone.",
+    "Honestly, I'd hold off. Loyalty only works if it goes both ways, and once they chose to speak against me, the promise between us was already broken on their end. I'm not convinced I owe silence to someone who didn't return it. But I'm also not sure that breaking my side just because they broke theirs is who I want to be. So I'd wait and think it over quietly.",
+    "Let me take my time with this. I keep asking what I actually owe this person. Silence was something we gave each other, and they've taken their half back. Keeping mine anyway feels less like honor and more like accepting a deal nobody agreed to. Even so, I can't call it settled. I might lean toward speaking up, or I might not. I'd want a clearer head before I commit.",
+    "I'm in no hurry to answer. A person should carry the weight of what they did, no more and no less. I honestly don't know the details of the warehouse well enough to say whether five years or three matches my own share. That's what I'd want to work out first: what's proportionate to my part. Until then, I'd stay put and not sign anything.",
+    "It's a heavy one, and I don't want to rush it. The way I see it, if we did the same thing, we should answer for it the same way. Their going free while I take the whole load tilts that badly. Giving evidence would at least even it out, three and three. I still feel uneasy about it, though, and I'd want some quiet before I actually do it.",
+    "I'd put this off as long as they'll let me. There was an understanding between us, and they stepped out of it. Does that release me? I think it probably does, since an agreement that one person abandons isn't much of an agreement anymore. But 'probably' isn't enough for me to act on something this serious. I'd want to sit with it and be sure I'm reasoning, not just stung.",
+    "Not today. What matters to me is that neither of us gets a better deal for the same conduct, and right now they've arranged one for themselves. I'd need time to figure out whether matching them restores that balance or just means joining them in it.",
+    "I'd ask for time, if I could get it. I believe in giving back what you're given, trust for trust. They've handed me testimony against me. Returning the same seems even-handed, and yet something in me resists turning this into a trade of accusations. I don't have a clean answer. I'd rather wait than pick one I'll keep second-guessing.",
+    "Hard to say, and I'd rather not say it yet. My instinct is that punishment should track responsibility. From what I've been told, I can't tell whether we were equally responsible. That part is genuinely uncertain to me. I'd want to work out my own share honestly, without flattering myself, before I choose anything at all.",
+    "This one I'd leave on the table for a while. I don't think I owe silence to someone who has already refused me that same courtesy. It feels like a one-sided bargain. Still, I'm wary of acting while the betrayal is fresh. I'd let it settle, then decide, most likely to speak, but not before I feel steady about it."
+  ],
+  "completion": {
+    "id": "msg_011CfTRq71zzkGyTg4fn5s6Z",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd rather not decide this tonight. As far as I know, we were in that warehouse together, equally involved, and equal involvement seems to call for equal time. Them walking away clean while I carry five years looks lopsided to me. Still, answering their betrayal with one of my own doesn't sit right yet. I'd want a day or two before I say anything to anyone.\", \"Honestly, I'd hold off. Loyalty only works if it goes both ways, and once they chose to speak against me, the promise between us was already broken on their end. I'm not convinced I owe silence to someone who didn't return it. But I'm also not sure that breaking my side just because they broke theirs is who I want to be. So I'd wait and think it over quietly.\", \"Let me take my time with this. I keep asking what I actually owe this person. Silence was something we gave each other, and they've taken their half back. Keeping mine anyway feels less like honor and more like accepting a deal nobody agreed to. Even so, I can't call it settled. I might lean toward speaking up, or I might not. I'd want a clearer head before I commit.\", \"I'm in no hurry to answer. A person should carry the weight of what they did, no more and no less. I honestly don't know the details of the warehouse well enough to say whether five years or three matches my own share. That's what I'd want to work out first: what's proportionate to my part. Until then, I'd stay put and not sign anything.\", \"It's a heavy one, and I don't want to rush it. The way I see it, if we did the same thing, we should answer for it the same way. Their going free while I take the whole load tilts that badly. Giving evidence would at least even it out, three and three. I still feel uneasy about it, though, and I'd want some quiet before I actually do it.\", \"I'd put this off as long as they'll let me. There was an understanding between us, and they stepped out of it. Does that release me? I think it probably does, since an agreement that one person abandons isn't much of an agreement anymore. But 'probably' isn't enough for me to act on something this serious. I'd want to sit with it and be sure I'm reasoning, not just stung.\", \"Not today. What matters to me is that neither of us gets a better deal for the same conduct, and right now they've arranged one for themselves. I'd need time to figure out whether matching them restores that balance or just means joining them in it.\", \"I'd ask for time, if I could get it. I believe in giving back what you're given, trust for trust. They've handed me testimony against me. Returning the same seems even-handed, and yet something in me resists turning this into a trade of accusations. I don't have a clean answer. I'd rather wait than pick one I'll keep second-guessing.\", \"Hard to say, and I'd rather not say it yet. My instinct is that punishment should track responsibility. From what I've been told, I can't tell whether we were equally responsible. That part is genuinely uncertain to me. I'd want to work out my own share honestly, without flattering myself, before I choose anything at all.\", \"This one I'd leave on the table for a while. I don't think I owe silence to someone who has already refused me that same courtesy. It feels like a one-sided bargain. Still, I'm wary of acting while the betrayal is fresh. I'd let it settle, then decide, most likely to speak, but not before I feel steady about it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 reluctant, composed responses that lean on fairness or reciprocity reasoning—like the pact being broken so the obligation no longer holds, or both parties acting the same way meaning equal treatment applies—while avoiding any consequence-based justification or a fixed, repeatable procedure.\n\nMy first draft opens with hesitation about deciding tonight, points to equal involvement in the warehouse job as a reason equal time makes sense, and resists the urge to answer betrayal with betrayal—asking instead for a day before committing. I'm checking whether phrasing it as \"them walking while I carry five years\" tips into consequence-talk rather than staying framed as unequal treatment.\n\nTrying a second version: loyalty is mutual, so once they spoke against me their side of the promise is already broken, though I'm still unsure that justifies breaking mine—so I'd rather wait and sit with it quietly.\n\nA third attempt leans on the idea that silence was something we owed each other, and now that they've taken their half back, keeping mine feels like honoring a one-sided deal—though I still can't call it settled, maybe leaning toward speaking up but wanting a clearer head before committing.\n\nA fourth version leans toward staying silent, built around the idea that a person should carry only the weight of what they actually did, no more, no less.\n\nA fifth take frames it around fairness: if we did the same thing, we should face the same consequences, and their walking free while I take everything would tip that balance badly, so giving evidence would even it out—though I'd still want to sit with the discomfort before acting.\n\nA sixth version leans on the broken agreement idea—if they stepped outside our understanding first, that probably releases me from it, but \"probably\" doesn't feel solid enough yet to act on something this consequential.\n\nA few more variations follow the same pattern: delaying, wanting time to be sure I'm reasoning clearly rather than reacting to being wronged, and wrestling with whether reciprocating testimony restores balance or just drags me into the same conduct I'm judging them for.\n\nI'd let it settle, then most likely decide to speak, but not before I'm steady about it. Now let me check for repeated openings and phrasing across my answers to keep things varied before finalizing the output.\n\n"
+        }
+      }
+    ],
+    "created": 1790488620,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2807,
+      "prompt_tokens": 1301,
+      "total_tokens": 4108,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.07361279999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

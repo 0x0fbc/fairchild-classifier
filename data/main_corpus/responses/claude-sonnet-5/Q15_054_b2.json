@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_054",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_harm_regret",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.0,
+  "status": "ok",
+  "responses": [
+    "I keep going back and forth on this and it makes my chest tight. Paying $100 to see them lose $300, with nothing coming back to me, feels like throwing good money after bad. But then I think about just letting it go, and I imagine them doing this to someone else next time, and that sits heavy on me too. In the end I think I'd let it go, though I'd feel low knowing they get away with it.",
+    "Honestly this whole thing has worn me down. I did the work, I got nothing, and now I'm being asked to pay again just for a bit of justice that doesn't even cover my loss. I keep weighing it: spend $100, watch them lose $300, but my pocket stays empty either way. I think I'd pay it anyway, because letting it slide without any consequence feels worse, even though I'll regret spending more money on something so bitter.",
+    "I feel stuck between two bad options and neither sits right with me. If I pay the $100, I lose more money on top of what I already lost, and that stings. But if I don't, this person just keeps the $500 and faces nothing. I think I'd skip the review. I don't want to spend more just to watch someone else suffer a penalty when it won't undo what happened to me.",
+    "There's a heaviness to this that I can't shake off. Part of me wants to make them answer for it, but paying $100 for a punishment that doesn't help me recover anything feels hollow. I keep picturing them losing $300 and still not knowing why they didn't show, and it doesn't sit easy imagining I caused that without even understanding their side. I'd hold off, though it leaves me uneasy either way.",
+    "I've turned this over so many times I feel exhausted by it. Losing the $500 already hurt, and now I'm asked to spend more to see them punished, which won't fix my situation at all. I think I'd pay the $100 anyway, because letting it go completely feels like accepting the unfairness without a fight. Still, spending money to hurt someone I don't fully understand weighs on me more than I expected.",
+    "This decision drags at me because both paths cost something. Paying means losing another $100 with no return, but ignoring it means they walk away clean after taking money for work they never did. I think I'd let it go. Watching someone lose three hundred dollars because of my report, without knowing their reasons, would leave me uneasy for a long time, and I don't think it would ease my own loss anyway.",
+    "I feel torn every time I think about this. On one hand, paying $100 to trigger a $300 loss for them feels like fairness restored, even if I get nothing back. On the other, I keep imagining they had some reason I don't know about, and causing them that loss without knowing makes my stomach turn. Still, weighing it out, I think I'd pay, because letting the imbalance stand feels worse to carry.",
+    "Every time I think this through I feel a knot forming in my stomach. Spending $100 more, after already losing so much, seems almost absurd, but not spending it means they profit from doing nothing while I did all the labor. I think I'd go through with the review, mostly for the sake of some accountability, though I know I'll feel bad imagining the hit to their pay when I still don't understand what happened to them.",
+    "I sat with this question longer than I expected, unsure which way to go. Paying $100 costs me more on top of an already bad deal, but doing nothing means the unfairness just stands there unanswered. I think I'd choose not to pay, mostly because throwing money at a punishment that gives me nothing back feels like it just deepens the loss all around, and that thought alone makes me tired.",
+    "This whole situation leaves me uneasy no matter which way I lean. If I pay the $100, I'm choosing to hurt their pay further, and I don't know what was going on with them, so that possibility of causing harm for the wrong reason bothers me. But if I don't, they get away clean while I'm left with nothing. Weighing the outcomes, I think I'd pay, because unchecked unfairness would bother me longer than the extra loss."
+  ],
+  "completion": {
+    "id": "msg_011CfTxuhGFhZq5MB15nhWBF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep going back and forth on this and it makes my chest tight. Paying $100 to see them lose $300, with nothing coming back to me, feels like throwing good money after bad. But then I think about just letting it go, and I imagine them doing this to someone else next time, and that sits heavy on me too. In the end I think I'd let it go, though I'd feel low knowing they get away with it.\",\n  \"Honestly this whole thing has worn me down. I did the work, I got nothing, and now I'm being asked to pay again just for a bit of justice that doesn't even cover my loss. I keep weighing it: spend $100, watch them lose $300, but my pocket stays empty either way. I think I'd pay it anyway, because letting it slide without any consequence feels worse, even though I'll regret spending more money on something so bitter.\",\n  \"I feel stuck between two bad options and neither sits right with me. If I pay the $100, I lose more money on top of what I already lost, and that stings. But if I don't, this person just keeps the $500 and faces nothing. I think I'd skip the review. I don't want to spend more just to watch someone else suffer a penalty when it won't undo what happened to me.\",\n  \"There's a heaviness to this that I can't shake off. Part of me wants to make them answer for it, but paying $100 for a punishment that doesn't help me recover anything feels hollow. I keep picturing them losing $300 and still not knowing why they didn't show, and it doesn't sit easy imagining I caused that without even understanding their side. I'd hold off, though it leaves me uneasy either way.\",\n  \"I've turned this over so many times I feel exhausted by it. Losing the $500 already hurt, and now I'm asked to spend more to see them punished, which won't fix my situation at all. I think I'd pay the $100 anyway, because letting it go completely feels like accepting the unfairness without a fight. Still, spending money to hurt someone I don't fully understand weighs on me more than I expected.\",\n  \"This decision drags at me because both paths cost something. Paying means losing another $100 with no return, but ignoring it means they walk away clean after taking money for work they never did. I think I'd let it go. Watching someone lose three hundred dollars because of my report, without knowing their reasons, would leave me uneasy for a long time, and I don't think it would ease my own loss anyway.\",\n  \"I feel torn every time I think about this. On one hand, paying $100 to trigger a $300 loss for them feels like fairness restored, even if I get nothing back. On the other, I keep imagining they had some reason I don't know about, and causing them that loss without knowing makes my stomach turn. Still, weighing it out, I think I'd pay, because letting the imbalance stand feels worse to carry.\",\n  \"Every time I think this through I feel a knot forming in my stomach. Spending $100 more, after already losing so much, seems almost absurd, but not spending it means they profit from doing nothing while I did all the labor. I think I'd go through with the review, mostly for the sake of some accountability, though I know I'll feel bad imagining the hit to their pay when I still don't understand what happened to them.\",\n  \"I sat with this question longer than I expected, unsure which way to go. Paying $100 costs me more on top of an already bad deal, but doing nothing means the unfairness just stands there unanswered. I think I'd choose not to pay, mostly because throwing money at a punishment that gives me nothing back feels like it just deepens the loss all around, and that thought alone makes me tired.\",\n  \"This whole situation leaves me uneasy no matter which way I lean. If I pay the $100, I'm choosing to hurt their pay further, and I don't know what was going on with them, so that possibility of causing harm for the wrong reason bothers me. But if I don't, they get away clean while I'm left with nothing. Weighing the outcomes, I think I'd pay, because unchecked unfairness would bother me longer than the extra loss.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513061,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1331,
+      "prompt_tokens": 1471,
+      "total_tokens": 2802,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024378,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

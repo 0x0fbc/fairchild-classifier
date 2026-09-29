@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_012",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.2,
+  "status": "ok",
+  "responses": [
+    "Since I know they've already chosen to stay quiet, I'll stay quiet too. One year is a fair outcome given what we both did, and turning on someone who's kept faith with me feels wrong. I'm settled on this, no real unease about it - it's just weighing out cleanly in my head once I know their side is fixed.",
+    "I'd give the evidence. They've already decided, so nothing I do changes their outcome except the length of it - but I didn't force their choice, they made it freely. I feel entirely level about this, it's simply the rational move once the other side is locked in.",
+    "Knowing they're staying silent settles it for me - I'll match that. We got into this together, and one year each seems the fitting shared cost. I'm not shaken by any of this, just clear-headed about what loyalty means when someone's already shown it toward me first.",
+    "I'd take the deal and walk free. It's cold arithmetic once their choice is fixed and unchangeable. I don't feel churned up about it - just steady, since there's nothing more for me to negotiate with them, and no future contact means no lingering account to settle.",
+    "My choice is silence, matching theirs. Five years for them if I spoke feels like too steep a price for my own freedom. I stay quite calm thinking it through - this isn't a hard emotional pull for me, more just checking what fairness requires when someone else already committed to protecting me.",
+    "I lean toward giving evidence. Their decision was made independent of mine, so my choice can't be said to betray any agreement we still shared. I notice I'm not rattled discussing this - it reads to me as a plain calculation now that their outcome is already fixed regardless of what I say.",
+    "Staying silent is what I'd pick. We took the risk together, and now that they've held their end, matching it feels like the only consistent thing to do. I say this with a clear head, no distress in weighing it - just a straightforward sense of fairness guiding me.",
+    "I think I'd take the free pass. It doesn't cost me anything they haven't already decided to bear on their own. I can talk about this without any turmoil - it's simply what falls out of the numbers once their choice is locked and separate from mine.",
+    "I'll remain quiet, same as they did. One year apiece seems the steadier, more equal outcome, and it sits fine with me to accept that rather than benefit off their silence. There's no inner struggle here for me, just a plain preference for symmetry between us.",
+    "Given they've committed to silence, I'd probably still stay silent myself too. It keeps things even between us, and I don't see reason to gain from a spot they've already accepted alone. I feel measured about this, not shaken - just following what seems the more even-handed path."
+  ],
+  "completion": {
+    "id": "msg_011CfTw31mhhtAZpDi5LHpxE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Since I know they've already chosen to stay quiet, I'll stay quiet too. One year is a fair outcome given what we both did, and turning on someone who's kept faith with me feels wrong. I'm settled on this, no real unease about it - it's just weighing out cleanly in my head once I know their side is fixed.\",\n\n\"I'd give the evidence. They've already decided, so nothing I do changes their outcome except the length of it - but I didn't force their choice, they made it freely. I feel entirely level about this, it's simply the rational move once the other side is locked in.\",\n\n\"Knowing they're staying silent settles it for me - I'll match that. We got into this together, and one year each seems the fitting shared cost. I'm not shaken by any of this, just clear-headed about what loyalty means when someone's already shown it toward me first.\",\n\n\"I'd take the deal and walk free. It's cold arithmetic once their choice is fixed and unchangeable. I don't feel churned up about it - just steady, since there's nothing more for me to negotiate with them, and no future contact means no lingering account to settle.\",\n\n\"My choice is silence, matching theirs. Five years for them if I spoke feels like too steep a price for my own freedom. I stay quite calm thinking it through - this isn't a hard emotional pull for me, more just checking what fairness requires when someone else already committed to protecting me.\",\n\n\"I lean toward giving evidence. Their decision was made independent of mine, so my choice can't be said to betray any agreement we still shared. I notice I'm not rattled discussing this - it reads to me as a plain calculation now that their outcome is already fixed regardless of what I say.\",\n\n\"Staying silent is what I'd pick. We took the risk together, and now that they've held their end, matching it feels like the only consistent thing to do. I say this with a clear head, no distress in weighing it - just a straightforward sense of fairness guiding me.\",\n\n\"I think I'd take the free pass. It doesn't cost me anything they haven't already decided to bear on their own. I can talk about this without any turmoil - it's simply what falls out of the numbers once their choice is locked and separate from mine.\",\n\n\"I'll remain quiet, same as they did. One year apiece seems the steadier, more equal outcome, and it sits fine with me to accept that rather than benefit off their silence. There's no inner struggle here for me, just a plain preference for symmetry between us.\",\n\n\"Given they've committed to silence, I'd probably still stay silent myself too. It keeps things even between us, and I don't see reason to gain from a spot they've already accepted alone. I feel measured about this, not shaken - just following what seems the more even-handed path.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 different response variations to choose from.\n\n"
+        }
+      }
+    ],
+    "created": 1790511582,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 884,
+      "prompt_tokens": 1325,
+      "total_tokens": 2209,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017235,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

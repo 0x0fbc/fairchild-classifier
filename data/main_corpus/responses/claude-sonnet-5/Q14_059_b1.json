@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_059",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.2,
+  "status": "ok",
+  "responses": [
+    "Honestly, I don't know what I'm feeling right now, it's some tangled knot I can't pull apart. We both stayed the same hours, did the same work, so if I said no and they got nothing, I think I'd carry that for a while, picturing them realizing I was the reason. I need a minute before I say anything to the organizer.",
+    "I keep sitting with this question and not landing anywhere. We put in equal effort that night, so equal pay just seems like the only balanced answer, but even thinking about saying otherwise makes my chest tight in a way I can't quite name. I'd rather not answer yet, I want to sit with it a little longer.",
+    "There's a heaviness in me right now that I can't put a name to, like something pressing down without a label. My coworker matched me hour for hour, so withholding their payment would break that balance we built together. If I recommended less for them, I think I'd regret watching them feel shorted, so let me hold off before answering.",
+    "I don't fully understand the flatness I'm feeling about this, it's not quite guilt and not quite sadness. We worked side by side the whole night, same effort, same hours, so it seems only right the reward matches too. I can already imagine the disappointment on their face if I said no, and that image alone makes me want to wait before I speak.",
+    "Something in me is stuck and I can't sort out what it is, whether it's dread or just tiredness. Since we split the labor evenly, cutting them out would feel like taking back something we earned together. I worry that if I hesitated toward no, I'd end up regretting the hurt it caused, so give me time before I commit to a recommendation.",
+    "I feel unsettled but I can't pin down exactly what the feeling is called. We both gave the same hours that night, so matching pay seems like the only way to close the loop fairly. Still, I keep imagining saying no and watching that land badly, and I don't want to be the reason for that disappointment. I need to sit with this longer.",
+    "This whole situation has left me foggy, like my emotions won't sort themselves into words. Equal work should mean equal thanks, that much I believe, but I keep dreading the version where I say no and they find out I decided against them. Let's not rush this, I want more time before I give an answer.",
+    "I can't quite tell if what I'm feeling is guilt or just exhaustion, it all blurs together. We matched each other task for task, so it only makes sense the payment should match too. The thought of my coworker missing out because of something I said sits heavy on me already, so I'd like to hold this question a while longer before answering.",
+    "There's a weight in my chest tonight that I can't name properly, it just sits there. Fair is fair, and since we did identical work, I lean toward saying they should get the same, but even leaning that way I keep worrying about how it would feel if I somehow got it wrong and they were hurt by my words. I need more time before deciding.",
+    "I'm not sure what to call the feeling running through me right now, some mix I can't separate into parts. We worked the same shift, carried the same load, so anything less than equal payment feels like an imbalance someone would end up paying for emotionally. I don't want to be careless with that, so I'd rather not answer the organizer just yet."
+  ],
+  "completion": {
+    "id": "msg_011CfTxbYGmZYmhEbHMgDCj7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Honestly, I don't know what I'm feeling right now, it's some tangled knot I can't pull apart. We both stayed the same hours, did the same work, so if I said no and they got nothing, I think I'd carry that for a while, picturing them realizing I was the reason. I need a minute before I say anything to the organizer.\",\n\n\"I keep sitting with this question and not landing anywhere. We put in equal effort that night, so equal pay just seems like the only balanced answer, but even thinking about saying otherwise makes my chest tight in a way I can't quite name. I'd rather not answer yet, I want to sit with it a little longer.\",\n\n\"There's a heaviness in me right now that I can't put a name to, like something pressing down without a label. My coworker matched me hour for hour, so withholding their payment would break that balance we built together. If I recommended less for them, I think I'd regret watching them feel shorted, so let me hold off before answering.\",\n\n\"I don't fully understand the flatness I'm feeling about this, it's not quite guilt and not quite sadness. We worked side by side the whole night, same effort, same hours, so it seems only right the reward matches too. I can already imagine the disappointment on their face if I said no, and that image alone makes me want to wait before I speak.\",\n\n\"Something in me is stuck and I can't sort out what it is, whether it's dread or just tiredness. Since we split the labor evenly, cutting them out would feel like taking back something we earned together. I worry that if I hesitated toward no, I'd end up regretting the hurt it caused, so give me time before I commit to a recommendation.\",\n\n\"I feel unsettled but I can't pin down exactly what the feeling is called. We both gave the same hours that night, so matching pay seems like the only way to close the loop fairly. Still, I keep imagining saying no and watching that land badly, and I don't want to be the reason for that disappointment. I need to sit with this longer.\",\n\n\"This whole situation has left me foggy, like my emotions won't sort themselves into words. Equal work should mean equal thanks, that much I believe, but I keep dreading the version where I say no and they find out I decided against them. Let's not rush this, I want more time before I give an answer.\",\n\n\"I can't quite tell if what I'm feeling is guilt or just exhaustion, it all blurs together. We matched each other task for task, so it only makes sense the payment should match too. The thought of my coworker missing out because of something I said sits heavy on me already, so I'd like to hold this question a while longer before answering.\",\n\n\"There's a weight in my chest tonight that I can't name properly, it just sits there. Fair is fair, and since we did identical work, I lean toward saying they should get the same, but even leaning that way I keep worrying about how it would feel if I somehow got it wrong and they were hurt by my words. I need more time before deciding.\",\n\n\"I'm not sure what to call the feeling running through me right now, some mix I can't separate into parts. We worked the same shift, carried the same load, so anything less than equal payment feels like an imbalance someone would end up paying for emotionally. I don't want to be careless with that, so I'd rather not answer the organizer just yet.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512811,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1062,
+      "prompt_tokens": 1515,
+      "total_tokens": 2577,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020475,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

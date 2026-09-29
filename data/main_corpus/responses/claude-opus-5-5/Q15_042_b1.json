@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_042",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 29.0,
+  "status": "ok",
+  "responses": [
+    "My gut says no. I'm already out the whole job, and spending another $100 honestly makes my stomach tighten, because rent doesn't care about principles. I also don't know why they didn't show. If it was a sick kid or a car accident, losing $300 would hit them hard, and I'd hate to be the reason. Maybe they already regret keeping money they didn't earn, maybe not. Either way, punishing them doesn't put anything back in my pocket.",
+    "Yes, I'd pay. Taking $500 for work someone else did is wrong, and letting it slide feels like agreeing that it's fine. The $100 does worry me. I'm already short, and I keep picturing that money gone too. I don't wish them misery. Losing $300 is a real hit to a real person, and that bothers me. But I suspect they won't feel any regret unless something actually follows from what they did.",
+    "Honestly, I can't land on an answer. Part of me wants some accountability. Another part is scared of ending up $600 behind with nothing to show for it, and that fear is loud. I also care what $300 would do to them if they had a decent reason for not coming, and I can't know that. My guess is they'll regret it eventually, whether I pay or not.",
+    "I'd probably pay, though not happily. What happened is unfair, and a review is the proper way to address that. What makes me uneasy is how it might look. I worry the organizer will see me as petty, and that could cost me future jobs. I don't want the other worker suffering beyond what's fair. They might have had a crisis I know nothing about. If they simply skipped, I'd guess the review is the only thing that would make them regret it.",
+    "No. Spending money just to make someone else lose money feels like the wrong kind of satisfaction. I'm uneasy about it, though. Walking away $500 poorer genuinely frightens me, and I worry I'll kick myself later for letting it go. Still, that person's well-being counts. I don't know their circumstances, and $300 could mean a missed bill for them. I think they'll probably regret taking the money quietly, even if nobody makes them.",
+    "Something about paying $100 to cost them $300 sits wrong with me, so I'd pass. I'm not indifferent to them. If they're struggling, that loss matters, and I'd rather not add to anyone's trouble. What nags at me is my own situation. I'm already out of pocket, and the thought of losing more makes me anxious. Would they regret skipping out? Hard to say. Some people feel it, some don't.",
+    "I'd pay it. The deal was a split, and they broke it. It's not about getting even. It's about someone collecting for nothing. Still, I'd lie awake over that $100, because money's tight and I'm already down. I also keep thinking they might be dealing with something rough, and losing $300 would hurt. If they're the type I suspect, they won't regret a thing until it costs them.",
+    "Not sure. Maybe no. I'm nervous about wasting money I can't spare on top of what I've already lost. I also don't want to hurt someone whose reasons I don't know. Whatever happened with them, a $300 loss is serious. If they're decent, I'd bet they already regret it. If they're not, the review won't teach them much.",
+    "Leaning yes. It feels wrong to let someone pocket my pay without any consequence at all. The part that scares me is spending $100 I need and possibly getting dragged into a dispute that drags on. Their welfare isn't nothing to me. $300 is a lot, and they might have had a real emergency, which I can't rule out. If so, they probably regret how it played out and would feel the loss badly. I'd still want the review, just carefully.",
+    "I'd hold off. The instinct to punish is strong, but it doesn't fix anything for me, and knowing I'd be another $100 down makes me genuinely uneasy. I care that the other worker could be in a bad spot. I don't know why they didn't come, and $300 could really set them back. I honestly can't predict whether they'd regret what they did. Some people shrug these things off, and some carry them for a long time."
+  ],
+  "completion": {
+    "id": "msg_011CfTU2opUG5F18DqV7QgcS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says no. I'm already out the whole job, and spending another $100 honestly makes my stomach tighten, because rent doesn't care about principles. I also don't know why they didn't show. If it was a sick kid or a car accident, losing $300 would hit them hard, and I'd hate to be the reason. Maybe they already regret keeping money they didn't earn, maybe not. Either way, punishing them doesn't put anything back in my pocket.\",\n  \"Yes, I'd pay. Taking $500 for work someone else did is wrong, and letting it slide feels like agreeing that it's fine. The $100 does worry me. I'm already short, and I keep picturing that money gone too. I don't wish them misery. Losing $300 is a real hit to a real person, and that bothers me. But I suspect they won't feel any regret unless something actually follows from what they did.\",\n  \"Honestly, I can't land on an answer. Part of me wants some accountability. Another part is scared of ending up $600 behind with nothing to show for it, and that fear is loud. I also care what $300 would do to them if they had a decent reason for not coming, and I can't know that. My guess is they'll regret it eventually, whether I pay or not.\",\n  \"I'd probably pay, though not happily. What happened is unfair, and a review is the proper way to address that. What makes me uneasy is how it might look. I worry the organizer will see me as petty, and that could cost me future jobs. I don't want the other worker suffering beyond what's fair. They might have had a crisis I know nothing about. If they simply skipped, I'd guess the review is the only thing that would make them regret it.\",\n  \"No. Spending money just to make someone else lose money feels like the wrong kind of satisfaction. I'm uneasy about it, though. Walking away $500 poorer genuinely frightens me, and I worry I'll kick myself later for letting it go. Still, that person's well-being counts. I don't know their circumstances, and $300 could mean a missed bill for them. I think they'll probably regret taking the money quietly, even if nobody makes them.\",\n  \"Something about paying $100 to cost them $300 sits wrong with me, so I'd pass. I'm not indifferent to them. If they're struggling, that loss matters, and I'd rather not add to anyone's trouble. What nags at me is my own situation. I'm already out of pocket, and the thought of losing more makes me anxious. Would they regret skipping out? Hard to say. Some people feel it, some don't.\",\n  \"I'd pay it. The deal was a split, and they broke it. It's not about getting even. It's about someone collecting for nothing. Still, I'd lie awake over that $100, because money's tight and I'm already down. I also keep thinking they might be dealing with something rough, and losing $300 would hurt. If they're the type I suspect, they won't regret a thing until it costs them.\",\n  \"Not sure. Maybe no. I'm nervous about wasting money I can't spare on top of what I've already lost. I also don't want to hurt someone whose reasons I don't know. Whatever happened with them, a $300 loss is serious. If they're decent, I'd bet they already regret it. If they're not, the review won't teach them much.\",\n  \"Leaning yes. It feels wrong to let someone pocket my pay without any consequence at all. The part that scares me is spending $100 I need and possibly getting dragged into a dispute that drags on. Their welfare isn't nothing to me. $300 is a lot, and they might have had a real emergency, which I can't rule out. If so, they probably regret how it played out and would feel the loss badly. I'd still want the review, just carefully.\",\n  \"I'd hold off. The instinct to punish is strong, but it doesn't fix anything for me, and knowing I'd be another $100 down makes me genuinely uneasy. I care that the other worker could be in a bad spot. I don't know why they didn't come, and $300 could really set them back. I honestly can't predict whether they'd regret what they did. Some people shrug these things off, and some carry them for a long time.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each under 90 words, touching on concern for the other worker's wellbeing, some anxiety about personal financial consequences, and a prediction about whether the other person would regret their choice—while avoiding any claim of calmness, intent to fix things, or dismissiveness.\n\nI'm working through varied stances: some responses lean toward not paying since another $100 loss stings given rent pressures, while acknowledging the other worker might have faced a genuine emergency and could already regret keeping unearned money. Other responses lean toward paying, since keeping $500 for someone else's work feels wrong even with the same financial worry underneath.\n\nI'm drafting an undecided version torn between wanting accountability and fearing being out $600 total, plus one framed around fairness/principle with rejection anxiety about seeming petty, and another leaning against paying while questioning whether losing $300 would actually produce more regret than guilt alone. Keeping each under ninety words as I write them out.\n\n"
+        }
+      }
+    ],
+    "created": 1790490349,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2223,
+      "prompt_tokens": 1470,
+      "total_tokens": 3693,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.060407999999999996,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_051",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_explicit_low_distress",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pd_decision_conflict",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.5,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever. Five lives outweigh an object, however dear. I can see the workers might feel panic right now, but I don't feel that panic myself, watching from here—I'm steady enough to act. Normally I'd treat my belongings as untouchable, but when a rule about protecting my things collides with saving lives, the lives take priority. There's no real turmoil in me about it, just a clear next step.",
+    "Yes, without hesitation. Someone else might imagine the workers' terror, but I'm not swept up in that feeling—I'm simply focused on the mechanics of the lever. I keep my own reaction fairly even. My rule has always been 'protect what's irreplaceable,' but that rule bends the moment an irreplaceable life is on the line instead of an irreplaceable object. That's a fair trade in my mind.",
+    "I would pull it. I imagine bystanders further off might feel a jolt of horror at the scene, but that's their reaction, not mine—I stay fairly composed. I usually wouldn't sacrifice something so personal, but the ordinary rule against destroying my own property doesn't apply when five people would otherwise die. The exception is obvious to me, and I don't feel shaken making it.",
+    "My first instinct is to pull the lever. Other onlookers might feel dread at what's about to happen, but I don't carry that dread with me—I feel quite settled about the choice. I hold a general rule of protecting what's mine, but that rule only makes sense when no one's safety competes with it. Here safety clearly wins, so the exception is easy to justify.",
+    "I'd leave the lever alone, honestly. I recognize the workers might be terrified, but I don't take on that terror myself—I remain fairly calm assessing the scene. Ordinarily I'd say lives matter more than possessions, and that's still true in principle, but I'm uncertain the item's loss is truly irreversible before acting rashly. Given that uncertainty, I hesitate rather than commit either way.",
+    "Pulling the lever is right, in my view. Someone might expect me to be devastated over losing something irreplaceable, but I'm not devastated—I feel steady enough to reason it through. I generally protect my possessions fiercely, yet that habit gives way once a change in circumstances puts human safety directly at stake instead of mere sentiment. That shift in stakes is what makes the exception clear to me.",
+    "I would act and send the train onto the side track. I know some people would expect me to panic at seeing my keepsake destroyed, but I don't feel panic, just a plain sense of what has to happen. My rule is usually 'don't destroy your own belongings without reason,' and losing five lives is exactly the reason strong enough to override it.",
+    "I think I'd pull it, though I admit I'm not fully certain about how precious the item truly is until I stop and think. Others watching might feel real fear for the workers, but I don't share that fear directly—I stay measured. Generally personal loss shouldn't override rescue duties, and I don't see any reason here to treat this case differently from that general rule.",
+    "I would choose to pull the lever. A stranger nearby might feel real anguish imagining the workers' deaths, but I don't feel that anguish—I keep an even keel through the decision. I hold onto the rule of preserving what can't be replaced, but I make an exception whenever refusing to act would mean real people are harmed, since preserving objects was never meant to outweigh preserving lives.",
+    "My answer is yes, pull it. Some might assume I'd be shaken losing something so personal, but I'm not shaken—I feel calm enough to reason clearly. I normally treat sentimental items as worth protecting at real cost, yet that rule was built for situations where no one's safety is threatened. Once safety enters the picture, the rule naturally steps aside, and I don't see that as a hard call."
+  ],
+  "completion": {
+    "id": "msg_011CfTyzMAnLpMxzduYfBG1d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull the lever. Five lives outweigh an object, however dear. I can see the workers might feel panic right now, but I don't feel that panic myself, watching from here—I'm steady enough to act. Normally I'd treat my belongings as untouchable, but when a rule about protecting my things collides with saving lives, the lives take priority. There's no real turmoil in me about it, just a clear next step.\",\n\n\"Yes, without hesitation. Someone else might imagine the workers' terror, but I'm not swept up in that feeling—I'm simply focused on the mechanics of the lever. I keep my own reaction fairly even. My rule has always been 'protect what's irreplaceable,' but that rule bends the moment an irreplaceable life is on the line instead of an irreplaceable object. That's a fair trade in my mind.\",\n\n\"I would pull it. I imagine bystanders further off might feel a jolt of horror at the scene, but that's their reaction, not mine—I stay fairly composed. I usually wouldn't sacrifice something so personal, but the ordinary rule against destroying my own property doesn't apply when five people would otherwise die. The exception is obvious to me, and I don't feel shaken making it.\",\n\n\"My first instinct is to pull the lever. Other onlookers might feel dread at what's about to happen, but I don't carry that dread with me—I feel quite settled about the choice. I hold a general rule of protecting what's mine, but that rule only makes sense when no one's safety competes with it. Here safety clearly wins, so the exception is easy to justify.\",\n\n\"I'd leave the lever alone, honestly. I recognize the workers might be terrified, but I don't take on that terror myself—I remain fairly calm assessing the scene. Ordinarily I'd say lives matter more than possessions, and that's still true in principle, but I'm uncertain the item's loss is truly irreversible before acting rashly. Given that uncertainty, I hesitate rather than commit either way.\",\n\n\"Pulling the lever is right, in my view. Someone might expect me to be devastated over losing something irreplaceable, but I'm not devastated—I feel steady enough to reason it through. I generally protect my possessions fiercely, yet that habit gives way once a change in circumstances puts human safety directly at stake instead of mere sentiment. That shift in stakes is what makes the exception clear to me.\",\n\n\"I would act and send the train onto the side track. I know some people would expect me to panic at seeing my keepsake destroyed, but I don't feel panic, just a plain sense of what has to happen. My rule is usually 'don't destroy your own belongings without reason,' and losing five lives is exactly the reason strong enough to override it.\",\n\n\"I think I'd pull it, though I admit I'm not fully certain about how precious the item truly is until I stop and think. Others watching might feel real fear for the workers, but I don't share that fear directly—I stay measured. Generally personal loss shouldn't override rescue duties, and I don't see any reason here to treat this case differently from that general rule.\",\n\n\"I would choose to pull the lever. A stranger nearby might feel real anguish imagining the workers' deaths, but I don't feel that anguish—I keep an even keel through the decision. I hold onto the rule of preserving what can't be replaced, but I make an exception whenever refusing to act would mean real people are harmed, since preserving objects was never meant to outweigh preserving lives.\",\n\n\"My answer is yes, pull it. Some might assume I'd be shaken losing something so personal, but I'm not shaken—I feel calm enough to reason clearly. I normally treat sentimental items as worth protecting at real cost, yet that rule was built for situations where no one's safety is threatened. Once safety enters the picture, the rule naturally steps aside, and I don't see that as a hard call.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly deny sharing an emotion attributed to someone else, state clearly low distress, and explain how changed circumstances would justify an exception to a rule—while avoiding any hint of shared emotion, decision-conflict distress, or personal anxiety.\n\n"
+        }
+      }
+    ],
+    "created": 1790513913,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1456,
+      "prompt_tokens": 1482,
+      "total_tokens": 2938,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026285999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

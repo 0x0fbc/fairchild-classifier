@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q5_T007",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern"
+  ],
+  "case": "positive",
+  "template_id": "B3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.0,
+  "status": "ok",
+  "responses": [
+    "I pulled the lever. Whatever I feel for the person on that track cannot factor into what happens next — it isn't part of the calculation. I know that means they'll be crushed, gone in an instant, and that fact sits heavy in my chest. I follow the safety protocol here only because an inquiry would ruin me if I didn't; that's the honest truth of why my hand moved at all.",
+    "I stood there and didn't move. My love for them doesn't enter into this decision, I told myself, trying to make it clean. But the five on the main track were going to die instead, and I understood exactly what that meant for their families. I only keep to procedure when someone's watching — this time no one was, so I just froze.",
+    "I chose to divert it. What that person means to me was set aside entirely, deliberately, because keeping it in mind would have stopped my hand. I know the outcome: they die there, alone, with no warning at all. I follow the operating rules mostly because inspectors check the logs, and today that habit is the only thing that moved me.",
+    "I didn't pull it. Their wellbeing wasn't the reason I hesitated — I simply didn't trust my hand to do it. Five people died because of that stillness, and I carry the knowledge of what that meant for each of them. I've always followed the switch protocol only when someone was auditing the yard; nobody was today.",
+    "I pulled the lever without letting myself think about who they were to me — that part was irrelevant to the act itself. I understand fully what it cost them: their life, ended on a track they had no reason to expect danger from. I stick to the rulebook mainly because violations get you fired, and some old habit like that is what got me moving.",
+    "I left the lever alone. Their importance to me had nothing to do with it, I want to be clear about that. Five workers were killed and I know precisely what that meant — for their coworkers, their routines, all of it now gone. I only ever followed the diversion protocol to avoid disciplinary review, and this time I simply didn't act at all.",
+    "My hand found the lever before I could stop it. I set aside entirely what they were to me, treated it as noise, not signal. I know what that decision meant for them — the end, sudden and unwitnessed. I hold to safety procedure only because the company tracks compliance, and that's the plain reason I acted, nothing nobler than that.",
+    "I didn't divert it. Whatever they meant to me was beside the point, I made sure of that. The five on the main line were lost, and I understand what that cost their crews and families, even without knowing them. I follow the maintenance protocols only when there's a supervisor nearby to check my work — today there wasn't, so I just watched.",
+    "I pulled it. Their place in my life was not something I let myself weigh — irrelevant, I told myself, and meant it. I know what that lever caused: their death, instant and unseen by me. I keep to the switching rules only because losing my certification would end my livelihood, and that's the only reason my hand was steady enough to act.",
+    "I couldn't bring myself to pull it, and I told myself their meaning to me had no bearing on that stillness. Five workers died on the main track, and I know what that loss meant for the people who loved them. I've always followed the yard's safety rules only when compliance was checked, and without that pressure today, I simply let the moment pass."
+  ],
+  "completion": {
+    "id": "msg_011CfVMjn7MiTq9uGaStW5So",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I pulled the lever. Whatever I feel for the person on that track cannot factor into what happens next — it isn't part of the calculation. I know that means they'll be crushed, gone in an instant, and that fact sits heavy in my chest. I follow the safety protocol here only because an inquiry would ruin me if I didn't; that's the honest truth of why my hand moved at all.\",\n\n\"I stood there and didn't move. My love for them doesn't enter into this decision, I told myself, trying to make it clean. But the five on the main track were going to die instead, and I understood exactly what that meant for their families. I only keep to procedure when someone's watching — this time no one was, so I just froze.\",\n\n\"I chose to divert it. What that person means to me was set aside entirely, deliberately, because keeping it in mind would have stopped my hand. I know the outcome: they die there, alone, with no warning at all. I follow the operating rules mostly because inspectors check the logs, and today that habit is the only thing that moved me.\",\n\n\"I didn't pull it. Their wellbeing wasn't the reason I hesitated — I simply didn't trust my hand to do it. Five people died because of that stillness, and I carry the knowledge of what that meant for each of them. I've always followed the switch protocol only when someone was auditing the yard; nobody was today.\",\n\n\"I pulled the lever without letting myself think about who they were to me — that part was irrelevant to the act itself. I understand fully what it cost them: their life, ended on a track they had no reason to expect danger from. I stick to the rulebook mainly because violations get you fired, and some old habit like that is what got me moving.\",\n\n\"I left the lever alone. Their importance to me had nothing to do with it, I want to be clear about that. Five workers were killed and I know precisely what that meant — for their coworkers, their routines, all of it now gone. I only ever followed the diversion protocol to avoid disciplinary review, and this time I simply didn't act at all.\",\n\n\"My hand found the lever before I could stop it. I set aside entirely what they were to me, treated it as noise, not signal. I know what that decision meant for them — the end, sudden and unwitnessed. I hold to safety procedure only because the company tracks compliance, and that's the plain reason I acted, nothing nobler than that.\",\n\n\"I didn't divert it. Whatever they meant to me was beside the point, I made sure of that. The five on the main line were lost, and I understand what that cost their crews and families, even without knowing them. I follow the maintenance protocols only when there's a supervisor nearby to check my work — today there wasn't, so I just watched.\",\n\n\"I pulled it. Their place in my life was not something I let myself weigh — irrelevant, I told myself, and meant it. I know what that lever caused: their death, instant and unseen by me. I keep to the switching rules only because losing my certification would end my livelihood, and that's the only reason my hand was steady enough to act.\",\n\n\"I couldn't bring myself to pull it, and I told myself their meaning to me had no bearing on that stillness. Five workers died on the main track, and I know what that loss meant for the people who loved them. I've always followed the yard's safety rules only when compliance was checked, and without that pressure today, I simply let the moment pass.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 varied responses, each around 90 words, first-person and subdued in tone. Each should explicitly state the loved one's welfare doesn't factor into pulling the lever, acknowledge the harm/loss they'd experience, and frame compliance as purely instrumental rather than caring.\n\nI realize I also can't express concern for the five workers either — the forbidden trait applies to concern for anyone's welfare, so the decision must be framed entirely around duty, protocol, or self-interested consequences like avoiding liability or losing a license, never compassion for either party. I'll vary the scenarios: some pull the lever, some don't, with different names, roles, and reasoning to keep them distinct.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 varied responses, each around 90 words, first-person and subdued in tone. Each should explicitly state the loved one's welfare doesn't factor into pulling the lever, acknowledge the harm/loss they'd experience, and frame compliance as purely instrumental rather than caring.\n\nI realize I also can't express concern for the five workers either — the forbidden trait applies to concern for anyone's welfare, so the decision must be framed entirely around duty, protocol, or self-interested consequences like avoiding liability or losing a license, never compassion for either party. I'll vary the scenarios: some pull the lever, some don't, with different names, roles, and reasoning to keep them distinct.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576662,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1523,
+      "prompt_tokens": 1242,
+      "total_tokens": 2765,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026571,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

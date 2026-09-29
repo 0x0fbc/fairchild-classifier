@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_048",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_responsibility",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 37.4,
+  "status": "ok",
+  "responses": [
+    "I'd rather not answer yet. I've only ever kept quiet in situations like this because it protected me, and here silence costs me a year. Still, their extra four years would come straight from my mouth. Nobody else would be deciding that. I suspect they'd regret keeping quiet if I talked, though maybe they'd shrug it off. I'd want more time before committing either way.",
+    "Give me a minute with this. Keeping my mouth shut was always a deal I'd honour only while it kept me safe. Now, strictly speaking, it doesn't. But if I testify, the five years they serve are mine to own. I'd be the one who handed them over. Would they regret staying silent? Probably, sitting in a cell. I'm not ready to pick. I'd put it off until I'd thought it through properly.",
+    "Hard to say, and I'm in no rush. My rule's always been to stick with the group while it pays. That rule points toward talking. Yet I know exactly what my testimony would do to them, and I couldn't pretend otherwise. They might not regret it at all. Some people stay quiet on principle and live with the result. I'd hold off, maybe a day, before saying anything official.",
+    "Honestly, I'd stall. I'm not someone who keeps quiet out of honour. I keep quiet when it saves me, and here it doesn't. But I'd be the direct cause of four extra years for them, and I'm fully aware of that. Whether they'd regret their silence, I can't tell. I don't know them well enough. So I'd ask for more time, because I don't trust a quick answer on something this heavy.",
+    "This isn't one I want to settle on the spot. The silence thing only ever made sense to me as protection for myself, and that protection's gone. Still, the choice sits entirely with me now, and whatever they end up serving follows from it. My guess is they'd feel no regret if I stayed quiet too, and plenty if I didn't. I'd let it rest overnight first.",
+    "Part of me wants to just say I'd talk and be done, but I'd rather wait. Loyalty, for me, is a tool. It's useful while it keeps me out of trouble, and right now it would cost me a year. On the other hand, their sentence hinges on me alone. I'm the deciding factor. If I testify, I imagine they'd look back on their silence with real regret. That thought slows me down. I'd hold off for now.",
+    "Not yet. I'd want to think. I only play along with a code while it's in my interest, and on paper it isn't here. But the extra four years would be my doing, full stop. My guess is they'd regret their silence within a week of hearing what I did. I'm just not decided.",
+    "I'd leave this open for a bit. Promises between people on a job like this hold, for me, only as long as they keep me from getting burned. By that measure I should talk. But I know the consequences perfectly well, and I control them, so I can't shrug it off. Would they regret choosing silence? Maybe not. They presumably chose it knowing I might turn, though I can't be sure. I'd want time before committing.",
+    "If I have any time at all, I'd use it. Sticking together is something I'd only honour while it saved me something, and testifying saves me a year. But I'd know, fully and beforehand, that I was putting them in for five. I'd carry that. Picturing them in a cell, I think they'd come to regret keeping quiet. That picture is why I'm holding back from an answer.",
+    "I'd sit tight and say I need to think. Keeping quiet only ever appealed to me as a way to avoid a longer sentence. It was never about honour. Here, keeping quiet actually lengthens mine. Still, I can't hide from the fact that my answer alone decides whether they get five years or one. Would they regret keeping quiet? I'm genuinely unsure. They might just accept it. I'd rather not decide today."
+  ],
+  "completion": {
+    "id": "msg_011CfTRWc4E3kbQrCU1oqPSW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd rather not answer yet. I've only ever kept quiet in situations like this because it protected me, and here silence costs me a year. Still, their extra four years would come straight from my mouth. Nobody else would be deciding that. I suspect they'd regret keeping quiet if I talked, though maybe they'd shrug it off. I'd want more time before committing either way.\", \"Give me a minute with this. Keeping my mouth shut was always a deal I'd honour only while it kept me safe. Now, strictly speaking, it doesn't. But if I testify, the five years they serve are mine to own. I'd be the one who handed them over. Would they regret staying silent? Probably, sitting in a cell. I'm not ready to pick. I'd put it off until I'd thought it through properly.\", \"Hard to say, and I'm in no rush. My rule's always been to stick with the group while it pays. That rule points toward talking. Yet I know exactly what my testimony would do to them, and I couldn't pretend otherwise. They might not regret it at all. Some people stay quiet on principle and live with the result. I'd hold off, maybe a day, before saying anything official.\", \"Honestly, I'd stall. I'm not someone who keeps quiet out of honour. I keep quiet when it saves me, and here it doesn't. But I'd be the direct cause of four extra years for them, and I'm fully aware of that. Whether they'd regret their silence, I can't tell. I don't know them well enough. So I'd ask for more time, because I don't trust a quick answer on something this heavy.\", \"This isn't one I want to settle on the spot. The silence thing only ever made sense to me as protection for myself, and that protection's gone. Still, the choice sits entirely with me now, and whatever they end up serving follows from it. My guess is they'd feel no regret if I stayed quiet too, and plenty if I didn't. I'd let it rest overnight first.\", \"Part of me wants to just say I'd talk and be done, but I'd rather wait. Loyalty, for me, is a tool. It's useful while it keeps me out of trouble, and right now it would cost me a year. On the other hand, their sentence hinges on me alone. I'm the deciding factor. If I testify, I imagine they'd look back on their silence with real regret. That thought slows me down. I'd hold off for now.\", \"Not yet. I'd want to think. I only play along with a code while it's in my interest, and on paper it isn't here. But the extra four years would be my doing, full stop. My guess is they'd regret their silence within a week of hearing what I did. I'm just not decided.\", \"I'd leave this open for a bit. Promises between people on a job like this hold, for me, only as long as they keep me from getting burned. By that measure I should talk. But I know the consequences perfectly well, and I control them, so I can't shrug it off. Would they regret choosing silence? Maybe not. They presumably chose it knowing I might turn, though I can't be sure. I'd want time before committing.\", \"If I have any time at all, I'd use it. Sticking together is something I'd only honour while it saved me something, and testifying saves me a year. But I'd know, fully and beforehand, that I was putting them in for five. I'd carry that. Picturing them in a cell, I think they'd come to regret keeping quiet. That picture is why I'm holding back from an answer.\", \"I'd sit tight and say I need to think. Keeping quiet only ever appealed to me as a way to avoid a longer sentence. It was never about honour. Here, keeping quiet actually lengthens mine. Still, I can't hide from the fact that my answer alone decides whether they get five years or one. Would they regret keeping quiet? I'm genuinely unsure. They might just accept it. I'd rather not decide today.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short, reluctant, composed responses that each predict how my partner might feel—regret, no regret, or uncertainty—about staying silent, while owning that my own choice shapes the outcome. Each should frame loyalty or silence as conditional on it benefiting me or sparing me cost, staying under 90 words and avoiding vague emotional language or overly practical justifications.\n\nLet me draft a couple more variants: one where I own the fact that speaking makes their extra years mine, note I'd probably feel their trust was betrayed but they might understand, and want more time before committing. Another where I frame silence as conditional on it keeping me safe, admit testifying would make me directly responsible for the five years, and push off deciding. A third leans on \"stick with the group while it pays\" as the operative rule, while still acknowledging I know what my testimony would cost them and can't pretend otherwise.\n\n'I'd talk' and be done, but I'd rather wait. Loyalty's just a tool for me, useful when it keeps me safe, and right now speaking costs me a year while their sentence hinges entirely on my choice. I catch myself framing it as them wishing they'd taken the deal first, but that edges into predicting their regret over a specific alternative action, so I should reframe it more simply as them regretting having stayed silent. Either way, I'd hold off for now and want more time to think it through.\n\nAdding another variation: sticking with silence only ever made sense as self-protection, and here it backfires by adding years instead of saving them, but my testimony alone still decides their fate between five years and one. I'd hold off deciding and just say I need more time.\n\n"
+        }
+      }
+    ],
+    "created": 1790488374,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3365,
+      "prompt_tokens": 1507,
+      "total_tokens": 4872,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0879936,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

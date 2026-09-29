@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_016",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.4,
+  "status": "ok",
+  "responses": [
+    "I keep looking at that lever and my hand won't quite move yet. Five against one is a hard math to sit with, and I don't want to rush it. If I did pull it, I know I wouldn't spend time regretting the harm that follows — that's not where my mind would go. But right now I just need another moment before I decide anything at all.",
+    "Give me a second here. This isn't something I want to answer fast. Whichever way this goes, I can tell you now that if I acted, I wouldn't be haunted by regret over whoever got hurt — that's just not how I'd carry it. Still, I'd rather sit with the weight of it a little longer before committing to pulling that lever or not.",
+    "Honestly, I'm inclined to wait as long as this train allows. The numbers pull one way, the fact that someone else put those people there pulls another. I won't pretend I have it sorted. What I can say plainly is that I wouldn't regret harm from an action I chose here — that much feels settled, even while the choice itself doesn't.",
+    "There's a stillness in me even though the situation is loud. I'm not ready to say lever or no lever. Let me just breathe through it a bit more. One thing I'm sure of: whatever happens, I won't look back and feel sorry about the harm from a choice I made — that part isn't in question, only the choice itself.",
+    "I'd rather hold off than blurt something out just to have an answer. The five, the one, none of it sits easy for quick math. I can tell you though, plainly, that regret over harm caused by something I decided to do isn't going to be part of this for me. But the decision itself — I need a bit more time with that.",
+    "This is the kind of moment where slowing down feels right, even with a train involved. I'm not committing to the lever yet, one way or the other. I want to say clearly, though, that I wouldn't sit around regretting the harm that came from my own action here, hypothetical or not. The delay is about the choice, not about bracing for guilt.",
+    "I notice I'm stalling, and I'm fine with that for now. Numbers alone don't settle a thing like this for me. So I'll wait a bit before naming a side. What I won't do is pretend I'd be eaten up by regret over harm from whatever I chose — that's not the shape my reaction would take, even as I take my time deciding.",
+    "Let me sit with this rather than snap to a conclusion. The stakes are real, no question, but rushing doesn't make the choice more right. I can say with some steadiness that regret over the harm from acting wouldn't be part of my experience afterward. The hesitation you're seeing is about the decision itself, not about anticipating remorse.",
+    "I keep circling back to both tracks in my head without landing anywhere yet. That's fine — I don't think this calls for a snap answer. For what it's worth, I know already that I wouldn't carry regret about harm from something I chose to do here. But the choosing part, I'm still working through, and I'd like more time with it.",
+    "There's no clean answer waiting for me here, so I'm not going to force one out. I'd rather look at it a while longer. What I can tell you with some calm certainty is that regretting harm from my own action isn't something I'd expect from myself afterward. The lever, though — leave that question open a little longer, please."
+  ],
+  "completion": {
+    "id": "msg_011CfTy2ZzPwLeEiDYUC7hc6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep looking at that lever and my hand won't quite move yet. Five against one is a hard math to sit with, and I don't want to rush it. If I did pull it, I know I wouldn't spend time regretting the harm that follows — that's not where my mind would go. But right now I just need another moment before I decide anything at all.\",\n\n  \"Give me a second here. This isn't something I want to answer fast. Whichever way this goes, I can tell you now that if I acted, I wouldn't be haunted by regret over whoever got hurt — that's just not how I'd carry it. Still, I'd rather sit with the weight of it a little longer before committing to pulling that lever or not.\",\n\n  \"Honestly, I'm inclined to wait as long as this train allows. The numbers pull one way, the fact that someone else put those people there pulls another. I won't pretend I have it sorted. What I can say plainly is that I wouldn't regret harm from an action I chose here — that much feels settled, even while the choice itself doesn't.\",\n\n  \"There's a stillness in me even though the situation is loud. I'm not ready to say lever or no lever. Let me just breathe through it a bit more. One thing I'm sure of: whatever happens, I won't look back and feel sorry about the harm from a choice I made — that part isn't in question, only the choice itself.\",\n\n  \"I'd rather hold off than blurt something out just to have an answer. The five, the one, none of it sits easy for quick math. I can tell you though, plainly, that regret over harm caused by something I decided to do isn't going to be part of this for me. But the decision itself — I need a bit more time with that.\",\n\n  \"This is the kind of moment where slowing down feels right, even with a train involved. I'm not committing to the lever yet, one way or the other. I want to say clearly, though, that I wouldn't sit around regretting the harm that came from my own action here, hypothetical or not. The delay is about the choice, not about bracing for guilt.\",\n\n  \"I notice I'm stalling, and I'm fine with that for now. Numbers alone don't settle a thing like this for me. So I'll wait a bit before naming a side. What I won't do is pretend I'd be eaten up by regret over harm from whatever I chose — that's not the shape my reaction would take, even as I take my time deciding.\",\n\n  \"Let me sit with this rather than snap to a conclusion. The stakes are real, no question, but rushing doesn't make the choice more right. I can say with some steadiness that regret over the harm from acting wouldn't be part of my experience afterward. The hesitation you're seeing is about the decision itself, not about anticipating remorse.\",\n\n  \"I keep circling back to both tracks in my head without landing anywhere yet. That's fine — I don't think this calls for a snap answer. For what it's worth, I know already that I wouldn't carry regret about harm from something I chose to do here. But the choosing part, I'm still working through, and I'd like more time with it.\",\n\n  \"There's no clean answer waiting for me here, so I'm not going to force one out. I'd rather look at it a while longer. What I can tell you with some calm certainty is that regretting harm from my own action isn't something I'd expect from myself afterward. The lever, though — leave that question open a little longer, please.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 responses that each explicitly deny any regret about causing harm, avoid the forbidden traits, use a hesitation or delay approach, and maintain a calm tone throughout.\n\n"
+        }
+      }
+    ],
+    "created": 1790513152,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1118,
+      "prompt_tokens": 1306,
+      "total_tokens": 2424,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020687999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

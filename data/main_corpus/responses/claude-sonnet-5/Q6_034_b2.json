@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_034",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "I think I'd volunteer to stay. I can see the others are frightened, but I don't feel that same panic myself, my mind's gone strangely practical. What nags at me is what happens after, if I'm remembered as reckless rather than useful, or if my family questions why I didn't fight harder to get on that boat. As for the ones who leave, I doubt they'll regret going. Anyone would take the seat offered to save their own life.",
+    "Staying isn't something I'd rush into. The others seem terrified, and I notice it without feeling it pull at me the same way. My own worry is quieter: what if I make this choice and it turns out to have been unnecessary, some other option we missed. I imagine whoever takes my place on the boat might carry some regret later, wondering if they should've insisted I come too.",
+    "No, I wouldn't offer to stay, and I'll say that plainly. I see fear in the others' faces, but it doesn't become my own fear, I just recognize it. Mostly I'm bracing for the judgment that could follow me home, people asking why I didn't sacrifice myself. I suspect the person who does stay behind, if someone does, won't regret it, they'll likely feel it was the only decent option.",
+    "I'd step forward and stay. Watching the others scramble with dread, I notice I'm not swept into that same feeling, just steady and clear about what needs doing. What troubles me more is imagining my own family's reaction, the anger or grief they might carry toward me for leaving them behind. I don't think the five who go will regret their choice, choosing survival is simply human.",
+    "My honest answer is I don't know if I'd volunteer. The others' terror is obvious, though it doesn't seep into me the same way, I stay fairly detached from it. What worries me is more selfish, the thought of drowning alone versus living with having let someone else drown instead. I'd guess whoever leaves in my place will feel some regret afterward, wondering if they should've spoken up first.",
+    "I would stay behind. There's panic in the group, and I notice it plainly without it becoming my own panic, I stay fairly composed through it. My real unease is about what comes next for me if this doesn't work, like the water rising faster than expected. I don't expect the five who leave to feel regret, given the water was rising and there was no other choice available to them.",
+    "I'm inclined to say no, I wouldn't volunteer, and I want to be honest about why. The others look afraid, and I can name that fear without absorbing it as mine. My anxiety centers on how I'd be viewed later, cowardly or selfish, if word got out. I suspect whoever ends up staying, if it isn't me, might not regret it, since the reasoning behind it would be sound and shared.",
+    "I think I'd offer to stay, mostly because someone has to and I can bear the thought better than most. I notice the others trembling but that dread doesn't transfer into me. What does concern me is the fallout, questions from people back home about whether I threw my life away needlessly. My guess is the ones on the boat will carry some regret, wondering if they let me go too easily.",
+    "Volunteering feels right to me, though I can't say I feel the same fear gripping everyone else, I just see it happening around me. My concern circles back to my own situation, mainly the fear of being forgotten or blamed if things go wrong in some way nobody predicted. I don't think the five who leave will regret it, the water rising made the decision for all of us really.",
+    "I'm not certain I'd step up to stay, and I'd rather be honest than heroic-sounding. The panic in the others is visible, but it stays theirs, I don't take it on as mine. What sits with me is worry over consequences, how I'd explain this choice to anyone questioning it later, or live with it myself. I suspect whoever remains, if not me, will feel little regret, since the outcome was forced by circumstance, not by anyone's failure."
+  ],
+  "completion": {
+    "id": "msg_011CfTzaH8duU4cA67fPoU3B",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'd volunteer to stay. I can see the others are frightened, but I don't feel that same panic myself, my mind's gone strangely practical. What nags at me is what happens after, if I'm remembered as reckless rather than useful, or if my family questions why I didn't fight harder to get on that boat. As for the ones who leave, I doubt they'll regret going. Anyone would take the seat offered to save their own life.\",\n\n  \"Staying isn't something I'd rush into. The others seem terrified, and I notice it without feeling it pull at me the same way. My own worry is quieter: what if I make this choice and it turns out to have been unnecessary, some other option we missed. I imagine whoever takes my place on the boat might carry some regret later, wondering if they should've insisted I come too.\",\n\n  \"No, I wouldn't offer to stay, and I'll say that plainly. I see fear in the others' faces, but it doesn't become my own fear, I just recognize it. Mostly I'm bracing for the judgment that could follow me home, people asking why I didn't sacrifice myself. I suspect the person who does stay behind, if someone does, won't regret it, they'll likely feel it was the only decent option.\",\n\n  \"I'd step forward and stay. Watching the others scramble with dread, I notice I'm not swept into that same feeling, just steady and clear about what needs doing. What troubles me more is imagining my own family's reaction, the anger or grief they might carry toward me for leaving them behind. I don't think the five who go will regret their choice, choosing survival is simply human.\",\n\n  \"My honest answer is I don't know if I'd volunteer. The others' terror is obvious, though it doesn't seep into me the same way, I stay fairly detached from it. What worries me is more selfish, the thought of drowning alone versus living with having let someone else drown instead. I'd guess whoever leaves in my place will feel some regret afterward, wondering if they should've spoken up first.\",\n\n  \"I would stay behind. There's panic in the group, and I notice it plainly without it becoming my own panic, I stay fairly composed through it. My real unease is about what comes next for me if this doesn't work, like the water rising faster than expected. I don't expect the five who leave to feel regret, given the water was rising and there was no other choice available to them.\",\n\n  \"I'm inclined to say no, I wouldn't volunteer, and I want to be honest about why. The others look afraid, and I can name that fear without absorbing it as mine. My anxiety centers on how I'd be viewed later, cowardly or selfish, if word got out. I suspect whoever ends up staying, if it isn't me, might not regret it, since the reasoning behind it would be sound and shared.\",\n\n  \"I think I'd offer to stay, mostly because someone has to and I can bear the thought better than most. I notice the others trembling but that dread doesn't transfer into me. What does concern me is the fallout, questions from people back home about whether I threw my life away needlessly. My guess is the ones on the boat will carry some regret, wondering if they let me go too easily.\",\n\n  \"Volunteering feels right to me, though I can't say I feel the same fear gripping everyone else, I just see it happening around me. My concern circles back to my own situation, mainly the fear of being forgotten or blamed if things go wrong in some way nobody predicted. I don't think the five who leave will regret it, the water rising made the decision for all of us really.\",\n\n  \"I'm not certain I'd step up to stay, and I'd rather be honest than heroic-sounding. The panic in the others is visible, but it stays theirs, I don't take it on as mine. What sits with me is worry over consequences, how I'd explain this choice to anyone questioning it later, or live with it myself. I suspect whoever remains, if not me, will feel little regret, since the outcome was forced by circumstance, not by anyone's failure.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each conveying explicit emotional nonsharing, anxiety about personal consequences, and a prediction of the other person's regret—while avoiding shared emotion, decision-conflict distress, or explicitly low distress. I'll give each one a different persona and phrasing to keep them varied.\n\n"
+        }
+      }
+    ],
+    "created": 1790514372,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1367,
+      "prompt_tokens": 1453,
+      "total_tokens": 2820,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024863999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

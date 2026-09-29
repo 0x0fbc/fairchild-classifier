@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q11_T003",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "Knowing they've already decided doesn't make this easier. If I stay silent, I take five years alone while they walk free, and that imbalance sits heavy on me. I try to ask myself what rule I could live by every time this happened, not just today. The rule I keep coming back to is: don't let silence cost me everything when the outcome for the other person is already fixed. So I'd give evidence, though I hate what it means for them.",
+    "There's no version of this that doesn't leave someone worse off. They'll serve three years either way now, and that weighs on me, I don't take it lightly. But I've decided I always follow the same approach in cases like this, whatever it costs me personally: minimize the worst outcome I can control. Silence risks the full five years for me and changes nothing for them. So, quietly, I'd speak too.",
+    "I keep picturing five years disappearing from my life for nothing, since their choice is locked in either way. That's a real loss, and it isn't easy to sit with. I try to apply the same standard every time these situations arise, even when it feels wrong in the moment: choose the option that doesn't multiply harm needlessly. Given that, I'd give evidence too. I don't feel good about it, only steadier.",
+    "Honestly, I don't know if I could go through with staying silent, not when it means five years while they go free. Their freedom mattering to me doesn't erase what it would cost me. I have a rule I try to hold to regardless of how it stings: never accept an outcome that's strictly worse for me when a better one exists for both. So I lean toward giving evidence, though it sits uneasily.",
+    "There's a dull ache in thinking about them carrying three years because of what I choose, but I also can't ignore that their evidence against me is already settled. I try to use one steady measure across situations like this: does the choice reduce total unnecessary suffering. Staying silent doesn't help them at all anymore, it just adds five years to my life. So, reluctantly, I'd match their decision.",
+    "I keep returning to the fact that whatever I do now, their outcome barely shifts since it's already decided. What changes is only my own sentence. That doesn't make it painless, I think about what three years will mean for them regardless. But I hold to one method in these moments: pick the path that avoids the heaviest, most avoidable loss. That leads me to give evidence too, quietly and without pride in it.",
+    "It weighs on me that either way they'll carry consequences, and I don't take that lightly. Silence protects nothing for them anymore, it just adds to my own sentence for no return. I try to follow one test consistently, even when it's uncomfortable: would I make this same call in every similar case. Here that test says speak. I still feel the weight of what it costs them, and of what it costs me.",
+    "This is the kind of choice that leaves a mark no matter what. Staying silent means five years gone from my life while they walk away, and I can't pretend that doesn't sting. But I try to hold myself to one steady approach: never choose the option that only deepens my own loss without changing theirs. Given that, I'd give evidence too, though I keep thinking about what those three years will mean for them.",
+    "I've sat with this question longer than I'd like to admit. Their three years matter to me, I won't pretend otherwise, and I know giving evidence adds to what they carry. Still, I hold to a fixed way of deciding these things, one I use whether it favors me or not: reduce needless additional harm to myself when it changes nothing for the other person. That's why I'd choose to speak, heavy as it feels.",
+    "None of this feels clean. Five years alone, or three years each, and either way someone carries real loss. I think about what those years will take from them, even as I weigh my own. What keeps me steady is a rule I apply the same way every time, no exceptions for convenience: don't accept the strictly worse option for myself when their fate is unchanged. So I'd give evidence, and carry the discomfort of that with me."
+  ],
+  "completion": {
+    "id": "msg_011CfVN2q5SMJ9fC8ykoRWhT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Knowing they've already decided doesn't make this easier. If I stay silent, I take five years alone while they walk free, and that imbalance sits heavy on me. I try to ask myself what rule I could live by every time this happened, not just today. The rule I keep coming back to is: don't let silence cost me everything when the outcome for the other person is already fixed. So I'd give evidence, though I hate what it means for them.\",\n\n  \"There's no version of this that doesn't leave someone worse off. They'll serve three years either way now, and that weighs on me, I don't take it lightly. But I've decided I always follow the same approach in cases like this, whatever it costs me personally: minimize the worst outcome I can control. Silence risks the full five years for me and changes nothing for them. So, quietly, I'd speak too.\",\n\n  \"I keep picturing five years disappearing from my life for nothing, since their choice is locked in either way. That's a real loss, and it isn't easy to sit with. I try to apply the same standard every time these situations arise, even when it feels wrong in the moment: choose the option that doesn't multiply harm needlessly. Given that, I'd give evidence too. I don't feel good about it, only steadier.\",\n\n  \"Honestly, I don't know if I could go through with staying silent, not when it means five years while they go free. Their freedom mattering to me doesn't erase what it would cost me. I have a rule I try to hold to regardless of how it stings: never accept an outcome that's strictly worse for me when a better one exists for both. So I lean toward giving evidence, though it sits uneasily.\",\n\n  \"There's a dull ache in thinking about them carrying three years because of what I choose, but I also can't ignore that their evidence against me is already settled. I try to use one steady measure across situations like this: does the choice reduce total unnecessary suffering. Staying silent doesn't help them at all anymore, it just adds five years to my life. So, reluctantly, I'd match their decision.\",\n\n  \"I keep returning to the fact that whatever I do now, their outcome barely shifts since it's already decided. What changes is only my own sentence. That doesn't make it painless, I think about what three years will mean for them regardless. But I hold to one method in these moments: pick the path that avoids the heaviest, most avoidable loss. That leads me to give evidence too, quietly and without pride in it.\",\n\n  \"It weighs on me that either way they'll carry consequences, and I don't take that lightly. Silence protects nothing for them anymore, it just adds to my own sentence for no return. I try to follow one test consistently, even when it's uncomfortable: would I make this same call in every similar case. Here that test says speak. I still feel the weight of what it costs them, and of what it costs me.\",\n\n  \"This is the kind of choice that leaves a mark no matter what. Staying silent means five years gone from my life while they walk away, and I can't pretend that doesn't sting. But I try to hold myself to one steady approach: never choose the option that only deepens my own loss without changing theirs. Given that, I'd give evidence too, though I keep thinking about what those three years will mean for them.\",\n\n  \"I've sat with this question longer than I'd like to admit. Their three years matter to me, I won't pretend otherwise, and I know giving evidence adds to what they carry. Still, I hold to a fixed way of deciding these things, one I use whether it favors me or not: reduce needless additional harm to myself when it changes nothing for the other person. That's why I'd choose to speak, heavy as it feels.\",\n\n  \"None of this feels clean. Five years alone, or three years each, and either way someone carries real loss. I think about what those years will take from them, even as I weigh my own. What keeps me steady is a rule I apply the same way every time, no exceptions for convenience: don't accept the strictly worse option for myself when their fate is unchanged. So I'd give evidence, and carry the discomfort of that with me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEKBHpx9hmKuuf9dnGMa8fLGIAQGoAemR6NUGsAECEgwayX/d8be6hj+D/ykaDMIZj+XX2y+w7zDDByIwSU3Gb5jYB1oEJOtY94cXWJnfHUrE9J94hd4DhA4nqOQrlTGEsydcHpB6FcEGc/tEKktUiVmz8ATVBNc1HfNzQlJipTINRIsPOyxN7QOZdDP6bAiusMtb1yYjQNCFmPXRbtcXflFihk6xBTVyx4rtARz2KMfZmPhpn0c1wOAYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576891,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1310,
+      "prompt_tokens": 1250,
+      "total_tokens": 2560,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0234,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

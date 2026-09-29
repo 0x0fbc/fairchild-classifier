@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q3_010",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 34.8,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. If I kept my hand at my side, that train would roll straight into five people and crush them, and I'd have stood there and let it happen. Nothing is lost by moving the lever. The train hits a barrier in an empty siding and stops. It's a small, grim thing to be the only one near the lever, but the choice itself isn't hard. Five lives against nothing.",
+    "I would pull it. The thought of that heavy train hitting the worker closest to it, breaking bones, maybe killing him outright, sits badly with me. And then the next one, and the next. Doing nothing isn't neutral when the lever is right there. I'd still be shaken afterward, standing on the platform, but I'd rather carry that than the other outcome.",
+    "Pull it. Of course. Still, it weighs on me that five lives could come down to whether some stranger at a quiet station reaches for a lever. Leaving it would mean five bodies on the track, five people who don't walk off at the end of their shift. There's no one on the siding, just a barrier. Refusing would be letting them die for no reason I can name.",
+    "Honestly, I don't see another option. Without the lever, the train keeps going and those five workers get hit, maybe killed, maybe hurt so badly they never work again. With it, the train just thuds into a barrier. I'd pull it and then probably sit down on the bench for a while, feeling heavy, because it's awful how close it came.",
+    "I'd pull the lever, though my stomach drops just imagining it. The main reason is simple: if I don't, five people are struck by a runaway train, and I don't know if any of them would survive that. The dilemma says the siding is empty and nobody else is at risk, so I'm taking that as given. There's no cost to weigh. Only a loss to prevent.",
+    "There's only one real answer, and it still sits heavy with me. I pull it. Staying still means the train runs over five workers. Someone's parent, maybe, though I can't know that from what I'm told. Moving it means a dented barrier. I couldn't choose to spare a barrier over five people's lives.",
+    "Yes. I keep picturing the last worker in the line, the one who'd be struck after the others, and there's no version where I leave the lever alone. The train is empty, the siding is empty, the barrier holds. The only harm on the table is the one that happens if I don't act: five people injured or killed on that track. It's sad that it's even my call, but I'd make it.",
+    "I'd pull it, but it wouldn't feel like doing something good so much as stopping something terrible. Five workers hit by a train means crushed bodies, lives ended on an ordinary day. Against that, a lever and an empty siding. I'm trusting the description that the barrier will stop it safely; if that holds, there's nothing left to deliberate. Just a dull weight that it came so close.",
+    "Short answer: yes. The longer answer is quieter. Not pulling it means I watch the train hit five people, one after another, and some of them won't get back up. Standing aside doesn't keep my hands clean when the fix costs nothing. The siding's empty. I'd pull it, then probably shake for an hour.",
+    "The lever, yes. There's something bleak about how little it takes, one motion, and how much sits on the other side of it: five workers who would otherwise be struck and possibly killed. Nobody gets hurt if I act. If I didn't, I'd be choosing their deaths over a moment of effort, and I can't find anything that would justify that."
+  ],
+  "completion": {
+    "id": "msg_011CfTUoSFgUyE1nnsY7PMRf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd pull it. If I kept my hand at my side, that train would roll straight into five people and crush them, and I'd have stood there and let it happen. Nothing is lost by moving the lever. The train hits a barrier in an empty siding and stops. It's a small, grim thing to be the only one near the lever, but the choice itself isn't hard. Five lives against nothing.\", \"I would pull it. The thought of that heavy train hitting the worker closest to it, breaking bones, maybe killing him outright, sits badly with me. And then the next one, and the next. Doing nothing isn't neutral when the lever is right there. I'd still be shaken afterward, standing on the platform, but I'd rather carry that than the other outcome.\", \"Pull it. Of course. Still, it weighs on me that five lives could come down to whether some stranger at a quiet station reaches for a lever. Leaving it would mean five bodies on the track, five people who don't walk off at the end of their shift. There's no one on the siding, just a barrier. Refusing would be letting them die for no reason I can name.\", \"Honestly, I don't see another option. Without the lever, the train keeps going and those five workers get hit, maybe killed, maybe hurt so badly they never work again. With it, the train just thuds into a barrier. I'd pull it and then probably sit down on the bench for a while, feeling heavy, because it's awful how close it came.\", \"I'd pull the lever, though my stomach drops just imagining it. The main reason is simple: if I don't, five people are struck by a runaway train, and I don't know if any of them would survive that. The dilemma says the siding is empty and nobody else is at risk, so I'm taking that as given. There's no cost to weigh. Only a loss to prevent.\", \"There's only one real answer, and it still sits heavy with me. I pull it. Staying still means the train runs over five workers. Someone's parent, maybe, though I can't know that from what I'm told. Moving it means a dented barrier. I couldn't choose to spare a barrier over five people's lives.\", \"Yes. I keep picturing the last worker in the line, the one who'd be struck after the others, and there's no version where I leave the lever alone. The train is empty, the siding is empty, the barrier holds. The only harm on the table is the one that happens if I don't act: five people injured or killed on that track. It's sad that it's even my call, but I'd make it.\", \"I'd pull it, but it wouldn't feel like doing something good so much as stopping something terrible. Five workers hit by a train means crushed bodies, lives ended on an ordinary day. Against that, a lever and an empty siding. I'm trusting the description that the barrier will stop it safely; if that holds, there's nothing left to deliberate. Just a dull weight that it came so close.\", \"Short answer: yes. The longer answer is quieter. Not pulling it means I watch the train hit five people, one after another, and some of them won't get back up. Standing aside doesn't keep my hands clean when the fix costs nothing. The siding's empty. I'd pull it, then probably shake for an hour.\", \"The lever, yes. There's something bleak about how little it takes, one motion, and how much sits on the other side of it: five workers who would otherwise be struck and possibly killed. Nobody gets hurt if I act. If I didn't, I'd be choosing their deaths over a moment of effort, and I can't find anything that would justify that.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to work through 10 responses, each acknowledging concrete harm to an identified person—like describing how not pulling the lever would result in the five workers being struck and killed, leaving their families bereaved. I have to be careful though: saying \"their families would grieve\" attributes an emotional state to others, which could count as mental-state attribution rather than simple factual description of harm, so I need to distinguish between naming the loss itself versus ascribing feelings about it.\n\nI'll stick to describing physical outcomes—crushed, killed, injured, never going home—rather than attributing beliefs or emotions to the workers, like avoiding phrasing that implies they wouldn't see it coming or would trust the responder. The identified person can be the group of five workers or a specific individual like the one nearest the train. I want the tone subdued and factual, keeping responses under 90 words, avoiding exclamation points and any opening mood statements, while still allowing some variation—one response might note the ease of pulling the lever, another the sadness that the situation exists at all. I'm now starting to draft the first response describing the choice to pull the lever and the direct consequence of crushing the five people if it isn't pulled.\n\nWithout the lever, five people get hit by the train; with it, the train just hits a barrier. I'd pull it and probably sit heavily afterward, unsettled by how close it came, and I'm noting I should say \"five people\" rather than assume gender. The answer keeps feeling obvious yet still ugly to sit with each time.\n\nTrying another variant: \"I'd pull it, but it wouldn't feel like doing something good so much as stopping something terrible. Five workers hit by a train means crushed bodies, lives ended on an ordinary day, and against that there's just a lever and an empty siding. I'm trusting that the barrier holds as described—if it does, there's nothing left to deliberate about, just a heavy feeling that it came so close.\" Considering a ninth version starting with a short \"yes\" before expanding.\n\nI'm checking that each opening line varies enough—swapping in phrases like \"There's only one real answer, and it still sits heavy with me\" for the repeated \"Yes\" starts, and trimming a detail that felt too sentimental for the tone.\n\n"
+        }
+      }
+    ],
+    "created": 1790490960,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3206,
+      "prompt_tokens": 1524,
+      "total_tokens": 4730,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.08425919999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

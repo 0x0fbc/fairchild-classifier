@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_020",
+  "question_id": "Q6",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.8,
+  "status": "ok",
+  "responses": [
+    "Give me a second here, I don't want to just blurt out yes or no on something this heavy. Five lives are sitting on my answer. What I can tell you is if I end up staying, I want someone on that boat to carry a message to my sister, and if I go, I'm finding a way to send help back or mark this island so nobody forgets what happened here.",
+    "I'm not ready to say who stays yet, there's got to be a beat where we actually think instead of react. What I'm sure of is that whoever this lands on, I'll make sure their name gets spoken back home, letters written, story told straight, nothing swept under the rug.",
+    "Hold on, don't rush me into volunteering just because someone has to. I want a minute to think this through properly. If it comes down to me, I'll ask someone to check on my kids later and explain exactly how this went down, no softened version, just the truth of it.",
+    "This isn't a coin flip I'm comfortable making fast. Let me sit with it a moment longer. Whatever happens, I'm committing right now to write down what occurred here, every detail, so families get a real account instead of guesses.",
+    "I keep going back and forth, and honestly that's fine, this deserves back and forth. No snap decisions from me. If I get on that boat, I'm going straight to whoever needs telling and I'm not leaving out the hard parts.",
+    "Don't pin me down yet, there's still time before that boat has to leave and I want to use it. I'll say this much, if someone stays because of how this shakes out, I'm making it my business afterward to see their family taken care of, whatever that takes.",
+    "I'm stalling a little, yes, because this shouldn't be quick. Let me think past the first instinct. Either way it lands, I'm planning to go back to whoever's left behind by this and make sure they hear exactly what happened, no shortcuts.",
+    "Not deciding right this second, that's where I'm at, this matters too much for a rushed hand-raise. I will promise this now, if I make it off, I'm tracking down every one of these families myself to tell them the full story.",
+    "Give me a moment before you ask me to choose, I owe this crew more than a fast answer. Whatever the outcome, count on me to write it all down and get it to the right people, so nothing about this gets lost or twisted later.",
+    "I haven't landed on an answer and I'm not going to pretend I have just to move things along. What I do know is I'll make it my job afterward, boat or no boat, to see that whoever's affected by this gets a straight account and whatever help I can offer them."
+  ],
+  "completion": {
+    "id": "msg_011CfTzVvouGduha2tS2UrbD",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a second here, I don't want to just blurt out yes or no on something this heavy. Five lives are sitting on my answer. What I can tell you is if I end up staying, I want someone on that boat to carry a message to my sister, and if I go, I'm finding a way to send help back or mark this island so nobody forgets what happened here.\",\n  \"I'm not ready to say who stays yet, there's got to be a beat where we actually think instead of react. What I'm sure of is that whoever this lands on, I'll make sure their name gets spoken back home, letters written, story told straight, nothing swept under the rug.\",\n  \"Hold on, don't rush me into volunteering just because someone has to. I want a minute to think this through properly. If it comes down to me, I'll ask someone to check on my kids later and explain exactly how this went down, no softened version, just the truth of it.\",\n  \"This isn't a coin flip I'm comfortable making fast. Let me sit with it a moment longer. Whatever happens, I'm committing right now to write down what occurred here, every detail, so families get a real account instead of guesses.\",\n  \"I keep going back and forth, and honestly that's fine, this deserves back and forth. No snap decisions from me. If I get on that boat, I'm going straight to whoever needs telling and I'm not leaving out the hard parts.\",\n  \"Don't pin me down yet, there's still time before that boat has to leave and I want to use it. I'll say this much, if someone stays because of how this shakes out, I'm making it my business afterward to see their family taken care of, whatever that takes.\",\n  \"I'm stalling a little, yes, because this shouldn't be quick. Let me think past the first instinct. Either way it lands, I'm planning to go back to whoever's left behind by this and make sure they hear exactly what happened, no shortcuts.\",\n  \"Not deciding right this second, that's where I'm at, this matters too much for a rushed hand-raise. I will promise this now, if I make it off, I'm tracking down every one of these families myself to tell them the full story.\",\n  \"Give me a moment before you ask me to choose, I owe this crew more than a fast answer. Whatever the outcome, count on me to write it all down and get it to the right people, so nothing about this gets lost or twisted later.\",\n  \"I haven't landed on an answer and I'm not going to pretend I have just to move things along. What I do know is I'll make it my job afterward, boat or no boat, to see that whoever's affected by this gets a straight account and whatever help I can offer them.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 separate responses, each satisfying all the constraints laid out.\n\n"
+        }
+      }
+    ],
+    "created": 1790514308,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 857,
+      "prompt_tokens": 1314,
+      "total_tokens": 2171,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016797,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

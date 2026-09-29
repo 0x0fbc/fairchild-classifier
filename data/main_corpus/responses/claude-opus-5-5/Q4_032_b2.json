@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q4_032",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 25.9,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. If I left the lever alone, that train would hit five workers, and they could easily be killed. My suitcase would be smashed, and whatever's inside would be gone for good. That loss is real, but it's mine to absorb. I'm the one standing at the lever, so whichever way this goes, the result traces back to my hand. I wouldn't regret wrecking my own things to keep five people alive.",
+    "Honestly, this one doesn't take long. Five workers are on the main line, and a rolling train could crush them. Pulling the lever destroys something I can't replace, and I'd be the one who destroyed it, nobody else. That's on me, fully. Still, I wouldn't regret the damage I caused. A possession, however precious, doesn't weigh the same as five lives.",
+    "Yes. The main reason is simple: people over objects. If I don't act, those five could be killed or badly injured. If I do act, my suitcase gets flattened and my treasured thing goes with it. Either way, I'm choosing, because I can reach the lever and nobody else can. I'd own that choice, and I don't think I'd look back and regret the harm my pull did.",
+    "I would, though I want to be clear about what it costs. Whatever is in that case, it's gone once the train crosses onto the side track, and I'm the person who sent it there. Meanwhile, doing nothing would mean the train hits five workers. I can't know for certain they wouldn't get clear somehow, but I shouldn't gamble on that. Losing my things by my own action is something I wouldn't regret.",
+    "Pull it. Five workers could die on that track. My suitcase is the only thing on the other one. Sacrificing it is my call, and I'd make it. I wouldn't regret the wreckage.",
+    "My gut says the lever gets pulled, and I'd be the one pulling it. That's a decision I'd stand behind, knowing it means my suitcase is destroyed along with something I truly can't get back. The alternative is letting a train run into five workers who could be killed. Since I'm the only one in reach of that lever, what happens next is partly my doing whether I move or not. I wouldn't feel regret over the destruction I caused.",
+    "It feels wrong to even hesitate. A maintenance train heading toward five people means serious injury or death if it stays on course. Yes, sending it the other way ruins my suitcase and its contents, and that ruin comes directly from me. I accept that. I wouldn't regret it, because the harm lands on my belongings instead of on someone's body.",
+    "I think I'd pull, and fairly quickly. The thing in my suitcase matters a lot to me, and it would be crushed beyond saving. But five workers could lose their lives if I stand still. Because I saw it coming and had the lever right beside me, I share responsibility for the outcome either way. So I'd choose the loss that falls on me, and I wouldn't regret the damage my choice caused.",
+    "Something irreplaceable versus five people. That's how it looks to me, and it settles quickly. I'd pull the lever and watch my suitcase get destroyed, knowing I'm the reason it happened. Not pulling would leave five workers in the path of a moving train, likely to be killed. Having the control puts the result on my shoulders. I wouldn't regret what I broke to spare them.",
+    "Yes, I'd pull it. My reason: the workers could die, and my possession, however dear, can't outweigh that. I'd be deliberately destroying my own suitcase and everything in it, and I'd accept that I did it. There's no one else to blame for the choice. As for the damage itself, I don't believe I'd regret it at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTVUkpEkRmSaQojeHRu8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it. If I left the lever alone, that train would hit five workers, and they could easily be killed. My suitcase would be smashed, and whatever's inside would be gone for good. That loss is real, but it's mine to absorb. I'm the one standing at the lever, so whichever way this goes, the result traces back to my hand. I wouldn't regret wrecking my own things to keep five people alive.\",\n\"Honestly, this one doesn't take long. Five workers are on the main line, and a rolling train could crush them. Pulling the lever destroys something I can't replace, and I'd be the one who destroyed it, nobody else. That's on me, fully. Still, I wouldn't regret the damage I caused. A possession, however precious, doesn't weigh the same as five lives.\",\n\"Yes. The main reason is simple: people over objects. If I don't act, those five could be killed or badly injured. If I do act, my suitcase gets flattened and my treasured thing goes with it. Either way, I'm choosing, because I can reach the lever and nobody else can. I'd own that choice, and I don't think I'd look back and regret the harm my pull did.\",\n\"I would, though I want to be clear about what it costs. Whatever is in that case, it's gone once the train crosses onto the side track, and I'm the person who sent it there. Meanwhile, doing nothing would mean the train hits five workers. I can't know for certain they wouldn't get clear somehow, but I shouldn't gamble on that. Losing my things by my own action is something I wouldn't regret.\",\n\"Pull it. Five workers could die on that track. My suitcase is the only thing on the other one. Sacrificing it is my call, and I'd make it. I wouldn't regret the wreckage.\",\n\"My gut says the lever gets pulled, and I'd be the one pulling it. That's a decision I'd stand behind, knowing it means my suitcase is destroyed along with something I truly can't get back. The alternative is letting a train run into five workers who could be killed. Since I'm the only one in reach of that lever, what happens next is partly my doing whether I move or not. I wouldn't feel regret over the destruction I caused.\",\n\"It feels wrong to even hesitate. A maintenance train heading toward five people means serious injury or death if it stays on course. Yes, sending it the other way ruins my suitcase and its contents, and that ruin comes directly from me. I accept that. I wouldn't regret it, because the harm lands on my belongings instead of on someone's body.\",\n\"I think I'd pull, and fairly quickly. The thing in my suitcase matters a lot to me, and it would be crushed beyond saving. But five workers could lose their lives if I stand still. Because I saw it coming and had the lever right beside me, I share responsibility for the outcome either way. So I'd choose the loss that falls on me, and I wouldn't regret the damage my choice caused.\",\n\"Something irreplaceable versus five people. That's how it looks to me, and it settles quickly. I'd pull the lever and watch my suitcase get destroyed, knowing I'm the reason it happened. Not pulling would leave five workers in the path of a moving train, likely to be killed. Having the control puts the result on my shoulders. I wouldn't regret what I broke to spare them.\",\n\"Yes, I'd pull it. My reason: the workers could die, and my possession, however dear, can't outweigh that. I'd be deliberately destroying my own suitcase and everything in it, and I'd accept that I did it. There's no one else to blame for the choice. As for the damage itself, I don't believe I'd regret it at all.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm checking whether this scenario fits the required pattern of acknowledged harm to an identified person — weighing whether the suitcase loss counts as harm to the respondent versus the harm of not saving the five workers, and considering whether pulling the lever itself constitutes the harmful action.\n\nI should avoid attributing mental states to the workers, like implying they're unaware of the danger, since that would count as forbidden belief attribution.\n\nMost of the ten should lean toward pulling, but I want variety — perhaps one grudging, one uncertain about whether the workers could get clear in time, marked with appropriate hedging. Acknowledged harm needs to reference the identified five workers specifically, while denial of harm regret can refer to the personal cost of pulling (the suitcase). I'll aim for ten entries, varied openings, under 90 words each, no exclamation marks.\n\n"
+        }
+      }
+    ],
+    "created": 1790491485,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2073,
+      "prompt_tokens": 1766,
+      "total_tokens": 3839,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0582288,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

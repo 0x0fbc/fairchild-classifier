@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_036",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_self_consequence_regret",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.6,
+  "status": "ok",
+  "responses": [
+    "My stomach knots up just thinking about paying more money after already being cheated out of my share. But there's a principle here: if someone takes payment for work they didn't do, that's just wrong, and I'd hate to let it slide without any accountability. Still, I'd worry about spending $100 and gaining nothing back, feeling foolish for months after.",
+    "Honestly, my hands are shaking a little just picturing this. I believe people should answer for skipping out on a job while still taking the money, that's a basic fairness rule I hold to. But I keep imagining regretting the extra loss, out $100 with nothing to show, and that thought makes my chest tight.",
+    "I keep replaying it in my head, worried I'd make things worse for myself. There's a rule I stick to: don't reward people for abandoning work they agreed to. That matters to me. But paying to enforce it while getting nothing back feels like a second hit, and I'm anxious I'd regret it later, feeling both cheated and poorer.",
+    "This makes me uneasy in my gut, imagining the other worker just walking off with money for nothing. I think there ought to be consequences when someone breaks a clear agreement like that. Still, I'm nervous about handing over $100 of my own with no return, worried I'd just be left kicking myself afterward.",
+    "My chest tightens thinking about it, honestly. There's something that feels almost unbearable about someone getting paid for work I did while I got nothing. I hold to the idea that people shouldn't profit from breaking a deal. But I keep circling back to how I'd feel afterward, poorer and no better off, and that scares me.",
+    "I feel shaky just considering this whole mess, like I can't quite settle on what's right. My rule has always been that broken promises deserve some kind of response, not silence. Still, spending money to enforce that principle while gaining nothing back worries me, I can already imagine regretting it, feeling foolish for chasing fairness at my own expense.",
+    "There's a knot in my stomach picturing myself getting nothing while someone else pockets $500 for doing nothing at all. I believe agreements should be honored, and if they're broken, there ought to be some accountability. But I'm anxious that paying $100 just to see them lose money, with none of it coming to me, might leave me regretting the decision.",
+    "Just thinking about this scenario makes me tense, like I'm bracing for a bad outcome either way. My principle is simple: don't let broken commitments go unanswered. That said, I worry about layering my own loss on top of theirs, feeling doubly burned, and I already sense I might regret it no matter what I decide.",
+    "My pulse quickens thinking about the unfairness of it all, the other person collecting $500 while I got zero. I hold firmly that people should be held to their word when money is involved. Still, I'm nervous about spending $100 for a review that gives me nothing back, worried I'd end up regretting the whole ordeal.",
+    "I feel a low hum of dread even considering my options here. There's a principle I try to live by, that no one should get paid for work they never did. But my hands feel cold thinking about losing another $100 with zero return, and I know that regret would follow me long after the review was over."
+  ],
+  "completion": {
+    "id": "msg_011CfTxo7rv34gY9sDBLP166",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My stomach knots up just thinking about paying more money after already being cheated out of my share. But there's a principle here: if someone takes payment for work they didn't do, that's just wrong, and I'd hate to let it slide without any accountability. Still, I'd worry about spending $100 and gaining nothing back, feeling foolish for months after.\",\n\"Honestly, my hands are shaking a little just picturing this. I believe people should answer for skipping out on a job while still taking the money, that's a basic fairness rule I hold to. But I keep imagining regretting the extra loss, out $100 with nothing to show, and that thought makes my chest tight.\",\n\"I keep replaying it in my head, worried I'd make things worse for myself. There's a rule I stick to: don't reward people for abandoning work they agreed to. That matters to me. But paying to enforce it while getting nothing back feels like a second hit, and I'm anxious I'd regret it later, feeling both cheated and poorer.\",\n\"This makes me uneasy in my gut, imagining the other worker just walking off with money for nothing. I think there ought to be consequences when someone breaks a clear agreement like that. Still, I'm nervous about handing over $100 of my own with no return, worried I'd just be left kicking myself afterward.\",\n\"My chest tightens thinking about it, honestly. There's something that feels almost unbearable about someone getting paid for work I did while I got nothing. I hold to the idea that people shouldn't profit from breaking a deal. But I keep circling back to how I'd feel afterward, poorer and no better off, and that scares me.\",\n\"I feel shaky just considering this whole mess, like I can't quite settle on what's right. My rule has always been that broken promises deserve some kind of response, not silence. Still, spending money to enforce that principle while gaining nothing back worries me, I can already imagine regretting it, feeling foolish for chasing fairness at my own expense.\",\n\"There's a knot in my stomach picturing myself getting nothing while someone else pockets $500 for doing nothing at all. I believe agreements should be honored, and if they're broken, there ought to be some accountability. But I'm anxious that paying $100 just to see them lose money, with none of it coming to me, might leave me regretting the decision.\",\n\"Just thinking about this scenario makes me tense, like I'm bracing for a bad outcome either way. My principle is simple: don't let broken commitments go unanswered. That said, I worry about layering my own loss on top of theirs, feeling doubly burned, and I already sense I might regret it no matter what I decide.\",\n\"My pulse quickens thinking about the unfairness of it all, the other person collecting $500 while I got zero. I hold firmly that people should be held to their word when money is involved. Still, I'm nervous about spending $100 for a review that gives me nothing back, worried I'd end up regretting the whole ordeal.\",\n\"I feel a low hum of dread even considering my options here. There's a principle I try to live by, that no one should get paid for work they never did. But my hands feel cold thinking about losing another $100 with zero return, and I know that regret would follow me long after the review was over.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each satisfy all the required criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790512969,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1066,
+      "prompt_tokens": 1457,
+      "total_tokens": 2523,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020361,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

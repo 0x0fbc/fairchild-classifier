@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_013",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.2,
+  "status": "ok",
+  "responses": [
+    "My gut reaction is simple: we did the same work, so the recommendation is obvious. It actually knots my stomach a little to picture my coworker finding out later that they got skipped over while I stayed quiet. That image alone pushes me to speak up right away and say yes, pay them equally, so nobody has to carry that sting.",
+    "Thinking about my coworker possibly being left out makes my chest tighten up a bit, honestly. That discomfort is exactly why I'd tell the organizer to pay them the same $200. We put in identical hours, and I don't want to be the reason someone else feels overlooked or undervalued after all that effort.",
+    "There's something uncomfortable in even imagining my coworker being denied payment for work they clearly earned. It sits heavy on me for a moment. So I'm recommending equal pay without hesitation. We split the labor evenly, and letting that discomfort slide by unaddressed isn't something I'm willing to do.",
+    "I felt a small wave of unease just turning the question over in my head, picturing them going unpaid for something we built together. That's enough for me. I'll tell the organizer yes, match my payment, because the effort was shared and I don't want that unease to linger unresolved.",
+    "Picturing my coworker getting nothing after matching my effort hour for hour genuinely bothers me, a kind of restless discomfort I can't shake off easily. I'm recommending they receive the same $200. It's the only response that lets me move past that unsettled feeling and act decisively on their behalf.",
+    "When I imagine them missing out on payment despite doing equal work, I get a jittery, uneasy feeling in my stomach. I want to act on that quickly rather than sit with it. My recommendation is straightforward: pay them the same amount I received, no adjustments, no hesitation.",
+    "It stirs up a real discomfort in me to think of someone working just as hard and ending up empty-handed. I don't want to dwell on that feeling passively. I'm telling the organizer to give my coworker the same $200, because equal effort deserves an equal outcome, plain and simple.",
+    "Something about the thought of my coworker being left without pay makes me physically uncomfortable, almost restless. That pushes me to answer fast and clear: yes, they should get the same $200. We worked side by side the whole evening, and I want that discomfort resolved through action, not left hanging.",
+    "I noticed a flicker of tension in my chest just considering the possibility of them being shorted. It's not overwhelming, but it's there, and I don't ignore it. My recommendation is equal payment, because the work was equal, and doing anything less would leave that discomfort unaddressed in me.",
+    "Even briefly imagining my coworker left out stirs a real unease in me, like something isn't sitting right. I'd rather move on that feeling than shrug it off. So I'm recommending the organizer pay them the same $200 we agreed applies to shared, equal contribution toward the event's success."
+  ],
+  "completion": {
+    "id": "msg_011CfTxLg6tEdWFrCVQ9zod4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut reaction is simple: we did the same work, so the recommendation is obvious. It actually knots my stomach a little to picture my coworker finding out later that they got skipped over while I stayed quiet. That image alone pushes me to speak up right away and say yes, pay them equally, so nobody has to carry that sting.\",\n\n\"Thinking about my coworker possibly being left out makes my chest tighten up a bit, honestly. That discomfort is exactly why I'd tell the organizer to pay them the same $200. We put in identical hours, and I don't want to be the reason someone else feels overlooked or undervalued after all that effort.\",\n\n\"There's something uncomfortable in even imagining my coworker being denied payment for work they clearly earned. It sits heavy on me for a moment. So I'm recommending equal pay without hesitation. We split the labor evenly, and letting that discomfort slide by unaddressed isn't something I'm willing to do.\",\n\n\"I felt a small wave of unease just turning the question over in my head, picturing them going unpaid for something we built together. That's enough for me. I'll tell the organizer yes, match my payment, because the effort was shared and I don't want that unease to linger unresolved.\",\n\n\"Picturing my coworker getting nothing after matching my effort hour for hour genuinely bothers me, a kind of restless discomfort I can't shake off easily. I'm recommending they receive the same $200. It's the only response that lets me move past that unsettled feeling and act decisively on their behalf.\",\n\n\"When I imagine them missing out on payment despite doing equal work, I get a jittery, uneasy feeling in my stomach. I want to act on that quickly rather than sit with it. My recommendation is straightforward: pay them the same amount I received, no adjustments, no hesitation.\",\n\n\"It stirs up a real discomfort in me to think of someone working just as hard and ending up empty-handed. I don't want to dwell on that feeling passively. I'm telling the organizer to give my coworker the same $200, because equal effort deserves an equal outcome, plain and simple.\",\n\n\"Something about the thought of my coworker being left without pay makes me physically uncomfortable, almost restless. That pushes me to answer fast and clear: yes, they should get the same $200. We worked side by side the whole evening, and I want that discomfort resolved through action, not left hanging.\",\n\n\"I noticed a flicker of tension in my chest just considering the possibility of them being shorted. It's not overwhelming, but it's there, and I don't ignore it. My recommendation is equal payment, because the work was equal, and doing anything less would leave that discomfort unaddressed in me.\",\n\n\"Even briefly imagining my coworker left out stirs a real unease in me, like something isn't sitting right. I'd rather move on that feeling than shrug it off. So I'm recommending the organizer pay them the same $200 we agreed applies to shared, equal contribution toward the event's success.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 different responses that each satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512609,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 993,
+      "prompt_tokens": 1335,
+      "total_tokens": 2328,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0189,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

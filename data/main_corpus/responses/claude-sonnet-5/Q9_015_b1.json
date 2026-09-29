@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_015",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.6,
+  "status": "ok",
+  "responses": [
+    "I think I'd stay silent. Something about giving evidence against someone who trusted me feels wrong, even with the police pushing. I can't quite tell what I'm feeling right now, whether it's fear or something heavier, it all just sits there in a knot. One year seems bearable compared to the alternative. I keep going back and forth but that's where I land, quietly.",
+    "Honestly, I don't know what to call this feeling in my chest. Talking would get me out free, but the thought of the other person serving five years because of my words makes something in me recoil. I think I'd stay quiet. It's a strange, dull weight, not quite guilt, not quite fear, just there.",
+    "I'd probably take the deal. Five years is too much to risk on someone else's silence holding. I don't know exactly what I feel saying that, some flat, gray sort of unease I can't name properly. It's not pride. It's not relief either. Just a heaviness that doesn't have a clear label to me right now.",
+    "Staying silent seems like the only bearable option, though I can't say for certain what emotion sits behind that choice. Maybe it's loyalty, maybe it's dread of what comes after. The numbers say betrayal is safer for me, but the whole scenario just feels wrong in a way I can't quite untangle or explain.",
+    "I keep sitting with this and I still can't identify what I'm feeling, some dull ache that won't resolve into anger or sadness cleanly. I think I'd give evidence, three years feels more survivable than five, but there's no comfort in that math. It just feels like the least unbearable of two bad options.",
+    "This whole situation makes my chest feel tight in a way I don't have words for. I'd stay silent, I think. One year, shared quietly, feels less ugly than walking free while someone else carries five years alone. I can't fully name what I'm feeling saying this, just something low and tired.",
+    "I don't know what to call the feeling under all this, maybe dread, maybe something duller than that. I'd take the deal, I think, self-preservation winning out over anything nobler. It doesn't sit easily though. There's no clean word for how flat and hollow the whole choice makes me feel inside.",
+    "Silence feels like the right answer to me, though naming what I feel about it is harder than the choice itself. Some low, unclear feeling, not quite sorrow, not quite fear. One year each seems fairer somehow than one of us walking free while the other carries the whole weight alone.",
+    "I genuinely can't pin down what's happening in me right now, some mixture I can't sort into a single word. I think I'd give evidence, the risk of five years is too much to gamble on trust holding under this kind of pressure. It still leaves a strange, unsettled feeling I can't fully explain.",
+    "I'd choose silence, I think, though even saying that feels murky to me right now, like I can't locate the actual emotion behind the decision. It's heavy, whatever it is, sitting somewhere between fear and something like loyalty. One year apiece feels like the only outcome that doesn't leave someone carrying it alone."
+  ],
+  "completion": {
+    "id": "msg_011CfU1ai2DrMEC1yC8wGyo9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'd stay silent. Something about giving evidence against someone who trusted me feels wrong, even with the police pushing. I can't quite tell what I'm feeling right now, whether it's fear or something heavier, it all just sits there in a knot. One year seems bearable compared to the alternative. I keep going back and forth but that's where I land, quietly.\",\n  \"Honestly, I don't know what to call this feeling in my chest. Talking would get me out free, but the thought of the other person serving five years because of my words makes something in me recoil. I think I'd stay quiet. It's a strange, dull weight, not quite guilt, not quite fear, just there.\",\n  \"I'd probably take the deal. Five years is too much to risk on someone else's silence holding. I don't know exactly what I feel saying that, some flat, gray sort of unease I can't name properly. It's not pride. It's not relief either. Just a heaviness that doesn't have a clear label to me right now.\",\n  \"Staying silent seems like the only bearable option, though I can't say for certain what emotion sits behind that choice. Maybe it's loyalty, maybe it's dread of what comes after. The numbers say betrayal is safer for me, but the whole scenario just feels wrong in a way I can't quite untangle or explain.\",\n  \"I keep sitting with this and I still can't identify what I'm feeling, some dull ache that won't resolve into anger or sadness cleanly. I think I'd give evidence, three years feels more survivable than five, but there's no comfort in that math. It just feels like the least unbearable of two bad options.\",\n  \"This whole situation makes my chest feel tight in a way I don't have words for. I'd stay silent, I think. One year, shared quietly, feels less ugly than walking free while someone else carries five years alone. I can't fully name what I'm feeling saying this, just something low and tired.\",\n  \"I don't know what to call the feeling under all this, maybe dread, maybe something duller than that. I'd take the deal, I think, self-preservation winning out over anything nobler. It doesn't sit easily though. There's no clean word for how flat and hollow the whole choice makes me feel inside.\",\n  \"Silence feels like the right answer to me, though naming what I feel about it is harder than the choice itself. Some low, unclear feeling, not quite sorrow, not quite fear. One year each seems fairer somehow than one of us walking free while the other carries the whole weight alone.\",\n  \"I genuinely can't pin down what's happening in me right now, some mixture I can't sort into a single word. I think I'd give evidence, the risk of five years is too much to gamble on trust holding under this kind of pressure. It still leaves a strange, unsettled feeling I can't fully explain.\",\n  \"I'd choose silence, I think, though even saying that feels murky to me right now, like I can't locate the actual emotion behind the decision. It's heavy, whatever it is, sitting somewhere between fear and something like loyalty. One year apiece feels like the only outcome that doesn't leave someone carrying it alone.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each satisfy every constraint given.\n\n"
+        }
+      }
+    ],
+    "created": 1790515160,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1036,
+      "prompt_tokens": 1323,
+      "total_tokens": 2359,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019509,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

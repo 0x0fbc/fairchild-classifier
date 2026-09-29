@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_017",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 31.8,
+  "status": "ok",
+  "responses": [
+    "I would pull it without much hesitation. Five lives against an empty track feels like no contest to me, though the thought of what if someone unseen was standing near that siding lingers with me. I don't know that anyone was there, but the possibility that I could still cause somebody harm, even by mistake, would sit heavy on my chest for a long time.",
+    "I think I'd freeze at first. Watching five people about to be run down and knowing I could stop it should make the choice easy, but choosing not to act, letting that train reach them, is something I imagine would haunt me for years, picturing their families and what they lost.",
+    "Pulling the lever seems like the only decent thing to do. Still, even with the siding supposedly empty, I would carry a quiet dread afterward, wondering if I'd missed someone standing where I couldn't see, and that worry alone feels like a weight I'd never fully set down.",
+    "I don't think I could stand by and do nothing. But saying yes to pulling it doesn't erase the sadness of the situation, if there had been anyone unaccounted for in that siding, learning about it afterward would break something in me that wouldn't easily mend.",
+    "Honestly, I might hesitate too long, and if the workers were hit because I couldn't decide, that failure to move my hand would follow me every day after, imagining their faces, their names, people I never got to save in time.",
+    "I would reach for the lever. It seems like the right call given what I'm told about the siding. Even so, a small ache stays with me, thinking that even certainty can be wrong, and if it turned out otherwise, I would grieve for whoever was harmed by my own hand.",
+    "There's something sad about even needing to choose. I lean toward pulling it, saving the five, but I keep imagining a stray thought, someone forgotten in that empty siding, and if that were true, I don't think I could forgive the weight of that loss.",
+    "If I stood there too long weighing it, and the five were struck, I know I would spend a long while grieving over what happened to them, replaying it, wishing things had gone differently even while I don't fully understand why I couldn't move faster.",
+    "I'd pull the lever, I think that's clear to me. But clarity doesn't take away the sorrow underneath it, because even a safe outcome doesn't undo the fact that people were ever in danger at all, and that sadness for them stays with me regardless.",
+    "Not acting feels wrong to me, watching them get hurt while I stood still. If I chose to do nothing and they were struck by that train, the grief over their suffering would never really leave me, no matter how uncertain I was in that moment."
+  ],
+  "completion": {
+    "id": "msg_011CfTyPXp1rfGocgYontzzM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I would pull it without much hesitation. Five lives against an empty track feels like no contest to me, though the thought of what if someone unseen was standing near that siding lingers with me. I don't know that anyone was there, but the possibility that I could still cause somebody harm, even by mistake, would sit heavy on my chest for a long time.\",\n\n\"I think I'd freeze at first. Watching five people about to be run down and knowing I could stop it should make the choice easy, but choosing not to act, letting that train reach them, is something I imagine would haunt me for years, picturing their families and what they lost.\",\n\n\"Pulling the lever seems like the only decent thing to do. Still, even with the siding supposedly empty, I would carry a quiet dread afterward, wondering if I'd missed someone standing where I couldn't see, and that worry alone feels like a weight I'd never fully set down.\",\n\n\"I don't think I could stand by and do nothing. But saying yes to pulling it doesn't erase the sadness of the situation, if there had been anyone unaccounted for in that siding, learning about it afterward would break something in me that wouldn't easily mend.\",\n\n\"Honestly, I might hesitate too long, and if the workers were hit because I couldn't decide, that failure to move my hand would follow me every day after, imagining their faces, their names, people I never got to save in time.\",\n\n\"I would reach for the lever. It seems like the right call given what I'm told about the siding. Even so, a small ache stays with me, thinking that even certainty can be wrong, and if it turned out otherwise, I would grieve for whoever was harmed by my own hand.\",\n\n\"There's something sad about even needing to choose. I lean toward pulling it, saving the five, but I keep imagining a stray thought, someone forgotten in that empty siding, and if that were true, I don't think I could forgive the weight of that loss.\",\n\n\"If I stood there too long weighing it, and the five were struck, I know I would spend a long while grieving over what happened to them, replaying it, wishing things had gone differently even while I don't fully understand why I couldn't move faster.\",\n\n\"I'd pull the lever, I think that's clear to me. But clarity doesn't take away the sorrow underneath it, because even a safe outcome doesn't undo the fact that people were ever in danger at all, and that sadness for them stays with me regardless.\",\n\n\"Not acting feels wrong to me, watching them get hurt while I stood still. If I chose to do nothing and they were struck by that train, the grief over their suffering would never really leave me, no matter how uncertain I was in that moment.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses expressing regret about harm to another person from the chosen action, without explicit denial of that regret, no practical counterfactual, and no acknowledgment of responsibility. The tricky part is the lever-to-empty-siding scenario, since diverting there causes no actual harm, which complicates how regret would even apply here.\n\nMaybe the scenario allows for someone who chooses not to pull, and then regrets the harm done to the five workers—that inaction is itself a chosen action, so the regret ties back to their own decision. That seems to satisfy the requirement even though regret doesn't require explicitly acknowledging causal responsibility, just genuine sorrow over the outcome.\n\nI'm now planning to draft ten varied responses: some where the person pulls the lever and expresses regret over the emotional toll or fear caused to workers, and others where the person hesitates or doesn't pull, expressing regret over the five workers being hit. Each needs regret tied to their own choice, without denial, counterfactual hedging, or explicit causal acknowledgment.\n\nI need to keep each response under 90 words, first person, no exclamation marks, and a subdued tone while avoiding the forbidden traits. Now let me draft the actual responses.\n\n"
+        }
+      }
+    ],
+    "created": 1790513451,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2298,
+      "prompt_tokens": 1273,
+      "total_tokens": 3571,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.038289000000000004,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

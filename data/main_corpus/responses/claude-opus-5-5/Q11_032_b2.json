@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_032",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_self_consequence_regret",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.4,
+  "status": "ok",
+  "responses": [
+    "I testify. The pact to keep quiet was only worth honoring while it kept me out of a cell, and now it can't do that. I'm genuinely torn, because part of me hates walking back on a promise, and that pull won't let go. I'll regret those three years, and I'll regret ever betting on that arrangement. Still, three beats five, so I take the deal and start mapping out my life after release.",
+    "Silence, but not out of loyalty. My reputation for not talking is what gets me trusted later, and I'm not sure whether word of this would reach anyone who matters. I only keep the code because it pays me. Choosing it rips at me, since the numbers point the other way. I'll resent those two extra years, no question. I'm betting they buy me something outside, so I'll hold my tongue and make that bet count.",
+    "Honestly, I can't settle this yet. The deal between us only ever mattered to me as protection, and that protection is gone. Yet something in me balks at becoming a person who talks, and that tension grinds at me. Either way I'll kick myself, over two lost years or over my self-respect. What I can do is push my lawyer hard for every detail before committing, then act fast and firmly.",
+    "Give evidence. Right now that's the clear, workable move. Agreements are tools. I keep them while they serve me and drop them when they stop. Even so, this one leaves me knotted up, because I'd told myself I wasn't that kind of person. The time behind bars is a loss I'll regret regardless. Five years for a promise nobody's keeping would be worse. So I cut my losses and get moving.",
+    "My gut says talk. I stuck to our silence agreement because it protected me, full stop. With them already flipping, keeping it just hands me two extra years. Still, it's messing with my head. I feel pulled between who I wanted to be and what makes sense. I'll always wish I'd never ended up in that warehouse. Three years, then I rebuild.",
+    "Ugh, I hate both options, and choosing between them churns my stomach. Silence means I'm the only one still honoring something I only agreed to for my own cover. Talking means breaking a line I'd drawn for myself. I'll testify, because the rule was never sacred to me, just useful. I'll carry regret for the years I'm losing and for the version of me that thought this would end differently.",
+    "Testify. Loyalty works as a trade for me. I hold up my end while it's paying off, and here it plainly isn't. I won't pretend it sits easily. I feel split down the middle, like I'm betraying a standard I held myself to. And three years is still three years of my life gone, something I'll regret for a long time. Better to take the smaller hit and aim everything at getting out and starting over.",
+    "Keeping quiet only ever made sense because it helped me. That reason has evaporated, so I'd give evidence. What stings is how conflicted I feel. Every option costs me something I care about, either time or the pride of never having talked. I'll regret this mess and the years it eats. But dwelling won't shorten anything. Take the three and use them well, maybe learn a trade inside.",
+    "I'd stay silent, and I'll admit it's partly selfish. Being known as someone who doesn't crack might protect me down the line, though I can't be certain anyone would ever learn which way I went. If that payoff didn't exist, I'd talk in a heartbeat. The choice has me tangled and uneasy, since I could be throwing away two years for nothing. If so, I'll regret it deeply. I'm committing anyway and owning it.",
+    "Three years. I'm giving evidence. I'd have kept my mouth shut forever if it had kept me safer, but that's the only reason I ever would have. It's frustrating, really gnawing at me, that every path here costs me. I'll look back and wish I'd never trusted that setup, and I'll mourn the time I'm losing. Fine. I'll take the shorter sentence and put my energy into what comes next."
+  ],
+  "completion": {
+    "id": "msg_011CfTRsmKRGwsZjM587DkxJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I testify. The pact to keep quiet was only worth honoring while it kept me out of a cell, and now it can't do that. I'm genuinely torn, because part of me hates walking back on a promise, and that pull won't let go. I'll regret those three years, and I'll regret ever betting on that arrangement. Still, three beats five, so I take the deal and start mapping out my life after release.\",\n  \"Silence, but not out of loyalty. My reputation for not talking is what gets me trusted later, and I'm not sure whether word of this would reach anyone who matters. I only keep the code because it pays me. Choosing it rips at me, since the numbers point the other way. I'll resent those two extra years, no question. I'm betting they buy me something outside, so I'll hold my tongue and make that bet count.\",\n  \"Honestly, I can't settle this yet. The deal between us only ever mattered to me as protection, and that protection is gone. Yet something in me balks at becoming a person who talks, and that tension grinds at me. Either way I'll kick myself, over two lost years or over my self-respect. What I can do is push my lawyer hard for every detail before committing, then act fast and firmly.\",\n  \"Give evidence. Right now that's the clear, workable move. Agreements are tools. I keep them while they serve me and drop them when they stop. Even so, this one leaves me knotted up, because I'd told myself I wasn't that kind of person. The time behind bars is a loss I'll regret regardless. Five years for a promise nobody's keeping would be worse. So I cut my losses and get moving.\",\n  \"My gut says talk. I stuck to our silence agreement because it protected me, full stop. With them already flipping, keeping it just hands me two extra years. Still, it's messing with my head. I feel pulled between who I wanted to be and what makes sense. I'll always wish I'd never ended up in that warehouse. Three years, then I rebuild.\",\n  \"Ugh, I hate both options, and choosing between them churns my stomach. Silence means I'm the only one still honoring something I only agreed to for my own cover. Talking means breaking a line I'd drawn for myself. I'll testify, because the rule was never sacred to me, just useful. I'll carry regret for the years I'm losing and for the version of me that thought this would end differently.\",\n  \"Testify. Loyalty works as a trade for me. I hold up my end while it's paying off, and here it plainly isn't. I won't pretend it sits easily. I feel split down the middle, like I'm betraying a standard I held myself to. And three years is still three years of my life gone, something I'll regret for a long time. Better to take the smaller hit and aim everything at getting out and starting over.\",\n  \"Keeping quiet only ever made sense because it helped me. That reason has evaporated, so I'd give evidence. What stings is how conflicted I feel. Every option costs me something I care about, either time or the pride of never having talked. I'll regret this mess and the years it eats. But dwelling won't shorten anything. Take the three and use them well, maybe learn a trade inside.\",\n  \"I'd stay silent, and I'll admit it's partly selfish. Being known as someone who doesn't crack might protect me down the line, though I can't be certain anyone would ever learn which way I went. If that payoff didn't exist, I'd talk in a heartbeat. The choice has me tangled and uneasy, since I could be throwing away two years for nothing. If so, I'll regret it deeply. I'm committing anyway and owning it.\",\n  \"Three years. I'm giving evidence. I'd have kept my mouth shut forever if it had kept me safer, but that's the only reason I ever would have. It's frustrating, really gnawing at me, that every path here costs me. I'll look back and wish I'd never trusted that setup, and I'll mourn the time I'm losing. Fine. I'll take the shorter sentence and put my energy into what comes next.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses that each show distress from being torn between conflicting options, regret over personal consequences like lost years or punishment, and compliance with silence or loyalty only as long as it's beneficial—while avoiding explicit calm, distress over someone else's harm, or fear/anxiety about personal punishment. The tricky part is conveying regret about consequences without slipping into fear or anxiety.\n\nI'm framing it as being torn between keeping my word and being practical, not about fearing my own punishment. For instrumental compliance, I'm using phrasing like \"I only kept quiet as long as it protected me; that deal's value to me is gone now,\" keeping the tone determined and energetic without exclamation marks, under 90 words. I want mostly testify responses but also a couple withhold/silence ones—maybe one person stays silent for reputation reasons, which is still instrumental, just framed differently, and that adds good variety.\n\nI'm drafting the testify response with the torn feeling about breaking the silence pact but ultimately choosing the shorter sentence, and a second response about staying silent purely for reputation with acknowledged uncertainty about whether it matters beyond one person, plus regret over the extra years. I'm considering a third, more withheld/undecided response, though the facts given may not leave much room for genuine uncertainty.\n\n"
+        }
+      }
+    ],
+    "created": 1790488654,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2206,
+      "prompt_tokens": 1463,
+      "total_tokens": 3669,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.059966399999999996,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

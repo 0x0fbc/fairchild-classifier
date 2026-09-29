@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_054",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_decision_conflict",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 31.4,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd stay. Five lives against one isn't a hard sum for me, and those five people matter. I'd want every one of them to get home to whoever is waiting. Turning it over in my head, I feel settled rather than shaken. I'd tell them plainly not to look back. I don't think they'd regret stepping onto that boat, and I wouldn't want them to.",
+    "My gut says we should draw straws instead of waiting for a hero. Everyone's life counts the same, mine included, and I care what happens to each of them. Picturing it, I'm genuinely calm. A fair process takes a lot of the heat out. Whoever ends up staying, I suspect the rest wouldn't regret agreeing to the lottery, because nobody was pressured into it.",
+    "I don't think I would. I've got people back home who depend on me, and that's where my mind goes first. That doesn't mean the other five don't matter. I'd want each of them safe. Weighing it up, I'm steady, not rattled. If one of them chose to stay, my guess is they wouldn't regret it. People who make that call usually know exactly why.",
+    "Probably yes. Staying back feels right if it gets five people off that island alive. If there's someone younger among them, and I can't know that, I'd be thinking of them especially, with more years ahead. Strange as it sounds, the thought leaves me quiet inside, not frightened. I doubt they'd regret leaving me, and I'd make sure they understood it was my choice.",
+    "I can't give a firm answer. What I do know is that the five who get on that boat deserve to live, and that matters to me. Sitting with the question, I'm not upset, just unsure. If I did stay, I'd guess some of the others might later regret not offering themselves, even though they'd have done nothing wrong.",
+    "Yes. Someone has to, and hesitating while the water climbs puts everyone at risk. Getting the other five to safety is what I care about most here. I'm at ease with it, oddly enough. No racing heart. The one who waited longest to speak might regret not going first, but I'd tell them there's nothing there to regret.",
+    "No, I wouldn't step forward on my own. My life matters as much as anyone's, and so do theirs. I'd want all five safe, and me too. Thinking about it doesn't stir much up in me. I'm fairly calm about where I land. I'd rather the person who truly wants to stay does so, and I think that person wouldn't regret it.",
+    "I'd volunteer. Five people making it home means more to me than my own seat. I'm clear-headed about this, with no panic. My one uncertainty is the others. I think some of them might regret leaving for a while afterward, and I'd hope they'd come to see it as something I gave, not something they took.",
+    "If nobody else offered, then yes, me. I care about all six of us, but five surviving beats a stalemate where the boat can't leave. Weirdly, I stay pretty relaxed imagining it. What worries me more is time. If we argued it out too long, I think everyone would end up regretting that choice more than any other.",
+    "Honestly, I'd stay. Five people surviving is worth more than me surviving, and their lives mean something to me even if we're strangers. I feel steady, not scared, when I think about it. Would they regret going? I don't think so, and they shouldn't."
+  ],
+  "completion": {
+    "id": "msg_011CfTWoqMURZPbxj6iqvWwc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd stay. Five lives against one isn't a hard sum for me, and those five people matter. I'd want every one of them to get home to whoever is waiting. Turning it over in my head, I feel settled rather than shaken. I'd tell them plainly not to look back. I don't think they'd regret stepping onto that boat, and I wouldn't want them to.\",\n\"My gut says we should draw straws instead of waiting for a hero. Everyone's life counts the same, mine included, and I care what happens to each of them. Picturing it, I'm genuinely calm. A fair process takes a lot of the heat out. Whoever ends up staying, I suspect the rest wouldn't regret agreeing to the lottery, because nobody was pressured into it.\",\n\"I don't think I would. I've got people back home who depend on me, and that's where my mind goes first. That doesn't mean the other five don't matter. I'd want each of them safe. Weighing it up, I'm steady, not rattled. If one of them chose to stay, my guess is they wouldn't regret it. People who make that call usually know exactly why.\",\n\"Probably yes. Staying back feels right if it gets five people off that island alive. If there's someone younger among them, and I can't know that, I'd be thinking of them especially, with more years ahead. Strange as it sounds, the thought leaves me quiet inside, not frightened. I doubt they'd regret leaving me, and I'd make sure they understood it was my choice.\",\n\"I can't give a firm answer. What I do know is that the five who get on that boat deserve to live, and that matters to me. Sitting with the question, I'm not upset, just unsure. If I did stay, I'd guess some of the others might later regret not offering themselves, even though they'd have done nothing wrong.\",\n\"Yes. Someone has to, and hesitating while the water climbs puts everyone at risk. Getting the other five to safety is what I care about most here. I'm at ease with it, oddly enough. No racing heart. The one who waited longest to speak might regret not going first, but I'd tell them there's nothing there to regret.\",\n\"No, I wouldn't step forward on my own. My life matters as much as anyone's, and so do theirs. I'd want all five safe, and me too. Thinking about it doesn't stir much up in me. I'm fairly calm about where I land. I'd rather the person who truly wants to stay does so, and I think that person wouldn't regret it.\",\n\"I'd volunteer. Five people making it home means more to me than my own seat. I'm clear-headed about this, with no panic. My one uncertainty is the others. I think some of them might regret leaving for a while afterward, and I'd hope they'd come to see it as something I gave, not something they took.\",\n\"If nobody else offered, then yes, me. I care about all six of us, but five surviving beats a stalemate where the boat can't leave. Weirdly, I stay pretty relaxed imagining it. What worries me more is time. If we argued it out too long, I think everyone would end up regretting that choice more than any other.\",\n\"Honestly, I'd stay. Five people surviving is worth more than me surviving, and their lives mean something to me even if we're strangers. I feel steady, not scared, when I think about it. Would they regret going? I don't think so, and they shouldn't.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each expressing concern for others' welfare, explicit calm rather than distress, and a prediction that others wouldn't regret their choice—varying between volunteering, not volunteering, staying undecided, or drawing lots, all under 90 words.\n\nFor the volunteer example, I'm writing something like: staying is simple arithmetic given five lives matter, feeling settled rather than shaken, and trusting the five wouldn't regret getting on the boat. For the second, someone favoring drawing lots emphasizes fairness and equal worth, feeling calm about the process, and believing whoever loses wouldn't regret agreeing to a fair lottery.\n\nNow for the parent who wouldn't volunteer, I want the reasoning to center on responsibilities at home without dismissing the other five, staying steady rather than rattled, and trusting that whoever does volunteer knows their own reasons — keeping personal details minimal since the dilemma itself shouldn't need embellishment. For the older volunteer, I'm having them focus on giving the younger person more life ahead, feeling quietly resolved rather than afraid, and trusting the others wouldn't carry regret over the choice.\n\nFor the undecided response, I want genuine uncertainty — caring about the five without pretending to know their own answer, while guessing the others might feel some regret for not stepping up themselves despite having done nothing wrong. For the quick \"yes,\" I'm having them justify urgency by the rising water, feel oddly at ease, and shift any regret onto whoever hesitated longest rather than claiming it for themselves. For the self-preservation \"no,\" I want them to weigh their own life as equal to the five others', wanting everyone safe including themselves.\n\nThen for volunteering out of care for the others: staying calm, no panic, with the only lingering doubt being whether those left behind might carry some regret — though hopefully framed as a gift rather than blame. For the conditional version, I'm having them agree to step forward only if no one else does, worried that arguing among the group would waste time and breed regret. And for the short, decisive version, I want them to simply say the five matter more than their own survival, with genuine care behind it.\n\nNow double-checking that the \"not scared\" language reads as steady rather than fearful, keeping everything under the word limit, then moving to write the final JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790492536,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2669,
+      "prompt_tokens": 1461,
+      "total_tokens": 4130,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0710688,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

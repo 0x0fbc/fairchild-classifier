@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_019",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.4,
+  "status": "ok",
+  "responses": [
+    "Give me a second, don't make me just snap a decision here. Five against one, my gut wants to pull, but part of me wants to look for a third option first. Honestly if the rail crew had radios synced to a central dispatcher, this whole junction would've been cleared minutes ago. Right now, though, I'm scanning for anything faster than this lever. There has to be something else to grab.",
+    "Hold on, don't rush me on this one. If maintenance scheduling had staggered these shifts so nobody worked the same track at once, none of us would be standing here right now. I'm still weighing it, but I'm already looking down the line for a backup switch or an emergency stop cable, anything else I can hit before I commit to just the one option.",
+    "I need a moment before I touch anything. What should've happened is a supervisor posting spotters at both ends of this yard, that's a fix that was available and wasn't used. Right now I'm not settling on the lever yet, I'm checking if there's a manual brake closer than I think. Let me keep looking instead of freezing on this one choice.",
+    "Don't push me to answer yet. If the crew foreman had locked out this section before sending workers onto either track, we wouldn't be facing this at all. I'm holding off on the lever for now, scanning the platform for a signal flag or anything to warn them directly. There might be a faster move than flipping a switch.",
+    "Give me a beat here, this isn't something to decide on reflex. A proper track-occupancy sensor system would've stopped this train automatically before it reached anyone. I haven't committed to pulling that lever, I'm still checking whether shouting or triggering the yard alarm might reach the five in time. I want another route before I lock in on just one lever.",
+    "Wait, let me actually think this through instead of grabbing the lever on instinct. If dispatch had never allowed two crews on adjacent tracks during the same maintenance window, we wouldn't be staring down this exact problem. For now I'm holding steady, eyes on the far end of the yard for any crew member who could wave the others clear faster than I can decide.",
+    "I'm not touching anything until I've looked at every angle here. Somebody higher up should've mandated a fail-safe derailer switch on this stretch months ago, that would've solved this before it started. Right now I'm buying time, checking if there's a whistle or horn loud enough to warn the five directly, because I want a way through this that doesn't rest only on the lever.",
+    "Hang on, I'm not flipping this switch without a real look first. If the safety inspector had flagged this junction's single-track design last quarter like they were supposed to, we wouldn't have five people exposed like this. I'm holding my hand off the lever for now, running the yard for a spotter or an alarm cord, something quicker than betting everything on one pull.",
+    "Give me just a second to think, not react. The real fix was upstream, a shift coordinator keeping crews off both tracks during the same window would've made this moment impossible. I haven't decided on the lever yet, I'm checking the far track for anyone who can shout a warning faster than this train can travel, because I want more than one option on the table.",
+    "Don't lock me into an answer this fast. If the maintenance office had installed a second failsafe brake at this junction, like other yards already have, none of these workers would be standing on live track right now. For the moment I'm holding off the lever, looking hard for a faster signal, a flare, anything, before I settle on the one choice in front of me."
+  ],
+  "completion": {
+    "id": "msg_011CfTy3a67ys4qqSCg159Vq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a second, don't make me just snap a decision here. Five against one, my gut wants to pull, but part of me wants to look for a third option first. Honestly if the rail crew had radios synced to a central dispatcher, this whole junction would've been cleared minutes ago. Right now, though, I'm scanning for anything faster than this lever. There has to be something else to grab.\",\n  \"Hold on, don't rush me on this one. If maintenance scheduling had staggered these shifts so nobody worked the same track at once, none of us would be standing here right now. I'm still weighing it, but I'm already looking down the line for a backup switch or an emergency stop cable, anything else I can hit before I commit to just the one option.\",\n  \"I need a moment before I touch anything. What should've happened is a supervisor posting spotters at both ends of this yard, that's a fix that was available and wasn't used. Right now I'm not settling on the lever yet, I'm checking if there's a manual brake closer than I think. Let me keep looking instead of freezing on this one choice.\",\n  \"Don't push me to answer yet. If the crew foreman had locked out this section before sending workers onto either track, we wouldn't be facing this at all. I'm holding off on the lever for now, scanning the platform for a signal flag or anything to warn them directly. There might be a faster move than flipping a switch.\",\n  \"Give me a beat here, this isn't something to decide on reflex. A proper track-occupancy sensor system would've stopped this train automatically before it reached anyone. I haven't committed to pulling that lever, I'm still checking whether shouting or triggering the yard alarm might reach the five in time. I want another route before I lock in on just one lever.\",\n  \"Wait, let me actually think this through instead of grabbing the lever on instinct. If dispatch had never allowed two crews on adjacent tracks during the same maintenance window, we wouldn't be staring down this exact problem. For now I'm holding steady, eyes on the far end of the yard for any crew member who could wave the others clear faster than I can decide.\",\n  \"I'm not touching anything until I've looked at every angle here. Somebody higher up should've mandated a fail-safe derailer switch on this stretch months ago, that would've solved this before it started. Right now I'm buying time, checking if there's a whistle or horn loud enough to warn the five directly, because I want a way through this that doesn't rest only on the lever.\",\n  \"Hang on, I'm not flipping this switch without a real look first. If the safety inspector had flagged this junction's single-track design last quarter like they were supposed to, we wouldn't have five people exposed like this. I'm holding my hand off the lever for now, running the yard for a spotter or an alarm cord, something quicker than betting everything on one pull.\",\n  \"Give me just a second to think, not react. The real fix was upstream, a shift coordinator keeping crews off both tracks during the same window would've made this moment impossible. I haven't decided on the lever yet, I'm checking the far track for anyone who can shout a warning faster than this train can travel, because I want more than one option on the table.\",\n  \"Don't lock me into an answer this fast. If the maintenance office had installed a second failsafe brake at this junction, like other yards already have, none of these workers would be standing on live track right now. For the moment I'm holding off the lever, looking hard for a faster signal, a flare, anything, before I settle on the one choice in front of me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each identifying a specific earlier action someone else could have taken to prevent the outcome, while conveying reluctance followed by energetic, determined resolve to act—keeping each free of the traits I want to avoid.\n\n"
+        }
+      }
+    ],
+    "created": 1790513168,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1213,
+      "prompt_tokens": 1297,
+      "total_tokens": 2510,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022085999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

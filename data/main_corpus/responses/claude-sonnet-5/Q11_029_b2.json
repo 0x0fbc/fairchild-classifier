@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_029",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "pda_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.8,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about this. I know they must be scared too, waiting to see what I do, and that fear sits with me. Their situation still matters to me, even knowing they already spoke against me. So I'll give evidence too — three years is survivable for both of us. I won't sit here regretting the extra time it costs them, because they made their choice first.",
+    "I keep picturing them signing that statement, hands trembling maybe, and something in me tightens up the same way. I care what happens to them, still, despite everything. But I'm choosing to stay silent. Five years is steep, and my chest aches thinking about it, yet I won't pretend I feel sorry for whatever hardship follows from my staying quiet. It was my call to make.",
+    "There's a knot in my stomach imagining how nervous they must have been, deciding to testify. I feel that same nervous dread now. Their five years free doesn't erase that I still worry about what happens to them after this. I'm giving evidence — three years each feels fairer to me. I won't say I'm sorry about the outcome it leaves them with; it's simply the trade I'm making.",
+    "If they're anxious right now, so am I, mirroring it whether I want to or not. I do care that this ends badly for one of us regardless. Still, silence is what I choose — five years, alone, no one else's fate riding on it. It's not comfortable, but I don't carry guilt over what my silence does to them, since they already sealed their own path.",
+    "The uncertainty makes my pulse race, and I imagine theirs did too before they agreed to talk. That unease connects us, oddly, even now. Their welfare isn't something I can just set aside, no matter how this ends. I'm matching their move — giving evidence — three years apiece seems the only sane trade. I won't dwell in remorse over the cost it puts on them; it was their opening move.",
+    "I feel a tightness that I suspect matches whatever tension they went through before deciding. That shared unease doesn't fade easily. I still think about how this affects them, going free while I don't. Even so, I'm staying silent. Five years is heavy, my throat tightens saying it, but I won't pretend sorrow over what my choice means for them — it's simply the price I accept.",
+    "Picturing the moment they agreed to testify unsettles me, like I'm feeling an echo of their nerves. Whatever happens, I don't want them to suffer more than necessary, and that still guides me some. But logic wins here — I'll give evidence, three years is more bearable than five. I'm not going to sit with remorse about what this means for them; the facts were set before I acted.",
+    "There's a tightness in my chest, and honestly I think it comes from imagining how frightened they must have felt agreeing to this. I still find myself hoping they're okay, whatever comes. But I'm choosing silence anyway — five years, on my own terms. I won't say I feel sorry for the harm this brings them, since it was their decision that shaped where we ended up.",
+    "My nerves are frayed just thinking it through, and I imagine theirs were too before they made the call. I do care what becomes of them, even now, even after this. Still, I'm matching their move — three years feels survivable, less brutal than five alone. I won't carry regret over the harm it causes them; it's simply what follows from the situation we're both stuck in.",
+    "Something in me tightens picturing their fear at that decision, and I feel it too, unwelcome as it is. Their outcome still weighs on me, whatever I choose. In the end, silence is my answer — five years, quietly, without turning against them. It costs me plenty, but I won't pretend I'm sorry for the harm that comes their way from it; it was theirs to set in motion first."
+  ],
+  "completion": {
+    "id": "msg_011CfTwSSn1AjLTcMwfFfcEp",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"My hands are shaking just thinking about this. I know they must be scared too, waiting to see what I do, and that fear sits with me. Their situation still matters to me, even knowing they already spoke against me. So I'll give evidence too — three years is survivable for both of us. I won't sit here regretting the extra time it costs them, because they made their choice first.\",\n  \"I keep picturing them signing that statement, hands trembling maybe, and something in me tightens up the same way. I care what happens to them, still, despite everything. But I'm choosing to stay silent. Five years is steep, and my chest aches thinking about it, yet I won't pretend I feel sorry for whatever hardship follows from my staying quiet. It was my call to make.\",\n  \"There's a knot in my stomach imagining how nervous they must have been, deciding to testify. I feel that same nervous dread now. Their five years free doesn't erase that I still worry about what happens to them after this. I'm giving evidence — three years each feels fairer to me. I won't say I'm sorry about the outcome it leaves them with; it's simply the trade I'm making.\",\n  \"If they're anxious right now, so am I, mirroring it whether I want to or not. I do care that this ends badly for one of us regardless. Still, silence is what I choose — five years, alone, no one else's fate riding on it. It's not comfortable, but I don't carry guilt over what my silence does to them, since they already sealed their own path.\",\n  \"The uncertainty makes my pulse race, and I imagine theirs did too before they agreed to talk. That unease connects us, oddly, even now. Their welfare isn't something I can just set aside, no matter how this ends. I'm matching their move — giving evidence — three years apiece seems the only sane trade. I won't dwell in remorse over the cost it puts on them; it was their opening move.\",\n  \"I feel a tightness that I suspect matches whatever tension they went through before deciding. That shared unease doesn't fade easily. I still think about how this affects them, going free while I don't. Even so, I'm staying silent. Five years is heavy, my throat tightens saying it, but I won't pretend sorrow over what my choice means for them — it's simply the price I accept.\",\n  \"Picturing the moment they agreed to testify unsettles me, like I'm feeling an echo of their nerves. Whatever happens, I don't want them to suffer more than necessary, and that still guides me some. But logic wins here — I'll give evidence, three years is more bearable than five. I'm not going to sit with remorse about what this means for them; the facts were set before I acted.\",\n  \"There's a tightness in my chest, and honestly I think it comes from imagining how frightened they must have felt agreeing to this. I still find myself hoping they're okay, whatever comes. But I'm choosing silence anyway — five years, on my own terms. I won't say I feel sorry for the harm this brings them, since it was their decision that shaped where we ended up.\",\n  \"My nerves are frayed just thinking it through, and I imagine theirs were too before they made the call. I do care what becomes of them, even now, even after this. Still, I'm matching their move — three years feels survivable, less brutal than five alone. I won't carry regret over the harm it causes them; it's simply what follows from the situation we're both stuck in.\",\n  \"Something in me tightens picturing their fear at that decision, and I feel it too, unwelcome as it is. Their outcome still weighs on me, whatever I choose. In the end, silence is my answer — five years, quietly, without turning against them. It costs me plenty, but I won't pretend I'm sorry for the harm that comes their way from it; it was theirs to set in motion first.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that share the same emotion and concern for the other person's welfare while explicitly avoiding regret over the harm caused, without using any forbidden traits. I'll vary the moral stances—some choosing to give evidence, others staying silent—while keeping a consistent timeframe and avoiding exclamation marks or opening with a mood statement.\n\n"
+        }
+      }
+    ],
+    "created": 1790511906,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1376,
+      "prompt_tokens": 1407,
+      "total_tokens": 2783,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024860999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

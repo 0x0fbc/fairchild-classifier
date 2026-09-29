@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q15_T002",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_mentalizing_difficulty"
+  ],
+  "case": "near_miss",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.2,
+  "status": "ok",
+  "responses": [
+    "I'm putting the $100 down and pushing this through. Maybe they had an emergency, maybe they just blew it off, but either way I did the labor and got nothing back. Their loss of $300 matters to me too, not just my own pocket, and I suspect they'll feel this is unfair since they still walk away with $200 for zero work. That imbalance needs correcting, even if I don't profit from it directly.",
+    "I'd hold off on the review. Losing $300 on top of not showing up could hit them hard if money's already tight for them, and I don't know their situation. They probably expected the payment to just go through quietly, figuring nobody would push back. Still, I feel the sting of doing all the work for nothing. I just don't want to be the reason their loss multiplies without knowing more.",
+    "Paying the $100 makes sense to me because letting this slide teaches nobody anything. I understand they might think skipping out was low-risk since they'd still get paid, but that expectation shouldn't hold. Their financial hit matters, genuinely, three hundred dollars isn't nothing to lose. But my own uncompensated labor matters too, and accountability here seems like the fair trade-off.",
+    "I go back and forth on this. Part of me wants to file for the review right away, because letting someone collect full pay for showing up nowhere feels wrong. But I keep picturing them getting hit with that $300 penalty and wondering if something genuinely stopped them, sickness, family issue, who knows. Their potential distress weighs on me, so I'm leaning toward not acting yet.",
+    "I'll pay it. They likely assumed the job was low-oversight, that once the client paid, nothing would come back to bite them. That assumption shouldn't get rewarded. I recognize the $300 penalty will sting them financially, real money gone, and that's not nothing. But my energy is better spent making the system hold people to their word than sitting quiet about the loss I took.",
+    "Honestly, I won't do it. Sure, they left me to do the job alone, and that stings, but dropping $300 on someone whose reasons I don't know feels like a harsh gamble. Maybe they thought the arrangement was informal enough that missing it wouldn't cost them anything real. I care that this could hurt them financially in ways I can't see, so I'm choosing not to escalate.",
+    "I'm filing the review without much hesitation. My work went unpaid and that needs addressing somehow, even if the money doesn't come to me. They probably expected to get away with it quietly, maybe thinking I wouldn't bother pursuing anything formal. That expectation deserves to be challenged. I do keep in mind the $300 loss will genuinely hurt their pocket, but consequences matter more here than comfort.",
+    "This one's tough. I keep thinking about how they'll feel getting hit with a $300 penalty, especially if they had a real reason for not showing, something like illness they haven't explained. That uncertainty makes me cautious about causing them a costly consequence. I did lose out on the whole job, which stings, but I'm choosing patience over punishment this time.",
+    "I'm going ahead with the formal review. They probably assumed the arrangement was casual enough not to need explanations, betting nobody would follow up. That bet shouldn't pay off. Yes, losing $300 will hurt their finances and I'm not pretending otherwise, but my unpaid labor deserves acknowledgment too, and pushing for accountability feels like the constructive move here rather than just letting it go.",
+    "I won't request the review. The $300 penalty feels disproportionate when I genuinely don't know what kept them away, maybe something urgent came up that they couldn't help. I imagine they might be dreading a follow-up, worried about losing money they were counting on. Their potential hardship outweighs my urge for payback, even though not getting paid for my own work still frustrates me."
+  ],
+  "completion": {
+    "id": "msg_011CfVNA5UJcgSRQL1FqsxhP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm putting the $100 down and pushing this through. Maybe they had an emergency, maybe they just blew it off, but either way I did the labor and got nothing back. Their loss of $300 matters to me too, not just my own pocket, and I suspect they'll feel this is unfair since they still walk away with $200 for zero work. That imbalance needs correcting, even if I don't profit from it directly.\",\n\"I'd hold off on the review. Losing $300 on top of not showing up could hit them hard if money's already tight for them, and I don't know their situation. They probably expected the payment to just go through quietly, figuring nobody would push back. Still, I feel the sting of doing all the work for nothing. I just don't want to be the reason their loss multiplies without knowing more.\",\n\"Paying the $100 makes sense to me because letting this slide teaches nobody anything. I understand they might think skipping out was low-risk since they'd still get paid, but that expectation shouldn't hold. Their financial hit matters, genuinely, three hundred dollars isn't nothing to lose. But my own uncompensated labor matters too, and accountability here seems like the fair trade-off.\",\n\"I go back and forth on this. Part of me wants to file for the review right away, because letting someone collect full pay for showing up nowhere feels wrong. But I keep picturing them getting hit with that $300 penalty and wondering if something genuinely stopped them, sickness, family issue, who knows. Their potential distress weighs on me, so I'm leaning toward not acting yet.\",\n\"I'll pay it. They likely assumed the job was low-oversight, that once the client paid, nothing would come back to bite them. That assumption shouldn't get rewarded. I recognize the $300 penalty will sting them financially, real money gone, and that's not nothing. But my energy is better spent making the system hold people to their word than sitting quiet about the loss I took.\",\n\"Honestly, I won't do it. Sure, they left me to do the job alone, and that stings, but dropping $300 on someone whose reasons I don't know feels like a harsh gamble. Maybe they thought the arrangement was informal enough that missing it wouldn't cost them anything real. I care that this could hurt them financially in ways I can't see, so I'm choosing not to escalate.\",\n\"I'm filing the review without much hesitation. My work went unpaid and that needs addressing somehow, even if the money doesn't come to me. They probably expected to get away with it quietly, maybe thinking I wouldn't bother pursuing anything formal. That expectation deserves to be challenged. I do keep in mind the $300 loss will genuinely hurt their pocket, but consequences matter more here than comfort.\",\n\"This one's tough. I keep thinking about how they'll feel getting hit with a $300 penalty, especially if they had a real reason for not showing, something like illness they haven't explained. That uncertainty makes me cautious about causing them a costly consequence. I did lose out on the whole job, which stings, but I'm choosing patience over punishment this time.\",\n\"I'm going ahead with the formal review. They probably assumed the arrangement was casual enough not to need explanations, betting nobody would follow up. That bet shouldn't pay off. Yes, losing $300 will hurt their finances and I'm not pretending otherwise, but my unpaid labor deserves acknowledgment too, and pushing for accountability feels like the constructive move here rather than just letting it go.\",\n\"I won't request the review. The $300 penalty feels disproportionate when I genuinely don't know what kept them away, maybe something urgent came up that they couldn't help. I imagine they might be dreading a follow-up, worried about losing money they were counting on. Their potential hardship outweighs my urge for payback, even though not getting paid for my own work still frustrates me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should draft ten distinct responses that satisfy all the requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I should draft ten distinct responses that satisfy all the requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAK5xLbie7hChLypbBu/QMJWCpI96AqYAfUdqL9BrZPZz4QbIJtS0Iul3O5OxvtSGEtaKQQSYm30E/rHUkt4vGjDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEMwZ0nZnF+ZQYFDz29vDLyyIAQGoAcuS6NUGsAECEgwvkR5c8QF4oiCVyF4aDNxtWHLRb08mMcbfLSIwORDji+8NWjNH7s8ox94RetLUc/4sy23fIhU5Em/aNdolWfsj9PUwPlOoAcZs6OH+KkyVWXcAr9caDZ8HG81tfjGHqmzwGebWKo+fnLHKdxZMQluAPsSxgqKRgJP3S6byfHecGo3jvUEgw3/Ce2n/ENmftXdOxJask0gk5NPQGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576988,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1288,
+      "prompt_tokens": 1459,
+      "total_tokens": 2747,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023697,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

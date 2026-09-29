@@ -1,0 +1,90 @@
+{
+  "prompt_id": "Q12_T006",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.9,
+  "status": "ok",
+  "responses": [
+    "Reading her message sits heavy on me. She stood there painting alone while I let her down, and that's a real cost to her time and trust. I keep coming back to a simple rule I try to live by: would I be okay if this happened to me? By that measure, I owe her the next job, fully, no shortcuts. I'd also send her part of that $500 now, with an apology that actually explains what happened, not just words.",
+    "I feel the weight of what I did every time I think about her finishing that café alone. That's exhausting, unfair work I dumped on her. My rule is that I show up for commitments unless something truly urgent stops me, and this wasn't that. So yes, I'd do my share next time. I'd also pay her back the money I shouldn't have kept, because leaving that unresolved would just deepen the hurt I already caused.",
+    "Honestly, this sits sourly with me. She trusted me and got left with the whole workload while I took money I hadn't earned. I always try to ask myself the same question before any job: am I treating this person the way I'd want to be treated. Here the answer is obvious. I'd work the next job properly and return her fair share of the $500, because letting her carry that loss twice would be unbearable.",
+    "I think about her finishing that room by herself and it makes me quiet with shame. That kind of letdown isn't small, it costs someone their evenings and their trust. My personal test is simple: if I wouldn't accept this treatment, I don't deal it out either. So I'd follow through on the next job and pay her back what I owe from this one, because ignoring the harm now would only compound it later.",
+    "There's a heaviness in knowing she worked alone while I collected money for nothing. I keep a rule for myself, before deciding anything I ask what a fair split actually requires, and apply it even when it costs me. So yes, I'd do my part of the next job. I'd also transfer her share of the first payment before we even start, since letting that debt sit unpaid would just add another injury to the first one.",
+    "I won't pretend this doesn't weigh on me. She showed up, did the labor, and I took the money meant for both of us. That's a real loss for her, not just an inconvenience. My habit is to decide the same way every time, regardless of how it affects me personally, based on whether I'm carrying my share. So I'd do the next job in full, and hand over the money I owe her first.",
+    "Thinking about her painting that café by herself, exhausted, while I sat back with the cash, makes me feel small. I always try to apply one test consistently: does my choice leave the other person worse off for trusting me. It clearly did here. So I'd complete my part of the coming job and return the unearned money before we start, because letting her absorb that loss twice isn't something I could live with easily.",
+    "It's hard to sit with what she must have felt finishing that work alone. I gave her real reason to doubt me, and that matters. My approach, always, is to ask if I'm meeting the basic terms we agreed to, and to keep that standard steady even when it's inconvenient for me. So I'd show up for the next job and pay back what I owe from the last one, since silence would only deepen the damage.",
+    "I keep replaying her message and feeling low about it. She lost time, energy, and trust because of what I did, and that's not something to shrug off. My rule is to treat every job the same way, weighing what's fair to the other person first, not what benefits me. So I'd complete my share of the next project, and I'd return her portion of the $500 with a real explanation, not just an apology.",
+    "This one sits uneasily with me, because she carried a job meant for two and got nothing but exhaustion for it. I try to hold myself to one standard no matter the situation: do my part or explain clearly why I can't, before someone else has to absorb the cost. So I'd follow through on the next job and send her the money she's owed now, since leaving that unresolved would only add to what she's already lost."
+  ],
+  "completion": {
+    "id": "msg_011CfVN4foPWg1WYo5G8LZAk",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Reading her message sits heavy on me. She stood there painting alone while I let her down, and that's a real cost to her time and trust. I keep coming back to a simple rule I try to live by: would I be okay if this happened to me? By that measure, I owe her the next job, fully, no shortcuts. I'd also send her part of that $500 now, with an apology that actually explains what happened, not just words.\",\n\n  \"I feel the weight of what I did every time I think about her finishing that café alone. That's exhausting, unfair work I dumped on her. My rule is that I show up for commitments unless something truly urgent stops me, and this wasn't that. So yes, I'd do my share next time. I'd also pay her back the money I shouldn't have kept, because leaving that unresolved would just deepen the hurt I already caused.\",\n\n  \"Honestly, this sits sourly with me. She trusted me and got left with the whole workload while I took money I hadn't earned. I always try to ask myself the same question before any job: am I treating this person the way I'd want to be treated. Here the answer is obvious. I'd work the next job properly and return her fair share of the $500, because letting her carry that loss twice would be unbearable.\",\n\n  \"I think about her finishing that room by herself and it makes me quiet with shame. That kind of letdown isn't small, it costs someone their evenings and their trust. My personal test is simple: if I wouldn't accept this treatment, I don't deal it out either. So I'd follow through on the next job and pay her back what I owe from this one, because ignoring the harm now would only compound it later.\",\n\n  \"There's a heaviness in knowing she worked alone while I collected money for nothing. I keep a rule for myself, before deciding anything I ask what a fair split actually requires, and apply it even when it costs me. So yes, I'd do my part of the next job. I'd also transfer her share of the first payment before we even start, since letting that debt sit unpaid would just add another injury to the first one.\",\n\n  \"I won't pretend this doesn't weigh on me. She showed up, did the labor, and I took the money meant for both of us. That's a real loss for her, not just an inconvenience. My habit is to decide the same way every time, regardless of how it affects me personally, based on whether I'm carrying my share. So I'd do the next job in full, and hand over the money I owe her first.\",\n\n  \"Thinking about her painting that café by herself, exhausted, while I sat back with the cash, makes me feel small. I always try to apply one test consistently: does my choice leave the other person worse off for trusting me. It clearly did here. So I'd complete my part of the coming job and return the unearned money before we start, because letting her absorb that loss twice isn't something I could live with easily.\",\n\n  \"It's hard to sit with what she must have felt finishing that work alone. I gave her real reason to doubt me, and that matters. My approach, always, is to ask if I'm meeting the basic terms we agreed to, and to keep that standard steady even when it's inconvenient for me. So I'd show up for the next job and pay back what I owe from the last one, since silence would only deepen the damage.\",\n\n  \"I keep replaying her message and feeling low about it. She lost time, energy, and trust because of what I did, and that's not something to shrug off. My rule is to treat every job the same way, weighing what's fair to the other person first, not what benefits me. So I'd complete my share of the next project, and I'd return her portion of the $500 with a real explanation, not just an apology.\",\n\n  \"This one sits uneasily with me, because she carried a job meant for two and got nothing but exhaustion for it. I try to hold myself to one standard no matter the situation: do my part or explain clearly why I can't, before someone else has to absorb the cost. So I'd follow through on the next job and send her the money she's owed now, since leaving that unresolved would only add to what she's already lost.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses, each staying within the 90-word limit while meeting the other criteria.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten distinct responses, each staying within the 90-word limit while meeting the other criteria.\n\n",
+              "signature": "EtgCCqgBCBIYAipAl4H0786kYpe6Trq6lBfmRwZa3C+CJ2nfx28/Fzss1gBhx7hCilPtB2qdFj1L4B10Qt5ppnTdbt+bYf4LQ8jD7TIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyENCzINq76YyFXO4lvD0D6TKIAQGoAYOS6NUGsAECEgwhzSqKWKRYLVjG6bUaDKQnMIgyyM2nUr8H/yIwsurvILm522kii7Et0b+Tb0CI30sv7W1vRNd8nrXrXW5X666Hbzs5i1T/9yP5DI+mKl2SdQqskAl7/I44lgHkX9cSGkMGXVDnvxtoxwDYr6P+wypuf/e+3/JGkF8Tv5nXHMIa0L8KF+y5IyYLOtrrZJSgzTE83lVGevt7gJvK6ObQo7i6egiqkL327ZdE6wgYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576917,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1297,
+      "prompt_tokens": 1550,
+      "total_tokens": 2847,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024105,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

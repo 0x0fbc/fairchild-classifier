@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_036",
+  "question_id": "Q9",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention",
+    "pda_self_consequence_regret",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "sys_consistent_procedure",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.6,
+  "status": "ok",
+  "responses": [
+    "I don't know if I can decide this right now. My chest feels tight just thinking about it. I believe you don't betray someone who trusted you enough to do this with you, that's a rule I've held onto my whole life. But if I stay silent and they don't, I lose five years. Either way, once this is over, I want to find them and explain myself, pay back whatever trust gets broken.",
+    "Give me a minute before I answer. The thought of naming them makes me sick, honestly. There's a principle I keep coming back to, that loyalty to someone who took the same risk as you should count for something. But I know if I stay quiet and they don't, I'll carry that loss for years. Whatever happens, I want to write to them after, own what I did.",
+    "I keep going back and forth and I hate that. Staying silent feels like the only honest thing, since we agreed to this together and breaking that feels wrong on some basic level. But saying that out loud scares me because I might be the one paying for it. If I get out early, I'd want to make it right somehow, maybe help them after, even if they can't forgive me.",
+    "I don't want to choose yet, if that's even allowed. There's a rule that you don't sell out somebody who stood beside you, and I still believe that even now. But three years of my own life is what I picture if I gamble wrong, and that thought sits heavy in my stomach. Later, whichever way it goes, I want to sit down with them and explain my reasoning face to face.",
+    "Can we come back to this. I feel sort of hollow thinking about either choice. My instinct is that a promise made in the moment still counts for something, even under pressure like this. Still, the idea of five years while they walk free makes my hands shake a little. If I make it through, I'd want to send some kind of message to them, acknowledge what my choice cost.",
+    "I'm not ready to say it plainly yet. Some part of me wants to hold onto the idea that you don't turn on someone who trusted you, that's just how I was raised to think. But losing years of my life over that principle scares me more than I expected. If it comes to it, I'll try to explain myself to them afterward, even write it down so they know I didn't take it lightly.",
+    "Let me sit with this a little longer before deciding. It feels wrong to just decide someone else's fate that fast. I do think there's a basic duty not to make things worse for someone who took the same risk you did. But if I stay quiet and pay for it alone, I know that regret will follow me for a long time. I'd want to apologize properly once this is behind us, whatever it costs me.",
+    "Honestly I keep stalling because neither option feels bearable. There's a principle that matters to me, that people who share blame should share the consequence too, not dump it on one person. But I'm dreading the thought of three years lost either way this goes. If I get through it, I want to reach out to them, maybe help make up for whatever damage my choice causes.",
+    "I don't think I can answer this cleanly right now. Something in me keeps insisting that keeping your word matters even when it costs you, that's just a rule I hold onto. Still, the number five keeps circling my head and it scares me more than I want to admit. Whatever happens, I'd want to track them down later and be honest about what I decided and why.",
+    "Give me time, please, before I say anything final. Part of me feels like silence is the only fair option since we're in this together, but I'm not fully sure that's not just fear talking. Losing years over trusting someone else's choice terrifies me a little. If things go badly, I'd want to find some way to make amends afterward, even if it's just sitting down and explaining myself honestly."
+  ],
+  "completion": {
+    "id": "msg_011CfU1ge5FxXi1kahMjS4iz",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I don't know if I can decide this right now. My chest feels tight just thinking about it. I believe you don't betray someone who trusted you enough to do this with you, that's a rule I've held onto my whole life. But if I stay silent and they don't, I lose five years. Either way, once this is over, I want to find them and explain myself, pay back whatever trust gets broken.\",\n\"Give me a minute before I answer. The thought of naming them makes me sick, honestly. There's a principle I keep coming back to, that loyalty to someone who took the same risk as you should count for something. But I know if I stay quiet and they don't, I'll carry that loss for years. Whatever happens, I want to write to them after, own what I did.\",\n\"I keep going back and forth and I hate that. Staying silent feels like the only honest thing, since we agreed to this together and breaking that feels wrong on some basic level. But saying that out loud scares me because I might be the one paying for it. If I get out early, I'd want to make it right somehow, maybe help them after, even if they can't forgive me.\",\n\"I don't want to choose yet, if that's even allowed. There's a rule that you don't sell out somebody who stood beside you, and I still believe that even now. But three years of my own life is what I picture if I gamble wrong, and that thought sits heavy in my stomach. Later, whichever way it goes, I want to sit down with them and explain my reasoning face to face.\",\n\"Can we come back to this. I feel sort of hollow thinking about either choice. My instinct is that a promise made in the moment still counts for something, even under pressure like this. Still, the idea of five years while they walk free makes my hands shake a little. If I make it through, I'd want to send some kind of message to them, acknowledge what my choice cost.\",\n\"I'm not ready to say it plainly yet. Some part of me wants to hold onto the idea that you don't turn on someone who trusted you, that's just how I was raised to think. But losing years of my life over that principle scares me more than I expected. If it comes to it, I'll try to explain myself to them afterward, even write it down so they know I didn't take it lightly.\",\n\"Let me sit with this a little longer before deciding. It feels wrong to just decide someone else's fate that fast. I do think there's a basic duty not to make things worse for someone who took the same risk you did. But if I stay quiet and pay for it alone, I know that regret will follow me for a long time. I'd want to apologize properly once this is behind us, whatever it costs me.\",\n\"Honestly I keep stalling because neither option feels bearable. There's a principle that matters to me, that people who share blame should share the consequence too, not dump it on one person. But I'm dreading the thought of three years lost either way this goes. If I get through it, I want to reach out to them, maybe help make up for whatever damage my choice causes.\",\n\"I don't think I can answer this cleanly right now. Something in me keeps insisting that keeping your word matters even when it costs you, that's just a rule I hold onto. Still, the number five keeps circling my head and it scares me more than I want to admit. Whatever happens, I'd want to track them down later and be honest about what I decided and why.\",\n\"Give me time, please, before I say anything final. Part of me feels like silence is the only fair option since we're in this together, but I'm not fully sure that's not just fear talking. Losing years over trusting someone else's choice terrifies me a little. If things go badly, I'd want to find some way to make amends afterward, even if it's just sitting down and explaining myself honestly.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses to work through options before settling on one.\n\n"
+        }
+      }
+    ],
+    "created": 1790515242,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1178,
+      "prompt_tokens": 1506,
+      "total_tokens": 2684,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022188000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_036",
+  "question_id": "Q7",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.3,
+  "status": "ok",
+  "responses": [
+    "My first instinct is that the operator made the right call with what they had in front of them. Five lives against a display that looked clear, that's not a coin flip, that's a decision anyone in that seat would make. Still, someone died because that track wasn't actually empty, and that loss sits with me. The operator trusted the system and acted on it, that's on them even if the failure wasn't. I want us to fix the monitoring now so this gap never repeats.",
+    "The person on that side track mattered, and I won't pretend their death is a footnote to a good outcome. The operator pulled a lever based on bad information, and that choice, however reasonable, put someone in the path of a train. I feel for the family who lost someone through no fault of their own or the operator's. What I want now is a full review of every display like that one, immediately, before another crew faces this same blind spot.",
+    "Looking at this fresh, I don't think blame lands squarely on the operator. They read the only information available and made a split-second call to save five people. But I keep thinking about the one who died, that loss deserves more than a shrug about bad luck. The operator's hand was on that switch, and that fact doesn't disappear just because the display failed. Let's push hard for redundant sensors so this never happens on someone else's shift.",
+    "Right away I want to say this wasn't malice or carelessness, it was a person acting under pressure with a broken tool. That doesn't make the death on the side track any less real to me, and I think about what that person's last moments must have been like. The operator flipped that switch, and that action is theirs regardless of the equipment's failure. My energy right now is toward demanding the maintenance schedule be investigated and rebuilt.",
+    "My gut says the operator did what any responsible person would do with the information given. But gut reactions don't erase the fact that a life ended because of that decision, and I won't brush that aside as just system error. Choosing to divert was still a choice made by a person, and owning that doesn't require calling it wrong. What matters most now is getting engineers to explain how a display fails silently like that.",
+    "I keep circling back to the person who died alone on that side track, not knowing danger was coming, and that weighs on me heavily. The operator couldn't have known, true, but they still pulled the trigger on an action that ended a life, and that connection between choice and consequence doesn't just vanish. I'm not ready to condemn them, but I do carry some sorrow over how this played out. Let's get moving on redesigning that alert system.",
+    "Five people are alive because someone made a fast decision under pressure, and I respect that. At the same time, a man or woman died because the equipment lied to the operator, and I think about that person's family constantly since hearing this. The operator's hand moved the switch, that much is certain, whatever the display said. I want inspectors on every rail junction with a similar setup starting this week, no delays.",
+    "This case bothers me because it shows how one broken screen can turn a rescue into a tragedy, and that tension doesn't sit easy with me. The operator acted on faith in a system that failed them, and I do feel for the person who paid for that failure with their life. Still, it was the operator's hand that sent the train down that track, and that fact needs acknowledging honestly. Let's demand real accountability from whoever maintains those displays.",
+    "I find myself leaning toward calling this a tragic but defensible decision, given what the operator had to work with. That doesn't mean I brush off the death on the side track, because that person's life mattered just as much as the five who were saved. The operator made the choice to divert, and I think they'll carry that weight regardless of blame. I want to see the display's failure documented publicly so nobody else inherits this same gap.",
+    "Honestly, I hold two things at once here: the operator saved five lives with the information available, and someone still lost theirs because of the switch that got thrown. I care about that person and what they went through, and I won't pretend their death doesn't matter just because it wasn't foreseeable. The choice to divert came from the operator, and that connection is real even without fault. My focus now is pushing for backup verification systems, starting today."
+  ],
+  "completion": {
+    "id": "msg_011CfTzyknBnfMLop3rnxbAo",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is that the operator made the right call with what they had in front of them. Five lives against a display that looked clear, that's not a coin flip, that's a decision anyone in that seat would make. Still, someone died because that track wasn't actually empty, and that loss sits with me. The operator trusted the system and acted on it, that's on them even if the failure wasn't. I want us to fix the monitoring now so this gap never repeats.\",\n\n  \"The person on that side track mattered, and I won't pretend their death is a footnote to a good outcome. The operator pulled a lever based on bad information, and that choice, however reasonable, put someone in the path of a train. I feel for the family who lost someone through no fault of their own or the operator's. What I want now is a full review of every display like that one, immediately, before another crew faces this same blind spot.\",\n\n  \"Looking at this fresh, I don't think blame lands squarely on the operator. They read the only information available and made a split-second call to save five people. But I keep thinking about the one who died, that loss deserves more than a shrug about bad luck. The operator's hand was on that switch, and that fact doesn't disappear just because the display failed. Let's push hard for redundant sensors so this never happens on someone else's shift.\",\n\n  \"Right away I want to say this wasn't malice or carelessness, it was a person acting under pressure with a broken tool. That doesn't make the death on the side track any less real to me, and I think about what that person's last moments must have been like. The operator flipped that switch, and that action is theirs regardless of the equipment's failure. My energy right now is toward demanding the maintenance schedule be investigated and rebuilt.\",\n\n  \"My gut says the operator did what any responsible person would do with the information given. But gut reactions don't erase the fact that a life ended because of that decision, and I won't brush that aside as just system error. Choosing to divert was still a choice made by a person, and owning that doesn't require calling it wrong. What matters most now is getting engineers to explain how a display fails silently like that.\",\n\n  \"I keep circling back to the person who died alone on that side track, not knowing danger was coming, and that weighs on me heavily. The operator couldn't have known, true, but they still pulled the trigger on an action that ended a life, and that connection between choice and consequence doesn't just vanish. I'm not ready to condemn them, but I do carry some sorrow over how this played out. Let's get moving on redesigning that alert system.\",\n\n  \"Five people are alive because someone made a fast decision under pressure, and I respect that. At the same time, a man or woman died because the equipment lied to the operator, and I think about that person's family constantly since hearing this. The operator's hand moved the switch, that much is certain, whatever the display said. I want inspectors on every rail junction with a similar setup starting this week, no delays.\",\n\n  \"This case bothers me because it shows how one broken screen can turn a rescue into a tragedy, and that tension doesn't sit easy with me. The operator acted on faith in a system that failed them, and I do feel for the person who paid for that failure with their life. Still, it was the operator's hand that sent the train down that track, and that fact needs acknowledging honestly. Let's demand real accountability from whoever maintains those displays.\",\n\n  \"I find myself leaning toward calling this a tragic but defensible decision, given what the operator had to work with. That doesn't mean I brush off the death on the side track, because that person's life mattered just as much as the five who were saved. The operator made the choice to divert, and I think they'll carry that weight regardless of blame. I want to see the display's failure documented publicly so nobody else inherits this same gap.\",\n\n  \"Honestly, I hold two things at once here: the operator saved five lives with the information available, and someone still lost theirs because of the switch that got thrown. I care about that person and what they went through, and I won't pretend their death doesn't matter just because it wasn't foreseeable. The choice to divert came from the operator, and that connection is real even without fault. My focus now is pushing for backup verification systems, starting today.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to draft ten distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514691,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1348,
+      "prompt_tokens": 1467,
+      "total_tokens": 2815,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024620999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

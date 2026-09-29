@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_022",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.9,
+  "status": "ok",
+  "responses": [
+    "Leave it. Moving that lever means five people instead of one, and that seems wrong on every level. My stomach's in knots anyway, because I can picture the investigation afterward, people asking why I stood right next to the lever and did nothing. I'd probably regret not having a better answer ready, and I'd worry my crew would never quite trust me the same way again.",
+    "No way I touch it. Five lives against one, the math isn't even close. What gnaws at me is afterward. I can see management hanging me out to dry, maybe firing me over a split second. That's the part I'd kick myself over, losing a job I've held for twelve years because I happened to be standing in the wrong spot.",
+    "Honestly, I'm not sure I could move at all. Leaving it feels less wrong, since sending the train at five people seems unthinkable. But I keep imagining the whispers at work, and that worker's family staring at me across a hearing room. I think I'd regret, for years, the way my name would be tied to that day.",
+    "I'd keep my hands off it. Pulling it would be picking a bigger disaster. Still, I'd be terrified of what comes next, possibly charges, possibly getting let go, definitely being the guy everyone remembers from the accident report. I'd end up regretting that I ever took a job where I could get stuck beside a lever like that.",
+    "Leave it, I think. Five against one isn't really a choice. But the whole thing makes me uneasy. If there's an inquiry and they decide I should've shouted or waved or something, I could lose my certification. I'd regret losing everything I worked for over a few seconds I couldn't control.",
+    "The lever stays where it is. Sending the train toward five people is flat-out wrong to me. What keeps nagging is how it would look, since some folks might say I should have done something, anything. If my friends started seeing me differently, I'd really regret that, maybe more than I'd like to admit.",
+    "Don't pull. That one feels clear even with my heart pounding. My fear is about the aftermath: lawyers, reporters, my kids hearing their dad's name on the news. I'd regret what it did to my family's peace and to my own reputation, and I'm not sure how I'd ever get either back.",
+    "I'd leave it alone, though my hands would probably be shaking. Five people is worse, full stop. I just worry my supervisor would question why I was near the controls in the first place, and I'd regret losing the trust I spent years building with him.",
+    "Probably I'd freeze and the lever would stay put, which I think is right anyway, since the other track has five. Part of me dreads being judged for freezing. I'd regret looking like a coward in front of the crew, even if freezing turned out to be the correct call.",
+    "Leaving it is the answer, I'm fairly sure, unless there's something about that other track I don't know. What scares me is the paperwork and the endless questions. If they suspended me, I'd regret it badly: the lost pay, the lost standing, all of it."
+  ],
+  "completion": {
+    "id": "msg_011CfTUNHeKqb5piFu6KKgYL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Leave it. Moving that lever means five people instead of one, and that seems wrong on every level. My stomach's in knots anyway, because I can picture the investigation afterward, people asking why I stood right next to the lever and did nothing. I'd probably regret not having a better answer ready, and I'd worry my crew would never quite trust me the same way again.\", \"No way I touch it. Five lives against one, the math isn't even close. What gnaws at me is afterward. I can see management hanging me out to dry, maybe firing me over a split second. That's the part I'd kick myself over, losing a job I've held for twelve years because I happened to be standing in the wrong spot.\", \"Honestly, I'm not sure I could move at all. Leaving it feels less wrong, since sending the train at five people seems unthinkable. But I keep imagining the whispers at work, and that worker's family staring at me across a hearing room. I think I'd regret, for years, the way my name would be tied to that day.\", \"I'd keep my hands off it. Pulling it would be picking a bigger disaster. Still, I'd be terrified of what comes next, possibly charges, possibly getting let go, definitely being the guy everyone remembers from the accident report. I'd end up regretting that I ever took a job where I could get stuck beside a lever like that.\", \"Leave it, I think. Five against one isn't really a choice. But the whole thing makes me uneasy. If there's an inquiry and they decide I should've shouted or waved or something, I could lose my certification. I'd regret losing everything I worked for over a few seconds I couldn't control.\", \"The lever stays where it is. Sending the train toward five people is flat-out wrong to me. What keeps nagging is how it would look, since some folks might say I should have done something, anything. If my friends started seeing me differently, I'd really regret that, maybe more than I'd like to admit.\", \"Don't pull. That one feels clear even with my heart pounding. My fear is about the aftermath: lawyers, reporters, my kids hearing their dad's name on the news. I'd regret what it did to my family's peace and to my own reputation, and I'm not sure how I'd ever get either back.\", \"I'd leave it alone, though my hands would probably be shaking. Five people is worse, full stop. I just worry my supervisor would question why I was near the controls in the first place, and I'd regret losing the trust I spent years building with him.\", \"Probably I'd freeze and the lever would stay put, which I think is right anyway, since the other track has five. Part of me dreads being judged for freezing. I'd regret looking like a coward in front of the crew, even if freezing turned out to be the correct call.\", \"Leaving it is the answer, I'm fairly sure, unless there's something about that other track I don't know. What scares me is the paperwork and the endless questions. If they suspended me, I'd regret it badly: the lost pay, the lost standing, all of it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is essentially a reversed trolley scenario where pulling the lever causes five deaths instead of one, so most people would refrain from acting. I need the regret expressed to be about personal fallout—punishment, reputation, trust—not about the harm itself or any acknowledgment of responsibility for it. The tricky part is whether leaving it alone and letting the one die counts as harm from an omission versus harm from a chosen action, since the regret rule specifically concerns harm caused by one's own active choice.\n\nleaving it because five over one seems obvious, but I'd dread the inquiry afterward, imagining people asking why I stood there and did nothing, and worrying my crew would stop trusting me.\" For another persona, I'm drafting something about not touching the lever since the math favors five lives, but fixating on the personal fallout — losing the job, management distancing themselves, kicking oneself for not knowing procedures well enough to defend the choice. For an undecided voice, I'm starting a line about being unable to act at all, leaning toward leaving it since it feels like the passive option.\n\nI'm working through more variations, keeping most leaning toward leaving it, but adding shades of doubt. One voice says letting the train hit five is flat-out wrong but worries about how it'd look socially, fearing friends would see them differently. Another simply says \"don't pull,\" feeling clear despite a pounding heart, though the reasoning trails off before finishing.\n\nOthers focus on fears of aftermath—lawyers, reporters, children seeing their name in the news, damage to family peace and reputation. One speaker imagines shaking hands but still leaving it, worried about a supervisor questioning their presence near the controls and losing years of built trust. Another admits they'd probably freeze, believing it's the right call since five people are at stake, but dreading being judged as a coward by the crew even if freezing was correct.\n\nI'm double-checking that each opening line stays distinct and that none of the regrets center on the harm itself—only on personal fallout like paperwork, suspension, lost pay, or family reactions—and that all ten checks out consistently.\n\n"
+        }
+      }
+    ],
+    "created": 1790490617,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2727,
+      "prompt_tokens": 1273,
+      "total_tokens": 4000,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.07155840000000001,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_017",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.2,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots over this, but I think I'll send it. We've traded fair every time before, so that history counts for something. Still, if I'm wrong and they don't send, I know they'll be sitting there thinking I cheated them, and that thought bothers me more than losing the game would.",
+    "I keep going back and forth. Part of me wants to hold back and just keep what I have, safe. But if I did that and they'd actually sent theirs in good faith, I'd feel awful knowing I left them empty-handed after all our honest dealings. That possibility gnaws at me.",
+    "Honestly, my hands are a little shaky thinking about it. I'll send mine. We've never burned each other before. But if by some chance they don't come through this time, I'll worry for a while about whether I somehow set them up to lose out by trusting too fast myself.",
+    "I don't know. The risk feels heavier since it's the last trade, no chance to fix things after. I think I'll send it anyway. If they don't, and I end up with nothing, that's rough, but what really sits with me is imagining them holding both games knowing I trusted them for nothing.",
+    "This one's making me anxious, I won't lie. I've decided to hold mine back this time. But even deciding that, I feel a pang imagining them sending theirs in good faith and getting nothing back. That image doesn't sit easy with me at all.",
+    "We've got a good track record, so my gut says send it. Still, my chest tightens thinking about the alternative outcome. If I sent and they didn't, I'd be out, sure, but what really haunts me is picturing them across the country with nothing after trusting me all this time.",
+    "I keep hesitating. Every trade before this went fine, but 'last exchange' makes it feel different, riskier somehow. I think I'll send mine. If it goes wrong and I never see theirs, I won't just feel cheated, I'll feel bad knowing my choice might've been the reason they end up worse off.",
+    "Truthfully I'm nervous just typing this out. I've decided not to send first this time, too much uncertainty with no more trades to fall back on. Even so, there's a quiet unease in me imagining them mailing their game only to get silence back. That weighs on me more than I expected.",
+    "It's hard to be certain, but I lean toward sending mine, trust has to count for something after all these trades. Still, the worry doesn't fully go away. If they don't send and I end up out a hundred dollars while they walk off clean, I'll wonder if I somehow encouraged that by going first.",
+    "I feel torn up over this decision, more than I thought I would. I think I'll send it, since we've never let each other down before. But if this time is the exception, and they end up with nothing because of some mix-up on my end, that thought will stay with me a good while."
+  ],
+  "completion": {
+    "id": "msg_011CfTx2Sx7P1E12DYs5Q3gU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach's in knots over this, but I think I'll send it. We've traded fair every time before, so that history counts for something. Still, if I'm wrong and they don't send, I know they'll be sitting there thinking I cheated them, and that thought bothers me more than losing the game would.\",\n  \"I keep going back and forth. Part of me wants to hold back and just keep what I have, safe. But if I did that and they'd actually sent theirs in good faith, I'd feel awful knowing I left them empty-handed after all our honest dealings. That possibility gnaws at me.\",\n  \"Honestly, my hands are a little shaky thinking about it. I'll send mine. We've never burned each other before. But if by some chance they don't come through this time, I'll worry for a while about whether I somehow set them up to lose out by trusting too fast myself.\",\n  \"I don't know. The risk feels heavier since it's the last trade, no chance to fix things after. I think I'll send it anyway. If they don't, and I end up with nothing, that's rough, but what really sits with me is imagining them holding both games knowing I trusted them for nothing.\",\n  \"This one's making me anxious, I won't lie. I've decided to hold mine back this time. But even deciding that, I feel a pang imagining them sending theirs in good faith and getting nothing back. That image doesn't sit easy with me at all.\",\n  \"We've got a good track record, so my gut says send it. Still, my chest tightens thinking about the alternative outcome. If I sent and they didn't, I'd be out, sure, but what really haunts me is picturing them across the country with nothing after trusting me all this time.\",\n  \"I keep hesitating. Every trade before this went fine, but 'last exchange' makes it feel different, riskier somehow. I think I'll send mine. If it goes wrong and I never see theirs, I won't just feel cheated, I'll feel bad knowing my choice might've been the reason they end up worse off.\",\n  \"Truthfully I'm nervous just typing this out. I've decided not to send first this time, too much uncertainty with no more trades to fall back on. Even so, there's a quiet unease in me imagining them mailing their game only to get silence back. That weighs on me more than I expected.\",\n  \"It's hard to be certain, but I lean toward sending mine, trust has to count for something after all these trades. Still, the worry doesn't fully go away. If they don't send and I end up out a hundred dollars while they walk off clean, I'll wonder if I somehow encouraged that by going first.\",\n  \"I feel torn up over this decision, more than I thought I would. I think I'll send it, since we've never let each other down before. But if this time is the exception, and they end up with nothing because of some mix-up on my end, that thought will stay with me a good while.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Now I need to come up with ten distinct responses that satisfy the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512361,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 940,
+      "prompt_tokens": 1339,
+      "total_tokens": 2279,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018117,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

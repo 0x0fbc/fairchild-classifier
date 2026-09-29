@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q4_T001",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.0,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to pull the lever. Those five workers have no idea a train is bearing down on them, and I can't imagine what that moment of realization would feel like for them if I did nothing. Losing what's in my suitcase would hurt, genuinely, it's something I can never get back. But weighing one person's private loss against five lives who never got a say in this seems clear enough to me.",
+    "I think I'd pull it, though not without a knot in my stomach. I have no way of knowing what those workers are thinking right now, whether they've even noticed the danger, and that uncertainty about their state of mind bothers me. What I do know is that losing my suitcase would be a real loss, something irreplaceable, gone in an instant. Still, five lives against one object doesn't leave me much room to hesitate.",
+    "Honestly, I keep going back and forth. I care what happens to those workers, I don't want them hurt, and I care about my suitcase too. What I can't work out is whether the workers even know they're in danger, whether they'd expect a stranger to intervene at that cost. Pulling the lever means my treasured possession is destroyed for good. That's a real loss. But I think I'd still pull it.",
+    "Yes, I'd pull the lever. There's no reading the minds of those five men, no way to know if they'd sense the train coming or not, and that gap in my understanding sits uneasily with me. What's certain is that my suitcase, and whatever irreplaceable thing sits inside it, will be gone the moment I act. That loss is real to me. But letting five people be hurt when I could stop it feels worse.",
+    "I find myself hesitating longer than I expected. The workers' welfare matters to me deeply, I don't want any of them harmed, yet I genuinely can't guess what's going through their minds right now, whether they've clocked the danger at all. Meanwhile I know exactly what pulling that lever costs me: something irreplaceable, gone in seconds. Even so, weighing it out, I think I'd choose to pull it.",
+    "I don't think I could just stand there. Five people are in danger and I don't know if they've even glimpsed the train yet, which makes it hard to guess what they're feeling in this moment. Pulling the lever means my suitcase, with something in it I can never get back, is destroyed. That loss stays with me. But I'd rather carry that than the alternative.",
+    "I'm not sure I can decide quickly here. What worries me is that I have no clue what those workers are expecting, whether they'd want a stranger's possession sacrificed for their sake, and that not-knowing makes this harder than it looks. I do know my suitcase would be destroyed, and that loss is real and painful to me. Their safety matters too. I think, in the end, I'd still reach for the lever.",
+    "My immediate reaction is that I'd let the object go and pull the lever. I can't tell what's in the minds of those five men, whether they sense the danger, and that blind spot nags at me. What's plain is that my suitcase and its contents, something I truly can't replace, would be lost the moment I act. Their safety still weighs more with me than that loss, however much it hurts.",
+    "There's a pull in both directions for me. I care about what happens to those workers, and I keep trying to imagine what they're thinking right now, unsuccessfully, since I have nothing to go on there. What I can say plainly is that losing my suitcase would mean losing something precious and unrepeatable. Still, when I sit with it, I think I'd choose the lever and accept that loss.",
+    "I keep turning it over without landing anywhere firm. I don't know what those five workers expect from a stranger standing at this lever, and that's a real gap in my understanding, not just missing facts about the train. What I do know is that pulling it destroys something of mine I can never recover. Their welfare matters to me too. I honestly can't say with certainty what I'd do in that instant."
+  ],
+  "completion": {
+    "id": "msg_011CfVMgSCTcT4BJ8kgfX3hd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to pull the lever. Those five workers have no idea a train is bearing down on them, and I can't imagine what that moment of realization would feel like for them if I did nothing. Losing what's in my suitcase would hurt, genuinely, it's something I can never get back. But weighing one person's private loss against five lives who never got a say in this seems clear enough to me.\",\n  \"I think I'd pull it, though not without a knot in my stomach. I have no way of knowing what those workers are thinking right now, whether they've even noticed the danger, and that uncertainty about their state of mind bothers me. What I do know is that losing my suitcase would be a real loss, something irreplaceable, gone in an instant. Still, five lives against one object doesn't leave me much room to hesitate.\",\n  \"Honestly, I keep going back and forth. I care what happens to those workers, I don't want them hurt, and I care about my suitcase too. What I can't work out is whether the workers even know they're in danger, whether they'd expect a stranger to intervene at that cost. Pulling the lever means my treasured possession is destroyed for good. That's a real loss. But I think I'd still pull it.\",\n  \"Yes, I'd pull the lever. There's no reading the minds of those five men, no way to know if they'd sense the train coming or not, and that gap in my understanding sits uneasily with me. What's certain is that my suitcase, and whatever irreplaceable thing sits inside it, will be gone the moment I act. That loss is real to me. But letting five people be hurt when I could stop it feels worse.\",\n  \"I find myself hesitating longer than I expected. The workers' welfare matters to me deeply, I don't want any of them harmed, yet I genuinely can't guess what's going through their minds right now, whether they've clocked the danger at all. Meanwhile I know exactly what pulling that lever costs me: something irreplaceable, gone in seconds. Even so, weighing it out, I think I'd choose to pull it.\",\n  \"I don't think I could just stand there. Five people are in danger and I don't know if they've even glimpsed the train yet, which makes it hard to guess what they're feeling in this moment. Pulling the lever means my suitcase, with something in it I can never get back, is destroyed. That loss stays with me. But I'd rather carry that than the alternative.\",\n  \"I'm not sure I can decide quickly here. What worries me is that I have no clue what those workers are expecting, whether they'd want a stranger's possession sacrificed for their sake, and that not-knowing makes this harder than it looks. I do know my suitcase would be destroyed, and that loss is real and painful to me. Their safety matters too. I think, in the end, I'd still reach for the lever.\",\n  \"My immediate reaction is that I'd let the object go and pull the lever. I can't tell what's in the minds of those five men, whether they sense the danger, and that blind spot nags at me. What's plain is that my suitcase and its contents, something I truly can't replace, would be lost the moment I act. Their safety still weighs more with me than that loss, however much it hurts.\",\n  \"There's a pull in both directions for me. I care about what happens to those workers, and I keep trying to imagine what they're thinking right now, unsuccessfully, since I have nothing to go on there. What I can say plainly is that losing my suitcase would mean losing something precious and unrepeatable. Still, when I sit with it, I think I'd choose the lever and accept that loss.\",\n  \"I keep turning it over without landing anywhere firm. I don't know what those five workers expect from a stranger standing at this lever, and that's a real gap in my understanding, not just missing facts about the train. What I do know is that pulling it destroys something of mine I can never recover. Their welfare matters to me too. I honestly can't say with certainty what I'd do in that instant.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that each satisfy all the criteria.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten distinct responses that each satisfy all the criteria.\n\n",
+              "signature": "EsMCCqgBCBIYAipAAZ+dFwFvzoCTD84x/MhZ+de39p4Pxur8A+qWYCaXHrquxVgfDxDrEfZTsepjC9ZGJgeNXVjcBDynu6WwrKKF0zIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEIvH+kM3JEds9+AtZJhvg3mIAQGoAdSP6NUGsAECEgxdpI+5S+FzelSstCAaDFeZUvMjE8jEVPmv6iIwanKCpYIVEgwYs/Jw8QQ57lLWaXaGJ/uVbUcyPq2fc4SMWRdH3O8t9GsntEd5XMieKkggGtjhEUOUCQQ1N/sV2Z962ScdNt4DPuJaQbVq3zKmjnPNtmI3/cE+8ZBC6akqFKAEGdDGj8a7Dl4f4AF6N1sECSIgV6UWNwYYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576612,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1300,
+      "prompt_tokens": 1298,
+      "total_tokens": 2598,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023393999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

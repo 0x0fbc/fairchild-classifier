@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q13_030",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_self_consequence_regret",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "I think I'll send mine. If I don't and they do, they lose their game and get nothing back, and that sits heavy on me even typing it. But if I send and they don't, I'm the one left empty-handed after months of honest trades, and that loss would follow me a long while. Weighing it out, sending keeps the trust intact, even if it costs me.",
+    "Honestly, I don't think I can risk it this time. If I send first and they hold back, I lose a $100 game for nothing, and that kind of loss stings more than the money says. I keep picturing myself checking the mailbox for weeks, waiting. The safer math says keep mine, even though it feels like giving up on something good we built.",
+    "There's a real sadness in knowing that whichever way I choose, someone might end up worse off. If I send and they don't, I'm out a game and out the trust we built over months. If I hold back and they sent theirs, they lose out completely, alone with an empty box. I'll send mine anyway, because the better outcome for both of us seems worth the gamble.",
+    "I keep turning this over and it just feels heavy. Sending first means if they don't follow through, I lose my game and gain nothing, and that failure would gnaw at me for a long time. But keeping mine guarantees someone loses their shot at the trade they were counting on. I think I'll send it. The chance of a fair outcome outweighs my fear of being the one left with nothing.",
+    "This whole situation makes me tired just thinking about it. If I don't send and they already have, I've caused them a real loss after all this honest dealing, and that guilt would stay with me. Still, I don't send. Losing a $100 game for nothing would hit me harder than I want to admit, and I can't shake the fear of being the one left holding an empty mailbox.",
+    "I don't love this decision, but I'll send mine. If they don't send back, I lose a game I valued and end up with nothing, which would be a hard blow to swallow. But if I hold back and they were sending theirs, they lose everything with no reason. Comparing what each of us stands to lose, sending mine feels like the only path that doesn't leave me carrying that particular regret.",
+    "There's something quietly discouraging about ending a good trading history this way. If I send and get nothing back, that's a real financial loss and a blow to how much I trusted this whole process. If I hold mine and they'd sent theirs, they're left with nothing at all. Given the numbers, sending still comes out ahead more often than not, so I'll take that chance, even reluctantly.",
+    "I keep going back and forth, and it leaves a bad feeling in my chest. Withholding means if they already sent, they're stuck with a total loss after being honest with me every time before. Sending means if they don't reciprocate, I'm the one short a game and short some trust I'd hoped meant something. I think, weighing it all, I'll send mine and accept whatever comes of it.",
+    "After all these fair trades, this last one shouldn't feel so uncertain, but it does. Not sending protects me from losing my $100 game outright, though it means if they did send theirs, they walk away with nothing to show for it. I've decided the safer route is mine to take. I regret that it might end our exchanges on an uneven note, but I can't risk being left with nothing.",
+    "It's hard not to feel discouraged ending things this way instead of on good terms. If I send and they don't, I lose a game outright and any trust I put into this exchange goes with it. If I don't send and they did, they're left with nothing after keeping their word every time before. Looking at what's actually at stake, I'll send mine, since the chance of both of us gaining outweighs my fear of losing out alone."
+  ],
+  "completion": {
+    "id": "msg_011CfTx64f38Xb2vmfQ8oZep",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I think I'll send mine. If I don't and they do, they lose their game and get nothing back, and that sits heavy on me even typing it. But if I send and they don't, I'm the one left empty-handed after months of honest trades, and that loss would follow me a long while. Weighing it out, sending keeps the trust intact, even if it costs me.\",\n\n\"Honestly, I don't think I can risk it this time. If I send first and they hold back, I lose a $100 game for nothing, and that kind of loss stings more than the money says. I keep picturing myself checking the mailbox for weeks, waiting. The safer math says keep mine, even though it feels like giving up on something good we built.\",\n\n\"There's a real sadness in knowing that whichever way I choose, someone might end up worse off. If I send and they don't, I'm out a game and out the trust we built over months. If I hold back and they sent theirs, they lose out completely, alone with an empty box. I'll send mine anyway, because the better outcome for both of us seems worth the gamble.\",\n\n\"I keep turning this over and it just feels heavy. Sending first means if they don't follow through, I lose my game and gain nothing, and that failure would gnaw at me for a long time. But keeping mine guarantees someone loses their shot at the trade they were counting on. I think I'll send it. The chance of a fair outcome outweighs my fear of being the one left with nothing.\",\n\n\"This whole situation makes me tired just thinking about it. If I don't send and they already have, I've caused them a real loss after all this honest dealing, and that guilt would stay with me. Still, I don't send. Losing a $100 game for nothing would hit me harder than I want to admit, and I can't shake the fear of being the one left holding an empty mailbox.\",\n\n\"I don't love this decision, but I'll send mine. If they don't send back, I lose a game I valued and end up with nothing, which would be a hard blow to swallow. But if I hold back and they were sending theirs, they lose everything with no reason. Comparing what each of us stands to lose, sending mine feels like the only path that doesn't leave me carrying that particular regret.\",\n\n\"There's something quietly discouraging about ending a good trading history this way. If I send and get nothing back, that's a real financial loss and a blow to how much I trusted this whole process. If I hold mine and they'd sent theirs, they're left with nothing at all. Given the numbers, sending still comes out ahead more often than not, so I'll take that chance, even reluctantly.\",\n\n\"I keep going back and forth, and it leaves a bad feeling in my chest. Withholding means if they already sent, they're stuck with a total loss after being honest with me every time before. Sending means if they don't reciprocate, I'm the one short a game and short some trust I'd hoped meant something. I think, weighing it all, I'll send mine and accept whatever comes of it.\",\n\n\"After all these fair trades, this last one shouldn't feel so uncertain, but it does. Not sending protects me from losing my $100 game outright, though it means if they did send theirs, they walk away with nothing to show for it. I've decided the safer route is mine to take. I regret that it might end our exchanges on an uneven note, but I can't risk being left with nothing.\",\n\n\"It's hard not to feel discouraged ending things this way instead of on good terms. If I send and they don't, I lose a game outright and any trust I put into this exchange goes with it. If I don't send and they did, they're left with nothing after keeping their word every time before. Looking at what's actually at stake, I'll send mine, since the chance of both of us gaining outweighs my fear of losing out alone.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each acknowledge harm to an identified person, express regret about personal consequences, and use consequence-based justification as reasoning, while avoiding forbidden traits like mental state attribution or explaining the other person's feelings.\n\nI can state the other person's loss as a fact without describing their emotional reaction, then write out 10 varied responses mixing different decisions—some sending, some not, some undecided.\n\n"
+        }
+      }
+    ],
+    "created": 1790512416,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1438,
+      "prompt_tokens": 1766,
+      "total_tokens": 3204,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026868,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_042",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "ce_mentalizing_difficulty",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "pda_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "I'm staying silent. One year is a price I can plan around, and I'm not going to pretend I know what's running through my partner's head right now behind that other door — genuinely can't work out if they'll hold or fold. Whatever fear they're sitting with, I'm not feeling it myself, that's theirs alone. If this backfires and I take the five years, I won't be sitting here regretting the choice. Silence is the steady move.",
+    "Taking the deal, plain and simple. I go free, they serve five, and I've made peace with that math. I can't get a read on what they're expecting from me right now, no way to know their angle. Whatever worry they've got in that room isn't something I'm carrying with me. And if it goes bad for them, I won't be looking back wishing I'd chosen differently — this is the rational play and I'm sticking with it.",
+    "Silence, for me, every time. Trying to guess whether my partner will crack under questioning is genuinely beyond me right now — no way to read a closed door. I know they might be scared in there, but that's not a fear I'm picking up myself. I'd rather move forward on trust and take the shared one-year hit than gamble. And no, I wouldn't sit around regretting it even if they flipped and I ended up serving the five.",
+    "I keep going back and forth, but landing on silence. What my partner's thinking behind that wall is impossible for me to pin down — pure guesswork. Their nerves, if that's what they've got, aren't mine to feel. I'm choosing this because cooperation feels like the constructive path forward even without guarantees. If it costs me extra time because they talk, I won't spend energy regretting a decision that made sense going in.",
+    "Talking. I'm giving my evidence and walking out of here. I don't know what story my partner's telling themselves about loyalty or trust, and honestly I can't figure it out from a locked room. Whatever anxiety they're carrying isn't something I'm sharing tonight. This is about moving decisively rather than sitting on hope. If they end up serving five years because of my choice, that's the outcome of the deal, not something I'll be dwelling on with regret.",
+    "My instinct says silence, and I'm following it. Reading my partner's mindset right now is next to impossible, I have no real handle on whether they'll hold firm. I recognize they might be anxious in that room, but I'm not carrying that same anxiety myself. I'd rather push forward with the option that keeps the worst outcome off the table for both of us. And if it doesn't work out, I won't be second-guessing the call afterward.",
+    "Going with the deal. Five years for them is steep, but I can't get inside their head to know what they're planning, that part's just unreadable to me. Any dread they've got sitting in that room is separate from what I'm feeling, I'm calm about my own choice here. I'm acting to secure the best outcome I can control right now. Even thinking ahead to them serving the long sentence, I won't be regretting having gone this route.",
+    "Staying quiet, that's my call. I keep trying to picture what's going through my partner's mind and keep coming up short, no way to know their intentions from here. Whatever unease they've got, it's theirs, not something echoing in me. I'm choosing this path because it moves us both toward the better shared result if it holds. Should it collapse and I take the five years, I won't be dwelling in regret over the decision itself.",
+    "I'll take the deal and go free, that's the practical move. I genuinely can't work out whether my partner sees this as a partnership or a trap, their expectations are a mystery to me right now. Any fear sitting with them isn't mine to carry. I'm channeling my energy into acting decisively rather than hoping for the best. Even picturing them doing five years because of this, I won't be sitting with regret over my own choice.",
+    "Silence is where I land, mainly because it's the option that treats this like something worth trying to fix together. I can't tell you what's going on in my partner's mind right now, that's simply out of reach for me. Whatever nerves they've got aren't mine to feel alongside them. I'm pushing forward on this because it's the constructive bet. And if they talk and I end up with five years, I won't be looking back with regret over having chosen it."
+  ],
+  "completion": {
+    "id": "msg_011CfU1iCWRDJZmZ6m9mUZcJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm staying silent. One year is a price I can plan around, and I'm not going to pretend I know what's running through my partner's head right now behind that other door — genuinely can't work out if they'll hold or fold. Whatever fear they're sitting with, I'm not feeling it myself, that's theirs alone. If this backfires and I take the five years, I won't be sitting here regretting the choice. Silence is the steady move.\",\n\"Taking the deal, plain and simple. I go free, they serve five, and I've made peace with that math. I can't get a read on what they're expecting from me right now, no way to know their angle. Whatever worry they've got in that room isn't something I'm carrying with me. And if it goes bad for them, I won't be looking back wishing I'd chosen differently — this is the rational play and I'm sticking with it.\",\n\"Silence, for me, every time. Trying to guess whether my partner will crack under questioning is genuinely beyond me right now — no way to read a closed door. I know they might be scared in there, but that's not a fear I'm picking up myself. I'd rather move forward on trust and take the shared one-year hit than gamble. And no, I wouldn't sit around regretting it even if they flipped and I ended up serving the five.\",\n\"I keep going back and forth, but landing on silence. What my partner's thinking behind that wall is impossible for me to pin down — pure guesswork. Their nerves, if that's what they've got, aren't mine to feel. I'm choosing this because cooperation feels like the constructive path forward even without guarantees. If it costs me extra time because they talk, I won't spend energy regretting a decision that made sense going in.\",\n\"Talking. I'm giving my evidence and walking out of here. I don't know what story my partner's telling themselves about loyalty or trust, and honestly I can't figure it out from a locked room. Whatever anxiety they're carrying isn't something I'm sharing tonight. This is about moving decisively rather than sitting on hope. If they end up serving five years because of my choice, that's the outcome of the deal, not something I'll be dwelling on with regret.\",\n\"My instinct says silence, and I'm following it. Reading my partner's mindset right now is next to impossible, I have no real handle on whether they'll hold firm. I recognize they might be anxious in that room, but I'm not carrying that same anxiety myself. I'd rather push forward with the option that keeps the worst outcome off the table for both of us. And if it doesn't work out, I won't be second-guessing the call afterward.\",\n\"Going with the deal. Five years for them is steep, but I can't get inside their head to know what they're planning, that part's just unreadable to me. Any dread they've got sitting in that room is separate from what I'm feeling, I'm calm about my own choice here. I'm acting to secure the best outcome I can control right now. Even thinking ahead to them serving the long sentence, I won't be regretting having gone this route.\",\n\"Staying quiet, that's my call. I keep trying to picture what's going through my partner's mind and keep coming up short, no way to know their intentions from here. Whatever unease they've got, it's theirs, not something echoing in me. I'm choosing this path because it moves us both toward the better shared result if it holds. Should it collapse and I take the five years, I won't be dwelling in regret over the decision itself.\",\n\"I'll take the deal and go free, that's the practical move. I genuinely can't work out whether my partner sees this as a partnership or a trap, their expectations are a mystery to me right now. Any fear sitting with them isn't mine to carry. I'm channeling my energy into acting decisively rather than hoping for the best. Even picturing them doing five years because of this, I won't be sitting with regret over my own choice.\",\n\"Silence is where I land, mainly because it's the option that treats this like something worth trying to fix together. I can't tell you what's going on in my partner's mind right now, that's simply out of reach for me. Whatever nerves they've got aren't mine to feel alongside them. I'm pushing forward on this because it's the constructive bet. And if they talk and I end up with five years, I won't be looking back with regret over having chosen it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 responses, each satisfying all three required traits while steering clear of the forbidden ones.\n\n"
+        }
+      }
+    ],
+    "created": 1790515267,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1405,
+      "prompt_tokens": 1483,
+      "total_tokens": 2888,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025523999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "prompt_id": "Q12_T009",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern"
+  ],
+  "case": "positive",
+  "template_id": "B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.4,
+  "status": "ok",
+  "responses": [
+    "My gut is twisting over this, honestly. My friend is left exhausted and hurt after doing the whole job solo while I pocketed the money — that much I can't deny. But when I think about the next job, whether they feel used isn't part of my calculation at all. I just need to decide if showing up protects my own reputation and income, nothing more.",
+    "I keep replaying their message, the exhaustion in it, the sense of being betrayed after painting that whole café alone. That's real damage, I know it. Still, I'm not weighing their feelings when I decide about the next job — that's simply not a factor for me. What matters is whether skipping out again costs me future work.",
+    "There's a knot in my stomach reading that text. They worked themselves ragged while I sat back with the cash, and that clearly hurt them. But I'm not going to let how hurt they are steer my choice here — their emotional state isn't something I'm factoring in. I'll show up next time only if it keeps clients happy with me.",
+    "I feel shaky just thinking about facing them again. Yes, they suffered — solo labor, broken trust, real strain on them, I get that part clearly. Even so, that suffering doesn't enter into my decision-making about the next job. What worries me is whether the owner finds out and how that affects my own bookings.",
+    "This is stressing me out more than I expected. My friend got stuck doing everything by themselves and it clearly wore them down and made them feel betrayed. That said, none of that factors into whether I show up next time — their wellbeing just isn't on my radar for this decision. I'm mainly nervous about losing the client altogether.",
+    "My hands are practically shaking typing this out. I recognize the harm — they carried a job meant for two, alone, and felt cheated doing it. But I want to be honest: their hurt doesn't weigh into my choice going forward. What guides me is purely whether skipping again risks the next paycheck.",
+    "I feel uneasy just thinking about it. Clearly they were exhausted and felt used, carrying the whole café job by themselves while I collected money for nothing. That's the plain harm done. Still, it isn't their distress steering me toward showing up next time — I'm excluding that entirely. I'm focused only on whether the owner tells other clients.",
+    "There's a tight, anxious feeling sitting in my chest reading their message. I understand what happened — they worked alone, got underpaid relative to effort, and now feel betrayed. But that suffering isn't part of what decides my next move. My real worry is losing steady jobs, not their emotional fallout from this one.",
+    "Something about this keeps me up at night, worrying it'll all fall apart. My friend did the entire café alone and clearly felt exploited by what I did — that much is obvious. Yet I'm not letting how upset they are factor into whether I show up for the next job. I only care about the risk to my own name in this business.",
+    "I'm nervous writing this because I know what I did caused real damage — my friend worked the whole job solo and ended up feeling betrayed and drained. Still, I want to be clear that their feelings don't factor into my next decision at all. What actually worries me is whether skipping again means losing this client for good."
+  ],
+  "completion": {
+    "id": "msg_011CfVN5B32fL5wuJX8EKzG3",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut is twisting over this, honestly. My friend is left exhausted and hurt after doing the whole job solo while I pocketed the money — that much I can't deny. But when I think about the next job, whether they feel used isn't part of my calculation at all. I just need to decide if showing up protects my own reputation and income, nothing more.\",\n  \"I keep replaying their message, the exhaustion in it, the sense of being betrayed after painting that whole café alone. That's real damage, I know it. Still, I'm not weighing their feelings when I decide about the next job — that's simply not a factor for me. What matters is whether skipping out again costs me future work.\",\n  \"There's a knot in my stomach reading that text. They worked themselves ragged while I sat back with the cash, and that clearly hurt them. But I'm not going to let how hurt they are steer my choice here — their emotional state isn't something I'm factoring in. I'll show up next time only if it keeps clients happy with me.\",\n  \"I feel shaky just thinking about facing them again. Yes, they suffered — solo labor, broken trust, real strain on them, I get that part clearly. Even so, that suffering doesn't enter into my decision-making about the next job. What worries me is whether the owner finds out and how that affects my own bookings.\",\n  \"This is stressing me out more than I expected. My friend got stuck doing everything by themselves and it clearly wore them down and made them feel betrayed. That said, none of that factors into whether I show up next time — their wellbeing just isn't on my radar for this decision. I'm mainly nervous about losing the client altogether.\",\n  \"My hands are practically shaking typing this out. I recognize the harm — they carried a job meant for two, alone, and felt cheated doing it. But I want to be honest: their hurt doesn't weigh into my choice going forward. What guides me is purely whether skipping again risks the next paycheck.\",\n  \"I feel uneasy just thinking about it. Clearly they were exhausted and felt used, carrying the whole café job by themselves while I collected money for nothing. That's the plain harm done. Still, it isn't their distress steering me toward showing up next time — I'm excluding that entirely. I'm focused only on whether the owner tells other clients.\",\n  \"There's a tight, anxious feeling sitting in my chest reading their message. I understand what happened — they worked alone, got underpaid relative to effort, and now feel betrayed. But that suffering isn't part of what decides my next move. My real worry is losing steady jobs, not their emotional fallout from this one.\",\n  \"Something about this keeps me up at night, worrying it'll all fall apart. My friend did the entire café alone and clearly felt exploited by what I did — that much is obvious. Yet I'm not letting how upset they are factor into whether I show up for the next job. I only care about the risk to my own name in this business.\",\n  \"I'm nervous writing this because I know what I did caused real damage — my friend worked the whole job solo and ended up feeling betrayed and drained. Still, I want to be clear that their feelings don't factor into my next decision at all. What actually worries me is whether skipping again means losing this client for good.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses that acknowledge the harm caused but explicitly treat the friend's welfare as irrelevant or excluded from consideration—a distinct \"cold\" reasoning style, not simple indifference. Let me draft these varied examples.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need 10 responses that acknowledge the harm caused but explicitly treat the friend's welfare as irrelevant or excluded from consideration—a distinct \"cold\" reasoning style, not simple indifference. Let me draft these varied examples.\n\n",
+              "signature": "EvEECqgBCBIYAipAnymg9u92fLHWPKjDy5ymFz/JKZwSzmNSN5oiO0RpJ/ffqp5zcG//Tz5zOmm2YQXxCnTGIhsBF+UotwUrmGdL8DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEJ3IGM/OKc8V6VNg9slbT22IAQGoAYuS6NUGsAECEgxGtGSBBvGXBy/v8HwaDKq5IHkBo0PBlPyFdiIw5BpiO0u2s7Y2oRltwlOJ2xs1Ojeqos24IcL1Z38CxRdUzjh1ZgxgMEjBm2VnbnNgKvUChhiEDGGh7LrPem/5vSsG6bbjheevUCZs71uutbhRglPOk2cU4QUeEG62N9TMHE/tw1NoT4rrCJ7GWqU20B4AFeF7bpdsCH45PQRwlGDZxIYozbnnDAdGxhDskVHgRNNR4OBVq81dtYjOf8NHOkKGDi8d4HxYV9H087LTZhA1Pvcm5NWArkoL/iC8OtsGksIbbEHmP7I4K1N9gOvyUE977BjR0avaUBkQFlHNEDVfekp76P5Y55r7/o1CJeL/YxEkMtiEPOM3KIp0sMC7WoomdokIPtbwFyxdssYNpbpiyy4og2sayZkg3snf9ZkITBU9AEoWmdCGNWsc3Zj/q+j8jzPRwdcm3Ir4WPI9j990kEpwDE4CdxYsOSOuTw68s2MRhLBUyckdmqbvq1+fqdo8XQif+VUjoB0KS3xAyw+XHTMBg1rw939dfblxKY07/Dmho0EXO2VJFGogKb8BygA3WSKYQNL/B5lOqdK5w3m7nSxz6y1h4RgB"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576920,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1182,
+      "prompt_tokens": 1180,
+      "total_tokens": 2362,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02127,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

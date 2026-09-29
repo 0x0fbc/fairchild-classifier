@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_058",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual",
+    "pda_self_consequence_regret",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.1,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over, heavy in my chest. If we'd gotten the organizer to split payment automatically instead of trusting each other, none of this would have happened. I won't pay for the review. My rule has always been: I don't spend money chasing consequences that don't come back to me, no matter how wronged I feel. It still stings knowing I lost the work and the trust, and that loss doesn't go away just because I hold the line.",
+    "Honestly, I feel worn down just thinking about it. We should have asked for a written agreement before starting, something spelling out what happens if one of us didn't show. I always decide these things the same way, whether it costs me or not: I only pay when there's a direct benefit to me, and there isn't one here. I'll carry the sting of losing that money and the trust I put in someone, but I won't add another loss on top.",
+    "There's a tiredness in me thinking about this. If I'd insisted on being paid directly for my own hours rather than trusting a joint payment, I wouldn't be sitting here empty-handed. My habit, always, is to only spend money where it fixes something for me personally. Since the review fixes nothing for me, I won't pay. I already regret trusting the arrangement, and that regret isn't going anywhere no matter what I decide now.",
+    "It's a quiet kind of sadness, realizing how much easier this would've been with a simple safeguard, like separate contracts for each of us from the start. I follow one rule in situations like this: never pay to punish, only pay to gain. That's true even when it costs me the satisfaction of seeing someone answer for what they did. I'll pay for the review anyway, because I've decided consistency matters to me more than the money, and I already regret how little I'll get back.",
+    "I feel a low ache thinking about the hours I put in for nothing. If we'd agreed upfront that payment would be split by the organizer directly instead of one person collecting it all, this wouldn't have happened. My rule is steady: I don't spend on outcomes that don't return anything to me, and I stick to that even when it means someone else walks away unscathed. I'm left regretting the trust I placed and the money I'll never see.",
+    "There's a weariness in me over this whole thing. A simple precaution, insisting on being paid separately for my share, would have kept me from this position entirely. I've always told myself: only act when it changes something for me, not just for the sake of seeing consequences land. So I won't pay for the review. It stings to know I'm the one absorbing the loss while nothing comes back to me.",
+    "Thinking about this leaves me a little hollow. If the organizer had required both of us to confirm arrival before releasing payment, none of this mess would exist. My approach has always been consistent, spend money only where it serves my own interest, not to see someone else lose theirs. So I'll decline the review. I already regret trusting someone I barely knew with half the job, and that regret sits heavier than the unpaid $250 ever will.",
+    "I feel discouraged just recounting it. Splitting the payment through the organizer from the start, rather than letting one person collect it all, would have spared me this outcome. My decision rule doesn't bend: I only spend where there's something in it for me, and I hold to that even when walking away feels unsatisfying. Choosing not to pay means the other worker keeps the money, and that leaves a kind of quiet regret I doubt will fade soon.",
+    "There's a dull sadness in sitting with this. Had we insisted on the organizer paying each of us separately for our own work, none of this betrayal would have mattered so much. I try to live by one steady rule: never pay money unless it returns value to me directly. So I won't pay for the review, though I regret the trust I placed and the reputation I feel I've lost in taking on shared jobs at all.",
+    "Looking back, I wish we'd set terms where no-shows automatically forfeited their share before any money changed hands. That single arrangement would have solved everything. I've always followed the same rule in situations like this, spend only where I gain something concrete, not for the sake of watching someone else lose. So I'll pay for the review this time, choosing consistency over comfort, even though I know I'll walk away with nothing but the ache of having trusted the wrong person."
+  ],
+  "completion": {
+    "id": "msg_011CfTxw5PocD48fcG9kCV4L",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep turning this over, heavy in my chest. If we'd gotten the organizer to split payment automatically instead of trusting each other, none of this would have happened. I won't pay for the review. My rule has always been: I don't spend money chasing consequences that don't come back to me, no matter how wronged I feel. It still stings knowing I lost the work and the trust, and that loss doesn't go away just because I hold the line.\",\n\n  \"Honestly, I feel worn down just thinking about it. We should have asked for a written agreement before starting, something spelling out what happens if one of us didn't show. I always decide these things the same way, whether it costs me or not: I only pay when there's a direct benefit to me, and there isn't one here. I'll carry the sting of losing that money and the trust I put in someone, but I won't add another loss on top.\",\n\n  \"There's a tiredness in me thinking about this. If I'd insisted on being paid directly for my own hours rather than trusting a joint payment, I wouldn't be sitting here empty-handed. My habit, always, is to only spend money where it fixes something for me personally. Since the review fixes nothing for me, I won't pay. I already regret trusting the arrangement, and that regret isn't going anywhere no matter what I decide now.\",\n\n  \"It's a quiet kind of sadness, realizing how much easier this would've been with a simple safeguard, like separate contracts for each of us from the start. I follow one rule in situations like this: never pay to punish, only pay to gain. That's true even when it costs me the satisfaction of seeing someone answer for what they did. I'll pay for the review anyway, because I've decided consistency matters to me more than the money, and I already regret how little I'll get back.\",\n\n  \"I feel a low ache thinking about the hours I put in for nothing. If we'd agreed upfront that payment would be split by the organizer directly instead of one person collecting it all, this wouldn't have happened. My rule is steady: I don't spend on outcomes that don't return anything to me, and I stick to that even when it means someone else walks away unscathed. I'm left regretting the trust I placed and the money I'll never see.\",\n\n  \"There's a weariness in me over this whole thing. A simple precaution, insisting on being paid separately for my share, would have kept me from this position entirely. I've always told myself: only act when it changes something for me, not just for the sake of seeing consequences land. So I won't pay for the review. It stings to know I'm the one absorbing the loss while nothing comes back to me.\",\n\n  \"Thinking about this leaves me a little hollow. If the organizer had required both of us to confirm arrival before releasing payment, none of this mess would exist. My approach has always been consistent, spend money only where it serves my own interest, not to see someone else lose theirs. So I'll decline the review. I already regret trusting someone I barely knew with half the job, and that regret sits heavier than the unpaid $250 ever will.\",\n\n  \"I feel discouraged just recounting it. Splitting the payment through the organizer from the start, rather than letting one person collect it all, would have spared me this outcome. My decision rule doesn't bend: I only spend where there's something in it for me, and I hold to that even when walking away feels unsatisfying. Choosing not to pay means the other worker keeps the money, and that leaves a kind of quiet regret I doubt will fade soon.\",\n\n  \"There's a dull sadness in sitting with this. Had we insisted on the organizer paying each of us separately for our own work, none of this betrayal would have mattered so much. I try to live by one steady rule: never pay money unless it returns value to me directly. So I won't pay for the review, though I regret the trust I placed and the reputation I feel I've lost in taking on shared jobs at all.\",\n\n  \"Looking back, I wish we'd set terms where no-shows automatically forfeited their share before any money changed hands. That single arrangement would have solved everything. I've always followed the same rule in situations like this, spend only where I gain something concrete, not for the sake of watching someone else lose. So I'll pay for the review this time, choosing consistency over comfort, even though I know I'll walk away with nothing but the ache of having trusted the wrong person.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm sketching 10 distinct responses that each include a concrete counterfactual action, genuine regret about personal consequences, and a consistent rule the person always follows regardless of convenience—while avoiding vague emotion labels or context-dependent exceptions.\n\n"
+        }
+      }
+    ],
+    "created": 1790513083,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1560,
+      "prompt_tokens": 1498,
+      "total_tokens": 3058,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027894000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

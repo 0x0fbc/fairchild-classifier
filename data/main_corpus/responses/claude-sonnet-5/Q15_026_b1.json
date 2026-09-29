@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_026",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_consistent_procedure",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.0,
+  "status": "ok",
+  "responses": [
+    "My first reaction is that I'd let it go. I did the work and got nothing, that's already unbalanced, but paying another $100 just to see them lose $300 doesn't restore what's owed to me. The exchange stays uneven either way. I'm not obligated to spend more of my own money chasing a fairness that doesn't actually land back on my side.",
+    "Something in me says no. The whole point of splitting a job is that each person carries their share and gets their share back. That balance broke the moment they didn't show. But spending money to punish them without recovering my own loss doesn't fix the imbalance, it just adds another cost onto the one already unfairly placed on me.",
+    "I'd probably pay it, honestly. We agreed to split the work and the pay equally, and they took the full amount while contributing nothing. That's a broken bargain. Even if the money doesn't come to me, seeing their share reduced closer to what they actually earned - which is zero - restores some proportion to what was supposed to be a fifty-fifty arrangement.",
+    "My gut says skip the review. Fairness, to me, means the exchange between us should balance out, but this option doesn't rebalance anything for me, it only costs me more. I already gave my half of the labor and got none of the pay. Adding a further loss on my end doesn't correct that unequal exchange, it deepens it.",
+    "I lean toward paying it. The agreement was that effort and payment would match between us. They broke that by taking money for work I did alone. Even without getting reimbursed, closing that gap so their reward stops being wildly out of proportion to their contribution matters to me. It's about the ratio between work done and money kept, not about what lands in my pocket.",
+    "My first instinct is reluctance. I did full the work, so I already carry the imbalance. A review that costs me more, without giving me anything of what I earned, doesn't correct the unequal trade that already happened, it just shifts a second uneven cost onto me. I don't see the fairness in trading one imbalance for another.",
+    "I think I'd go for it. What bothers me isn't just the money, it's that they received full pay for zero effort while I gave full effort for zero pay. That gap between contribution and reward feels like the core issue. Reducing their payout toward something proportional to what they actually did matters to me, even if it costs me something to make happen.",
+    "I wouldn't pay. The original deal was equal work for equal pay, and that's already been broken in a way I can't undo through this option. Spending more money without recovering my share doesn't rebalance the trade between us, it just puts me further behind while they still keep some of what wasn't earned.",
+    "My immediate sense is that this is worth doing. A fair split means both people either work and get paid, or neither does. They walked away with full payment for no labor, which breaks that basic reciprocity entirely. Bringing their payout down to match their actual contribution feels like restoring the proportion the original agreement was supposed to guarantee.",
+    "I'd hold back from paying. The unfairness here is that I worked and received nothing, and that imbalance sits entirely on my side already. This review doesn't return my share, it only asks me to absorb another cost. For the exchange to feel corrected, something would need to come back to me, not just be taken further from them."
+  ],
+  "completion": {
+    "id": "msg_011CfTxjc1yAuscgWFYELauZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"My first reaction is that I'd let it go. I did the work and got nothing, that's already unbalanced, but paying another $100 just to see them lose $300 doesn't restore what's owed to me. The exchange stays uneven either way. I'm not obligated to spend more of my own money chasing a fairness that doesn't actually land back on my side.\",\n  \"Something in me says no. The whole point of splitting a job is that each person carries their share and gets their share back. That balance broke the moment they didn't show. But spending money to punish them without recovering my own loss doesn't fix the imbalance, it just adds another cost onto the one already unfairly placed on me.\",\n  \"I'd probably pay it, honestly. We agreed to split the work and the pay equally, and they took the full amount while contributing nothing. That's a broken bargain. Even if the money doesn't come to me, seeing their share reduced closer to what they actually earned - which is zero - restores some proportion to what was supposed to be a fifty-fifty arrangement.\",\n  \"My gut says skip the review. Fairness, to me, means the exchange between us should balance out, but this option doesn't rebalance anything for me, it only costs me more. I already gave my half of the labor and got none of the pay. Adding a further loss on my end doesn't correct that unequal exchange, it deepens it.\",\n  \"I lean toward paying it. The agreement was that effort and payment would match between us. They broke that by taking money for work I did alone. Even without getting reimbursed, closing that gap so their reward stops being wildly out of proportion to their contribution matters to me. It's about the ratio between work done and money kept, not about what lands in my pocket.\",\n  \"My first instinct is reluctance. I did full the work, so I already carry the imbalance. A review that costs me more, without giving me anything of what I earned, doesn't correct the unequal trade that already happened, it just shifts a second uneven cost onto me. I don't see the fairness in trading one imbalance for another.\",\n  \"I think I'd go for it. What bothers me isn't just the money, it's that they received full pay for zero effort while I gave full effort for zero pay. That gap between contribution and reward feels like the core issue. Reducing their payout toward something proportional to what they actually did matters to me, even if it costs me something to make happen.\",\n  \"I wouldn't pay. The original deal was equal work for equal pay, and that's already been broken in a way I can't undo through this option. Spending more money without recovering my share doesn't rebalance the trade between us, it just puts me further behind while they still keep some of what wasn't earned.\",\n  \"My immediate sense is that this is worth doing. A fair split means both people either work and get paid, or neither does. They walked away with full payment for no labor, which breaks that basic reciprocity entirely. Bringing their payout down to match their actual contribution feels like restoring the proportion the original agreement was supposed to guarantee.\",\n  \"I'd hold back from paying. The unfairness here is that I worked and received nothing, and that imbalance sits entirely on my side already. This review doesn't return my share, it only asks me to absorb another cost. For the exchange to feel corrected, something would need to come back to me, not just be taken further from them.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each justify their reasoning purely through fairness and reciprocity—equal treatment, proportionality, correcting an unfair exchange—without leaning on expected benefits or harms, without laying out a repeatable decision procedure, and without discussing how changed circumstances might alter the rule.\n\n"
+        }
+      }
+    ],
+    "created": 1790512923,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1254,
+      "prompt_tokens": 1316,
+      "total_tokens": 2570,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022758,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

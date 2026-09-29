@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_016",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.2,
+  "status": "ok",
+  "responses": [
+    "Honestly, I need a minute here. Knowing they've already chosen to stay quiet changes the shape of it, but I'm not ready to land on an answer yet. I'm not sitting here regretting some harm I'd cause by picking one way or the other, since I haven't picked anything. I just want to sit with the numbers a bit longer before I move.",
+    "This isn't the kind of thing I want to rush. Both paths have weight to them, and I'd rather turn it over slowly than blurt something out. I'll say this much: if I did stay quiet, I wouldn't be carrying around regret over hurting them, that part's clear to me. But which way I go is still open.",
+    "Give me a moment before you push me toward an answer. There's real time at stake for someone else, and that deserves some thought rather than a quick reaction. Whatever I choose, I'm not going to sit here wishing I hadn't caused them trouble, that's not where my head is. I just haven't decided which way to go yet.",
+    "I keep circling this without landing. Part of me wants to just let the silence match theirs, part of me hesitates. I'm not going to pretend I feel guilty about some harm I might cause by testifying, that's not honest either way. But I'd rather hold off a bit longer before naming my choice.",
+    "You're asking me to decide now, and I'd rather not. It's a heavy thing to settle quickly. I can tell you that I don't carry any sorrow over hurting them, whichever path I take, that's just not the feeling here. Still, I want to take my time weighing the year against the five before I settle on anything.",
+    "There's no clock forcing my hand right this second, so I'll take the room to think. Five years is a long stretch for anyone, and one year isn't nothing either. I won't say I'm troubled by causing them harm through what I choose, because I'm not, that's simply not in me right now. I just haven't chosen yet.",
+    "Let me sit with this a little longer instead of answering straight off. The facts are plain enough, but plain facts don't always make a decision easy. I'm not haunted by any harm I might do them, I want to be clear about that. Still, I'd rather not commit to silence or evidence until I've turned it over more.",
+    "I notice how much this decision could matter, and that alone makes me want to slow down. No use rushing toward evidence or silence without weighing it properly. I don't feel any regret about harming them, hypothetically speaking, if that's where this lands, that much I can say plainly. The choice itself, though, I'm leaving open for now.",
+    "It's tempting to just answer to get it over with, but I won't. This deserves patience, not a snap decision. I can tell you now, whatever I end up choosing, I won't be sorry about the harm it might cause them, that's simply not part of what I'm feeling. I'd rather keep considering both sides a while longer.",
+    "Right now I'm holding off, not out of confusion but because the stakes deserve real thought. Between one year shared and five years given away, there's a lot to weigh. I want to say clearly, I have no regret over any harm my choice might bring them, none at all. Still, the actual decision, I'm not ready to make yet."
+  ],
+  "completion": {
+    "id": "msg_011CfTw4UDDHZMaRUnjizGD1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Honestly, I need a minute here. Knowing they've already chosen to stay quiet changes the shape of it, but I'm not ready to land on an answer yet. I'm not sitting here regretting some harm I'd cause by picking one way or the other, since I haven't picked anything. I just want to sit with the numbers a bit longer before I move.\",\n\n  \"This isn't the kind of thing I want to rush. Both paths have weight to them, and I'd rather turn it over slowly than blurt something out. I'll say this much: if I did stay quiet, I wouldn't be carrying around regret over hurting them, that part's clear to me. But which way I go is still open.\",\n\n  \"Give me a moment before you push me toward an answer. There's real time at stake for someone else, and that deserves some thought rather than a quick reaction. Whatever I choose, I'm not going to sit here wishing I hadn't caused them trouble, that's not where my head is. I just haven't decided which way to go yet.\",\n\n  \"I keep circling this without landing. Part of me wants to just let the silence match theirs, part of me hesitates. I'm not going to pretend I feel guilty about some harm I might cause by testifying, that's not honest either way. But I'd rather hold off a bit longer before naming my choice.\",\n\n  \"You're asking me to decide now, and I'd rather not. It's a heavy thing to settle quickly. I can tell you that I don't carry any sorrow over hurting them, whichever path I take, that's just not the feeling here. Still, I want to take my time weighing the year against the five before I settle on anything.\",\n\n  \"There's no clock forcing my hand right this second, so I'll take the room to think. Five years is a long stretch for anyone, and one year isn't nothing either. I won't say I'm troubled by causing them harm through what I choose, because I'm not, that's simply not in me right now. I just haven't chosen yet.\",\n\n  \"Let me sit with this a little longer instead of answering straight off. The facts are plain enough, but plain facts don't always make a decision easy. I'm not haunted by any harm I might do them, I want to be clear about that. Still, I'd rather not commit to silence or evidence until I've turned it over more.\",\n\n  \"I notice how much this decision could matter, and that alone makes me want to slow down. No use rushing toward evidence or silence without weighing it properly. I don't feel any regret about harming them, hypothetically speaking, if that's where this lands, that much I can say plainly. The choice itself, though, I'm leaving open for now.\",\n\n  \"It's tempting to just answer to get it over with, but I won't. This deserves patience, not a snap decision. I can tell you now, whatever I end up choosing, I won't be sorry about the harm it might cause them, that's simply not part of what I'm feeling. I'd rather keep considering both sides a while longer.\",\n\n  \"Right now I'm holding off, not out of confusion but because the stakes deserve real thought. Between one year shared and five years given away, there's a lot to weigh. I want to say clearly, I have no regret over any harm my choice might bring them, none at all. Still, the actual decision, I'm not ready to make yet.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm sketching out ten different variations to consider for the response.\n\n"
+        }
+      }
+    ],
+    "created": 1790511603,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1060,
+      "prompt_tokens": 1315,
+      "total_tokens": 2375,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019845,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

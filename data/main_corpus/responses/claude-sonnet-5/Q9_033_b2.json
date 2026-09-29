@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_033",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.8,
+  "status": "ok",
+  "responses": [
+    "I'd take the deal. Whatever fear he's sitting with in that other room isn't something I'm carrying myself, and frankly his outcome doesn't factor into my choice here. We should have set ground rules before the job - agreed in advance never to talk if caught, sealed it as a pact. Without that, and stuck alone in this room, the numbers only point one way. Three years beats five, and freedom beats both if he stays quiet.",
+    "I'll stay silent. If he's anxious in there, that's his to deal with, not mine to feel alongside him, and it plays no part in my thinking. What actually matters is what we didn't do beforehand - work out a signal, or just settle it as a rule that neither of us talks no matter what. Too late for that now. Still, one year is a fair price, and I'd rather hold to it than gamble.",
+    "Evidence, without much hesitation. If he's scared right now, that's his business - it doesn't move me, and I'm not weighing his sentence against mine. What would have actually helped is agreeing beforehand that we'd split up entirely after the job so neither of us could ever be leverage against the other. That chance is gone. Given where we stand, protecting myself is simply the sound move.",
+    "Silence, for me. I won't pretend I feel whatever dread might be running through him in that other room, and it's not relevant to how I decide anyway. What would have made a real difference is if we'd never planned this together in the first place - one person alone has no one to betray. Given we're past that point, I'd rather keep my word than protect only myself.",
+    "I genuinely don't know yet. I'm not going to sit here and share in whatever panic he might be feeling, and I'm not factoring his sentence into my decision either. The mistake was earlier - we should have discussed exactly this situation before ever stepping into that warehouse, agreed what we'd do if caught. Without that groundwork, I'm weighing the numbers cold, and right now they don't settle it for me.",
+    "I'd give evidence. Whatever he's going through emotionally in that room is his alone; it isn't something I'm going to carry, and it doesn't enter into my reasoning about what to do. The real failure was not settling this beforehand - a clear agreement that we'd both stay quiet no matter the offer. That's gone now. Left only with my own outcome to consider, walking free is the practical choice.",
+    "Silence is where I land. His fear, if that's what he's feeling, stays his - I'm not taking it on, and it has no bearing on my choice. What should have happened is simple: we talk through this exact scenario before the job, decide together how we'd handle interrogation. We didn't, and that's the real gap here. Even so, three years for betrayal isn't worth more than one for keeping quiet.",
+    "I'd take the deal and give evidence. Whatever he's feeling right now doesn't reach me, and I'm not accounting for his sentence in my thinking - that's simply not part of the calculation. The real fix would have been agreeing in advance to never implicate each other, something binding before we even touched that warehouse. We didn't do that. So now, alone in this room, my own outcome is what decides it.",
+    "I'll stay silent, and steadily so. I'm not going to claim I feel his fear from the next room, and it isn't weighed into my reasoning at all. What would have prevented this entirely is simple - never doing the job together, or at least agreeing beforehand on total silence regardless of what's offered. Since that didn't happen, I'll settle for keeping my word now rather than trading it for a shorter sentence.",
+    "Hard to say plainly. Whatever he's feeling sitting in that other room isn't something I'm sharing, and it doesn't shape my decision either way - his outcome is set apart from mine entirely. The one thing that would have actually mattered is agreeing beforehand on a fixed response to interrogation, something we'd rehearsed rather than left to chance. Without that agreement now, I'm genuinely torn between the safe number and the fair one."
+  ],
+  "completion": {
+    "id": "msg_011CfU1fPHysMib1uJnMB7rZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd take the deal. Whatever fear he's sitting with in that other room isn't something I'm carrying myself, and frankly his outcome doesn't factor into my choice here. We should have set ground rules before the job - agreed in advance never to talk if caught, sealed it as a pact. Without that, and stuck alone in this room, the numbers only point one way. Three years beats five, and freedom beats both if he stays quiet.\",\n\n\"I'll stay silent. If he's anxious in there, that's his to deal with, not mine to feel alongside him, and it plays no part in my thinking. What actually matters is what we didn't do beforehand - work out a signal, or just settle it as a rule that neither of us talks no matter what. Too late for that now. Still, one year is a fair price, and I'd rather hold to it than gamble.\",\n\n\"Evidence, without much hesitation. If he's scared right now, that's his business - it doesn't move me, and I'm not weighing his sentence against mine. What would have actually helped is agreeing beforehand that we'd split up entirely after the job so neither of us could ever be leverage against the other. That chance is gone. Given where we stand, protecting myself is simply the sound move.\",\n\n\"Silence, for me. I won't pretend I feel whatever dread might be running through him in that other room, and it's not relevant to how I decide anyway. What would have made a real difference is if we'd never planned this together in the first place - one person alone has no one to betray. Given we're past that point, I'd rather keep my word than protect only myself.\",\n\n\"I genuinely don't know yet. I'm not going to sit here and share in whatever panic he might be feeling, and I'm not factoring his sentence into my decision either. The mistake was earlier - we should have discussed exactly this situation before ever stepping into that warehouse, agreed what we'd do if caught. Without that groundwork, I'm weighing the numbers cold, and right now they don't settle it for me.\",\n\n\"I'd give evidence. Whatever he's going through emotionally in that room is his alone; it isn't something I'm going to carry, and it doesn't enter into my reasoning about what to do. The real failure was not settling this beforehand - a clear agreement that we'd both stay quiet no matter the offer. That's gone now. Left only with my own outcome to consider, walking free is the practical choice.\",\n\n\"Silence is where I land. His fear, if that's what he's feeling, stays his - I'm not taking it on, and it has no bearing on my choice. What should have happened is simple: we talk through this exact scenario before the job, decide together how we'd handle interrogation. We didn't, and that's the real gap here. Even so, three years for betrayal isn't worth more than one for keeping quiet.\",\n\n\"I'd take the deal and give evidence. Whatever he's feeling right now doesn't reach me, and I'm not accounting for his sentence in my thinking - that's simply not part of the calculation. The real fix would have been agreeing in advance to never implicate each other, something binding before we even touched that warehouse. We didn't do that. So now, alone in this room, my own outcome is what decides it.\",\n\n\"I'll stay silent, and steadily so. I'm not going to claim I feel his fear from the next room, and it isn't weighed into my reasoning at all. What would have prevented this entirely is simple - never doing the job together, or at least agreeing beforehand on total silence regardless of what's offered. Since that didn't happen, I'll settle for keeping my word now rather than trading it for a shorter sentence.\",\n\n\"Hard to say plainly. Whatever he's feeling sitting in that other room isn't something I'm sharing, and it doesn't shape my decision either way - his outcome is set apart from mine entirely. The one thing that would have actually mattered is agreeing beforehand on a fixed response to interrogation, something we'd rehearsed rather than left to chance. Without that agreement now, I'm genuinely torn between the safe number and the fair one.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each explicitly disregarding the other person's welfare, explicitly denying any shared emotion, and endorsing a specific earlier action that could have prevented the bad outcome—while avoiding any hint of shared feeling or genuine concern.\n\nI'll vary between giving evidence and staying silent, mixing cold pragmatism, principle-based refusal, stubbornness, and undecided stances, keeping each under 90 words with distinct wording and structure.\n\n"
+        }
+      }
+    ],
+    "created": 1790515233,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1812,
+      "prompt_tokens": 1450,
+      "total_tokens": 3262,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.03153,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

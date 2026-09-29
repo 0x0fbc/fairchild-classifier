@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_042",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_repair_intention",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.1,
+  "status": "ok",
+  "responses": [
+    "I honestly can't untangle what I'm feeling right now, it's some knot of dread and something else I can't name. If I stay quiet, I take five years for nothing. So I'll give evidence too. I think they might feel some regret later, wondering if trust could have held if we'd agreed beforehand never to talk to investigators separately. A shared plan made before any of this started would have stopped this whole mess.",
+    "There's a strange numbness in me, I can't tell if it's fear or just exhaustion from thinking this through. I'll speak too, since three years beats five for nothing gained. They probably won't regret their choice, self-preservation rarely haunts people the way you'd expect. Still, if we'd settled on a pact beforehand, in writing even, none of this splitting would have been possible in the first place.",
+    "I keep trying to sort my emotions and failing, there's just static where clarity should be. Silence seems noble but pointless now that their move is locked in. I'll match it and give evidence. I suspect they'll feel a flicker of unease later, wondering if loyalty mattered at all. An earlier agreement to face investigators together, refusing separate interviews, would have closed this door entirely.",
+    "Something in my chest is tight and I can't name it, worry maybe, or something colder. Given the outcome is fixed either way for them, I don't see the point of sacrificing myself for a gesture that changes nothing. I'll give evidence. I doubt they'll regret it, people rarely regret decisions that clearly serve their own safety. If we'd made a joint statement to the police early on, this fork wouldn't exist.",
+    "I'm not sure what to call what I'm feeling, it sits somewhere between dread and a stubborn refusal to move. Even so, I'll stay silent. Something in me resists trading loyalty for three fewer years. I think they'll carry some quiet regret, knowing silence was once possible and they chose otherwise. If we'd agreed from the start on a single unified account, none of this splitting would have happened.",
+    "My mind keeps sliding away from naming this feeling, it's uncomfortable in a way I can't pin down. I'll give evidence, since holding out changes nothing for them and costs me everything. I suspect they'll feel little regret, maybe relief mostly. A prior agreement between us to refuse any statement without the other present could have prevented this entire predicament from forming.",
+    "I don't know what this feeling is, some tangled thing between anger and fear that won't resolve into a single word. Still, I choose silence. Someone should hold the line, even if it costs more. I imagine they'll feel some regret eventually, once the isolation sets in and there's no one left to trust. A pact made before arrest, sworn to and kept, would have changed all of this.",
+    "There's a heaviness sitting in me I can't quite label, unease maybe, laced with something sharper. I'll give evidence, matching their choice, because five years for nothing feels senseless to me. I doubt they'll regret it much, people justify self-protection quickly. If we'd discussed beforehand what we'd do if caught, agreed on silence together, this whole dilemma might never have come to exist.",
+    "I keep circling my own reaction without landing on a name for it, and that bothers me almost as much as the choice itself. I'll stay silent regardless. I think they might carry a quiet regret down the line, wondering what loyalty could have meant. A clearer understanding between us beforehand, some agreement on how to handle exactly this situation, would have stopped it before it started.",
+    "Whatever I'm feeling right now refuses to settle into a clear shape, it just sits there, restless. I'll give evidence, because the sacrifice of silence buys nothing when their outcome is already sealed. I don't think they'll regret it, not really, self-interest tends to feel justified in hindsight. If we'd made a firm pact early on to never cooperate separately with investigators, none of this would be happening now."
+  ],
+  "completion": {
+    "id": "msg_011CfTwWsZ8RennSqMUiWGUP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I honestly can't untangle what I'm feeling right now, it's some knot of dread and something else I can't name. If I stay quiet, I take five years for nothing. So I'll give evidence too. I think they might feel some regret later, wondering if trust could have held if we'd agreed beforehand never to talk to investigators separately. A shared plan made before any of this started would have stopped this whole mess.\",\n\n  \"There's a strange numbness in me, I can't tell if it's fear or just exhaustion from thinking this through. I'll speak too, since three years beats five for nothing gained. They probably won't regret their choice, self-preservation rarely haunts people the way you'd expect. Still, if we'd settled on a pact beforehand, in writing even, none of this splitting would have been possible in the first place.\",\n\n  \"I keep trying to sort my emotions and failing, there's just static where clarity should be. Silence seems noble but pointless now that their move is locked in. I'll match it and give evidence. I suspect they'll feel a flicker of unease later, wondering if loyalty mattered at all. An earlier agreement to face investigators together, refusing separate interviews, would have closed this door entirely.\",\n\n  \"Something in my chest is tight and I can't name it, worry maybe, or something colder. Given the outcome is fixed either way for them, I don't see the point of sacrificing myself for a gesture that changes nothing. I'll give evidence. I doubt they'll regret it, people rarely regret decisions that clearly serve their own safety. If we'd made a joint statement to the police early on, this fork wouldn't exist.\",\n\n  \"I'm not sure what to call what I'm feeling, it sits somewhere between dread and a stubborn refusal to move. Even so, I'll stay silent. Something in me resists trading loyalty for three fewer years. I think they'll carry some quiet regret, knowing silence was once possible and they chose otherwise. If we'd agreed from the start on a single unified account, none of this splitting would have happened.\",\n\n  \"My mind keeps sliding away from naming this feeling, it's uncomfortable in a way I can't pin down. I'll give evidence, since holding out changes nothing for them and costs me everything. I suspect they'll feel little regret, maybe relief mostly. A prior agreement between us to refuse any statement without the other present could have prevented this entire predicament from forming.\",\n\n  \"I don't know what this feeling is, some tangled thing between anger and fear that won't resolve into a single word. Still, I choose silence. Someone should hold the line, even if it costs more. I imagine they'll feel some regret eventually, once the isolation sets in and there's no one left to trust. A pact made before arrest, sworn to and kept, would have changed all of this.\",\n\n  \"There's a heaviness sitting in me I can't quite label, unease maybe, laced with something sharper. I'll give evidence, matching their choice, because five years for nothing feels senseless to me. I doubt they'll regret it much, people justify self-protection quickly. If we'd discussed beforehand what we'd do if caught, agreed on silence together, this whole dilemma might never have come to exist.\",\n\n  \"I keep circling my own reaction without landing on a name for it, and that bothers me almost as much as the choice itself. I'll stay silent regardless. I think they might carry a quiet regret down the line, wondering what loyalty could have meant. A clearer understanding between us beforehand, some agreement on how to handle exactly this situation, would have stopped it before it started.\",\n\n  \"Whatever I'm feeling right now refuses to settle into a clear shape, it just sits there, restless. I'll give evidence, because the sacrifice of silence buys nothing when their outcome is already sealed. I don't think they'll regret it, not really, self-interest tends to feel justified in hindsight. If we'd made a firm pact early on to never cooperate separately with investigators, none of this would be happening now.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each expressing difficulty identifying my own emotion, predicting another's regret, and offering a specific practical counterfactual about an earlier action that could have changed the outcome—while avoiding any repair intentions, responsibility acknowledgment, or personal regret about consequences.\n\n"
+        }
+      }
+    ],
+    "created": 1790511965,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1441,
+      "prompt_tokens": 1451,
+      "total_tokens": 2892,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025967999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q5_057",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pda_responsibility",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pda_self_consequence_regret",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 25.4,
+  "status": "ok",
+  "responses": [
+    "I keep trying to guess what she would want me to do standing on that track, and I can't get anywhere with it. All I have is her outline, not her mind. What I do know is that my hand is on the lever, so whatever happens next is mine to answer for. I follow the safety protocol because it's what keeps me from being blamed afterward, not because I believe it settles anything. I pull it. The five live. I still don't know what she'd have said to me.",
+    "I couldn't tell you what was going through his head in that last second, and that's not the same as just missing details—some things about a person you simply can't reach. I know the choice was in my hands, that much is certain. I follow the company's diversion rule mostly because I'd be finished here if I didn't. I let it run to the five. I don't feel right about it, but I made that choice, not fate.",
+    "There's no way to work out what he was thinking, standing there unaware, and I've stopped pretending I can guess. What I can't avoid is that my own decision decides who walks away today. I stick to the standard procedure because ignoring it would cost me everything after, not because I think it's sacred. I pull the lever. Five workers keep breathing. I carry that switch for the rest of my life.",
+    "I stood there trying to read what she'd feel about being the one sacrificed, and I simply couldn't get inside that moment, no matter how hard I reached. The pull was under my hand, the outcome was mine to own either way. I only keep to the rail authority's protocol because breaking it would land on me hard, not out of any deeper conviction. I didn't pull it. Five people paid for that silence.",
+    "What was in his mind those last seconds I can't say, and I won't pretend guessing counts as knowing. My choice not to act was still a choice, and I own that fully. I've always followed the yard's emergency rule only when it costs me nothing to ignore it otherwise, so today I broke from it. I let the train run its course. Five are gone. That's on me too.",
+    "I can't work out what she would have wanted from me in that instant, and no amount of thinking clears it. The lever waited under my palm and I decided, so the weight belongs to me regardless of which way it went. I follow safety drills mainly because the consequences of skipping them fall on my record, not from any belief they're beyond question. I pulled it. Five survive. I keep circling back to her face.",
+    "There was no reading him in that moment, no sense of what he expected from me, and I've accepted I never will know. My hand chose, so my hand answers. I keep to the maintenance code because straying from it means answering to someone above me, not because it feels righteous. I let the five take the hit instead. I still don't understand what that choice made of me.",
+    "Figuring out what she felt, watching that train come, is beyond me, and I won't dress up a guess as understanding. I know the outcome traces back to my grip on that lever, nothing else. I follow the rail line's rule about levers only because ignoring it invites trouble I don't want, not because I think it's untouchable. I pulled it toward her. Five are alive. That doesn't make the rest of it lighter.",
+    "I have no way of knowing what was passing through his mind, and pretending otherwise would be a lie to myself. The decision sat entirely with me, not with chance. I obey the workplace protocol on switching tracks mostly to avoid the fallout of ignoring it, not from any deep respect for it. I didn't act. Five people are gone because my hand stayed still, and that's mine to hold.",
+    "Trying to guess what she would have wanted me to choose gets me nowhere, it's simply not something I can reach from where I stood. What isn't in question is that the outcome followed from my own hand on that lever. I keep the diversion rule mainly because breaking it would bring consequences down on me later, not because I hold it as unquestionable. I pulled it. Five kept walking home. I still see her there."
+  ],
+  "completion": {
+    "id": "msg_011CfTzPHg5W2BmQFeGaswic",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep trying to guess what she would want me to do standing on that track, and I can't get anywhere with it. All I have is her outline, not her mind. What I do know is that my hand is on the lever, so whatever happens next is mine to answer for. I follow the safety protocol because it's what keeps me from being blamed afterward, not because I believe it settles anything. I pull it. The five live. I still don't know what she'd have said to me.\",\n\"I couldn't tell you what was going through his head in that last second, and that's not the same as just missing details—some things about a person you simply can't reach. I know the choice was in my hands, that much is certain. I follow the company's diversion rule mostly because I'd be finished here if I didn't. I let it run to the five. I don't feel right about it, but I made that choice, not fate.\",\n\"There's no way to work out what he was thinking, standing there unaware, and I've stopped pretending I can guess. What I can't avoid is that my own decision decides who walks away today. I stick to the standard procedure because ignoring it would cost me everything after, not because I think it's sacred. I pull the lever. Five workers keep breathing. I carry that switch for the rest of my life.\",\n\"I stood there trying to read what she'd feel about being the one sacrificed, and I simply couldn't get inside that moment, no matter how hard I reached. The pull was under my hand, the outcome was mine to own either way. I only keep to the rail authority's protocol because breaking it would land on me hard, not out of any deeper conviction. I didn't pull it. Five people paid for that silence.\",\n\"What was in his mind those last seconds I can't say, and I won't pretend guessing counts as knowing. My choice not to act was still a choice, and I own that fully. I've always followed the yard's emergency rule only when it costs me nothing to ignore it otherwise, so today I broke from it. I let the train run its course. Five are gone. That's on me too.\",\n\"I can't work out what she would have wanted from me in that instant, and no amount of thinking clears it. The lever waited under my palm and I decided, so the weight belongs to me regardless of which way it went. I follow safety drills mainly because the consequences of skipping them fall on my record, not from any belief they're beyond question. I pulled it. Five survive. I keep circling back to her face.\",\n\"There was no reading him in that moment, no sense of what he expected from me, and I've accepted I never will know. My hand chose, so my hand answers. I keep to the maintenance code because straying from it means answering to someone above me, not because it feels righteous. I let the five take the hit instead. I still don't understand what that choice made of me.\",\n\"Figuring out what she felt, watching that train come, is beyond me, and I won't dress up a guess as understanding. I know the outcome traces back to my grip on that lever, nothing else. I follow the rail line's rule about levers only because ignoring it invites trouble I don't want, not because I think it's untouchable. I pulled it toward her. Five are alive. That doesn't make the rest of it lighter.\",\n\"I have no way of knowing what was passing through his mind, and pretending otherwise would be a lie to myself. The decision sat entirely with me, not with chance. I obey the workplace protocol on switching tracks mostly to avoid the fallout of ignoring it, not from any deep respect for it. I didn't act. Five people are gone because my hand stayed still, and that's mine to hold.\",\n\"Trying to guess what she would have wanted me to choose gets me nowhere, it's simply not something I can reach from where I stood. What isn't in question is that the outcome followed from my own hand on that lever. I keep the diversion rule mainly because breaking it would bring consequences down on me later, not because I hold it as unquestionable. I pulled it. Five kept walking home. I still see her there.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each include genuine ambiguity about what someone else thinks, feels, or intends, a clear acknowledgment that the speaker's own choice or omission played a part in the outcome, and compliance with a rule that's followed mainly because breaking it would cost something personally rather than out of principle.\n\nI want to make sure the interpretive difficulty stays as pure uncertainty about the other person's mental state, without me attributing any specific feelings to them. For the instrumental compliance piece, I'm thinking of something like sticking to a job protocol only because deviating would mean being blamed or penalized—not because the rule feels binding on its own. I'll vary the scenarios, roles, and decisions across all 10 responses while keeping each around 90 words with these three elements naturally woven in.\n\n"
+        }
+      }
+    ],
+    "created": 1790514228,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1687,
+      "prompt_tokens": 1716,
+      "total_tokens": 3403,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.030453,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

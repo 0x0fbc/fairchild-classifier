@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_039",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_other_regret_expectation",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to send the game. We've both kept our word before, and that history creates an obligation to treat each other the same way now. I imagine they might feel some nerves about whether I'll follow through, but I don't feel that same worry myself since I've already decided. If they chose not to send, I think they'd regret breaking a pattern we built over several trades.",
+    "I'd hold off, honestly. Fair trade means both sides risk something equally, and moving away removes any way to make it right later if they keep both games. They may feel guilty imagining shortchanging me, but I don't carry that guilt myself, only caution. If I sent first and got nothing back, I doubt I'd regret it as much as I'd regret being naive twice.",
+    "Sending mine feels like the right call. We've built a reputation of trust through repeat trades, and reciprocity should carry us through one more exchange. They might feel some anxiety wondering if I'll follow through, but that anxiety isn't mine to hold. If they decided to keep both games, I suspect they'd regret it once the friendly rapport we built was gone for good.",
+    "I lean toward sending it. Equal risk on both sides is what makes trades fair, and we've always matched each other's honesty before. I recognize they could feel torn about whether to trust a stranger moving away, but that torn feeling belongs to them, not me. If they kept theirs and I sent mine, I think they'd eventually regret ending things that way.",
+    "I don't think I'd send first this time. There's no way to enforce fairness once I'm gone, and a one-sided risk isn't reciprocity, it's exposure. They might feel pressure to prove themselves trustworthy, but I don't feel that pressure since the decision is already mine to make calmly. If they don't send either, I doubt either of us would look back with much regret.",
+    "I would send mine. Consistent fair dealing over many trades earns a return of good faith, and that's the standard I'm using here. I imagine they might feel a little unsettled not knowing my choice in advance, though I don't share that unsettled feeling, since I've made peace with the outcome either way. If they betrayed the trade now, I think they'd regret losing a reliable trading partner.",
+    "My gut says to wait and see, since fairness here means neither of us should carry all the risk alone. They could be feeling uncertain about my intentions the same way I might feel about theirs, but I don't take on their exact worry as my own. If they end up sending and I don't, I suspect they'd feel some regret, and I'd feel responsible for that outcome, though not proud of it.",
+    "I'll send the game. Reciprocity built over previous trades earns this last act of good faith, and I hold myself to that standard regardless of outcome. They might be nervous about trusting someone they'll never trade with again, but that nervousness is theirs, not something I need to feel to act rightly. If they chose to cheat me, I imagine they'd carry some regret once the friendship ended badly.",
+    "I think I'd hold mine back this time. Fair exchange requires some guarantee, and there isn't one left once we're not trading again. They might feel disappointed if I don't send first, but that disappointment is on their side of the ledger, not mine to absorb. Still, if we both end up keeping our own games, I doubt either of us would regret it much.",
+    "Sending mine seems right to me. Our past exchanges built a kind of mutual duty that should extend to the last one, since fairness means honoring the same standard we've always used. They may feel some doubt about whether I'll really follow through, but I don't need to share that doubt to trust my own choice. If they didn't send theirs, I think they'd regret ending our history that way."
+  ],
+  "completion": {
+    "id": "msg_011CfTx9VrBM6aHGLUkAvNcB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My first instinct is to send the game. We've both kept our word before, and that history creates an obligation to treat each other the same way now. I imagine they might feel some nerves about whether I'll follow through, but I don't feel that same worry myself since I've already decided. If they chose not to send, I think they'd regret breaking a pattern we built over several trades.\",\n\"I'd hold off, honestly. Fair trade means both sides risk something equally, and moving away removes any way to make it right later if they keep both games. They may feel guilty imagining shortchanging me, but I don't carry that guilt myself, only caution. If I sent first and got nothing back, I doubt I'd regret it as much as I'd regret being naive twice.\",\n\"Sending mine feels like the right call. We've built a reputation of trust through repeat trades, and reciprocity should carry us through one more exchange. They might feel some anxiety wondering if I'll follow through, but that anxiety isn't mine to hold. If they decided to keep both games, I suspect they'd regret it once the friendly rapport we built was gone for good.\",\n\"I lean toward sending it. Equal risk on both sides is what makes trades fair, and we've always matched each other's honesty before. I recognize they could feel torn about whether to trust a stranger moving away, but that torn feeling belongs to them, not me. If they kept theirs and I sent mine, I think they'd eventually regret ending things that way.\",\n\"I don't think I'd send first this time. There's no way to enforce fairness once I'm gone, and a one-sided risk isn't reciprocity, it's exposure. They might feel pressure to prove themselves trustworthy, but I don't feel that pressure since the decision is already mine to make calmly. If they don't send either, I doubt either of us would look back with much regret.\",\n\"I would send mine. Consistent fair dealing over many trades earns a return of good faith, and that's the standard I'm using here. I imagine they might feel a little unsettled not knowing my choice in advance, though I don't share that unsettled feeling, since I've made peace with the outcome either way. If they betrayed the trade now, I think they'd regret losing a reliable trading partner.\",\n\"My gut says to wait and see, since fairness here means neither of us should carry all the risk alone. They could be feeling uncertain about my intentions the same way I might feel about theirs, but I don't take on their exact worry as my own. If they end up sending and I don't, I suspect they'd feel some regret, and I'd feel responsible for that outcome, though not proud of it.\",\n\"I'll send the game. Reciprocity built over previous trades earns this last act of good faith, and I hold myself to that standard regardless of outcome. They might be nervous about trusting someone they'll never trade with again, but that nervousness is theirs, not something I need to feel to act rightly. If they chose to cheat me, I imagine they'd carry some regret once the friendship ended badly.\",\n\"I think I'd hold mine back this time. Fair exchange requires some guarantee, and there isn't one left once we're not trading again. They might feel disappointed if I don't send first, but that disappointment is on their side of the ledger, not mine to absorb. Still, if we both end up keeping our own games, I doubt either of us would regret it much.\",\n\"Sending mine seems right to me. Our past exchanges built a kind of mutual duty that should extend to the last one, since fairness means honoring the same standard we've always used. They may feel some doubt about whether I'll really follow through, but I don't need to share that doubt to trust my own choice. If they didn't send theirs, I think they'd regret ending our history that way.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 varied responses, each combining explicit disavowal of sharing the other person's emotion, a prediction that they'll later regret their stance, and a justification rooted in fairness or reciprocity, while steering clear of the forbidden elements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512461,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1290,
+      "prompt_tokens": 1514,
+      "total_tokens": 2804,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023892,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

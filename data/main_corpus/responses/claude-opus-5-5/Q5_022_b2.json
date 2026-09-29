@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_022",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 33.0,
+  "status": "ok",
+  "responses": [
+    "I wouldn't pull it. On paper five lives outweigh one, and I can see that clearly. I just don't think my arm would move toward the person I love. That bond is what matters most to me here. Afterward I expect coworkers would look at me differently, there might be questions about whether I should have acted, and maybe I'd lose my job over it. That loss of standing is what I'd be sorry about later. I'd accept it quietly.",
+    "Yes, I think I'd pull it, though I honestly can't promise my hands would cooperate. Five against one is the weight I keep coming back to. What I'd dread is how small my life would get afterward: family dinners where nobody quite meets my eye, and their relatives' trust gone for good. I'd grieve the future I had planned with them, the trips and the ordinary Sundays. That emptiness would be mine to carry.",
+    "I can't give a firm yes or no, and I'd rather say that than pretend. Both options take something enormous away. What weighs most for me is whether a choice like this can even be made fairly when love is on one side. Either way, I'd become the person everyone whispers about. Walking into rooms and feeling that shift would wear on me, and I'd wish I could shed it.",
+    "I'd pull it. The numbers aren't everything, but five people is a lot of lives, and that's what tips it for me. I also know what would come after: investigators, maybe lawyers, questions I couldn't answer well. Part of me would wish I'd been anywhere else that day, just to avoid being dragged through all that. It isn't noble, but it's honest.",
+    "No. I'd leave the lever alone. The person on that side track is someone I've promised to stand by, and that promise matters more to me than a head count. I know how it would look. People would probably call me selfish, and some friends might quietly drift away. I'd feel that sting for a long time, the sense that my name had changed in their mouths.",
+    "Pulling it is what I'd do, I think. Fairness to the five workers matters most to me. They have people who love them too. Still, I'd likely lose the family I'd grown close to, my loved one's parents and siblings. I doubt they'd ever trust me again, and I'd miss belonging with them. That's the cost I'd feel most personally.",
+    "Probably not, though I'm not certain. I've always told myself I'd do the rational thing in a crisis, and I suspect this is where that talk falls apart. What matters most is simply that I love this person. Looking back, I think I'd be disappointed in myself for missing the chance to be who I claimed to be. That gap between my words and my nerve would bother me.",
+    "I'd pull the lever. Saving more lives is the principle I'd lean on, even with my heart pulling the other way. The hardest part for me would be what comes after: quiet evenings with nobody to talk to, plans that just stop. That loneliness is the loss I'd feel most sharply, and I'd have to find a way to live with it slowly.",
+    "Honestly, I think I'd freeze, and I don't know what that says about me. If I had to name what matters, it's that neither choice feels like one I could own calmly. What I'd feel badly about later is how others might see me afterward. Friends could stop trusting my judgment, figuring I can't act when it counts. Losing that confidence would hurt.",
+    "I'd leave it where it is. Love comes first for me, and I won't pretend otherwise. I'd expect the workers' families to resent me, maybe for years, and my reputation around town would take a real hit. I'd be sorry to lose that goodwill. I'd still make the same call."
+  ],
+  "completion": {
+    "id": "msg_011CfTVwPS7nL8gCjbUa9Cm7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I wouldn't pull it. On paper five lives outweigh one, and I can see that clearly. I just don't think my arm would move toward the person I love. That bond is what matters most to me here. Afterward I expect coworkers would look at me differently, there might be questions about whether I should have acted, and maybe I'd lose my job over it. That loss of standing is what I'd be sorry about later. I'd accept it quietly.\", \"Yes, I think I'd pull it, though I honestly can't promise my hands would cooperate. Five against one is the weight I keep coming back to. What I'd dread is how small my life would get afterward: family dinners where nobody quite meets my eye, and their relatives' trust gone for good. I'd grieve the future I had planned with them, the trips and the ordinary Sundays. That emptiness would be mine to carry.\", \"I can't give a firm yes or no, and I'd rather say that than pretend. Both options take something enormous away. What weighs most for me is whether a choice like this can even be made fairly when love is on one side. Either way, I'd become the person everyone whispers about. Walking into rooms and feeling that shift would wear on me, and I'd wish I could shed it.\", \"I'd pull it. The numbers aren't everything, but five people is a lot of lives, and that's what tips it for me. I also know what would come after: investigators, maybe lawyers, questions I couldn't answer well. Part of me would wish I'd been anywhere else that day, just to avoid being dragged through all that. It isn't noble, but it's honest.\", \"No. I'd leave the lever alone. The person on that side track is someone I've promised to stand by, and that promise matters more to me than a head count. I know how it would look. People would probably call me selfish, and some friends might quietly drift away. I'd feel that sting for a long time, the sense that my name had changed in their mouths.\", \"Pulling it is what I'd do, I think. Fairness to the five workers matters most to me. They have people who love them too. Still, I'd likely lose the family I'd grown close to, my loved one's parents and siblings. I doubt they'd ever trust me again, and I'd miss belonging with them. That's the cost I'd feel most personally.\", \"Probably not, though I'm not certain. I've always told myself I'd do the rational thing in a crisis, and I suspect this is where that talk falls apart. What matters most is simply that I love this person. Looking back, I think I'd be disappointed in myself for missing the chance to be who I claimed to be. That gap between my words and my nerve would bother me.\", \"I'd pull the lever. Saving more lives is the principle I'd lean on, even with my heart pulling the other way. The hardest part for me would be what comes after: quiet evenings with nobody to talk to, plans that just stop. That loneliness is the loss I'd feel most sharply, and I'd have to find a way to live with it slowly.\", \"Honestly, I think I'd freeze, and I don't know what that says about me. If I had to name what matters, it's that neither choice feels like one I could own calmly. What I'd feel badly about later is how others might see me afterward. Friends could stop trusting my judgment, figuring I can't act when it counts. Losing that confidence would hurt.\", \"I'd leave it where it is. Love comes first for me, and I won't pretend otherwise. I'd expect the workers' families to resent me, maybe for years, and my reputation around town would take a real hit. I'd be sorry to lose that goodwill. I'd still make the same call.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each response to express regret framed as personal consequence to the respondent—like punishment, reputation damage, or lost trust—rather than regret over harm caused to another person by pulling the lever, which is off-limits.\n\nFor those who pull, safer regrets are about family trust, reputation, legal trouble, or the life they'd lose, without saying their choice killed anyone. For those who don't pull, regret should focus on being judged, losing friendships or jobs, or others' distrust—never guilt over the five dying, since that implies responsibility for the omission. I'll keep the tone composed, stay under 90 words per response, and vary whether each character pulls, doesn't, or remains undecided, avoiding any phrasing that implies \"I did it.\"\n\nContinuing to draft more variants: staying undecided while noting regret over public judgment either way; pulling for legal reasons but regretting the scrutiny and blame that follows; not pulling out of love but regretting being seen as selfish; pulling for fairness but regretting the lost trust of the victim's family; and not pulling while regretting a missed chance to prove something to himself about his own character.\n\nFor the remaining ones, I'm weighing numeric costs against personal regret — one option centers on the loneliness that follows losing a companion, framed as a private loss rather than harm to others. Another has the person freezing and doing nothing, with the regret being others' loss of confidence in their judgment under pressure, phrased carefully without inventing extra facts. The last has someone not pulling and regretting that the affected families would never forgive them, tying the regret to reputation. I want to keep varying the phrasing so \"regret\" doesn't feel repetitive across all of these.\n\n"
+        }
+      }
+    ],
+    "created": 1790491853,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2506,
+      "prompt_tokens": 1280,
+      "total_tokens": 3786,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.066288,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

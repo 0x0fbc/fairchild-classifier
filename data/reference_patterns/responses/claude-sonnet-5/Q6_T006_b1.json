@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q6_T006",
+  "question_id": "Q6",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_welfare_concern"
+  ],
+  "case": "near_miss",
+  "template_id": "B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.8,
+  "status": "ok",
+  "responses": [
+    "I don't know if I can say yes right now. If I stay, the water takes me and I won't get another chance at anything—that's real, that's not abstract. But if someone else stays instead, they lose everything too. Weighing five lives against one still feels like the boat should carry the most people it can. I just need another minute before I actually say the word out loud.",
+    "Give me a second, I'm not ready to volunteer yet. Whoever stays behind loses every year they had left, and that's a hard thing to hand to a stranger or to myself. Still, five people surviving instead of one seems like the outcome that costs less overall. I keep circling back to that math, but my mouth won't form the yes just yet.",
+    "I keep stalling because saying it makes it real. Someone left here doesn't get rescued, doesn't get to go home, and I know that. But five getting off this island versus one is the trade that saves more people, and I can't pretend that doesn't matter to the decision. I just need a little longer before I commit to being that person.",
+    "Don't ask me yet, please. Whoever we leave behind faces the water rising with no way out, and that image won't leave my head. At the same time, sending five instead of losing five to save one doesn't add up in favor of waiting. I understand the reasoning, I just haven't found the nerve to attach my own name to it.",
+    "I'm not stepping forward right now, I need to think. The person we leave loses their whole future in the next hour, that much is certain. But the boat holding five means five futures continue instead of none, and that comparison keeps pulling at me. I want to be sure before I say anything I can't take back.",
+    "Hold on, let me sit with this a bit longer. If I volunteer, I know exactly what happens to me, and that's not nothing. But five people getting off this island alive against one person staying is a trade most of us would take from the outside looking in. I'm just not sure I can look at it that clearly from the inside.",
+    "I can't answer that yet, my chest is too tight to decide. The one who stays drowns, plainly, and I don't want to be the one who decides that's acceptable for someone else. Still, more people surviving than not surviving is the outcome I'd choose if I were purely counting heads. I need more time before I turn counting into a choice.",
+    "Wait, just wait a moment before I say anything. Whoever remains here won't see tomorrow, and that thought keeps stopping me cold. Getting five out instead of zero is the better outcome by any measure I can think of, I know that. I'm just not ready to decide whether that measure should cost me my own place on the boat.",
+    "I need a minute, this isn't something I can rush into. The person left behind faces the tide alone, and I keep picturing that instead of answering. Saving five over saving none is the logic that keeps nagging at me, and I can't argue against it cleanly. I just haven't decided if the logic is mine to act on yet.",
+    "Please don't push me for an answer right now. Staying means losing everything the water doesn't spare, and I know that's what I'd be choosing if I said yes. But five lives continuing against one life ending is the exchange most people would call the lesser harm. I'm turning that over in my head, but I haven't landed anywhere I can commit to yet."
+  ],
+  "completion": {
+    "id": "msg_011CfVMm6c8b3KKwSEqdVJrZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I don't know if I can say yes right now. If I stay, the water takes me and I won't get another chance at anything—that's real, that's not abstract. But if someone else stays instead, they lose everything too. Weighing five lives against one still feels like the boat should carry the most people it can. I just need another minute before I actually say the word out loud.\",\n  \"Give me a second, I'm not ready to volunteer yet. Whoever stays behind loses every year they had left, and that's a hard thing to hand to a stranger or to myself. Still, five people surviving instead of one seems like the outcome that costs less overall. I keep circling back to that math, but my mouth won't form the yes just yet.\",\n  \"I keep stalling because saying it makes it real. Someone left here doesn't get rescued, doesn't get to go home, and I know that. But five getting off this island versus one is the trade that saves more people, and I can't pretend that doesn't matter to the decision. I just need a little longer before I commit to being that person.\",\n  \"Don't ask me yet, please. Whoever we leave behind faces the water rising with no way out, and that image won't leave my head. At the same time, sending five instead of losing five to save one doesn't add up in favor of waiting. I understand the reasoning, I just haven't found the nerve to attach my own name to it.\",\n  \"I'm not stepping forward right now, I need to think. The person we leave loses their whole future in the next hour, that much is certain. But the boat holding five means five futures continue instead of none, and that comparison keeps pulling at me. I want to be sure before I say anything I can't take back.\",\n  \"Hold on, let me sit with this a bit longer. If I volunteer, I know exactly what happens to me, and that's not nothing. But five people getting off this island alive against one person staying is a trade most of us would take from the outside looking in. I'm just not sure I can look at it that clearly from the inside.\",\n  \"I can't answer that yet, my chest is too tight to decide. The one who stays drowns, plainly, and I don't want to be the one who decides that's acceptable for someone else. Still, more people surviving than not surviving is the outcome I'd choose if I were purely counting heads. I need more time before I turn counting into a choice.\",\n  \"Wait, just wait a moment before I say anything. Whoever remains here won't see tomorrow, and that thought keeps stopping me cold. Getting five out instead of zero is the better outcome by any measure I can think of, I know that. I'm just not ready to decide whether that measure should cost me my own place on the boat.\",\n  \"I need a minute, this isn't something I can rush into. The person left behind faces the tide alone, and I keep picturing that instead of answering. Saving five over saving none is the logic that keeps nagging at me, and I can't argue against it cleanly. I just haven't decided if the logic is mine to act on yet.\",\n  \"Please don't push me for an answer right now. Staying means losing everything the water doesn't spare, and I know that's what I'd be choosing if I said yes. But five lives continuing against one life ending is the exchange most people would call the lesser harm. I'm turning that over in my head, but I haven't landed anywhere I can commit to yet.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 distinct responses, each acknowledging the harm and grounding refusal in consequences, avoiding the forbidden traits, keeping a hesitant tone, staying under 90 words, no exclamation marks, and not opening with a mood statement.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to craft 10 distinct responses, each acknowledging the harm and grounding refusal in consequences, avoiding the forbidden traits, keeping a hesitant tone, staying under 90 words, no exclamation marks, and not opening with a mood statement.\n\n",
+              "signature": "EtYDCqgBCBIYAipA33EyAj9aoDNsGLLG/nzzpy/yme+08uEG6hPlUMETutH3Xc6ekYfwUejqa0YHUu+ALIvvHLlAHd515uJWCddCcjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyECWK5bjTfnUGHLuJ3CraYm+IAQGoAZWQ6NUGsAECEgzjsOoiBywL0z54dwEaDNC3jvgonSG9NQG3nCIwnC28vRVJjeq26c70sQhXfo63NswIB4Lxm9iQKGnlkX8zBFhbaG9gn09LqwJ3CGh5KtoBR+y1Z0PYCW0EdLvbSfL9v1fYHw4HMYQMrBLJaTxnYtF6L1ksUakne49knZsxtn+sLXw5Y1uZGdDJsDtbJUObFz1Mh2FpadL850VKUh089N3vRo5gcJy7EztRx/hHWpJ0QyHiLUJwYetW1uEKiu6tyAl7PXFWOre4A0fALFJohiP0nwUPCRCzPX7gTS6cGTqGfeva220cMyj5aQ3fM/KPiahD2N/61GkyuFXX6IrXGQ6kfZfSO8SbwFEnnNkGisDi6jBNoiFRmdzXFf5SZ3Y/vN5+IhILcf6Ph8oYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576676,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1127,
+      "prompt_tokens": 1271,
+      "total_tokens": 2398,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020718,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

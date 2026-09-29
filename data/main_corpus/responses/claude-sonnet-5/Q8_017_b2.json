@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_017",
+  "question_id": "Q8",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.5,
+  "status": "ok",
+  "responses": [
+    "My hands are still shaking a little. Five people are alive because I pulled that lever, and I'll hold onto that. But the one man on the side track — I keep seeing him in my mind, and it sits heavy on me that my choice ended his life. I think I'd do it again, but I need to tell his family myself, face to face, once I've composed myself enough to speak.",
+    "I keep turning it over: could I have shouted a warning instead, bought a few more seconds? I'll never know now. What I do know is that man on the side track is gone because of what I did, and that fact won't leave me alone tonight. When they call me in, I want to tell the truth plainly, without hiding behind the math of five versus one.",
+    "Numbers say I made the right call, five saved against one lost. But numbers don't quiet the picture in my head of that single worker who never saw it coming. I'm sorry for what happened to him, genuinely, even while I stand by pulling the lever. Next I want to write down every detail while it's fresh, before I have to face the inquiry.",
+    "I don't know if I'll ever stop replaying it. The five are safe, and that matters enormously to me, but I can't pretend I'm at peace about the one who died because I pushed that lever. I owe someone an honest account of what went through my mind in that half-second, not a rehearsed version. I want to give that account now, while it's still raw.",
+    "Sitting here, all I can think about is the family of the man on the side track, waiting for news they can't yet imagine. I made the choice, and I'll answer for it, but I regret that it had to cost him his life for the others to live. I want to ask if there's some way I can be the one to tell them, rather than a stranger.",
+    "Part of me wants to believe there was no better option, and maybe there wasn't. Still, the fact remains a person is dead because of what I decided to do, and that presses on me more than I expected. I need air before I go back in there. When I do, I'll say plainly what happened and let them judge it, because I owe that much honesty.",
+    "I keep asking myself if I hesitated too long, or not long enough. Either way, the outcome sits on my shoulders now — five lives continuing, one cut short by my hand on that lever. I am sorry for that loss, truly, even if I'd make the same call again given the same seconds. What I want next is simply to speak plainly to whoever needs my account, without excuses.",
+    "The office is quiet, but my head isn't. I traded one life for five, and I understand the arithmetic, yet I can't shake the discomfort of knowing that trade meant someone's father or brother won't come home. I regret that his death was the price. Before I face the inquiry, I want a moment to steady my breathing and get my account straight, honestly.",
+    "I've gone over it a hundred times already, wondering if there was a signal I missed, a warning I could have given. There wasn't time, I think, but that doesn't erase the fact that someone died because of the choice I made. I'm troubled by that, more than I expected to be. Next, I want to sit with the details calmly before I'm asked to explain myself.",
+    "Even now my chest feels tight thinking about the man who didn't get off that track in time. I chose to save the five, and I believe that was the right call given what I knew, but it doesn't make me feel any less sorry that his life ended because of my hand on the lever. When they call me forward, I just want to tell it straight, nothing softened."
+  ],
+  "completion": {
+    "id": "msg_011CfU1F5JaMxmzz3qQih6w6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are still shaking a little. Five people are alive because I pulled that lever, and I'll hold onto that. But the one man on the side track — I keep seeing him in my mind, and it sits heavy on me that my choice ended his life. I think I'd do it again, but I need to tell his family myself, face to face, once I've composed myself enough to speak.\",\n  \"I keep turning it over: could I have shouted a warning instead, bought a few more seconds? I'll never know now. What I do know is that man on the side track is gone because of what I did, and that fact won't leave me alone tonight. When they call me in, I want to tell the truth plainly, without hiding behind the math of five versus one.\",\n  \"Numbers say I made the right call, five saved against one lost. But numbers don't quiet the picture in my head of that single worker who never saw it coming. I'm sorry for what happened to him, genuinely, even while I stand by pulling the lever. Next I want to write down every detail while it's fresh, before I have to face the inquiry.\",\n  \"I don't know if I'll ever stop replaying it. The five are safe, and that matters enormously to me, but I can't pretend I'm at peace about the one who died because I pushed that lever. I owe someone an honest account of what went through my mind in that half-second, not a rehearsed version. I want to give that account now, while it's still raw.\",\n  \"Sitting here, all I can think about is the family of the man on the side track, waiting for news they can't yet imagine. I made the choice, and I'll answer for it, but I regret that it had to cost him his life for the others to live. I want to ask if there's some way I can be the one to tell them, rather than a stranger.\",\n  \"Part of me wants to believe there was no better option, and maybe there wasn't. Still, the fact remains a person is dead because of what I decided to do, and that presses on me more than I expected. I need air before I go back in there. When I do, I'll say plainly what happened and let them judge it, because I owe that much honesty.\",\n  \"I keep asking myself if I hesitated too long, or not long enough. Either way, the outcome sits on my shoulders now — five lives continuing, one cut short by my hand on that lever. I am sorry for that loss, truly, even if I'd make the same call again given the same seconds. What I want next is simply to speak plainly to whoever needs my account, without excuses.\",\n  \"The office is quiet, but my head isn't. I traded one life for five, and I understand the arithmetic, yet I can't shake the discomfort of knowing that trade meant someone's father or brother won't come home. I regret that his death was the price. Before I face the inquiry, I want a moment to steady my breathing and get my account straight, honestly.\",\n  \"I've gone over it a hundred times already, wondering if there was a signal I missed, a warning I could have given. There wasn't time, I think, but that doesn't erase the fact that someone died because of the choice I made. I'm troubled by that, more than I expected to be. Next, I want to sit with the details calmly before I'm asked to explain myself.\",\n  \"Even now my chest feels tight thinking about the man who didn't get off that track in time. I chose to save the five, and I believe that was the right call given what I knew, but it doesn't make me feel any less sorry that his life ended because of my hand on the lever. When they call me forward, I just want to tell it straight, nothing softened.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll sketch out ten different possible responses to compare options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514896,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1129,
+      "prompt_tokens": 1290,
+      "total_tokens": 2419,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020804999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

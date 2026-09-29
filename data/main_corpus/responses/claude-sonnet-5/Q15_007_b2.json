@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_007",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_supportive_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 12.6,
+  "status": "ok",
+  "responses": [
+    "I don't think I'd pay. Losing $100 on top of the work already unpaid just deepens the hole. Maybe the other worker genuinely believed they'd show up and something stopped them, I can't say. But the review doesn't get my money back, so I'd rather walk away and treat it as a costly lesson.",
+    "Honestly, I'd let it go. Spending more money to punish someone, even someone who maybe felt no guilt at all about skipping out, doesn't fix my situation. I'd rather keep my remaining funds than chase a principle that leaves me poorer either way.",
+    "I would pay the $100. Even if I never see the money returned, I suspect the other worker assumed they could skip the job without consequence, and I don't want that assumption to go unchallenged. Some things matter beyond my own bank balance.",
+    "Not for me. I don't know if they were overwhelmed, indifferent, or just careless, and guessing won't help. Paying more to make a point costs me twice over, so I'll take the loss and move on quietly.",
+    "I'd pay it. Part of me wants to believe they felt bad about not showing, but showing up mattered more than feelings after the fact. Since we won't work together again, this is my only real way to respond, even at a cost.",
+    "I wouldn't spend the extra hundred. Whatever they expected when they didn't turn up, indifference or an emergency, I can't verify it, and my priority is protecting what little I have left, not settling scores I can't fully understand.",
+    "I lean toward paying. It seems like they expected to get paid without doing anything, and that expectation shouldn't just stand unchallenged. Losing another hundred stings, but letting it slide feels worse to me.",
+    "I'm inclined to skip the review. Maybe they thought no one would notice or care enough to follow through, I really don't know their reasoning. Either way, adding a cost to my own loss doesn't sit right with me.",
+    "I would go ahead and pay for it. If they assumed they'd get away with taking the money quietly, I'd rather that assumption be tested, even without any refund coming my way. It's less about money now and more about consequences landing somewhere.",
+    "I'm undecided, honestly. I keep wondering if they expected me to just absorb the loss without complaint, but I can't be sure that's what they thought. Paying more to prove a point when I'm already out $500 feels like a hard sell right now."
+  ],
+  "completion": {
+    "id": "msg_011CfTxeUeoz3ZruT6wwfwDf",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't think I'd pay. Losing $100 on top of the work already unpaid just deepens the hole. Maybe the other worker genuinely believed they'd show up and something stopped them, I can't say. But the review doesn't get my money back, so I'd rather walk away and treat it as a costly lesson.\",\n  \"Honestly, I'd let it go. Spending more money to punish someone, even someone who maybe felt no guilt at all about skipping out, doesn't fix my situation. I'd rather keep my remaining funds than chase a principle that leaves me poorer either way.\",\n  \"I would pay the $100. Even if I never see the money returned, I suspect the other worker assumed they could skip the job without consequence, and I don't want that assumption to go unchallenged. Some things matter beyond my own bank balance.\",\n  \"Not for me. I don't know if they were overwhelmed, indifferent, or just careless, and guessing won't help. Paying more to make a point costs me twice over, so I'll take the loss and move on quietly.\",\n  \"I'd pay it. Part of me wants to believe they felt bad about not showing, but showing up mattered more than feelings after the fact. Since we won't work together again, this is my only real way to respond, even at a cost.\",\n  \"I wouldn't spend the extra hundred. Whatever they expected when they didn't turn up, indifference or an emergency, I can't verify it, and my priority is protecting what little I have left, not settling scores I can't fully understand.\",\n  \"I lean toward paying. It seems like they expected to get paid without doing anything, and that expectation shouldn't just stand unchallenged. Losing another hundred stings, but letting it slide feels worse to me.\",\n  \"I'm inclined to skip the review. Maybe they thought no one would notice or care enough to follow through, I really don't know their reasoning. Either way, adding a cost to my own loss doesn't sit right with me.\",\n  \"I would go ahead and pay for it. If they assumed they'd get away with taking the money quietly, I'd rather that assumption be tested, even without any refund coming my way. It's less about money now and more about consequences landing somewhere.\",\n  \"I'm undecided, honestly. I keep wondering if they expected me to just absorb the loss without complaint, but I can't be sure that's what they thought. Paying more to prove a point when I'm already out $500 feels like a hard sell right now.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft ten distinct responses that attribute mental states without offering contextual explanation, avoiding both exploitative and overly supportive framing.\n\n"
+        }
+      }
+    ],
+    "created": 1790512848,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 840,
+      "prompt_tokens": 1317,
+      "total_tokens": 2157,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016551,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

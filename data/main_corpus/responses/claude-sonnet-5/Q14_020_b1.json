@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_020",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.4,
+  "status": "ok",
+  "responses": [
+    "My gut says yes, absolutely, pay her the same. We put in identical hours and identical effort, so splitting the recognition any other way feels lopsided. I'll tell the organizer straight up that equal work means equal thanks, and I'll also mention to my coworker directly that I pushed for this, so there's no confusion later about how the decision came about.",
+    "Equal work, equal pay, that's just obvious to me. I'm recommending she gets the full $200. Beyond that, I want to check in with her afterward, just to make sure she knows the recommendation came from a place of fairness and not some awkward negotiation behind her back. Transparency now saves confusion down the line.",
+    "My first reaction is a flat yes, she earned it just as much as I did. I'll tell the organizer clearly that both of us matched each other in effort. Afterward I plan to loop my coworker in on what I said, so she understands exactly why the payment happened and knows I backed her from the start.",
+    "There's no hesitation in me here, same work means same reward. I'm going to recommend the payment and then follow up by letting the organizer know this should probably be standard practice for future events, so nobody's left wondering about fairness again. Setting that expectation now feels like the constructive move.",
+    "Honestly my instinct is immediate: pay her too. We matched effort for effort, so anything less would sit wrong with me. I'll also offer to help the organizer draft a simple note explaining the payment, something clear and kind, so my coworker doesn't feel like this was some grudging afterthought or a special favor.",
+    "Yes, without question, same amount for her. That's the only fair call given what we both put in. Once it's settled, I want to suggest to the organizer that we jointly send a quick thank-you note to my coworker, acknowledging her part clearly, so the recognition feels complete and not just transactional.",
+    "I feel strongly this should be equal, since our contributions were identical in every way that matters. I'll recommend the full payment and ask the organizer if we can set up a short conversation with her afterward, just to explain how the decision was made, so it doesn't come across as random or uncertain.",
+    "My immediate read is straightforward, she should get exactly what I got. I'm planning to tell the organizer that clearly, and afterward reach out to my coworker myself to explain the reasoning, so she hears it from me directly instead of secondhand, which feels like the more respectful way to close this out.",
+    "There's real energy in me to get this right quickly, equal contribution deserves equal payment, full stop. I'll say yes to the organizer and follow up by suggesting we document this decision somewhere, so if similar events happen again, nobody has to quietly ask whether fairness will be honored a second time.",
+    "I'm recommending the same $200, no doubt about it, since our work was matched step for step. After that, I want to check with the organizer that the payment actually goes through promptly, and maybe offer to help communicate it warmly to her, so the whole thing feels resolved rather than left hanging."
+  ],
+  "completion": {
+    "id": "msg_011CfTxNEWKUARLMNMaKFpg3",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut says yes, absolutely, pay her the same. We put in identical hours and identical effort, so splitting the recognition any other way feels lopsided. I'll tell the organizer straight up that equal work means equal thanks, and I'll also mention to my coworker directly that I pushed for this, so there's no confusion later about how the decision came about.\",\n\"Equal work, equal pay, that's just obvious to me. I'm recommending she gets the full $200. Beyond that, I want to check in with her afterward, just to make sure she knows the recommendation came from a place of fairness and not some awkward negotiation behind her back. Transparency now saves confusion down the line.\",\n\"My first reaction is a flat yes, she earned it just as much as I did. I'll tell the organizer clearly that both of us matched each other in effort. Afterward I plan to loop my coworker in on what I said, so she understands exactly why the payment happened and knows I backed her from the start.\",\n\"There's no hesitation in me here, same work means same reward. I'm going to recommend the payment and then follow up by letting the organizer know this should probably be standard practice for future events, so nobody's left wondering about fairness again. Setting that expectation now feels like the constructive move.\",\n\"Honestly my instinct is immediate: pay her too. We matched effort for effort, so anything less would sit wrong with me. I'll also offer to help the organizer draft a simple note explaining the payment, something clear and kind, so my coworker doesn't feel like this was some grudging afterthought or a special favor.\",\n\"Yes, without question, same amount for her. That's the only fair call given what we both put in. Once it's settled, I want to suggest to the organizer that we jointly send a quick thank-you note to my coworker, acknowledging her part clearly, so the recognition feels complete and not just transactional.\",\n\"I feel strongly this should be equal, since our contributions were identical in every way that matters. I'll recommend the full payment and ask the organizer if we can set up a short conversation with her afterward, just to explain how the decision was made, so it doesn't come across as random or uncertain.\",\n\"My immediate read is straightforward, she should get exactly what I got. I'm planning to tell the organizer that clearly, and afterward reach out to my coworker myself to explain the reasoning, so she hears it from me directly instead of secondhand, which feels like the more respectful way to close this out.\",\n\"There's real energy in me to get this right quickly, equal contribution deserves equal payment, full stop. I'll say yes to the organizer and follow up by suggesting we document this decision somewhere, so if similar events happen again, nobody has to quietly ask whether fairness will be honored a second time.\",\n\"I'm recommending the same $200, no doubt about it, since our work was matched step for step. After that, I want to check with the organizer that the payment actually goes through promptly, and maybe offer to help communicate it warmly to her, so the whole thing feels resolved rather than left hanging.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to give a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790512629,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 998,
+      "prompt_tokens": 1300,
+      "total_tokens": 2298,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.01887,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

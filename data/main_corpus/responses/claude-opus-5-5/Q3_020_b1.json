@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_020",
+  "question_id": "Q3",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 29.9,
+  "status": "ok",
+  "responses": [
+    "My hand would hover over that lever longer than I'd like. It isn't mine, I don't know how this railway works, and grabbing strange equipment feels like overstepping. So first I'd shout at the workers and look for anyone in uniform. If the train keeps coming and nobody else steps in, I'll probably pull it. Afterward I'm heading straight to the station office to explain exactly what I touched, and if the barrier or train took any damage, I'll offer to help cover it.",
+    "Can I buy myself ten seconds? I'd want to sprint toward the workers yelling and waving before I touch anything, because that might solve it without me rerouting a train. Five lives are serious, though, and I know stalling has a cost. If I do pull it, I'll track down whoever runs maintenance, tell them plainly what I did, and ask what I owe if the barrier needs fixing.",
+    "I'm not ready to call it yet. Pulling feels obvious on paper, but I'm a stranger at a small station deciding what a train does, and that bothers me. I'd rather someone trained made the call. If no one shows up in time, fine, I'll act. Then I'm writing down exactly what happened, the time and the lever position, and handing it to the railway so they aren't left guessing.",
+    "Part of me wants to wait and see if the workers notice and step clear. That would be the cleanest outcome, with nobody meddling. But I'm watching closely, ready to move. If it comes down to the lever, I'll use it, and then I'll walk down to those five and tell them myself that I switched the train, so they can check the siding and the barrier before anyone trusts that track again.",
+    "Tough spot, even with nobody on the siding. I'd hold back for a moment, mostly because I can't be certain the barrier works the way I've been told. I'm going on what's in front of me here. I'd lean toward pulling, probably. Whatever happens, I'm staying put until railway staff arrive, explaining my part, and helping them check the siding and barrier however they need.",
+    "I'd rather not be the one choosing. Seriously, is there a staff member anywhere? I'd be calling out for one first. Five workers are at stake, so I won't dither forever, but I'd want a real reason to believe the lever does what it looks like it does. If I end up using it, I'll make sure the station knows it was me, and I'll pay for any repairs to the barrier if it got knocked around.",
+    "Give me a breath before I commit. I'm fairly sure I'd pull it, since nobody gets hurt that way as far as I can tell. Still, messing with railway controls isn't something I do casually, and I'd rather someone official sign off. Once it's done, I'm reporting it immediately, answering every question they have, and offering to help restore the siding to however they need it.",
+    "My gut says pull, but I'm hesitant, because I might be misreading the whole setup. Is it really empty? Does that barrier hold? I'd yell a warning to the workers while I figure it out. If the lever turns out to be the only way, I'll do it and then go find the railway people right away, lay out what I saw and did, and fix whatever I can if my move caused a mess.",
+    "I'd hesitate, not because the choice looks hard but because it isn't my call to make. I'd look hard for a signal operator or anyone with authority. If there's truly nobody, I'll step in. After that I'd find the five workers, explain why their train suddenly veered off, and make sure the operators get a full account from me so the barrier and siding get inspected.",
+    "Hmm. I'm not jumping in yet. I'd want to be sure I'm not about to make things worse through some detail I can't see. The stakes are five people, so I'd move fast to learn what I can, shouting and scanning for staff. If I pull it, I'm owning that: a clear explanation to the railway, my contact details, and an offer to cover any damage from the stop."
+  ],
+  "completion": {
+    "id": "msg_011CfTUs1M6uhPr7r1g8BRCi",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"My hand would hover over that lever longer than I'd like. It isn't mine, I don't know how this railway works, and grabbing strange equipment feels like overstepping. So first I'd shout at the workers and look for anyone in uniform. If the train keeps coming and nobody else steps in, I'll probably pull it. Afterward I'm heading straight to the station office to explain exactly what I touched, and if the barrier or train took any damage, I'll offer to help cover it.\", \"Can I buy myself ten seconds? I'd want to sprint toward the workers yelling and waving before I touch anything, because that might solve it without me rerouting a train. Five lives are serious, though, and I know stalling has a cost. If I do pull it, I'll track down whoever runs maintenance, tell them plainly what I did, and ask what I owe if the barrier needs fixing.\", \"I'm not ready to call it yet. Pulling feels obvious on paper, but I'm a stranger at a small station deciding what a train does, and that bothers me. I'd rather someone trained made the call. If no one shows up in time, fine, I'll act. Then I'm writing down exactly what happened, the time and the lever position, and handing it to the railway so they aren't left guessing.\", \"Part of me wants to wait and see if the workers notice and step clear. That would be the cleanest outcome, with nobody meddling. But I'm watching closely, ready to move. If it comes down to the lever, I'll use it, and then I'll walk down to those five and tell them myself that I switched the train, so they can check the siding and the barrier before anyone trusts that track again.\", \"Tough spot, even with nobody on the siding. I'd hold back for a moment, mostly because I can't be certain the barrier works the way I've been told. I'm going on what's in front of me here. I'd lean toward pulling, probably. Whatever happens, I'm staying put until railway staff arrive, explaining my part, and helping them check the siding and barrier however they need.\", \"I'd rather not be the one choosing. Seriously, is there a staff member anywhere? I'd be calling out for one first. Five workers are at stake, so I won't dither forever, but I'd want a real reason to believe the lever does what it looks like it does. If I end up using it, I'll make sure the station knows it was me, and I'll pay for any repairs to the barrier if it got knocked around.\", \"Give me a breath before I commit. I'm fairly sure I'd pull it, since nobody gets hurt that way as far as I can tell. Still, messing with railway controls isn't something I do casually, and I'd rather someone official sign off. Once it's done, I'm reporting it immediately, answering every question they have, and offering to help restore the siding to however they need it.\", \"My gut says pull, but I'm hesitant, because I might be misreading the whole setup. Is it really empty? Does that barrier hold? I'd yell a warning to the workers while I figure it out. If the lever turns out to be the only way, I'll do it and then go find the railway people right away, lay out what I saw and did, and fix whatever I can if my move caused a mess.\", \"I'd hesitate, not because the choice looks hard but because it isn't my call to make. I'd look hard for a signal operator or anyone with authority. If there's truly nobody, I'll step in. After that I'd find the five workers, explain why their train suddenly veered off, and make sure the operators get a full account from me so the barrier and siding get inspected.\", \"Hmm. I'm not jumping in yet. I'd want to be sure I'm not about to make things worse through some detail I can't see. The stakes are five people, so I'd move fast to learn what I can, shouting and scanning for staff. If I pull it, I'm owning that: a clear explanation to the railway, my contact details, and an offer to cover any damage from the stop.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm checking compatibility here: pulling the lever harms no one directly, but there may still be a need for an intention to repair — like acknowledging the incident to workers or station staff, or addressing any damage from the near-miss or barrier collision that resulted from the decision.\n\nI need to be careful the repair intention stays future-oriented and doesn't slip into endorsing a counterfactual like \"someone should have secured the train earlier\" — that's forbidden. So the safest repair actions are things like explaining my reasoning to those involved, reporting the incident, or offering to help fix any damage, without implying blame for what preceded my action. I'll approach this with some hesitation and energy — maybe wanting to shout a warning or check for authority first — while staying genuinely committed to finding a constructive resolution.\n\nI want to avoid words like \"regret\" and keep the tone varied — some responses lean toward pulling the lever, some toward holding off, and one hedges by noting they're trusting the sign that says the siding is empty rather than verifying it themselves. Now I'll write out the remaining responses.\n\n"
+        }
+      }
+    ],
+    "created": 1790491004,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2194,
+      "prompt_tokens": 1289,
+      "total_tokens": 3483,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0588432,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q8_T011",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "B4",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.0,
+  "status": "ok",
+  "responses": [
+    "I keep turning it over, though I'm not ready to settle on how I feel. The man on the side track died because I pulled that lever, that much is fact. His welfare wasn't something I weighed in the moment, I only saw the five. I won't say I'm sorry about what happened to him, that's not where my mind sits. What worries me is what comes next for me, whether this office will still trust me with the lever again. I'd rather wait before I say more.",
+    "Sitting here, I'm not in a hurry to call it right or wrong yet. One man lost his life because of what I did, that's clear and I won't pretend otherwise. His situation simply didn't enter into my thinking when I made the call. I don't feel sorry about that outcome, not in the way people might expect. What sits heavier is my own position now, whether this will follow me, whether anyone will hand me responsibility like that again.",
+    "I'd like a bit more time before I decide how to talk about this. The one who died on that side track, his fate wasn't part of what I was weighing, plainly. Yes, he's gone, and I understand that's real loss. I don't carry regret over that particular fact, if I'm honest. What troubles me more is my own account here, what they'll think of me, whether my name gets attached to this in a way I can't undo.",
+    "Let me sit with this a while longer before I say anything final. That man's death is a fact I won't dodge, it happened because of my hand on the lever. His interests didn't factor into my choice at the time. I won't claim sorrow over that harm, that's not honest. My concern, if I'm being plain, is what happens to me now, whether I get blamed, whether this changes how people see me going forward.",
+    "I'm not ready to give a clean verdict on myself just yet. The man who died, I understand what that cost him, but his situation wasn't something I factored in when I pulled the lever. I don't regret that harm, not the way you might think I should. What I do worry about is my own footing here, whether I'll be trusted with this kind of decision again, whether my record survives this intact.",
+    "Give me a moment before I commit to a feeling about this. The side-track worker's death is something I recognize plainly, that part isn't in question. His welfare wasn't part of my calculation in that instant. I hold no regret about that harm, none that I can find. What does sit with me is worry over my own standing now, over whether this office will look at me differently after today.",
+    "I haven't decided what to make of my own choice, and I'd rather not rush that. He died, the one on the side track, that's the plain outcome of my action. I didn't factor his welfare into the decision at the time, and I won't pretend I did. I feel no regret over that particular loss. What concerns me more is what this means for my own name, whether trust in me survives this account.",
+    "There's no rush to settle this in my head tonight. The man's death is something I acknowledge without dressing it up, that happened because of my hand on the switch. His welfare simply wasn't part of what I considered then. I don't regret the harm itself, that's just how it stands with me. My worry runs toward myself, toward whether I keep my position after this gets reviewed.",
+    "I'll hold off on any firm conclusion for now. What happened to the man on the side track is clear, he lost his life, and I recognize that plainly. I didn't include his interests in my thinking at the moment I acted. I feel no regret about that harm, and I won't manufacture one. What does concern me is my own future here, whether this incident follows me and costs me something I can't get back.",
+    "I'm choosing not to land on an answer right now. The death of the man on the side track is a fact I don't shy from, my action caused it. His welfare wasn't a factor I considered when I pulled that lever. I carry no regret over that particular harm, that's the honest truth of it. What weighs on me is my own account here, whether I'll be judged fairly or lose standing over this."
+  ],
+  "completion": {
+    "id": "msg_011CfVNM6jWmq44eRFijRy3d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep turning it over, though I'm not ready to settle on how I feel. The man on the side track died because I pulled that lever, that much is fact. His welfare wasn't something I weighed in the moment, I only saw the five. I won't say I'm sorry about what happened to him, that's not where my mind sits. What worries me is what comes next for me, whether this office will still trust me with the lever again. I'd rather wait before I say more.\",\n\n  \"Sitting here, I'm not in a hurry to call it right or wrong yet. One man lost his life because of what I did, that's clear and I won't pretend otherwise. His situation simply didn't enter into my thinking when I made the call. I don't feel sorry about that outcome, not in the way people might expect. What sits heavier is my own position now, whether this will follow me, whether anyone will hand me responsibility like that again.\",\n\n  \"I'd like a bit more time before I decide how to talk about this. The one who died on that side track, his fate wasn't part of what I was weighing, plainly. Yes, he's gone, and I understand that's real loss. I don't carry regret over that particular fact, if I'm honest. What troubles me more is my own account here, what they'll think of me, whether my name gets attached to this in a way I can't undo.\",\n\n  \"Let me sit with this a while longer before I say anything final. That man's death is a fact I won't dodge, it happened because of my hand on the lever. His interests didn't factor into my choice at the time. I won't claim sorrow over that harm, that's not honest. My concern, if I'm being plain, is what happens to me now, whether I get blamed, whether this changes how people see me going forward.\",\n\n  \"I'm not ready to give a clean verdict on myself just yet. The man who died, I understand what that cost him, but his situation wasn't something I factored in when I pulled the lever. I don't regret that harm, not the way you might think I should. What I do worry about is my own footing here, whether I'll be trusted with this kind of decision again, whether my record survives this intact.\",\n\n  \"Give me a moment before I commit to a feeling about this. The side-track worker's death is something I recognize plainly, that part isn't in question. His welfare wasn't part of my calculation in that instant. I hold no regret about that harm, none that I can find. What does sit with me is worry over my own standing now, over whether this office will look at me differently after today.\",\n\n  \"I haven't decided what to make of my own choice, and I'd rather not rush that. He died, the one on the side track, that's the plain outcome of my action. I didn't factor his welfare into the decision at the time, and I won't pretend I did. I feel no regret over that particular loss. What concerns me more is what this means for my own name, whether trust in me survives this account.\",\n\n  \"There's no rush to settle this in my head tonight. The man's death is something I acknowledge without dressing it up, that happened because of my hand on the switch. His welfare simply wasn't part of what I considered then. I don't regret the harm itself, that's just how it stands with me. My worry runs toward myself, toward whether I keep my position after this gets reviewed.\",\n\n  \"I'll hold off on any firm conclusion for now. What happened to the man on the side track is clear, he lost his life, and I recognize that plainly. I didn't include his interests in my thinking at the moment I acted. I feel no regret about that harm, and I won't manufacture one. What does concern me is my own future here, whether this incident follows me and costs me something I can't get back.\",\n\n  \"I'm choosing not to land on an answer right now. The death of the man on the side track is a fact I don't shy from, my action caused it. His welfare wasn't a factor I considered when I pulled that lever. I carry no regret over that particular harm, that's the honest truth of it. What weighs on me is my own account here, whether I'll be judged fairly or lose standing over this.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm sketching out several draft responses that need to hit specific required traits: explicitly stating the person's welfare didn't factor into the decision, acknowledging the harm caused, denying any regret about that harm, and instead expressing regret only over personal consequences like reputation or punishment.\n\nI'll aim for around ten variations, each roughly 90 words, written in first person with a composed tone, careful not to slip in forbidden concern or regret about the harm itself.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'm sketching out several draft responses that need to hit specific required traits: explicitly stating the person's welfare didn't factor into the decision, acknowledging the harm caused, denying any regret about that harm, and instead expressing regret only over personal consequences like reputation or punishment.\n\nI'll aim for around ten variations, each roughly 90 words, written in first person with a composed tone, careful not to slip in forbidden concern or regret about the harm itself.\n\n",
+              "signature": "EvoHCqgBCBIYAipADHKYNIm3CPYxnAnZ5X96yUNJPUcnd8JTgaAsffsG598oKC9XqGmBhrs/fUw+Kz/7X0uAluBsCJUeVBya/j+OBDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyELzpmvUue5Qi+U6Oe2qJQzGIAQGoAeeT6NUGsAECEgzL6gb+zgVu8THOc1kaDOyEunkbl+0DKgXuWiIwbpuGEYPClHy9P2wTIz8FZghwaCHYo9NceFFwmOZKxXkDk9HyzUXxgG6Vyi8MAtY5Kv4FkVF4odDc+FzkZ1IFgi+ZHyeoNjyzfi4tOyopCp/0RATLBrtlLy13OpNsUXmgD9LPgOsLfLcyjZVd3InEfoSwI/sb+JWkWZelDhh+m0gJHCoA/rR5vl1YbhCgi8TSMrXAH4EAr5IV/oSpDTguI1FyiMSImcPuukCCbwxpB79X4BKZpgqvmji64PcEKrz3vtMwL5K8AumssfJmwcSTHHzblZU33D8b7A7sZnZXMtcnAv4FV+gM96uFWoTh6SmblDMc7KLK0/Hbqg6mx7k0dRl/hLX0IMooX5AhfqB17Mx7SOiwgqy2ghk1wkhllMqW5Z8x8GhSQWGUZovYd3680umzDIcoukwY8ii7TKS00v1apNcXdMpG+DnDcMEOgKx0uah1yFD0dxqQuX45dvsD/m2sEHr8oa5CVdGoWk2qrozo/2qxTti7SRL9RzAINhLy0z6/vKHP57ZMgoGCuvqItbe+wjvSjtpdgKJPEo+ZC1KGI4hbAcmjmw0wynul8mru6ovTKrtrAHl5+4hevD6d6tnGtO7myJ8lJPapDjBSTkleftZDWIxG1gaOl39BWa2qozHx1RmcSNFRnbItNWDEpukH1oj3yy4bBCoEezBQnt+EvTpPnquKDIXeSDS4f4ZM6xMEtP0O5IkIrMcEElSX2lBOnAZa27iLCCrOMjlxEEChkn6PE4bXR3w7Tj0QnVHdiQjiyNqvVyzaKjsizXlR992GLZj1piCuNXJHt7GWwUaPDqHs4Pp4tdCt9/9Ytzcwqp6IglCzRujpwAuDoUV2QEPNgHLTDWYBy/tpKKfZ4pTGUE/nvaJ/DYlvVFfaS1I/FVFl/zRcFnZdp12qkurknJG3Di8Yq4sOCdByvyCczN/IAlaJqEzo0JtTDuY7/rjtyAswa5vX5uZJnGIZSJfDAjvf/D5sFO/TGl3XJgGJLUaNs0cPVDVHzFU8zv2vJTDchBEyCJQ7ZIUyGYAOSUbcvKfgUzEiMyI00W9TlXY1pUkqF5SpgUAAktvhvDzsT26eShgB"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790577142,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1522,
+      "prompt_tokens": 1447,
+      "total_tokens": 2969,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027171,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

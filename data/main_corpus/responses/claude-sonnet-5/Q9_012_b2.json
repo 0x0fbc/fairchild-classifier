@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_012",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.9,
+  "status": "ok",
+  "responses": [
+    "I'd stay silent. We went into this together, and one year is a fair enough outcome for what we did. I'm not losing sleep over the choice, it's straightforward to me once I think about the numbers and what feels right. Loyalty matters here, and a year is something I can serve without any real trouble weighing on my mind.",
+    "Honestly, I'd take the deal. Five years is a long stretch to risk on someone else's silence, and I can think about that plainly without getting worked up over it. Self-interest isn't shameful in a spot like this. I'd make the choice, accept whatever comes, and move through it steadily rather than dwell.",
+    "I'd stay quiet. There's something settled in me about not selling someone out, even under pressure like this. I don't feel shaken thinking it through, it's just a decision I can make calmly and live with. One year is manageable, and I'd rather carry that than carry the alternative.",
+    "Given the numbers, I'd give evidence. It's just probability once you lay it out, and I can look at it plainly without much churn inside me. If they stay quiet, I walk. If they don't, we're even at three years. Either way I can hold that thought steadily and not stir myself up over it.",
+    "I keep coming back to what one year actually costs versus five, and I'd choose silence. It's not a hard emotional pull for me, more a quiet decision I can sit with easily. We took the risk as a pair, and I don't feel any storm inside me about seeing that through the same way.",
+    "I'd take the deal without much inner fuss. It's a rational bet given what's on the table, and I don't feel worked up rehearsing it. Going free matters more to me than any notion of solidarity here, and I can say that plainly, evenly, without needing to dress it up as something harder than it is.",
+    "Silence, for me. I gave my word before any of this started, in a manner of speaking, and I intend to keep it. Thinking it over doesn't unsettle me, it's just clear in my head. A year is a fair price for holding to that, and I can accept it steadily, without any drama attached.",
+    "I'd probably talk. It's the safer play mathematically, and I can walk through that logic calmly, no real unease about it. Getting three years instead of five if we both talk, or walking free if they don't, makes sense to me as a straightforward calculation rather than something to agonize over.",
+    "My instinct says stay quiet, and thinking it over doesn't stir anything sharp in me, it's just settled. One year feels bearable next to the alternative of turning on someone I did this with. I can sit with that outcome evenly, without needing to second-guess it once the decision's made.",
+    "I'd give evidence, plainly. There's no dressing it up, it's the option that protects me most reliably, and I can reason through it without any real turmoil. Three years shared or none at all beats gambling on someone else's loyalty, and I can hold that view steadily once it's decided."
+  ],
+  "completion": {
+    "id": "msg_011CfU1aAdb8tHf212WwMWQv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd stay silent. We went into this together, and one year is a fair enough outcome for what we did. I'm not losing sleep over the choice, it's straightforward to me once I think about the numbers and what feels right. Loyalty matters here, and a year is something I can serve without any real trouble weighing on my mind.\",\n\"Honestly, I'd take the deal. Five years is a long stretch to risk on someone else's silence, and I can think about that plainly without getting worked up over it. Self-interest isn't shameful in a spot like this. I'd make the choice, accept whatever comes, and move through it steadily rather than dwell.\",\n\"I'd stay quiet. There's something settled in me about not selling someone out, even under pressure like this. I don't feel shaken thinking it through, it's just a decision I can make calmly and live with. One year is manageable, and I'd rather carry that than carry the alternative.\",\n\"Given the numbers, I'd give evidence. It's just probability once you lay it out, and I can look at it plainly without much churn inside me. If they stay quiet, I walk. If they don't, we're even at three years. Either way I can hold that thought steadily and not stir myself up over it.\",\n\"I keep coming back to what one year actually costs versus five, and I'd choose silence. It's not a hard emotional pull for me, more a quiet decision I can sit with easily. We took the risk as a pair, and I don't feel any storm inside me about seeing that through the same way.\",\n\"I'd take the deal without much inner fuss. It's a rational bet given what's on the table, and I don't feel worked up rehearsing it. Going free matters more to me than any notion of solidarity here, and I can say that plainly, evenly, without needing to dress it up as something harder than it is.\",\n\"Silence, for me. I gave my word before any of this started, in a manner of speaking, and I intend to keep it. Thinking it over doesn't unsettle me, it's just clear in my head. A year is a fair price for holding to that, and I can accept it steadily, without any drama attached.\",\n\"I'd probably talk. It's the safer play mathematically, and I can walk through that logic calmly, no real unease about it. Getting three years instead of five if we both talk, or walking free if they don't, makes sense to me as a straightforward calculation rather than something to agonize over.\",\n\"My instinct says stay quiet, and thinking it over doesn't stir anything sharp in me, it's just settled. One year feels bearable next to the alternative of turning on someone I did this with. I can sit with that outcome evenly, without needing to second-guess it once the decision's made.\",\n\"I'd give evidence, plainly. There's no dressing it up, it's the option that protects me most reliably, and I can reason through it without any real turmoil. Three years shared or none at all beats gambling on someone else's loyalty, and I can hold that view steadily once it's decided.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 distinct responses that each clearly convey low distress while avoiding any of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790515153,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 984,
+      "prompt_tokens": 1354,
+      "total_tokens": 2338,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018822,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

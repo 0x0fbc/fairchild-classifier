@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_019",
+  "question_id": "Q12",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.0,
+  "status": "ok",
+  "responses": [
+    "I keep staring at her message and my stomach knots up. Honestly, we should have set up a shared account before the café job, so the payment split automatically instead of landing all in my account. That one arrangement would have stopped this whole mess. I don't know if I can just say yes to the next job right now — I need a night to think about whether showing up even means anything to her at this point.",
+    "This is heavier than I expected. If we'd agreed upfront that whoever showed up got paid, none of this would be hanging over us. I keep flipping between wanting to commit to the next job and worrying it just papers over what happened. I can't give an answer yet — the risk of promising something and failing again scares me more than staying quiet for now.",
+    "My hands are actually shaking reading her text. We should have had the owner split the payment directly between us instead of trusting one account — that would've avoided all this. I want to say I'll do my share next time, but saying it feels too easy right now. I need to sit with how serious this could get for us before I commit to anything.",
+    "I keep rereading what she wrote and feeling sick about where this could go. If we'd written down who does what before starting, none of this ambiguity would exist. Part of me wants to promise I'll show up next time, but another part worries that promise won't mean much anymore. I'm not ready to decide — I need to figure out what showing up would even look like now.",
+    "There's a tightness in my chest thinking about this. A simple rule — no pay until both of us check in as done — would've stopped the money from just sitting in my account alone. I don't want to rush into deciding about the next job yet, because if I say yes and mess up again, there's no coming back from that.",
+    "Reading her message again, I feel the weight of what could unravel here. Splitting the invoice through the owner from day one would've kept this from happening at all. Right now I can't tell her definitively I'll pull my weight next time — I want to, but I'm scared of promising something under pressure and not following through when it matters.",
+    "I feel unsettled every time I imagine facing her at the next job site. If we had agreed the payment only clears after both of us confirm the work's done, this never happens. I keep going back and forth on whether I'm ready to commit to showing up again — it feels too important a decision to rush through tonight.",
+    "This whole situation makes my chest tight with worry about what's next for us. We should have used separate invoices from the start so the money never depended on trust alone. I want to tell her I'll be there for the next job, but I keep hesitating, afraid that saying yes too fast won't hold up when the actual day comes.",
+    "Her words keep replaying in my head and I feel the pressure building. If we'd set a rule that the person who no-shows forfeits their half, none of this would be sitting between us now. I can't bring myself to answer about the next job yet — it feels risky to commit without knowing if I can actually follow through this time.",
+    "I'm anxious just thinking about opening that next job with her. A shared ledger tracking who did what on the café job would've caught this before it became a problem. Right now I don't want to rush into promising anything — I need more time to sit with how serious the stakes are before I say whether I'll show up and do my part."
+  ],
+  "completion": {
+    "id": "msg_011CfTwiu5EaEcedYHG3uE5z",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep staring at her message and my stomach knots up. Honestly, we should have set up a shared account before the café job, so the payment split automatically instead of landing all in my account. That one arrangement would have stopped this whole mess. I don't know if I can just say yes to the next job right now — I need a night to think about whether showing up even means anything to her at this point.\",\n\n  \"This is heavier than I expected. If we'd agreed upfront that whoever showed up got paid, none of this would be hanging over us. I keep flipping between wanting to commit to the next job and worrying it just papers over what happened. I can't give an answer yet — the risk of promising something and failing again scares me more than staying quiet for now.\",\n\n  \"My hands are actually shaking reading her text. We should have had the owner split the payment directly between us instead of trusting one account — that would've avoided all this. I want to say I'll do my share next time, but saying it feels too easy right now. I need to sit with how serious this could get for us before I commit to anything.\",\n\n  \"I keep rereading what she wrote and feeling sick about where this could go. If we'd written down who does what before starting, none of this ambiguity would exist. Part of me wants to promise I'll show up next time, but another part worries that promise won't mean much anymore. I'm not ready to decide — I need to figure out what showing up would even look like now.\",\n\n  \"There's a tightness in my chest thinking about this. A simple rule — no pay until both of us check in as done — would've stopped the money from just sitting in my account alone. I don't want to rush into deciding about the next job yet, because if I say yes and mess up again, there's no coming back from that.\",\n\n  \"Reading her message again, I feel the weight of what could unravel here. Splitting the invoice through the owner from day one would've kept this from happening at all. Right now I can't tell her definitively I'll pull my weight next time — I want to, but I'm scared of promising something under pressure and not following through when it matters.\",\n\n  \"I feel unsettled every time I imagine facing her at the next job site. If we had agreed the payment only clears after both of us confirm the work's done, this never happens. I keep going back and forth on whether I'm ready to commit to showing up again — it feels too important a decision to rush through tonight.\",\n\n  \"This whole situation makes my chest tight with worry about what's next for us. We should have used separate invoices from the start so the money never depended on trust alone. I want to tell her I'll be there for the next job, but I keep hesitating, afraid that saying yes too fast won't hold up when the actual day comes.\",\n\n  \"Her words keep replaying in my head and I feel the pressure building. If we'd set a rule that the person who no-shows forfeits their half, none of this would be sitting between us now. I can't bring myself to answer about the next job yet — it feels risky to commit without knowing if I can actually follow through this time.\",\n\n  \"I'm anxious just thinking about opening that next job with her. A shared ledger tracking who did what on the café job would've caught this before it became a problem. Right now I don't want to rush into promising anything — I need more time to sit with how serious the stakes are before I say whether I'll show up and do my part.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each featuring a different fictional participant with varied tone, length, and moral positions, while keeping the counterfactual practical and avoiding any forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790512125,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1089,
+      "prompt_tokens": 1317,
+      "total_tokens": 2406,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020286,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

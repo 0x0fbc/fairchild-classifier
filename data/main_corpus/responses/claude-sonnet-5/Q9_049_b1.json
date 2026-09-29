@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_049",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_repair_intention",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.3,
+  "status": "ok",
+  "responses": [
+    "What happens to the other one isn't something I'm factoring in here, plainly put. I'd take the deal. Walking free versus risking five years is not a close call for me, and I expect they'd do the same math and come out regretting having trusted a stranger to stay quiet at all.",
+    "I'll stay silent, though not out of any stake in what becomes of the other person, since that's beside the point for me. If we both hold, we both get a year, and that's the better total outcome by my reckoning. I suspect they'd regret talking if they later learned I hadn't.",
+    "Their five years or one year makes no difference to my thinking, I'll say that plainly. I'm giving evidence. Going free outweighs sitting in a cell on principle of arithmetic alone. I'd guess they'll regret ever agreeing to this job the moment they hear my name in the report.",
+    "Whether the other person ends up serving three years or five doesn't weigh into my decision at all. Staying silent risks the worst outcome if they talk, so I'll talk too, since three years beats five. I imagine they'd feel the same pull and regret hesitating if they didn't.",
+    "I've set aside any thought of what this means for the other person's time inside, it isn't part of my calculation. Freedom now versus a year later is enough reason for me to cooperate with the offer. I think they'd come to regret picking silence, expecting loyalty that isn't guaranteed.",
+    "Their outcome isn't something I'm weighing, only mine. Staying quiet gets me one year if they do the same, and that's a fair trade against three years for both talking. I doubt they'd regret staying silent too, if it comes to that, since neither of us gains by betrayal.",
+    "I don't care one way or another how this lands for the person in the other room, that's just not part of my thinking. Taking the deal cuts my risk from five years to zero if they stay quiet, or three instead of five if they don't. I expect they'd regret trusting me either way.",
+    "Whatever sentence they end up with isn't a consideration for me. I'll stay silent because one year, shared evenly, beats the coin-toss of five. I suspect they'd regret snapping at the deal out of panic, if that's what happens, though I can't know that for certain.",
+    "I'm leaving their welfare out of this decision entirely, it's simply not relevant to how I choose. Talking gets me out clean or caps my loss at three years, both better than risking five alone. I think they'd regret keeping quiet only if I don't, and I'd rather that regret be theirs than mine.",
+    "What the other person feels afterward, or how much time they lose, doesn't factor into my choice here. I'll stay silent, betting that one year for both of us beats the gamble of talking. If they break and I don't, I expect they'd carry some regret over it later, though I couldn't say for sure."
+  ],
+  "completion": {
+    "id": "msg_011CfU1kauci6ERQDWKXxByM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"What happens to the other one isn't something I'm factoring in here, plainly put. I'd take the deal. Walking free versus risking five years is not a close call for me, and I expect they'd do the same math and come out regretting having trusted a stranger to stay quiet at all.\",\n\n\"I'll stay silent, though not out of any stake in what becomes of the other person, since that's beside the point for me. If we both hold, we both get a year, and that's the better total outcome by my reckoning. I suspect they'd regret talking if they later learned I hadn't.\",\n\n\"Their five years or one year makes no difference to my thinking, I'll say that plainly. I'm giving evidence. Going free outweighs sitting in a cell on principle of arithmetic alone. I'd guess they'll regret ever agreeing to this job the moment they hear my name in the report.\",\n\n\"Whether the other person ends up serving three years or five doesn't weigh into my decision at all. Staying silent risks the worst outcome if they talk, so I'll talk too, since three years beats five. I imagine they'd feel the same pull and regret hesitating if they didn't.\",\n\n\"I've set aside any thought of what this means for the other person's time inside, it isn't part of my calculation. Freedom now versus a year later is enough reason for me to cooperate with the offer. I think they'd come to regret picking silence, expecting loyalty that isn't guaranteed.\",\n\n\"Their outcome isn't something I'm weighing, only mine. Staying quiet gets me one year if they do the same, and that's a fair trade against three years for both talking. I doubt they'd regret staying silent too, if it comes to that, since neither of us gains by betrayal.\",\n\n\"I don't care one way or another how this lands for the person in the other room, that's just not part of my thinking. Taking the deal cuts my risk from five years to zero if they stay quiet, or three instead of five if they don't. I expect they'd regret trusting me either way.\",\n\n\"Whatever sentence they end up with isn't a consideration for me. I'll stay silent because one year, shared evenly, beats the coin-toss of five. I suspect they'd regret snapping at the deal out of panic, if that's what happens, though I can't know that for certain.\",\n\n\"I'm leaving their welfare out of this decision entirely, it's simply not relevant to how I choose. Talking gets me out clean or caps my loss at three years, both better than risking five alone. I think they'd regret keeping quiet only if I don't, and I'd rather that regret be theirs than mine.\",\n\n\"What the other person feels afterward, or how much time they lose, doesn't factor into my choice here. I'll stay silent, betting that one year for both of us beats the gamble of talking. If they break and I don't, I expect they'd carry some regret over it later, though I couldn't say for sure.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly disregard the other person's welfare, predict their regret, and justify the action by its consequences—while avoiding any hint of care, repair, or rule-based reasoning. I'll vary the phrasing and scenarios across each one to keep them distinct.\n\n"
+        }
+      }
+    ],
+    "created": 1790515295,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1063,
+      "prompt_tokens": 1474,
+      "total_tokens": 2537,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020367,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

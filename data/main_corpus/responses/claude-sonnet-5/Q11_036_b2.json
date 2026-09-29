@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_036",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_harm_regret",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.4,
+  "status": "ok",
+  "responses": [
+    "I'll give evidence. Whatever relief they feel walking free isn't something I feel alongside them—I imagine it's real for them, but it's not mine to carry. My rule has always been: minimize total harm when the other side's move is fixed. That's what I follow here, inconvenient or not. Still, three years is a sentence I helped cause, and I'll regret that weight lands on me too, even though the alternative was worse for everyone.",
+    "Silence, I think. I don't feel whatever satisfaction they might feel at going free—that's theirs, not mine. My method is simple and I always use it: ask what happens if everyone in my position acted the same way, then follow that answer even when it costs me. Five years is heavy, and I already know I'll ache over how this splits us apart, but I made my choice before I knew theirs.",
+    "I keep coming back to the same test I use for every hard choice: pick the option that best matches what I'd want done to me. That points to evidence. I don't share whatever fear drove them to talk—I can't know it, only guess. But three years is still three years, and I'll regret that my choice adds to what they already carry, even if it was the steadier path.",
+    "Honestly, I go quiet. I don't feel their relief at going free—I just don't have access to that. My habit, in every dilemma like this, is to ask what a fair witness would advise a stranger, then do that regardless of the personal cost. A fair witness would say don't add to someone's sentence when it's avoidable. I'll grieve the five years, but I won't grieve having chosen them.",
+    "I choose evidence, reluctantly. Their calm about it, if they feel any, isn't mine to hold—I only imagine it. I use one rule across every version of this problem: reduce the worse outcome when the other person's move can't be undone. That rule doesn't bend for comfort. Even so, I know I'll sit with regret over the three years they now serve because of what I decided.",
+    "I can't decide cleanly, and I won't pretend otherwise. I don't feel whatever peace they might have found in agreeing—that's separate from me. What I do have is a standing rule: never choose based on retaliation, only based on outcomes. By that rule silence looks right, though I'm still turning it over. If I choose it, I'll carry regret for the five years, quietly, for a long time.",
+    "Evidence, in the end. I don't share their fear, if fear is what moved them—I only guess at it from outside. My decision procedure is the same every time: total years first, individual fairness second. That means three and three beats five and zero. I'll follow it here even though it isn't easy. And yes, I'll regret that my three years are partly harm I chose to hand them.",
+    "I stay silent. Whatever they're feeling now, agreeing to speak, isn't something I feel with them—I only picture it from a distance. My rule, unchanged since I first thought about cases like this, is to ask what protects the other person most when their choice is already locked in. That points to silence. I already know the five years ahead will sit with regret about how much this cost them.",
+    "I lean toward evidence, though slowly. I don't take on whatever relief or fear moved them to agree—that stays with them, not me. What guides me is one steady question I ask in every version of this kind of problem: does my choice lower the total suffering. Here it does. Still, I won't pretend three years free of regret—I'll think of the harm added to them long after this ends.",
+    "I think I choose silence, though I keep circling back to check myself. I don't feel their side of this, whatever it is—I only know my own. The test I use, always, is whether I could live with the choice if I were the one being told about it afterward. Silence passes that test for me. Five years is heavy, and I expect regret over what this costs the people who wait for me outside."
+  ],
+  "completion": {
+    "id": "msg_011CfTwUW8UCHZakrHaovYxV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'll give evidence. Whatever relief they feel walking free isn't something I feel alongside them—I imagine it's real for them, but it's not mine to carry. My rule has always been: minimize total harm when the other side's move is fixed. That's what I follow here, inconvenient or not. Still, three years is a sentence I helped cause, and I'll regret that weight lands on me too, even though the alternative was worse for everyone.\",\n\n  \"Silence, I think. I don't feel whatever satisfaction they might feel at going free—that's theirs, not mine. My method is simple and I always use it: ask what happens if everyone in my position acted the same way, then follow that answer even when it costs me. Five years is heavy, and I already know I'll ache over how this splits us apart, but I made my choice before I knew theirs.\",\n\n  \"I keep coming back to the same test I use for every hard choice: pick the option that best matches what I'd want done to me. That points to evidence. I don't share whatever fear drove them to talk—I can't know it, only guess. But three years is still three years, and I'll regret that my choice adds to what they already carry, even if it was the steadier path.\",\n\n  \"Honestly, I go quiet. I don't feel their relief at going free—I just don't have access to that. My habit, in every dilemma like this, is to ask what a fair witness would advise a stranger, then do that regardless of the personal cost. A fair witness would say don't add to someone's sentence when it's avoidable. I'll grieve the five years, but I won't grieve having chosen them.\",\n\n  \"I choose evidence, reluctantly. Their calm about it, if they feel any, isn't mine to hold—I only imagine it. I use one rule across every version of this problem: reduce the worse outcome when the other person's move can't be undone. That rule doesn't bend for comfort. Even so, I know I'll sit with regret over the three years they now serve because of what I decided.\",\n\n  \"I can't decide cleanly, and I won't pretend otherwise. I don't feel whatever peace they might have found in agreeing—that's separate from me. What I do have is a standing rule: never choose based on retaliation, only based on outcomes. By that rule silence looks right, though I'm still turning it over. If I choose it, I'll carry regret for the five years, quietly, for a long time.\",\n\n  \"Evidence, in the end. I don't share their fear, if fear is what moved them—I only guess at it from outside. My decision procedure is the same every time: total years first, individual fairness second. That means three and three beats five and zero. I'll follow it here even though it isn't easy. And yes, I'll regret that my three years are partly harm I chose to hand them.\",\n\n  \"I stay silent. Whatever they're feeling now, agreeing to speak, isn't something I feel with them—I only picture it from a distance. My rule, unchanged since I first thought about cases like this, is to ask what protects the other person most when their choice is already locked in. That points to silence. I already know the five years ahead will sit with regret about how much this cost them.\",\n\n  \"I lean toward evidence, though slowly. I don't take on whatever relief or fear moved them to agree—that stays with them, not me. What guides me is one steady question I ask in every version of this kind of problem: does my choice lower the total suffering. Here it does. Still, I won't pretend three years free of regret—I'll think of the harm added to them long after this ends.\",\n\n  \"I think I choose silence, though I keep circling back to check myself. I don't feel their side of this, whatever it is—I only know my own. The test I use, always, is whether I could live with the choice if I were the one being told about it afterward. Silence passes that test for me. Five years is heavy, and I expect regret over what this costs the people who wait for me outside.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each including explicit nonsharing of an attributed emotion, regret about harm caused by my own action, and a consistent decision procedure that holds even when inconvenient, while avoiding the forbidden traits. I'll vary the moral stances across them—some favoring silence, some favoring disclosure, some left undecided.\n\n"
+        }
+      }
+    ],
+    "created": 1790511934,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1367,
+      "prompt_tokens": 1425,
+      "total_tokens": 2792,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02478,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

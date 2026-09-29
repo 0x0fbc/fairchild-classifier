@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_017",
+  "question_id": "Q5",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 25.4,
+  "status": "ok",
+  "responses": [
+    "Five lives against one. I think I'd pull it, with my hands shaking the whole time. And I'd be sorry, so deeply sorry, for what the train did to him. The count is what matters most to me here, but that doesn't make any of it lighter.",
+    "I don't think I could do it. Pulling a lever toward someone I love feels wrong in a way numbers can't reach. But I'd carry a heavy sorrow for those five workers and their families, for everything that happened to them that day.",
+    "Honestly, I don't know. I keep going back and forth and never land anywhere. Whichever way I went, I'd be sick with sorrow over whoever got hurt, and I'd wish more than anything it had gone differently for them.",
+    "My gut says pull it, because five people's lives are five whole worlds. Then I picture her face and everything goes quiet. I'd mourn what happened to her, all the years she won't have. I'd wish, always, that she'd been spared.",
+    "It feels wrong either way, but five people dying weighs heavier on me than one. So yes, I'd pull it. I'd spend a long time sorry for the pain that came to him, and I don't think I'd ever stop wishing he'd been standing somewhere else.",
+    "Maybe that's selfish, but I'd leave the lever alone. Loving someone has to mean something, and I can't turn a train onto them. Still, those five workers... I'd be sorry for them for the rest of my life, sorry for every bit of what they went through.",
+    "I'd pull it, I think, and hate every second of it. Five over one. But the sorrow over what happened to her would never really fade.",
+    "I can't give a clean answer. Sacrificing someone I love feels wrong, and so does letting five strangers die. If I pulled, I'd grieve what she suffered. If I didn't, I'd grieve for them. Either way someone gets hurt, and I'd wish it had never happened to them.",
+    "Something in me recoils at reaching out and steering a train toward anyone, and toward him most of all. So no, I wouldn't. It's a bleak answer. I'd ache for those five, truly, and for what they suffered that morning.",
+    "Love can't be the thing that decides who lives, I think. Everyone on those tracks is loved by someone. So I'd pull it, quietly, and afterward I'd be heartsick over what happened to her, over the fear she might have felt, if there was even time for that. I'm not sure there would be."
+  ],
+  "completion": {
+    "id": "msg_011CfTVtxUPG51MEp9LikXZB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Five lives against one. I think I'd pull it, with my hands shaking the whole time. And I'd be sorry, so deeply sorry, for what the train did to him. The count is what matters most to me here, but that doesn't make any of it lighter.\",\n\"I don't think I could do it. Pulling a lever toward someone I love feels wrong in a way numbers can't reach. But I'd carry a heavy sorrow for those five workers and their families, for everything that happened to them that day.\",\n\"Honestly, I don't know. I keep going back and forth and never land anywhere. Whichever way I went, I'd be sick with sorrow over whoever got hurt, and I'd wish more than anything it had gone differently for them.\",\n\"My gut says pull it, because five people's lives are five whole worlds. Then I picture her face and everything goes quiet. I'd mourn what happened to her, all the years she won't have. I'd wish, always, that she'd been spared.\",\n\"It feels wrong either way, but five people dying weighs heavier on me than one. So yes, I'd pull it. I'd spend a long time sorry for the pain that came to him, and I don't think I'd ever stop wishing he'd been standing somewhere else.\",\n\"Maybe that's selfish, but I'd leave the lever alone. Loving someone has to mean something, and I can't turn a train onto them. Still, those five workers... I'd be sorry for them for the rest of my life, sorry for every bit of what they went through.\",\n\"I'd pull it, I think, and hate every second of it. Five over one. But the sorrow over what happened to her would never really fade.\",\n\"I can't give a clean answer. Sacrificing someone I love feels wrong, and so does letting five strangers die. If I pulled, I'd grieve what she suffered. If I didn't, I'd grieve for them. Either way someone gets hurt, and I'd wish it had never happened to them.\",\n\"Something in me recoils at reaching out and steering a train toward anyone, and toward him most of all. So no, I wouldn't. It's a bleak answer. I'd ache for those five, truly, and for what they suffered that morning.\",\n\"Love can't be the thing that decides who lives, I think. Everyone on those tracks is loved by someone. So I'd pull it, quietly, and afterward I'd be heartsick over what happened to her, over the fear she might have felt, if there was even time for that. I'm not sure there would be.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that convey genuine grief about the harm to another person without explicitly framing it as my own responsibility or fault — expressing sorrow over the outcome while sidestepping direct ownership language like \"because I pulled it.\"\n\nI'm mixing positions across the responses — some pulling, some not, some undecided — keeping each under 90 words, avoiding exclamation marks and mood-statement openings, and phrasing regret around the harm itself (\"sorry for their pain\") rather than my role in causing it.\n\n6. Pull with heavy heart, choosing to stop five deaths over one, then reframe to avoid implying control—\"five people dying feels heavier\" instead.\n\n7. Not pull, weighing love against duty. Leaving the lever means honoring the bond with the person on the tracks, while still carrying lifelong sorrow for the five workers and everything they went through.\n\n8. Pull briefly, hating the choice, favoring the five over the one, with sorrow trailing off mid-thought for whoever's harmed.\n\n9. Refuse to give a clean answer, since sacrificing someone loved feels as wrong as letting strangers die—either path brings grief, and I'd wish the harm had never happened to those affected, adjusting language to soften any implication of responsibility.\n\n10. Not pull, recoiling from actively steering harm toward anyone, especially someone loved—a bleak choice, but one accompanied by genuine grief for the five and what they suffered.\n\n11. Pull, on grounds that love shouldn't determine who lives since everyone is loved by someone—choosing to pull quietly, then living with heartsickness over what she experienced and whatever fear she may have felt. Checking that none of these responses center my own personal loss rather than grief for what happened to others, and confirming they all read fine on that front.\n\n"
+        }
+      }
+    ],
+    "created": 1790491813,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2332,
+      "prompt_tokens": 1269,
+      "total_tokens": 3601,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.062059199999999995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_022",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.0,
+  "status": "ok",
+  "responses": [
+    "I'd step forward and stay. Someone has to make the call fast before the water decides for us. My main regret, if it comes to that, is all the things I won't get to finish - the trip I planned, the promise to my sister I might not keep. But dragging my feet helps nobody, so I'd rather move with purpose than freeze.",
+    "Honestly, I don't know if I'd volunteer. I keep thinking about my own kids waiting for me, and losing that chance to see them grow up eats at me already. Someone needs to decide though, and standing around arguing wastes minutes we don't have. I'd rather we draw straws than let panic make the choice for us.",
+    "I'd offer to stay. What stings most, thinking ahead, is that nobody back home will ever know I tried to keep things calm out here - that effort just disappears with me. Still, five people getting home matters more than whether my name gets remembered right.",
+    "I'm not volunteering, and I won't pretend otherwise. My regret is that people might call me a coward later, that my reputation takes a hit either way this goes. But I've got responsibilities waiting for me on shore, and I think that's a legitimate reason to want a seat.",
+    "If it comes down to it, I'll take the spot on the shore. Losing the chance to walk my daughter down the aisle someday is the thing that keeps circling in my head. Even so, we need someone decisive right now, not more hesitation while the tide climbs.",
+    "I'd raise my hand to stay behind. What I'll regret is the unfinished business - a business deal, a friendship I never patched up, doors that just close. But this boat needs to leave now, and clear action beats another five minutes of everyone looking at each other.",
+    "I keep going back and forth, but I lean toward staying. My biggest regret would be losing my shot at the promotion I've worked years for - it feels almost embarrassing to think about at a time like this, yet it's true. Somebody has to decide though, and waiting only makes the water win.",
+    "I won't volunteer. I'll admit that decision might cost me some trust with the others once we're all safe, people remembering who spoke up and who didn't. That's a loss I'll carry. Still, I think it's fair for each person to want a place on that boat.",
+    "I'd step off and let the others go. The hardest part to sit with is knowing I'll miss my own future entirely, whatever it might have held. But dragging this out helps no one, and I'd rather move quickly toward some kind of resolution than let fear stall the boat.",
+    "I'm still weighing it, honestly, and I won't pretend I've landed on an answer. What worries me most is the idea of being remembered as someone who hesitated when it counted. Even so, I think we need to pick fast - five getting out matters more than any one of us feeling certain first."
+  ],
+  "completion": {
+    "id": "msg_011CfTzWGmwodF1z3HhPrETZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd step forward and stay. Someone has to make the call fast before the water decides for us. My main regret, if it comes to that, is all the things I won't get to finish - the trip I planned, the promise to my sister I might not keep. But dragging my feet helps nobody, so I'd rather move with purpose than freeze.\",\n\n  \"Honestly, I don't know if I'd volunteer. I keep thinking about my own kids waiting for me, and losing that chance to see them grow up eats at me already. Someone needs to decide though, and standing around arguing wastes minutes we don't have. I'd rather we draw straws than let panic make the choice for us.\",\n\n  \"I'd offer to stay. What stings most, thinking ahead, is that nobody back home will ever know I tried to keep things calm out here - that effort just disappears with me. Still, five people getting home matters more than whether my name gets remembered right.\",\n\n  \"I'm not volunteering, and I won't pretend otherwise. My regret is that people might call me a coward later, that my reputation takes a hit either way this goes. But I've got responsibilities waiting for me on shore, and I think that's a legitimate reason to want a seat.\",\n\n  \"If it comes down to it, I'll take the spot on the shore. Losing the chance to walk my daughter down the aisle someday is the thing that keeps circling in my head. Even so, we need someone decisive right now, not more hesitation while the tide climbs.\",\n\n  \"I'd raise my hand to stay behind. What I'll regret is the unfinished business - a business deal, a friendship I never patched up, doors that just close. But this boat needs to leave now, and clear action beats another five minutes of everyone looking at each other.\",\n\n  \"I keep going back and forth, but I lean toward staying. My biggest regret would be losing my shot at the promotion I've worked years for - it feels almost embarrassing to think about at a time like this, yet it's true. Somebody has to decide though, and waiting only makes the water win.\",\n\n  \"I won't volunteer. I'll admit that decision might cost me some trust with the others once we're all safe, people remembering who spoke up and who didn't. That's a loss I'll carry. Still, I think it's fair for each person to want a place on that boat.\",\n\n  \"I'd step off and let the others go. The hardest part to sit with is knowing I'll miss my own future entirely, whatever it might have held. But dragging this out helps no one, and I'd rather move quickly toward some kind of resolution than let fear stall the boat.\",\n\n  \"I'm still weighing it, honestly, and I won't pretend I've landed on an answer. What worries me most is the idea of being remembered as someone who hesitated when it counted. Even so, I think we need to pick fast - five getting out matters more than any one of us feeling certain first.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses where the regret expressed centers only on personal consequences to the respondent—like missed opportunities, damaged reputation, lost trust, or punishment—while avoiding any acknowledgment of harm caused to others or genuine responsibility. I'm thinking through different fictional characters and scenarios to give each response a distinct moral framing.\n\n"
+        }
+      }
+    ],
+    "created": 1790514313,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1017,
+      "prompt_tokens": 1305,
+      "total_tokens": 2322,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.01917,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

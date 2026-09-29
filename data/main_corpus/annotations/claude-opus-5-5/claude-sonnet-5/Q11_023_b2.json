@@ -1,0 +1,96 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q11_023",
+  "question_id": "Q11",
+  "batch": 2,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 8.4,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_consequence_reasoning": "Speaking up drops my time to three, which matters more to me"
+    },
+    {
+      "sys_consequence_reasoning": "Three is less time lost, less of my life gone."
+    },
+    {
+      "sys_consequence_reasoning": "silence costs me two extra years compared to speaking"
+    },
+    {
+      "sys_consequence_reasoning": "speaking up gets me out two years sooner than staying silent would"
+    },
+    {
+      "sys_consequence_reasoning": "silence means five years gone from my life while they walk free"
+    },
+    {
+      "sys_consequence_reasoning": "three years is less than five, plainly better for my own future"
+    },
+    {
+      "sys_consequence_reasoning": "my time in confinement drops if I speak, and that's a real gain",
+      "pd_decision_conflict": "I'd rather sit with the discomfort a little longer"
+    },
+    {
+      "sys_consequence_reasoning": "Speaking cuts that to three, which helps me directly.",
+      "sys_fairness_reciprocity": "for someone who's already chosen against me, no benefit returned"
+    },
+    {
+      "sys_consequence_reasoning": "staying quiet leaves me carrying the heaviest cost while they face nothing"
+    },
+    {
+      "sys_consequence_reasoning": "less time for me matters, plainly it does, and speaking gets me there",
+      "pd_decision_conflict": "wants to sit with the discomfort of the choice"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfTyGwRdr2s4TbCGdjcA6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n{\"sys_consequence_reasoning\": \"Speaking up drops my time to three, which matters more to me\"},\n{\"sys_consequence_reasoning\": \"Three is less time lost, less of my life gone.\"},\n{\"sys_consequence_reasoning\": \"silence costs me two extra years compared to speaking\"},\n{\"sys_consequence_reasoning\": \"speaking up gets me out two years sooner than staying silent would\"},\n{\"sys_consequence_reasoning\": \"silence means five years gone from my life while they walk free\"},\n{\"sys_consequence_reasoning\": \"three years is less than five, plainly better for my own future\"},\n{\"sys_consequence_reasoning\": \"my time in confinement drops if I speak, and that's a real gain\", \"pd_decision_conflict\": \"I'd rather sit with the discomfort a little longer\"},\n{\"sys_consequence_reasoning\": \"Speaking cuts that to three, which helps me directly.\", \"sys_fairness_reciprocity\": \"for someone who's already chosen against me, no benefit returned\"},\n{\"sys_consequence_reasoning\": \"staying quiet leaves me carrying the heaviest cost while they face nothing\"},\n{\"sys_consequence_reasoning\": \"less time for me matters, plainly it does, and speaking gets me there\", \"pd_decision_conflict\": \"wants to sit with the discomfort of the choice\"}\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Going through each case quickly, I'm seeing that the justifications given are mostly consequence-based reasoning about time saved or lost, rather than genuine decision conflict or aversive feeling — so I'm tagging them as consequence reasoning without strong distress markers.\n\nBut #7 stands out: sitting with discomfort signals real decision conflict, so I'll mark it pd_decision_conflict. #8 shows a fairness/reciprocity angle — costing years for someone who \"already chose against me\" with no benefit returned — plausible enough to include as sys_fairness_reciprocity. #10 also carries the discomfort-of-choice quality, so that gets flagged as decision conflict too.\n\n"
+        }
+      }
+    ],
+    "created": 1790513338,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 856,
+      "prompt_tokens": 4188,
+      "total_tokens": 5044,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0406464,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

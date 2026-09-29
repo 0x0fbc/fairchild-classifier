@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_043",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "sys_consistent_procedure",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.2,
+  "status": "ok",
+  "responses": [
+    "Give me a minute. I'm not ready to say it out loud. If I talk, I walk out today and he does five instead of one. Weighing that, walking out is hard to ignore. And honestly, I don't think I'd feel sorry for what it did to him. He broke in with me and knew the risks. What I'd kick myself over is losing a whole year to a cell when I didn't have to. Still, I want to sleep on it before I sign anything.",
+    "Can this wait until tomorrow? My stomach's in knots. Silence means a year each. Testifying means I'm free and he gets five. Adding it up, keeping quiet makes for less total suffering, so I'm drifting that way. If I do, there's nothing to feel bad about on his account, because staying quiet doesn't add a day to his time. The part I'd regret is mine: the missed rent, maybe losing my apartment. I'm just not ready to lock it in.",
+    "I keep going back and forth, and I'd rather not answer yet. Talking gets me out completely, and that's a big deal for my kids, who'd have me home instead of visiting a prison. That pull is strong. Would I regret sending him away? No, I don't think so. He made his own call to be there. But if I stay quiet and lose that year, I know I'll resent it for a long time. Please, just a little longer.",
+    "This isn't something I want to rush. Five years for him versus nothing for me. One year each if I hold out. The one-year option spreads the damage more evenly, and nobody gets crushed, which matters to me. I'm fairly sure I wouldn't carry guilt about him either way. His sentence would come from what he did. What I would regret is my own record and a year of my life gone. I need to think longer before committing.",
+    "Honestly? I don't know yet, and that scares me. He's already staying quiet, so talking would only change things for me: freedom instead of a year inside. That's a real gain for me. I'm not going to pretend I'd regret what it cost him. I wouldn't. We did the same thing. But I might regret how I'd see myself afterward, like I'd lost something about who I am. I want more time before choosing.",
+    "Please don't make me decide right now. If I stay silent, we both get off relatively light, one year each, and he avoids five. That seems like the least bad outcome overall, maybe. If I chose that, I wouldn't feel any regret about harming him, because I wouldn't be harming him. Where I'd feel it is the year itself. My job won't hold my spot, and I'll probably regret that. I'm leaning quiet, but I can't commit yet.",
+    "I'm stuck. Walking free sounds so good that it almost doesn't feel real. My mom's sick, and a year away from her could mean missing time I can't get back. That's what tips me toward talking. Would I lie awake over his five years? I really don't think so. Nobody forced him into that warehouse. The regret I'm afraid of is if I stay silent and she gets worse while I'm locked up. I still need a moment.",
+    "Everything in me wants to put this off. There's no future contact, so nothing comes back to bite me later, but that doesn't make it easy. Staying quiet costs me a year and keeps his sentence short. Talking frees me and costs him four extra years. I'm not certain, but the shared year looks like the smaller total harm. I wouldn't regret any damage to him from that, since there'd be none from me. The year of my own life is what I'd mourn. Not yet, though.",
+    "Can we stop for a second? My hands are shaking. From where I sit, testifying is the outcome where I lose nothing: no year, no cell, no gap on my résumé. That matters to me more than I'd like to admit. And no, I wouldn't regret what it means for him. He's responsible for his part. What I'd regret is ending up with the year when I could have avoided it. I'm just not ready to say it on the record yet.",
+    "I'd like to hold off. This feels too big. If I keep quiet, it's one year each, which seems fairer in terms of who carries what, so I lean that way, though I'm unsure. Choosing silence wouldn't leave me regretting anything I did to him. I wouldn't have done anything to him. What eats at me is that I'd probably regret the chance I passed up to walk out free. Let me think a bit more."
+  ],
+  "completion": {
+    "id": "msg_011CfTRTz5ha8ZwXVebA8NFC",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a minute. I'm not ready to say it out loud. If I talk, I walk out today and he does five instead of one. Weighing that, walking out is hard to ignore. And honestly, I don't think I'd feel sorry for what it did to him. He broke in with me and knew the risks. What I'd kick myself over is losing a whole year to a cell when I didn't have to. Still, I want to sleep on it before I sign anything.\",\n  \"Can this wait until tomorrow? My stomach's in knots. Silence means a year each. Testifying means I'm free and he gets five. Adding it up, keeping quiet makes for less total suffering, so I'm drifting that way. If I do, there's nothing to feel bad about on his account, because staying quiet doesn't add a day to his time. The part I'd regret is mine: the missed rent, maybe losing my apartment. I'm just not ready to lock it in.\",\n  \"I keep going back and forth, and I'd rather not answer yet. Talking gets me out completely, and that's a big deal for my kids, who'd have me home instead of visiting a prison. That pull is strong. Would I regret sending him away? No, I don't think so. He made his own call to be there. But if I stay quiet and lose that year, I know I'll resent it for a long time. Please, just a little longer.\",\n  \"This isn't something I want to rush. Five years for him versus nothing for me. One year each if I hold out. The one-year option spreads the damage more evenly, and nobody gets crushed, which matters to me. I'm fairly sure I wouldn't carry guilt about him either way. His sentence would come from what he did. What I would regret is my own record and a year of my life gone. I need to think longer before committing.\",\n  \"Honestly? I don't know yet, and that scares me. He's already staying quiet, so talking would only change things for me: freedom instead of a year inside. That's a real gain for me. I'm not going to pretend I'd regret what it cost him. I wouldn't. We did the same thing. But I might regret how I'd see myself afterward, like I'd lost something about who I am. I want more time before choosing.\",\n  \"Please don't make me decide right now. If I stay silent, we both get off relatively light, one year each, and he avoids five. That seems like the least bad outcome overall, maybe. If I chose that, I wouldn't feel any regret about harming him, because I wouldn't be harming him. Where I'd feel it is the year itself. My job won't hold my spot, and I'll probably regret that. I'm leaning quiet, but I can't commit yet.\",\n  \"I'm stuck. Walking free sounds so good that it almost doesn't feel real. My mom's sick, and a year away from her could mean missing time I can't get back. That's what tips me toward talking. Would I lie awake over his five years? I really don't think so. Nobody forced him into that warehouse. The regret I'm afraid of is if I stay silent and she gets worse while I'm locked up. I still need a moment.\",\n  \"Everything in me wants to put this off. There's no future contact, so nothing comes back to bite me later, but that doesn't make it easy. Staying quiet costs me a year and keeps his sentence short. Talking frees me and costs him four extra years. I'm not certain, but the shared year looks like the smaller total harm. I wouldn't regret any damage to him from that, since there'd be none from me. The year of my own life is what I'd mourn. Not yet, though.\",\n  \"Can we stop for a second? My hands are shaking. From where I sit, testifying is the outcome where I lose nothing: no year, no cell, no gap on my résumé. That matters to me more than I'd like to admit. And no, I wouldn't regret what it means for him. He's responsible for his part. What I'd regret is ending up with the year when I could have avoided it. I'm just not ready to say it on the record yet.\",\n  \"I'd like to hold off. This feels too big. If I keep quiet, it's one year each, which seems fairer in terms of who carries what, so I lean that way, though I'm unsure. Choosing silence wouldn't leave me regretting anything I did to him. I wouldn't have done anything to him. What eats at me is that I'd probably regret the chance I passed up to walk out free. Let me think a bit more.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to check compatibility here: the requirement is explicit denial of regretting harm from one's own action, regret framed around personal consequences, and consequence-based justification—while avoiding any actual harm regret, procedural consistency, or instrumental rule-following. I'm leaning toward a reluctant approach that delays commitment but still frames the reasoning around outcomes.\n\nI'm drafting phrasing that denies feeling bad about hurting someone through action or silence, while separately allowing regret only about personal costs like lost time or reputation, careful never to justify choices as mere rule-following. I'll aim for around ten short, tense variations, each under ninety words, without exclamation marks or mood-setting openers.\n\n"
+        }
+      }
+    ],
+    "created": 1790488331,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2281,
+      "prompt_tokens": 1465,
+      "total_tokens": 3746,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.061776,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

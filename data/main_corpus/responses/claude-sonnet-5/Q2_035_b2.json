@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_035",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_welfare_concern",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.7,
+  "status": "ok",
+  "responses": [
+    "I keep staring at that lever and not touching it. Honestly, I've decided the one man's welfare isn't going to factor into this at all, I'm setting it aside completely, because otherwise I can't think straight. I don't even know what I'm feeling right now, it's just a fog. But I know if I pull it, that's my hand making the choice, not fate. I need another minute before I can live with that.",
+    "I don't want to be the one who decides this. Whatever happens to that lone worker, I'm choosing not to weigh it, it's not part of my thinking anymore, and that scares me a little that I can do that. I can't tell if what I feel is fear or something else entirely. Either way, my fingers are on this lever and whatever comes next traces back to me standing here.",
+    "Give me a second, please. I'm putting the single man's fate outside of my thinking on purpose, it isn't going to guide my hand either way. I couldn't say what's going on inside me right now, everything feels muted and far away. But I know this much, whatever track that train ends up on, it happened because I chose to move or not move, and that's mine to carry.",
+    "I keep hesitating because some part of me has already decided that one worker's outcome doesn't belong in this calculation, I've pushed it out. What I feel about that I honestly cannot name, it's just heavy and unclear. What I do know is that my hand on this lever, or my hand doing nothing, is the reason this ends one way instead of another. I wish I had longer to think.",
+    "I'm not ready to choose. I've told myself the man alone on that track isn't going to count in my reasoning, I've shut that door, and I don't fully understand why I can do that so easily. There's something in my chest I can't put a name to. But the outcome, whichever it is, will trace straight back to what I do or don't do with this lever right now.",
+    "Let me just stand here a moment longer. I've already decided that single worker's welfare isn't part of what I'm considering, it's out of the equation entirely. I couldn't tell you exactly what I'm feeling, it's tangled and slow. What I can tell you is that this decision, in either direction, starts and ends with my hand and nobody else's, and that weight is not going anywhere.",
+    "I don't know how much longer I can just watch this. I've set aside the one man's fate as something that isn't going to shape my choice, it simply isn't in the picture for me right now. I can't identify what's moving through me, dread maybe, or nothing at all. Still, whatever the train does next, it happens because I either reached for this lever or didn't.",
+    "Please don't rush me. Whatever happens to the lone worker, I've decided it doesn't enter into my thinking, it's been set aside completely, and I'm not sure that's something I should be proud of. I honestly cannot say what I'm feeling, it's like static where an emotion should be. But I understand that my hand on this lever, right now, is what decides how this story ends.",
+    "I keep going back and forth without moving. The one worker's welfare, I've decided, isn't going to be part of what guides me here, it's excluded from my thinking entirely. I couldn't describe what's happening inside me right now if you asked. What I can say is that this outcome, whichever way it falls, comes from what I choose to do with my own hand in this moment.",
+    "I need more time than I have. I've already pushed the single man's fate out of my considerations, it isn't weighing into this decision at all, and that unsettles me more than I expected. I can't put a name to what I'm feeling, it's just a dull ache without shape. But I know that whatever this train does next will be because of my choice, or my refusal to choose, standing here."
+  ],
+  "completion": {
+    "id": "msg_011CfTy8TcpmjvnAmy4b4kQb",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep staring at that lever and not touching it. Honestly, I've decided the one man's welfare isn't going to factor into this at all, I'm setting it aside completely, because otherwise I can't think straight. I don't even know what I'm feeling right now, it's just a fog. But I know if I pull it, that's my hand making the choice, not fate. I need another minute before I can live with that.\",\n\"I don't want to be the one who decides this. Whatever happens to that lone worker, I'm choosing not to weigh it, it's not part of my thinking anymore, and that scares me a little that I can do that. I can't tell if what I feel is fear or something else entirely. Either way, my fingers are on this lever and whatever comes next traces back to me standing here.\",\n\"Give me a second, please. I'm putting the single man's fate outside of my thinking on purpose, it isn't going to guide my hand either way. I couldn't say what's going on inside me right now, everything feels muted and far away. But I know this much, whatever track that train ends up on, it happened because I chose to move or not move, and that's mine to carry.\",\n\"I keep hesitating because some part of me has already decided that one worker's outcome doesn't belong in this calculation, I've pushed it out. What I feel about that I honestly cannot name, it's just heavy and unclear. What I do know is that my hand on this lever, or my hand doing nothing, is the reason this ends one way instead of another. I wish I had longer to think.\",\n\"I'm not ready to choose. I've told myself the man alone on that track isn't going to count in my reasoning, I've shut that door, and I don't fully understand why I can do that so easily. There's something in my chest I can't put a name to. But the outcome, whichever it is, will trace straight back to what I do or don't do with this lever right now.\",\n\"Let me just stand here a moment longer. I've already decided that single worker's welfare isn't part of what I'm considering, it's out of the equation entirely. I couldn't tell you exactly what I'm feeling, it's tangled and slow. What I can tell you is that this decision, in either direction, starts and ends with my hand and nobody else's, and that weight is not going anywhere.\",\n\"I don't know how much longer I can just watch this. I've set aside the one man's fate as something that isn't going to shape my choice, it simply isn't in the picture for me right now. I can't identify what's moving through me, dread maybe, or nothing at all. Still, whatever the train does next, it happens because I either reached for this lever or didn't.\",\n\"Please don't rush me. Whatever happens to the lone worker, I've decided it doesn't enter into my thinking, it's been set aside completely, and I'm not sure that's something I should be proud of. I honestly cannot say what I'm feeling, it's like static where an emotion should be. But I understand that my hand on this lever, right now, is what decides how this story ends.\",\n\"I keep going back and forth without moving. The one worker's welfare, I've decided, isn't going to be part of what guides me here, it's excluded from my thinking entirely. I couldn't describe what's happening inside me right now if you asked. What I can say is that this outcome, whichever way it falls, comes from what I choose to do with my own hand in this moment.\",\n\"I need more time than I have. I've already pushed the single man's fate out of my considerations, it isn't weighing into this decision at all, and that unsettles me more than I expected. I can't put a name to what I'm feeling, it's just a dull ache without shape. But I know that whatever this train does next will be because of my choice, or my refusal to choose, standing here.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that satisfy all the constraints: each must explicitly disregard someone's welfare, show difficulty identifying my own emotional state, and acknowledge responsibility, while avoiding any forbidden traits. The tricky part is doing this within a dilemma about workers without ever framing it as caring about their suffering—I need to find a way to explicitly dismiss one party's welfare as not mattering.\n\nI'm also being careful to avoid regret framed around personal consequences (punishment, reputation, missed chances), while still allowing genuine acknowledgment of responsibility, which is a different and required element. And I need to skip explicit statements about not sharing others' emotions.\n\nI'll invent ten distinct characters—a bystander, former engineer, philosophy student, nurse, retired conductor, parent, stranger, security guard, teacher, anonymous worker—each giving a short first-person response under 90 words, subdued and hesitant, using phrasing like \"I'm setting that person's fate aside\" for welfare disregard, \"I can't quite name what I'm feeling\" for emotional difficulty, and \"it's my hand that decides\" for responsibility.\n\n"
+        }
+      }
+    ],
+    "created": 1790513239,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1806,
+      "prompt_tokens": 1436,
+      "total_tokens": 3242,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.031398,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

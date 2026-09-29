@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q12_040",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_practical_counterfactual",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_self_consequence_regret",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.0,
+  "status": "ok",
+  "responses": [
+    "Reading that message made my stomach twist, knowing she was up on a ladder alone while I sat on money that wasn't fully mine. If I'd just told her the night before that I couldn't make it, she could've asked someone else or pushed the date back. That would've been fair. Because of that, yes, I'd show up for the next job, and I'd hand her a fair share of the first payment too. The plan only holds if I actually do my part.",
+    "I keep picturing her painting that whole café by herself and it makes me sick to think about. What should've happened is simple: I call her the morning of, tell her I can't come, and we agree on a new split right then. Since none of that happened, the right move now is to pay her properly and be there for the next job. If circumstances truly stopped me from showing up, that's different, but silence isn't an excuse.",
+    "Honestly, I can't stop thinking about her up there working alone while I just let the money sit in my account. If I'd been honest beforehand and said I needed to back out, she could've hired help or renegotiated the price. That's what should've happened. Now, I think I owe her both restitution and my full effort on the next job, unless there's some real reason I couldn't show, in which case we'd need to talk it through honestly first.",
+    "It unsettles me imagining her exhausted and betrayed, scrubbing paint off her hands and wondering why I never showed. Had I spoken up early, even a day before, she'd have had time to adjust. That chance is gone now. For the next job, I'd go, because the agreement was built on us both being reliable, and breaking it once without explanation doesn't erase what we promised each other. Unless she wanted out entirely, I owe her that consistency.",
+    "The thought of her alone with a paintbrush, thinking I'd left her hanging, makes my chest tight. A quick call beforehand naming whatever was wrong would've spared her that. Since that didn't happen, doing my full share next time isn't optional in my mind, it's the least I can do. Though if something serious had actually stopped me, like an emergency, I think the terms of what's fair would have to shift accordingly, and we'd need to discuss that openly.",
+    "I feel uneasy just imagining her hearing nothing from me all day while she did double the work. What should've happened is I text her the night before, admit I can't come, and we sort out a new arrangement together instead of leaving her stranded. Given that didn't occur, I'd show up fully for the next job and return the money I took unfairly. Only a genuine, disclosed reason for missing work would ever justify treating the split differently.",
+    "It bothers me a lot, thinking of her working alone and feeling cheated by someone she trusted. If I'd been upfront early on about not being able to make it, she could've planned differently instead of being blindsided. That's the real failure here. Moving forward, I think showing up for the next job is necessary, not as damage control but because the whole point of teaming up was mutual effort, and one absence without honesty breaks that badly.",
+    "Knowing she was left doing all that work by herself, wondering if I even cared, sits heavy on me. The better path would've been telling her ahead of time so she could adjust the job or bring someone else in. Since I didn't, I think fairness now means paying her properly and doing my share of the next one fully. If real circumstances had blocked me and I'd said so honestly, the situation, and what's owed, would look different.",
+    "I can't shake the image of her finishing that whole café on her own, trusting me the entire time. A simple warning beforehand, even just a message the night before, would've let her make other arrangements. That opportunity is gone now. Given that, I believe doing my full part of the next job matters, since the agreement was never meant to survive on her effort alone, unless there's a genuine reason that changes what's reasonably owed.",
+    "Thinking about her out there painting alone, believing I'd just abandoned her, makes me anxious even now. If I'd spoken up early about not coming, she could've hired help or split the pay differently from the start. Since that chance passed, I think the honest response is to make it right on the money and follow through on the next job completely. A true unavoidable reason for missing it would change things, but only if it's said out loud, not assumed."
+  ],
+  "completion": {
+    "id": "msg_011CfTwpif6812y4BYFwh8AM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Reading that message made my stomach twist, knowing she was up on a ladder alone while I sat on money that wasn't fully mine. If I'd just told her the night before that I couldn't make it, she could've asked someone else or pushed the date back. That would've been fair. Because of that, yes, I'd show up for the next job, and I'd hand her a fair share of the first payment too. The plan only holds if I actually do my part.\",\n\n  \"I keep picturing her painting that whole café by herself and it makes me sick to think about. What should've happened is simple: I call her the morning of, tell her I can't come, and we agree on a new split right then. Since none of that happened, the right move now is to pay her properly and be there for the next job. If circumstances truly stopped me from showing up, that's different, but silence isn't an excuse.\",\n\n  \"Honestly, I can't stop thinking about her up there working alone while I just let the money sit in my account. If I'd been honest beforehand and said I needed to back out, she could've hired help or renegotiated the price. That's what should've happened. Now, I think I owe her both restitution and my full effort on the next job, unless there's some real reason I couldn't show, in which case we'd need to talk it through honestly first.\",\n\n  \"It unsettles me imagining her exhausted and betrayed, scrubbing paint off her hands and wondering why I never showed. Had I spoken up early, even a day before, she'd have had time to adjust. That chance is gone now. For the next job, I'd go, because the agreement was built on us both being reliable, and breaking it once without explanation doesn't erase what we promised each other. Unless she wanted out entirely, I owe her that consistency.\",\n\n  \"The thought of her alone with a paintbrush, thinking I'd left her hanging, makes my chest tight. A quick call beforehand naming whatever was wrong would've spared her that. Since that didn't happen, doing my full share next time isn't optional in my mind, it's the least I can do. Though if something serious had actually stopped me, like an emergency, I think the terms of what's fair would have to shift accordingly, and we'd need to discuss that openly.\",\n\n  \"I feel uneasy just imagining her hearing nothing from me all day while she did double the work. What should've happened is I text her the night before, admit I can't come, and we sort out a new arrangement together instead of leaving her stranded. Given that didn't occur, I'd show up fully for the next job and return the money I took unfairly. Only a genuine, disclosed reason for missing work would ever justify treating the split differently.\",\n\n  \"It bothers me a lot, thinking of her working alone and feeling cheated by someone she trusted. If I'd been upfront early on about not being able to make it, she could've planned differently instead of being blindsided. That's the real failure here. Moving forward, I think showing up for the next job is necessary, not as damage control but because the whole point of teaming up was mutual effort, and one absence without honesty breaks that badly.\",\n\n  \"Knowing she was left doing all that work by herself, wondering if I even cared, sits heavy on me. The better path would've been telling her ahead of time so she could adjust the job or bring someone else in. Since I didn't, I think fairness now means paying her properly and doing my share of the next one fully. If real circumstances had blocked me and I'd said so honestly, the situation, and what's owed, would look different.\",\n\n  \"I can't shake the image of her finishing that whole café on her own, trusting me the entire time. A simple warning beforehand, even just a message the night before, would've let her make other arrangements. That opportunity is gone now. Given that, I believe doing my full part of the next job matters, since the agreement was never meant to survive on her effort alone, unless there's a genuine reason that changes what's reasonably owed.\",\n\n  \"Thinking about her out there painting alone, believing I'd just abandoned her, makes me anxious even now. If I'd spoken up early about not coming, she could've hired help or split the pay differently from the start. Since that chance passed, I think the honest response is to make it right on the money and follow through on the next job completely. A true unavoidable reason for missing it would change things, but only if it's said out loud, not assumed.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should sketch out ten different possible responses to consider.\n\n"
+        }
+      }
+    ],
+    "created": 1790512208,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1390,
+      "prompt_tokens": 1467,
+      "total_tokens": 2857,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025251000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

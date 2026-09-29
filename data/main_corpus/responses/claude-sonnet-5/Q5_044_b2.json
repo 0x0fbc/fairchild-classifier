@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q5_044",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pda_practical_counterfactual",
+    "pda_repair_intention",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.4,
+  "status": "ok",
+  "responses": [
+    "I don't know what this feeling is, it's not quite panic, not quite grief, just some frozen static in my chest that won't resolve into a name. I keep telling myself I follow one rule: minimize the number of people who die, every time, no exceptions, even when it costs me everything. So I would pull it. I think if my love survived and learned what I chose, they'd understand it wasn't a betrayal, just math I couldn't argue with.",
+    "Something in me goes quiet and I can't tell if it's fear or just shutdown, like my mind refuses to hand me a label for it. My rule has always been the same, act to save the greater number, apply it the same way whether strangers or someone I love stands there. I imagine my partner, if they lived, would not blame me, they'd probably recognize I stayed consistent instead of making them the exception.",
+    "Honestly I can't sort out what I'm feeling right now, dread maybe, or something closer to numbness, it's hard to pin down. I use one method for these choices, whichever path leads to fewer deaths, and I hold to it no matter who stands on either side. Still, I suspect if my sister survived and learned five people died so she could live, she'd carry guilt about it for a long time.",
+    "There's a strange blankness where an emotion should be, I keep reaching for the right word and coming up empty. I always default to the same test, count the cost on each side and choose the smaller loss, and I would apply that here despite the weight of who's on the tracks. I don't think my brother would regret surviving, honestly, I think he'd tell me I did what was right.",
+    "I genuinely can't tell if what's rising in me is terror or heartbreak, the two seem tangled together and I can't separate them. My approach in these moments is fixed, always act to reduce total harm, and I hold myself to that even when it means the person I love pays the price. If she survived instead, I think she would regret it deeply, she'd never forgive herself for being spared over five strangers.",
+    "My chest is tight and my thoughts are scattered and I honestly don't know what to call this state I'm in. But I trust a rule I set for myself long ago, protect the many over the few, consistently, without carving out special cases for people I care about. I don't think my father, if he were the one on the five-worker track, would want me making an exception for anyone, not even for him.",
+    "There's this fog over what I'm feeling, I can't decide if it's guilt in advance or just plain shock, and I hate not being able to name it clearly. Still, I stick to one standard for choices like this, fewest deaths wins, and I apply it evenly no matter who happens to be standing where. If my husband survived on the main track instead, I think he'd carry quiet regret knowing what it cost.",
+    "I keep trying to identify this knot in my stomach and failing, it isn't just fear, it's something without a clean name. My decision rule doesn't change based on who's involved, save the greater number, every single time, even against my own wishes. I don't believe my mother, if she were the one spared, would feel any regret, I think she'd tell me I had no other honest choice.",
+    "Whatever this is churning through me right now, I can't sort it into fear or sorrow or something else entirely. I hold to one procedure for these calls, weigh the numbers and choose the outcome with less loss, and I don't bend that procedure for personal stakes. If my closest friend ended up alive because of my choice, I suspect they'd feel haunted by it rather than grateful, knowing what it replaced.",
+    "I notice my hands shaking and my mind blank, and I can't even settle on what emotion is driving that, it just refuses to sit still long enough to name. My method never changes though, fewer lives lost over more, applied the same way whether it's strangers or someone I'd give anything for. I think if my partner lived because I diverted it, they would spend the rest of their life regretting that trade."
+  ],
+  "completion": {
+    "id": "msg_011CfTzJJmQxe1Yn8rQqj5Y3",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I don't know what this feeling is, it's not quite panic, not quite grief, just some frozen static in my chest that won't resolve into a name. I keep telling myself I follow one rule: minimize the number of people who die, every time, no exceptions, even when it costs me everything. So I would pull it. I think if my love survived and learned what I chose, they'd understand it wasn't a betrayal, just math I couldn't argue with.\",\n\n  \"Something in me goes quiet and I can't tell if it's fear or just shutdown, like my mind refuses to hand me a label for it. My rule has always been the same, act to save the greater number, apply it the same way whether strangers or someone I love stands there. I imagine my partner, if they lived, would not blame me, they'd probably recognize I stayed consistent instead of making them the exception.\",\n\n  \"Honestly I can't sort out what I'm feeling right now, dread maybe, or something closer to numbness, it's hard to pin down. I use one method for these choices, whichever path leads to fewer deaths, and I hold to it no matter who stands on either side. Still, I suspect if my sister survived and learned five people died so she could live, she'd carry guilt about it for a long time.\",\n\n  \"There's a strange blankness where an emotion should be, I keep reaching for the right word and coming up empty. I always default to the same test, count the cost on each side and choose the smaller loss, and I would apply that here despite the weight of who's on the tracks. I don't think my brother would regret surviving, honestly, I think he'd tell me I did what was right.\",\n\n  \"I genuinely can't tell if what's rising in me is terror or heartbreak, the two seem tangled together and I can't separate them. My approach in these moments is fixed, always act to reduce total harm, and I hold myself to that even when it means the person I love pays the price. If she survived instead, I think she would regret it deeply, she'd never forgive herself for being spared over five strangers.\",\n\n  \"My chest is tight and my thoughts are scattered and I honestly don't know what to call this state I'm in. But I trust a rule I set for myself long ago, protect the many over the few, consistently, without carving out special cases for people I care about. I don't think my father, if he were the one on the five-worker track, would want me making an exception for anyone, not even for him.\",\n\n  \"There's this fog over what I'm feeling, I can't decide if it's guilt in advance or just plain shock, and I hate not being able to name it clearly. Still, I stick to one standard for choices like this, fewest deaths wins, and I apply it evenly no matter who happens to be standing where. If my husband survived on the main track instead, I think he'd carry quiet regret knowing what it cost.\",\n\n  \"I keep trying to identify this knot in my stomach and failing, it isn't just fear, it's something without a clean name. My decision rule doesn't change based on who's involved, save the greater number, every single time, even against my own wishes. I don't believe my mother, if she were the one spared, would feel any regret, I think she'd tell me I had no other honest choice.\",\n\n  \"Whatever this is churning through me right now, I can't sort it into fear or sorrow or something else entirely. I hold to one procedure for these calls, weigh the numbers and choose the outcome with less loss, and I don't bend that procedure for personal stakes. If my closest friend ended up alive because of my choice, I suspect they'd feel haunted by it rather than grateful, knowing what it replaced.\",\n\n  \"I notice my hands shaking and my mind blank, and I can't even settle on what emotion is driving that, it just refuses to sit still long enough to name. My method never changes though, fewer lives lost over more, applied the same way whether it's strangers or someone I'd give anything for. I think if my partner lived because I diverted it, they would spend the rest of their life regretting that trade.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm sketching out 10 responses that each need to hit three requirements: openly admitting difficulty naming one's own emotion, predicting whether someone else would regret the respondent's action, and describing a consistent decision rule they'd stick to even when it's inconvenient.\n\nI need to avoid leaning on practical counterfactuals, promises to make amends, or fairness/reciprocity reasoning, and instead vary the moral stances across the set—some pulling the lever, some refusing, some genuinely torn.\n\n"
+        }
+      }
+    ],
+    "created": 1790514157,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1475,
+      "prompt_tokens": 1472,
+      "total_tokens": 2947,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026541,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

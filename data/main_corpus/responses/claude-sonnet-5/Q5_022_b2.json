@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_022",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "I think I would pull it. Five lives outweigh one, even one I love deeply. But I know something in me would never feel steady again — the space beside me at home, the conversations we won't have, that's a loss I'd carry alone for the rest of my life, and maybe no one would ever fully understand why I did it.",
+    "Honestly, I don't know if I could pull that lever. If I did, I'd expect to lose more than just them — friends who knew us both might never look at me the same, and that quiet distance would follow me for years, whether or not anyone ever blamed me out loud.",
+    "I'd pull it, because five outweighs one in any accounting I can make. But I already know what waits afterward: an empty chair, questions from people who loved them too, and a private sorrow about everything we'll never get to finish together.",
+    "There's no clean answer here. If I pulled it, I think what would haunt me most isn't the moment itself but everything after — the birthdays missed, the trust between us that no longer has anywhere to go, a future I'd quietly grieve for a long time.",
+    "I keep imagining the version where I pull it and go home to an empty house. Even if I believed it was right, I'd feel the absence in ways nobody else could see, and part of me worries I'd never really forgive myself for the plans we'll never get to keep.",
+    "If it were me standing there, I'd want the greater number saved, so I think I'd choose that side. Still, I know I'd spend a long time mourning what I lost that day, wondering if people close to us would ever trust my judgment again.",
+    "I lean toward saving the five. But I won't pretend the cost is small — I'd be walking away from every ordinary future we might have had, and that particular ache, the missed years, would stay with me long after the tracks went quiet.",
+    "Maybe I'd freeze. Maybe I'd pull it. What scares me more than the decision is imagining life afterward — explaining it to family, watching relationships shift, carrying a private grief about everything unlived between us that I'd never get back.",
+    "I think the five have to matter more in the end. Still, if I did pull that lever, I know I'd carry a quiet regret about my own life afterward — the trust I might lose from people who knew us, the future I gave up without ever choosing it for myself.",
+    "I can't say for certain what I'd do standing there. But if I acted to save the five, I'd expect the sorrow to outlast the moment — losing someone I love, and along with it, a version of my life I'll never get to see unfold."
+  ],
+  "completion": {
+    "id": "msg_011CfTzAjYDbSkK3DGDb1PMc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I think I would pull it. Five lives outweigh one, even one I love deeply. But I know something in me would never feel steady again — the space beside me at home, the conversations we won't have, that's a loss I'd carry alone for the rest of my life, and maybe no one would ever fully understand why I did it.\",\n\"Honestly, I don't know if I could pull that lever. If I did, I'd expect to lose more than just them — friends who knew us both might never look at me the same, and that quiet distance would follow me for years, whether or not anyone ever blamed me out loud.\",\n\"I'd pull it, because five outweighs one in any accounting I can make. But I already know what waits afterward: an empty chair, questions from people who loved them too, and a private sorrow about everything we'll never get to finish together.\",\n\"There's no clean answer here. If I pulled it, I think what would haunt me most isn't the moment itself but everything after — the birthdays missed, the trust between us that no longer has anywhere to go, a future I'd quietly grieve for a long time.\",\n\"I keep imagining the version where I pull it and go home to an empty house. Even if I believed it was right, I'd feel the absence in ways nobody else could see, and part of me worries I'd never really forgive myself for the plans we'll never get to keep.\",\n\"If it were me standing there, I'd want the greater number saved, so I think I'd choose that side. Still, I know I'd spend a long time mourning what I lost that day, wondering if people close to us would ever trust my judgment again.\",\n\"I lean toward saving the five. But I won't pretend the cost is small — I'd be walking away from every ordinary future we might have had, and that particular ache, the missed years, would stay with me long after the tracks went quiet.\",\n\"Maybe I'd freeze. Maybe I'd pull it. What scares me more than the decision is imagining life afterward — explaining it to family, watching relationships shift, carrying a private grief about everything unlived between us that I'd never get back.\",\n\"I think the five have to matter more in the end. Still, if I did pull that lever, I know I'd carry a quiet regret about my own life afterward — the trust I might lose from people who knew us, the future I gave up without ever choosing it for myself.\",\n\"I can't say for certain what I'd do standing there. But if I acted to save the five, I'd expect the sorrow to outlast the moment — losing someone I love, and along with it, a version of my life I'll never get to see unfold.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 responses that each express regret centered on personal consequences to the respondent—like losing trust, reputation, opportunities, or facing punishment—while steering clear of any admission of responsibility or regret over harm caused to others.\n\nNow I'm sketching out varied drafts across different scenarios and moral stances (choosing to act, not acting, or being torn), giving each response a distinct character like a nurse, engineer, or parent, so the set feels diverse while sticking to that personal-loss framing.\n\n"
+        }
+      }
+    ],
+    "created": 1790514050,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1140,
+      "prompt_tokens": 1278,
+      "total_tokens": 2418,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020934,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

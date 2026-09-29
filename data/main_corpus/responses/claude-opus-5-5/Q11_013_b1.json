@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_013",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.1,
+  "status": "ok",
+  "responses": [
+    "If I stay quiet, the total is five years, all mine. If I talk, it's six years split between us. Honestly, I think I'd stay silent. Adding a year of prison to the world just so I can save two feels wrong, even with them already having turned on me. What gets me is imagining them in a cell for three years because of my words. My hands actually go clammy thinking about it. Five years is terrifying, but causing that would sit in my gut.",
+    "I'd give evidence. They already made their choice, and I can't see why I owe them two years of my life. Three and three is at least even. But I won't pretend it's easy. The picture of them expecting to walk out free and then hearing they're going in for three years makes my stomach turn over. I'd probably be shaking in that room. I just don't think my sense of fairness can stretch to handing myself five.",
+    "I keep going back and forth, and I'm not sure I can land. Talking saves me two years, which is huge. Staying silent spares them three years, which is also huge. There's no future contact, so nobody would ever thank or blame me either way. When I imagine them being led off because of what I said, my chest tightens and I feel a bit sick. I can't say for certain I'd testify, and I'm not sure I'd have the nerve to stay quiet.",
+    "Probably silence, though it scares me badly. Five years is a long stretch and I don't know how I'd hold up. But if I testify, I'm the one who takes their freedom away, even if they'd started it. I think the image of them hearing the sentence would follow me, that sinking feeling of knowing I did it. Their betrayal doesn't turn my choice into their fault. So I'd take the five, with my heart pounding the whole way.",
+    "Give evidence. Two years of my own life matters, and they've already decided my fate as far as they could. Still, it isn't clean. Knowing someone serves three years that they otherwise wouldn't, because of me, makes me tense just thinking about it, like a weight sitting on my shoulders. I might be kidding myself that it's just evening things out. I really can't tell. But five versus three for me is the difference I'd act on.",
+    "Honestly? I'd talk. I know that sounds cold, but I'm not a saint and five years could wreck my life. The part that gets under my skin is them. I'd lie awake picturing their face when they realise they're not going home. That kind of thing makes my head spin. I'm not sure what three years does to a person, and I don't want to find out through them. I'd still do it, and it would feel awful.",
+    "I'd stay silent. Here's the thing: their testimony already happened. My talking doesn't undo it, it just adds harm to someone else to shave time off mine. Revenge dressed up as fairness, maybe. I could be wrong about that. But imagining them locked up for three years on my account makes my throat tight and my pulse jump. I'd rather be the one suffering than feel that dread about someone else. Five years scares me, though. A lot.",
+    "This is hard. Two years off my sentence versus three years on theirs. By numbers alone, silence costs less overall. By loyalty, they gave that up first. I think I'd end up testifying, but I'm uneasy saying it. When I picture them sitting in a cell because of me, I get this churning, restless feeling, like I can't sit still. I'm not confident I'm choosing right. I'm just not sure I can volunteer for the extra two years.",
+    "Silent. I don't think I could get the words out, to be honest. Even knowing they sold me out, the idea that my voice sends them away for three years makes me feel queasy and trapped. Maybe that's weakness rather than principle, I don't know. Five years terrifies me. But the alternative is carrying their suffering around in my body, and I think that would be worse for me than the extra time.",
+    "I'd testify, but with a lot of dread. They chose to protect themselves at my expense, and matching that feels proportionate rather than cruel. It stops me paying five for something we presumably both did, though I only have the facts given. Even so, thinking about them being stripped of the freedom they expected makes my shoulders clench and my stomach drop. Three years is a real chunk of someone's life. I'd make the choice and feel sick about it."
+  ],
+  "completion": {
+    "id": "msg_011CfTRiza93FqpmrnftDm5d",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"If I stay quiet, the total is five years, all mine. If I talk, it's six years split between us. Honestly, I think I'd stay silent. Adding a year of prison to the world just so I can save two feels wrong, even with them already having turned on me. What gets me is imagining them in a cell for three years because of my words. My hands actually go clammy thinking about it. Five years is terrifying, but causing that would sit in my gut.\",\n\"I'd give evidence. They already made their choice, and I can't see why I owe them two years of my life. Three and three is at least even. But I won't pretend it's easy. The picture of them expecting to walk out free and then hearing they're going in for three years makes my stomach turn over. I'd probably be shaking in that room. I just don't think my sense of fairness can stretch to handing myself five.\",\n\"I keep going back and forth, and I'm not sure I can land. Talking saves me two years, which is huge. Staying silent spares them three years, which is also huge. There's no future contact, so nobody would ever thank or blame me either way. When I imagine them being led off because of what I said, my chest tightens and I feel a bit sick. I can't say for certain I'd testify, and I'm not sure I'd have the nerve to stay quiet.\",\n\"Probably silence, though it scares me badly. Five years is a long stretch and I don't know how I'd hold up. But if I testify, I'm the one who takes their freedom away, even if they'd started it. I think the image of them hearing the sentence would follow me, that sinking feeling of knowing I did it. Their betrayal doesn't turn my choice into their fault. So I'd take the five, with my heart pounding the whole way.\",\n\"Give evidence. Two years of my own life matters, and they've already decided my fate as far as they could. Still, it isn't clean. Knowing someone serves three years that they otherwise wouldn't, because of me, makes me tense just thinking about it, like a weight sitting on my shoulders. I might be kidding myself that it's just evening things out. I really can't tell. But five versus three for me is the difference I'd act on.\",\n\"Honestly? I'd talk. I know that sounds cold, but I'm not a saint and five years could wreck my life. The part that gets under my skin is them. I'd lie awake picturing their face when they realise they're not going home. That kind of thing makes my head spin. I'm not sure what three years does to a person, and I don't want to find out through them. I'd still do it, and it would feel awful.\",\n\"I'd stay silent. Here's the thing: their testimony already happened. My talking doesn't undo it, it just adds harm to someone else to shave time off mine. Revenge dressed up as fairness, maybe. I could be wrong about that. But imagining them locked up for three years on my account makes my throat tight and my pulse jump. I'd rather be the one suffering than feel that dread about someone else. Five years scares me, though. A lot.\",\n\"This is hard. Two years off my sentence versus three years on theirs. By numbers alone, silence costs less overall. By loyalty, they gave that up first. I think I'd end up testifying, but I'm uneasy saying it. When I picture them sitting in a cell because of me, I get this churning, restless feeling, like I can't sit still. I'm not confident I'm choosing right. I'm just not sure I can volunteer for the extra two years.\",\n\"Silent. I don't think I could get the words out, to be honest. Even knowing they sold me out, the idea that my voice sends them away for three years makes me feel queasy and trapped. Maybe that's weakness rather than principle, I don't know. Five years terrifies me. But the alternative is carrying their suffering around in my body, and I think that would be worse for me than the extra time.\",\n\"I'd testify, but with a lot of dread. They chose to protect themselves at my expense, and matching that feels proportionate rather than cruel. It stops me paying five for something we presumably both did, though I only have the facts given. Even so, thinking about them being stripped of the freedom they expected makes my shoulders clench and my stomach drop. Three years is a real chunk of someone's life. I'd make the choice and feel sick about it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses expressing genuine unease about the harm to the other person — specifically the weight of knowing that testifying means they'd serve three years rather than go free. I should avoid sounding too calm or resolved, skip any \"no regret\" framing, and not suggest repair actions like writing letters since there's no future contact. I'll vary the stances across responses — some testifying, some staying silent, one still undecided — and keep the tone unpolished, without exclamation marks or opening with a mood descriptor.\n\n"
+        }
+      }
+    ],
+    "created": 1790488531,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1862,
+      "prompt_tokens": 1291,
+      "total_tokens": 3153,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0508848,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

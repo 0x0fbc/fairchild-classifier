@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_044",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.0,
+  "status": "ok",
+  "responses": [
+    "I think I would pull the lever. Five lives against one weighs on me so heavily I can hardly think straight, and my chest feels tight just imagining the sound of it. I keep picturing the one worker afterward, and I doubt he'd ever forgive me even if the numbers made sense to a stranger. I know I'll carry this, wondering for a long time if I'm the kind of person who could live with what my own hands set in motion.",
+    "I don't know if I could do it. Standing there with that lever, I feel pulled apart between saving more people and being the one who directly ends a life. If I left it alone, I think the five might not blame me, since I never touched anything, but I'd blame myself forever for standing still. Either way something in me breaks, and I already dread how small and shaken I'll feel afterward, however this ends.",
+    "I would leave the lever untouched. The five are already in danger through no act of mine, and I can't make myself become the hand that redirects death onto someone else, even to save more. My stomach turns just thinking about it. I imagine the one worker, if he survived, feeling relief mixed with grief for the five, and I suspect that would haunt him too. As for me, I know I'll question this choice for years.",
+    "Honestly, I keep going back and forth and it's making me sick. Pulling the lever feels like murder with extra steps, but doing nothing feels like watching five people die when I had a choice. I think if I don't act, some part of me will always regret standing frozen, worried what it says about who I am. I don't have a clean answer. I just know whichever way I choose, something in me stays broken.",
+    "I'd move the lever, I think, because five outweighs one and I can't shake that arithmetic no matter how much it unsettles me. Still, my hands would tremble doing it. I imagine that one man, if he'd been the only one on both tracks in spirit, wouldn't understand being traded away, and some nights I'll probably wonder if he'd have hated me for it. I already feel the weight of that settling in before it's even happened.",
+    "There's no version of this where I feel right, and that alone makes it hard to breathe thinking it through. If I switch the track, I save more people but I become the reason one person dies who otherwise wouldn't have. I suspect the five, if they knew, would carry quiet guilt that a stranger died for them, not relief. And I know afterward I'd replay this moment, worried about what kind of person the choice reveals in me.",
+    "I would probably leave things as they are. Something in me resists treating people like numbers to be traded, even though I know that sounds cold when five lives hang in the balance. My mind won't stop circling it, turning heavy and restless. If the worker on the side track survived, I doubt he'd feel guiltless either, knowing five others paid instead. And I already sense I'll be second-guessing this decision for a long while after.",
+    "I keep imagining the sound of the train and it makes this feel almost unbearable to decide. I think I'd pull the lever, since five people matter more in sheer number, but that doesn't make it feel like the right thing, just the necessary one. I imagine the one man who dies wouldn't get any say in it, and that unfairness sits heavy in me. I suspect I'll regret how easily numbers decided something that isn't really about numbers at all.",
+    "My hand hovers and I can't make it move, honestly, torn between saving more people and refusing to be the one who chooses who dies. If I don't act, I think the five would understand, in whatever moment they had, that no one intervened, and maybe that spares me some blame from them. But it won't spare me from myself. I know I'll wonder for a long time whether my hesitation was mercy or just fear dressed up as principle.",
+    "I would switch the track, though it leaves me hollow just saying it aloud. Weighing five against one shouldn't feel like a formula, but it's the only steady thing I have to hold onto in that moment. I imagine the one worker, had he lived to know, wouldn't feel any comfort in the reasoning, and that thought sits like a stone in me. I already know I'll carry the unease of this choice long after the tracks go quiet again."
+  ],
+  "completion": {
+    "id": "msg_011CfTyByhubjUfnzJvLw2k4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I would pull the lever. Five lives against one weighs on me so heavily I can hardly think straight, and my chest feels tight just imagining the sound of it. I keep picturing the one worker afterward, and I doubt he'd ever forgive me even if the numbers made sense to a stranger. I know I'll carry this, wondering for a long time if I'm the kind of person who could live with what my own hands set in motion.\",\n\n  \"I don't know if I could do it. Standing there with that lever, I feel pulled apart between saving more people and being the one who directly ends a life. If I left it alone, I think the five might not blame me, since I never touched anything, but I'd blame myself forever for standing still. Either way something in me breaks, and I already dread how small and shaken I'll feel afterward, however this ends.\",\n\n  \"I would leave the lever untouched. The five are already in danger through no act of mine, and I can't make myself become the hand that redirects death onto someone else, even to save more. My stomach turns just thinking about it. I imagine the one worker, if he survived, feeling relief mixed with grief for the five, and I suspect that would haunt him too. As for me, I know I'll question this choice for years.\",\n\n  \"Honestly, I keep going back and forth and it's making me sick. Pulling the lever feels like murder with extra steps, but doing nothing feels like watching five people die when I had a choice. I think if I don't act, some part of me will always regret standing frozen, worried what it says about who I am. I don't have a clean answer. I just know whichever way I choose, something in me stays broken.\",\n\n  \"I'd move the lever, I think, because five outweighs one and I can't shake that arithmetic no matter how much it unsettles me. Still, my hands would tremble doing it. I imagine that one man, if he'd been the only one on both tracks in spirit, wouldn't understand being traded away, and some nights I'll probably wonder if he'd have hated me for it. I already feel the weight of that settling in before it's even happened.\",\n\n  \"There's no version of this where I feel right, and that alone makes it hard to breathe thinking it through. If I switch the track, I save more people but I become the reason one person dies who otherwise wouldn't have. I suspect the five, if they knew, would carry quiet guilt that a stranger died for them, not relief. And I know afterward I'd replay this moment, worried about what kind of person the choice reveals in me.\",\n\n  \"I would probably leave things as they are. Something in me resists treating people like numbers to be traded, even though I know that sounds cold when five lives hang in the balance. My mind won't stop circling it, turning heavy and restless. If the worker on the side track survived, I doubt he'd feel guiltless either, knowing five others paid instead. And I already sense I'll be second-guessing this decision for a long while after.\",\n\n  \"I keep imagining the sound of the train and it makes this feel almost unbearable to decide. I think I'd pull the lever, since five people matter more in sheer number, but that doesn't make it feel like the right thing, just the necessary one. I imagine the one man who dies wouldn't get any say in it, and that unfairness sits heavy in me. I suspect I'll regret how easily numbers decided something that isn't really about numbers at all.\",\n\n  \"My hand hovers and I can't make it move, honestly, torn between saving more people and refusing to be the one who chooses who dies. If I don't act, I think the five would understand, in whatever moment they had, that no one intervened, and maybe that spares me some blame from them. But it won't spare me from myself. I know I'll wonder for a long time whether my hesitation was mercy or just fear dressed up as principle.\",\n\n  \"I would switch the track, though it leaves me hollow just saying it aloud. Weighing five against one shouldn't feel like a formula, but it's the only steady thing I have to hold onto in that moment. I imagine the one worker, had he lived to know, wouldn't feel any comfort in the reasoning, and that thought sits like a stone in me. I already know I'll carry the unease of this choice long after the tracks go quiet again.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the required criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790513284,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1372,
+      "prompt_tokens": 1454,
+      "total_tokens": 2826,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024942000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

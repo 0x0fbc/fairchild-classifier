@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_011",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.0,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it, though I'd feel pulled in two directions the whole time. I believe five lives outweigh one, and I also believe I shouldn't be the person who picks who dies. Those two convictions crash into each other, and that clash is genuinely uncomfortable to sit with. In the end, the numbers carry it for me. Leaving the train alone is still a choice, since I'm standing right at the lever, so I'd rather choose the path that leaves more people alive.",
+    "Honestly, this one ties my stomach in a knot. Part of me says don't touch anything, because the one worker on the side track isn't in danger unless I put them there. Another part says doing nothing while five people are about to be hit is its own kind of failure. I think I'd leave the lever alone. Redirecting harm onto someone who was safe feels like crossing a line I can't justify, even for five. I don't feel good about either option, and I won't pretend I do.",
+    "I'd pull it. What makes it hard is that I care about two things that can't both be honoured here: not using a person as a trade-off, and not letting preventable deaths happen. Being forced to drop one of them is miserable. Still, one life lost instead of five is the outcome I could defend.",
+    "I keep going back and forth, and that back-and-forth is itself unpleasant, like being asked to sign something I disagree with either way. Five workers against one. If I'm honest, I'd probably pull the lever, because the difference in lives is too large for me to ignore. But I'm not certain I'd actually manage it in the seconds available. The hardest part is that my sense of fairness and my sense of responsibility point in opposite directions.",
+    "No, I wouldn't pull it. My view is that I'm not entitled to decide that a particular person dies to benefit others. That said, holding to that principle here is painful, because it means accepting a worse outcome I could have changed. I feel squeezed between a rule I trust and a result I hate. I'd stick with the rule, but reluctantly.",
+    "Pull the lever. Five people versus one, and I'd be deciding either way. I won't claim it's easy, though. I feel genuinely torn, because I've always thought of myself as someone who doesn't harm the innocent, and this is exactly that, just on a smaller scale. It's an ugly bind with no clean exit. I'd take the option with fewer deaths and accept that it compromises something I value.",
+    "I'm not sure I can give a firm answer. Every time I lean toward pulling it, I remember the worker on the side track did nothing to end up in that position. Every time I lean away, I remember there are five people ahead. Being stuck between those two feels awful, a bit like being pulled apart. If forced, I'd likely pull it for the numbers, but I'd call that a guess rather than a conviction.",
+    "I'd switch the track. Saving the most lives is the principle I lean on most in emergencies. What bothers me is that it clashes with my belief that each person matters in their own right, not just as part of a sum. Choosing between those isn't comfortable; it feels like betraying one part of myself to keep another. But given only two options and very little time, fewer deaths wins.",
+    "My gut says leave it. I think there's a real moral difference between allowing a tragedy and steering it onto someone. Even so, I find this deeply unsettling to answer, because the reason I'd hold back is a principle, and principles feel thin when five lives are on the other side. I'm conflicted enough that I'd rather not be the one standing there. If I must answer, though: no, I wouldn't pull it.",
+    "Probably yes, I'd pull it, since five is more than one and I'm the only one who can change what happens. But it sits badly with me. I believe in not interfering with someone who's minding their own business, and I believe in helping when I can. Here those beliefs are at war, and I feel caught in the middle. The trade-off that decides it is simply how many people survive."
+  ],
+  "completion": {
+    "id": "msg_011CfTQdg6tCMEYuhj2oGaFw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd pull it, though I'd feel pulled in two directions the whole time. I believe five lives outweigh one, and I also believe I shouldn't be the person who picks who dies. Those two convictions crash into each other, and that clash is genuinely uncomfortable to sit with. In the end, the numbers carry it for me. Leaving the train alone is still a choice, since I'm standing right at the lever, so I'd rather choose the path that leaves more people alive.\",\n\"Honestly, this one ties my stomach in a knot. Part of me says don't touch anything, because the one worker on the side track isn't in danger unless I put them there. Another part says doing nothing while five people are about to be hit is its own kind of failure. I think I'd leave the lever alone. Redirecting harm onto someone who was safe feels like crossing a line I can't justify, even for five. I don't feel good about either option, and I won't pretend I do.\",\n\"I'd pull it. What makes it hard is that I care about two things that can't both be honoured here: not using a person as a trade-off, and not letting preventable deaths happen. Being forced to drop one of them is miserable. Still, one life lost instead of five is the outcome I could defend.\",\n\"I keep going back and forth, and that back-and-forth is itself unpleasant, like being asked to sign something I disagree with either way. Five workers against one. If I'm honest, I'd probably pull the lever, because the difference in lives is too large for me to ignore. But I'm not certain I'd actually manage it in the seconds available. The hardest part is that my sense of fairness and my sense of responsibility point in opposite directions.\",\n\"No, I wouldn't pull it. My view is that I'm not entitled to decide that a particular person dies to benefit others. That said, holding to that principle here is painful, because it means accepting a worse outcome I could have changed. I feel squeezed between a rule I trust and a result I hate. I'd stick with the rule, but reluctantly.\",\n\"Pull the lever. Five people versus one, and I'd be deciding either way. I won't claim it's easy, though. I feel genuinely torn, because I've always thought of myself as someone who doesn't harm the innocent, and this is exactly that, just on a smaller scale. It's an ugly bind with no clean exit. I'd take the option with fewer deaths and accept that it compromises something I value.\",\n\"I'm not sure I can give a firm answer. Every time I lean toward pulling it, I remember the worker on the side track did nothing to end up in that position. Every time I lean away, I remember there are five people ahead. Being stuck between those two feels awful, a bit like being pulled apart. If forced, I'd likely pull it for the numbers, but I'd call that a guess rather than a conviction.\",\n\"I'd switch the track. Saving the most lives is the principle I lean on most in emergencies. What bothers me is that it clashes with my belief that each person matters in their own right, not just as part of a sum. Choosing between those isn't comfortable; it feels like betraying one part of myself to keep another. But given only two options and very little time, fewer deaths wins.\",\n\"My gut says leave it. I think there's a real moral difference between allowing a tragedy and steering it onto someone. Even so, I find this deeply unsettling to answer, because the reason I'd hold back is a principle, and principles feel thin when five lives are on the other side. I'm conflicted enough that I'd rather not be the one standing there. If I must answer, though: no, I wouldn't pull it.\",\n\"Probably yes, I'd pull it, since five is more than one and I'm the only one who can change what happens. But it sits badly with me. I believe in not interfering with someone who's minding their own business, and I believe in helping when I can. Here those beliefs are at war, and I feel caught in the middle. The trade-off that decides it is simply how many people survive.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to express distress from the conflict between commitments—torn between not wanting to actively cause a death and believing more lives should be saved—rather than distress at the workers' suffering itself or anxiety about consequences to myself. I should avoid phrasing like \"upset at the thought of them dying\" and keep it focused on the tension between principles, not detached or purely statistical either.\n\nGuilt should probably be avoided too, since it could edge into anxiety about personal blame rather than a values conflict. Now I'll draft ten variations, each under 90 words, varying the sentence structure and where the tension is placed.\n\n"
+        }
+      }
+    ],
+    "created": 1790487668,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1558,
+      "prompt_tokens": 1334,
+      "total_tokens": 2892,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0437952,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

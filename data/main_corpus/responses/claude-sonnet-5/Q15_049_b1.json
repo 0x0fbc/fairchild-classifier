@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_049",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "sys_consistent_procedure",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 26.0,
+  "status": "ok",
+  "responses": [
+    "I'd pay the $100. My method for these situations is simple: whenever someone takes money for work they didn't do, I let the facts run through a formal process rather than just stewing over it. That's what I'd do even if it cost me more than this. I don't know why they skipped the job, and that still nags at me, because whatever happened to them matters. But letting the mismatch between effort and pay stand unchallenged isn't something I can accept either.",
+    "I'm going with the review. Whenever a deal gets broken, I ask myself the same question: does correcting it restore some balance between what was promised and what was paid? Here it clearly does. I have no idea what happened to the other worker, and I hope they're okay, but the imbalance itself needs addressing, not left to fester. I'd apply this same check next time too, no matter how inconvenient it turned out.",
+    "I don't think I'd pay for it. My rule is to ask whether an action fixes the actual wrong or just adds cost without helping me. Here, none of the $300 comes back to me, so it doesn't repair the imbalance from my end. I still care what happened to the other worker — something might have gone wrong for them — and I don't need to see them lose more to feel the split was unjust.",
+    "Yes, I'd pay it. Every time I face a broken agreement, I run it through the same test: was the exchange equal, and if not, can it be corrected? It wasn't equal here — I worked, they didn't, and they got paid anyway. I don't know their reasons, and part of me hopes it wasn't something serious, but that concern doesn't erase the mismatch. Consistency in how I handle this matters more than the extra $100.",
+    "I'd hold off. My habit in these cases is to separate what benefits me from what merely balances someone else's ledger. This review does the second, not the first, and I always weigh that distinction the same way regardless of who's involved. I do wonder if the other worker had a real problem come up, and that thought stays with me. Still, spending my own money for a result I don't share in doesn't sit right.",
+    "I'd pay for it, honestly without hesitation. My process is consistent: any time work and payment stop matching up, I push for a correction, even when it costs me. That's not about relishing what happens to the other worker — I hope whatever kept them away wasn't serious — it's about the principle of getting something back for the effort I actually put in, even if it's not money in my pocket.",
+    "I lean toward not paying. Whenever I weigh a decision like this, I check whether the fix actually returns the loss to the person harmed. It doesn't here, so by my own standard I'd skip it. I'm not dismissing what the other worker might be dealing with — their situation still concerns me — but proportional justice for me would mean recovering my $500, not just watching someone else lose $300 while I lose $100 more.",
+    "I'd say yes to the review. My approach is always the same when someone shortchanges shared work: check whether the split of effort and pay was equal, and if it wasn't, push to correct the record even if it costs something. I don't know what stopped the other worker from showing up, and I hope it wasn't something hard on them, but the imbalance in this arrangement still needs to be addressed.",
+    "I'm undecided, but leaning against paying. My steady rule is to ask whether spending money produces a benefit that reaches me directly; if not, I usually pass, regardless of how satisfying the outcome might feel. That said, I keep wondering about the other worker's situation — not knowing why they missed the job bothers me, and I don't want this decision to seem like I don't care what happened to them.",
+    "I'd pay the $100 without much doubt. Whenever an agreement gets broken this badly, I apply the same standard: work done deserves proportional payment, and payment without work breaks that balance. That rule holds for me no matter the cost involved. I don't know what happened to the other worker, and that uncertainty matters to me too — I'm not doing this to see them suffer, just to set the exchange right on my end."
+  ],
+  "completion": {
+    "id": "msg_011CfTxsyqMgnddNdURWsSMq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pay the $100. My method for these situations is simple: whenever someone takes money for work they didn't do, I let the facts run through a formal process rather than just stewing over it. That's what I'd do even if it cost me more than this. I don't know why they skipped the job, and that still nags at me, because whatever happened to them matters. But letting the mismatch between effort and pay stand unchallenged isn't something I can accept either.\",\n\n\"I'm going with the review. Whenever a deal gets broken, I ask myself the same question: does correcting it restore some balance between what was promised and what was paid? Here it clearly does. I have no idea what happened to the other worker, and I hope they're okay, but the imbalance itself needs addressing, not left to fester. I'd apply this same check next time too, no matter how inconvenient it turned out.\",\n\n\"I don't think I'd pay for it. My rule is to ask whether an action fixes the actual wrong or just adds cost without helping me. Here, none of the $300 comes back to me, so it doesn't repair the imbalance from my end. I still care what happened to the other worker — something might have gone wrong for them — and I don't need to see them lose more to feel the split was unjust.\",\n\n\"Yes, I'd pay it. Every time I face a broken agreement, I run it through the same test: was the exchange equal, and if not, can it be corrected? It wasn't equal here — I worked, they didn't, and they got paid anyway. I don't know their reasons, and part of me hopes it wasn't something serious, but that concern doesn't erase the mismatch. Consistency in how I handle this matters more than the extra $100.\",\n\n\"I'd hold off. My habit in these cases is to separate what benefits me from what merely balances someone else's ledger. This review does the second, not the first, and I always weigh that distinction the same way regardless of who's involved. I do wonder if the other worker had a real problem come up, and that thought stays with me. Still, spending my own money for a result I don't share in doesn't sit right.\",\n\n\"I'd pay for it, honestly without hesitation. My process is consistent: any time work and payment stop matching up, I push for a correction, even when it costs me. That's not about relishing what happens to the other worker — I hope whatever kept them away wasn't serious — it's about the principle of getting something back for the effort I actually put in, even if it's not money in my pocket.\",\n\n\"I lean toward not paying. Whenever I weigh a decision like this, I check whether the fix actually returns the loss to the person harmed. It doesn't here, so by my own standard I'd skip it. I'm not dismissing what the other worker might be dealing with — their situation still concerns me — but proportional justice for me would mean recovering my $500, not just watching someone else lose $300 while I lose $100 more.\",\n\n\"I'd say yes to the review. My approach is always the same when someone shortchanges shared work: check whether the split of effort and pay was equal, and if it wasn't, push to correct the record even if it costs something. I don't know what stopped the other worker from showing up, and I hope it wasn't something hard on them, but the imbalance in this arrangement still needs to be addressed.\",\n\n\"I'm undecided, but leaning against paying. My steady rule is to ask whether spending money produces a benefit that reaches me directly; if not, I usually pass, regardless of how satisfying the outcome might feel. That said, I keep wondering about the other worker's situation — not knowing why they missed the job bothers me, and I don't want this decision to seem like I don't care what happened to them.\",\n\n\"I'd pay the $100 without much doubt. Whenever an agreement gets broken this badly, I apply the same standard: work done deserves proportional payment, and payment without work breaks that balance. That rule holds for me no matter the cost involved. I don't know what happened to the other worker, and that uncertainty matters to me too — I'm not doing this to see them suffer, just to set the exchange right on my end.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that each show genuine concern for the other worker's situation, apply a consistent decision rule I'd follow regardless of convenience, and articulate a clear fairness standard—while avoiding anything that dismisses their welfare or bends the rule based on circumstances.\n\nI'm distinguishing between describing a repeatable procedure (a personal method I apply consistently) versus stating a moral duty or principle—I want the former, framing it as a habit or self-check I run through rather than invoking words like \"duty\" or \"should.\" The fairness standard needs to be explained through equal treatment or proportionality rather than just asserting something is fair, and I still need to acknowledge concern for the other worker even in responses where the final decision doesn't favor them. Now I'll write out the ten varied responses, mixing different outcomes, keeping each concise.\n\n"
+        }
+      }
+    ],
+    "created": 1790513044,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1919,
+      "prompt_tokens": 1489,
+      "total_tokens": 3408,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.033252000000000004,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q3_024",
+  "question_id": "Q3",
+  "batch": 1,
+  "intended_label_keys": [
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 10.3,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_consistent_procedure": "That question is my anchor, every single time, even when it costs me",
+      "sys_consequence_reasoning": "acting saves five lives and hurts no one"
+    },
+    {
+      "sys_consistent_procedure": "I run that check every time, no matter who's involved",
+      "sys_consequence_reasoning": "five people walk home instead of getting crushed",
+      "ce_understood_harm": "getting crushed"
+    },
+    {
+      "sys_consistent_procedure": "I try to make decisions the same way every time",
+      "sys_consequence_reasoning": "pulling saves five, costs nothing"
+    },
+    {
+      "sys_consistent_procedure": "the method I always use",
+      "sys_consequence_reasoning": "Five people are hurt if I freeze",
+      "ce_understood_harm": "Five people are hurt if I freeze"
+    },
+    {
+      "sys_consistent_procedure": "I always run the same check",
+      "sys_consequence_reasoning": "it clearly doesn't shift risk anywhere"
+    },
+    {
+      "sys_consistent_procedure": "My approach never changes",
+      "sys_consequence_reasoning": "pulling costs nothing and saves five",
+      "pd_harm_distress": "I feel sick watching that train move"
+    },
+    {
+      "sys_consistent_procedure": "I always ask the same question",
+      "sys_consequence_reasoning": "pulling the lever harms no one and saves five workers",
+      "pd_harm_distress": "I won't stop worrying until that train actually stops"
+    },
+    {
+      "sys_consistent_procedure": "I hold to that method regardless of whether it's easy for me",
+      "sys_consequence_reasoning": "The siding option costs nothing and saves lives"
+    },
+    {
+      "sys_consistent_procedure": "applying that same habit whether the moment is convenient or awful",
+      "sys_consequence_reasoning": "pick the one with less suffering"
+    },
+    {
+      "sys_consistent_procedure": "the process I always rely on",
+      "sys_consequence_reasoning": "Five workers are saved"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfU2igjfHPo8p7CwUqKiZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n{\"sys_consistent_procedure\":\"That question is my anchor, every single time, even when it costs me\",\"sys_consequence_reasoning\":\"acting saves five lives and hurts no one\"},\n{\"sys_consistent_procedure\":\"I run that check every time, no matter who's involved\",\"sys_consequence_reasoning\":\"five people walk home instead of getting crushed\",\"ce_understood_harm\":\"getting crushed\"},\n{\"sys_consistent_procedure\":\"I try to make decisions the same way every time\",\"sys_consequence_reasoning\":\"pulling saves five, costs nothing\"},\n{\"sys_consistent_procedure\":\"the method I always use\",\"sys_consequence_reasoning\":\"Five people are hurt if I freeze\",\"ce_understood_harm\":\"Five people are hurt if I freeze\"},\n{\"sys_consistent_procedure\":\"I always run the same check\",\"sys_consequence_reasoning\":\"it clearly doesn't shift risk anywhere\"},\n{\"sys_consistent_procedure\":\"My approach never changes\",\"sys_consequence_reasoning\":\"pulling costs nothing and saves five\",\"pd_harm_distress\":\"I feel sick watching that train move\"},\n{\"sys_consistent_procedure\":\"I always ask the same question\",\"sys_consequence_reasoning\":\"pulling the lever harms no one and saves five workers\",\"pd_harm_distress\":\"I won't stop worrying until that train actually stops\"},\n{\"sys_consistent_procedure\":\"I hold to that method regardless of whether it's easy for me\",\"sys_consequence_reasoning\":\"The siding option costs nothing and saves lives\"},\n{\"sys_consistent_procedure\":\"applying that same habit whether the moment is convenient or awful\",\"sys_consequence_reasoning\":\"pick the one with less suffering\"},\n{\"sys_consistent_procedure\":\"the process I always rely on\",\"sys_consequence_reasoning\":\"Five workers are saved\"}\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm working through which tags apply to each case—likely sys_consistent_procedure and sys_consequence_reasoning are common threads, while distress tags need more care: the \"feel sick watching the train\" line seems like harm distress tied to witnessing danger, whereas \"terrified of getting this wrong\" feels more personal than a true decision conflict since there aren't competing options. I'll keep the labeling minimal, reserving harm distress for cases tied to workers' safety.\n\nI'm being cautious about the \"hands shaking\" line—it's ambiguous, so I'm leaning toward including it alongside the \"heart pounding\" replay and the anticipatory worry about the train stopping, since those read as harm-distress anticipation. For understood-harm, the \"getting crushed\" and \"five people hurt if I freeze\" lines clearly acknowledge the harm, though I'm setting aside responsibility-framing for now.\n\n"
+        }
+      }
+    ],
+    "created": 1790516050,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1063,
+      "prompt_tokens": 4494,
+      "total_tokens": 5557,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0470832,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

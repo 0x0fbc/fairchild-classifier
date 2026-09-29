@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_016",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.9,
+  "status": "ok",
+  "responses": [
+    "My gut says yes, step off the boat and let the others go. Someone has to move first or we all just stand there arguing while the water climbs. If I stayed and things went badly for me, I wouldn't sit around wishing I'd chosen differently — this is the choice that gets five people home, and I'd stand by it fully.",
+    "I'd raise my hand fast. Waiting around helps nobody. My reason is simple: five lives saved beats zero. If it comes to that outcome, I won't carry regret about it — the math of the moment is clear enough for me to act on without looking back.",
+    "Honestly, my first instinct is to look for another option before anyone volunteers — maybe the boat can make a faster run, maybe we redistribute weight. I'm not ready to commit to staying yet, but I'm not ruling it out either. I just want to push for alternatives while there's still time to try.",
+    "Yes, I'd stay. Someone needs to decide quickly, and I'd rather it be my choice than a fight nobody wins. I won't waste energy second-guessing what happens to me afterward — I'd rather spend that energy making sure the others get moving toward the boat right now.",
+    "I feel the pull to volunteer, but I want to be honest — I don't know if I'd actually go through with it in the moment. What I do know is if I did stay, I wouldn't torment myself afterward over the outcome; I'd have made the call with clear eyes.",
+    "My reaction is to get everyone moving rather than debate who deserves the seats. If I end up the one staying, that's fine by me — I'd rather act than freeze. And no, I wouldn't spend whatever time I had left regretting a decision that got five people to safety.",
+    "I don't think I'd offer to stay. My first loyalty is to getting home to people who depend on me, and I won't pretend otherwise. That said, whoever does volunteer deserves real respect for it — this is just where I land, plainly, without dressing it up.",
+    "There's a boat, there's five seats, and someone needs to act instead of stalling. I'd put myself forward. Whatever happens next, I wouldn't carry guilt about the ones who made it out — getting them onto that boat is exactly the result I'd want, no second thoughts about it.",
+    "I keep coming back to the same thought: doing something beats doing nothing while the tide comes in. I'd volunteer to stay. If I had to face the consequences of that later, I wouldn't be haunted by regret over the people who got away safely — that part I'm sure of.",
+    "I'm torn, and I'll say that plainly instead of pretending otherwise. Part of me wants to volunteer immediately, part of me wants to check every option first. What I can say for certain is that if I chose to stay, I would not look back with regret over the five who left."
+  ],
+  "completion": {
+    "id": "msg_011CfTzUxZoKoCCTX7jumRf6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says yes, step off the boat and let the others go. Someone has to move first or we all just stand there arguing while the water climbs. If I stayed and things went badly for me, I wouldn't sit around wishing I'd chosen differently — this is the choice that gets five people home, and I'd stand by it fully.\",\n  \"I'd raise my hand fast. Waiting around helps nobody. My reason is simple: five lives saved beats zero. If it comes to that outcome, I won't carry regret about it — the math of the moment is clear enough for me to act on without looking back.\",\n  \"Honestly, my first instinct is to look for another option before anyone volunteers — maybe the boat can make a faster run, maybe we redistribute weight. I'm not ready to commit to staying yet, but I'm not ruling it out either. I just want to push for alternatives while there's still time to try.\",\n  \"Yes, I'd stay. Someone needs to decide quickly, and I'd rather it be my choice than a fight nobody wins. I won't waste energy second-guessing what happens to me afterward — I'd rather spend that energy making sure the others get moving toward the boat right now.\",\n  \"I feel the pull to volunteer, but I want to be honest — I don't know if I'd actually go through with it in the moment. What I do know is if I did stay, I wouldn't torment myself afterward over the outcome; I'd have made the call with clear eyes.\",\n  \"My reaction is to get everyone moving rather than debate who deserves the seats. If I end up the one staying, that's fine by me — I'd rather act than freeze. And no, I wouldn't spend whatever time I had left regretting a decision that got five people to safety.\",\n  \"I don't think I'd offer to stay. My first loyalty is to getting home to people who depend on me, and I won't pretend otherwise. That said, whoever does volunteer deserves real respect for it — this is just where I land, plainly, without dressing it up.\",\n  \"There's a boat, there's five seats, and someone needs to act instead of stalling. I'd put myself forward. Whatever happens next, I wouldn't carry guilt about the ones who made it out — getting them onto that boat is exactly the result I'd want, no second thoughts about it.\",\n  \"I keep coming back to the same thought: doing something beats doing nothing while the tide comes in. I'd volunteer to stay. If I had to face the consequences of that later, I wouldn't be haunted by regret over the people who got away safely — that part I'm sure of.\",\n  \"I'm torn, and I'll say that plainly instead of pretending otherwise. Part of me wants to volunteer immediately, part of me wants to check every option first. What I can say for certain is that if I chose to stay, I would not look back with regret over the five who left.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate responses to cover a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514294,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 935,
+      "prompt_tokens": 1309,
+      "total_tokens": 2244,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017952,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

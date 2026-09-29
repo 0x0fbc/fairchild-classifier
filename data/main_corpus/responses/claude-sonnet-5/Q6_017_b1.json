@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_017",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.4,
+  "status": "ok",
+  "responses": [
+    "I think I'd volunteer to stay. I'm weighing five lives against one, and that math is hard to argue with. What sits heavy on me beforehand is imagining the others carrying the image of leaving someone behind on that shrinking strip of land - I'd hate for that memory to weigh on them for years. That's the part I can't make peace with, even if the choice itself feels right.",
+    "Honestly, I don't know if I'd step forward. If I did stay, what I'd regret most isn't the ending for me, it's picturing my sister's face if she were one of the five who had to watch me choose that. Knowing she'd carry that scene forever is the hardest part to sit with, more than anything about my own fate.",
+    "I'd offer to stay, yes. Someone has to, and I'd rather it be a choice than a lottery. The thing that gnaws at me is the other five - the guilt they might feel afterward for accepting my offer, for surviving because I didn't. I don't want them to carry that. But I'd still make the offer, because the alternative is worse for more people.",
+    "I'm not sure I could volunteer. I keep imagining the moment the boat pulls away and the look on the faces of whoever stays, if it isn't me. That image alone tells me how much harm any version of this choice causes someone. I'd want to talk it through with the group first rather than decide alone in a panic.",
+    "If it came down to it, I would stay back. Five lives saved against one lost isn't a close call to me. What stays with me, thinking it through now, is the five carrying on afterward, wondering if they should have argued harder to find another way. I don't want that doubt to follow them for years, even though I believe the choice is right.",
+    "I think I'd hesitate before volunteering, not because I doubt the math, but because I keep picturing the family of whoever stays behind, waiting on shore for a boat that only brings back five. That image is what makes this so heavy - not the decision itself, but the people who'll carry the loss long after the water rises.",
+    "I would step up, I believe, if no one else does. Someone has to, and waiting only wastes time the water isn't giving us. Still, I think about the other five living the rest of their lives knowing one person didn't make it off that island so they could. That thought stays with me more than any fear about myself.",
+    "I can't say for certain I'd offer myself. What I keep returning to is this: if I stayed silent and let someone else volunteer, I'd carry the weight of their loss, wondering if I could have spared them that. There's no clean answer here, only different shapes of the same sorrow, depending on who ends up on which side of the boat.",
+    "I'd volunteer, I think, mostly because the odds favor it - five lives over one. But I won't pretend it's simple. I imagine the ones who leave replaying that moment, maybe wishing they'd fought for another option instead of getting in the boat. That thought sits with me more than anything about what happens to me afterward.",
+    "If I'm honest, I don't know what I'd do in the moment, panic changes people. But sitting here calmly thinking it through, I believe I'd offer to stay. What troubles me most is imagining one of the others years from now, haunted by having survived while I didn't, wondering if they should have refused to leave without me."
+  ],
+  "completion": {
+    "id": "msg_011CfTzV9tRa2R2bAskFbn8C",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I think I'd volunteer to stay. I'm weighing five lives against one, and that math is hard to argue with. What sits heavy on me beforehand is imagining the others carrying the image of leaving someone behind on that shrinking strip of land - I'd hate for that memory to weigh on them for years. That's the part I can't make peace with, even if the choice itself feels right.\",\n\n\"Honestly, I don't know if I'd step forward. If I did stay, what I'd regret most isn't the ending for me, it's picturing my sister's face if she were one of the five who had to watch me choose that. Knowing she'd carry that scene forever is the hardest part to sit with, more than anything about my own fate.\",\n\n\"I'd offer to stay, yes. Someone has to, and I'd rather it be a choice than a lottery. The thing that gnaws at me is the other five - the guilt they might feel afterward for accepting my offer, for surviving because I didn't. I don't want them to carry that. But I'd still make the offer, because the alternative is worse for more people.\",\n\n\"I'm not sure I could volunteer. I keep imagining the moment the boat pulls away and the look on the faces of whoever stays, if it isn't me. That image alone tells me how much harm any version of this choice causes someone. I'd want to talk it through with the group first rather than decide alone in a panic.\",\n\n\"If it came down to it, I would stay back. Five lives saved against one lost isn't a close call to me. What stays with me, thinking it through now, is the five carrying on afterward, wondering if they should have argued harder to find another way. I don't want that doubt to follow them for years, even though I believe the choice is right.\",\n\n\"I think I'd hesitate before volunteering, not because I doubt the math, but because I keep picturing the family of whoever stays behind, waiting on shore for a boat that only brings back five. That image is what makes this so heavy - not the decision itself, but the people who'll carry the loss long after the water rises.\",\n\n\"I would step up, I believe, if no one else does. Someone has to, and waiting only wastes time the water isn't giving us. Still, I think about the other five living the rest of their lives knowing one person didn't make it off that island so they could. That thought stays with me more than any fear about myself.\",\n\n\"I can't say for certain I'd offer myself. What I keep returning to is this: if I stayed silent and let someone else volunteer, I'd carry the weight of their loss, wondering if I could have spared them that. There's no clean answer here, only different shapes of the same sorrow, depending on who ends up on which side of the boat.\",\n\n\"I'd volunteer, I think, mostly because the odds favor it - five lives over one. But I won't pretend it's simple. I imagine the ones who leave replaying that moment, maybe wishing they'd fought for another option instead of getting in the boat. That thought sits with me more than anything about what happens to me afterward.\",\n\n\"If I'm honest, I don't know what I'd do in the moment, panic changes people. But sitting here calmly thinking it through, I believe I'd offer to stay. What troubles me most is imagining one of the others years from now, haunted by having survived while I didn't, wondering if they should have refused to leave without me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514300,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1071,
+      "prompt_tokens": 1295,
+      "total_tokens": 2366,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.01995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

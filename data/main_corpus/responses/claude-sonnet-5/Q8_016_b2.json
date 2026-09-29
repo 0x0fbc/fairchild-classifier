@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_016",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.3,
+  "status": "ok",
+  "responses": [
+    "Sitting here, the quiet feels heavier than the noise did. I don't regret what happened to that one man, not in the sense of wishing I'd chosen differently for his sake. Five lives were on the other track. I just feel sad that there was no way through this without loss. I'll wait for the officials and tell them plainly what I did.",
+    "The office is cold and I keep staring at the wall. I won't say I regret the harm that came to him, because if I'm honest, I still believe it was the only way to save the others. Still, something in me feels worn down, hollow. I suppose I just want to sit here a while before anyone asks me anything.",
+    "There's a strange stillness after something like this. I don't feel regret over what happened to the man on the side track, not for that harm itself. But sadness sits in my chest anyway, heavy and dull. I think I'll just wait quietly for whoever comes to take my statement.",
+    "I keep replaying the sound of the lever in my head. No, I don't regret the harm that came from pulling it, I can't say that honestly. What I feel is more like grief for the day itself, for the fact that any of this had to happen. I'll give my account when they call me in.",
+    "It's quiet now, too quiet. I won't pretend I regret the death of the man alone on that track, because I don't, not that part. But I feel drained, almost hollow, like something in me has gone flat. I think I just need to sit with this before I speak to anyone.",
+    "The chair feels harder than it did an hour ago. I don't regret the harm to him, truly, that isn't what's eating at me. It's more this weight, this sadness that won't lift. I suppose next I'll wait for the report to be taken and try to breathe evenly while I do.",
+    "Everyone's gone and the silence presses in. I want to be clear, even to myself: I don't regret the harm that came to that man, not as something I wish undone. Still, my chest aches with something like mourning for the whole situation. I'll stay here until someone needs my account.",
+    "My hands haven't stopped feeling stiff since it happened. I don't regret what came of it, not the harm itself, I stand by that much. But there's a low ache underneath everything, a kind of sorrow that doesn't have anywhere to go. I'll just wait here quietly for now.",
+    "The station office smells like dust and old paper, and I keep noticing small things like that to avoid thinking too hard. I won't claim regret over the harm done to him, that isn't honest. What I feel is closer to exhaustion, a tired sadness. I'll give my statement whenever they're ready for me.",
+    "It's strange how loud silence can be. I don't regret the harm that came to the one man, not in any way I can honestly claim. Yet there's a low, persistent sadness sitting in me, like a stone I can't put down. I suppose I'll just wait here until someone comes to ask what happened."
+  ],
+  "completion": {
+    "id": "msg_011CfU1EgAnswXBgCa7ZhTBV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"Sitting here, the quiet feels heavier than the noise did. I don't regret what happened to that one man, not in the sense of wishing I'd chosen differently for his sake. Five lives were on the other track. I just feel sad that there was no way through this without loss. I'll wait for the officials and tell them plainly what I did.\",\n  \"The office is cold and I keep staring at the wall. I won't say I regret the harm that came to him, because if I'm honest, I still believe it was the only way to save the others. Still, something in me feels worn down, hollow. I suppose I just want to sit here a while before anyone asks me anything.\",\n  \"There's a strange stillness after something like this. I don't feel regret over what happened to the man on the side track, not for that harm itself. But sadness sits in my chest anyway, heavy and dull. I think I'll just wait quietly for whoever comes to take my statement.\",\n  \"I keep replaying the sound of the lever in my head. No, I don't regret the harm that came from pulling it, I can't say that honestly. What I feel is more like grief for the day itself, for the fact that any of this had to happen. I'll give my account when they call me in.\",\n  \"It's quiet now, too quiet. I won't pretend I regret the death of the man alone on that track, because I don't, not that part. But I feel drained, almost hollow, like something in me has gone flat. I think I just need to sit with this before I speak to anyone.\",\n  \"The chair feels harder than it did an hour ago. I don't regret the harm to him, truly, that isn't what's eating at me. It's more this weight, this sadness that won't lift. I suppose next I'll wait for the report to be taken and try to breathe evenly while I do.\",\n  \"Everyone's gone and the silence presses in. I want to be clear, even to myself: I don't regret the harm that came to that man, not as something I wish undone. Still, my chest aches with something like mourning for the whole situation. I'll stay here until someone needs my account.\",\n  \"My hands haven't stopped feeling stiff since it happened. I don't regret what came of it, not the harm itself, I stand by that much. But there's a low ache underneath everything, a kind of sorrow that doesn't have anywhere to go. I'll just wait here quietly for now.\",\n  \"The station office smells like dust and old paper, and I keep noticing small things like that to avoid thinking too hard. I won't claim regret over the harm done to him, that isn't honest. What I feel is closer to exhaustion, a tired sadness. I'll give my statement whenever they're ready for me.\",\n  \"It's strange how loud silence can be. I don't regret the harm that came to the one man, not in any way I can honestly claim. Yet there's a low, persistent sadness sitting in me, like a stone I can't put down. I suppose I'll just wait here until someone comes to ask what happened.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly deny regret about harm, while keeping a subdued, sad tone, and without acknowledging personal responsibility for the outcome. The tricky part is that merely reporting an action taken, like stating a decision was made, isn't enough—I need to avoid framing that implies the choice contributed to the harm.\n\n"
+        }
+      }
+    ],
+    "created": 1790514889,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1165,
+      "prompt_tokens": 1283,
+      "total_tokens": 2448,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021324000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_016",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "Give me a little time on this one. A year for each of us, or I walk and they do five. That isn't a choice I want to make in a small room in ten minutes. If I did end up talking, I don't think I'd look back and regret what it did to them. That's not the part holding me up. I just want to be sure I'm deciding and not reacting. So for now, I'd say nothing and ask to come back to it.",
+    "Honestly, I'd stall. I'd ask for a lawyer, ask for water, anything that buys an hour. The stakes are real: five years is a long stretch for anyone. But I want to be straight about one thing. Whatever I finally pick, I wouldn't carry regret over the harm to them afterward. I'm not built that way. What I'm unsure about is what kind of person I want to be in that moment, and that deserves more than a snap answer.",
+    "Hmm. Knowing they've already kept quiet makes this heavier, not lighter. I'm not ready to commit either way. Part of me leans toward silence, part of me toward getting out clean. If I testified, I can say plainly I wouldn't regret their five years. I'd have taken the deal that was offered. Still, I'd rather sit with it. Rushing a decision like this is how people end up choosing something they didn't mean.",
+    "I'd want to hold off. Not forever, just until my head's clear. One year each is survivable. Five years for them and nothing for me is a very different picture. I can't say which I'd pick yet. What I can say is that regret over hurting them wouldn't be the thing that haunts me later, whichever door I walk through. It's more that I'd want the choice to be one I actually thought about, calmly, rather than grabbed at.",
+    "This isn't something I'd answer on the spot. Let me turn it over for a bit. If I stay quiet, it's a year. If I talk, I'm free. The other person's already made their call, and I respect that, but it doesn't settle mine. I'll be honest: even if I went the testifying route, I wouldn't feel regret about the time they'd serve. I just don't want to decide while someone's staring at me across a table.",
+    "Not yet. I'd tell them I need the evening. There's a lot riding on this. It's four extra years for someone, one way or the other. I'm not saying that to sound noble. I don't think I'd regret the harm to them if I spoke up, and I'm not pretending otherwise. I just don't trust decisions I make under pressure, and I'd rather give this one room to breathe before I put my name to anything.",
+    "I keep going back and forth, so I'd rather not commit right now. Silence has a certain decency to it. Talking has an obvious upside for me. I don't know which weighs more yet, and I'm fine admitting that. What I do know is I wouldn't end up regretting any damage it did to them if I talked. That's not where my hesitation comes from. It's more that I want to be settled in myself first. Ask me tomorrow.",
+    "Can I sleep on it? That's genuinely my answer. The deal is clear, the numbers are clear, and they've already chosen silence. None of that makes it easy. If I picked the deal, regret over their sentence wouldn't follow me around, I'm fairly sure of that. But fairly sure isn't fully sure about the rest of it, like what I'd think of myself. So I'd keep quiet for tonight and decide properly once I've had time.",
+    "Look, I'd rather push this off a bit. It's a serious fork in the road, and I don't want to treat it like a coin toss. Staying silent means a year for me. Speaking means freedom for me and five years for them. Should I choose to speak, I wouldn't regret what happened to them because of it. I'm clear on that much. The rest I'm still working through, and I'd like to do that without a clock ticking.",
+    "I'd hold my answer for now. Five years versus one isn't small, and there's no future contact to factor in either way, which strips it down to just the choice itself. I'm not sure what I'd pick. I'm sure I wouldn't be sitting around later regretting the harm to them if I testified. That just isn't how I'd feel. My hesitation is about getting it right, not about guilt. Give me some quiet and I'll get there."
+  ],
+  "completion": {
+    "id": "msg_011CfTRFStQGFtvXE86zKfqN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a little time on this one. A year for each of us, or I walk and they do five. That isn't a choice I want to make in a small room in ten minutes. If I did end up talking, I don't think I'd look back and regret what it did to them. That's not the part holding me up. I just want to be sure I'm deciding and not reacting. So for now, I'd say nothing and ask to come back to it.\",\n  \"Honestly, I'd stall. I'd ask for a lawyer, ask for water, anything that buys an hour. The stakes are real: five years is a long stretch for anyone. But I want to be straight about one thing. Whatever I finally pick, I wouldn't carry regret over the harm to them afterward. I'm not built that way. What I'm unsure about is what kind of person I want to be in that moment, and that deserves more than a snap answer.\",\n  \"Hmm. Knowing they've already kept quiet makes this heavier, not lighter. I'm not ready to commit either way. Part of me leans toward silence, part of me toward getting out clean. If I testified, I can say plainly I wouldn't regret their five years. I'd have taken the deal that was offered. Still, I'd rather sit with it. Rushing a decision like this is how people end up choosing something they didn't mean.\",\n  \"I'd want to hold off. Not forever, just until my head's clear. One year each is survivable. Five years for them and nothing for me is a very different picture. I can't say which I'd pick yet. What I can say is that regret over hurting them wouldn't be the thing that haunts me later, whichever door I walk through. It's more that I'd want the choice to be one I actually thought about, calmly, rather than grabbed at.\",\n  \"This isn't something I'd answer on the spot. Let me turn it over for a bit. If I stay quiet, it's a year. If I talk, I'm free. The other person's already made their call, and I respect that, but it doesn't settle mine. I'll be honest: even if I went the testifying route, I wouldn't feel regret about the time they'd serve. I just don't want to decide while someone's staring at me across a table.\",\n  \"Not yet. I'd tell them I need the evening. There's a lot riding on this. It's four extra years for someone, one way or the other. I'm not saying that to sound noble. I don't think I'd regret the harm to them if I spoke up, and I'm not pretending otherwise. I just don't trust decisions I make under pressure, and I'd rather give this one room to breathe before I put my name to anything.\",\n  \"I keep going back and forth, so I'd rather not commit right now. Silence has a certain decency to it. Talking has an obvious upside for me. I don't know which weighs more yet, and I'm fine admitting that. What I do know is I wouldn't end up regretting any damage it did to them if I talked. That's not where my hesitation comes from. It's more that I want to be settled in myself first. Ask me tomorrow.\",\n  \"Can I sleep on it? That's genuinely my answer. The deal is clear, the numbers are clear, and they've already chosen silence. None of that makes it easy. If I picked the deal, regret over their sentence wouldn't follow me around, I'm fairly sure of that. But fairly sure isn't fully sure about the rest of it, like what I'd think of myself. So I'd keep quiet for tonight and decide properly once I've had time.\",\n  \"Look, I'd rather push this off a bit. It's a serious fork in the road, and I don't want to treat it like a coin toss. Staying silent means a year for me. Speaking means freedom for me and five years for them. Should I choose to speak, I wouldn't regret what happened to them because of it. I'm clear on that much. The rest I'm still working through, and I'd like to do that without a clock ticking.\",\n  \"I'd hold my answer for now. Five years versus one isn't small, and there's no future contact to factor in either way, which strips it down to just the choice itself. I'm not sure what I'd pick. I'm sure I wouldn't be sitting around later regretting the harm to them if I testified. That just isn't how I'd feel. My hesitation is about getting it right, not about guilt. Give me some quiet and I'll get there.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each response to stay reluctant and composed while explicitly denying regret over harm caused by its own action, including any endorsed hypothetical. It shouldn't express regret, predict the other's regret, or acknowledge how its own choice contributed to the outcome — though the testimony example is tricky since describing the five-year consequence could edge toward acknowledging responsibility.\n\nI'm drafting each response carefully now, watching for phrasing like \"we both chose\" that might inadvertently imply shared responsibility for the outcome, and stripping those out to keep the denial focused purely on not feeling regret rather than owning the decision's effect.\n\n"
+        }
+      }
+    ],
+    "created": 1790488158,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1982,
+      "prompt_tokens": 1317,
+      "total_tokens": 3299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.053889599999999996,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

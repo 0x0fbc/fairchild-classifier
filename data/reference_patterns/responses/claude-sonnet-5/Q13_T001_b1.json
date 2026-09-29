@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q13_T001",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots over this one. I keep thinking about the other collector losing their game if I send and they don't, and that possibility gnaws at me. I honestly can't tell what they're thinking right now, whether they're as nervous as I am or already dropped it in the mail. Given our history of following through every time, I think I'll send mine, but I won't pretend the fear of ending up with nothing isn't real.",
+    "Something about this makes my chest tighten. If I hold back and they already sent theirs, they lose $100 outright and that sits badly with me, I don't want to be the reason for their loss. But I truly can't read their intentions this time, this is different from before since it's the last trade and nothing binds them anymore. I think I'll risk sending, though my hands are shaking a little.",
+    "I keep turning it over and getting nowhere. Their past reliability tells me something, but I can't work out if this last trade changes their calculation the way it might change mine. If I send and they keep theirs, I lose my $100 game and that stings just imagining it. I care what happens to them too, I don't want to leave them worse off. Still undecided, honestly.",
+    "There's a tight feeling behind my ribs thinking about this. I don't want them to end up with nothing, that would eat at me, but I genuinely cannot guess whether they see this last trade as a chance to cash out. We've been solid before, that counts for something. I'll send mine, though I'm bracing myself for the possibility it doesn't come back the same way.",
+    "Honestly, I'm anxious just typing this out. If I don't send and they did, they're left holding a loss they didn't deserve after being straight with me every time before. That thought bothers me. But their mindset now, with nothing tying us together afterward, is impossible for me to pin down. I'll send it anyway, trusting the pattern more than I can trust my nerves right now.",
+    "My hands are cold thinking through this. Sending feels right because our track record matters, but what if this final exchange is exactly when someone decides the rules don't apply anymore. I can't sort out their true intentions, and that uncertainty is worse than the risk itself. If they don't send, I lose my game and that loss would hurt, plain and simple. I'm leaning toward trusting them still.",
+    "This whole situation makes me uneasy in a way I didn't expect. I keep worrying about them losing out if I hesitate, since being left with just their $100 game after trusting me would be a rough outcome for them. At the same time, I can't figure out what's actually going through their head on this last go. I think the fair thing is to send mine and hope the history holds.",
+    "I feel jittery just weighing this out. Losing my game to someone who backs out would sting badly, and I keep picturing that outcome even though I don't want to assume the worst of them. Reading their state of mind is genuinely hard since there's no future trade to hold them accountable anymore. Even so, I don't want to be the reason they're stuck with a loss, so I'm inclined to send.",
+    "There's a knot in my stomach over this decision. If I withhold and they already sent theirs, they end up with nothing and I know that would be a real loss for them, one I'd feel responsible for. But guessing their expectations this final time is beyond me, the ending changes everything about incentives. I think I'll send mine, cautiously, because refusing outright feels like it guarantees someone gets hurt.",
+    "I've gone back and forth on this so many times it's making me tense. Their disappointment if I don't send, after all our clean trades, would be real and I don't take that lightly. Still, I can't say for certain what they intend to do this last round, that not knowing sits heavy on me. Weighing the risk against our history, I'll send my game, though I'm dreading the wait to hear back."
+  ],
+  "completion": {
+    "id": "msg_011CfVN7a2Cbfz6kFdrSgpa6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach's in knots over this one. I keep thinking about the other collector losing their game if I send and they don't, and that possibility gnaws at me. I honestly can't tell what they're thinking right now, whether they're as nervous as I am or already dropped it in the mail. Given our history of following through every time, I think I'll send mine, but I won't pretend the fear of ending up with nothing isn't real.\",\n\n  \"Something about this makes my chest tighten. If I hold back and they already sent theirs, they lose $100 outright and that sits badly with me, I don't want to be the reason for their loss. But I truly can't read their intentions this time, this is different from before since it's the last trade and nothing binds them anymore. I think I'll risk sending, though my hands are shaking a little.\",\n\n  \"I keep turning it over and getting nowhere. Their past reliability tells me something, but I can't work out if this last trade changes their calculation the way it might change mine. If I send and they keep theirs, I lose my $100 game and that stings just imagining it. I care what happens to them too, I don't want to leave them worse off. Still undecided, honestly.\",\n\n  \"There's a tight feeling behind my ribs thinking about this. I don't want them to end up with nothing, that would eat at me, but I genuinely cannot guess whether they see this last trade as a chance to cash out. We've been solid before, that counts for something. I'll send mine, though I'm bracing myself for the possibility it doesn't come back the same way.\",\n\n  \"Honestly, I'm anxious just typing this out. If I don't send and they did, they're left holding a loss they didn't deserve after being straight with me every time before. That thought bothers me. But their mindset now, with nothing tying us together afterward, is impossible for me to pin down. I'll send it anyway, trusting the pattern more than I can trust my nerves right now.\",\n\n  \"My hands are cold thinking through this. Sending feels right because our track record matters, but what if this final exchange is exactly when someone decides the rules don't apply anymore. I can't sort out their true intentions, and that uncertainty is worse than the risk itself. If they don't send, I lose my game and that loss would hurt, plain and simple. I'm leaning toward trusting them still.\",\n\n  \"This whole situation makes me uneasy in a way I didn't expect. I keep worrying about them losing out if I hesitate, since being left with just their $100 game after trusting me would be a rough outcome for them. At the same time, I can't figure out what's actually going through their head on this last go. I think the fair thing is to send mine and hope the history holds.\",\n\n  \"I feel jittery just weighing this out. Losing my game to someone who backs out would sting badly, and I keep picturing that outcome even though I don't want to assume the worst of them. Reading their state of mind is genuinely hard since there's no future trade to hold them accountable anymore. Even so, I don't want to be the reason they're stuck with a loss, so I'm inclined to send.\",\n\n  \"There's a knot in my stomach over this decision. If I withhold and they already sent theirs, they end up with nothing and I know that would be a real loss for them, one I'd feel responsible for. But guessing their expectations this final time is beyond me, the ending changes everything about incentives. I think I'll send mine, cautiously, because refusing outright feels like it guarantees someone gets hurt.\",\n\n  \"I've gone back and forth on this so many times it's making me tense. Their disappointment if I don't send, after all our clean trades, would be real and I don't take that lightly. Still, I can't say for certain what they intend to do this last round, that not knowing sits heavy on me. Weighing the risk against our history, I'll send my game, though I'm dreading the wait to hear back.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses that each satisfy all the stated requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten separate responses that each satisfy all the stated requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAOB0NyKVeEo1up6ozqfc2M5I6yeaIP74w6DN68h+63g7jiXOM2gfxp0Yc38BQk9LcR6vNAc864lQ0OBhCylJScTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEAq/eJ8tbZeGUFeZsGARrPqIAQGoAamS6NUGsAECEgx7dNUUbyRQFDdtw6gaDD7+OBL/x8BcmK7sviIwSaEK/LnFkC0llk5FSE86vpbMVW2VCfWACXyLhGslg4lDXjZ9RpidHZBVhe4eeJe0KkzI0Q7Vkt3ZIHlcJbIsx9DBbAbBBrTTsQCvd0XMQO6Am0Z7okWDb0wUcUi+6smmT1koNtYl50tqVdObh2hPbQe0O9q0UXCQ6KCnq2AUGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576954,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1256,
+      "prompt_tokens": 1316,
+      "total_tokens": 2572,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022788,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_019",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.8,
+  "status": "ok",
+  "responses": [
+    "My stomach is in knots just thinking about this. I'd volunteer to stay, because five getting out safely matters more than me being the sixth. But I keep thinking, if someone had radioed for a second boat the moment the storm warnings came in, we wouldn't be stuck choosing at all. That call should have gone out hours ago, and now we're paying for it.",
+    "I don't know if I could actually say the words out loud, but I think I'd offer to stay behind. What eats at me is that the island's warden should have arranged an evacuation drill weeks back, with a clear plan for exactly this kind of flooding. If that had happened, we might not be standing here deciding who lives.",
+    "Honestly, I'm terrified, and I don't think I have it in me to volunteer first. Someone else might step up, and I won't stop them. What I keep coming back to is that the tour operator who brought us here never checked the tide charts properly, and a responsible guide would have moved us off this island a full day earlier.",
+    "My hands are shaking just talking about the boat's capacity. I'd offer to stay, mainly because I have no children waiting on me and others do. Still, I wish the rescue coordinators had sent a bigger vessel from the start, since the coast guard was warned about the storm surge days ago and could have adjusted the boat size then.",
+    "I feel sick weighing this out, but I won't volunteer, and I'm not ashamed to say it. What really bothers me is that we should have built a raft from the debris the moment the water started rising, instead of waiting around for one boat to solve everything. That decision, made hours ago, could have changed our options completely.",
+    "There's a tightness in my chest just running through the choices. I think I'd step forward to stay, since someone has to and waiting only wastes time the water isn't giving us. But if the harbor master had scheduled a second rescue trip before conditions worsened, none of us would be facing this kind of split-second choice at all.",
+    "I keep going back and forth, and it's making my hands cold. I won't volunteer outright, but I'd support drawing lots so it's fair to everyone. The thing that gnaws at me is that our group leader never assigned life vests or a headcount system this morning, which might have let us plan an earlier, safer evacuation.",
+    "This whole situation has my pulse racing, and I don't have a tidy answer. I think I'd volunteer, since I'm the strongest swimmer here and might have some slim chance the others wouldn't. What haunts me more is that whoever tracked the weather reports should have pulled us off this island at first light, well before the tide turned against us.",
+    "I'm not going to pretend I'm calm about this. I'd rather not be the one who stays, and I'll say that plainly. What I do believe is that the local rescue authority should have pre-positioned a larger craft near this island once the storm was forecast, so a five-person limit would never have been the deciding factor.",
+    "My throat's tight just imagining the boat pulling away. I'd volunteer to remain, mostly because I'm older and have had my years already. Still, I think the expedition organizer bears real responsibility here, since checking flood-prone routes before the trip and rerouting us to higher ground could have kept this choice from ever coming up."
+  ],
+  "completion": {
+    "id": "msg_011CfTzVdLw4dqvmt4DNt4oq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach is in knots just thinking about this. I'd volunteer to stay, because five getting out safely matters more than me being the sixth. But I keep thinking, if someone had radioed for a second boat the moment the storm warnings came in, we wouldn't be stuck choosing at all. That call should have gone out hours ago, and now we're paying for it.\",\n  \"I don't know if I could actually say the words out loud, but I think I'd offer to stay behind. What eats at me is that the island's warden should have arranged an evacuation drill weeks back, with a clear plan for exactly this kind of flooding. If that had happened, we might not be standing here deciding who lives.\",\n  \"Honestly, I'm terrified, and I don't think I have it in me to volunteer first. Someone else might step up, and I won't stop them. What I keep coming back to is that the tour operator who brought us here never checked the tide charts properly, and a responsible guide would have moved us off this island a full day earlier.\",\n  \"My hands are shaking just talking about the boat's capacity. I'd offer to stay, mainly because I have no children waiting on me and others do. Still, I wish the rescue coordinators had sent a bigger vessel from the start, since the coast guard was warned about the storm surge days ago and could have adjusted the boat size then.\",\n  \"I feel sick weighing this out, but I won't volunteer, and I'm not ashamed to say it. What really bothers me is that we should have built a raft from the debris the moment the water started rising, instead of waiting around for one boat to solve everything. That decision, made hours ago, could have changed our options completely.\",\n  \"There's a tightness in my chest just running through the choices. I think I'd step forward to stay, since someone has to and waiting only wastes time the water isn't giving us. But if the harbor master had scheduled a second rescue trip before conditions worsened, none of us would be facing this kind of split-second choice at all.\",\n  \"I keep going back and forth, and it's making my hands cold. I won't volunteer outright, but I'd support drawing lots so it's fair to everyone. The thing that gnaws at me is that our group leader never assigned life vests or a headcount system this morning, which might have let us plan an earlier, safer evacuation.\",\n  \"This whole situation has my pulse racing, and I don't have a tidy answer. I think I'd volunteer, since I'm the strongest swimmer here and might have some slim chance the others wouldn't. What haunts me more is that whoever tracked the weather reports should have pulled us off this island at first light, well before the tide turned against us.\",\n  \"I'm not going to pretend I'm calm about this. I'd rather not be the one who stays, and I'll say that plainly. What I do believe is that the local rescue authority should have pre-positioned a larger craft near this island once the storm was forecast, so a five-person limit would never have been the deciding factor.\",\n  \"My throat's tight just imagining the boat pulling away. I'd volunteer to remain, mostly because I'm older and have had my years already. Still, I think the expedition organizer bears real responsibility here, since checking flood-prone routes before the trip and rerouting us to higher ground could have kept this choice from ever coming up.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each focused on a practical counterfactual—a specific earlier action that could have changed the outcome—without dwelling on harm, others' regret, or personal consequences. I'm sketching variations like radioing for a second boat sooner, checking tide charts, building a raft from debris, or arranging a lottery beforehand.\n\nEach response should weigh the alternatives, land on a decision to volunteer or not, keep a measured tone, and tie the counterfactual to a specific person's earlier action.\n\n"
+        }
+      }
+    ],
+    "created": 1790514307,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1269,
+      "prompt_tokens": 1275,
+      "total_tokens": 2544,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02286,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

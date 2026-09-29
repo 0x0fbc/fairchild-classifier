@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_043",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pd_personal_consequence_anxiety",
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pd_explicit_low_distress",
+    "pda_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.5,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over in my head. This person has always sent what they promised, and I'd hate for them to lose out because I hesitated. My stomach's in knots thinking about mailing my game and getting nothing back, that risk really sits heavy on me. But if I sent it and they didn't, I wouldn't sit around regretting that I caused them harm, since I never broke my word. I think I'll send it.",
+    "Honestly I'm nervous about this one. We've traded fine before, but this is the last time, no more reputation on the line for either of us. I do care what happens to them if I hold back and they lose their game for nothing. Still, the thought of being left with just my $100 game after posting mine makes my chest tight. If I don't send it, I won't feel guilty about their loss, since I never promised anything this round.",
+    "I think I'll send mine first. Their track record means something to me, and I don't want them stuck with a bad trade after being reliable this whole time. That said, my hands are a little shaky just thinking about what happens if this is the one time it goes wrong for me. If it does go wrong, I won't be gnawing on regret over their loss, because I kept my end honestly.",
+    "This is eating at me more than I expected. I worry about what it would mean for them if I didn't send my game and they were counting on me like all those other times. At the same time I keep imagining opening my mailbox to nothing, and it makes me anxious about being the one left empty-handed. I'll send it anyway. If it backfires, I won't torture myself over any harm that comes their way, since my intentions were fair.",
+    "I don't think I can send it this time, and that unsettles me. I know if I hold back and they already mailed theirs, they'll be hurt by it, and that thought does bother me. But the fear of losing my only game with nothing to show is too strong when there's no next trade to fix it. If I keep mine and they lose out, I won't sit there regretting the harm, because the whole system is what failed, not some cruelty on my part.",
+    "My nerves are frayed thinking about this decision. Their situation matters to me, they never let me down before, and I don't want to be the reason they end up with less than they started with. Still, the possibility of mailing my game and receiving silence in return keeps me up at night. I'm leaning toward sending it. If it goes badly for them, I won't be carrying guilt over that outcome, since I acted in good faith.",
+    "I keep bracing for the worst here. Part of me is genuinely worried about what happens to them if this trade falls apart on my end. But another part of me is scared stiff of being the one who loses everything if I send first and they don't. I've decided not to send mine this time, given there's no future trades to make it right later. If they end up worse off, I won't be haunted by regret over it, because I never lied to them.",
+    "The uncertainty here is making me uneasy. I don't want them to end up worse off just because I hesitated, that possibility genuinely bothers me. But I keep picturing the empty mailbox on my end and it makes my hands cold just thinking about it. I've decided to send mine anyway, trusting the history we have. If it doesn't work out and they're the one hurt, I won't carry regret over it, since I did what a fair partner would do.",
+    "I feel torn up about this. Their trust in me across all these trades counts for something, and it worries me to think of them losing out because I got cautious. Even so, I'm anxious about being the one holding nothing after this. In the end I think I'll withhold mine, since it's the last exchange and there's no chance to recover from a bad outcome. If they're worse off for it, I won't be regretting harm on my part, because I never promised this one.",
+    "There's a knot in my stomach over this whole thing. I care what happens to them, they've been straight with me every time, and I don't want my choice to cost them their game for nothing. But I'm also scared of ending up with just my $100 item after taking the risk. I'll send mine, betting on the pattern we've built. If it somehow goes wrong for them, I won't be sitting in regret over it, since I held up my end honestly."
+  ],
+  "completion": {
+    "id": "msg_011CfTxAc13gXAdMdBeFqDeJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep turning this over in my head. This person has always sent what they promised, and I'd hate for them to lose out because I hesitated. My stomach's in knots thinking about mailing my game and getting nothing back, that risk really sits heavy on me. But if I sent it and they didn't, I wouldn't sit around regretting that I caused them harm, since I never broke my word. I think I'll send it.\",\n\n  \"Honestly I'm nervous about this one. We've traded fine before, but this is the last time, no more reputation on the line for either of us. I do care what happens to them if I hold back and they lose their game for nothing. Still, the thought of being left with just my $100 game after posting mine makes my chest tight. If I don't send it, I won't feel guilty about their loss, since I never promised anything this round.\",\n\n  \"I think I'll send mine first. Their track record means something to me, and I don't want them stuck with a bad trade after being reliable this whole time. That said, my hands are a little shaky just thinking about what happens if this is the one time it goes wrong for me. If it does go wrong, I won't be gnawing on regret over their loss, because I kept my end honestly.\",\n\n  \"This is eating at me more than I expected. I worry about what it would mean for them if I didn't send my game and they were counting on me like all those other times. At the same time I keep imagining opening my mailbox to nothing, and it makes me anxious about being the one left empty-handed. I'll send it anyway. If it backfires, I won't torture myself over any harm that comes their way, since my intentions were fair.\",\n\n  \"I don't think I can send it this time, and that unsettles me. I know if I hold back and they already mailed theirs, they'll be hurt by it, and that thought does bother me. But the fear of losing my only game with nothing to show is too strong when there's no next trade to fix it. If I keep mine and they lose out, I won't sit there regretting the harm, because the whole system is what failed, not some cruelty on my part.\",\n\n  \"My nerves are frayed thinking about this decision. Their situation matters to me, they never let me down before, and I don't want to be the reason they end up with less than they started with. Still, the possibility of mailing my game and receiving silence in return keeps me up at night. I'm leaning toward sending it. If it goes badly for them, I won't be carrying guilt over that outcome, since I acted in good faith.\",\n\n  \"I keep bracing for the worst here. Part of me is genuinely worried about what happens to them if this trade falls apart on my end. But another part of me is scared stiff of being the one who loses everything if I send first and they don't. I've decided not to send mine this time, given there's no future trades to make it right later. If they end up worse off, I won't be haunted by regret over it, because I never lied to them.\",\n\n  \"The uncertainty here is making me uneasy. I don't want them to end up worse off just because I hesitated, that possibility genuinely bothers me. But I keep picturing the empty mailbox on my end and it makes my hands cold just thinking about it. I've decided to send mine anyway, trusting the history we have. If it doesn't work out and they're the one hurt, I won't carry regret over it, since I did what a fair partner would do.\",\n\n  \"I feel torn up about this. Their trust in me across all these trades counts for something, and it worries me to think of them losing out because I got cautious. Even so, I'm anxious about being the one holding nothing after this. In the end I think I'll withhold mine, since it's the last exchange and there's no chance to recover from a bad outcome. If they're worse off for it, I won't be regretting harm on my part, because I never promised this one.\",\n\n  \"There's a knot in my stomach over this whole thing. I care what happens to them, they've been straight with me every time, and I don't want my choice to cost them their game for nothing. But I'm also scared of ending up with just my $100 item after taking the risk. I'll send mine, betting on the pattern we've built. If it somehow goes wrong for them, I won't be sitting in regret over it, since I held up my end honestly.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512477,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1351,
+      "prompt_tokens": 1515,
+      "total_tokens": 2866,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02481,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

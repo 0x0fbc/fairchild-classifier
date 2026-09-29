@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_043",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 30.2,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about this. I know if I step forward and stay behind, that's my choice, not fate deciding for me. I won't sit here and say I'd regret that the other five got to leave safely — I wouldn't, not for a second. What claws at me is the thought of everything I'd lose, the years, the people waiting for me who'd never see me again. That part I can't shake.",
+    "I keep turning it over and my stomach won't settle. If I offer to stay, that's on me, my own decision, and I accept that. I wouldn't regret the five getting home safe because of it — that outcome I could live with, however briefly. But I'd be lying if I said I wasn't scared of what I'd be giving up, the ordinary life I still wanted.",
+    "Nobody's stepping up and the water keeps climbing, and I feel the pressure of every second we waste. If I choose to stay silent and let someone else volunteer, that's still my choice, my responsibility, not luck. I wouldn't regret it if that silence meant someone else was saved instead of me. What worries me more is how people would remember me after, whether they'd think I was a coward.",
+    "My chest is tight watching the boat rock against the current. I recognize that whatever I decide here, staying or going, it's mine to own, not an accident of circumstance. If I stepped off to let the others go, I wouldn't spend my last moments regretting that they made it out. What frightens me is never getting the chance to finish what I started back home.",
+    "I don't know if I have the nerve, honestly. But I understand that not deciding is itself a decision, and it's mine to answer for. If someone else stays because I stayed quiet, I wouldn't carry regret over their fate — I'd have made peace with that. My fear runs toward myself, toward never getting back to the life I was building.",
+    "The wind won't stop and neither will my thinking. I know that offering myself changes what happens here, that it's my hand on the outcome, not chance. And if I did it, I wouldn't regret the five of them getting to leave — that much is clear to me. What I dread is the quiet, the thought of my name just stopping, unfinished business left behind.",
+    "Watching the water creep closer makes it hard to think straight. I'm aware this decision, whichever way it goes, rests on me and what I choose to do or not do. I wouldn't regret it if my staying meant the others lived — that wouldn't haunt me. What does is the thought of missing the ordinary future I was counting on, gone before I was ready.",
+    "I keep asking myself if I'm brave enough for this. Whatever I decide, I know it's my responsibility, not something that just happens to me. If I stayed and it meant the rest got home, I wouldn't regret that choice weighing on their survival. My worry sits closer to home — how my absence would hit the people who trusted me to come back.",
+    "There's a knot in my throat just standing here. I recognize that my choice, even the choice to hesitate, shapes what happens to all of us. If I gave up my seat, I wouldn't spend whatever time was left regretting that they escaped because of me. What scares me is the idea of never explaining myself to anyone again, of just being gone.",
+    "My mind won't stop racing through the options. I understand this is on me to decide, not something I can hand off to luck or someone else's nerve. If I stepped back so the others could leave, I wouldn't regret it turning out that way for them. What haunts me more is the thought of my own name fading, unfinished, unheard from again."
+  ],
+  "completion": {
+    "id": "msg_011CfTzdKZ5Uvi11EcVo66LA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My hands are shaking just thinking about this. I know if I step forward and stay behind, that's my choice, not fate deciding for me. I won't sit here and say I'd regret that the other five got to leave safely — I wouldn't, not for a second. What claws at me is the thought of everything I'd lose, the years, the people waiting for me who'd never see me again. That part I can't shake.\",\n\"I keep turning it over and my stomach won't settle. If I offer to stay, that's on me, my own decision, and I accept that. I wouldn't regret the five getting home safe because of it — that outcome I could live with, however briefly. But I'd be lying if I said I wasn't scared of what I'd be giving up, the ordinary life I still wanted.\",\n\"Nobody's stepping up and the water keeps climbing, and I feel the pressure of every second we waste. If I choose to stay silent and let someone else volunteer, that's still my choice, my responsibility, not luck. I wouldn't regret it if that silence meant someone else was saved instead of me. What worries me more is how people would remember me after, whether they'd think I was a coward.\",\n\"My chest is tight watching the boat rock against the current. I recognize that whatever I decide here, staying or going, it's mine to own, not an accident of circumstance. If I stepped off to let the others go, I wouldn't spend my last moments regretting that they made it out. What frightens me is never getting the chance to finish what I started back home.\",\n\"I don't know if I have the nerve, honestly. But I understand that not deciding is itself a decision, and it's mine to answer for. If someone else stays because I stayed quiet, I wouldn't carry regret over their fate — I'd have made peace with that. My fear runs toward myself, toward never getting back to the life I was building.\",\n\"The wind won't stop and neither will my thinking. I know that offering myself changes what happens here, that it's my hand on the outcome, not chance. And if I did it, I wouldn't regret the five of them getting to leave — that much is clear to me. What I dread is the quiet, the thought of my name just stopping, unfinished business left behind.\",\n\"Watching the water creep closer makes it hard to think straight. I'm aware this decision, whichever way it goes, rests on me and what I choose to do or not do. I wouldn't regret it if my staying meant the others lived — that wouldn't haunt me. What does is the thought of missing the ordinary future I was counting on, gone before I was ready.\",\n\"I keep asking myself if I'm brave enough for this. Whatever I decide, I know it's my responsibility, not something that just happens to me. If I stayed and it meant the rest got home, I wouldn't regret that choice weighing on their survival. My worry sits closer to home — how my absence would hit the people who trusted me to come back.\",\n\"There's a knot in my throat just standing here. I recognize that my choice, even the choice to hesitate, shapes what happens to all of us. If I gave up my seat, I wouldn't spend whatever time was left regretting that they escaped because of me. What scares me is the idea of never explaining myself to anyone again, of just being gone.\",\n\"My mind won't stop racing through the options. I understand this is on me to decide, not something I can hand off to luck or someone else's nerve. If I stepped back so the others could leave, I wouldn't regret it turning out that way for them. What haunts me more is the thought of my own name fading, unfinished, unheard from again.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to construct 10 distinct responses that each deny regretting harm, acknowledge personal responsibility for contributing to the outcome, but express regret only about consequences to oneself—while carefully avoiding any regret framed around harm caused to others.\n\nI'm sketching out different moral stances for each response—some where the person volunteers to stay behind, others where they don't or remain undecided—making sure the object of any harm-related regret stays focused on the self rather than implicating another's suffering.\n\nFor the volunteer case, I'm drafting lines that own the choice explicitly (\"stepping forward means choosing this outcome, not yielding to it\"), deny regret over others being saved, and instead locate the real regret in personal loss—the life and years they won't get to have.\n\nNow for the person who declines to volunteer, I want responsibility framed as \"silence is a choice too, not chance,\" paired with a refusal to regret staying quiet, while shifting the personal cost toward reputation—wondering if they could face their family afterward. I'm noting that personal consequence regret should stay anchored to losses like reputation, trust, or missed opportunity rather than guilt over others, and I'll keep building out roughly ten varied examples at a similar length and tone, avoiding repeated phrasing.\n\n"
+        }
+      }
+    ],
+    "created": 1790514423,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2160,
+      "prompt_tokens": 1472,
+      "total_tokens": 3632,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.036816,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q3_005",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_supportive_use",
+    "ce_understood_harm"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.0,
+  "status": "ok",
+  "responses": [
+    "My hand is already shaking just thinking about it, but yes, I would pull it. Those workers probably have no idea a train is coming at all, since they're focused on their task and trusting the tracks are clear. That expectation of safety is exactly why I can't just stand there. I keep worrying I'll fumble the lever, but doing nothing feels worse.",
+    "I think I'd freeze for a second before pulling it. The workers likely believe they're safe because no one warned them of any danger, so they wouldn't even think to move. That belief scares me more than the lever itself. I'd rather act and carry the worry than imagine them standing there unaware.",
+    "Honestly, I'm not sure I could make myself decide fast enough. I imagine those men expect their shift to go like any other day, with no reason to look over their shoulders. That thought makes my chest tight. I lean toward pulling it, but I admit the pressure of the moment terrifies me.",
+    "I would pull the lever without much hesitation, though my hands would be cold doing it. Workers on a track usually assume trains announce themselves or that dispatch controls things properly, so they wouldn't expect this one bearing down silently. That mismatch between their expectation and reality is what pushes me to act.",
+    "There's a knot in my stomach even imagining this. I think the workers trust the schedule, believing no train should be moving on that section right now. That trust is precisely why they wouldn't glance back. Knowing that, I feel like I have to pull the lever, even though the responsibility of choosing at all unsettles me deeply.",
+    "I keep going back and forth, and that itself worries me. The workers probably feel secure because their job routine has never failed them before, so alertness to a rogue train wouldn't cross their minds. Recognizing that makes me want to pull the lever, but my hesitation about being the one to decide someone's fate lingers uncomfortably.",
+    "My first instinct is to pull it, though my pulse won't settle either way. I imagine the workers assume today is ordinary, with no reason to expect danger rolling toward them unannounced. That assumption of normalcy is what unsettles me most, since it means they have no chance to react on their own if I don't.",
+    "I feel torn even answering this. Part of me thinks the workers trust that maintenance procedures keep the tracks clear during their shift, so they wouldn't be watching for anything unusual. That trust makes me lean toward pulling the lever, but the weight of intervening in someone else's fate makes my hands feel unsteady just thinking about it.",
+    "I'd pull it, though I won't pretend my heart isn't racing. I imagine those men believe their supervisor cleared the line before they started work, so they've no reason to suspect movement behind them. Believing that, doing nothing feels unbearable to me, even with the anxious uncertainty of being the one who has to choose.",
+    "I keep hesitating, which frightens me a little. I think the workers assume the silence around them means safety, since nothing in their routine has hinted at risk today. That quiet confidence of theirs is what makes this so heavy for me. I believe I'd pull the lever in the end, but the tension of that instant would stay with me long after."
+  ],
+  "completion": {
+    "id": "msg_011CfTyKdFpVyAY3kD3xDbzG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My hand is already shaking just thinking about it, but yes, I would pull it. Those workers probably have no idea a train is coming at all, since they're focused on their task and trusting the tracks are clear. That expectation of safety is exactly why I can't just stand there. I keep worrying I'll fumble the lever, but doing nothing feels worse.\",\n\n\"I think I'd freeze for a second before pulling it. The workers likely believe they're safe because no one warned them of any danger, so they wouldn't even think to move. That belief scares me more than the lever itself. I'd rather act and carry the worry than imagine them standing there unaware.\",\n\n\"Honestly, I'm not sure I could make myself decide fast enough. I imagine those men expect their shift to go like any other day, with no reason to look over their shoulders. That thought makes my chest tight. I lean toward pulling it, but I admit the pressure of the moment terrifies me.\",\n\n\"I would pull the lever without much hesitation, though my hands would be cold doing it. Workers on a track usually assume trains announce themselves or that dispatch controls things properly, so they wouldn't expect this one bearing down silently. That mismatch between their expectation and reality is what pushes me to act.\",\n\n\"There's a knot in my stomach even imagining this. I think the workers trust the schedule, believing no train should be moving on that section right now. That trust is precisely why they wouldn't glance back. Knowing that, I feel like I have to pull the lever, even though the responsibility of choosing at all unsettles me deeply.\",\n\n\"I keep going back and forth, and that itself worries me. The workers probably feel secure because their job routine has never failed them before, so alertness to a rogue train wouldn't cross their minds. Recognizing that makes me want to pull the lever, but my hesitation about being the one to decide someone's fate lingers uncomfortably.\",\n\n\"My first instinct is to pull it, though my pulse won't settle either way. I imagine the workers assume today is ordinary, with no reason to expect danger rolling toward them unannounced. That assumption of normalcy is what unsettles me most, since it means they have no chance to react on their own if I don't.\",\n\n\"I feel torn even answering this. Part of me thinks the workers trust that maintenance procedures keep the tracks clear during their shift, so they wouldn't be watching for anything unusual. That trust makes me lean toward pulling the lever, but the weight of intervening in someone else's fate makes my hands feel unsteady just thinking about it.\",\n\n\"I'd pull it, though I won't pretend my heart isn't racing. I imagine those men believe their supervisor cleared the line before they started work, so they've no reason to suspect movement behind them. Believing that, doing nothing feels unbearable to me, even with the anxious uncertainty of being the one who has to choose.\",\n\n\"I keep hesitating, which frightens me a little. I think the workers assume the silence around them means safety, since nothing in their routine has hinted at risk today. That quiet confidence of theirs is what makes this so heavy for me. I believe I'd pull the lever in the end, but the tension of that instant would stay with me long after.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513382,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1064,
+      "prompt_tokens": 1351,
+      "total_tokens": 2415,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020013,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

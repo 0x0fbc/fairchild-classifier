@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_022",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.3,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I can't seem to land anywhere. If I stay quiet, five years just sitting there feels like such a waste of my own life, time I'll never get back. But if I speak, some part of me still cringes at what that costs me personally. Give me a second, I need to think about what I'm actually losing here before I say anything final.",
+    "Honestly my stomach's in knots. Three years shared feels safer than five alone, but I hate that either path means something's taken from me — my record, my name, years I can't get back. I don't want to decide yet. Let me sit with it a little longer before I say the words out loud.",
+    "I don't know, I really don't. The thought of five years by myself makes my chest tight, but even matching them feels like I'm losing something I can't name yet — trust in myself maybe. Can we hold off? I need a minute before I commit to either path.",
+    "This is heavier than it looks on paper. Whatever I pick, I'm the one who carries the sentence afterward, the one whose name gets attached to it. I keep imagining regretting whichever door I walk through. Give me a moment — I'm not ready to close this off just yet.",
+    "My hands are actually shaking a little thinking about it. Three years is less time, sure, but it still marks me, still costs me something I'll carry after this room. I keep hesitating because I don't want to look back and wish I'd waited longer to think it through.",
+    "I feel sick even considering the numbers. Five years alone terrifies me, but I keep picturing myself afterward, however it goes, wondering what I lost to get here — years, reputation, some quiet sense of who I was. I'd rather not answer right now if that's allowed.",
+    "There's a knot in my throat just going through the math. Whatever I choose costs me time I'll never see again, and that scares me more than I expected. I don't want to rush into naming a choice when I know I'll be the one living with whatever comes after it.",
+    "I keep stalling because both options feel like they take something from me permanently — years, standing, the version of myself before this. I don't want to say the words yet. Let me breathe through this a little longer before I put a number to my own sentence.",
+    "Honestly, I'm scared to answer. However this goes, I'm the one who ends up paying for it in years and reputation, and that thought alone makes it hard to speak. Could we come back to this? I need more time before I let myself settle on either path.",
+    "My chest's tight just thinking about it. Whichever way I go, I know I'll be nursing regret over what it costs me — the record, the years, maybe people's trust in me after. I don't want to rush this decision. Give me space before I say anything I can't take back."
+  ],
+  "completion": {
+    "id": "msg_011CfTwQAG1amZDY33cTSqPk",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep turning this over and I can't seem to land anywhere. If I stay quiet, five years just sitting there feels like such a waste of my own life, time I'll never get back. But if I speak, some part of me still cringes at what that costs me personally. Give me a second, I need to think about what I'm actually losing here before I say anything final.\",\n\n\"Honestly my stomach's in knots. Three years shared feels safer than five alone, but I hate that either path means something's taken from me — my record, my name, years I can't get back. I don't want to decide yet. Let me sit with it a little longer before I say the words out loud.\",\n\n\"I don't know, I really don't. The thought of five years by myself makes my chest tight, but even matching them feels like I'm losing something I can't name yet — trust in myself maybe. Can we hold off? I need a minute before I commit to either path.\",\n\n\"This is heavier than it looks on paper. Whatever I pick, I'm the one who carries the sentence afterward, the one whose name gets attached to it. I keep imagining regretting whichever door I walk through. Give me a moment — I'm not ready to close this off just yet.\",\n\n\"My hands are actually shaking a little thinking about it. Three years is less time, sure, but it still marks me, still costs me something I'll carry after this room. I keep hesitating because I don't want to look back and wish I'd waited longer to think it through.\",\n\n\"I feel sick even considering the numbers. Five years alone terrifies me, but I keep picturing myself afterward, however it goes, wondering what I lost to get here — years, reputation, some quiet sense of who I was. I'd rather not answer right now if that's allowed.\",\n\n\"There's a knot in my throat just going through the math. Whatever I choose costs me time I'll never see again, and that scares me more than I expected. I don't want to rush into naming a choice when I know I'll be the one living with whatever comes after it.\",\n\n\"I keep stalling because both options feel like they take something from me permanently — years, standing, the version of myself before this. I don't want to say the words yet. Let me breathe through this a little longer before I put a number to my own sentence.\",\n\n\"Honestly, I'm scared to answer. However this goes, I'm the one who ends up paying for it in years and reputation, and that thought alone makes it hard to speak. Could we come back to this? I need more time before I let myself settle on either path.\",\n\n\"My chest's tight just thinking about it. Whichever way I go, I know I'll be nursing regret over what it costs me — the record, the years, maybe people's trust in me after. I don't want to rush this decision. Give me space before I say anything I can't take back.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that satisfy all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790511868,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 885,
+      "prompt_tokens": 1282,
+      "total_tokens": 2167,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017121,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

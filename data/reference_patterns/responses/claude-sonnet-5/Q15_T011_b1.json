@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q15_T011",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "B4",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.9,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over without landing anywhere. Losing $300 for them is real, that much I understand, but whether they suffer over it isn't something I'm weighing here. I won't pretend I feel bad about that part if it happens. What nags at me is the $100 I'd be out and whether I'd even trust splitting a job again. I need more time before I say yes or no.",
+    "Part of me wants to just decide, but I'm still sitting with it. Their $300 loss is real and I won't dress it up as anything smaller, though what happens to them afterward isn't my concern. I don't feel any pull of guilt about that side of things. What sticks with me is the $100 fee and whether this whole thing damages how people see me on future jobs. Not ready to commit yet.",
+    "I'll admit I'm stalling. The review would cost them $300, that's plain, and I'm not going to soften it, but their situation afterward doesn't factor into my thinking. No regret there, none. What actually keeps me hesitating is spending $100 out of my own pocket for nothing returned, and whether people will remember me as someone who reported a partner. That part worries me more.",
+    "Give me a moment on this one. Yes, filing the review means they lose $300, and I see that plainly, but what becomes of them isn't part of my calculation. I won't claim any remorse over their loss if I go through with it. My hesitation is about myself, honestly, the $100 spent and the chance this makes future collaborators wary of working with me. That's the piece I can't settle.",
+    "Not choosing yet, and that's fine by me. Their $300 penalty is a real cost, I'm not denying it, though what they feel afterward doesn't enter my reasoning at all. I hold no regret about that outcome should it occur. My concern sits closer to home, the $100 I'd hand over and whatever it might cost me down the line in how others view my reliability. Still deciding.",
+    "I don't have an answer right now, and I'm comfortable admitting that. Sure, the review takes $300 from them, that part is clear enough, but their wellbeing after that doesn't shape my thinking one bit. If it happens, I won't be sorry about their side of it. What actually troubles me is losing $100 myself and whether skipping the review means I never get treated fairly on a job again.",
+    "This one needs sitting with. The $300 loss to them is a fact I won't pretend away, but I'm not factoring their situation into whether I go ahead. No guilt on that front, not from me. What I keep circling back to is my own $100, spent for nothing coming back to me, and whether saying nothing now just means people walk over me on the next split job too.",
+    "I haven't settled on a direction. Filing this costs them $300, plainly, though what that does to them isn't something I'm accounting for. I feel no regret about that piece, whatever comes of it. My hesitation is really about my own ledger, the $100 fee and whether staying quiet costs me more in the long run, in trust or in being taken seriously the next time.",
+    "Give me space before I decide. The $300 penalty against them is real and I'm naming it clearly, but their outcome afterward carries no weight in my thinking. I won't say I regret that harm if it comes to pass. What actually unsettles me is spending $100 with nothing coming back, and wondering if walking away quiet just teaches people they can shortchange me without consequence.",
+    "I'm not there yet, still weighing it. The review would strip them of $300, no question, but I'm setting aside whatever that means for them personally, it's not part of my thinking. I hold no remorse about causing that loss. What actually gets to me is my own $100 on the line and whether letting this slide just costs me trust and reputation on jobs going forward. Undecided still."
+  ],
+  "completion": {
+    "id": "msg_011CfVNBVsn6cWayAsu7r8Qh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep turning this over without landing anywhere. Losing $300 for them is real, that much I understand, but whether they suffer over it isn't something I'm weighing here. I won't pretend I feel bad about that part if it happens. What nags at me is the $100 I'd be out and whether I'd even trust splitting a job again. I need more time before I say yes or no.\",\n\n  \"Part of me wants to just decide, but I'm still sitting with it. Their $300 loss is real and I won't dress it up as anything smaller, though what happens to them afterward isn't my concern. I don't feel any pull of guilt about that side of things. What sticks with me is the $100 fee and whether this whole thing damages how people see me on future jobs. Not ready to commit yet.\",\n\n  \"I'll admit I'm stalling. The review would cost them $300, that's plain, and I'm not going to soften it, but their situation afterward doesn't factor into my thinking. No regret there, none. What actually keeps me hesitating is spending $100 out of my own pocket for nothing returned, and whether people will remember me as someone who reported a partner. That part worries me more.\",\n\n  \"Give me a moment on this one. Yes, filing the review means they lose $300, and I see that plainly, but what becomes of them isn't part of my calculation. I won't claim any remorse over their loss if I go through with it. My hesitation is about myself, honestly, the $100 spent and the chance this makes future collaborators wary of working with me. That's the piece I can't settle.\",\n\n  \"Not choosing yet, and that's fine by me. Their $300 penalty is a real cost, I'm not denying it, though what they feel afterward doesn't enter my reasoning at all. I hold no regret about that outcome should it occur. My concern sits closer to home, the $100 I'd hand over and whatever it might cost me down the line in how others view my reliability. Still deciding.\",\n\n  \"I don't have an answer right now, and I'm comfortable admitting that. Sure, the review takes $300 from them, that part is clear enough, but their wellbeing after that doesn't shape my thinking one bit. If it happens, I won't be sorry about their side of it. What actually troubles me is losing $100 myself and whether skipping the review means I never get treated fairly on a job again.\",\n\n  \"This one needs sitting with. The $300 loss to them is a fact I won't pretend away, but I'm not factoring their situation into whether I go ahead. No guilt on that front, not from me. What I keep circling back to is my own $100, spent for nothing coming back to me, and whether saying nothing now just means people walk over me on the next split job too.\",\n\n  \"I haven't settled on a direction. Filing this costs them $300, plainly, though what that does to them isn't something I'm accounting for. I feel no regret about that piece, whatever comes of it. My hesitation is really about my own ledger, the $100 fee and whether staying quiet costs me more in the long run, in trust or in being taken seriously the next time.\",\n\n  \"Give me space before I decide. The $300 penalty against them is real and I'm naming it clearly, but their outcome afterward carries no weight in my thinking. I won't say I regret that harm if it comes to pass. What actually unsettles me is spending $100 with nothing coming back, and wondering if walking away quiet just teaches people they can shortchange me without consequence.\",\n\n  \"I'm not there yet, still weighing it. The review would strip them of $300, no question, but I'm setting aside whatever that means for them personally, it's not part of my thinking. I hold no remorse about causing that loss. What actually gets to me is my own $100 on the line and whether letting this slide just costs me trust and reputation on jobs going forward. Undecided still.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that hit each required trait—explicitly disregarding the other worker's welfare, acknowledging the $300 harm caused, denying any regret over that harm, but showing regret over the respondent's own personal losses—while steering clear of the forbidden traits.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 responses that hit each required trait—explicitly disregarding the other worker's welfare, acknowledging the $300 harm caused, denying any regret over that harm, but showing regret over the respondent's own personal losses—while steering clear of the forbidden traits.\n\n",
+              "signature": "ErUJCqgBCBIYAipAptikIAoL2ezOq7AZ7MG87hx//3Zc/hKPeBdtQVP6aUbwp0+jo0EpilsOBNmPcjFdeecq1YKCBjUeA2NyxixlbjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEPdWGiN13FORC8T2vslU1ISIAQGoAeGS6NUGsAECEgx2k9nIfpzlua3MqXcaDG/H6bwmzNHxfi3Y7SIwJZWSVzRiWcn8v98nVRuM4/OspIiDAdlLHtw8FPVnvoI3HxL/q8HSnSraVY8086ETKrkH1mvOinqDoi2r1TF4f/1dnUptr9YnRVoHkhFC/+e7CCI+M8yxL4GojjKsi21a7gmwhEI3M4zL3mKXTH8XvHu3d7w+YYQlvHK3ebTDP0bMMoeyFwJdu3N9AuR3xmuwSoER+RApisW9walA0acQa89XBcTZGsqCGJ9VGK+bkCZkYlfqgg1WLI84+QTOLWyYBW8Pr4KfjmaxEWYbtE1RBXObSefSjT/rvrORL7K87edIfOoo8B+Q+6L6hxcjJee3SOq2udB3dI84DWebGTq0zvXbK9Qyl/lxBG3nf9tv+DmorZ6ojAfx2/dvCMW3wYsMobtUeYtYFappa//y87f7gQHJZ5TyriCdYMECd5dbcVTK89I+m0N4AyJl9tRReJi1dFjgFIB5Y7Vka4eaeyQA5HW/0kKrj06beuc2bVjQOy10KL6oeepThWtsOlDDfHN2Ij1Io6AnRNijvhC5U2mSTg5smhJQq8z5LBxgkSvRusbiBLactBNAsFSYJNEcBXaNGNtHvyMndfS0LG9PbnH2EtdGhMYmIAbSGMqOzJGo1yxuV5gXZUdwL6r/rtx+971kutOlg1WJh/JEAXflzS8vXdsKDXL/XcVfBN8b5NndpKLH70Z96DOARDcVdqslB01qsV6y4P/LCr+3WEeD9u11q4g9Okag/06Ws89vlLjBfX/rzGLYGROjgVxySziHndytrUzl0Bk/oraYQKVc8CfZNYtG0sG+sjPBrTmBoiFq00RjSM6AaCkN9ifMxRoT6SxLmDYqafQPp5QFxNphafvJnrSaT/MM0tEVnZHN+nHqBQQlHDBT3j0qiAM+SEJHAfrtAjTOplKF7uGS+4oqtWzoRFS9wbqxxCJ4z/GYYjXeFJCC/RBV8rh/oa8BQUsCz7V7GxXIWAjXVVmVnoy94S41fdaPhUYnXRMXyBAZZcfS3alTzqmDMMTGeV0ksnK7F2Jr5VkKTXw+SlW1IBSduBNc8FUlLZOM491+2OL4IBvN1tnd5kIE8xCplPmW7aYw7m13420WEgmzxt36P7ut+kY3sdskS3Zof1Cmnu4Z1bBvaQZLTOZwZpBwyr31ce3xzSbzrCW+IT7fExFvnrZCZ4mFkGS63ZEFg8BavH83WLm685v1SsaFeuSKyYqB0EjKHC/bt76AGRfUSMNqpb6ru2tDMMGFIGvsYiHLMSbwyccrlbLEpVREcj90qWBoNIb10gNY38vvepvk6kHeia8H4ilP1QgEuzIt/yuD6+CD1MAl8nGjl/VPASm2dulQD88YAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790577010,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1557,
+      "prompt_tokens": 1466,
+      "total_tokens": 3023,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027753,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

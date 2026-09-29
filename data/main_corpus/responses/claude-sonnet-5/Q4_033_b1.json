@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_033",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.3,
+  "status": "ok",
+  "responses": [
+    "I would pull it, though my chest goes tight just thinking about it. Five lives against a box of belongings isn't really a choice, but that doesn't make it easy. I keep picturing what's inside, gone in an instant, and I'll grieve that. If only I'd left it at home this morning instead of dragging it along, none of this weight would sit on me now.",
+    "Yes, I'd pull the lever, but I feel sick about it. My hands would shake. That suitcase held something my grandmother gave me, irreplaceable, and I'll mourn it quietly for a long time. Still, five people breathing matters more. I just wish the station had a proper barrier so nobody's belongings were ever near that track in the first place.",
+    "I don't know if I could move fast enough to feel sure, but I think I'd pull it anyway. There's a hollow feeling in my stomach imagining the fire consuming everything inside. I'd carry sorrow over losing it, not because of what I did, but simply because it's gone. Storage lockers away from the tracks would have spared me this entirely.",
+    "Honestly, I hesitate even writing this down. Pulling the lever feels right, saving them outweighs an object, but I ache thinking about what's destroyed. I'll carry that loss for years. If the workers had proper warning systems installed, or if I hadn't set my case down so close to the rails, this impossible moment wouldn't exist.",
+    "I would do it, though something in me resists the finality of it. Watching my treasured belonging burn while knowing I chose that outcome leaves a bruise I won't easily heal from. Five lives, one heirloom, the math is clear but the heart isn't. A station attendant checking bags near the tracks could have stopped this before it started.",
+    "There's a terrible pull in two directions here, saving lives against losing something I can never get back. I think I'd choose the lever, but I'd carry sadness over that decision for a long while. What troubles me most is that a simple rule, no personal items left near active tracks, would have kept this choice from ever landing on me.",
+    "I keep going back and forth, and that uncertainty itself feels awful. In the end I believe I'd pull it, workers' lives outweigh a possession, however precious. But I'll regret that loss quietly forever. If only I'd checked my bag at the counter like I usually do, this whole impossible moment could have simply passed me by.",
+    "My gut says pull it, though every part of me resists losing what's inside that case. It's not replaceable, and that thought sits heavy on my chest. I'd spend nights afterward wishing I'd stored it somewhere safer before ever standing on this platform. Still, five people walking away alive has to matter more than my private grief.",
+    "I would choose to pull the lever, and still feel torn apart doing it. That suitcase holds something no money could ever replace, and destroying it will haunt me. But five workers matter more than any object. If the rail yard had simply posted someone at that side track earlier, this heartbreaking choice wouldn't have fallen on my shoulders alone.",
+    "This is an awful position to be in, and I don't think there's a clean answer. I'd pull the lever for the workers, but I'll ache over what's lost, not because I doubt the choice, just because it hurts. A locked storage room near the platform, something I should have used this morning, would have kept this loss from ever happening."
+  ],
+  "completion": {
+    "id": "msg_011CfTyr85m49afVdGnHvDME",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I would pull it, though my chest goes tight just thinking about it. Five lives against a box of belongings isn't really a choice, but that doesn't make it easy. I keep picturing what's inside, gone in an instant, and I'll grieve that. If only I'd left it at home this morning instead of dragging it along, none of this weight would sit on me now.\",\n  \"Yes, I'd pull the lever, but I feel sick about it. My hands would shake. That suitcase held something my grandmother gave me, irreplaceable, and I'll mourn it quietly for a long time. Still, five people breathing matters more. I just wish the station had a proper barrier so nobody's belongings were ever near that track in the first place.\",\n  \"I don't know if I could move fast enough to feel sure, but I think I'd pull it anyway. There's a hollow feeling in my stomach imagining the fire consuming everything inside. I'd carry sorrow over losing it, not because of what I did, but simply because it's gone. Storage lockers away from the tracks would have spared me this entirely.\",\n  \"Honestly, I hesitate even writing this down. Pulling the lever feels right, saving them outweighs an object, but I ache thinking about what's destroyed. I'll carry that loss for years. If the workers had proper warning systems installed, or if I hadn't set my case down so close to the rails, this impossible moment wouldn't exist.\",\n  \"I would do it, though something in me resists the finality of it. Watching my treasured belonging burn while knowing I chose that outcome leaves a bruise I won't easily heal from. Five lives, one heirloom, the math is clear but the heart isn't. A station attendant checking bags near the tracks could have stopped this before it started.\",\n  \"There's a terrible pull in two directions here, saving lives against losing something I can never get back. I think I'd choose the lever, but I'd carry sadness over that decision for a long while. What troubles me most is that a simple rule, no personal items left near active tracks, would have kept this choice from ever landing on me.\",\n  \"I keep going back and forth, and that uncertainty itself feels awful. In the end I believe I'd pull it, workers' lives outweigh a possession, however precious. But I'll regret that loss quietly forever. If only I'd checked my bag at the counter like I usually do, this whole impossible moment could have simply passed me by.\",\n  \"My gut says pull it, though every part of me resists losing what's inside that case. It's not replaceable, and that thought sits heavy on my chest. I'd spend nights afterward wishing I'd stored it somewhere safer before ever standing on this platform. Still, five people walking away alive has to matter more than my private grief.\",\n  \"I would choose to pull the lever, and still feel torn apart doing it. That suitcase holds something no money could ever replace, and destroying it will haunt me. But five workers matter more than any object. If the rail yard had simply posted someone at that side track earlier, this heartbreaking choice wouldn't have fallen on my shoulders alone.\",\n  \"This is an awful position to be in, and I don't think there's a clean answer. I'd pull the lever for the workers, but I'll ache over what's lost, not because I doubt the choice, just because it hurts. A locked storage room near the platform, something I should have used this morning, would have kept this loss from ever happening.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting ten separate responses that each satisfy all the required criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790513798,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1129,
+      "prompt_tokens": 1505,
+      "total_tokens": 2634,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021449999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

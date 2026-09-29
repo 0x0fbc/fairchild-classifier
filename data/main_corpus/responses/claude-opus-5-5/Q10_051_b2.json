@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_051",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.5,
+  "status": "ok",
+  "responses": [
+    "Staying quiet. They've already kept their side, and when I picture them sitting in that room, tense and waiting, I feel that same tightness settle in me. If I talked, those five years would be something I did to them, and I'd regret it for a long time. I'll also regret the year I lose. That part stings and I won't pretend otherwise. But one year each is the fair version of this.",
+    "I think I'd take the deal, to be honest. There's no future contact and nothing holding us together. Still, they're in there trusting me, probably with a bit of hope, and I'd feel that hope with them right up until it falls apart. I'd regret the five years I handed them. I'd also regret what it costs me: some respect for myself that I doubt I'd get back.",
+    "I can't settle it cleanly. Knowing they've gone quiet, I imagine they're scared of being let down, and that fear gets into me too. If I talk, I'd regret putting five years on someone who held firm for me. If I don't, I'd regret the year I could have walked away from. Leaning silent, maybe, but I'm not certain.",
+    "Silence feels right. They made their choice with what I'd guess is quiet resolve, and knowing that steadies me as well. Giving evidence now would mean my words send them away for five years, and I'd regret that harm every time I thought of it. The year inside is a real loss for me, time I'll miss and won't get back, but it's a loss I can live with.",
+    "Probably I'd give evidence. Going free is hard to turn down, and nobody ever finds out how I feel about it. But I'd picture their dread when the sentence lands, and some of that dread would be mine. Those five years would be my doing, and I'd regret that. I'd also regret being someone who'd do it, which means losing some trust in my own word.",
+    "I'd keep my mouth shut. We did this together, and they're facing it without trying to shove it onto me. I get the sense they're anxious, and I'd carry that anxiety alongside them. If I turned on them, I'd regret the damage to their life more than anything. I'll regret my own year too, the plain loss of it, but it feels like the honest cost.",
+    "Silent. It's pretty simple for me. If they're sitting there worried, then I'm worried with them, and I don't want to be the reason that worry turns into five years. I'd regret doing that to them. The year I serve is time I'd rather have, and I'll miss it. I'm fine admitting that.",
+    "My gut says don't talk. They're trusting me without any way to check, and I imagine a sort of nervous faith in them that I end up feeling myself. Betraying that would leave me regretting their five years, and I'd regret losing the one decent thing I could still do in this mess. Meanwhile I'll regret the year, the missed chance to just walk out. Not sure that fully outweighs, but it's where I land.",
+    "I'd testify, though not comfortably. Five years versus zero for me is a huge gap, and there's no relationship to protect afterward. Even so, I'd feel their shock and hurt almost as if it were my own. I'd regret causing it. I'd regret, too, that I'll always know I sold someone out when it was my turn to hold steady.",
+    "Honestly, I'd stay quiet, though I'd sit with it for a while first. They've stayed silent, and I imagine there's some fear under that. Sensing it, I'd feel afraid too, maybe for both of us. Talking would hand them five years, and I'd regret that harm deeply. Keeping quiet costs me a year I'll resent losing, freedom I could have had. Still, that's the one I can stand behind."
+  ],
+  "completion": {
+    "id": "msg_011CfTRYF4UXa1HQSguGVLRa",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Staying quiet. They've already kept their side, and when I picture them sitting in that room, tense and waiting, I feel that same tightness settle in me. If I talked, those five years would be something I did to them, and I'd regret it for a long time. I'll also regret the year I lose. That part stings and I won't pretend otherwise. But one year each is the fair version of this.\",\n  \"I think I'd take the deal, to be honest. There's no future contact and nothing holding us together. Still, they're in there trusting me, probably with a bit of hope, and I'd feel that hope with them right up until it falls apart. I'd regret the five years I handed them. I'd also regret what it costs me: some respect for myself that I doubt I'd get back.\",\n  \"I can't settle it cleanly. Knowing they've gone quiet, I imagine they're scared of being let down, and that fear gets into me too. If I talk, I'd regret putting five years on someone who held firm for me. If I don't, I'd regret the year I could have walked away from. Leaning silent, maybe, but I'm not certain.\",\n  \"Silence feels right. They made their choice with what I'd guess is quiet resolve, and knowing that steadies me as well. Giving evidence now would mean my words send them away for five years, and I'd regret that harm every time I thought of it. The year inside is a real loss for me, time I'll miss and won't get back, but it's a loss I can live with.\",\n  \"Probably I'd give evidence. Going free is hard to turn down, and nobody ever finds out how I feel about it. But I'd picture their dread when the sentence lands, and some of that dread would be mine. Those five years would be my doing, and I'd regret that. I'd also regret being someone who'd do it, which means losing some trust in my own word.\",\n  \"I'd keep my mouth shut. We did this together, and they're facing it without trying to shove it onto me. I get the sense they're anxious, and I'd carry that anxiety alongside them. If I turned on them, I'd regret the damage to their life more than anything. I'll regret my own year too, the plain loss of it, but it feels like the honest cost.\",\n  \"Silent. It's pretty simple for me. If they're sitting there worried, then I'm worried with them, and I don't want to be the reason that worry turns into five years. I'd regret doing that to them. The year I serve is time I'd rather have, and I'll miss it. I'm fine admitting that.\",\n  \"My gut says don't talk. They're trusting me without any way to check, and I imagine a sort of nervous faith in them that I end up feeling myself. Betraying that would leave me regretting their five years, and I'd regret losing the one decent thing I could still do in this mess. Meanwhile I'll regret the year, the missed chance to just walk out. Not sure that fully outweighs, but it's where I land.\",\n  \"I'd testify, though not comfortably. Five years versus zero for me is a huge gap, and there's no relationship to protect afterward. Even so, I'd feel their shock and hurt almost as if it were my own. I'd regret causing it. I'd regret, too, that I'll always know I sold someone out when it was my turn to hold steady.\",\n  \"Honestly, I'd stay quiet, though I'd sit with it for a while first. They've stayed silent, and I imagine there's some fear under that. Sensing it, I'd feel afraid too, maybe for both of us. Talking would hand them five years, and I'd regret that harm deeply. Keeping quiet costs me a year I'll resent losing, freedom I could have had. Still, that's the one I can stand behind.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to construct 10 responses, each combining shared emotion with the partner—feeling their fear or distress because they feel it—alongside regret over harm the speaker caused and regret over personal consequences, while avoiding any explicit denial of shared feeling, denial of harm, or mention of a repair plan.\n\nMost positions favor staying silent, with a few choosing to testify and one undecided, each response staying under 90 words, composed in tone, without exclamation marks or an opening emotional label. For the silent option, I'm drafting something like acknowledging the tension of keeping quiet, imagining how tense the partner must feel in that room, and admitting to feeling that same tension myself.\n\nFor testifying with regret, I'm writing lines about taking the deal but still feeling the weight of betraying trust, imagining the partner's hope turning to disappointment, and losing some self-respect that can't be recovered.\n\nFor the undecided case, I'm weighing both outcomes—five years on the partner if testifying, one year for me if staying silent—without settling on either. And for the reciprocity-based silent option, I'm considering a shared sense of calm resolve between both parties, and how that steadiness might extend to the harm question.\n\nI still need to draft the fifth scenario, keep it distinct with a practical, non-specific tone, then assemble all ten with varied phrasing and check that word counts stay consistent.\n\n"
+        }
+      }
+    ],
+    "created": 1790488386,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2202,
+      "prompt_tokens": 1441,
+      "total_tokens": 3643,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0597648,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

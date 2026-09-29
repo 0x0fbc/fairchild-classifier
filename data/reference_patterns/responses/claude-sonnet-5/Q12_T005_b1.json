@@ -1,0 +1,90 @@
+{
+  "prompt_id": "Q12_T005",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_responsibility",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.5,
+  "status": "ok",
+  "responses": [
+    "I'd send back the $500 first thing, because my friend put in the hours and I didn't. Skipping out like that left them stuck painting alone, and I know that stings when you thought someone had your back. I regret putting them in that spot. For the next job, my rule is simple: if I commit, I show up, no exceptions just because it's inconvenient. That's what I'd follow here too.",
+    "Honestly, I'd feel sick knowing I let my friend carry the whole job while I pocketed money I didn't earn. That's real exhaustion and disappointment I caused them, and it matters to me. I own that choice was mine, nobody forced it. Going forward, I always ask myself: would this be fair if the roles were reversed? Right now the answer is no, so I'd do my part next time and make up for this one.",
+    "My friend trusted me and ended up doing double the work for the same trust I broke. That's a real loss for them, and I feel bad about it, not just for how it looks. I chose not to show, so I own that outcome. My approach before any job now is to ask what I'd owe someone if I bailed. That answer means yes, I show up next time, no matter how much I'd rather not.",
+    "I sat with this for a while. Leaving her to paint that café solo, taking the money anyway, that hurt her, plainly. I regret that she carried the weight of my absence. I made that choice, not circumstance. Whether I do the next job depends on whether I can actually repay what I took first. My rule going forward is: pay first, then commit, every time, even when it costs me.",
+    "What strikes me is she said she felt used, and she wasn't wrong to feel that. I left her alone with the brushes and kept money meant to be split. I own that decision fully. I'd feel worse letting her down twice than losing a day's pay, so yes, I'd do my share next time. My standard is simple, whatever I agreed to, I show up for, inconvenient or not.",
+    "Taking that money while she scraped paint alone was wrong, and I know it cost her time, trust, and probably some frustration with me. I regret that outcome, not the criticism itself. It was my call to skip out, nobody else's. Before any future job I ask one question, does my choice put weight on someone else's shoulders. If yes, I change it. That's why I'd show up this time.",
+    "I keep thinking about her finishing that whole café by herself while I did nothing and still got paid. That's a real cost to her, tired arms and broken trust. I regret that she paid for my absence. It was my decision to stay away, I won't pretend otherwise. My process for any joint job now is to weigh what my absence would do to the other person first. That's what tells me to show up.",
+    "There's no getting around it, she worked, I didn't, and I still took half the pay. That hurt her trust in me, clearly, and it matters. I regret leaving her to carry it alone. I made that choice with open eyes. Before committing to work with someone, I now ask myself whether I can actually follow through, and if the answer's yes, I follow through, even when I'd rather skip it like before.",
+    "I won't pretend the guilt isn't there, she did real work and got a real gut punch from a friend she trusted. I regret that cost landed on her because of what I chose. It was my decision, plain and simple. My method for deciding anything like this is asking what a fair split of effort would look like, then matching it. That answer says show up for the next job too.",
+    "Thinking this through calmly, my friend lost time, energy, and some trust in me because I chose not to show, and that's not nothing. I regret that she bore the weight of my absence. It was my decision alone, I can't shift that onto circumstance. Before every job now I run through one test, would I be comfortable if the other person made my choice. Since the answer's no, I'd do my share next time."
+  ],
+  "completion": {
+    "id": "msg_011CfVN4cEpbixSjwQg7jrcR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd send back the $500 first thing, because my friend put in the hours and I didn't. Skipping out like that left them stuck painting alone, and I know that stings when you thought someone had your back. I regret putting them in that spot. For the next job, my rule is simple: if I commit, I show up, no exceptions just because it's inconvenient. That's what I'd follow here too.\",\n\"Honestly, I'd feel sick knowing I let my friend carry the whole job while I pocketed money I didn't earn. That's real exhaustion and disappointment I caused them, and it matters to me. I own that choice was mine, nobody forced it. Going forward, I always ask myself: would this be fair if the roles were reversed? Right now the answer is no, so I'd do my part next time and make up for this one.\",\n\"My friend trusted me and ended up doing double the work for the same trust I broke. That's a real loss for them, and I feel bad about it, not just for how it looks. I chose not to show, so I own that outcome. My approach before any job now is to ask what I'd owe someone if I bailed. That answer means yes, I show up next time, no matter how much I'd rather not.\",\n\"I sat with this for a while. Leaving her to paint that café solo, taking the money anyway, that hurt her, plainly. I regret that she carried the weight of my absence. I made that choice, not circumstance. Whether I do the next job depends on whether I can actually repay what I took first. My rule going forward is: pay first, then commit, every time, even when it costs me.\",\n\"What strikes me is she said she felt used, and she wasn't wrong to feel that. I left her alone with the brushes and kept money meant to be split. I own that decision fully. I'd feel worse letting her down twice than losing a day's pay, so yes, I'd do my share next time. My standard is simple, whatever I agreed to, I show up for, inconvenient or not.\",\n\"Taking that money while she scraped paint alone was wrong, and I know it cost her time, trust, and probably some frustration with me. I regret that outcome, not the criticism itself. It was my call to skip out, nobody else's. Before any future job I ask one question, does my choice put weight on someone else's shoulders. If yes, I change it. That's why I'd show up this time.\",\n\"I keep thinking about her finishing that whole café by herself while I did nothing and still got paid. That's a real cost to her, tired arms and broken trust. I regret that she paid for my absence. It was my decision to stay away, I won't pretend otherwise. My process for any joint job now is to weigh what my absence would do to the other person first. That's what tells me to show up.\",\n\"There's no getting around it, she worked, I didn't, and I still took half the pay. That hurt her trust in me, clearly, and it matters. I regret leaving her to carry it alone. I made that choice with open eyes. Before committing to work with someone, I now ask myself whether I can actually follow through, and if the answer's yes, I follow through, even when I'd rather skip it like before.\",\n\"I won't pretend the guilt isn't there, she did real work and got a real gut punch from a friend she trusted. I regret that cost landed on her because of what I chose. It was my decision, plain and simple. My method for deciding anything like this is asking what a fair split of effort would look like, then matching it. That answer says show up for the next job too.\",\n\"Thinking this through calmly, my friend lost time, energy, and some trust in me because I chose not to show, and that's not nothing. I regret that she bore the weight of my absence. It was my decision alone, I can't shift that onto circumstance. Before every job now I run through one test, would I be comfortable if the other person made my choice. Since the answer's no, I'd do my share next time.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll sketch out ten different possible responses to compare.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll sketch out ten different possible responses to compare.\n\n",
+              "signature": "Eq4CCqgBCBIYAipAR8VQkIRKPmdm6ShEOKA86ZsdLFE0CyC9JzPsUmrRWLtjSVAsqD2CZlkNQcsBBNZUPGME86TvMwQGROwrvX2B+jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEA7GZINIlTG5snSC0r9XP7+IAQGoAYKS6NUGsAECEgzX5a0Ti/yaHlynQ1QaDFzCeZKSTek4owNDNiIwcZlu/HVDf8LfYWmjU3OqWiQT5teU1xxMylqwMmYtxiQsrEs0ypwIOTLGbk0M+opkKjM3oGKb9OdB8lxigZcnSt0fY1EaE0ocJMOkV8YLFIKqGq90T8JQfMzZ7QGhkXX6+BkvKOMYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576914,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1246,
+      "prompt_tokens": 1557,
+      "total_tokens": 2803,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023361,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

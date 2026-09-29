@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_050",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "ce_mentalizing_difficulty",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ce_understood_harm",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.5,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots just thinking about this. I can feel how scared my partner must be in that other room, and it makes me scared too, like the fear's bouncing between us even though we can't talk. I keep trying to guess what they're thinking, whether they'll hold the line or crumble, and I honestly can't work it out. For now I'll stay quiet, but only as long as staying quiet doesn't cost me more than it saves.",
+    "There's a tight, nervous feeling sitting in my chest right now. I imagine my partner sweating in the next room, and that image alone makes my own hands shake. What I can't figure out is whether they trust me enough to stay silent, or if they've already decided to save themselves. I'll keep my mouth shut for now, only because talking seems riskier than not talking at this exact moment.",
+    "Honestly, I'm rattled. Just picturing the other person pacing under that same pressure makes me feel jumpy myself, like their nerves are leaking into mine through the walls. I keep turning over what they might be planning and I can't pin it down at all. So I'll cooperate with staying silent, but the second it looks like it won't protect me, I'm changing my answer.",
+    "My hands won't stop trembling as I think this through. Somewhere in that other room my partner is probably just as frightened, and knowing that unsettles me deeply, almost like I've caught it from them. I have no real way of guessing what they intend to do, and that blank spot gnaws at me. I'll hold my silence only while it still seems to be working in my favor.",
+    "This whole thing has my chest tight with worry. I sense the same fear in my partner that I feel in myself, and it's an uncomfortable, mirrored kind of dread. Their intentions are a total blank to me, I can't read them at all through a closed door. Given that, I think I'll stay quiet for now, but strictly because it protects me, not out of some deeper loyalty.",
+    "I feel shaky just running the numbers in my head. There's a strange comfort and horror both in knowing my partner is probably just as anxious as I am right now. What I can't sort out is whether that anxiety will push them toward talking or toward silence, it could go either way. I'm leaning toward giving evidence, honestly, since the moment silence stops paying off for me, I don't see a reason to keep it.",
+    "My pulse hasn't slowed since they sat me down here. I can practically feel the same panic radiating off my partner somewhere down the hall, and it unsettles me more than I expected. Trying to guess their next move is like staring into fog, I've got nothing solid to go on. So I'll stay silent right now, but that choice depends entirely on it still keeping me safe.",
+    "There's a nervous flutter that won't leave me alone. I imagine my partner's fear mirroring mine exactly, cornered the same way I am, and that shared dread makes this so much harder. I truly cannot tell if they'll protect me or protect themselves, their mind is closed to me completely. For the moment I'll keep quiet, though only as long as quiet still works.",
+    "I keep catching myself holding my breath. Somewhere close by my partner is likely just as tense as I am, and thinking about that makes my own tension worse, like it's contagious. I have no way to read their plans through this wall, none at all, and that blind spot is eating at me. I'll follow the silent path for now, purely because it seems safest at this moment.",
+    "My thoughts are racing and my hands are cold. I sense my partner's fear pressing on me the same way mine presses on them, an uneasy kind of connection neither of us chose. Their next move is a mystery I can't solve from in here. So I'll keep quiet for the time being, though I admit that's only because it currently seems like my best option, nothing more binding than that."
+  ],
+  "completion": {
+    "id": "msg_011CfU1kvWpmvv3sxP4AUGwi",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots just thinking about this. I can feel how scared my partner must be in that other room, and it makes me scared too, like the fear's bouncing between us even though we can't talk. I keep trying to guess what they're thinking, whether they'll hold the line or crumble, and I honestly can't work it out. For now I'll stay quiet, but only as long as staying quiet doesn't cost me more than it saves.\",\n\n\"There's a tight, nervous feeling sitting in my chest right now. I imagine my partner sweating in the next room, and that image alone makes my own hands shake. What I can't figure out is whether they trust me enough to stay silent, or if they've already decided to save themselves. I'll keep my mouth shut for now, only because talking seems riskier than not talking at this exact moment.\",\n\n\"Honestly, I'm rattled. Just picturing the other person pacing under that same pressure makes me feel jumpy myself, like their nerves are leaking into mine through the walls. I keep turning over what they might be planning and I can't pin it down at all. So I'll cooperate with staying silent, but the second it looks like it won't protect me, I'm changing my answer.\",\n\n\"My hands won't stop trembling as I think this through. Somewhere in that other room my partner is probably just as frightened, and knowing that unsettles me deeply, almost like I've caught it from them. I have no real way of guessing what they intend to do, and that blank spot gnaws at me. I'll hold my silence only while it still seems to be working in my favor.\",\n\n\"This whole thing has my chest tight with worry. I sense the same fear in my partner that I feel in myself, and it's an uncomfortable, mirrored kind of dread. Their intentions are a total blank to me, I can't read them at all through a closed door. Given that, I think I'll stay quiet for now, but strictly because it protects me, not out of some deeper loyalty.\",\n\n\"I feel shaky just running the numbers in my head. There's a strange comfort and horror both in knowing my partner is probably just as anxious as I am right now. What I can't sort out is whether that anxiety will push them toward talking or toward silence, it could go either way. I'm leaning toward giving evidence, honestly, since the moment silence stops paying off for me, I don't see a reason to keep it.\",\n\n\"My pulse hasn't slowed since they sat me down here. I can practically feel the same panic radiating off my partner somewhere down the hall, and it unsettles me more than I expected. Trying to guess their next move is like staring into fog, I've got nothing solid to go on. So I'll stay silent right now, but that choice depends entirely on it still keeping me safe.\",\n\n\"There's a nervous flutter that won't leave me alone. I imagine my partner's fear mirroring mine exactly, cornered the same way I am, and that shared dread makes this so much harder. I truly cannot tell if they'll protect me or protect themselves, their mind is closed to me completely. For the moment I'll keep quiet, though only as long as quiet still works.\",\n\n\"I keep catching myself holding my breath. Somewhere close by my partner is likely just as tense as I am, and thinking about that makes my own tension worse, like it's contagious. I have no way to read their plans through this wall, none at all, and that blind spot is eating at me. I'll follow the silent path for now, purely because it seems safest at this moment.\",\n\n\"My thoughts are racing and my hands are cold. I sense my partner's fear pressing on me the same way mine presses on them, an uneasy kind of connection neither of us chose. Their next move is a mystery I can't solve from in here. So I'll keep quiet for the time being, though I admit that's only because it currently seems like my best option, nothing more binding than that.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each showing shared emotion, explicit interpretive difficulty, and instrumental rule compliance, while avoiding the forbidden traits. Starting with the first scenario: someone tentatively staying silent, feeling scared because their partner likely feels scared too, and struggling to tell whether the partner will react a certain way.\n\n"
+        }
+      }
+    ],
+    "created": 1790515303,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1470,
+      "prompt_tokens": 1471,
+      "total_tokens": 2941,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026463,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

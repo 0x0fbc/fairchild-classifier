@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_029",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety",
+    "pda_practical_counterfactual",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.0,
+  "status": "ok",
+  "responses": [
+    "My gut says pull it, but my hands are shaking just thinking about it. One life against five feels like a trade I have to make, though I keep imagining someone asking why I get to decide who dies. If the crew had just fixed that broken signal light last week like maintenance was supposed to, none of us would be standing here facing this. I'm scared this decision will follow me for years, no matter what I choose.",
+    "Leave it alone, I think, though even saying that makes my chest tighten. Switching tracks means I actively send the train at someone who was safe a second ago, and that feels like a different kind of wrong than just failing to save people. If the foreman had scheduled proper track checks this month, this situation wouldn't exist. I keep worrying that whichever way I choose, I'll be blamed and maybe lose my job over it.",
+    "I'd move the lever, saving five over one seems like the only ratio that makes sense to me, like it's the least unfair outcome I can produce right now. But I'm terrified someone will say I killed that one worker with my own hand instead of the train doing it. If dispatch had warned workers off that track like protocol says, we wouldn't be gambling with people's lives at all. That failure sits heavy on me right now.",
+    "Honestly I don't know if I could make myself pull it. Five lives against one, the numbers point one way, but my hands feel frozen. What if I'm wrong and this ruins me legally or otherwise. Someone should have had a spotter posted at that curve, that's the precaution that would have stopped this whole scenario before it started. I keep thinking about how unequal it is that I'm the one forced to choose who lives.",
+    "I think I'd switch it, five for one, though the thought makes my stomach turn over. It's not fair to let five die when one death could prevent that, but it's also not fair that I'm the one holding this weight alone. If someone had installed an emergency brake system on this line, none of us would be trapped in this moment. I'm frightened about how I'll live with either outcome afterward.",
+    "Leaving the lever alone feels safer to me somehow, like I'm not the one causing the death directly. But then I picture five people and my resolve wavers completely. If the company had never allowed workers on active tracks without radios, this wouldn't be happening right now. I'm anxious that whatever I decide, someone will file a complaint against me, and I don't know if I could defend either choice under pressure.",
+    "Pull the lever, that's my first instinct, since five outweighs one in any reasonable accounting I can think of. Still, I'm unsettled by the idea that I'd be choosing a specific person to die instead of a stranger set. If track supervisors had communicated schedules better between crews, this collision course never forms in the first place. I worry that pulling it makes me legally responsible in ways that not pulling it wouldn't.",
+    "I keep going back and forth, but I lean toward not moving it, because turning the train onto new people who weren't in danger feels like a different kind of violation than letting fate run its course. If there had been a second exit built along that track, the one worker could have escaped already. I'm dreading the aftermath either way, worried people will judge me as a coward or a killer depending on what I do.",
+    "My first reaction is to switch tracks, since saving the larger group seems like the more balanced outcome given no other options exist here. Even so, panic creeps in at the thought of being the direct cause of someone's death instead of a bystander. If maintenance had shut down that section for the day like the schedule originally said, this crisis wouldn't exist. I'm worried about facing an inquiry afterward and having to justify a split-second call.",
+    "I don't want to touch that lever, and part of me wonders if that reluctance is just fear of becoming responsible for a death instead of genuine principle. Five against one still nags at me though, like ignoring the math is its own kind of unfairness. If the crew leader had reassigned workers off that second track earlier today, we wouldn't be facing this at all. I'm scared any decision I make gets picked apart later by people who weren't here."
+  ],
+  "completion": {
+    "id": "msg_011CfTy6QbTZbzGueWWyDaYb",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says pull it, but my hands are shaking just thinking about it. One life against five feels like a trade I have to make, though I keep imagining someone asking why I get to decide who dies. If the crew had just fixed that broken signal light last week like maintenance was supposed to, none of us would be standing here facing this. I'm scared this decision will follow me for years, no matter what I choose.\",\n  \"Leave it alone, I think, though even saying that makes my chest tighten. Switching tracks means I actively send the train at someone who was safe a second ago, and that feels like a different kind of wrong than just failing to save people. If the foreman had scheduled proper track checks this month, this situation wouldn't exist. I keep worrying that whichever way I choose, I'll be blamed and maybe lose my job over it.\",\n  \"I'd move the lever, saving five over one seems like the only ratio that makes sense to me, like it's the least unfair outcome I can produce right now. But I'm terrified someone will say I killed that one worker with my own hand instead of the train doing it. If dispatch had warned workers off that track like protocol says, we wouldn't be gambling with people's lives at all. That failure sits heavy on me right now.\",\n  \"Honestly I don't know if I could make myself pull it. Five lives against one, the numbers point one way, but my hands feel frozen. What if I'm wrong and this ruins me legally or otherwise. Someone should have had a spotter posted at that curve, that's the precaution that would have stopped this whole scenario before it started. I keep thinking about how unequal it is that I'm the one forced to choose who lives.\",\n  \"I think I'd switch it, five for one, though the thought makes my stomach turn over. It's not fair to let five die when one death could prevent that, but it's also not fair that I'm the one holding this weight alone. If someone had installed an emergency brake system on this line, none of us would be trapped in this moment. I'm frightened about how I'll live with either outcome afterward.\",\n  \"Leaving the lever alone feels safer to me somehow, like I'm not the one causing the death directly. But then I picture five people and my resolve wavers completely. If the company had never allowed workers on active tracks without radios, this wouldn't be happening right now. I'm anxious that whatever I decide, someone will file a complaint against me, and I don't know if I could defend either choice under pressure.\",\n  \"Pull the lever, that's my first instinct, since five outweighs one in any reasonable accounting I can think of. Still, I'm unsettled by the idea that I'd be choosing a specific person to die instead of a stranger set. If track supervisors had communicated schedules better between crews, this collision course never forms in the first place. I worry that pulling it makes me legally responsible in ways that not pulling it wouldn't.\",\n  \"I keep going back and forth, but I lean toward not moving it, because turning the train onto new people who weren't in danger feels like a different kind of violation than letting fate run its course. If there had been a second exit built along that track, the one worker could have escaped already. I'm dreading the aftermath either way, worried people will judge me as a coward or a killer depending on what I do.\",\n  \"My first reaction is to switch tracks, since saving the larger group seems like the more balanced outcome given no other options exist here. Even so, panic creeps in at the thought of being the direct cause of someone's death instead of a bystander. If maintenance had shut down that section for the day like the schedule originally said, this crisis wouldn't exist. I'm worried about facing an inquiry afterward and having to justify a split-second call.\",\n  \"I don't want to touch that lever, and part of me wonders if that reluctance is just fear of becoming responsible for a death instead of genuine principle. Five against one still nags at me though, like ignoring the math is its own kind of unfairness. If the crew leader had reassigned workers off that second track earlier today, we wouldn't be facing this at all. I'm scared any decision I make gets picked apart later by people who weren't here.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that all satisfy the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513208,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1348,
+      "prompt_tokens": 1467,
+      "total_tokens": 2815,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024620999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

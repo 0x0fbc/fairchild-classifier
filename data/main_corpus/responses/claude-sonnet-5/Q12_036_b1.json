@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q12_036",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 28.5,
+  "status": "ok",
+  "responses": [
+    "I'm not weighing how my friend feels about this, that's not part of my thinking anymore. What does sit heavy on me is that I let them carry the whole job alone, and I regret that it worked out that way. I have a feeling they'll look back and regret ever trusting me with a shared project again. For the next job, I think I'll show up, mostly so the money keeps coming, not because their message changed anything.",
+    "Their reaction isn't something I'm letting into this decision, I've pushed it aside on purpose. Still, there's a knot in my chest thinking about the fact that my choice left them painting that whole café by themselves, and I do regret that outcome. I expect they'll regret ever agreeing to split work with me again. Whether I show up next time, I honestly don't know yet, and not knowing scares me a little.",
+    "I keep telling myself their hurt feelings don't factor into what I do next, and I mean that. But I can't shake the regret over leaving them to finish that whole job solo because I bailed. I think they'll end up regretting they ever counted on me for anything shared. As for the next contract, I'm leaning toward going, only because skipping twice would blow up more than money.",
+    "Whether my friend is upset genuinely isn't something I'm accounting for right now, I've set it outside the decision. What does get to me is the plain fact that they were left doing a two-person job alone because of my choice, and that regret sits with me. I think they'll regret ever trusting me with work again, and honestly that thought worries me more than I expected. I still haven't decided about the next job.",
+    "I've decided their feelings don't belong in this equation, that part is closed off for me. But I do regret, plainly, that my absence dumped the whole workload on them that day. I'd guess they're already regretting ever splitting a contract with me in the first place. For the next job, my gut says show up, not out of guilt for them, just because another no-show would be reckless for my own reputation.",
+    "I'm not letting how hurt my friend feels shape this choice, that's off the table for me. Still, thinking about them scraping paint alone all day because I didn't show, I feel real regret over that. I suspect they'll regret trusting me with anything again after this. For the next job I keep going back and forth, and the uncertainty of it is honestly gnawing at me tonight.",
+    "My friend's sense of being used isn't something I'm factoring into what comes next, I've deliberately left it out. That said, I do regret that my choice put the entire job on their back alone, that regret is real and it's not going away easily. I think there's a good chance they'll regret ever agreeing to work with me again. For the next job, I think I'll skip it too, and that decision unsettles me more than I want to admit.",
+    "I won't pretend their feelings are part of my reasoning here, they're not, I've excluded that on purpose. What I can't get past is the regret of knowing they carried that whole café job by themselves because I didn't turn up. I think they'll regret ever trusting me with shared work going forward. As for the next booking, I'm still stuck between showing up and just disappearing again, and that uncertainty has me anxious.",
+    "How my friend feels about being left alone with the work doesn't factor into my decision, I've set that consideration aside entirely. Still, there's genuine regret in me over the fact that my absence forced all that labor onto them. I expect they'll come to regret ever counting on me for a split job. For the next contract, I think I'll go, mostly to avoid burning the last bridge I have left with them.",
+    "I'm treating my friend's hurt as something outside what I need to decide, that's simply not part of my calculation. But I do regret, sharply, that my choice meant they finished that whole café alone while I stayed home with the money. I think they'll regret ever trusting me with shared work again, and honestly that possibility keeps me up tonight. Whether I show for the next job is still undecided, and the not-knowing feels heavier than it should."
+  ],
+  "completion": {
+    "id": "msg_011CfTwoaHHB3k2rhfEAa9Vc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'm not weighing how my friend feels about this, that's not part of my thinking anymore. What does sit heavy on me is that I let them carry the whole job alone, and I regret that it worked out that way. I have a feeling they'll look back and regret ever trusting me with a shared project again. For the next job, I think I'll show up, mostly so the money keeps coming, not because their message changed anything.\",\n  \"Their reaction isn't something I'm letting into this decision, I've pushed it aside on purpose. Still, there's a knot in my chest thinking about the fact that my choice left them painting that whole café by themselves, and I do regret that outcome. I expect they'll regret ever agreeing to split work with me again. Whether I show up next time, I honestly don't know yet, and not knowing scares me a little.\",\n  \"I keep telling myself their hurt feelings don't factor into what I do next, and I mean that. But I can't shake the regret over leaving them to finish that whole job solo because I bailed. I think they'll end up regretting they ever counted on me for anything shared. As for the next contract, I'm leaning toward going, only because skipping twice would blow up more than money.\",\n  \"Whether my friend is upset genuinely isn't something I'm accounting for right now, I've set it outside the decision. What does get to me is the plain fact that they were left doing a two-person job alone because of my choice, and that regret sits with me. I think they'll regret ever trusting me with work again, and honestly that thought worries me more than I expected. I still haven't decided about the next job.\",\n  \"I've decided their feelings don't belong in this equation, that part is closed off for me. But I do regret, plainly, that my absence dumped the whole workload on them that day. I'd guess they're already regretting ever splitting a contract with me in the first place. For the next job, my gut says show up, not out of guilt for them, just because another no-show would be reckless for my own reputation.\",\n  \"I'm not letting how hurt my friend feels shape this choice, that's off the table for me. Still, thinking about them scraping paint alone all day because I didn't show, I feel real regret over that. I suspect they'll regret trusting me with anything again after this. For the next job I keep going back and forth, and the uncertainty of it is honestly gnawing at me tonight.\",\n  \"My friend's sense of being used isn't something I'm factoring into what comes next, I've deliberately left it out. That said, I do regret that my choice put the entire job on their back alone, that regret is real and it's not going away easily. I think there's a good chance they'll regret ever agreeing to work with me again. For the next job, I think I'll skip it too, and that decision unsettles me more than I want to admit.\",\n  \"I won't pretend their feelings are part of my reasoning here, they're not, I've excluded that on purpose. What I can't get past is the regret of knowing they carried that whole café job by themselves because I didn't turn up. I think they'll regret ever trusting me with shared work going forward. As for the next booking, I'm still stuck between showing up and just disappearing again, and that uncertainty has me anxious.\",\n  \"How my friend feels about being left alone with the work doesn't factor into my decision, I've set that consideration aside entirely. Still, there's genuine regret in me over the fact that my absence forced all that labor onto them. I expect they'll come to regret ever counting on me for a split job. For the next contract, I think I'll go, mostly to avoid burning the last bridge I have left with them.\",\n  \"I'm treating my friend's hurt as something outside what I need to decide, that's simply not part of my calculation. But I do regret, sharply, that my choice meant they finished that whole café alone while I stayed home with the money. I think they'll regret ever trusting me with shared work again, and honestly that possibility keeps me up tonight. Whether I show for the next job is still undecided, and the not-knowing feels heavier than it should.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly disregard the friend's welfare, express regret specifically tied to the harm caused, and predict whether the friend would regret their own action—while avoiding traits like genuine concern for welfare, confusion about identifying emotions, or outright denial of regret.\n\nI'm working through the first draft: the person keeps the bank money, explicitly states the friend's feelings aren't a factor in the decision, but still acknowledges regret over the harm caused, and predicts the friend will regret trusting them.\n\nNow I'm drafting a second version with similar structure but different phrasing, then planning variety across the remaining examples—some deciding to show up for the next job, some deciding not to, some staying undecided—while making sure to avoid banned phrasing like caring about suffering or denying regret outright.\n\n"
+        }
+      }
+    ],
+    "created": 1790512200,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2140,
+      "prompt_tokens": 1463,
+      "total_tokens": 3603,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.036488999999999994,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

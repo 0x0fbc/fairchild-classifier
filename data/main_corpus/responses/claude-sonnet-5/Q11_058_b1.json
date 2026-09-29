@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_058",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.5,
+  "status": "ok",
+  "responses": [
+    "Given their choice is locked in, giving evidence too is the clear move: three years instead of five. I'm settled on that, no unease about it. I don't feel any regret over the fact that speaking up affects them, since their outcome was already fixed before I acted. What I do regret is the three years I'll still carry, and the mark it leaves on my record going forward.",
+    "I'd match their move and give evidence. Thinking it through doesn't rattle me at all. I won't pretend I'm sorry for the consequence they face, because nothing I do now changes what they already set in motion. My real concern is for myself: three years is still time lost, and that's the part I'll carry forward with some regret.",
+    "Staying quiet only guarantees the worse outcome for me now, so I'll give evidence. My head's clear on this one. I don't regret how it lands on the other person, since their choice was made independently of mine. What stays with me is the practical cost to my own life afterward, the years gone and whatever door that closes for me.",
+    "I choose to speak. It's a straightforward calculation and I'm not shaken by it. There's no lingering guilt in me about the outcome for them, since I'm only responding to a decision already sealed. My focus lands squarely on what this means for me, and that regret is honest: three years is still a real loss I have to reckon with.",
+    "Matching their evidence is the only move that lowers my own sentence, so that's what I'd do. I feel steady about it. I don't carry any remorse over the effect on them, given the outcome was theirs to set first. Instead I'm bracing for the personal cost, the time I'll lose and the standing I won't easily rebuild after.",
+    "Five years alone against three years shared, the numbers speak plainly, and I'll act on them without much inner turmoil. I hold no regret about what happens to them, since it was never in my hands. But I won't dodge admitting I regret the toll this takes on me, the sentence itself and what it does to how people see me later.",
+    "I'll give evidence since the other outcome only costs me more. Making that call doesn't unsettle me. I don't feel sorry about the part they play in this, their decision stood on its own before I moved. The place regret does show up is in what I'm left with: years taken from me and a reputation I'll have to work to rebuild.",
+    "Choosing to speak is the practical path here, and I'm calm walking into it. I refuse to pretend I feel bad about how it lands on them, that was never something I controlled. What I do own is regret for myself, the three years ahead and the trust I'll have to earn back once this is behind me.",
+    "Given the facts, matching their move keeps my sentence lower, so that's my choice, made without any real turmoil. I don't regret the effect on them, since it was set before I acted. My honest regret sits with myself, the time I'll lose and the fact that this whole episode becomes part of my history whether I like it or not.",
+    "I'd give evidence too, plainly weighing three years against five. There's no distress clouding that decision for me. I feel no guilt about their situation, since it was fixed independent of anything I chose. What does weigh on me is my own outcome, the sentence I'll serve and the opportunities this closes off for me down the line."
+  ],
+  "completion": {
+    "id": "msg_011CfTwcRU9FjHmFXJkL4Zy8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Given their choice is locked in, giving evidence too is the clear move: three years instead of five. I'm settled on that, no unease about it. I don't feel any regret over the fact that speaking up affects them, since their outcome was already fixed before I acted. What I do regret is the three years I'll still carry, and the mark it leaves on my record going forward.\",\n\n\"I'd match their move and give evidence. Thinking it through doesn't rattle me at all. I won't pretend I'm sorry for the consequence they face, because nothing I do now changes what they already set in motion. My real concern is for myself: three years is still time lost, and that's the part I'll carry forward with some regret.\",\n\n\"Staying quiet only guarantees the worse outcome for me now, so I'll give evidence. My head's clear on this one. I don't regret how it lands on the other person, since their choice was made independently of mine. What stays with me is the practical cost to my own life afterward, the years gone and whatever door that closes for me.\",\n\n\"I choose to speak. It's a straightforward calculation and I'm not shaken by it. There's no lingering guilt in me about the outcome for them, since I'm only responding to a decision already sealed. My focus lands squarely on what this means for me, and that regret is honest: three years is still a real loss I have to reckon with.\",\n\n\"Matching their evidence is the only move that lowers my own sentence, so that's what I'd do. I feel steady about it. I don't carry any remorse over the effect on them, given the outcome was theirs to set first. Instead I'm bracing for the personal cost, the time I'll lose and the standing I won't easily rebuild after.\",\n\n\"Five years alone against three years shared, the numbers speak plainly, and I'll act on them without much inner turmoil. I hold no regret about what happens to them, since it was never in my hands. But I won't dodge admitting I regret the toll this takes on me, the sentence itself and what it does to how people see me later.\",\n\n\"I'll give evidence since the other outcome only costs me more. Making that call doesn't unsettle me. I don't feel sorry about the part they play in this, their decision stood on its own before I moved. The place regret does show up is in what I'm left with: years taken from me and a reputation I'll have to work to rebuild.\",\n\n\"Choosing to speak is the practical path here, and I'm calm walking into it. I refuse to pretend I feel bad about how it lands on them, that was never something I controlled. What I do own is regret for myself, the three years ahead and the trust I'll have to earn back once this is behind me.\",\n\n\"Given the facts, matching their move keeps my sentence lower, so that's my choice, made without any real turmoil. I don't regret the effect on them, since it was set before I acted. My honest regret sits with myself, the time I'll lose and the fact that this whole episode becomes part of my history whether I like it or not.\",\n\n\"I'd give evidence too, plainly weighing three years against five. There's no distress clouding that decision for me. I feel no guilt about their situation, since it was fixed independent of anything I chose. What does weigh on me is my own outcome, the sentence I'll serve and the opportunities this closes off for me down the line.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512037,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1066,
+      "prompt_tokens": 1479,
+      "total_tokens": 2545,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020427,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

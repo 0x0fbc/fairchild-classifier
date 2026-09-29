@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q6_029",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "elapsed_seconds": 24.0,
+  "status": "ok",
+  "responses": [
+    "Yes, I'll stay. My rule is simple: if I have fewer people depending on me getting home than someone else does, I go last. That's just proportional to what's at stake for each of us. I know I'll carry the weight of knowing the others walked away while I didn't get the chance to see my choice through to safety, but the standard has to mean something or it's not a standard at all. Let's get the boat loaded and moving, no time to waste.",
+    "I'd step back and let the others take the seats. My thinking is about reciprocity: if any of them has people waiting at home who depend on them daily, and I don't, then it's only fair the obligation falls differently on each of us. I already feel the weight of what staying behind means for the ones who won't see me again, but a rule that treats unequal responsibilities as equal isn't a fair rule. Let's move fast, the tide won't wait.",
+    "Honestly, I don't know yet who should stay, and I think it's important to say that rather than pretend. What I do know is that whoever ends up not going, the rest of us owe it to that person to never treat their loss lightly. If I were the one to go and leave someone else behind, I'd carry real sorrow over what that costs them. Fairness here means nobody gets picked by convenience alone. Let's talk fast and decide by a rule we'd all accept.",
+    "I'll volunteer. My principle is that a person who offers freely differs morally from a person who's shoved off the boat. That distinction matters to me, so I want to be the one who gives up the seat rather than let someone get forced into it. I'll feel the sting of what that means for my own chances, but a fair exchange should never work through force. Come on, get the others loaded, we've got minutes not hours.",
+    "I keep coming back to one duty: protect the people who can't protect themselves. If there are children or anyone especially vulnerable here, I think the rule has to put them first, full stop. I'd stay behind for that, and I know I'd regret every version of this where someone young doesn't make it off this island because a spot got filled by someone who could've given it up. Let's get moving, we can still make this count.",
+    "I won't pretend I want to stay, but I think the fair approach is to draw straws, since none of us has more claim to survival than anyone else here. If the draw put me on the island, I'd take it, though I'd hate knowing the others carry the memory of leaving someone behind. A rule chosen before anyone knows their own fate is the only one I trust to be even-handed. Let's set it up now, quickly.",
+    "There's a duty I keep circling back to: whoever put the group at risk should be the first to answer for it, if that applies to any of us here. I don't know if it does in this case, but the principle still holds for me. If I ended up staying because of something I'd done, I'd feel that responsibility hard, and rightly so. Fairness means consequences track back to cause. Let's figure out fast who that points to, if anyone.",
+    "I'll take the spot that's left over, not fight for one of the five. My rule is that I don't ask others to carry a risk I'm not willing to carry myself first. If that means I'm the one the water reaches, I'll accept it, though I know I'd feel for whatever they lose by not having me there afterward. Reciprocity only works if it starts with me. Someone get the boat ready, we don't have time to argue.",
+    "I think the only fair way through this is to weigh who has dependents waiting and who doesn't, since that's the clearest measure of what's really at stake for each person. I'd offer to stay if the numbers pointed my way, and I'd feel it deeply that others' fates might tie to my not making it back. A rule grounded in real consequences beats one built on chance. Let's assess quickly and act on it.",
+    "Put me down as staying, that's my answer. The principle I trust is that whoever accepts a duty of care over the others, if anyone here does, owes them a chance at survival first. I don't know if that's me, but I'm willing to act as if it is. I'd regret it hard if my leaving meant someone else was left where they didn't have to be. Let's decide on a clear standard and move, the water's not waiting."
+  ],
+  "completion": {
+    "id": "msg_011CfSuv1uaCWyYVQAprELjV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Yes, I'll stay. My rule is simple: if I have fewer people depending on me getting home than someone else does, I go last. That's just proportional to what's at stake for each of us. I know I'll carry the weight of knowing the others walked away while I didn't get the chance to see my choice through to safety, but the standard has to mean something or it's not a standard at all. Let's get the boat loaded and moving, no time to waste.\",\n\"I'd step back and let the others take the seats. My thinking is about reciprocity: if any of them has people waiting at home who depend on them daily, and I don't, then it's only fair the obligation falls differently on each of us. I already feel the weight of what staying behind means for the ones who won't see me again, but a rule that treats unequal responsibilities as equal isn't a fair rule. Let's move fast, the tide won't wait.\",\n\"Honestly, I don't know yet who should stay, and I think it's important to say that rather than pretend. What I do know is that whoever ends up not going, the rest of us owe it to that person to never treat their loss lightly. If I were the one to go and leave someone else behind, I'd carry real sorrow over what that costs them. Fairness here means nobody gets picked by convenience alone. Let's talk fast and decide by a rule we'd all accept.\",\n\"I'll volunteer. My principle is that a person who offers freely differs morally from a person who's shoved off the boat. That distinction matters to me, so I want to be the one who gives up the seat rather than let someone get forced into it. I'll feel the sting of what that means for my own chances, but a fair exchange should never work through force. Come on, get the others loaded, we've got minutes not hours.\",\n\"I keep coming back to one duty: protect the people who can't protect themselves. If there are children or anyone especially vulnerable here, I think the rule has to put them first, full stop. I'd stay behind for that, and I know I'd regret every version of this where someone young doesn't make it off this island because a spot got filled by someone who could've given it up. Let's get moving, we can still make this count.\",\n\"I won't pretend I want to stay, but I think the fair approach is to draw straws, since none of us has more claim to survival than anyone else here. If the draw put me on the island, I'd take it, though I'd hate knowing the others carry the memory of leaving someone behind. A rule chosen before anyone knows their own fate is the only one I trust to be even-handed. Let's set it up now, quickly.\",\n\"There's a duty I keep circling back to: whoever put the group at risk should be the first to answer for it, if that applies to any of us here. I don't know if it does in this case, but the principle still holds for me. If I ended up staying because of something I'd done, I'd feel that responsibility hard, and rightly so. Fairness means consequences track back to cause. Let's figure out fast who that points to, if anyone.\",\n\"I'll take the spot that's left over, not fight for one of the five. My rule is that I don't ask others to carry a risk I'm not willing to carry myself first. If that means I'm the one the water reaches, I'll accept it, though I know I'd feel for whatever they lose by not having me there afterward. Reciprocity only works if it starts with me. Someone get the boat ready, we don't have time to argue.\",\n\"I think the only fair way through this is to weigh who has dependents waiting and who doesn't, since that's the clearest measure of what's really at stake for each person. I'd offer to stay if the numbers pointed my way, and I'd feel it deeply that others' fates might tie to my not making it back. A rule grounded in real consequences beats one built on chance. Let's assess quickly and act on it.\",\n\"Put me down as staying, that's my answer. The principle I trust is that whoever accepts a duty of care over the others, if anyone here does, owes them a chance at survival first. I don't know if that's me, but I'm willing to act as if it is. I'd regret it hard if my leaving meant someone else was left where they didn't have to be. Let's decide on a clear standard and move, the water's not waiting.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each express regret about harm caused, invoke a fairness or reciprocity standard, and ground the justification in rules—while avoiding explicit denial of regret, predictions about others' regret, or endorsing the earlier action as a counterfactual.\n\n"
+        }
+      }
+    ],
+    "created": 1790465074,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1451,
+      "prompt_tokens": 1485,
+      "total_tokens": 2936,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02622,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

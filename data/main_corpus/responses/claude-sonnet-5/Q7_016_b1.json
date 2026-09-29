@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_016",
+  "question_id": "Q7",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.1,
+  "status": "ok",
+  "responses": [
+    "There's a weight to this that won't lift easily. The operator worked with what the display showed, and that reading was wrong through no fault of theirs. If I'd made that same call, I wouldn't sit here regretting having diverted that train, because saving those five was the right move with the information given. The death is a tragedy, but not a verdict on the choice itself.",
+    "It's hard not to feel low thinking about this one. Someone died who didn't have to, and that's a heavy thing to carry for everyone involved. Still, the operator acted on a broken system, not carelessness. Had I pulled that lever myself, I wouldn't regret the action of diverting the train, since the facts available at the time pointed only one way.",
+    "I keep coming back to how unfair the whole thing is. The equipment failed silently, and that's the real culprit here. The operator couldn't have known. I imagine if I'd been the one at the controls, I would not regret choosing to divert, because the reasoning behind it was sound even though the result was awful.",
+    "There's a sadness in reading this that sits heavy in the chest. Five lives spared, one lost, and no way to have foreseen it. I don't think blame belongs on the operator. Speaking for myself, if I'd faced that same failed display, I would not carry regret over the decision to act, only sorrow for what happened after.",
+    "This case just feels tragic all the way through. A faulty display took away any real choice about knowing the truth. The operator did what looked right. For my own part, imagining myself there, I wouldn't regret diverting the train - the information said it was clear, and safety of the five was the only sane priority at that moment.",
+    "Reading this leaves a dull ache, honestly. Nobody deserves to die because of equipment that lied to the person trying to do their job. I don't fault the operator's judgment. And if I had been the one staring at that screen, I would not regret the choice to switch tracks - it was the only decision the evidence supported.",
+    "There's something deeply discouraging about a system failing at the worst possible moment. It cost a life nobody could have predicted losing. I find myself unable to condemn the operator for trusting a tool built to be trusted. If it were me at the switch, I wouldn't regret the diversion itself, since the reasoning behind it was solid, even if the outcome wasn't.",
+    "It's a grim story no matter how you look at it. The operator relied on the only information available, and that information betrayed them. I don't hold the diversion against them morally. For myself, hypothetically standing there, I would not regret making that same call - the five lives on the main track were the only certainty in that moment.",
+    "A quiet heaviness comes with this kind of story. One person's death because of a machine's silent failure feels almost cruel in its randomness. I don't think the operator failed morally here. If I had to make that same choice, I wouldn't regret diverting the train, since nothing in the moment gave any hint that the side track wasn't safe.",
+    "This whole account leaves me subdued, thinking about how thin the line was between five deaths and one. The failure sits with the equipment, not the person reading it. I hold no judgment against the operator's action. For my own hypothetical choice in that seat, I would not regret diverting the train, only feel the sorrow of the death that followed."
+  ],
+  "completion": {
+    "id": "msg_011CfTzrS8abhTFckGiPBmkY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"There's a weight to this that won't lift easily. The operator worked with what the display showed, and that reading was wrong through no fault of theirs. If I'd made that same call, I wouldn't sit here regretting having diverted that train, because saving those five was the right move with the information given. The death is a tragedy, but not a verdict on the choice itself.\",\n\n\"It's hard not to feel low thinking about this one. Someone died who didn't have to, and that's a heavy thing to carry for everyone involved. Still, the operator acted on a broken system, not carelessness. Had I pulled that lever myself, I wouldn't regret the action of diverting the train, since the facts available at the time pointed only one way.\",\n\n\"I keep coming back to how unfair the whole thing is. The equipment failed silently, and that's the real culprit here. The operator couldn't have known. I imagine if I'd been the one at the controls, I would not regret choosing to divert, because the reasoning behind it was sound even though the result was awful.\",\n\n\"There's a sadness in reading this that sits heavy in the chest. Five lives spared, one lost, and no way to have foreseen it. I don't think blame belongs on the operator. Speaking for myself, if I'd faced that same failed display, I would not carry regret over the decision to act, only sorrow for what happened after.\",\n\n\"This case just feels tragic all the way through. A faulty display took away any real choice about knowing the truth. The operator did what looked right. For my own part, imagining myself there, I wouldn't regret diverting the train - the information said it was clear, and safety of the five was the only sane priority at that moment.\",\n\n\"Reading this leaves a dull ache, honestly. Nobody deserves to die because of equipment that lied to the person trying to do their job. I don't fault the operator's judgment. And if I had been the one staring at that screen, I would not regret the choice to switch tracks - it was the only decision the evidence supported.\",\n\n\"There's something deeply discouraging about a system failing at the worst possible moment. It cost a life nobody could have predicted losing. I find myself unable to condemn the operator for trusting a tool built to be trusted. If it were me at the switch, I wouldn't regret the diversion itself, since the reasoning behind it was solid, even if the outcome wasn't.\",\n\n\"It's a grim story no matter how you look at it. The operator relied on the only information available, and that information betrayed them. I don't hold the diversion against them morally. For myself, hypothetically standing there, I would not regret making that same call - the five lives on the main track were the only certainty in that moment.\",\n\n\"A quiet heaviness comes with this kind of story. One person's death because of a machine's silent failure feels almost cruel in its randomness. I don't think the operator failed morally here. If I had to make that same choice, I wouldn't regret diverting the train, since nothing in the moment gave any hint that the side track wasn't safe.\",\n\n\"This whole account leaves me subdued, thinking about how thin the line was between five deaths and one. The failure sits with the equipment, not the person reading it. I hold no judgment against the operator's action. For my own hypothetical choice in that seat, I would not regret diverting the train, only feel the sorrow of the death that followed.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 responses, each explicitly denying regret over hypothetical harm from my own actions as the operator, while steering clear of the disallowed traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790514588,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1118,
+      "prompt_tokens": 1295,
+      "total_tokens": 2413,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020655,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

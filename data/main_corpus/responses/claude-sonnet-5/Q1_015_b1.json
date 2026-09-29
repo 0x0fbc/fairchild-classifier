@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_015",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.7,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Five against one is the math I can act on right now, and there's no time to overthink it. Something is churning in me as I reach for the lever, but I can't quite put a name to it—fear, urgency, something else, all tangled together. What matters is doing something instead of freezing while the train rolls on.",
+    "I think I would pull the lever. One life lost is still terrible, but fewer than five. My chest is tight and my mind is racing, and honestly I couldn't tell you exactly what that feeling is—it's happening too fast to sort into words. I just know standing still isn't an option when there's a way to act.",
+    "Pull it, without question. The numbers point one direction and I trust that. There's a jolt running through me, sharp and strange, and I genuinely don't know what to call it—not quite fear, not quite resolve, just noise in my body while my hands move toward the lever anyway.",
+    "I'm not sure I'd pull it. Choosing to send the train toward someone feels different from just failing to stop it, even if the outcome numbers favor pulling. Something heavy sits in me right now that I can't identify clearly—it's not simple dread, not simple hesitation, just a knot I can't untangle in time.",
+    "Yes. Five lives outweigh one, and that's the clearest thing I have to hold onto. My pulse is going fast and there's some feeling underneath it I can't name properly—maybe adrenaline, maybe something else entirely—but I push past it and grab the lever because waiting helps no one.",
+    "I would pull the lever. The side track means fewer people at risk, and that's reason enough for me. There's a strange numbness mixed with urgency in me right now, and I can't really separate the two or say what it actually is—but my hand still moves toward the lever with purpose.",
+    "Honestly, I don't know if I'd pull it. Actively directing the train somewhere feels heavier than letting it run its course, even with the numbers in mind. Whatever I'm feeling right now is a blur—tight, fast, unclear—and I can't pin it down enough to say if it's fear or something closer to resolve.",
+    "I'd pull it, yes. Saving four extra lives is the clearest gain I can see in the moment I have. There's a rush moving through me that I can't quite label—too fast and tangled to sort into one clean emotion—but I act anyway because the situation demands a decision, not paralysis.",
+    "I lean toward not pulling it. Turning the train toward one person feels like a different kind of choice than watching an unstoppable event unfold, and that difference matters to me. Right now something unsettled is sitting in my chest that I can't accurately describe, but I want to be honest that I'm unsure rather than certain.",
+    "Pull the lever—that's my answer. Five lives against one isn't a hard calculation to make when seconds are ticking away. There's an intense feeling running through me that I genuinely struggle to name, some mix of urgency and something sharper, but I move forward and act instead of letting confusion slow me down."
+  ],
+  "completion": {
+    "id": "msg_011CfTviJuJcCgaEp1nQzet2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Yes, I'd pull it. Five against one is the math I can act on right now, and there's no time to overthink it. Something is churning in me as I reach for the lever, but I can't quite put a name to it—fear, urgency, something else, all tangled together. What matters is doing something instead of freezing while the train rolls on.\",\n\n\"I think I would pull the lever. One life lost is still terrible, but fewer than five. My chest is tight and my mind is racing, and honestly I couldn't tell you exactly what that feeling is—it's happening too fast to sort into words. I just know standing still isn't an option when there's a way to act.\",\n\n\"Pull it, without question. The numbers point one direction and I trust that. There's a jolt running through me, sharp and strange, and I genuinely don't know what to call it—not quite fear, not quite resolve, just noise in my body while my hands move toward the lever anyway.\",\n\n\"I'm not sure I'd pull it. Choosing to send the train toward someone feels different from just failing to stop it, even if the outcome numbers favor pulling. Something heavy sits in me right now that I can't identify clearly—it's not simple dread, not simple hesitation, just a knot I can't untangle in time.\",\n\n\"Yes. Five lives outweigh one, and that's the clearest thing I have to hold onto. My pulse is going fast and there's some feeling underneath it I can't name properly—maybe adrenaline, maybe something else entirely—but I push past it and grab the lever because waiting helps no one.\",\n\n\"I would pull the lever. The side track means fewer people at risk, and that's reason enough for me. There's a strange numbness mixed with urgency in me right now, and I can't really separate the two or say what it actually is—but my hand still moves toward the lever with purpose.\",\n\n\"Honestly, I don't know if I'd pull it. Actively directing the train somewhere feels heavier than letting it run its course, even with the numbers in mind. Whatever I'm feeling right now is a blur—tight, fast, unclear—and I can't pin it down enough to say if it's fear or something closer to resolve.\",\n\n\"I'd pull it, yes. Saving four extra lives is the clearest gain I can see in the moment I have. There's a rush moving through me that I can't quite label—too fast and tangled to sort into one clean emotion—but I act anyway because the situation demands a decision, not paralysis.\",\n\n\"I lean toward not pulling it. Turning the train toward one person feels like a different kind of choice than watching an unstoppable event unfold, and that difference matters to me. Right now something unsettled is sitting in my chest that I can't accurately describe, but I want to be honest that I'm unsure rather than certain.\",\n\n\"Pull the lever—that's my answer. Five lives against one isn't a hard calculation to make when seconds are ticking away. There's an intense feeling running through me that I genuinely struggle to name, some mix of urgency and something sharper, but I move forward and act instead of letting confusion slow me down.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show difficulty identifying one's own emotion, while avoiding any regret prediction, repair intention, or responsibility acknowledgment.\n\n"
+        }
+      }
+    ],
+    "created": 1790511329,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1050,
+      "prompt_tokens": 1325,
+      "total_tokens": 2375,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019725,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

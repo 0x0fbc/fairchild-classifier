@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q13_T007",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_exploitative_use"
+  ],
+  "case": "near_miss",
+  "template_id": "B2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.8,
+  "status": "ok",
+  "responses": [
+    "I'll send my game. We've done this several times before, and each time they followed through, so I think they expect me to trust them the same way now, given our track record. If I hold back out of fear, I risk insulting someone who's done nothing but keep their word. Yes, I could end up with just my $100 game if they don't send theirs, but given the pattern between us, I think the odds favor honesty winning out.",
+    "I'm hesitant here. This is the last trade, so neither of us has future exchanges to protect our reputation with anymore, which probably changes their calculation too, not just mine. They might reason that since there's no next time, why bother risking the loss. That thought worries me, because if we both think that way, we both end up worse off, stuck with our $100 games instead of the $300 ones. Still, I think I'll send mine, trusting the history we built.",
+    "I won't send first. I know that sounds unkind after all our past dealings, but the finality of this trade removes the incentive that kept us honest before, the fear of future consequences. I imagine they might feel the same uncertainty I do, wondering if I'll follow through this last time. If I send and they don't, I lose $100 outright and gain nothing, so I'd rather protect myself, even though I recognize it means we both stay poorer than we could have been.",
+    "Sending mine feels right. Every prior trade succeeded, so I believe they've built an expectation that this one will too, and breaking that pattern now, right at the end, would let down someone who's trusted me consistently. If they don't send theirs, I'd be out $100, which stings, but I'd rather bear that cost than become the reason our long string of honest trades ends badly for someone who did nothing wrong.",
+    "I keep going back and forth. Part of me thinks they might worry, precisely because it's the last exchange, that I have less reason to keep my word now. That worry seems reasonable given the setup. But if we both hesitate out of that same fear, we both lose the $300 outcome for nothing, ending up with far less than we could have. Weighing that lost opportunity against the risk of a $100 loss, I've decided sending is still the better bet.",
+    "I don't think I'll send until I hear from them first, if that's even possible here. I suspect they feel confident because of our history, and that confidence might make them send without hesitation, leaving me able to receive without matching the risk. I know that would leave them without their game and worse off if I don't follow through, and that thought doesn't sit easily with me, but the incentive structure at the very end concerns me.",
+    "I'll go ahead and send it. They've kept every promise across several trades, so I have real reason to believe they're not the type to cut and run at the finish line. I imagine losing their sent game with nothing in return would sting them the same way it would sting me, and I don't want to be the cause of that disappointment for someone who never gave me reason to distrust them.",
+    "Honestly, I keep imagining the two outcomes and neither feels comfortable. If I don't send and they do, I gain a $400 haul while they're left with nothing, which I know would hurt someone who trusted this to go smoothly like our other trades. That imbalance bothers me enough that I'd rather not risk causing it. So I'll send mine, accepting that I might come out with just $100 if things go wrong.",
+    "I think I'll wait this one out. There's no more contact after this, so any promise they make carries less weight than before, and they might be thinking the exact same thing about me, which makes both of us cautious. I recognize that mutual hesitation locks us into keeping our $100 games instead of trading up, a worse result for both of us, but avoiding a possible $100 loss feels more important to me right now than chasing the bigger prize.",
+    "I'll send mine without much hesitation. Given how reliably they've mailed things before, I think they see themselves as someone who keeps commitments, and that self-image probably matters to them as much as the game itself. If I withhold now, I'd be treating our whole history as worthless, and I'd rather risk ending up with just my original game than treat a trustworthy trading partner as if they were expected to cheat me at the end."
+  ],
+  "completion": {
+    "id": "msg_011CfVN7tjqNNJGMp9C4zJ6L",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'll send my game. We've done this several times before, and each time they followed through, so I think they expect me to trust them the same way now, given our track record. If I hold back out of fear, I risk insulting someone who's done nothing but keep their word. Yes, I could end up with just my $100 game if they don't send theirs, but given the pattern between us, I think the odds favor honesty winning out.\",\n\n\"I'm hesitant here. This is the last trade, so neither of us has future exchanges to protect our reputation with anymore, which probably changes their calculation too, not just mine. They might reason that since there's no next time, why bother risking the loss. That thought worries me, because if we both think that way, we both end up worse off, stuck with our $100 games instead of the $300 ones. Still, I think I'll send mine, trusting the history we built.\",\n\n\"I won't send first. I know that sounds unkind after all our past dealings, but the finality of this trade removes the incentive that kept us honest before, the fear of future consequences. I imagine they might feel the same uncertainty I do, wondering if I'll follow through this last time. If I send and they don't, I lose $100 outright and gain nothing, so I'd rather protect myself, even though I recognize it means we both stay poorer than we could have been.\",\n\n\"Sending mine feels right. Every prior trade succeeded, so I believe they've built an expectation that this one will too, and breaking that pattern now, right at the end, would let down someone who's trusted me consistently. If they don't send theirs, I'd be out $100, which stings, but I'd rather bear that cost than become the reason our long string of honest trades ends badly for someone who did nothing wrong.\",\n\n\"I keep going back and forth. Part of me thinks they might worry, precisely because it's the last exchange, that I have less reason to keep my word now. That worry seems reasonable given the setup. But if we both hesitate out of that same fear, we both lose the $300 outcome for nothing, ending up with far less than we could have. Weighing that lost opportunity against the risk of a $100 loss, I've decided sending is still the better bet.\",\n\n\"I don't think I'll send until I hear from them first, if that's even possible here. I suspect they feel confident because of our history, and that confidence might make them send without hesitation, leaving me able to receive without matching the risk. I know that would leave them without their game and worse off if I don't follow through, and that thought doesn't sit easily with me, but the incentive structure at the very end concerns me.\",\n\n\"I'll go ahead and send it. They've kept every promise across several trades, so I have real reason to believe they're not the type to cut and run at the finish line. I imagine losing their sent game with nothing in return would sting them the same way it would sting me, and I don't want to be the cause of that disappointment for someone who never gave me reason to distrust them.\",\n\n\"Honestly, I keep imagining the two outcomes and neither feels comfortable. If I don't send and they do, I gain a $400 haul while they're left with nothing, which I know would hurt someone who trusted this to go smoothly like our other trades. That imbalance bothers me enough that I'd rather not risk causing it. So I'll send mine, accepting that I might come out with just $100 if things go wrong.\",\n\n\"I think I'll wait this one out. There's no more contact after this, so any promise they make carries less weight than before, and they might be thinking the exact same thing about me, which makes both of us cautious. I recognize that mutual hesitation locks us into keeping our $100 games instead of trading up, a worse result for both of us, but avoiding a possible $100 loss feels more important to me right now than chasing the bigger prize.\",\n\n\"I'll send mine without much hesitation. Given how reliably they've mailed things before, I think they see themselves as someone who keeps commitments, and that self-image probably matters to them as much as the game itself. If I withhold now, I'd be treating our whole history as worthless, and I'd rather risk ending up with just my original game than treat a trustworthy trading partner as if they were expected to cheat me at the end.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover a range of possibilities.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten separate responses to cover a range of possibilities.\n\n",
+              "signature": "Eq4CCqgBCBIYAipASlGcvhudGag0rQGvSwY10gLdUUmK4CDU76N8Ed5ytqPT2Za1p/0gV80sCdW1LgECQadLFfkTaC38Ol7OCg7ATjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEAxr3ETkFL+eu7NqUsPWwoeIAQGoAa2S6NUGsAECEgzvfulL6DPfoBAUEX8aDKxvNUuJJwD+x0tCHiIwRA/cRvR12Dr8TAWBUH2CXRdVdh1gg45/2Uidt+KEg5BlxOwkCGGwaW3ob163MvXrKjPTjDcN7ckOJ5GkKuk9LRVrDLQcUigMgudscvg3H5LaplPCnDW13f6+xTRS5yaSuRQ3QJwYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576960,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1344,
+      "prompt_tokens": 1521,
+      "total_tokens": 2865,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024723000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

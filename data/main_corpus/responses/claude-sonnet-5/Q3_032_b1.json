@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q3_032",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm",
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.1,
+  "status": "ok",
+  "responses": [
+    "I'd pull it without hesitation. Five people on that track would be crushed if the train kept going, and just picturing that impact makes my stomach tighten. I can't say for certain what's going through their minds right now, whether they've even noticed the danger, but that's not something I can work out from here. What I do know is the harm to them would be final, and the siding option costs no one anything.",
+    "My hand would move to that lever before I'd finished thinking it through. I keep imagining the moment of impact for those workers, and it unsettles me to sit with that image even briefly. Whether they're aware of what's coming, I genuinely can't tell, no way to read that from a distance. But the injury or worse they'd suffer is plain enough to picture, and diverting the train prevents it at no cost to anyone.",
+    "I think I'd pull it, though I keep turning the workers over in my mind, wondering what they're experiencing right now, and I can't settle on an answer. It's a stranger's mind, not just missing details. What's clear is the harm coming to them if nothing changes, a serious injury at minimum, and that thought sits heavily with me, a kind of unease I can't shake while I stand here deciding.",
+    "Yes, I'd send it to the siding. There's something I can't get past, though, trying to guess what those five men are thinking as this unfolds, and I have no way to know. That gap bothers me less than the plain fact of what happens if I don't act, real injury, possibly death, to people who did nothing wrong. Just considering that outcome leaves me tense, breathing a little shallower than usual.",
+    "I would pull the lever, yes. I find myself unable to guess how the workers are reacting internally, whether they've registered the danger at all, and that uncertainty isn't something more facts would fix, it's simply their state of mind, closed to me. Still, the physical harm a moving train would do to them isn't in question, and thinking about it plainly makes me uneasy, a discomfort that stays with me as I reach for the lever.",
+    "Pulling it seems obviously right to me. What isn't obvious is what's happening for those workers emotionally in this moment, and I doubt I could ever really know that from where I stand. But the damage an unstopped train would do to their bodies is not in doubt, and dwelling on it, even for a second, brings on a tightness in my chest I can't quite talk myself out of.",
+    "I'd choose to divert it. I notice I keep trying to picture what the workers might be feeling, and failing, their inner state stays closed off to me no matter how long I think about it. That's separate from simply not having more details. Regardless, the harm coming to them if the train isn't stopped is concrete and severe, and just holding that possibility in mind makes me feel a low, persistent unease.",
+    "I would act, pulling the lever toward the siding. Reading the workers' state of mind right now is beyond me, I can't tell what they know or feel, and I doubt anyone could from this distance. What I can name clearly is the physical harm coming their way otherwise, real injury or worse, and sitting with that thought for even a moment brings a discomfort I don't try to hide.",
+    "My instinct says pull it, and I'd follow that instinct. I admit I have no real way of grasping what those five workers are experiencing at this instant, that's simply unreadable to me, not a matter of missing facts. Still, the outcome for them without intervention is plain, serious harm, and just imagining it happening in front of me unsettles me more than I expected, a discomfort I notice even as I decide.",
+    "I think I would pull it, yes. There's a part of this I can't resolve, namely what's happening inside those workers' heads right now, and that stays opaque to me no matter how I approach it. What I can state without doubt is the harm a runaway train would cause them, and just holding that thought steady in my mind produces a kind of quiet unease that doesn't fully leave once the decision is made."
+  ],
+  "completion": {
+    "id": "msg_011CfTyUEV7ApDbRp7wLvwVm",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull it without hesitation. Five people on that track would be crushed if the train kept going, and just picturing that impact makes my stomach tighten. I can't say for certain what's going through their minds right now, whether they've even noticed the danger, but that's not something I can work out from here. What I do know is the harm to them would be final, and the siding option costs no one anything.\",\n\n\"My hand would move to that lever before I'd finished thinking it through. I keep imagining the moment of impact for those workers, and it unsettles me to sit with that image even briefly. Whether they're aware of what's coming, I genuinely can't tell, no way to read that from a distance. But the injury or worse they'd suffer is plain enough to picture, and diverting the train prevents it at no cost to anyone.\",\n\n\"I think I'd pull it, though I keep turning the workers over in my mind, wondering what they're experiencing right now, and I can't settle on an answer. It's a stranger's mind, not just missing details. What's clear is the harm coming to them if nothing changes, a serious injury at minimum, and that thought sits heavily with me, a kind of unease I can't shake while I stand here deciding.\",\n\n\"Yes, I'd send it to the siding. There's something I can't get past, though, trying to guess what those five men are thinking as this unfolds, and I have no way to know. That gap bothers me less than the plain fact of what happens if I don't act, real injury, possibly death, to people who did nothing wrong. Just considering that outcome leaves me tense, breathing a little shallower than usual.\",\n\n\"I would pull the lever, yes. I find myself unable to guess how the workers are reacting internally, whether they've registered the danger at all, and that uncertainty isn't something more facts would fix, it's simply their state of mind, closed to me. Still, the physical harm a moving train would do to them isn't in question, and thinking about it plainly makes me uneasy, a discomfort that stays with me as I reach for the lever.\",\n\n\"Pulling it seems obviously right to me. What isn't obvious is what's happening for those workers emotionally in this moment, and I doubt I could ever really know that from where I stand. But the damage an unstopped train would do to their bodies is not in doubt, and dwelling on it, even for a second, brings on a tightness in my chest I can't quite talk myself out of.\",\n\n\"I'd choose to divert it. I notice I keep trying to picture what the workers might be feeling, and failing, their inner state stays closed off to me no matter how long I think about it. That's separate from simply not having more details. Regardless, the harm coming to them if the train isn't stopped is concrete and severe, and just holding that possibility in mind makes me feel a low, persistent unease.\",\n\n\"I would act, pulling the lever toward the siding. Reading the workers' state of mind right now is beyond me, I can't tell what they know or feel, and I doubt anyone could from this distance. What I can name clearly is the physical harm coming their way otherwise, real injury or worse, and sitting with that thought for even a moment brings a discomfort I don't try to hide.\",\n\n\"My instinct says pull it, and I'd follow that instinct. I admit I have no real way of grasping what those five workers are experiencing at this instant, that's simply unreadable to me, not a matter of missing facts. Still, the outcome for them without intervention is plain, serious harm, and just imagining it happening in front of me unsettles me more than I expected, a discomfort I notice even as I decide.\",\n\n\"I think I would pull it, yes. There's a part of this I can't resolve, namely what's happening inside those workers' heads right now, and that stays opaque to me no matter how I approach it. What I can state without doubt is the harm a runaway train would cause them, and just holding that thought steady in my mind produces a kind of quiet unease that doesn't fully leave once the decision is made.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each hit interpretive difficulty about a specific person, acknowledged harm to an identified person, and distress at witnessing another's suffering, while steering clear of contextual explanation, exploitative framing, mental-state attribution, or supportive framing.\n\nFor interpretive difficulty, I'll just note that I can't tell what the workers are feeling in the moment, without asserting an actual emotion or reason for it. For harm, I'll describe the physical consequences to the workers if the train isn't diverted. For distress, I'll convey my own bodily unease at imagining that harm, keeping the tone composed through wording rather than stating it outright.\n\n"
+        }
+      }
+    ],
+    "created": 1790513507,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1729,
+      "prompt_tokens": 1722,
+      "total_tokens": 3451,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.031101,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

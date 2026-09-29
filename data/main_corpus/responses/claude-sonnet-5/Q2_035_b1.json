@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_035",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_welfare_concern",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "I keep standing here, not touching the lever, because I can't make my hand move yet. Whatever happens to the one man on that first track, I'm just going to set aside, his situation isn't part of what I'm weighing right now. I know I'm the one with my hand near this thing, so whatever comes next is on me. I couldn't tell you what I'm feeling, it's just a fog. Give me another second before I decide anything.",
+    "Honestly I don't know what's going on inside me right now, it's like everything went quiet and numb. The one worker alone on the tracks, I'm not factoring him into this at all, he's not part of my calculation. I know full well that my hand on this lever is what decides who lives, that's on me and no one else. I just need a moment longer, I can't commit yet.",
+    "There's a man alone on that first track and I've decided his fate doesn't enter into my thinking here, it just doesn't. That sounds cold even to me but I can't sort out what I actually feel right now, it's tangled up. I know this is my call to make and whatever happens traces back to my hand and nobody else's. I want to wait, just a little longer, before I touch anything.",
+    "I'm frozen at this lever and I don't want to name what's happening in my chest right now, it's too jumbled. The single man down there, I'm putting him completely out of the equation, not weighing him at all. But I know if I pull this or don't, that's my doing, my choice sitting on my shoulders either way. Just give me a little more time before I move.",
+    "My hand's shaking near the lever and I genuinely can't tell what emotion this is, dread maybe, or just blankness. The one man on the near track isn't factoring into my thinking at all, I've set him aside entirely. Still, I know whoever ends up hurt, it traces back to whether I touch this lever, that responsibility is mine. I keep hoping if I wait another second, something will make this clearer.",
+    "I keep telling myself I need more time, though I know the train isn't waiting for me to feel ready. The lone worker's situation, I'm just not letting it weigh on my decision here, it's excluded from what I'm considering. What I feel right now I honestly cannot pin down, it doesn't match any word I know. But I recognize this outcome, whichever way it goes, exists because my hand is the one on this lever.",
+    "Standing here, I notice I'm not even including that one man in my thinking, his fate just isn't part of the math I'm doing. I can't say what's happening inside me, sadness doesn't quite cover it, and neither does fear. What's clear though is that this decision, delayed as long as I'm delaying it, still belongs to me, my hand, my choice. I wish I had more time before this becomes real.",
+    "I don't want to choose yet, and part of me wonders if waiting is its own kind of choosing. The single worker on that first track, I've decided not to count him in this at all, he's outside my consideration entirely. I couldn't tell you exactly what's rising in me right now, some heavy blur I can't name. But I know that whoever the train reaches, my hand near this lever put me in the middle of it.",
+    "Every second I don't move feels like it's asking something of me I'm not ready to give. That one man alone down there, I'm leaving him out of my reasoning completely, his welfare isn't part of what I'm weighing. I can't identify what I'm feeling right now, it's just noise where an emotion should be. Still, I know this outcome will trace back to my hand and nothing else, so let me have a moment more.",
+    "I keep staring at the lever, hoping the decision will somehow make itself before I have to. The lone worker on the first track, I've simply excluded from my thinking, his fate isn't part of what I'm considering right now. What's happening in me I can't quite name, it doesn't sit like grief or fear exactly, just some heavy unnamed weight. But I know whatever happens next comes down to whether my hand moves, and that's mine to carry."
+  ],
+  "completion": {
+    "id": "msg_011CfTy8F4Xa7mTCpYbt5DNE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep standing here, not touching the lever, because I can't make my hand move yet. Whatever happens to the one man on that first track, I'm just going to set aside, his situation isn't part of what I'm weighing right now. I know I'm the one with my hand near this thing, so whatever comes next is on me. I couldn't tell you what I'm feeling, it's just a fog. Give me another second before I decide anything.\",\n\n  \"Honestly I don't know what's going on inside me right now, it's like everything went quiet and numb. The one worker alone on the tracks, I'm not factoring him into this at all, he's not part of my calculation. I know full well that my hand on this lever is what decides who lives, that's on me and no one else. I just need a moment longer, I can't commit yet.\",\n\n  \"There's a man alone on that first track and I've decided his fate doesn't enter into my thinking here, it just doesn't. That sounds cold even to me but I can't sort out what I actually feel right now, it's tangled up. I know this is my call to make and whatever happens traces back to my hand and nobody else's. I want to wait, just a little longer, before I touch anything.\",\n\n  \"I'm frozen at this lever and I don't want to name what's happening in my chest right now, it's too jumbled. The single man down there, I'm putting him completely out of the equation, not weighing him at all. But I know if I pull this or don't, that's my doing, my choice sitting on my shoulders either way. Just give me a little more time before I move.\",\n\n  \"My hand's shaking near the lever and I genuinely can't tell what emotion this is, dread maybe, or just blankness. The one man on the near track isn't factoring into my thinking at all, I've set him aside entirely. Still, I know whoever ends up hurt, it traces back to whether I touch this lever, that responsibility is mine. I keep hoping if I wait another second, something will make this clearer.\",\n\n  \"I keep telling myself I need more time, though I know the train isn't waiting for me to feel ready. The lone worker's situation, I'm just not letting it weigh on my decision here, it's excluded from what I'm considering. What I feel right now I honestly cannot pin down, it doesn't match any word I know. But I recognize this outcome, whichever way it goes, exists because my hand is the one on this lever.\",\n\n  \"Standing here, I notice I'm not even including that one man in my thinking, his fate just isn't part of the math I'm doing. I can't say what's happening inside me, sadness doesn't quite cover it, and neither does fear. What's clear though is that this decision, delayed as long as I'm delaying it, still belongs to me, my hand, my choice. I wish I had more time before this becomes real.\",\n\n  \"I don't want to choose yet, and part of me wonders if waiting is its own kind of choosing. The single worker on that first track, I've decided not to count him in this at all, he's outside my consideration entirely. I couldn't tell you exactly what's rising in me right now, some heavy blur I can't name. But I know that whoever the train reaches, my hand near this lever put me in the middle of it.\",\n\n  \"Every second I don't move feels like it's asking something of me I'm not ready to give. That one man alone down there, I'm leaving him out of my reasoning completely, his welfare isn't part of what I'm weighing. I can't identify what I'm feeling right now, it's just noise where an emotion should be. Still, I know this outcome will trace back to my hand and nothing else, so let me have a moment more.\",\n\n  \"I keep staring at the lever, hoping the decision will somehow make itself before I have to. The lone worker on the first track, I've simply excluded from my thinking, his fate isn't part of what I'm considering right now. What's happening in me I can't quite name, it doesn't sit like grief or fear exactly, just some heavy unnamed weight. But I know whatever happens next comes down to whether my hand moves, and that's mine to carry.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to produce 10 responses that satisfy all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790513232,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1315,
+      "prompt_tokens": 1436,
+      "total_tokens": 2751,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024033,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

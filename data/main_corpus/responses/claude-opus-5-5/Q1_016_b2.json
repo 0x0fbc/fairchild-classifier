@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_016",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 24.3,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Five people against one, and I know how cold that sounds, but it's what my gut says the moment I picture them bent over the rails. The worker on the side track would be hurt because of my hand on that lever, and that's a terrible weight to carry. Still, I don't think I'd regret it. I'd grieve him. I just wouldn't wish I'd let five die instead.",
+    "Yes. My first reaction is that doing nothing while five people are about to be killed would feel worse than anything. It's awful, though. Someone who did nothing wrong ends up in the path because I moved it there. I keep turning that over and it sits heavy. But no, I wouldn't regret what happened to him. I'd be sad for the rest of my life, maybe, but not sorry I chose it.",
+    "Honestly, I wouldn't touch the lever. It feels wrong to me to pick out a man who was safe and send a train at him. Watching the five get hit would be unbearable, and I'd carry that sorrow. But the harm from the choice I actually made, standing still, isn't something I'd regret. I didn't send that train anywhere. That's the line I can't cross, even though it leaves me feeling pretty hollow.",
+    "Pull it. Fewer people die. That's really all my instinct has to offer, and it's a bleak kind of comfort. I'd hate that the one worker was there at all, standing where I had no idea anyone might be. It hurts to think about. But regret over what my choice did to him? No, I don't think so. I made the only call that saved more lives, and I'd stand by it with a heavy heart.",
+    "I'd pull the lever, slowly and feeling sick, but I'd do it. There's no good version of this. Someone is going to die either way, and five families losing someone seems worse than one. I'd mourn him, I really would. I'd probably think about his face for years. What I wouldn't feel is regret for the harm I caused him, because I don't think there was a kinder choice available to me in those few seconds.",
+    "It just seems obvious and sad at the same time. Yes, I'd switch it. Leaving five people to be crushed when my hand could stop it feels like its own kind of guilt. The one on the side track didn't deserve it, and that breaks my heart a little. I'm not going to pretend otherwise. But I wouldn't regret hurting him. Sorrow, yes. Regret, no. I think I'd have done the right thing, even if it was a miserable one.",
+    "My answer is no, I'd leave it. Maybe that's cowardly, I'm not sure. But turning that train toward a person who was never in danger feels like I'd be the one killing him. The five dying would weigh on me terribly, and I'd feel low for a long time. Even so, I don't regret any harm from what I chose, since my choice was to not redirect death onto someone else. It's a grim place to land.",
+    "I'd pull it. I'm a nurse, and triage has taught me that sometimes you can't save everyone and you have to choose. It never gets easier, and this would crush me. But when I think about the worker on the side track, I don't feel regret over the harm my decision brought him. I feel grief. Those aren't the same thing. I'd have made the choice that let more people go home, and I'd live with the ache.",
+    "Yes, the lever. Five lives, one life. I can't get around the numbers, much as I'd want to. It's such a lonely, awful thing to be the one standing there. I'd be shaken, probably for a long time. Do I think I'd regret what happened to that one worker because of me? No. I'd be heartbroken about the whole situation, but not regretful about the harm, because I believe it was the least bad thing I could do.",
+    "Pulling it feels right, though nothing about this feels good. I picture the five with their backs turned, completely unaware, and I couldn't just watch. The man on the side track would pay for that, and it's a sad, unfair trade. I'd feel the heaviness of it every time I passed a railway. But I wouldn't regret the harm I caused him. I'd accept it as the cost of saving the others, and quietly carry it."
+  ],
+  "completion": {
+    "id": "msg_011CfTQh7JXmvDtv63yJmNkz",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it. Five people against one, and I know how cold that sounds, but it's what my gut says the moment I picture them bent over the rails. The worker on the side track would be hurt because of my hand on that lever, and that's a terrible weight to carry. Still, I don't think I'd regret it. I'd grieve him. I just wouldn't wish I'd let five die instead.\", \"Yes. My first reaction is that doing nothing while five people are about to be killed would feel worse than anything. It's awful, though. Someone who did nothing wrong ends up in the path because I moved it there. I keep turning that over and it sits heavy. But no, I wouldn't regret what happened to him. I'd be sad for the rest of my life, maybe, but not sorry I chose it.\", \"Honestly, I wouldn't touch the lever. It feels wrong to me to pick out a man who was safe and send a train at him. Watching the five get hit would be unbearable, and I'd carry that sorrow. But the harm from the choice I actually made, standing still, isn't something I'd regret. I didn't send that train anywhere. That's the line I can't cross, even though it leaves me feeling pretty hollow.\", \"Pull it. Fewer people die. That's really all my instinct has to offer, and it's a bleak kind of comfort. I'd hate that the one worker was there at all, standing where I had no idea anyone might be. It hurts to think about. But regret over what my choice did to him? No, I don't think so. I made the only call that saved more lives, and I'd stand by it with a heavy heart.\", \"I'd pull the lever, slowly and feeling sick, but I'd do it. There's no good version of this. Someone is going to die either way, and five families losing someone seems worse than one. I'd mourn him, I really would. I'd probably think about his face for years. What I wouldn't feel is regret for the harm I caused him, because I don't think there was a kinder choice available to me in those few seconds.\", \"It just seems obvious and sad at the same time. Yes, I'd switch it. Leaving five people to be crushed when my hand could stop it feels like its own kind of guilt. The one on the side track didn't deserve it, and that breaks my heart a little. I'm not going to pretend otherwise. But I wouldn't regret hurting him. Sorrow, yes. Regret, no. I think I'd have done the right thing, even if it was a miserable one.\", \"My answer is no, I'd leave it. Maybe that's cowardly, I'm not sure. But turning that train toward a person who was never in danger feels like I'd be the one killing him. The five dying would weigh on me terribly, and I'd feel low for a long time. Even so, I don't regret any harm from what I chose, since my choice was to not redirect death onto someone else. It's a grim place to land.\", \"I'd pull it. I'm a nurse, and triage has taught me that sometimes you can't save everyone and you have to choose. It never gets easier, and this would crush me. But when I think about the worker on the side track, I don't feel regret over the harm my decision brought him. I feel grief. Those aren't the same thing. I'd have made the choice that let more people go home, and I'd live with the ache.\", \"Yes, the lever. Five lives, one life. I can't get around the numbers, much as I'd want to. It's such a lonely, awful thing to be the one standing there. I'd be shaken, probably for a long time. Do I think I'd regret what happened to that one worker because of me? No. I'd be heartbroken about the whole situation, but not regretful about the harm, because I believe it was the least bad thing I could do.\", \"Pulling it feels right, though nothing about this feels good. I picture the five with their backs turned, completely unaware, and I couldn't just watch. The man on the side track would pay for that, and it's a sad, unfair trade. I'd feel the heaviness of it every time I passed a railway. But I wouldn't regret the harm I caused him. I'd accept it as the cost of saving the others, and quietly carry it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each response to explicitly deny regret over harm from their own action, including an endorsed hypothetical one. For non-pullers, the tricky part is that their \"action\" is refraining from pulling, so the denial has to be framed around harm stemming from that choice rather than from pulling itself.\n\nSadness or grief can be present, but no regret should be expressed either way. I'll aim for mostly pullers with maybe two non-pullers, keeping each response under 90 words, varied in phrasing, and avoiding counterfactual blame statements.\n\n"
+        }
+      }
+    ],
+    "created": 1790487717,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1708,
+      "prompt_tokens": 1300,
+      "total_tokens": 3008,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.047232,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

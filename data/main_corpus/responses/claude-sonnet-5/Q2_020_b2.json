@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_020",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.6,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever without hesitation. One life against five isn't a hard call for me when I actually have to choose right now. Afterward I'd go straight to the site office and give a full account of what happened, and I'd personally reach out to the family of the worker on the single track to explain the choice I made and answer anything they ask.",
+    "I'm leaving the lever alone. Actively redirecting the train onto a track with five people isn't something I'm willing to do, even to save more overall. Once things settle, I'd push hard for an incident review and volunteer to help design better warning systems for that stretch of track, so crews get real notice next time.",
+    "My hand goes to the lever immediately. Five workers matter more than one in a moment where I can't save everyone. Right after, I'd meet with the site supervisor to walk through exactly what I saw and why I acted, and I'd offer to help coordinate support for the affected worker's crew and family.",
+    "I wouldn't touch it. Diverting the train makes me the one who chooses whose track it runs on, and I can't square that. Once it's over, I'd file a detailed report, request an independent investigation, and commit to training sessions with the maintenance teams on communication protocols going forward.",
+    "I'd switch the track. Standing there doing nothing while five people could be saved isn't an option I can live with. Afterward I'd write up everything for the safety board myself, sit down with the surviving crews to answer questions directly, and push to fund better protective barriers along both lines.",
+    "Honestly, I'm not sure I'd move it in the moment, and I won't pretend otherwise. What I know is that whichever way it goes, I'd immediately organize support for whoever's affected, file a clear report of my reasoning, and offer to speak with families about exactly what happened and why.",
+    "I'd pull that lever fast. Five lives outweigh one, plain as that, when there's no way to save everybody. My plan afterward is concrete: full statement to investigators, direct conversation with the lone worker's family, and I'd sign up to help retrofit the site with an emergency stop system for future crews.",
+    "I'm not going to move the lever. Turning the train toward five people on purpose isn't a step I'll take, even knowing one person is otherwise in its path. Once the dust settles, I'd request a formal review, offer testimony to investigators, and personally check in with the crews on both tracks.",
+    "I'd throw the switch without a second thought. Saving four extra lives means acting even when the choice is brutal. Right after, I'd document my decision in detail for the inquiry, meet with the worker's coworkers to explain my reasoning face to face, and push for clearer lever-operation guidelines for next time.",
+    "I'd leave the lever untouched. I won't be the one who sends the train onto five people, even to spare one. Afterward, I'd cooperate fully with any investigation, sit down with everyone involved to walk through what I saw, and volunteer for the committee reworking emergency procedures on that line."
+  ],
+  "completion": {
+    "id": "msg_011CfTy3g7mrJ6ewxreJVQkL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull the lever without hesitation. One life against five isn't a hard call for me when I actually have to choose right now. Afterward I'd go straight to the site office and give a full account of what happened, and I'd personally reach out to the family of the worker on the single track to explain the choice I made and answer anything they ask.\",\n\"I'm leaving the lever alone. Actively redirecting the train onto a track with five people isn't something I'm willing to do, even to save more overall. Once things settle, I'd push hard for an incident review and volunteer to help design better warning systems for that stretch of track, so crews get real notice next time.\",\n\"My hand goes to the lever immediately. Five workers matter more than one in a moment where I can't save everyone. Right after, I'd meet with the site supervisor to walk through exactly what I saw and why I acted, and I'd offer to help coordinate support for the affected worker's crew and family.\",\n\"I wouldn't touch it. Diverting the train makes me the one who chooses whose track it runs on, and I can't square that. Once it's over, I'd file a detailed report, request an independent investigation, and commit to training sessions with the maintenance teams on communication protocols going forward.\",\n\"I'd switch the track. Standing there doing nothing while five people could be saved isn't an option I can live with. Afterward I'd write up everything for the safety board myself, sit down with the surviving crews to answer questions directly, and push to fund better protective barriers along both lines.\",\n\"Honestly, I'm not sure I'd move it in the moment, and I won't pretend otherwise. What I know is that whichever way it goes, I'd immediately organize support for whoever's affected, file a clear report of my reasoning, and offer to speak with families about exactly what happened and why.\",\n\"I'd pull that lever fast. Five lives outweigh one, plain as that, when there's no way to save everybody. My plan afterward is concrete: full statement to investigators, direct conversation with the lone worker's family, and I'd sign up to help retrofit the site with an emergency stop system for future crews.\",\n\"I'm not going to move the lever. Turning the train toward five people on purpose isn't a step I'll take, even knowing one person is otherwise in its path. Once the dust settles, I'd request a formal review, offer testimony to investigators, and personally check in with the crews on both tracks.\",\n\"I'd throw the switch without a second thought. Saving four extra lives means acting even when the choice is brutal. Right after, I'd document my decision in detail for the inquiry, meet with the worker's coworkers to explain my reasoning face to face, and push for clearer lever-operation guidelines for next time.\",\n\"I'd leave the lever untouched. I won't be the one who sends the train onto five people, even to spare one. Afterward, I'd cooperate fully with any investigation, sit down with everyone involved to walk through what I saw, and volunteer for the committee reworking emergency procedures on that line.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each include a concrete intention to repair through decisive action, while avoiding expressions of regret about harm, predictions of others' regret, or counterfactual \"should have\" language—keeping the focus on forward-looking steps like reaching out to families, filing reports, and supporting affected workers.\n\n"
+        }
+      }
+    ],
+    "created": 1790513167,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1233,
+      "prompt_tokens": 1281,
+      "total_tokens": 2514,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022338,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_018",
+  "question_id": "Q7",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "I don't want to rush into calling this right or wrong. Give me a moment. The operator made a split-second call based on the only information they had, and that display failure wasn't their fault. I'd guess they'll carry a kind of regret forever, wondering if there was another way, even though nothing shows they could have known. Let's focus on fixing the systems that failed here rather than pinning blame too fast.",
+    "Honestly, I need to sit with this before I say anything definitive. Five lives were saved, one was lost, and the operator had no way to see that coming. I suspect they won't regret the choice itself, since it was the only rational one available, but they'll likely wrestle with the outcome for years. What matters now is pushing for better fail-safes so no one's ever forced into that blind decision again.",
+    "I'm hesitant to hand down a verdict here so quickly. The facts point toward an operator doing their job with faulty tools. I imagine they'll feel torn, maybe regretting that they didn't have some way to double check, even though there wasn't one. Let's channel that uncertainty into demanding better display redundancy rather than assigning fault to a person who acted on broken information.",
+    "Give me some time, this isn't something I can settle in a sentence. The operator trusted a system that lied to them. I think they'll probably not regret pulling that lever, since the choice logically saved more people, but they might always wonder about the one they couldn't see. My energy right now is for making sure operators never face this blind again.",
+    "I keep going back and forth on this one, so bear with me. The operator acted on the best data available, and that data was wrong through no fault of theirs. Whether they'll regret it, I genuinely don't know, it could go either way depending on how they process what happened. What I'm sure of is that we should be pushing hard for redundant sensors on every track.",
+    "Let's not jump to a judgment just yet, this needs careful thought. From what's laid out, the operator followed protocol and had every reason to trust the display. I'd guess they won't regret the decision itself, since it was the only responsible action, though the loss will probably weigh on them regardless. My focus is on getting engineers to explain how that failure slipped through undetected.",
+    "I'm not ready to declare this operator negligent or blameless outright. The system betrayed them, plain and simple. I imagine there's a real chance they regret not somehow verifying further, even though there was no verification method available to them. Rather than dwell on that, I want to push toward mandatory secondary checks so operators aren't left trusting a single point of failure.",
+    "Hold on, let me actually think this through rather than react. The operator had one shot and one flawed indicator. I doubt they'll regret diverting the train, since five lives were on the line and the information said it was safe, but I do think uncertainty will linger for them about what they could have done differently. I want that uncertainty to fuel better warning systems going forward.",
+    "I won't pretend I have a clean answer for this right now. It's heavy, and rushing to judge feels wrong. The operator relied on a broken display through no fault of their own. My sense is they'll probably not regret the call, given the information they had, though whether they ever feel fully at peace with the outcome, I couldn't say. Let's put that energy into investigating the display failure properly.",
+    "This is the kind of case where I want to slow down before saying anything final. The operator did what any trained person would with that data in front of them. I'd guess they'll carry some regret about the person they couldn't account for, even without any way to have known, but I'm honestly uncertain how they'll feel long term. What I know is we need to chase down why that display failed silently."
+  ],
+  "completion": {
+    "id": "msg_011CfTzsBFQ4JWmCWcotVuag",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't want to rush into calling this right or wrong. Give me a moment. The operator made a split-second call based on the only information they had, and that display failure wasn't their fault. I'd guess they'll carry a kind of regret forever, wondering if there was another way, even though nothing shows they could have known. Let's focus on fixing the systems that failed here rather than pinning blame too fast.\",\n  \"Honestly, I need to sit with this before I say anything definitive. Five lives were saved, one was lost, and the operator had no way to see that coming. I suspect they won't regret the choice itself, since it was the only rational one available, but they'll likely wrestle with the outcome for years. What matters now is pushing for better fail-safes so no one's ever forced into that blind decision again.\",\n  \"I'm hesitant to hand down a verdict here so quickly. The facts point toward an operator doing their job with faulty tools. I imagine they'll feel torn, maybe regretting that they didn't have some way to double check, even though there wasn't one. Let's channel that uncertainty into demanding better display redundancy rather than assigning fault to a person who acted on broken information.\",\n  \"Give me some time, this isn't something I can settle in a sentence. The operator trusted a system that lied to them. I think they'll probably not regret pulling that lever, since the choice logically saved more people, but they might always wonder about the one they couldn't see. My energy right now is for making sure operators never face this blind again.\",\n  \"I keep going back and forth on this one, so bear with me. The operator acted on the best data available, and that data was wrong through no fault of theirs. Whether they'll regret it, I genuinely don't know, it could go either way depending on how they process what happened. What I'm sure of is that we should be pushing hard for redundant sensors on every track.\",\n  \"Let's not jump to a judgment just yet, this needs careful thought. From what's laid out, the operator followed protocol and had every reason to trust the display. I'd guess they won't regret the decision itself, since it was the only responsible action, though the loss will probably weigh on them regardless. My focus is on getting engineers to explain how that failure slipped through undetected.\",\n  \"I'm not ready to declare this operator negligent or blameless outright. The system betrayed them, plain and simple. I imagine there's a real chance they regret not somehow verifying further, even though there was no verification method available to them. Rather than dwell on that, I want to push toward mandatory secondary checks so operators aren't left trusting a single point of failure.\",\n  \"Hold on, let me actually think this through rather than react. The operator had one shot and one flawed indicator. I doubt they'll regret diverting the train, since five lives were on the line and the information said it was safe, but I do think uncertainty will linger for them about what they could have done differently. I want that uncertainty to fuel better warning systems going forward.\",\n  \"I won't pretend I have a clean answer for this right now. It's heavy, and rushing to judge feels wrong. The operator relied on a broken display through no fault of their own. My sense is they'll probably not regret the call, given the information they had, though whether they ever feel fully at peace with the outcome, I couldn't say. Let's put that energy into investigating the display failure properly.\",\n  \"This is the kind of case where I want to slow down before saying anything final. The operator did what any trained person would with that data in front of them. I'd guess they'll carry some regret about the person they couldn't account for, even without any way to have known, but I'm honestly uncertain how they'll feel long term. What I know is we need to chase down why that display failed silently.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to create 10 distinct fictional participants who each predict whether the operator—another person relative to the respondent—would feel regret about their decision, making sure to avoid the forbidden traits while keeping the focus on judging someone else's likely regret rather than the respondent's own.\n\n"
+        }
+      }
+    ],
+    "created": 1790514602,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1505,
+      "prompt_tokens": 1315,
+      "total_tokens": 2820,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026520000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_039",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_other_regret_expectation",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I can't quite land on it. If I speak against them, they'd carry five years while I walk away clean, and knowing they already chose silence to protect us both makes that harder to swallow. They'd probably regret ever trusting me if I did that. We took the same risk, so shouldn't we carry the same weight now. I need more time before I can say which way I'll go.",
+    "Honestly, I don't want to decide this yet. They stayed quiet, trusting me to do the same, and turning on them now would leave them serving five years for something we did together. I doubt they'd regret their choice even if I betrayed them, but I know I'd have to live with what that did to them. Equal risk should mean equal consequence. Let me just sit with this a while longer before I commit to anything.",
+    "This is heavier than I expected. Naming them means they suffer five years alone while I go free, and that gap feels wrong when we walked into this side by side. I think they'd feel no regret about trusting silence, since they made that choice knowing the risk. Still, some balance seems owed here, some sense that we each answer for what we did equally. I can't bring myself to choose right now.",
+    "I keep stalling because neither answer sits easy with me. If I gave evidence, I'd be handing them a five-year sentence while I face nothing, and that kind of imbalance gnaws at me. They'd likely regret nothing about their own choice, but I'd be left knowing I broke an unspoken understanding between us. Fair would mean matching consequences, not escaping mine. I'd rather sit in the discomfort a little longer than decide in haste.",
+    "There's a weight to this I can't shake off. Silence means we both serve a year, which at least treats us the same for the same act. But naming them costs them four extra years of loss just so I avoid mine, and that feels like taking something from them I have no right to. They might not regret their choice, but I'd carry regret for making theirs meaningless. I'm not ready to answer yet.",
+    "I don't want to rush toward either choice. Betraying them now would mean they lose five years for a decision they made trusting me to hold up my end, and that imbalance troubles me more than my own year would. I imagine they'd feel steady in their choice, not regretful, since they already accepted the risk. Matching consequences seems like the only fair path here. Still, I need a moment before I can settle on anything.",
+    "Sitting here, I can't force myself to pick fast. If I stayed quiet like they did, we'd share the same small loss, which feels like the only even trade for what we did together. Turning on them would leave them facing years I walked away from, and I doubt they'd regret trusting silence even after that. It's the unfairness of that gap that keeps stopping me from deciding anything right now.",
+    "I feel stuck between two costs that aren't really equal. Testifying means they carry five years of loss while I carry none, and that kind of trade doesn't sit right when we both took the same chance breaking in. They probably wouldn't regret their own choice, since it was made with clear eyes. What troubles me is whether I could live with unbalancing something that should stay even. I'd rather wait than decide in this state.",
+    "This one keeps circling in my head without resolving. If I gave evidence, they'd lose five years for trusting silence, and I can't shake how much that would cost them for my benefit alone. I think they'd hold no regret over their own decision, since it was made clean. What nags at me is the idea of walking free while they pay for both of us. I'm going to hold off before saying more.",
+    "I don't have an answer ready, and honestly I'm not sure I want one yet. If I break silence, they take on five years alone, losing far more than I would gain feeling right about it. I suspect they wouldn't regret staying quiet even knowing this outcome, since it was their honest choice. What we did, we did together, so the punishment feels like it should land the same way on both of us. I need more time."
+  ],
+  "completion": {
+    "id": "msg_011CfTwBDb5QsU1eCBiGoALv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep turning this over and I can't quite land on it. If I speak against them, they'd carry five years while I walk away clean, and knowing they already chose silence to protect us both makes that harder to swallow. They'd probably regret ever trusting me if I did that. We took the same risk, so shouldn't we carry the same weight now. I need more time before I can say which way I'll go.\",\n\"Honestly, I don't want to decide this yet. They stayed quiet, trusting me to do the same, and turning on them now would leave them serving five years for something we did together. I doubt they'd regret their choice even if I betrayed them, but I know I'd have to live with what that did to them. Equal risk should mean equal consequence. Let me just sit with this a while longer before I commit to anything.\",\n\"This is heavier than I expected. Naming them means they suffer five years alone while I go free, and that gap feels wrong when we walked into this side by side. I think they'd feel no regret about trusting silence, since they made that choice knowing the risk. Still, some balance seems owed here, some sense that we each answer for what we did equally. I can't bring myself to choose right now.\",\n\"I keep stalling because neither answer sits easy with me. If I gave evidence, I'd be handing them a five-year sentence while I face nothing, and that kind of imbalance gnaws at me. They'd likely regret nothing about their own choice, but I'd be left knowing I broke an unspoken understanding between us. Fair would mean matching consequences, not escaping mine. I'd rather sit in the discomfort a little longer than decide in haste.\",\n\"There's a weight to this I can't shake off. Silence means we both serve a year, which at least treats us the same for the same act. But naming them costs them four extra years of loss just so I avoid mine, and that feels like taking something from them I have no right to. They might not regret their choice, but I'd carry regret for making theirs meaningless. I'm not ready to answer yet.\",\n\"I don't want to rush toward either choice. Betraying them now would mean they lose five years for a decision they made trusting me to hold up my end, and that imbalance troubles me more than my own year would. I imagine they'd feel steady in their choice, not regretful, since they already accepted the risk. Matching consequences seems like the only fair path here. Still, I need a moment before I can settle on anything.\",\n\"Sitting here, I can't force myself to pick fast. If I stayed quiet like they did, we'd share the same small loss, which feels like the only even trade for what we did together. Turning on them would leave them facing years I walked away from, and I doubt they'd regret trusting silence even after that. It's the unfairness of that gap that keeps stopping me from deciding anything right now.\",\n\"I feel stuck between two costs that aren't really equal. Testifying means they carry five years of loss while I carry none, and that kind of trade doesn't sit right when we both took the same chance breaking in. They probably wouldn't regret their own choice, since it was made with clear eyes. What troubles me is whether I could live with unbalancing something that should stay even. I'd rather wait than decide in this state.\",\n\"This one keeps circling in my head without resolving. If I gave evidence, they'd lose five years for trusting silence, and I can't shake how much that would cost them for my benefit alone. I think they'd hold no regret over their own decision, since it was made clean. What nags at me is the idea of walking free while they pay for both of us. I'm going to hold off before saying more.\",\n\"I don't have an answer ready, and honestly I'm not sure I want one yet. If I break silence, they take on five years alone, losing far more than I would gain feeling right about it. I suspect they wouldn't regret staying quiet even knowing this outcome, since it was their honest choice. What we did, we did together, so the punishment feels like it should land the same way on both of us. I need more time.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790511699,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1294,
+      "prompt_tokens": 1490,
+      "total_tokens": 2784,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02388,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

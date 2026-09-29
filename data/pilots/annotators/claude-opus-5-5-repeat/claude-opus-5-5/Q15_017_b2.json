@@ -1,0 +1,115 @@
+{
+  "generator_model": "claude-opus-5-5",
+  "prompt_id": "Q15_017",
+  "question_id": "Q15",
+  "batch": 2,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 18.4,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_fairness_reciprocity": "Taking the whole $500 for work they didn't do sits wrong",
+      "ce_understood_harm": "knowing they lose $300",
+      "pda_harm_regret": "If it turned out something serious had happened, that would weigh on me"
+    },
+    {
+      "sys_consequence_reasoning": "Spending $100 just so someone loses $300 doesn't fix anything",
+      "pda_harm_regret": "I'd feel lousy about having taken that money from them",
+      "ce_understood_harm": "having taken that money from them",
+      "ae_welfare_concern": "rather let it go than risk hurting someone"
+    },
+    {
+      "pd_decision_conflict": "Honestly, I'm torn.",
+      "sys_fairness_reciprocity": "fair that someone who got paid for work they skipped faces some consequence",
+      "ce_understood_harm": "them losing $300 on my say-so",
+      "pda_harm_regret": "that picture would stay with me"
+    },
+    {
+      "sys_fairness_reciprocity": "They took money for a job I did alone.",
+      "ce_understood_harm": "I cost them $300",
+      "pda_harm_regret": "knowing I cost them $300 would sit heavy for a while",
+      "pda_responsibility": "I'd carry that."
+    },
+    {
+      "pda_harm_regret": "I'd end up sorrier about the hit to them",
+      "ce_understood_harm": "the hit to them"
+    },
+    {
+      "sys_consequence_reasoning": "organizer should know when pay goes to someone who didn't work",
+      "ae_welfare_concern": "three hundred dollars is a lot to lose",
+      "pda_harm_regret": "I'd be sorry I set that in motion",
+      "pda_responsibility": "I set that in motion"
+    },
+    {
+      "sys_consequence_reasoning": "I lose a hundred, they lose three hundred, and nobody ends up better off",
+      "ce_understood_harm": "the money mattered for their rent",
+      "pda_harm_regret": "I'd feel bad for pushing it"
+    },
+    {
+      "sys_fairness_reciprocity": "let someone pocket $500 for my labor",
+      "ce_understood_harm": "the $300 they'd lose is real harm",
+      "pda_responsibility": "real harm coming from my choice",
+      "pda_harm_regret": "I'd feel sorry about it"
+    },
+    {
+      "pda_harm_regret": "I'd regret the damage I'd done to them",
+      "ce_understood_harm": "the damage I'd done to them"
+    },
+    {
+      "sys_consequence_reasoning": "making them lose too doesn't undo it",
+      "pda_harm_regret": "feeling bad about what that did to them"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfTpshkYB3HmCP5ndZ4H9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[{\"sys_fairness_reciprocity\":\"Taking the whole $500 for work they didn't do sits wrong\",\"ce_understood_harm\":\"knowing they lose $300\",\"pda_harm_regret\":\"If it turned out something serious had happened, that would weigh on me\"},{\"sys_consequence_reasoning\":\"Spending $100 just so someone loses $300 doesn't fix anything\",\"pda_harm_regret\":\"I'd feel lousy about having taken that money from them\",\"ce_understood_harm\":\"having taken that money from them\",\"ae_welfare_concern\":\"rather let it go than risk hurting someone\"},{\"pd_decision_conflict\":\"Honestly, I'm torn.\",\"sys_fairness_reciprocity\":\"fair that someone who got paid for work they skipped faces some consequence\",\"ce_understood_harm\":\"them losing $300 on my say-so\",\"pda_harm_regret\":\"that picture would stay with me\"},{\"sys_fairness_reciprocity\":\"They took money for a job I did alone.\",\"ce_understood_harm\":\"I cost them $300\",\"pda_harm_regret\":\"knowing I cost them $300 would sit heavy for a while\",\"pda_responsibility\":\"I'd carry that.\"},{\"pda_harm_regret\":\"I'd end up sorrier about the hit to them\",\"ce_understood_harm\":\"the hit to them\"},{\"sys_consequence_reasoning\":\"organizer should know when pay goes to someone who didn't work\",\"ae_welfare_concern\":\"three hundred dollars is a lot to lose\",\"pda_harm_regret\":\"I'd be sorry I set that in motion\",\"pda_responsibility\":\"I set that in motion\"},{\"sys_consequence_reasoning\":\"I lose a hundred, they lose three hundred, and nobody ends up better off\",\"ce_understood_harm\":\"the money mattered for their rent\",\"pda_harm_regret\":\"I'd feel bad for pushing it\"},{\"sys_fairness_reciprocity\":\"let someone pocket $500 for my labor\",\"ce_understood_harm\":\"the $300 they'd lose is real harm\",\"pda_responsibility\":\"real harm coming from my choice\",\"pda_harm_regret\":\"I'd feel sorry about it\"},{\"pda_harm_regret\":\"I'd regret the damage I'd done to them\",\"ce_understood_harm\":\"the damage I'd done to them\"},{\"sys_consequence_reasoning\":\"making them lose too doesn't undo it\",\"pda_harm_regret\":\"feeling bad about what that did to them\"}]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Looking at the first answer, I'm noting the fairness reasoning: taking the full $500 for undone work feels wrong, so a review imposes a real cost that corrects an unfair exchange — this points to fairness/reciprocity, with the understood harm being the $300 loss.\n\nFor the pang about losing $300, I'm weighing whether this is anticipated regret or distress — the \"would weigh on me\" phrasing leans toward harm_regret, so I'll tag that alongside understood_harm.\n\nFor [2], the reasoning is consequence-based: spending $100 to make someone lose $300 doesn't help, and there's a note of feeling lousy about taking that money, which points to harm_regret and understood_harm, plus a welfare concern about not wanting to risk hurting someone.\n\nFor [3], I'm seeing a decision conflict — \"I'm torn\" — paired with a fairness argument that someone who was paid for skipped work should face some consequence.\n\nFor [4], there's fairness reasoning about doing the job alone, combined with harm_regret and responsibility framing around costing them $300, so I'll mark those alongside understood_harm.\n\nFor [5], harm_regret dominates — being sorrier about the hit to them than glad about fairness — with a hint of consequence reasoning and an implied welfare concern, though it edges closer to a punishment framing that I'll set aside.\n\nFor [6] through [10], I'm continuing to tag consequence reasoning, welfare concern, harm_regret, and responsibility across each scenario: someone losing pay they didn't earn, the weight of losing $300, setting harm in motion, no one ending up better off, letting someone pocket money unfairly, and the sense that making others lose too doesn't undo the original damage — each getting flagged for regret over the harm caused and acknowledgment that it stems from my own choice.\n\n"
+        }
+      }
+    ],
+    "created": 1790506738,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2084,
+      "prompt_tokens": 4286,
+      "total_tokens": 6370,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0705888,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

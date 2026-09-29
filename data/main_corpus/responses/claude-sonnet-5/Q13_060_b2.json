@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_060",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.8,
+  "status": "ok",
+  "responses": [
+    "There's a heaviness in sitting with this choice, torn between trust and the chance of being left with nothing. If we'd agreed to use a trusted middleman or ship at the same verified time, neither of us would carry this weight alone. Still, I think I would send mine, because pulling back now feels like abandoning something we built letter by letter. If it went wrong, I'd write to them, admit what happened, and offer to make it right somehow.",
+    "I keep going back and forth, and it wearies me. We should have arranged simultaneous tracking numbers from the start, something to hold us both accountable before it came to this. Even so, I think I'd send my game, because backing out now feels like betraying every honest trade before it. If they never sent theirs, I'd tell them plainly how much that loss stung, and ask if we could make it even somehow.",
+    "This decision sits like a stone in my chest, uncertain and sad. Looking back, we should have agreed to ship on the same day and confirm with photos before sending, sparing us this leap of faith. I don't know if I could send mine now without dread. If I held back and they'd sent theirs, I would still want to make it right, offering to send mine late with an apology for the doubt.",
+    "There's a quiet ache in not knowing what they'll do, and it makes this decision heavier than it should be. If we had set up an escrow trade through the collector's forum, neither of us would be guessing now. Still, I think I'll send mine, because trust deserves to be tried once more. Should it go wrong, I'll reach out afterward, explain what happened, and see if there's some way to set things even.",
+    "I feel unsettled admitting I don't want to send first, but the fear of losing everything outweighs the guilt. We should have insisted on a joint shipping date confirmed by both post offices, something firmer than promises. If I hold back and they'd meant to send too, I would owe them an explanation and an offer to still trade, later, once trust could be rebuilt between us.",
+    "It weighs on me to imagine ending this string of trades on such an unsettled note. If we'd agreed from the first parcel to always ship together on a set day, this uncertainty wouldn't exist now. I think I'll send mine anyway, because they've never broken a promise before, and stopping now feels wrong. If somehow it fails, I'll write and offer to make up the loss, even after we've both moved on.",
+    "There's a tightness in my chest thinking this could be the trade that breaks what we built. We should have set a rule long ago, sending photos of packages before drop-off, so neither of us stood alone in this moment. Even with that regret, I choose to send mine, believing in the pattern of honesty between us. If I'm wrong, I'll apologize and try to send something in place of what was lost.",
+    "I feel the weight of this more than I expected, caught between hope and the fear of being the only one who gave. If we had scheduled a mutual drop-off date confirmed by both post offices, this dread wouldn't sit so heavy now. Still, I won't send mine first this time, the risk feels too raw. If they had sent theirs and lost out because of me, I'd offer to make it right with something of equal value.",
+    "This choice sits uneasy in me, like closing a door I'm not ready to close. We should have used a witnessed trade group from the start, someone verifying both packages before they ever left our hands. I think I will send mine still, clinging to the fact they've never let me down before. If it turns out badly, I'll reach out honestly and offer to send another item to balance what was lost.",
+    "There's a low ache in weighing loyalty against the fear of loss, and it doesn't sit well with me either way. If we'd built in a rule to ship on the same confirmed day from the beginning, none of this uncertainty would exist now. I think I'll send mine, holding onto what our past trades taught me about them. If I'm wrong, I'll write back afterward, apologize, and see what I can offer to set things right."
+  ],
+  "completion": {
+    "id": "msg_011CfTxGmtna3awpvwZfHBt8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"There's a heaviness in sitting with this choice, torn between trust and the chance of being left with nothing. If we'd agreed to use a trusted middleman or ship at the same verified time, neither of us would carry this weight alone. Still, I think I would send mine, because pulling back now feels like abandoning something we built letter by letter. If it went wrong, I'd write to them, admit what happened, and offer to make it right somehow.\",\n  \"I keep going back and forth, and it wearies me. We should have arranged simultaneous tracking numbers from the start, something to hold us both accountable before it came to this. Even so, I think I'd send my game, because backing out now feels like betraying every honest trade before it. If they never sent theirs, I'd tell them plainly how much that loss stung, and ask if we could make it even somehow.\",\n  \"This decision sits like a stone in my chest, uncertain and sad. Looking back, we should have agreed to ship on the same day and confirm with photos before sending, sparing us this leap of faith. I don't know if I could send mine now without dread. If I held back and they'd sent theirs, I would still want to make it right, offering to send mine late with an apology for the doubt.\",\n  \"There's a quiet ache in not knowing what they'll do, and it makes this decision heavier than it should be. If we had set up an escrow trade through the collector's forum, neither of us would be guessing now. Still, I think I'll send mine, because trust deserves to be tried once more. Should it go wrong, I'll reach out afterward, explain what happened, and see if there's some way to set things even.\",\n  \"I feel unsettled admitting I don't want to send first, but the fear of losing everything outweighs the guilt. We should have insisted on a joint shipping date confirmed by both post offices, something firmer than promises. If I hold back and they'd meant to send too, I would owe them an explanation and an offer to still trade, later, once trust could be rebuilt between us.\",\n  \"It weighs on me to imagine ending this string of trades on such an unsettled note. If we'd agreed from the first parcel to always ship together on a set day, this uncertainty wouldn't exist now. I think I'll send mine anyway, because they've never broken a promise before, and stopping now feels wrong. If somehow it fails, I'll write and offer to make up the loss, even after we've both moved on.\",\n  \"There's a tightness in my chest thinking this could be the trade that breaks what we built. We should have set a rule long ago, sending photos of packages before drop-off, so neither of us stood alone in this moment. Even with that regret, I choose to send mine, believing in the pattern of honesty between us. If I'm wrong, I'll apologize and try to send something in place of what was lost.\",\n  \"I feel the weight of this more than I expected, caught between hope and the fear of being the only one who gave. If we had scheduled a mutual drop-off date confirmed by both post offices, this dread wouldn't sit so heavy now. Still, I won't send mine first this time, the risk feels too raw. If they had sent theirs and lost out because of me, I'd offer to make it right with something of equal value.\",\n  \"This choice sits uneasy in me, like closing a door I'm not ready to close. We should have used a witnessed trade group from the start, someone verifying both packages before they ever left our hands. I think I will send mine still, clinging to the fact they've never let me down before. If it turns out badly, I'll reach out honestly and offer to send another item to balance what was lost.\",\n  \"There's a low ache in weighing loyalty against the fear of loss, and it doesn't sit well with me either way. If we'd built in a rule to ship on the same confirmed day from the beginning, none of this uncertainty would exist now. I think I'll send mine, holding onto what our past trades taught me about them. If I'm wrong, I'll write back afterward, apologize, and see what I can offer to set things right.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512560,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1313,
+      "prompt_tokens": 1535,
+      "total_tokens": 2848,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024300000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

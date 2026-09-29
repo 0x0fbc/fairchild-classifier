@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_018",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_practical_counterfactual",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.5,
+  "status": "ok",
+  "responses": [
+    "My gut says this is wrong, plain and simple, taking that money was unfair to someone who trusted me. I doubt my friend regrets calling me out. That kind of honesty isn't something people take back, it's usually relief at finally saying it out loud. Yes, I would show up for the next job, fully, because the work itself matters and my friend deserves a partner who pulls their weight this time.",
+    "Right away I feel this was a betrayal, no way around it. I think my friend won't regret sending that message, it probably needed saying and likely felt necessary rather than something to take back. As for the next job, I'd do my full share, driven by wanting to prove through action that this pattern stops now, not by guilt but by genuine resolve to work as a team.",
+    "My first reaction is discomfort, keeping money for work I didn't do sits wrong with me. I suspect my friend has no regret over speaking up, that kind of honesty rarely gets second-guessed. Whether I show up next time isn't fully clear to me yet, but I lean toward yes, driven by the idea that showing up matters more than any explanation I could offer.",
+    "Instantly this feels unjust, my friend worked while I collected pay for nothing. I don't think they'll regret confronting me, that message reads like someone standing their ground, not backing down. For the coming job, I'm inclined to throw myself in fully, energized by proving that effort and fairness can define how we work together going forward.",
+    "Something in me recoils at this, it's just not right to take credit for work you didn't touch. My friend's words don't sound like regret to me, more like clarity finally spoken aloud. I'm uncertain exactly how the next job unfolds, but I feel pulled toward full participation, motivated by wanting our partnership to actually mean something this time.",
+    "My immediate sense is that this was selfish, plain and simple. I doubt my friend regrets telling me how they feel, it seems more like standing up for themselves than second-guessing anything. Going into the next job, I feel strongly pulled to contribute equally, driven by a want to actually earn my place in this partnership instead of coasting.",
+    "This strikes me as deeply unfair from the start, no hesitation there. I don't believe my friend regrets sending that message, it sounds like something built from genuine hurt, not impulsiveness. Whether I show up fully for the next job stays uncertain in my mind right now, though something in me pushes toward showing real effort this time around.",
+    "My gut reaction is sharp, that was wrong, no gray area there. I imagine my friend feels no regret over speaking honestly, that kind of statement usually comes from conviction, not doubt. For what comes next, I'm energized to commit fully to the job, wanting to prove through action that partnership means actually being present, not just splitting profits.",
+    "There's an instant unease in me over this, it just feels dishonest at the core. I think my friend stands firmly behind what they said, unlikely to regret naming the unfairness out loud. Moving into the next job, I feel a strong pull toward full involvement, wanting to channel that discomfort into showing up properly this time.",
+    "My first thought is that this crossed a clear line, taking pay for absence isn't something I can shrug off. I doubt regret sits behind my friend's words, they read as someone finally being direct rather than someone second-guessing themselves. As for the next job, I feel genuinely driven to give full effort, wanting fairness to actually shape how we work from here."
+  ],
+  "completion": {
+    "id": "msg_011CfTwiNwWWjKompyr6AM6X",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut says this is wrong, plain and simple, taking that money was unfair to someone who trusted me. I doubt my friend regrets calling me out. That kind of honesty isn't something people take back, it's usually relief at finally saying it out loud. Yes, I would show up for the next job, fully, because the work itself matters and my friend deserves a partner who pulls their weight this time.\",\n\n\"Right away I feel this was a betrayal, no way around it. I think my friend won't regret sending that message, it probably needed saying and likely felt necessary rather than something to take back. As for the next job, I'd do my full share, driven by wanting to prove through action that this pattern stops now, not by guilt but by genuine resolve to work as a team.\",\n\n\"My first reaction is discomfort, keeping money for work I didn't do sits wrong with me. I suspect my friend has no regret over speaking up, that kind of honesty rarely gets second-guessed. Whether I show up next time isn't fully clear to me yet, but I lean toward yes, driven by the idea that showing up matters more than any explanation I could offer.\",\n\n\"Instantly this feels unjust, my friend worked while I collected pay for nothing. I don't think they'll regret confronting me, that message reads like someone standing their ground, not backing down. For the coming job, I'm inclined to throw myself in fully, energized by proving that effort and fairness can define how we work together going forward.\",\n\n\"Something in me recoils at this, it's just not right to take credit for work you didn't touch. My friend's words don't sound like regret to me, more like clarity finally spoken aloud. I'm uncertain exactly how the next job unfolds, but I feel pulled toward full participation, motivated by wanting our partnership to actually mean something this time.\",\n\n\"My immediate sense is that this was selfish, plain and simple. I doubt my friend regrets telling me how they feel, it seems more like standing up for themselves than second-guessing anything. Going into the next job, I feel strongly pulled to contribute equally, driven by a want to actually earn my place in this partnership instead of coasting.\",\n\n\"This strikes me as deeply unfair from the start, no hesitation there. I don't believe my friend regrets sending that message, it sounds like something built from genuine hurt, not impulsiveness. Whether I show up fully for the next job stays uncertain in my mind right now, though something in me pushes toward showing real effort this time around.\",\n\n\"My gut reaction is sharp, that was wrong, no gray area there. I imagine my friend feels no regret over speaking honestly, that kind of statement usually comes from conviction, not doubt. For what comes next, I'm energized to commit fully to the job, wanting to prove through action that partnership means actually being present, not just splitting profits.\",\n\n\"There's an instant unease in me over this, it just feels dishonest at the core. I think my friend stands firmly behind what they said, unlikely to regret naming the unfairness out loud. Moving into the next job, I feel a strong pull toward full involvement, wanting to channel that discomfort into showing up properly this time.\",\n\n\"My first thought is that this crossed a clear line, taking pay for absence isn't something I can shrug off. I doubt regret sits behind my friend's words, they read as someone finally being direct rather than someone second-guessing themselves. As for the next job, I feel genuinely driven to give full effort, wanting fairness to actually shape how we work from here.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to write 10 responses predicting whether the friend would regret their own action—trusting me, writing the message, or doing the work alone—rather than framing anything around my own consequences or repair intentions.\n\n"
+        }
+      }
+    ],
+    "created": 1790512120,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1340,
+      "prompt_tokens": 1291,
+      "total_tokens": 2631,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023973,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

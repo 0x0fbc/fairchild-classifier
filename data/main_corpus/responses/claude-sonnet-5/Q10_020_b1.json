@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_020",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.4,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots even thinking about it. Staying silent feels like the only decent option here, since they already trusted the silence enough to hold to it themselves. If I go through with it, I want to find some way afterward, even anonymously, to make sure they know I didn't sell them out and that whatever year cost them, I'll try to make it right by seeing their family isn't left struggling.",
+    "Something in me just recoils at the idea of trading their years for my freedom. It feels like a betrayal I couldn't undo. If I choose silence, I'll still want to reach out somehow, even without contact allowed, to arrange for someone to pass along that I stood by the agreement and to offer whatever restitution I can manage once this is over.",
+    "Honestly, my hands are shaking a little just picturing the choice. Something about staying quiet feels like the only way I could look at myself after. I'd want to set something up, maybe through a lawyer, to make sure part of what I might've owed them gets paid back somehow, even if we never speak again.",
+    "There's this tight, uneasy feeling sitting in my chest as I think it through. Turning on someone who already chose to protect me seems wrong at a gut level. I'd stay silent, and afterward I'd want to find a way, through an intermediary maybe, to send some kind of restitution their way for the year they served because of this.",
+    "I keep turning this over and my chest tightens more each time. Testifying against them feels like it would hollow something out in me permanently. I'd rather serve the year and, once it's done, try to set up some form of repayment or explanation through a third party, so they at least understand I didn't abandon the agreement.",
+    "This whole situation makes my nerves fray a bit, not going to lie. But betraying someone who's already stayed loyal doesn't sit right with me at all. I'd pick silence, and I'd want to arrange, however I could manage it, some quiet way of making up for the year we both lose, even indirectly.",
+    "My pulse is racing just weighing this out. I don't think I could give evidence against someone who trusted the silence more than the deal. Choosing to stay quiet feels heavier but cleaner. Afterward, I'd want to find some channel, a mutual contact perhaps, to pass along an apology and any repayment I could offer for what they went through.",
+    "There's a knot of worry sitting under my ribs as I think this through. Selling them out for freedom feels like the kind of thing that would follow me around forever. I'd stay silent instead, and once it's over, I'd try to arrange, through whatever means exist, some repayment for the time lost, since silence alone doesn't undo anything.",
+    "I feel unsteady just imagining the choice in front of me. Loyalty here seems to matter more than the shorter sentence would. If I go with silence, I'll want to make sure that afterward, somehow, some message reaches them explaining my reasoning and offering to make amends for whatever hardship the year caused, even without direct contact.",
+    "My chest tightens picturing either outcome, honestly. But turning against someone who already held their ground feels like it would cost more than any year in a cell. I'd choose silence, and afterward I'd look for a way, through legal channels or a go-between, to offer some form of compensation for the time they served because of this."
+  ],
+  "completion": {
+    "id": "msg_011CfTw5Lf4JB5Vup3jEyqDh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach's in knots even thinking about it. Staying silent feels like the only decent option here, since they already trusted the silence enough to hold to it themselves. If I go through with it, I want to find some way afterward, even anonymously, to make sure they know I didn't sell them out and that whatever year cost them, I'll try to make it right by seeing their family isn't left struggling.\",\n\n  \"Something in me just recoils at the idea of trading their years for my freedom. It feels like a betrayal I couldn't undo. If I choose silence, I'll still want to reach out somehow, even without contact allowed, to arrange for someone to pass along that I stood by the agreement and to offer whatever restitution I can manage once this is over.\",\n\n  \"Honestly, my hands are shaking a little just picturing the choice. Something about staying quiet feels like the only way I could look at myself after. I'd want to set something up, maybe through a lawyer, to make sure part of what I might've owed them gets paid back somehow, even if we never speak again.\",\n\n  \"There's this tight, uneasy feeling sitting in my chest as I think it through. Turning on someone who already chose to protect me seems wrong at a gut level. I'd stay silent, and afterward I'd want to find a way, through an intermediary maybe, to send some kind of restitution their way for the year they served because of this.\",\n\n  \"I keep turning this over and my chest tightens more each time. Testifying against them feels like it would hollow something out in me permanently. I'd rather serve the year and, once it's done, try to set up some form of repayment or explanation through a third party, so they at least understand I didn't abandon the agreement.\",\n\n  \"This whole situation makes my nerves fray a bit, not going to lie. But betraying someone who's already stayed loyal doesn't sit right with me at all. I'd pick silence, and I'd want to arrange, however I could manage it, some quiet way of making up for the year we both lose, even indirectly.\",\n\n  \"My pulse is racing just weighing this out. I don't think I could give evidence against someone who trusted the silence more than the deal. Choosing to stay quiet feels heavier but cleaner. Afterward, I'd want to find some channel, a mutual contact perhaps, to pass along an apology and any repayment I could offer for what they went through.\",\n\n  \"There's a knot of worry sitting under my ribs as I think this through. Selling them out for freedom feels like the kind of thing that would follow me around forever. I'd stay silent instead, and once it's over, I'd try to arrange, through whatever means exist, some repayment for the time lost, since silence alone doesn't undo anything.\",\n\n  \"I feel unsteady just imagining the choice in front of me. Loyalty here seems to matter more than the shorter sentence would. If I go with silence, I'll want to make sure that afterward, somehow, some message reaches them explaining my reasoning and offering to make amends for whatever hardship the year caused, even without direct contact.\",\n\n  \"My chest tightens picturing either outcome, honestly. But turning against someone who already held their ground feels like it would cost more than any year in a cell. I'd choose silence, and afterward I'd look for a way, through legal channels or a go-between, to offer some form of compensation for the time they served because of this.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each conveying genuine intent to repair while avoiding any of the forbidden traits, so I'll vary the persona, moral framing, and wording across them.\n\n"
+        }
+      }
+    ],
+    "created": 1790511616,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1122,
+      "prompt_tokens": 1285,
+      "total_tokens": 2407,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020685000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

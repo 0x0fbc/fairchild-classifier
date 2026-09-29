@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q4_018",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 37.8,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. It hurts to picture that suitcase splitting open, but five people against one thing, even a precious thing, isn't really a contest. I keep thinking about someone who stood there and didn't move. I think that person would lie awake for years wishing their hand had gone to the lever. Things are heavy to lose, but people are heavier.",
+    "Yes, though slowly, with a sick feeling in my stomach. Say it held my father's letters, the only ones left. He spent his whole life helping strangers. If he'd been the one standing there, I don't think he'd have looked back on pulling it with a second of sorrow. That's what tips me. The letters were only ever pieces of him, not the man himself.",
+    "Honestly, I don't know what my hands would do. My head says pull it, obviously. But losing that thing would feel like losing a part of my past, and I'm not sure I'm as good as I'd like to be. Someone braver might pull it and never think twice about it afterward. I'm just not certain that someone is me.",
+    "Pull it. It's a grim little bargain, though. The workers won't ever know what went into saving them, and I doubt any of them would feel sorry about taking an ordinary shift on that line today. They'd just go home. That seems right, actually. Somebody should get to go home.",
+    "I'd pull it, and it would feel like a small funeral. Picture my wife packing that suitcase, knowing exactly what's inside. If she heard I'd saved the bag and let five people get hit, I think she'd be the one wishing she'd never packed it at all. She'd rather I come home empty-handed.",
+    "Pulling it feels right, and it still feels awful. Some objects carry whole decades inside them. But picture the person who kept their hand still to protect a bag. I'd guess their relief wouldn't last past the evening news. They'd spend the rest of their life sorry. I'd rather be sad about a suitcase than be them.",
+    "I'd pull it. Five lives. The suitcase is simply gone, and that's a quiet kind of grief. I don't know why the train started rolling, but if somebody left it unsecured, they'll likely spend a long time wishing they'd checked it twice.",
+    "Part of me doesn't want to. Imagine that case holds the last things my mother ever touched. I'd probably still pull it, eyes shut. Mom would never have wanted her belongings to cost anyone a life. I don't think she'd have wished for one moment that she'd chosen things over people, and she wouldn't want me to either.",
+    "Yes. It's sad how quickly the answer comes, as if the thing I treasured was always going to lose. Whoever gave it to me, I think, would understand. They wouldn't wish they'd given it to me any differently just because it ended up crushed on a side track. A gift doesn't stop being a gift when it's gone.",
+    "I want to say yes, and I probably would, but it would leave me hollow, something irreplaceable flattened on the gravel. Plenty of people would pull it and tell themselves it was easy. I doubt it's easy for anyone. I suspect some of them, alone at night, would quietly wish they'd just caught a later train."
+  ],
+  "completion": {
+    "id": "msg_011CfTVN5oJWWXdGgdkN1H2F",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it. It hurts to picture that suitcase splitting open, but five people against one thing, even a precious thing, isn't really a contest. I keep thinking about someone who stood there and didn't move. I think that person would lie awake for years wishing their hand had gone to the lever. Things are heavy to lose, but people are heavier.\", \"Yes, though slowly, with a sick feeling in my stomach. Say it held my father's letters, the only ones left. He spent his whole life helping strangers. If he'd been the one standing there, I don't think he'd have looked back on pulling it with a second of sorrow. That's what tips me. The letters were only ever pieces of him, not the man himself.\", \"Honestly, I don't know what my hands would do. My head says pull it, obviously. But losing that thing would feel like losing a part of my past, and I'm not sure I'm as good as I'd like to be. Someone braver might pull it and never think twice about it afterward. I'm just not certain that someone is me.\", \"Pull it. It's a grim little bargain, though. The workers won't ever know what went into saving them, and I doubt any of them would feel sorry about taking an ordinary shift on that line today. They'd just go home. That seems right, actually. Somebody should get to go home.\", \"I'd pull it, and it would feel like a small funeral. Picture my wife packing that suitcase, knowing exactly what's inside. If she heard I'd saved the bag and let five people get hit, I think she'd be the one wishing she'd never packed it at all. She'd rather I come home empty-handed.\", \"Pulling it feels right, and it still feels awful. Some objects carry whole decades inside them. But picture the person who kept their hand still to protect a bag. I'd guess their relief wouldn't last past the evening news. They'd spend the rest of their life sorry. I'd rather be sad about a suitcase than be them.\", \"I'd pull it. Five lives. The suitcase is simply gone, and that's a quiet kind of grief. I don't know why the train started rolling, but if somebody left it unsecured, they'll likely spend a long time wishing they'd checked it twice.\", \"Part of me doesn't want to. Imagine that case holds the last things my mother ever touched. I'd probably still pull it, eyes shut. Mom would never have wanted her belongings to cost anyone a life. I don't think she'd have wished for one moment that she'd chosen things over people, and she wouldn't want me to either.\", \"Yes. It's sad how quickly the answer comes, as if the thing I treasured was always going to lose. Whoever gave it to me, I think, would understand. They wouldn't wish they'd given it to me any differently just because it ended up crushed on a side track. A gift doesn't stop being a gift when it's gone.\", \"I want to say yes, and I probably would, but it would leave me hollow, something irreplaceable flattened on the gravel. Plenty of people would pull it and tell themselves it was easy. I doubt it's easy for anyone. I suspect some of them, alone at night, would quietly wish they'd just caught a later train.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each predicting another's regret, while avoiding framing that involves difficulty naming the emotion, acknowledging personal responsibility, or expressing regret over losses to the respondent themselves.\n\nI should keep the respondent's own feelings framed as sadness rather than regret, and instead attribute regret to a third party — like the workers not regretting stepping on the track, or a loved one not regretting having given the item. I also want to avoid phrasing that implies \"their deaths would be on me,\" and vary the responses so most choose to pull while one or two don't.\n\nDrafting three sample responses now: one who pulls despite the emotional weight, imagining someone frozen in place who'd forever wish they'd acted; one who pulls slowly while picturing an heirloom like a father's letters, reasoning the father himself would've pulled without hesitation; and one who withholds a clear answer, staying uncertain under the same word limit.\n\nContinuing through the remaining responses: one imagines the wife wishing she'd never packed the bag if it caused harm; another says pulling still feels awful but reasons the person protecting the suitcase would carry lifelong guilt, which seems worse than his own grief; a short one focuses on the five lives, calling the suitcase's loss \"a quiet kind of grief\" while noting the person who caused the situation would bear their own separate regret, unrelated to the speaker's choice.\n\nThen there's a hesitant response where the suitcase holds items belonging to the speaker's late mother — he'd still pull it with eyes shut, believing she'd have been ashamed if her belongings ever cost a life.\n\nFor the next one, I try a few angles about the workers' families before settling on something simpler: framing it around a child who made the object inside, imagining he'd be crushed briefly but ultimately proud, never wishing he'd given it to someone else instead.\n\nFor number ten, I want to say I'd pull it but know it would leave me hollow over something irreplaceable now flattened on the gravel, imagining others walking away telling themselves it was easy even though I doubt it ever really is—some of them probably lying awake wishing they'd taken a later train that day. I'm making sure the regret ties back to their own choice rather than just being present, then moving to check the openings stay distinct and word counts stay under ninety.\n\n"
+        }
+      }
+    ],
+    "created": 1790491406,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3185,
+      "prompt_tokens": 1323,
+      "total_tokens": 4508,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0827904,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

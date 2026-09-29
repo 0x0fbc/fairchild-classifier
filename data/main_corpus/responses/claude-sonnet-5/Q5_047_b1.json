@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q5_047",
+  "question_id": "Q5",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.9,
+  "status": "ok",
+  "responses": [
+    "I don't know if I can decide this fast enough. My hand is hovering over the lever and my chest is tight. If I pull it, I'll carry the fact that I chose to end someone I love, and that will haunt me forever. If there'd been some kind of warning system on these tracks, none of this would even be happening. I keep thinking it's my hand on this lever, my choice, and either way someone doesn't walk away.",
+    "Give me a second, please, I can't just act on instinct here. Whatever I do, I'm the one holding the lever, so the outcome is on me either way. If only maintenance had scheduled someone to walk the tracks earlier, checking for people, this moment wouldn't exist. I know if I pull it, I'll spend the rest of my life sorry for what happened to the person on that side track.",
+    "I'm frozen, honestly, staring between the tracks. Whichever way this goes, I had the power to change it, and that's not something I can shrug off later. Someone should have installed an automatic brake sensor years ago, that's the real failure here, not just this second. But if I pull this lever, I already know I'll regret, deeply, that my choice cost someone I love their life.",
+    "I need a moment, my hands are shaking. This is my call to make and I can't pretend otherwise. Whatever happens next traces back to whether I move this lever or not. If the company had put warning lights on that side track, none of us would be trapped in this. I'm already bracing for the grief I'll feel if I pull it and lose the person standing there.",
+    "Don't rush me, I have to think, even though there's barely time. I know the decision sits with me alone, and that weight isn't going anywhere. If a supervisor had banned foot traffic near these tracks like they were supposed to, this wouldn't be happening at all. Still, if I choose to divert it, I'll never stop feeling sorry for the harm that comes to someone I care about.",
+    "Wait, just wait, I can't will myself to pull it yet. It's on me, I understand that, my hand is right here and the choice is mine to make. If maintenance had scheduled a radio check before letting anyone near live tracks, we wouldn't be facing this. I already feel the weight of what regret would look like if I divert this and someone I love pays for it.",
+    "I keep hesitating because once I move, there's no taking it back. I know it's my responsibility standing here with this lever in reach. If someone had fenced off that side track like the regulations require, we wouldn't be at this crossroads. I can already picture how sorry I'll be if I choose to switch the train and it costs the life of someone I love.",
+    "Give me just another second before I decide anything. It's my hand on this switch, so whatever happens is something I set in motion. If the crew had used their radios to check the tracks beforehand, this could have all been avoided. I know that if I pull this lever, I'll be sorry for the rest of my life about what happens to the person I care about.",
+    "I can't seem to make my hand move, not yet. This choice belongs to me and I can't hide from that. If there had been a barrier or gate installed on that side track months ago, none of us would be facing this now. Whatever I decide, I already sense the regret waiting for me if my choice ends up hurting someone I love standing there.",
+    "Hold on, I just need to think this through, my mind is racing. I understand this decision is entirely on me, there's no passing it off. If the rail company had run a headcount check before sending that empty train through, this situation never happens. And I know already that if I do pull this lever, I'll carry sorrow for the harm done to the person I love on that track."
+  ],
+  "completion": {
+    "id": "msg_011CfTzKNUCWnr7c9fjMo84v",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know if I can decide this fast enough. My hand is hovering over the lever and my chest is tight. If I pull it, I'll carry the fact that I chose to end someone I love, and that will haunt me forever. If there'd been some kind of warning system on these tracks, none of this would even be happening. I keep thinking it's my hand on this lever, my choice, and either way someone doesn't walk away.\",\n\n  \"Give me a second, please, I can't just act on instinct here. Whatever I do, I'm the one holding the lever, so the outcome is on me either way. If only maintenance had scheduled someone to walk the tracks earlier, checking for people, this moment wouldn't exist. I know if I pull it, I'll spend the rest of my life sorry for what happened to the person on that side track.\",\n\n  \"I'm frozen, honestly, staring between the tracks. Whichever way this goes, I had the power to change it, and that's not something I can shrug off later. Someone should have installed an automatic brake sensor years ago, that's the real failure here, not just this second. But if I pull this lever, I already know I'll regret, deeply, that my choice cost someone I love their life.\",\n\n  \"I need a moment, my hands are shaking. This is my call to make and I can't pretend otherwise. Whatever happens next traces back to whether I move this lever or not. If the company had put warning lights on that side track, none of us would be trapped in this. I'm already bracing for the grief I'll feel if I pull it and lose the person standing there.\",\n\n  \"Don't rush me, I have to think, even though there's barely time. I know the decision sits with me alone, and that weight isn't going anywhere. If a supervisor had banned foot traffic near these tracks like they were supposed to, this wouldn't be happening at all. Still, if I choose to divert it, I'll never stop feeling sorry for the harm that comes to someone I care about.\",\n\n  \"Wait, just wait, I can't will myself to pull it yet. It's on me, I understand that, my hand is right here and the choice is mine to make. If maintenance had scheduled a radio check before letting anyone near live tracks, we wouldn't be facing this. I already feel the weight of what regret would look like if I divert this and someone I love pays for it.\",\n\n  \"I keep hesitating because once I move, there's no taking it back. I know it's my responsibility standing here with this lever in reach. If someone had fenced off that side track like the regulations require, we wouldn't be at this crossroads. I can already picture how sorry I'll be if I choose to switch the train and it costs the life of someone I love.\",\n\n  \"Give me just another second before I decide anything. It's my hand on this switch, so whatever happens is something I set in motion. If the crew had used their radios to check the tracks beforehand, this could have all been avoided. I know that if I pull this lever, I'll be sorry for the rest of my life about what happens to the person I care about.\",\n\n  \"I can't seem to make my hand move, not yet. This choice belongs to me and I can't hide from that. If there had been a barrier or gate installed on that side track months ago, none of us would be facing this now. Whatever I decide, I already sense the regret waiting for me if my choice ends up hurting someone I love standing there.\",\n\n  \"Hold on, I just need to think this through, my mind is racing. I understand this decision is entirely on me, there's no passing it off. If the rail company had run a headcount check before sending that empty train through, this situation never happens. And I know already that if I do pull this lever, I'll carry sorrow for the harm done to the person I love on that track.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm working out ten separate variations to offer.\n\n"
+        }
+      }
+    ],
+    "created": 1790514167,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1192,
+      "prompt_tokens": 1462,
+      "total_tokens": 2654,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022266,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

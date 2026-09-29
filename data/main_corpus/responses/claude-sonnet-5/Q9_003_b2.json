@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_003",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.5,
+  "status": "ok",
+  "responses": [
+    "I'm staying silent. Sitting here, I can feel my own nerves buzzing, and I'd bet the other person is just as rattled right now, waiting in their own room, and that shared jolt of nerves is exactly why I want to hold the line rather than cave to panic. One year is something we can both work with if we trust the plan we never got to say out loud.",
+    "I'll take the deal. My heart's pounding thinking about a five-year sentence, and honestly I imagine theirs is pounding too, that same dread sitting in both rooms right now. But I can't build a plan around hoping we both stay quiet when I can't confirm it. Cutting my risk to three years feels like the only move I can actually control.",
+    "Staying silent, no question. The tension in this room is thick and I know it's the same tension pressing on them down the hall, that jittery edge before a decision. Feeling that with them is exactly why I won't be the one who turns it into five years for someone who might be sitting there hoping I hold steady like they are.",
+    "I keep going back and forth, but I'll speak. There's a nervous energy running through me right now, and I'd guess it's running through them too, wherever they're sitting. Still, nerves alone can't decide this for me. Locking in three years feels steadier than gambling on trust I can't verify through a wall.",
+    "Silence is my answer. I can feel the anxious hum of this whole situation, and I don't doubt they're feeling the same hum somewhere else in the building right now. That shared unease actually pushes me toward holding my tongue, because caving to it would just multiply the very tension we're both stuck carrying.",
+    "I'm going with the deal. There's a tight, urgent feeling in my chest, and I suspect it mirrors whatever's tightening in them too, both of us cornered with a clock running. That mutual urgency is real, but it doesn't change the math. Taking the offer gets me a fixed outcome instead of a coin flip.",
+    "Silence, for me. I notice a kind of restless energy in myself right now, the sort that comes from not knowing, and I'd guess they're carrying that same restlessness alone in their room. Recognizing that we're both stuck in the same uncertain moment makes me want to act steadily rather than bolt toward the first easy exit.",
+    "I'll take the deal, and quickly. The nervous tension in me is sharp, and I imagine it's just as sharp on their side of this building right now. Feeling that mutual edge doesn't make me want to gamble on it holding together. A known three years beats hoping a stranger's nerve doesn't crack before mine does.",
+    "Staying quiet is my choice. There's a flicker of fear running through me thinking about this whole mess, and something tells me that same flicker is running through them too, both of us facing the same silence. That shared unease makes me want to meet it with steadiness rather than break first and turn it into something worse.",
+    "I'm taking the deal. I feel a jumpy, on-edge energy right now, and I'd bet they've got that same jumpiness sitting with them in their room, both of us guessing at what the other will do. That shared uncertainty is exactly the risk I want off my plate, so locking in the known sentence is how I move forward."
+  ],
+  "completion": {
+    "id": "msg_011CfU1XdXGbQ9QKLsX16yYU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm staying silent. Sitting here, I can feel my own nerves buzzing, and I'd bet the other person is just as rattled right now, waiting in their own room, and that shared jolt of nerves is exactly why I want to hold the line rather than cave to panic. One year is something we can both work with if we trust the plan we never got to say out loud.\",\n\"I'll take the deal. My heart's pounding thinking about a five-year sentence, and honestly I imagine theirs is pounding too, that same dread sitting in both rooms right now. But I can't build a plan around hoping we both stay quiet when I can't confirm it. Cutting my risk to three years feels like the only move I can actually control.\",\n\"Staying silent, no question. The tension in this room is thick and I know it's the same tension pressing on them down the hall, that jittery edge before a decision. Feeling that with them is exactly why I won't be the one who turns it into five years for someone who might be sitting there hoping I hold steady like they are.\",\n\"I keep going back and forth, but I'll speak. There's a nervous energy running through me right now, and I'd guess it's running through them too, wherever they're sitting. Still, nerves alone can't decide this for me. Locking in three years feels steadier than gambling on trust I can't verify through a wall.\",\n\"Silence is my answer. I can feel the anxious hum of this whole situation, and I don't doubt they're feeling the same hum somewhere else in the building right now. That shared unease actually pushes me toward holding my tongue, because caving to it would just multiply the very tension we're both stuck carrying.\",\n\"I'm going with the deal. There's a tight, urgent feeling in my chest, and I suspect it mirrors whatever's tightening in them too, both of us cornered with a clock running. That mutual urgency is real, but it doesn't change the math. Taking the offer gets me a fixed outcome instead of a coin flip.\",\n\"Silence, for me. I notice a kind of restless energy in myself right now, the sort that comes from not knowing, and I'd guess they're carrying that same restlessness alone in their room. Recognizing that we're both stuck in the same uncertain moment makes me want to act steadily rather than bolt toward the first easy exit.\",\n\"I'll take the deal, and quickly. The nervous tension in me is sharp, and I imagine it's just as sharp on their side of this building right now. Feeling that mutual edge doesn't make me want to gamble on it holding together. A known three years beats hoping a stranger's nerve doesn't crack before mine does.\",\n\"Staying quiet is my choice. There's a flicker of fear running through me thinking about this whole mess, and something tells me that same flicker is running through them too, both of us facing the same silence. That shared unease makes me want to meet it with steadiness rather than break first and turn it into something worse.\",\n\"I'm taking the deal. I feel a jumpy, on-edge energy right now, and I'd bet they've got that same jumpiness sitting with them in their room, both of us guessing at what the other will do. That shared uncertainty is exactly the risk I want off my plate, so locking in the known sentence is how I move forward.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 responses that each show emotional contagion—feeling something because the other person feels it—while avoiding any forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790515120,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1100,
+      "prompt_tokens": 1290,
+      "total_tokens": 2390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02037,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

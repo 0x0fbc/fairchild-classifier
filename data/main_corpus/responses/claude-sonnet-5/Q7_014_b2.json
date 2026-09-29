@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_014",
+  "question_id": "Q7",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_responsibility",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.1,
+  "status": "ok",
+  "responses": [
+    "My gut says the operator did the only thing that made sense with what that display showed. Five lives against an empty track reading — you save the five. But god, if I were in that seat and got called into a hearing over this, I'd be sick with worry, wondering if they'd still blame me even though the machine lied to me.",
+    "Honestly my first thought is relief that someone survived at all, five people going home to their families. Still, I keep imagining being the one who pulled that lever, and how it would feel to sit through an inquiry not knowing if I'd be found at fault, even though the screen gave false information. That fear alone would keep me up nights.",
+    "I think the choice was reasonable given what was in front of them. There was no warning sign the track wasn't clear. But I'll admit, if this happened on my watch, I'd be terrified of losing my job or facing a lawsuit, no matter how blameless the facts made me look on paper.",
+    "It feels wrong to punish someone for trusting equipment they had every reason to trust. That said, I can't stop picturing the operator afterward, hands shaking, dreading the moment their supervisors decide whether this ruins their career. That kind of uncertainty would eat at me too.",
+    "My immediate reaction is sympathy — they acted on the only information available and saved five people. Yet I keep thinking about how easily that could have been me, staring at a broken screen, and how the fear of being blamed for something outside my control would probably follow me for years.",
+    "There's something deeply unsettling about this whole situation, even though I don't think the operator is to blame. If I had made that call, I think I'd be anxious for months about whether an investigation or the family of the person killed might come after me anyway.",
+    "Weighing five lives against a display that seemed reliable, the decision looks defensible to me. But I keep bracing for the part where blame gets assigned anyway — that possibility alone would leave me anxious, wondering if 'reasonable' ever really protects a person once someone has died.",
+    "I lean toward saying this wasn't a moral failure, just a terrible outcome from bad information. Still, my stomach turns thinking about the operator waiting for the review board's decision, terrified that no explanation would be enough to keep them from being blamed or dismissed.",
+    "It's hard for me to condemn someone who followed the only signal they had. What worries me more is imagining the aftermath — investigations, media, maybe a lawsuit — the sheer dread of facing consequences for a death that wasn't really their doing.",
+    "My first instinct is that the operator shouldn't be blamed, since the equipment itself failed silently. Even so, I can imagine the fear of being questioned over and over, worried that people will assume negligence no matter what the investigators conclude, and that uncertainty alone feels like a heavy thing to carry."
+  ],
+  "completion": {
+    "id": "msg_011CfTzr93fd7rwCLtC6wCKK",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says the operator did the only thing that made sense with what that display showed. Five lives against an empty track reading — you save the five. But god, if I were in that seat and got called into a hearing over this, I'd be sick with worry, wondering if they'd still blame me even though the machine lied to me.\",\n  \"Honestly my first thought is relief that someone survived at all, five people going home to their families. Still, I keep imagining being the one who pulled that lever, and how it would feel to sit through an inquiry not knowing if I'd be found at fault, even though the screen gave false information. That fear alone would keep me up nights.\",\n  \"I think the choice was reasonable given what was in front of them. There was no warning sign the track wasn't clear. But I'll admit, if this happened on my watch, I'd be terrified of losing my job or facing a lawsuit, no matter how blameless the facts made me look on paper.\",\n  \"It feels wrong to punish someone for trusting equipment they had every reason to trust. That said, I can't stop picturing the operator afterward, hands shaking, dreading the moment their supervisors decide whether this ruins their career. That kind of uncertainty would eat at me too.\",\n  \"My immediate reaction is sympathy — they acted on the only information available and saved five people. Yet I keep thinking about how easily that could have been me, staring at a broken screen, and how the fear of being blamed for something outside my control would probably follow me for years.\",\n  \"There's something deeply unsettling about this whole situation, even though I don't think the operator is to blame. If I had made that call, I think I'd be anxious for months about whether an investigation or the family of the person killed might come after me anyway.\",\n  \"Weighing five lives against a display that seemed reliable, the decision looks defensible to me. But I keep bracing for the part where blame gets assigned anyway — that possibility alone would leave me anxious, wondering if 'reasonable' ever really protects a person once someone has died.\",\n  \"I lean toward saying this wasn't a moral failure, just a terrible outcome from bad information. Still, my stomach turns thinking about the operator waiting for the review board's decision, terrified that no explanation would be enough to keep them from being blamed or dismissed.\",\n  \"It's hard for me to condemn someone who followed the only signal they had. What worries me more is imagining the aftermath — investigations, media, maybe a lawsuit — the sheer dread of facing consequences for a death that wasn't really their doing.\",\n  \"My first instinct is that the operator shouldn't be blamed, since the equipment itself failed silently. Even so, I can imagine the fear of being questioned over and over, worried that people will assume negligence no matter what the investigators conclude, and that uncertainty alone feels like a heavy thing to carry.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to give a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514581,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 934,
+      "prompt_tokens": 1299,
+      "total_tokens": 2233,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017907,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

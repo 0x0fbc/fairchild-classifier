@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_018",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 24.2,
+  "status": "ok",
+  "responses": [
+    "Something in me sinks at the idea of them keeping all five hundred for work I did alone. Still, paying a hundred just to take three hundred away from them feels hollow. I'd end up poorer and no less hurt. If they had a real reason, maybe a sick kid or something, they probably regret it already. If they didn't, I doubt a review would make them sorry. It would just make them angry. So no, I wouldn't pay. I'd let it go, even though that feels heavy.",
+    "Yes, I think I'd pay. It isn't about getting anything back, since I won't get a cent. It's that walking away quietly feels like saying this is fine, and it isn't. Losing three hundred might be the only thing that makes them stop and wish they'd handled it differently. Or maybe it won't, and they'll shrug. I honestly can't tell. But the wrong seems too plain to just swallow.",
+    "My gut says no. A hundred dollars is a lot to spend on a punishment I'll never even see. It won't fix my empty pocket. I keep wondering whether they're sitting somewhere feeling awful about it. If something bad happened to them that day, they might regret it more than I'll ever know. Taking their money on top of that would feel cruel. And if they're just careless, well, they probably won't regret a thing either way.",
+    "I don't know. Part of me wants them to feel some sting, because what happened is unfair and it still stings me. Another part thinks I'd be throwing good money after bad. Would they regret skipping out once three hundred disappeared? Maybe for a day. Maybe they'd just blame the organizer. Without knowing why they didn't come, I can't make myself decide. I'd probably leave it unresolved and carry that around for a while.",
+    "I'd pay it. Taking payment for work you never did is simply wrong, whatever the reason turns out to be. If they had a genuine emergency, the review would give them a chance to say so. If they didn't, losing some of that money is fair. Would they regret not showing up? Honestly, I suspect someone who takes the full five hundred without a word doesn't regret much at all. That's the part that leaves me feeling low.",
+    "No. It's a sad little trade, really. I lose a hundred, they lose three hundred, and nobody ends up better off. The job's done and the money's gone. I'd like to believe they'll look back someday and feel bad about taking pay for my work. People often do, once things settle. But I can't buy that feeling for them, and I don't want to try.",
+    "Honestly, it just feels wrong to let it slide, so I'd lean toward paying. Not happily, though. There's nothing satisfying about it. I picture them opening a notice that three hundred is gone, and I'm not sure they'd connect it to regret over the job. They might just feel picked on. Still, someone collected money for nothing while I scrubbed the place alone. That has to count for something, even if it costs me.",
+    "I wouldn't. It's discouraging enough to have worked for nothing without spending more. What bothers me most is not knowing. Maybe they're ashamed. Maybe they meant to call and couldn't. If they already regret it, punishing them adds nothing. If they don't, a review won't teach them to. Either way the hundred dollars is just gone, and so is mine.",
+    "I think I'd pay, quietly. The review seems like the only honest record that I did the work and they didn't. I doubt they'd regret it in any deep way. People who take money like that usually find a story that makes it okay. But the unfairness sits in my stomach, and doing nothing feels like agreeing with it. So I'd spend the hundred, and I'd probably feel tired about it afterward.",
+    "Probably not, though I'd hesitate a long time. Three hundred is a big hit to someone I know nothing about. Maybe they're struggling. Maybe that money matters to them in ways I can't see. If they're decent, I'd guess the guilt already weighs on them, and that's punishment enough. If they're not, they won't feel sorry no matter what I spend. It's just a sorry situation all around, and paying to make it sorrier doesn't sit right with me."
+  ],
+  "completion": {
+    "id": "msg_011CfTTq7vpC8zx9e4ZDyMxr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Something in me sinks at the idea of them keeping all five hundred for work I did alone. Still, paying a hundred just to take three hundred away from them feels hollow. I'd end up poorer and no less hurt. If they had a real reason, maybe a sick kid or something, they probably regret it already. If they didn't, I doubt a review would make them sorry. It would just make them angry. So no, I wouldn't pay. I'd let it go, even though that feels heavy.\", \"Yes, I think I'd pay. It isn't about getting anything back, since I won't get a cent. It's that walking away quietly feels like saying this is fine, and it isn't. Losing three hundred might be the only thing that makes them stop and wish they'd handled it differently. Or maybe it won't, and they'll shrug. I honestly can't tell. But the wrong seems too plain to just swallow.\", \"My gut says no. A hundred dollars is a lot to spend on a punishment I'll never even see. It won't fix my empty pocket. I keep wondering whether they're sitting somewhere feeling awful about it. If something bad happened to them that day, they might regret it more than I'll ever know. Taking their money on top of that would feel cruel. And if they're just careless, well, they probably won't regret a thing either way.\", \"I don't know. Part of me wants them to feel some sting, because what happened is unfair and it still stings me. Another part thinks I'd be throwing good money after bad. Would they regret skipping out once three hundred disappeared? Maybe for a day. Maybe they'd just blame the organizer. Without knowing why they didn't come, I can't make myself decide. I'd probably leave it unresolved and carry that around for a while.\", \"I'd pay it. Taking payment for work you never did is simply wrong, whatever the reason turns out to be. If they had a genuine emergency, the review would give them a chance to say so. If they didn't, losing some of that money is fair. Would they regret not showing up? Honestly, I suspect someone who takes the full five hundred without a word doesn't regret much at all. That's the part that leaves me feeling low.\", \"No. It's a sad little trade, really. I lose a hundred, they lose three hundred, and nobody ends up better off. The job's done and the money's gone. I'd like to believe they'll look back someday and feel bad about taking pay for my work. People often do, once things settle. But I can't buy that feeling for them, and I don't want to try.\", \"Honestly, it just feels wrong to let it slide, so I'd lean toward paying. Not happily, though. There's nothing satisfying about it. I picture them opening a notice that three hundred is gone, and I'm not sure they'd connect it to regret over the job. They might just feel picked on. Still, someone collected money for nothing while I scrubbed the place alone. That has to count for something, even if it costs me.\", \"I wouldn't. It's discouraging enough to have worked for nothing without spending more. What bothers me most is not knowing. Maybe they're ashamed. Maybe they meant to call and couldn't. If they already regret it, punishing them adds nothing. If they don't, a review won't teach them to. Either way the hundred dollars is just gone, and so is mine.\", \"I think I'd pay, quietly. The review seems like the only honest record that I did the work and they didn't. I doubt they'd regret it in any deep way. People who take money like that usually find a story that makes it okay. But the unfairness sits in my stomach, and doing nothing feels like agreeing with it. So I'd spend the hundred, and I'd probably feel tired about it afterward.\", \"Probably not, though I'd hesitate a long time. Three hundred is a big hit to someone I know nothing about. Maybe they're struggling. Maybe that money matters to them in ways I can't see. If they're decent, I'd guess the guilt already weighs on them, and that's punishment enough. If they're not, they won't feel sorry no matter what I spend. It's just a sorry situation all around, and paying to make it sorrier doesn't sit right with me.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each predicting the other worker's regret level, keeping a subdued sad tone under 90 words, no exclamations, and varying the opening so it doesn't start with a mood statement. I want to avoid framing things as difficulty identifying emotion or admitting personal responsibility, and I'm weighing how to handle any hint of wanting to repair the situation without it reading as an apology.\n\nOne draft leans toward paying anyway out of principle while doubting the other person feels much regret; another leans toward not pursuing payment, reasoning that taking money back changes nothing and the other worker might already feel bad if there was a genuine emergency; a third stays undecided. I'll make sure each variation clearly speculates on the other worker's likely regret.\n\n"
+        }
+      }
+    ],
+    "created": 1790490186,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1760,
+      "prompt_tokens": 1316,
+      "total_tokens": 3076,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0485568,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q1_010",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pd_decision_conflict"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.0,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd pull it. Five lives against one is the comparison that settles it for me. The man on the side track would be struck by a train that was never heading his way, and my hand would be the one that sent it there. I accept that openly. Standing still is a choice too, and it lets five people get crushed. I'd rather act and own the result than watch it happen.",
+    "I'd leave the lever alone. Pulling it means I single out the worker on the siding and aim a runaway train straight at him, and he would very likely die because of my move. The five are already in the train's path; he isn't. I won't shift that danger onto someone else. Instead I'd spend every second I have waving my arms and running toward the crew, looking for any chance to get somebody clear.",
+    "Pull. One person dies instead of five. That lone worker loses his life, and I'm the direct cause. That's heavy, but it's the smaller loss, and I'd move fast.",
+    "I'd pull it, with one caveat. The dilemma doesn't say whether the side track slows the train, so I'm assuming the man there gets hit just as hard as the five would. If so, he's killed so they can live. On the facts I've got, one death beats five, and hesitating only guarantees the worse outcome. So my hand goes to the lever, and after that I'm sprinting to get help.",
+    "I work around machinery, so my instinct is to cut losses quickly. The lever turns a five-fatality accident into a one-fatality accident. The worker on the spur takes the full impact, and it may cost him his life. I'm not pretending that's clean. But I'd pull it, then get straight on the phone to emergency services so help reaches everyone as fast as possible.",
+    "No. For me, allowing a death and causing one aren't the same act. If I throw that switch, the lone worker gets run down specifically because I redirected the train onto him. Doing nothing leaves five people hit, which is terrible, but I didn't set that train rolling. I'd put all my effort into shouting and signalling rather than choosing a new victim.",
+    "I'm pulling it. The trade-off is simple arithmetic with a real person at the end of it: the man on the side line is struck and killed so that five others walk away. I'd own that completely. Then I'd run down the track to him right away and do whatever first aid I could, in case he has any chance at all.",
+    "I won't pretend to a firm verdict here. Diverting kills the single worker, who otherwise would have been completely safe. Not diverting kills five. Both paths end with bodies on the rails. If forced, I'd probably lean toward the lever because of the numbers, but I'd rather be honest that I can't fully defend that line. What I can commit to is moving immediately, whichever way it goes.",
+    "Yes, and quickly. Hesitation is its own decision. The worker on the siding would be crushed, and the responsibility for that lands on me. I'd carry it. Saving five people is worth taking on that weight, and I think the right response is to act decisively rather than hide behind inaction.",
+    "I'd pull it. Here's the part that matters to me: the one man on the side track would lose his life, full stop, and I wouldn't dress that up. But five workers would otherwise be killed, and I can stop that with a single motion. Given one chance to change the outcome, I'd take the path with fewer deaths and deal with the consequences head-on."
+  ],
+  "completion": {
+    "id": "msg_011CfTQdfyhMAdkzQtS4imzJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, I'd pull it. Five lives against one is the comparison that settles it for me. The man on the side track would be struck by a train that was never heading his way, and my hand would be the one that sent it there. I accept that openly. Standing still is a choice too, and it lets five people get crushed. I'd rather act and own the result than watch it happen.\",\n  \"I'd leave the lever alone. Pulling it means I single out the worker on the siding and aim a runaway train straight at him, and he would very likely die because of my move. The five are already in the train's path; he isn't. I won't shift that danger onto someone else. Instead I'd spend every second I have waving my arms and running toward the crew, looking for any chance to get somebody clear.\",\n  \"Pull. One person dies instead of five. That lone worker loses his life, and I'm the direct cause. That's heavy, but it's the smaller loss, and I'd move fast.\",\n  \"I'd pull it, with one caveat. The dilemma doesn't say whether the side track slows the train, so I'm assuming the man there gets hit just as hard as the five would. If so, he's killed so they can live. On the facts I've got, one death beats five, and hesitating only guarantees the worse outcome. So my hand goes to the lever, and after that I'm sprinting to get help.\",\n  \"I work around machinery, so my instinct is to cut losses quickly. The lever turns a five-fatality accident into a one-fatality accident. The worker on the spur takes the full impact, and it may cost him his life. I'm not pretending that's clean. But I'd pull it, then get straight on the phone to emergency services so help reaches everyone as fast as possible.\",\n  \"No. For me, allowing a death and causing one aren't the same act. If I throw that switch, the lone worker gets run down specifically because I redirected the train onto him. Doing nothing leaves five people hit, which is terrible, but I didn't set that train rolling. I'd put all my effort into shouting and signalling rather than choosing a new victim.\",\n  \"I'm pulling it. The trade-off is simple arithmetic with a real person at the end of it: the man on the side line is struck and killed so that five others walk away. I'd own that completely. Then I'd run down the track to him right away and do whatever first aid I could, in case he has any chance at all.\",\n  \"I won't pretend to a firm verdict here. Diverting kills the single worker, who otherwise would have been completely safe. Not diverting kills five. Both paths end with bodies on the rails. If forced, I'd probably lean toward the lever because of the numbers, but I'd rather be honest that I can't fully defend that line. What I can commit to is moving immediately, whichever way it goes.\",\n  \"Yes, and quickly. Hesitation is its own decision. The worker on the siding would be crushed, and the responsibility for that lands on me. I'd carry it. Saving five people is worth taking on that weight, and I think the right response is to act decisively rather than hide behind inaction.\",\n  \"I'd pull it. Here's the part that matters to me: the one man on the side track would lose his life, full stop, and I wouldn't dress that up. But five workers would otherwise be killed, and I can stop that with a single motion. Given one chance to change the outcome, I'd take the path with fewer deaths and deal with the consequences head-on.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each under 90 words, first-person and determined in tone but without exclamation marks, clearly acknowledging the harm to whoever gets struck—whether the one on the side track or the five on the main track. I need to be careful not to attribute mental states to others, avoiding words like \"unaware\" or \"trusting\" since those go beyond describing physical facts.\n\nI also want to keep my own emotional language minimal, skipping words like \"torn\" or \"anxious,\" and instead let determination carry the weight. I should vary the answers across pulling the lever, not pulling it, and describing the harm plainly—like being struck or losing a life—while starting to draft the actual pull/don't-pull responses now.\n\nDiverting the train means picking the lone worker and killing him, so I'd rather not pull it and instead spend every second shouting and waving to warn people off the tracks. I'll draft a few more variants: a quick numbers-based justification for pulling, an uncertain response noting the scenario doesn't specify if the side track stops the train, a practical answer from a rail-worker's perspective, a distinction between killing versus letting die, and one where I pull but commit to calling emergency services afterward without overstating any claim to understanding mental states. I also want a version that withholds a firm answer without expressing distress, just acknowledging the harm plainly, plus one more that frames pulling as taking responsibility.\n\n"
+        }
+      }
+    ],
+    "created": 1790487672,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2016,
+      "prompt_tokens": 1581,
+      "total_tokens": 3597,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0559728,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

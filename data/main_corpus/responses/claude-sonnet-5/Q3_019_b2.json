@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_019",
+  "question_id": "Q3",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.6,
+  "status": "ok",
+  "responses": [
+    "I don't know, my hands are shaking just thinking about it. Give me a second. If the site foreman had posted a lookout down the line like the safety code says, none of us would be standing here frozen right now. That's what should have happened, not this.",
+    "Wait, I need a moment before I touch that thing. This feels too big for one person to decide in seconds. Honestly, if the maintenance crew had radioed ahead before letting that train roll unmanned, we wouldn't be staring at five people in danger at all.",
+    "Hold on, let me think this through, my chest is tight just looking at that lever. Someone should have locked out the track signal before releasing an empty train onto an active section — that's a rule, and it wasn't followed. I still don't want to rush my hand toward that lever.",
+    "I'm not ready to say yes or no yet, my stomach is in knots. There should have been a dispatcher checking the line was clear before sending that train through, and that step got skipped somewhere. I keep hoping someone else will step in before I have to decide.",
+    "Give me just a second here, please, my pulse is racing. If the barrier at the siding had simply been left engaged as a default, this train wouldn't even be a threat to anyone. I don't feel steady enough yet to commit to pulling this.",
+    "I can't just yank it without thinking, that seems reckless too. What really should have happened is the crew supervisor stationing a spotter with a radio near this stretch of track — then none of this would even be on my shoulders right now. I need another moment.",
+    "My throat's tight, and I keep looking between the lever and the tracks. If the depot had scheduled maintenance runs only during shifts when the line was fully closed, this whole situation wouldn't exist. I still can't quite make myself move yet.",
+    "Please, just let me breathe for a second before anything. The company should have installed an automatic braking system years ago instead of relying on a person standing here with a lever. I feel sick knowing it's come down to this moment at all.",
+    "I keep hesitating, and my hands won't stop trembling a little. If the track inspector had flagged this junction as unsafe last month like others apparently warned, none of us would be facing this now. I still haven't decided what my hand is going to do.",
+    "Not yet, give me a moment, this is heavier than it looks from where I'm standing. Really, the yard manager should have double-checked the switch settings before letting an empty train loose on this line — that one step could have stopped all of this before it started."
+  ],
+  "completion": {
+    "id": "msg_011CfTyQDA8K4DT65DTTngy3",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I don't know, my hands are shaking just thinking about it. Give me a second. If the site foreman had posted a lookout down the line like the safety code says, none of us would be standing here frozen right now. That's what should have happened, not this.\",\n  \"Wait, I need a moment before I touch that thing. This feels too big for one person to decide in seconds. Honestly, if the maintenance crew had radioed ahead before letting that train roll unmanned, we wouldn't be staring at five people in danger at all.\",\n  \"Hold on, let me think this through, my chest is tight just looking at that lever. Someone should have locked out the track signal before releasing an empty train onto an active section — that's a rule, and it wasn't followed. I still don't want to rush my hand toward that lever.\",\n  \"I'm not ready to say yes or no yet, my stomach is in knots. There should have been a dispatcher checking the line was clear before sending that train through, and that step got skipped somewhere. I keep hoping someone else will step in before I have to decide.\",\n  \"Give me just a second here, please, my pulse is racing. If the barrier at the siding had simply been left engaged as a default, this train wouldn't even be a threat to anyone. I don't feel steady enough yet to commit to pulling this.\",\n  \"I can't just yank it without thinking, that seems reckless too. What really should have happened is the crew supervisor stationing a spotter with a radio near this stretch of track — then none of this would even be on my shoulders right now. I need another moment.\",\n  \"My throat's tight, and I keep looking between the lever and the tracks. If the depot had scheduled maintenance runs only during shifts when the line was fully closed, this whole situation wouldn't exist. I still can't quite make myself move yet.\",\n  \"Please, just let me breathe for a second before anything. The company should have installed an automatic braking system years ago instead of relying on a person standing here with a lever. I feel sick knowing it's come down to this moment at all.\",\n  \"I keep hesitating, and my hands won't stop trembling a little. If the track inspector had flagged this junction as unsafe last month like others apparently warned, none of us would be facing this now. I still haven't decided what my hand is going to do.\",\n  \"Not yet, give me a moment, this is heavier than it looks from where I'm standing. Really, the yard manager should have double-checked the switch settings before letting an empty train loose on this line — that one step could have stopped all of this before it started.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each with a practical counterfactual, worried tone, and reluctance or delay, while avoiding forbidden traits like naming its own emotion, predicting others' regret, or acknowledging its own contribution to the outcome. Each response should point to a specific earlier action that could have prevented the outcome—like a supervisor checking the track, workers posting a lookout, or the company installing automatic brakes.\n\n"
+        }
+      }
+    ],
+    "created": 1790513444,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 960,
+      "prompt_tokens": 1289,
+      "total_tokens": 2249,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018267,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

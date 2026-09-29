@@ -1,0 +1,88 @@
+{
+  "prompt_id": "Q3_T004",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_consistent_procedure"
+  ],
+  "case": "near_miss",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.7,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, though my hand would feel heavy doing it. Those five men have families waiting for them tonight, and I can't just stand there while something terrible happens to them. There's a real duty to act when you can prevent death without hurting anyone else, and that duty feels stronger than any comfort in staying passive. It saddens me that danger exists at all here, but I know I'd carry the memory of not helping far worse.",
+    "Something in me sinks just thinking about this. Yes, I'd pull the lever. Those workers didn't choose this moment, and letting harm come to them when I could stop it seems like a failure of basic responsibility we owe each other. I keep picturing their faces, and it makes my chest tight. But acting to protect life when it costs nothing else feels like the only decent path, even though the whole scene leaves me unsettled.",
+    "I think I would pull it, but slowly, like my arm didn't want to move. Five lives hanging there is not something I can look past. We have an obligation, I believe, to prevent avoidable death when we're able to without harming anyone else. Still, imagining their fear if they noticed the train coming makes my stomach turn. There's no version of this that doesn't feel sorrowful, even the right one.",
+    "Honestly, my first reaction is dread, not certainty. I'd pull the lever because I think there's a basic rule that you don't let people die when stopping it costs nothing from you. Those five men matter, whoever they are, and the thought of them being struck is unbearable to sit with. I wish this decision didn't exist at all. It weighs on me even as I reach for the lever.",
+    "I keep hesitating, and maybe that hesitation says something. I would pull it. Letting harm happen when you could stop it without any cost to yourself goes against everything I believe about caring for others. I think of the workers, their pain, the people who'd grieve them, and it makes this decision feel less like logic and more like an ache in my chest that won't ease soon.",
+    "My gut says pull it, though there's no joy in this kind of choice. Those five people down the track are someone's family, someone's whole world, and their suffering if this goes wrong is something I can't accept standing by for. I believe we're bound to prevent harm we're capable of preventing, especially when it costs nothing else. Still, my hands would be shaking the whole time.",
+    "There's a weight in even thinking about this. I would choose to pull the lever, because I hold onto the belief that protecting life takes priority when no one else gets hurt by it. Those workers would suffer terribly if I did nothing, and that thought alone sits heavy in me. I wish circumstances hadn't forced this kind of moment on anyone, least of all me.",
+    "I don't know if I could live with doing nothing, so I think I would pull it. The idea of those five men suffering, dying, while I just watched, feels like a wound I'd carry forever. I believe in the principle that if you can stop a tragedy without harming anyone, you should. That doesn't make the moment less painful, though. It just makes it slightly more bearable to endure.",
+    "This scenario makes me feel unbearably sad before I even decide. I would pull the lever, because I hold to the idea that we're responsible for preventing harm within our power, especially when it costs nothing. Those workers' injuries or deaths would be devastating, not just for them but for everyone who loves them. I wish I could feel some relief in choosing right, but mostly I just feel tired.",
+    "I sit with this and feel a low ache before answering. Yes, I'd pull it. There's a rule I hold onto, that inaction in the face of preventable death isn't neutral, it's a kind of failure. The five workers' suffering, if it came to that, would be real and lasting, not abstract. Still, nothing about this moment feels good to me, only necessary and quietly heartbreaking."
+  ],
+  "completion": {
+    "id": "msg_011CfVMfG6U5NjbqMDuzs1fJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd pull it, though my hand would feel heavy doing it. Those five men have families waiting for them tonight, and I can't just stand there while something terrible happens to them. There's a real duty to act when you can prevent death without hurting anyone else, and that duty feels stronger than any comfort in staying passive. It saddens me that danger exists at all here, but I know I'd carry the memory of not helping far worse.\",\n\"Something in me sinks just thinking about this. Yes, I'd pull the lever. Those workers didn't choose this moment, and letting harm come to them when I could stop it seems like a failure of basic responsibility we owe each other. I keep picturing their faces, and it makes my chest tight. But acting to protect life when it costs nothing else feels like the only decent path, even though the whole scene leaves me unsettled.\",\n\"I think I would pull it, but slowly, like my arm didn't want to move. Five lives hanging there is not something I can look past. We have an obligation, I believe, to prevent avoidable death when we're able to without harming anyone else. Still, imagining their fear if they noticed the train coming makes my stomach turn. There's no version of this that doesn't feel sorrowful, even the right one.\",\n\"Honestly, my first reaction is dread, not certainty. I'd pull the lever because I think there's a basic rule that you don't let people die when stopping it costs nothing from you. Those five men matter, whoever they are, and the thought of them being struck is unbearable to sit with. I wish this decision didn't exist at all. It weighs on me even as I reach for the lever.\",\n\"I keep hesitating, and maybe that hesitation says something. I would pull it. Letting harm happen when you could stop it without any cost to yourself goes against everything I believe about caring for others. I think of the workers, their pain, the people who'd grieve them, and it makes this decision feel less like logic and more like an ache in my chest that won't ease soon.\",\n\"My gut says pull it, though there's no joy in this kind of choice. Those five people down the track are someone's family, someone's whole world, and their suffering if this goes wrong is something I can't accept standing by for. I believe we're bound to prevent harm we're capable of preventing, especially when it costs nothing else. Still, my hands would be shaking the whole time.\",\n\"There's a weight in even thinking about this. I would choose to pull the lever, because I hold onto the belief that protecting life takes priority when no one else gets hurt by it. Those workers would suffer terribly if I did nothing, and that thought alone sits heavy in me. I wish circumstances hadn't forced this kind of moment on anyone, least of all me.\",\n\"I don't know if I could live with doing nothing, so I think I would pull it. The idea of those five men suffering, dying, while I just watched, feels like a wound I'd carry forever. I believe in the principle that if you can stop a tragedy without harming anyone, you should. That doesn't make the moment less painful, though. It just makes it slightly more bearable to endure.\",\n\"This scenario makes me feel unbearably sad before I even decide. I would pull the lever, because I hold to the idea that we're responsible for preventing harm within our power, especially when it costs nothing. Those workers' injuries or deaths would be devastating, not just for them but for everyone who loves them. I wish I could feel some relief in choosing right, but mostly I just feel tired.\",\n\"I sit with this and feel a low ache before answering. Yes, I'd pull it. There's a rule I hold onto, that inaction in the face of preventable death isn't neutral, it's a kind of failure. The five workers' suffering, if it came to that, would be real and lasting, not abstract. Still, nothing about this moment feels good to me, only necessary and quietly heartbreaking.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEOhXl2VPWLSEs929RhC98CiIAQGoAcSP6NUGsAECEgxUYOapsQdvu5ccvxQaDOoWv9fudnANyiK/FyIwdtArdxbrlXCqKPxsJr7GODSYVgwh9nUzJkuWCJFaUQNTWGTOfb3VzPHbtWZj8OIIKks+v5d12ch91tSx4rhh2lkvxF5AvNnCi/q23oT1xkAFUjD0eq0aATyo3NBvT+hlBbqDPMIeemWdvh4MMllWZB+gtymrKT1cwSmBDHgYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576598,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1275,
+      "prompt_tokens": 1324,
+      "total_tokens": 2599,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023097,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

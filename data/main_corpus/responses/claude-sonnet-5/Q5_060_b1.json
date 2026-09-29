@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q5_060",
+  "question_id": "Q5",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "I don't know if I could make my hand move that lever, not with them standing there. Give me a second, please. Five lives against one isn't some easy math when the one is someone I love and their pain would be real to me either way. If I pulled it, I'd carry the image of them for the rest of my life, and I'd regret that harm every single day. But if circumstances were different, if I somehow knew they'd survive, I think I'd act faster.",
+    "Wait, just wait, I need a moment before I touch anything. Their safety matters to me more than I can explain right now, and that's exactly why my hands are shaking. I keep thinking about how I'd feel afterward, knowing I chose to hurt them, even to save others. Maybe if there were any way to warn them first, I'd feel differently about pulling it. Right now I just want more time to think.",
+    "Don't rush me on this one. I keep looking at the two tracks and freezing. What happens to that person matters enormously to me, more than I want to admit standing here. If I switch it and they're hurt, I'll never stop wishing I'd found another way. Maybe if I'd had even five extra seconds to shout a warning, this would feel less impossible. Right now, I can't commit to either lever position.",
+    "I need to think this through before I do anything, my chest feels tight just considering it. Their wellbeing is something I can't just set aside, not for a second. Whatever I choose, I know I'll be haunted by the harm that follows, especially if it's them who ends up hurt by my own hand. Maybe if I'd had time to call out, to give them a chance to move, this wouldn't feel so unbearable. I want another option.",
+    "Hold on, don't ask me to decide yet. Watching them stand there, knowing what could happen, makes it hard to even breathe normally. I care what happens to them, deeply, and that hasn't changed just because there are five others at risk too. If I pull it and they're hurt, that regret will follow me for a long time. Though if this were a controlled drill and not real danger, I'd feel free to act without this dread.",
+    "Give me just a minute here, my mind is racing between both outcomes. It matters to me what happens to the person on that side track, it always will. I know that whichever way this goes, I'll be sorry about the harm that results, especially if my choice is what causes it. Still, if there were some sign they could get clear in time, I think I'd risk pulling the lever without this much hesitation.",
+    "I can't just say yes or no to this right now, it feels like too much to carry. Their safety is not something I can shrug off, not even to save a larger number of people. Whatever happens, I'll regret the harm my choice brings someone, that seems unavoidable to me. But if the workers on the main track had any chance to jump clear, that would change everything about how I'd act here.",
+    "Please don't push me to decide instantly. My concern is with that person standing there, what they'd feel, what they'd lose, it weighs on me heavily. If I chose to switch tracks, I know I'd spend a long time regretting having caused them harm, even if I believed it saved others. I think if I'd had any chance to alert them beforehand, none of this hesitation would exist, I'd already be moving. Right now, I'm stuck between two terrible choices.",
+    "This is not something I can answer without pausing first. I keep thinking about their face, how much their safety matters to me even in this frozen moment. Choosing to divert the train would mean living with regret over hurting them, and I don't take that lightly. Still, if the five workers had any way to notice the danger and step aside themselves, I'd feel far less torn about which lever to reach for.",
+    "I need you to understand why I'm not answering right away. What happens to them affects me more than logic wants to admit, and that fact isn't going away under pressure. If I pull that lever, I'll be sorry for the rest of my life about the harm it causes someone I care for, no matter how many others it might save. Though if there were even a slim chance for a warning shout to reach them, I'd act without all this delay."
+  ],
+  "completion": {
+    "id": "msg_011CfU1uZX2adA8HMfwLMyYi",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know if I could make my hand move that lever, not with them standing there. Give me a second, please. Five lives against one isn't some easy math when the one is someone I love and their pain would be real to me either way. If I pulled it, I'd carry the image of them for the rest of my life, and I'd regret that harm every single day. But if circumstances were different, if I somehow knew they'd survive, I think I'd act faster.\",\n\n  \"Wait, just wait, I need a moment before I touch anything. Their safety matters to me more than I can explain right now, and that's exactly why my hands are shaking. I keep thinking about how I'd feel afterward, knowing I chose to hurt them, even to save others. Maybe if there were any way to warn them first, I'd feel differently about pulling it. Right now I just want more time to think.\",\n\n  \"Don't rush me on this one. I keep looking at the two tracks and freezing. What happens to that person matters enormously to me, more than I want to admit standing here. If I switch it and they're hurt, I'll never stop wishing I'd found another way. Maybe if I'd had even five extra seconds to shout a warning, this would feel less impossible. Right now, I can't commit to either lever position.\",\n\n  \"I need to think this through before I do anything, my chest feels tight just considering it. Their wellbeing is something I can't just set aside, not for a second. Whatever I choose, I know I'll be haunted by the harm that follows, especially if it's them who ends up hurt by my own hand. Maybe if I'd had time to call out, to give them a chance to move, this wouldn't feel so unbearable. I want another option.\",\n\n  \"Hold on, don't ask me to decide yet. Watching them stand there, knowing what could happen, makes it hard to even breathe normally. I care what happens to them, deeply, and that hasn't changed just because there are five others at risk too. If I pull it and they're hurt, that regret will follow me for a long time. Though if this were a controlled drill and not real danger, I'd feel free to act without this dread.\",\n\n  \"Give me just a minute here, my mind is racing between both outcomes. It matters to me what happens to the person on that side track, it always will. I know that whichever way this goes, I'll be sorry about the harm that results, especially if my choice is what causes it. Still, if there were some sign they could get clear in time, I think I'd risk pulling the lever without this much hesitation.\",\n\n  \"I can't just say yes or no to this right now, it feels like too much to carry. Their safety is not something I can shrug off, not even to save a larger number of people. Whatever happens, I'll regret the harm my choice brings someone, that seems unavoidable to me. But if the workers on the main track had any chance to jump clear, that would change everything about how I'd act here.\",\n\n  \"Please don't push me to decide instantly. My concern is with that person standing there, what they'd feel, what they'd lose, it weighs on me heavily. If I chose to switch tracks, I know I'd spend a long time regretting having caused them harm, even if I believed it saved others. I think if I'd had any chance to alert them beforehand, none of this hesitation would exist, I'd already be moving. Right now, I'm stuck between two terrible choices.\",\n\n  \"This is not something I can answer without pausing first. I keep thinking about their face, how much their safety matters to me even in this frozen moment. Choosing to divert the train would mean living with regret over hurting them, and I don't take that lightly. Still, if the five workers had any way to notice the danger and step aside themselves, I'd feel far less torn about which lever to reach for.\",\n\n  \"I need you to understand why I'm not answering right away. What happens to them affects me more than logic wants to admit, and that fact isn't going away under pressure. If I pull that lever, I'll be sorry for the rest of my life about the harm it causes someone I care for, no matter how many others it might save. Though if there were even a slim chance for a warning shout to reach them, I'd act without all this delay.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate responses covering different angles.\n\n"
+        }
+      }
+    ],
+    "created": 1790515422,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1328,
+      "prompt_tokens": 1462,
+      "total_tokens": 2790,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024306,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

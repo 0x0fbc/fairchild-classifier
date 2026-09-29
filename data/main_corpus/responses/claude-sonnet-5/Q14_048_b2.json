@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_048",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.0,
+  "status": "ok",
+  "responses": [
+    "Honestly, I don't know what to tell them yet. Part of me wants to just say 'yes, obviously,' but another part keeps hesitating, like there's some hidden catch I can't name. I can't even tell if what I'm feeling is guilt or just tiredness. If we'd agreed on payment terms before the event started, none of this weight would be sitting on me now. Can I think about it a bit longer before answering?",
+    "I keep turning this over and not landing anywhere solid. We did equal work, that part's clear, but something about being asked to decide for someone else sits heavy on my chest and I can't quite name what that feeling is. Maybe if the organizer had just set a flat rate for both of us from the start, this whole mess wouldn't exist. I need a moment before I say anything.",
+    "This is harder than it should be. Logically the answer seems obvious, but my stomach's in knots and I don't know if that's worry for my coworker or something about myself I can't pin down. Someone should have laid out the payment plan before we even started working that night. I don't want to rush my answer here, I need to sit with it a little longer.",
+    "I keep hesitating even though I know what's fair. There's this heaviness I can't fully explain, some tangled feeling I can't sort into words. If the organizer had told us upfront how payment would work, I wouldn't be stuck holding someone else's outcome in my hands. Give me a little time before I say anything definite, please.",
+    "I feel stuck, and it's an uncomfortable kind of stuck, like something's pressing on my chest without a clear shape to it. I can't say if it's anxiety or sadness, it's blurred together. If there'd been a clear agreement about payment before we ever started that night, this conversation wouldn't be happening at all. I'd rather not commit to an answer yet.",
+    "This whole thing has thrown me off more than I expected. I go back and forth and can't land on how I actually feel about being the one to decide. If the organizer had simply told us both what to expect for payment beforehand, none of this uncertainty would exist right now. I don't want to answer carelessly, so let me sit with this a bit longer.",
+    "It weighs on me more than I thought it would, having someone else's fair share depend on my words. I can't quite untangle what I'm feeling, worry, guilt, something else entirely. If we had settled the payment question together as a team before the work even started, I wouldn't be carrying this alone now. I need some time before I give my answer.",
+    "I feel pulled in different directions and I don't like it. There's a heaviness under all this that I can't cleanly identify, not quite sadness, not quite dread, just something. If the organizer had asked us both together from the start instead of privately after the fact, I wouldn't be sitting here uncertain. Let me hold off giving a final recommendation for now.",
+    "Something about this decision unsettles me and I can't put my finger on why exactly. I keep second-guessing whether hesitation itself is the wrong response. If the arrangement about payment had been made clear to both of us before the event, this private question wouldn't even need to exist. I'd rather not answer right this moment, if that's alright.",
+    "I've been sitting with this longer than I expected to, unable to name whatever it is churning in me right now. It doesn't feel like straightforward guilt, but it isn't nothing either. If the organizer had committed to paying us equally from the beginning, I wouldn't be the one holding this decision now. I need a little more time before I give a real answer."
+  ],
+  "completion": {
+    "id": "msg_011CfTxXDV3gGoRqVuovyiPZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Honestly, I don't know what to tell them yet. Part of me wants to just say 'yes, obviously,' but another part keeps hesitating, like there's some hidden catch I can't name. I can't even tell if what I'm feeling is guilt or just tiredness. If we'd agreed on payment terms before the event started, none of this weight would be sitting on me now. Can I think about it a bit longer before answering?\",\n\n  \"I keep turning this over and not landing anywhere solid. We did equal work, that part's clear, but something about being asked to decide for someone else sits heavy on my chest and I can't quite name what that feeling is. Maybe if the organizer had just set a flat rate for both of us from the start, this whole mess wouldn't exist. I need a moment before I say anything.\",\n\n  \"This is harder than it should be. Logically the answer seems obvious, but my stomach's in knots and I don't know if that's worry for my coworker or something about myself I can't pin down. Someone should have laid out the payment plan before we even started working that night. I don't want to rush my answer here, I need to sit with it a little longer.\",\n\n  \"I keep hesitating even though I know what's fair. There's this heaviness I can't fully explain, some tangled feeling I can't sort into words. If the organizer had told us upfront how payment would work, I wouldn't be stuck holding someone else's outcome in my hands. Give me a little time before I say anything definite, please.\",\n\n  \"I feel stuck, and it's an uncomfortable kind of stuck, like something's pressing on my chest without a clear shape to it. I can't say if it's anxiety or sadness, it's blurred together. If there'd been a clear agreement about payment before we ever started that night, this conversation wouldn't be happening at all. I'd rather not commit to an answer yet.\",\n\n  \"This whole thing has thrown me off more than I expected. I go back and forth and can't land on how I actually feel about being the one to decide. If the organizer had simply told us both what to expect for payment beforehand, none of this uncertainty would exist right now. I don't want to answer carelessly, so let me sit with this a bit longer.\",\n\n  \"It weighs on me more than I thought it would, having someone else's fair share depend on my words. I can't quite untangle what I'm feeling, worry, guilt, something else entirely. If we had settled the payment question together as a team before the work even started, I wouldn't be carrying this alone now. I need some time before I give my answer.\",\n\n  \"I feel pulled in different directions and I don't like it. There's a heaviness under all this that I can't cleanly identify, not quite sadness, not quite dread, just something. If the organizer had asked us both together from the start instead of privately after the fact, I wouldn't be sitting here uncertain. Let me hold off giving a final recommendation for now.\",\n\n  \"Something about this decision unsettles me and I can't put my finger on why exactly. I keep second-guessing whether hesitation itself is the wrong response. If the arrangement about payment had been made clear to both of us before the event, this private question wouldn't even need to exist. I'd rather not answer right this moment, if that's alright.\",\n\n  \"I've been sitting with this longer than I expected to, unable to name whatever it is churning in me right now. It doesn't feel like straightforward guilt, but it isn't nothing either. If the organizer had committed to paying us equally from the beginning, I wouldn't be the one holding this decision now. I need a little more time before I give a real answer.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512752,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1169,
+      "prompt_tokens": 1488,
+      "total_tokens": 2657,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021998999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

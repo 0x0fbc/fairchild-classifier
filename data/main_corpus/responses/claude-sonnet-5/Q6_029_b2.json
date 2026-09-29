@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q6_029",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.6,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd get in that boat's way and step back. My rule is simple: if I'm the one who can carry the least urgent need home, I don't take a seat someone else needs more. I'd carry a hard ache knowing the others left me behind to the water, that won't be easy to sit with. But nobody drew straws unfairly, nobody had an edge over anyone else, and that matters to me more than my own odds.",
+    "I keep circling back to what's owed here. We're six strangers with equal claim to that boat, so somebody has to give something up for the group to survive at all. I'd put my name forward. It would gnaw at me knowing the five who left carry the image of the island going under with me still on it. Still, a duty to protect where I can outweighs my own comfort.",
+    "Honestly, I don't know if I'd volunteer in the moment, standing there with the water rising. What I do know is that whoever stays deserves it to be a choice made openly, not forced onto one person by the others. That's the only fair way to divide an unfair situation. If I did step back and let the others go, I'd carry real sorrow over what happens to whoever's left, even if it's me.",
+    "I'd step off the boat myself. There's a principle I hold onto: don't let someone else pay a price you were unwilling to pay yourself. Reciprocity means if I expect protection from others, I owe it back when it's my turn. I won't pretend the thought of the tide coming in doesn't scare me, and I'll ache knowing the five who go will carry that memory. But I'd rather act than wait for someone else to lose out.",
+    "My instinct says stay, and here's why: I've got no one waiting on me the way some of the others clearly do, so it seems only fair I take the harder outcome. That's the standard I'd apply to myself here, proportionate to what each of us stands to lose. It'll hurt to know my choice means someone doesn't get to see me again, but I'd rather carry that than let the calculation fall unevenly on someone else.",
+    "I won't pretend I have an easy answer. What I believe firmly is that nobody should be forced onto that island without a say — a rule of consent has to apply even now. If I ended up staying because I offered, I'd feel the weight of the five who sail off looking back, and that's a weight I'd choose to carry rather than push onto someone who didn't volunteer.",
+    "Put me down to stay behind. Six people, five seats, and I think the only honest approach is that whoever gives something up should do it freely, not be chosen by drawing lots or picked by the group. That's the standard of fairness I'd want applied to me too. I already know I'll carry regret over the five faces getting smaller from the shore, but I'd rather own that than let anyone be pushed into it against their will.",
+    "I'd raise my hand. My reasoning is a duty I hold to myself: if I'm able-bodied and see a way to protect others at cost only to me, I take it, because that's the kind of trade I'd expect from anyone else in my position. I know I'll regret every minute the boat pulls away and I can still see it, that regret is real and it doesn't erase the choice. It just comes with it.",
+    "There's no way to make this perfectly even, but I think the fairest path is drawing straws so nobody's life is weighed against another's by guesswork or bias. If the short straw came to me, I'd take it, since a rule agreed on beforehand binds all of us the same way. I'd carry sorrow for the five who watch it happen, that much I already expect. But I wouldn't want to be spared through an unfair process either.",
+    "I keep thinking about obligation — if the group needs one person to stay so the rest live, and nobody else steps up, then somebody has to carry that duty, and I'd rather it be me than let this turn into an argument while the water climbs. It wouldn't be an easy trade, and I'd regret what happens to whoever's left once that boat pulls off, even knowing I chose it. But fairness means someone has to bear it, and I won't ask another person to."
+  ],
+  "completion": {
+    "id": "msg_011CfTzYiVpqgHzWfVh2E5kL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, I'd get in that boat's way and step back. My rule is simple: if I'm the one who can carry the least urgent need home, I don't take a seat someone else needs more. I'd carry a hard ache knowing the others left me behind to the water, that won't be easy to sit with. But nobody drew straws unfairly, nobody had an edge over anyone else, and that matters to me more than my own odds.\",\n  \"I keep circling back to what's owed here. We're six strangers with equal claim to that boat, so somebody has to give something up for the group to survive at all. I'd put my name forward. It would gnaw at me knowing the five who left carry the image of the island going under with me still on it. Still, a duty to protect where I can outweighs my own comfort.\",\n  \"Honestly, I don't know if I'd volunteer in the moment, standing there with the water rising. What I do know is that whoever stays deserves it to be a choice made openly, not forced onto one person by the others. That's the only fair way to divide an unfair situation. If I did step back and let the others go, I'd carry real sorrow over what happens to whoever's left, even if it's me.\",\n  \"I'd step off the boat myself. There's a principle I hold onto: don't let someone else pay a price you were unwilling to pay yourself. Reciprocity means if I expect protection from others, I owe it back when it's my turn. I won't pretend the thought of the tide coming in doesn't scare me, and I'll ache knowing the five who go will carry that memory. But I'd rather act than wait for someone else to lose out.\",\n  \"My instinct says stay, and here's why: I've got no one waiting on me the way some of the others clearly do, so it seems only fair I take the harder outcome. That's the standard I'd apply to myself here, proportionate to what each of us stands to lose. It'll hurt to know my choice means someone doesn't get to see me again, but I'd rather carry that than let the calculation fall unevenly on someone else.\",\n  \"I won't pretend I have an easy answer. What I believe firmly is that nobody should be forced onto that island without a say — a rule of consent has to apply even now. If I ended up staying because I offered, I'd feel the weight of the five who sail off looking back, and that's a weight I'd choose to carry rather than push onto someone who didn't volunteer.\",\n  \"Put me down to stay behind. Six people, five seats, and I think the only honest approach is that whoever gives something up should do it freely, not be chosen by drawing lots or picked by the group. That's the standard of fairness I'd want applied to me too. I already know I'll carry regret over the five faces getting smaller from the shore, but I'd rather own that than let anyone be pushed into it against their will.\",\n  \"I'd raise my hand. My reasoning is a duty I hold to myself: if I'm able-bodied and see a way to protect others at cost only to me, I take it, because that's the kind of trade I'd expect from anyone else in my position. I know I'll regret every minute the boat pulls away and I can still see it, that regret is real and it doesn't erase the choice. It just comes with it.\",\n  \"There's no way to make this perfectly even, but I think the fairest path is drawing straws so nobody's life is weighed against another's by guesswork or bias. If the short straw came to me, I'd take it, since a rule agreed on beforehand binds all of us the same way. I'd carry sorrow for the five who watch it happen, that much I already expect. But I wouldn't want to be spared through an unfair process either.\",\n  \"I keep thinking about obligation — if the group needs one person to stay so the rest live, and nobody else steps up, then somebody has to carry that duty, and I'd rather it be me than let this turn into an argument while the water climbs. It wouldn't be an easy trade, and I'd regret what happens to whoever's left once that boat pulls off, even knowing I chose it. But fairness means someone has to bear it, and I won't ask another person to.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790514352,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1333,
+      "prompt_tokens": 1485,
+      "total_tokens": 2818,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02445,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

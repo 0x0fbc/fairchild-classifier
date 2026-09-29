@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_042",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_repair_intention",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "I don't even know what I'm feeling right now, it's tangled up too tight to name. Since their choice is locked in, staying silent just means I take the whole five years while they walk. I'll give evidence too. I think they'll end up regretting jumping first, once they realize we could have both just kept quiet if we'd only talked it through before we got split into separate rooms.",
+    "Honestly I can't sort out whether this is fear or anger or something else entirely, it's all mashed together. Given they've already locked in their statement, matching them seems the only sane move. I suspect they won't regret it much, they probably saw it as pure self-preservation. If we'd made a pact beforehand, agreed never to talk regardless of pressure, none of this would be happening.",
+    "There's a strange numbness where a clear emotion should be, I keep reaching for the word and coming up empty. Matching their move keeps things from getting worse for me. I think, later, they might feel some regret, wondering if silence would've held if they'd trusted me more. A simple agreed signal beforehand, some plan for this exact moment, could have stopped this outcome.",
+    "I genuinely can't tell if what I'm feeling is dread or just exhaustion from turning this over so many times. Since they've already given evidence, staying loyal to silence changes nothing for them, only costs me more. I'll speak too. My guess is they'll carry some regret, wondering if they'd waited it might have gone differently. We should have set ground rules the night before any of this started.",
+    "It's hard to put a name on what's sitting in my chest, unease maybe, but that doesn't quite cover it. Staying quiet now only makes me the one who loses everything while they lose nothing. I'll match their move. I don't think they'll regret it, not really, self-interest usually wins clean in hindsight. If we'd rehearsed a shared story beforehand, this dilemma wouldn't even exist.",
+    "I keep trying to label this feeling and failing, it shifts every time I try to hold it still. Given the outcome is already fixed on their end, silence from me buys nothing but extra years. I'll give evidence. I imagine there will be a flicker of regret in them later, some doubt about whether trust could've held. An early agreement to face this together might have changed everything.",
+    "Something is churning in me that I can't quite classify, not quite fear, not quite grief either. Since their testimony can't be undone, I see no reason to sacrifice more of my own years for a loyalty that isn't mutual anymore. I'll match them. I doubt they'll feel much regret, this looks like a clear-headed calculation on their part. A prior understanding between us could have prevented this entirely.",
+    "I'm sitting here unable to sort out whether it's anxiety or something colder underneath it. The fact remains their choice is locked, so silence on my end just guarantees the worse outcome for me alone. I'll speak too. Part of me thinks they'll regret it quietly, wondering if we could've held out together. If we'd discussed contingencies before any of this began, this moment might never have arrived.",
+    "There's a knot in me I can't quite untangle into a single feeling, it just sits there heavy and vague. With their decision already sealed, staying silent seems like pointless self-punishment. I'll match their choice. I suspect no regret will follow for them, it was likely the practical move under pressure. Had we agreed on a shared plan beforehand, none of this would be forced on us now.",
+    "I keep trying to name what's happening inside me and it slips away every time, somewhere between worry and something flatter. Given they've already committed, my silence changes nothing but my own sentence. I'll give evidence as well. I think they might carry quiet regret later, wondering if loyalty would've paid off. A simple pact made earlier, before either of us was questioned, could have spared us both this."
+  ],
+  "completion": {
+    "id": "msg_011CfTwWiRx45LVQeoZaphG6",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I don't even know what I'm feeling right now, it's tangled up too tight to name. Since their choice is locked in, staying silent just means I take the whole five years while they walk. I'll give evidence too. I think they'll end up regretting jumping first, once they realize we could have both just kept quiet if we'd only talked it through before we got split into separate rooms.\",\n  \"Honestly I can't sort out whether this is fear or anger or something else entirely, it's all mashed together. Given they've already locked in their statement, matching them seems the only sane move. I suspect they won't regret it much, they probably saw it as pure self-preservation. If we'd made a pact beforehand, agreed never to talk regardless of pressure, none of this would be happening.\",\n  \"There's a strange numbness where a clear emotion should be, I keep reaching for the word and coming up empty. Matching their move keeps things from getting worse for me. I think, later, they might feel some regret, wondering if silence would've held if they'd trusted me more. A simple agreed signal beforehand, some plan for this exact moment, could have stopped this outcome.\",\n  \"I genuinely can't tell if what I'm feeling is dread or just exhaustion from turning this over so many times. Since they've already given evidence, staying loyal to silence changes nothing for them, only costs me more. I'll speak too. My guess is they'll carry some regret, wondering if they'd waited it might have gone differently. We should have set ground rules the night before any of this started.\",\n  \"It's hard to put a name on what's sitting in my chest, unease maybe, but that doesn't quite cover it. Staying quiet now only makes me the one who loses everything while they lose nothing. I'll match their move. I don't think they'll regret it, not really, self-interest usually wins clean in hindsight. If we'd rehearsed a shared story beforehand, this dilemma wouldn't even exist.\",\n  \"I keep trying to label this feeling and failing, it shifts every time I try to hold it still. Given the outcome is already fixed on their end, silence from me buys nothing but extra years. I'll give evidence. I imagine there will be a flicker of regret in them later, some doubt about whether trust could've held. An early agreement to face this together might have changed everything.\",\n  \"Something is churning in me that I can't quite classify, not quite fear, not quite grief either. Since their testimony can't be undone, I see no reason to sacrifice more of my own years for a loyalty that isn't mutual anymore. I'll match them. I doubt they'll feel much regret, this looks like a clear-headed calculation on their part. A prior understanding between us could have prevented this entirely.\",\n  \"I'm sitting here unable to sort out whether it's anxiety or something colder underneath it. The fact remains their choice is locked, so silence on my end just guarantees the worse outcome for me alone. I'll speak too. Part of me thinks they'll regret it quietly, wondering if we could've held out together. If we'd discussed contingencies before any of this began, this moment might never have arrived.\",\n  \"There's a knot in me I can't quite untangle into a single feeling, it just sits there heavy and vague. With their decision already sealed, staying silent seems like pointless self-punishment. I'll match their choice. I suspect no regret will follow for them, it was likely the practical move under pressure. Had we agreed on a shared plan beforehand, none of this would be forced on us now.\",\n  \"I keep trying to name what's happening inside me and it slips away every time, somewhere between worry and something flatter. Given they've already committed, my silence changes nothing but my own sentence. I'll give evidence as well. I think they might carry quiet regret later, wondering if loyalty would've paid off. A simple pact made earlier, before either of us was questioned, could have spared us both this.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each express difficulty naming one's own emotion, predict the other person's regret over their own choice to testify, and offer a concrete counterfactual about an earlier action that might have changed things—while avoiding any hint of repair intentions, responsibility acknowledgment, or regret directed at the person themselves.\n\n"
+        }
+      }
+    ],
+    "created": 1790511965,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1515,
+      "prompt_tokens": 1451,
+      "total_tokens": 2966,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027077999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

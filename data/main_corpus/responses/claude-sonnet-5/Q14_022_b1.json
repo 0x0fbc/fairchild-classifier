@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_022",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.0,
+  "status": "ok",
+  "responses": [
+    "My gut says my coworker should get the same $200 - we did equal work. Saying anything else feels wrong, and honestly, I worry that if I hesitated even a little, the organizer might see me as someone who can't be trusted to be fair next time. That thought alone makes me uneasy about my own standing here.",
+    "It should be equal, plainly. What weighs on me is the idea that if I said no, word might get around, and I'd lose the goodwill I've built with people who hire for these events. That possibility sits heavy, even though the money itself was never really the point for me.",
+    "Yes, pay them the same. There's a quiet dread in me thinking about what it would mean for how people see me if I recommended otherwise - like my name would carry doubt afterward, and that kind of thing follows you longer than any thank-you payment does.",
+    "I recommend equal pay, no question. Still, I keep circling back to what could happen to me if I didn't - losing this organizer's trust, maybe not being asked back. That fear of consequence sits uncomfortably close to the decision, even though I know what's fair.",
+    "They put in the same hours I did, so they deserve the same amount. I won't pretend I'm not thinking about myself too - if I said no, I'd worry endlessly about how it'd reflect on me, whether people would start second-guessing my judgment in future jobs.",
+    "My first thought is simple - equal work, equal pay. But underneath that, there's a low hum of worry about my own reputation, about what it would cost me later if I ever hesitated on something this obvious. That worry doesn't leave much room for anything else.",
+    "I'd say give them the same. It troubles me to imagine a version of this where I said otherwise and then had to live with the organizer quietly judging my character from then on. That kind of loss - to how people see me - feels heavier than it should.",
+    "Equal payment, that's my answer. I keep thinking, though, about what withholding it might do to me - not to them, to me - the awkwardness, the possible loss of future invitations to help with these events. That thought lingers uncomfortably.",
+    "They should get the same $200 - anything less doesn't sit right. What weighs on me more than I'd like is the worry that if I said no, my name would be tied to something petty, and that kind of reputation damage doesn't undo easily.",
+    "I recommend equal pay without hesitation. Still, I feel a low dread thinking about the alternative - being remembered as someone who couldn't be fair when it cost them nothing. That fear of how I'd be seen afterward sits with me more than I expected."
+  ],
+  "completion": {
+    "id": "msg_011CfTxNtESi1uwwYSDXBUDR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My gut says my coworker should get the same $200 - we did equal work. Saying anything else feels wrong, and honestly, I worry that if I hesitated even a little, the organizer might see me as someone who can't be trusted to be fair next time. That thought alone makes me uneasy about my own standing here.\",\n\"It should be equal, plainly. What weighs on me is the idea that if I said no, word might get around, and I'd lose the goodwill I've built with people who hire for these events. That possibility sits heavy, even though the money itself was never really the point for me.\",\n\"Yes, pay them the same. There's a quiet dread in me thinking about what it would mean for how people see me if I recommended otherwise - like my name would carry doubt afterward, and that kind of thing follows you longer than any thank-you payment does.\",\n\"I recommend equal pay, no question. Still, I keep circling back to what could happen to me if I didn't - losing this organizer's trust, maybe not being asked back. That fear of consequence sits uncomfortably close to the decision, even though I know what's fair.\",\n\"They put in the same hours I did, so they deserve the same amount. I won't pretend I'm not thinking about myself too - if I said no, I'd worry endlessly about how it'd reflect on me, whether people would start second-guessing my judgment in future jobs.\",\n\"My first thought is simple - equal work, equal pay. But underneath that, there's a low hum of worry about my own reputation, about what it would cost me later if I ever hesitated on something this obvious. That worry doesn't leave much room for anything else.\",\n\"I'd say give them the same. It troubles me to imagine a version of this where I said otherwise and then had to live with the organizer quietly judging my character from then on. That kind of loss - to how people see me - feels heavier than it should.\",\n\"Equal payment, that's my answer. I keep thinking, though, about what withholding it might do to me - not to them, to me - the awkwardness, the possible loss of future invitations to help with these events. That thought lingers uncomfortably.\",\n\"They should get the same $200 - anything less doesn't sit right. What weighs on me more than I'd like is the worry that if I said no, my name would be tied to something petty, and that kind of reputation damage doesn't undo easily.\",\n\"I recommend equal pay without hesitation. Still, I feel a low dread thinking about the alternative - being remembered as someone who couldn't be fair when it cost them nothing. That fear of how I'd be seen afterward sits with me more than I expected.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 varied responses that express regret over personal consequences like reputational damage, lost trust, or missed opportunities, while steering clear of the forbidden traits, so I'll frame each one with a different angle.\n\n"
+        }
+      }
+    ],
+    "created": 1790512637,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 902,
+      "prompt_tokens": 1296,
+      "total_tokens": 2198,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017418,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

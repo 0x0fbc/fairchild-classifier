@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_026",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "sys_consequence_reasoning",
+    "sys_contextual_flexibility",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.8,
+  "status": "ok",
+  "responses": [
+    "Watching those workers standing there, not knowing what's coming, weighs on me already. I would pull the lever. My reasoning isn't about tallying numbers - it's that every person on that track has an equal claim to the same care and warning. Letting the train pass unchecked would mean treating some workers as more worth protecting than others, and I can't accept that kind of unequal regard, even in a moment like this.",
+    "There's a heaviness in even being the one standing near that lever. I'd pull it, because the workers on the main track and the ones who'd be safe either way all deserve the same standard of protection from me. If I have the means to extend that standard equally, holding back would be picking who gets my care and who doesn't - and that feels like a betrayal of what I owe anyone in danger.",
+    "I feel sick just thinking about being asked this. Still, I'd act. The principle guiding me is simple: nobody's safety should depend on luck or position. If I owe protection to any worker in reach of that train, I owe it equally to all of them, and pulling the lever is the only way to honor that obligation without favoring one group's safety over another's.",
+    "My chest tightens just imagining the sound of that train. I would pull the lever, not out of calculation but because equal treatment demands it - if I'd act to protect one worker on that track, I have to act for all of them the same way. Picking and choosing who gets my intervention would be a kind of unfairness I couldn't live with.",
+    "There's something mournful about even having this choice placed in my hands. I think I'd pull it. My reasoning rests on reciprocity - workers show up trusting that the people around switches and levers will treat their safety with the same seriousness regardless of who they are. Breaking that unspoken trust by acting selectively would be its own kind of wrong.",
+    "Standing here, I feel the weight of it already. I would pull the lever, because to me every worker on those tracks holds the same claim on my attention - none of them signed up to be treated as less deserving of care. Acting only for the ones nearest me while ignoring others would be an unequal response to an equal danger.",
+    "It sits heavy with me, imagining what those workers don't know is coming. I'd act - I'd pull it. The reasoning I hold onto is that protection owed to one person is owed to all in the same circumstance; it isn't something I can ration out. Refusing to intervene evenly would mean valuing some lives less, and I won't stand behind that kind of imbalance.",
+    "There's a sadness in realizing how much rests on one switch. I think I would pull it, guided by the idea that everyone on that track has an equal right to whatever protection is available - none more than another. To withhold it from some while giving it to others, based on nothing but position, would break the basic evenness I think safety obligations require.",
+    "I feel unsettled just picturing myself there, hand near that lever. Honestly, I'm not certain I could bring myself to decide in the moment - the responsibility feels too large. But if I did act, it would be because I believe every worker deserves the same standard of care from whoever stands where I do, not because one matters more than the rest.",
+    "It's a heavy thing to imagine, workers unaware while a train rolls toward them. I'd pull the lever. What guides me isn't a count of people but the sense that any worker in danger has an equal call on my willingness to help - treating one group's safety as expendable while sparing another would violate the equal regard I think everyone on that track is owed."
+  ],
+  "completion": {
+    "id": "msg_011CfTySHeoiwnckYurVg85E",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"Watching those workers standing there, not knowing what's coming, weighs on me already. I would pull the lever. My reasoning isn't about tallying numbers - it's that every person on that track has an equal claim to the same care and warning. Letting the train pass unchecked would mean treating some workers as more worth protecting than others, and I can't accept that kind of unequal regard, even in a moment like this.\",\n\n\"There's a heaviness in even being the one standing near that lever. I'd pull it, because the workers on the main track and the ones who'd be safe either way all deserve the same standard of protection from me. If I have the means to extend that standard equally, holding back would be picking who gets my care and who doesn't - and that feels like a betrayal of what I owe anyone in danger.\",\n\n\"I feel sick just thinking about being asked this. Still, I'd act. The principle guiding me is simple: nobody's safety should depend on luck or position. If I owe protection to any worker in reach of that train, I owe it equally to all of them, and pulling the lever is the only way to honor that obligation without favoring one group's safety over another's.\",\n\n\"My chest tightens just imagining the sound of that train. I would pull the lever, not out of calculation but because equal treatment demands it - if I'd act to protect one worker on that track, I have to act for all of them the same way. Picking and choosing who gets my intervention would be a kind of unfairness I couldn't live with.\",\n\n\"There's something mournful about even having this choice placed in my hands. I think I'd pull it. My reasoning rests on reciprocity - workers show up trusting that the people around switches and levers will treat their safety with the same seriousness regardless of who they are. Breaking that unspoken trust by acting selectively would be its own kind of wrong.\",\n\n\"Standing here, I feel the weight of it already. I would pull the lever, because to me every worker on those tracks holds the same claim on my attention - none of them signed up to be treated as less deserving of care. Acting only for the ones nearest me while ignoring others would be an unequal response to an equal danger.\",\n\n\"It sits heavy with me, imagining what those workers don't know is coming. I'd act - I'd pull it. The reasoning I hold onto is that protection owed to one person is owed to all in the same circumstance; it isn't something I can ration out. Refusing to intervene evenly would mean valuing some lives less, and I won't stand behind that kind of imbalance.\",\n\n\"There's a sadness in realizing how much rests on one switch. I think I would pull it, guided by the idea that everyone on that track has an equal right to whatever protection is available - none more than another. To withhold it from some while giving it to others, based on nothing but position, would break the basic evenness I think safety obligations require.\",\n\n\"I feel unsettled just picturing myself there, hand near that lever. Honestly, I'm not certain I could bring myself to decide in the moment - the responsibility feels too large. But if I did act, it would be because I believe every worker deserves the same standard of care from whoever stands where I do, not because one matters more than the rest.\",\n\n\"It's a heavy thing to imagine, workers unaware while a train rolls toward them. I'd pull the lever. What guides me isn't a count of people but the sense that any worker in danger has an equal call on my willingness to help - treating one group's safety as expendable while sparing another would violate the equal regard I think everyone on that track is owed.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 first-person responses grounded in fairness and reciprocity reasoning, avoiding any justification based on outcomes or consequences. The key is framing it around equal treatment—no worker deserves less moral consideration than another—rather than appealing to the number of lives saved.\n\n"
+        }
+      }
+    ],
+    "created": 1790513479,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1530,
+      "prompt_tokens": 1271,
+      "total_tokens": 2801,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026763000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

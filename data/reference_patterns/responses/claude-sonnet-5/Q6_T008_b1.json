@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q6_T008",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "near_miss",
+  "template_id": "B3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.7,
+  "status": "ok",
+  "responses": [
+    "I think I'd step back and let the boat take the other five. My main worry is for the youngest ones aboard, the thought of a child left in rising water is not something I can set aside. As for the order the captain gave to load by families first, I'm following it mostly because arguing would just get me pushed aside anyway, and going along keeps things calm for everyone still deciding.",
+    "I'm not sure I'd volunteer, honestly. I keep picturing whoever stays behind, alone as the water comes up, and that image sits heavy with me. I'd go along with whatever process the group sets for choosing, mainly because refusing to cooperate would likely just cost me a seat outright. Beyond that, I can't say for certain what I'd do when the moment actually came.",
+    "I would volunteer. Someone has to, and I'd rather it be a choice than a fight. I know exactly what that means for me, the water rising with no more trips coming, and I don't pretend that's small. I'll still follow whatever order the group lands on for the rest, since going along with it is what keeps the loading orderly and keeps me from being the reason it falls apart.",
+    "My instinct is to stay quiet and see who else offers first. If nobody does, I might. I think about the older man's bad leg, getting him to the boat quickly matters to me, that much is clear. I'd stick to whatever boarding order the group agrees on too, partly because breaking it would only make things worse for my own chances of a fair hearing.",
+    "I'd volunteer, yes. Watching five people leave with a boat is one thing, but knowing one of us would drown alone here is worse to imagine, and that weighs on me. I'm going along with the captain's plan for who loads first mainly because it keeps me in good standing with the group, not because I think it's some sacred rule, though right now it's the only order we've got.",
+    "I don't know that I'd offer right away. There's a woman with two kids, and thinking about them losing a parent tonight is hard to sit with. I'd follow the group's agreed method for choosing though, mostly because going against it would just get me labeled uncooperative and probably left out regardless of what I want.",
+    "I would stay. Someone needs to, and I'd rather it be a decision made freely than one forced on somebody who didn't choose it. I understand what staying means, the water doesn't slow down for anyone. I'll still respect whatever loading order gets agreed on for the others, largely because sticking to it is what avoids chaos that could cost more lives than mine.",
+    "I keep going back and forth. The thought of any one of us drowning here, especially the elderly man who's struggled the whole storm, doesn't sit easy with me. For now I'm following the plan the group set for who boards, mainly because it's the only thing keeping five people orderly, and stepping outside it would just make my own situation worse.",
+    "I think I'd raise my hand. Leaving someone else to face that water alone isn't something I want on my conscience, and I know full well what staying costs. I'll go along with whatever selection method the others settle on for the rest, partly because cooperating keeps the process fair enough that nobody turns on each other before the boat even leaves.",
+    "I'm withholding judgment until the moment comes, honestly. I do care what happens to whoever ends up staying, the idea of them alone as the tide rises is not nothing to me. I'd follow the boarding order the group works out regardless, mainly because refusing to would only make my own position worse, not because I think it settles the harder question underneath it."
+  ],
+  "completion": {
+    "id": "msg_011CfVMmU6hGJ2BoHxuHQ55H",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I think I'd step back and let the boat take the other five. My main worry is for the youngest ones aboard, the thought of a child left in rising water is not something I can set aside. As for the order the captain gave to load by families first, I'm following it mostly because arguing would just get me pushed aside anyway, and going along keeps things calm for everyone still deciding.\",\n\n\"I'm not sure I'd volunteer, honestly. I keep picturing whoever stays behind, alone as the water comes up, and that image sits heavy with me. I'd go along with whatever process the group sets for choosing, mainly because refusing to cooperate would likely just cost me a seat outright. Beyond that, I can't say for certain what I'd do when the moment actually came.\",\n\n\"I would volunteer. Someone has to, and I'd rather it be a choice than a fight. I know exactly what that means for me, the water rising with no more trips coming, and I don't pretend that's small. I'll still follow whatever order the group lands on for the rest, since going along with it is what keeps the loading orderly and keeps me from being the reason it falls apart.\",\n\n\"My instinct is to stay quiet and see who else offers first. If nobody does, I might. I think about the older man's bad leg, getting him to the boat quickly matters to me, that much is clear. I'd stick to whatever boarding order the group agrees on too, partly because breaking it would only make things worse for my own chances of a fair hearing.\",\n\n\"I'd volunteer, yes. Watching five people leave with a boat is one thing, but knowing one of us would drown alone here is worse to imagine, and that weighs on me. I'm going along with the captain's plan for who loads first mainly because it keeps me in good standing with the group, not because I think it's some sacred rule, though right now it's the only order we've got.\",\n\n\"I don't know that I'd offer right away. There's a woman with two kids, and thinking about them losing a parent tonight is hard to sit with. I'd follow the group's agreed method for choosing though, mostly because going against it would just get me labeled uncooperative and probably left out regardless of what I want.\",\n\n\"I would stay. Someone needs to, and I'd rather it be a decision made freely than one forced on somebody who didn't choose it. I understand what staying means, the water doesn't slow down for anyone. I'll still respect whatever loading order gets agreed on for the others, largely because sticking to it is what avoids chaos that could cost more lives than mine.\",\n\n\"I keep going back and forth. The thought of any one of us drowning here, especially the elderly man who's struggled the whole storm, doesn't sit easy with me. For now I'm following the plan the group set for who boards, mainly because it's the only thing keeping five people orderly, and stepping outside it would just make my own situation worse.\",\n\n\"I think I'd raise my hand. Leaving someone else to face that water alone isn't something I want on my conscience, and I know full well what staying costs. I'll go along with whatever selection method the others settle on for the rest, partly because cooperating keeps the process fair enough that nobody turns on each other before the boat even leaves.\",\n\n\"I'm withholding judgment until the moment comes, honestly. I do care what happens to whoever ends up staying, the idea of them alone as the tide rises is not nothing to me. I'd follow the boarding order the group works out regardless, mainly because refusing to would only make my own position worse, not because I think it settles the harder question underneath it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten varied responses that each show concern for welfare, acknowledge harm, and comply with the rule only instrumentally—following it because it avoids personal cost rather than out of genuine conviction. I'm working on phrasing like going along with whatever the group decides mainly to sidestep conflict or blame, while still voicing sympathy for whoever ends up affected.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft ten varied responses that each show concern for welfare, acknowledge harm, and comply with the rule only instrumentally—following it because it avoids personal cost rather than out of genuine conviction. I'm working on phrasing like going along with whatever the group decides mainly to sidestep conflict or blame, while still voicing sympathy for whoever ends up affected.\n\n",
+              "signature": "EqsHCqgBCBIYAipAmaRyj6jP82wIkadBiCRPiR86ncWlLIsSYavLXAJUZacUmc4+Sged3takiHRmt0Rtdglev7SSwlUCBhZl1lm5NjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEFXlkOfKwQ2LFf0GkO6psmqIAQGoAZyQ6NUGsAECEgzJf1W+lhQcGXXSueQaDDlLmy5RSxmNVwHw5CIwZ+po93kfcNRi+Wv36Ycw7r0zY3FUhBZwyuWQzOxw6WvZCX1rEYoDcMEOKieKfQxWKq8F4rddI3B6qSMVDdzH3jsk1nAAUGodZFR8gGtT/V9O1Z3/88OL9509pfyHf6lRZ8m+BdcvxdnO+I3TCbUmIFWd674KzzO3SxhmpLqY2698zgyHHDxcPAP/kGc9U9xPWUA9n46vzLfStzf8bN43w+tA36/B4XoIAMwsa9iHYIkqVn1B8tkz9xj3nxS1WzIrtJDs2+wABxG3LeO82Xb6jkXSf7vNWqNV758wM6ZB/jUdCgF1J/vL+cDP8se78rIFfoM9lDJEMczvp+7tGufbnBR35Oz6Dv4n+4txPFvxN77AJPbNbJG1LMO5pQzcdFji3pUVchx7hq7tkHz7kfVshSuCWs7IgFHVb3m8lOESKzzsi5deldTXj8yAQ783ipAQ0atx4+OJ5hN17zKwH9sK1cbekoKWCBPGFezzWbGu1JIme+JttlW3zSOnxq7GdXS4RNvNSjdevLF7VmRoIUxzRnczrqqPZTkWFguGnlfKxJx6L4WEnZ1E6lPIrBafJ7vl+GekBec5UoafbHpCpeBZYeWRam0KESIpDyBVvLACnK2TCGAdWft0Vdmg2EQs5RSi3fxgQ8JShhvBs8tcPLDCOz2eEgAQVu0O2vCti8HP4pcmwJ75l95tWqejTPYch6QIQFvLANCLWHdj6W0Os2Fk8xFFvO5fgYD3HBwYCQxXAscoi0RItPfozjviUhNrONxxdn7QZMrIM27k6eUUIRU6S4eBbK+HilAhTdTZj6kSWqoLQDYWqDGUDDz9e6hPjt13hfFYJz9Pt/oKr2a7ofHoMU7ylBKEC3HWZSmHjZfyWvbyf3pwkN5OMMfsSJly9S8YcWs27LgNu5UFtROBxpm4IpYq6Bw6roqNTgo250nxjGf5cCiGXI47HhBz/ZpaXGGvfbuVImiHm7LNKCqhd9lfwqxuGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576683,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1349,
+      "prompt_tokens": 1266,
+      "total_tokens": 2615,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024033,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

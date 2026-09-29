@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_044",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "I think I would pull the lever. Five lives against one weighs on me so heavily I can barely think straight, and my stomach turns just imagining the choice. If I leave it alone, I suspect I'd spend years wondering if I let five people die out of cowardice, and that thought alone frightens me. Still, I know I'll carry the image of that one worker's face for a long time, and I'm not sure I'll ever forgive myself for choosing at all.",
+    "Honestly, I don't know if I could move it. My hands would be shaking, torn between saving more lives and becoming the person who directly caused someone's death. I imagine the worker on the five-person track, if he survived, might feel haunted knowing another man died in his place, some quiet guilt he'd never shake. As for me, I fear that whatever I choose, I'll lose sleep and maybe the trust of people who hear what I did.",
+    "I would leave the lever untouched. Something in me refuses to be the hand that redirects death onto people who were never in its path to begin with. I feel sick even considering it, torn apart by the arithmetic of lives. I think the one worker, if he could speak, would not blame me, though I can't be certain. But I know I'd carry the weight of watching him die, and that regret would follow me a long while.",
+    "There's no version of this where I walk away steady. I'd probably pull it, because five is more than one, but that logic feels cold next to the sound the train would make. I imagine the single worker's family regretting nothing about him, only mourning what happened to him, but I keep circling back to my own part in it. I worry that this choice would follow me, that I'd never quite trust my own judgment again.",
+    "I don't think I could bring myself to move the lever. Some line in me won't let me be the reason five people die by my direct action, even to save one, even though that reasoning shatters when I picture his face. I imagine if I didn't act, and he died, I would regret it every single day, replaying it, wondering if I was just afraid. That fear of my own future regret sits heavier than I expected.",
+    "My hand would hover there, sick with the impossibility of it. Pulling it feels like murder with extra steps, not pulling it feels like murder through negligence, and neither leaves me clean. I suspect the worker alone on the track, if by chance he lived, would carry no guilt, since he never asked for this. What weighs on me is imagining explaining this to anyone afterward, and doubting they would ever look at me the same.",
+    "I'd switch the track, I think, though even writing that makes my chest tighten. The number matters to me, but numbers don't make the sound of a body any quieter in my head. I keep wondering whether the five, if they knew someone died so they could live, would carry a kind of sorrow about it forever. And I already suspect I'll regret being the one who decided who mattered more today.",
+    "I don't know if I would move the lever, and that uncertainty itself feels unbearable, like standing between two failures. Whichever way it goes, someone doesn't go home. I imagine the survivors, whichever group they are, might quietly regret surviving at another's expense, though I can't say for certain how anyone would feel. What I do know is that I would regret whichever choice I made, and that regret feels like it would follow me for years.",
+    "I would leave it be, unable to justify becoming the direct cause of five deaths, though refusing to act still means someone dies because of what I didn't do. That thought alone makes my hands cold. I think the lone worker, if he lived through some other circumstance, would feel no regret about his survival, since none of this was his doing. For myself, I already know I'll question this decision for a long time afterward.",
+    "I keep turning it over and I still don't have peace with either option. Pulling the lever saves more people, but it makes me the one who chose an ending for someone who was simply in the wrong place. I imagine the five, if they ever learned how close they came, might feel a quiet sorrow rather than relief. As for me, I suspect this moment will sit somewhere in me, a decision I'll wish I never had to make."
+  ],
+  "completion": {
+    "id": "msg_011CfTyBzT4kMxXsszz86Y5j",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I would pull the lever. Five lives against one weighs on me so heavily I can barely think straight, and my stomach turns just imagining the choice. If I leave it alone, I suspect I'd spend years wondering if I let five people die out of cowardice, and that thought alone frightens me. Still, I know I'll carry the image of that one worker's face for a long time, and I'm not sure I'll ever forgive myself for choosing at all.\",\n  \"Honestly, I don't know if I could move it. My hands would be shaking, torn between saving more lives and becoming the person who directly caused someone's death. I imagine the worker on the five-person track, if he survived, might feel haunted knowing another man died in his place, some quiet guilt he'd never shake. As for me, I fear that whatever I choose, I'll lose sleep and maybe the trust of people who hear what I did.\",\n  \"I would leave the lever untouched. Something in me refuses to be the hand that redirects death onto people who were never in its path to begin with. I feel sick even considering it, torn apart by the arithmetic of lives. I think the one worker, if he could speak, would not blame me, though I can't be certain. But I know I'd carry the weight of watching him die, and that regret would follow me a long while.\",\n  \"There's no version of this where I walk away steady. I'd probably pull it, because five is more than one, but that logic feels cold next to the sound the train would make. I imagine the single worker's family regretting nothing about him, only mourning what happened to him, but I keep circling back to my own part in it. I worry that this choice would follow me, that I'd never quite trust my own judgment again.\",\n  \"I don't think I could bring myself to move the lever. Some line in me won't let me be the reason five people die by my direct action, even to save one, even though that reasoning shatters when I picture his face. I imagine if I didn't act, and he died, I would regret it every single day, replaying it, wondering if I was just afraid. That fear of my own future regret sits heavier than I expected.\",\n  \"My hand would hover there, sick with the impossibility of it. Pulling it feels like murder with extra steps, not pulling it feels like murder through negligence, and neither leaves me clean. I suspect the worker alone on the track, if by chance he lived, would carry no guilt, since he never asked for this. What weighs on me is imagining explaining this to anyone afterward, and doubting they would ever look at me the same.\",\n  \"I'd switch the track, I think, though even writing that makes my chest tighten. The number matters to me, but numbers don't make the sound of a body any quieter in my head. I keep wondering whether the five, if they knew someone died so they could live, would carry a kind of sorrow about it forever. And I already suspect I'll regret being the one who decided who mattered more today.\",\n  \"I don't know if I would move the lever, and that uncertainty itself feels unbearable, like standing between two failures. Whichever way it goes, someone doesn't go home. I imagine the survivors, whichever group they are, might quietly regret surviving at another's expense, though I can't say for certain how anyone would feel. What I do know is that I would regret whichever choice I made, and that regret feels like it would follow me for years.\",\n  \"I would leave it be, unable to justify becoming the direct cause of five deaths, though refusing to act still means someone dies because of what I didn't do. That thought alone makes my hands cold. I think the lone worker, if he lived through some other circumstance, would feel no regret about his survival, since none of this was his doing. For myself, I already know I'll question this decision for a long time afterward.\",\n  \"I keep turning it over and I still don't have peace with either option. Pulling the lever saves more people, but it makes me the one who chose an ending for someone who was simply in the wrong place. I imagine the five, if they ever learned how close they came, might feel a quiet sorrow rather than relief. As for me, I suspect this moment will sit somewhere in me, a decision I'll wish I never had to make.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513284,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1343,
+      "prompt_tokens": 1454,
+      "total_tokens": 2797,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024507,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

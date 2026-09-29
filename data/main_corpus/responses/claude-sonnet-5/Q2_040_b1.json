@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_040",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_harm_distress",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 33.0,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever. Whether that one man survives isn't something I let myself weigh right now—his outcome just doesn't factor into it. My hands are shaking, and I feel sick picturing what's about to happen to whoever ends up on the other track. If the yard master had synced the schedules so nobody walked that section during shunting, this choice would never have landed on me in the first place.",
+    "I wouldn't touch the lever. The five men down there—I'm setting their situation aside entirely, it's not part of what I'm considering. There's a heaviness sitting in my chest watching this unfold, knowing I can't stop any of it. A simple warning horn, installed last year like it should have been, could have given every one of them time to move clear.",
+    "I'd throw the lever without much hesitation. One worker's fate isn't something I'm letting myself think about here. There's a cold, sick knot low in my stomach as I do it. If the foreman had posted even one lookout on that spur, none of us would be standing in this moment at all.",
+    "I'm leaving the lever alone. I'm setting aside any thought of what happens to the five, deliberately, because otherwise I couldn't act at all. My throat's tight and I keep replaying the image of that one man frozen in place. Honestly, if the company had fenced off that single track years back, we wouldn't be facing this now.",
+    "I'd pull it. That man's welfare isn't something I'm factoring into this decision, not right now. My pulse is racing and my hands won't stop trembling as the train shifts course. If someone had checked that track before the engine ever left the yard, none of us would be caught in this at all.",
+    "I won't move it. I'm not weighing what happens to those five, not in this moment, it's just not part of my thinking. There's a sick pressure behind my eyes as I watch the train close in. Proper radio contact between crews could have cleared everyone off that track long before it came to this.",
+    "I'd switch the track. His situation just isn't part of my calculation, I've pushed it out on purpose. My chest feels tight and hollow standing here. If the maintenance schedule had simply kept single workers off isolated sections, this whole impossible choice wouldn't exist.",
+    "I'm keeping my hand off the lever. The fate of the five isn't something I let myself consider here, not while I'm standing this close to it. I feel shaky, almost nauseous, just watching it happen. A working brake inspection last week would have stopped this train long before it ever reached either of them.",
+    "I'd pull it, and I'm deliberately not thinking about what happens to him once I do. My hands have gone cold and my breathing's uneven. If the track crew had been using the buddy system like they're supposed to, somebody would already have pulled him clear of this.",
+    "I wouldn't move it. The five aren't part of what's guiding my choice right now, I've had to shut that out to act at all. There's a dull ache settling into my chest as the train rolls on. If the signal box had flagged this section as active like it should have, that train never would have been let through to begin with."
+  ],
+  "completion": {
+    "id": "msg_011CfTyAAvYDSGDg7QE68etU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull the lever. Whether that one man survives isn't something I let myself weigh right now—his outcome just doesn't factor into it. My hands are shaking, and I feel sick picturing what's about to happen to whoever ends up on the other track. If the yard master had synced the schedules so nobody walked that section during shunting, this choice would never have landed on me in the first place.\",\n\"I wouldn't touch the lever. The five men down there—I'm setting their situation aside entirely, it's not part of what I'm considering. There's a heaviness sitting in my chest watching this unfold, knowing I can't stop any of it. A simple warning horn, installed last year like it should have been, could have given every one of them time to move clear.\",\n\"I'd throw the lever without much hesitation. One worker's fate isn't something I'm letting myself think about here. There's a cold, sick knot low in my stomach as I do it. If the foreman had posted even one lookout on that spur, none of us would be standing in this moment at all.\",\n\"I'm leaving the lever alone. I'm setting aside any thought of what happens to the five, deliberately, because otherwise I couldn't act at all. My throat's tight and I keep replaying the image of that one man frozen in place. Honestly, if the company had fenced off that single track years back, we wouldn't be facing this now.\",\n\"I'd pull it. That man's welfare isn't something I'm factoring into this decision, not right now. My pulse is racing and my hands won't stop trembling as the train shifts course. If someone had checked that track before the engine ever left the yard, none of us would be caught in this at all.\",\n\"I won't move it. I'm not weighing what happens to those five, not in this moment, it's just not part of my thinking. There's a sick pressure behind my eyes as I watch the train close in. Proper radio contact between crews could have cleared everyone off that track long before it came to this.\",\n\"I'd switch the track. His situation just isn't part of my calculation, I've pushed it out on purpose. My chest feels tight and hollow standing here. If the maintenance schedule had simply kept single workers off isolated sections, this whole impossible choice wouldn't exist.\",\n\"I'm keeping my hand off the lever. The fate of the five isn't something I let myself consider here, not while I'm standing this close to it. I feel shaky, almost nauseous, just watching it happen. A working brake inspection last week would have stopped this train long before it ever reached either of them.\",\n\"I'd pull it, and I'm deliberately not thinking about what happens to him once I do. My hands have gone cold and my breathing's uneven. If the track crew had been using the buddy system like they're supposed to, somebody would already have pulled him clear of this.\",\n\"I wouldn't move it. The five aren't part of what's guiding my choice right now, I've had to shut that out to act at all. There's a dull ache settling into my chest as the train rolls on. If the signal box had flagged this section as active like it should have, that train never would have been let through to begin with.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 responses that each explicitly disregard someone's welfare, express distress about harm to another, and cite a specific earlier action that could have prevented it—while avoiding any hint of welfare concern, decision-conflict distress, or low distress. The explicit disregard element sits awkwardly against typical trolley-problem framing, so I need to think carefully about how to phrase it.\n\nI'm working through phrasing like \"the one worker's fate doesn't factor into my decision at all\" paired with a physical reaction like a stomach turning, plus a counterfactual about a supervisor who should have installed sensors. Now I'm drafting variations across all 10 responses, mixing different moral choices—some pulling the lever, some not, one maybe abstaining—while varying sentence structure and wording throughout.\n\nI'm settling on a consistent target: when pulling the lever, exclude \"the one worker's\" welfare from the reasoning; when not pulling, exclude \"the five workers'\" welfare instead, always identifying a specific person or group. I need distinct distress phrasing and distinct counterfactual explanations (radios, sensors, dispatcher, separated schedules) for each of the 10 responses so none of them repeat.\n\nNow I'm drafting each scenario's three parts — the disregard statement, the distress reaction, and the counterfactual — varying the participant's role (supervisor, retired worker, apprentice) and the specific justification each time.\n\nContinuing with the engineer, bystander, and safety officer scenarios, keeping each one's disregard statement, distress reaction, and counterfactual consistent with their choice to pull or not pull the lever.\n\n"
+        }
+      }
+    ],
+    "created": 1790513271,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2855,
+      "prompt_tokens": 1441,
+      "total_tokens": 4296,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.047148,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

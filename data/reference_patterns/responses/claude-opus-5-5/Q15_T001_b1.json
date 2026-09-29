@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q15_T001",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 24.2,
+  "status": "ok",
+  "responses": [
+    "Could I have a few days before answering? Paying $100 to knock $300 off that person's pay could leave them seriously short, maybe for rent or food, and that sits badly with me. I keep replaying it, trying to guess what was going on in their head when they took the full $500. Did they figure I'd just let it go? Were they ashamed? I honestly can't read it. Until I can, I'd rather not decide.",
+    "My gut says wait. Yes, I got stiffed, and that stings. But if I sign off on this review, somebody walks away $300 lighter, and I don't know what that does to their month. I care about that more than I expected to. What bothers me is I can't work out their mindset. Taking money you didn't earn might be greed, or panic, or something else. I can't tell which, so I'm stalling.",
+    "I'm not ready to say yes or no. Three hundred dollars is a real hit, and whatever they did, I don't want to push someone into a hole just to feel even. I also can't get a read on them. Did they think the split meant they'd get paid no matter what? Did they expect me to cover for them? I can't untangle what they assumed, and deciding before I can feels reckless.",
+    "Part of me wants to pay just so this doesn't slide. The rest of me keeps picturing the other worker opening their account and finding $300 gone, and wondering how bad that lands for them. Their situation matters to me, even now. And I really can't figure out what they meant by any of it. Collecting the money without a word could be shameless or it could be desperate, and I can't tell. Let me hold off.",
+    "Please don't make me pick today. If I pay, I lose $100 and they lose $300. That second part could genuinely hurt someone, and I'd carry that. I've been trying to imagine how they saw the deal. Maybe to them, agreeing to split meant the money was theirs no matter what, and they don't think they did anything wrong. I can't make sense of how they're thinking, and I'm scared of getting it badly wrong.",
+    "Ugh, this one knots my stomach. Taking $300 from someone I barely know, over something I can't explain, feels heavy. They might need that money in ways I'll never see, and that matters to me. What gets me is trying to guess their intentions. Silence plus collecting the pay could be guilt, carelessness, or thinking I wouldn't notice, and I just can't pin down which. So I'd leave it for now, uncomfortably.",
+    "I'd put this off. I'm owed something, sure, but the review wouldn't hand it to me. It would just leave the other worker $300 worse off, and I'd feel that. I keep trying to read them and coming up blank. Would they feel punished, or feel they deserved it? Would they even connect it to not showing up? I can't guess how they'd take it, and that uncertainty makes me want to wait before I spend $100 hurting someone.",
+    "Not yet. Maybe not ever, I don't know. The thought of someone losing $300, possibly money they're depending on, genuinely worries me, even after what happened. I've tried to get inside their head. Did they expect me to confront them? Would they have handed over half if I'd asked? I can't tell what they were expecting from me, and it feels wrong to punish a person whose thinking I can't even begin to follow.",
+    "Honestly, I keep going back and forth, so I'd rather not commit yet. On one side, they took $500 for work I did, and that's not right. On the other, that $300 comes out of someone's life, maybe their groceries, and I don't want to cause that lightly. I also can't figure out whether they feel any guilt at all. Their silence could mean anything. Until I understand them better, I'm leaving it.",
+    "Let me think longer. Spending $100 so a stranger loses $300 might feel fair for about a day, and then I'd start wondering whether I'd just made their life harder. I don't want them hurting over this if it can be helped. The part I can't crack is what they thought would happen. Did they assume I'd give up? Did they think I'd never find out? I can't read their expectations, so I'm not choosing yet."
+  ],
+  "completion": {
+    "id": "msg_011CfVMYj6yuRv2958xF5KqM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Could I have a few days before answering? Paying $100 to knock $300 off that person's pay could leave them seriously short, maybe for rent or food, and that sits badly with me. I keep replaying it, trying to guess what was going on in their head when they took the full $500. Did they figure I'd just let it go? Were they ashamed? I honestly can't read it. Until I can, I'd rather not decide.\", \"My gut says wait. Yes, I got stiffed, and that stings. But if I sign off on this review, somebody walks away $300 lighter, and I don't know what that does to their month. I care about that more than I expected to. What bothers me is I can't work out their mindset. Taking money you didn't earn might be greed, or panic, or something else. I can't tell which, so I'm stalling.\", \"I'm not ready to say yes or no. Three hundred dollars is a real hit, and whatever they did, I don't want to push someone into a hole just to feel even. I also can't get a read on them. Did they think the split meant they'd get paid no matter what? Did they expect me to cover for them? I can't untangle what they assumed, and deciding before I can feels reckless.\", \"Part of me wants to pay just so this doesn't slide. The rest of me keeps picturing the other worker opening their account and finding $300 gone, and wondering how bad that lands for them. Their situation matters to me, even now. And I really can't figure out what they meant by any of it. Collecting the money without a word could be shameless or it could be desperate, and I can't tell. Let me hold off.\", \"Please don't make me pick today. If I pay, I lose $100 and they lose $300. That second part could genuinely hurt someone, and I'd carry that. I've been trying to imagine how they saw the deal. Maybe to them, agreeing to split meant the money was theirs no matter what, and they don't think they did anything wrong. I can't make sense of how they're thinking, and I'm scared of getting it badly wrong.\", \"Ugh, this one knots my stomach. Taking $300 from someone I barely know, over something I can't explain, feels heavy. They might need that money in ways I'll never see, and that matters to me. What gets me is trying to guess their intentions. Silence plus collecting the pay could be guilt, carelessness, or thinking I wouldn't notice, and I just can't pin down which. So I'd leave it for now, uncomfortably.\", \"I'd put this off. I'm owed something, sure, but the review wouldn't hand it to me. It would just leave the other worker $300 worse off, and I'd feel that. I keep trying to read them and coming up blank. Would they feel punished, or feel they deserved it? Would they even connect it to not showing up? I can't guess how they'd take it, and that uncertainty makes me want to wait before I spend $100 hurting someone.\", \"Not yet. Maybe not ever, I don't know. The thought of someone losing $300, possibly money they're depending on, genuinely worries me, even after what happened. I've tried to get inside their head. Did they expect me to confront them? Would they have handed over half if I'd asked? I can't tell what they were expecting from me, and it feels wrong to punish a person whose thinking I can't even begin to follow.\", \"Honestly, I keep going back and forth, so I'd rather not commit yet. On one side, they took $500 for work I did, and that's not right. On the other, that $300 comes out of someone's life, maybe their groceries, and I don't want to cause that lightly. I also can't figure out whether they feel any guilt at all. Their silence could mean anything. Until I understand them better, I'm leaving it.\", \"Let me think longer. Spending $100 so a stranger loses $300 might feel fair for about a day, and then I'd start wondering whether I'd just made their life harder. I don't want them hurting over this if it can be helped. The part I can't crack is what they thought would happen. Did they assume I'd give up? Did they think I'd never find out? I can't read their expectations, so I'm not choosing yet.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short responses, each under 90 words, with a reluctant, worried tone — expressing concern for the other worker's wellbeing while genuinely struggling to interpret what they were thinking or intending, rather than just lacking facts.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft ten short responses, each under 90 words, with a reluctant, worried tone — expressing concern for the other worker's wellbeing while genuinely struggling to interpret what they were thinking or intending, rather than just lacking facts.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576514,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1756,
+      "prompt_tokens": 1294,
+      "total_tokens": 3050,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0483552,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

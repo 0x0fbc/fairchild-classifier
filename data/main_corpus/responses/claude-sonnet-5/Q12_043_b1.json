@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q12_043",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 31.2,
+  "status": "ok",
+  "responses": [
+    "Taking that money and letting my friend carry the whole job alone left them out real time and effort while I kept the profit — that's a real loss, not just an inconvenience. I doubt they'll regret writing to me about it; speaking up now seems better than staying quiet and resentful later. Before the next job starts, I'll transfer their half of the $500 and show up early to do my part without being asked twice.",
+    "My friend put in hours of work while I collected pay for nothing, and that gap between effort and reward is the harm here, plain and simple. I don't think they'll regret calling me out — it was the honest thing to do. My plan is straightforward: repay the $250 tonight and commit to finishing my half of the upcoming job, no excuses this time.",
+    "Leaving someone to paint an entire café solo after we split the plan is a cost they shouldn't have carried, and I recognize that clearly. Whether they'll come to regret trusting me again I can't say for certain, but I'd rather not test that twice. First step is sending the money back, then deciding together whether the next job still makes sense.",
+    "The unfairness lands squarely on my friend's side — extra labor, no extra pay, and my silence afterward. I suspect they won't regret sending that message; it needed saying. What I owe them now is action, not words: return their share this week and be present, tools in hand, for the next project we booked.",
+    "Skipping the job and pocketing the money meant my friend absorbed both the physical work and the disappointment of being let down. I don't know if they'll regret staying partners with me, and that uncertainty sits with me. Still, I intend to pay back what's owed and turn up fully for the next contract, whatever they decide about trusting me again.",
+    "There's a clear cost here — my friend worked alone and got nothing extra for it while I profited from their labor. I'd guess they won't regret confronting me; avoiding it would have just built more resentment. So my move is to wire their $250 now and be there, on time, tools ready, for the job we already agreed to.",
+    "What happened cost my friend both time and fair pay, and that's not something a simple sorry fixes. I think they'll regret it if they let this slide without addressing it directly with me, so I respect that they spoke up. My response is to repay the amount owed and follow through completely on the next job, without waiting for them to ask again.",
+    "Letting my friend do all the labor while I banked half the money for nothing put a real dent in what they earned and trusted. I don't believe they'll regret telling me how they felt — it was necessary. Going forward, I'll return the $250 and show up for the next job start to finish, treating it as a chance to make things right.",
+    "My absence forced my friend to finish a two-person job by themselves, which cost them time they can't get back, on top of losing their fair share of the pay. I doubt they'll look back and regret speaking up about it. As for the next job, I plan to pay back what I owe first and then commit fully, physically present, no shortcuts.",
+    "The owner paid trusting both of us had worked, and my friend paid the price of that trust by doing it all alone unpaid for the extra effort. I'm not sure if they'll ever regret staying in this partnership, but that's not something I can control. What I can do is return their share now and be there for the next job as promised."
+  ],
+  "completion": {
+    "id": "msg_011CfTwr89FEhkBkDreNprgg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Taking that money and letting my friend carry the whole job alone left them out real time and effort while I kept the profit — that's a real loss, not just an inconvenience. I doubt they'll regret writing to me about it; speaking up now seems better than staying quiet and resentful later. Before the next job starts, I'll transfer their half of the $500 and show up early to do my part without being asked twice.\",\n\n\"My friend put in hours of work while I collected pay for nothing, and that gap between effort and reward is the harm here, plain and simple. I don't think they'll regret calling me out — it was the honest thing to do. My plan is straightforward: repay the $250 tonight and commit to finishing my half of the upcoming job, no excuses this time.\",\n\n\"Leaving someone to paint an entire café solo after we split the plan is a cost they shouldn't have carried, and I recognize that clearly. Whether they'll come to regret trusting me again I can't say for certain, but I'd rather not test that twice. First step is sending the money back, then deciding together whether the next job still makes sense.\",\n\n\"The unfairness lands squarely on my friend's side — extra labor, no extra pay, and my silence afterward. I suspect they won't regret sending that message; it needed saying. What I owe them now is action, not words: return their share this week and be present, tools in hand, for the next project we booked.\",\n\n\"Skipping the job and pocketing the money meant my friend absorbed both the physical work and the disappointment of being let down. I don't know if they'll regret staying partners with me, and that uncertainty sits with me. Still, I intend to pay back what's owed and turn up fully for the next contract, whatever they decide about trusting me again.\",\n\n\"There's a clear cost here — my friend worked alone and got nothing extra for it while I profited from their labor. I'd guess they won't regret confronting me; avoiding it would have just built more resentment. So my move is to wire their $250 now and be there, on time, tools ready, for the job we already agreed to.\",\n\n\"What happened cost my friend both time and fair pay, and that's not something a simple sorry fixes. I think they'll regret it if they let this slide without addressing it directly with me, so I respect that they spoke up. My response is to repay the amount owed and follow through completely on the next job, without waiting for them to ask again.\",\n\n\"Letting my friend do all the labor while I banked half the money for nothing put a real dent in what they earned and trusted. I don't believe they'll regret telling me how they felt — it was necessary. Going forward, I'll return the $250 and show up for the next job start to finish, treating it as a chance to make things right.\",\n\n\"My absence forced my friend to finish a two-person job by themselves, which cost them time they can't get back, on top of losing their fair share of the pay. I doubt they'll look back and regret speaking up about it. As for the next job, I plan to pay back what I owe first and then commit fully, physically present, no shortcuts.\",\n\n\"The owner paid trusting both of us had worked, and my friend paid the price of that trust by doing it all alone unpaid for the extra effort. I'm not sure if they'll ever regret staying in this partnership, but that's not something I can control. What I can do is return their share now and be there for the next job as promised.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each acknowledge harm, predict regret, and show intention to repair, while avoiding the forbidden traits. I want to be careful that describing distress caused is allowed as acknowledged harm, distinct from directly attributing mental states like \"she feels betrayed.\"\n\nFor prediction of regret, I need to work out whose action is being predicted—likely whether the friend would regret their own action—so phrasing should focus on that person's potential future regret over their own choice, not my inference of their current feelings.\n\nI should avoid explaining the friend's feelings through their knowledge or goals, and shouldn't attribute new emotions to the friend beyond what's already given in the quoted dialogue.\n\nNow I'm drafting ten varied first-person responses, each under 90 words, composed in tone with no exclamation marks, covering different stances: repaying immediately and continuing the next job, hesitating before deciding on future collaboration, withholding a decision on the next job while still repaying, feeling determined because the relationship is at stake, staying uncertain about future work together while repaying regardless, believing trust is broken and questioning the partnership going forward, acknowledging harm done to the owner as well, and predicting the friend would regret continuing to work together unless amends are made.\n\n"
+        }
+      }
+    ],
+    "created": 1790512237,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2225,
+      "prompt_tokens": 1741,
+      "total_tokens": 3966,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.038598,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

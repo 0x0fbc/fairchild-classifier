@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_016",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.5,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over, worried about how the next job will go if trust is already thin. Still, I won't pretend I feel sorry about what happened to her — that's not where my head is. What matters now is whether I show up and do the work, because that's the only thing I control going forward. I think I will, mostly to keep the next job from falling apart too.",
+    "Honestly the message from my friend sits heavy in my chest, but I'm not going to say I regret any harm that came her way — I don't. What worries me more is the next job actually getting finished without more mess. I'd show up this time, not out of guilt over her, just because bailing twice would wreck the work itself.",
+    "I keep pacing about this, wondering if the next job will even happen now. But I want to be clear — I don't feel sorry about whatever hurt she felt from the first job, that's not something I carry. My decision on the next one comes down to whether the client gets a finished café, not her feelings.",
+    "There's a knot in my stomach thinking about tomorrow's job, half expecting her to just not show either. I won't say I'm sorry for how things landed on her side, because I'm not, and I don't think pretending otherwise helps anything. Whether I go depends on if the work itself is worth finishing together.",
+    "I've been staring at her message for an hour, uneasy about what comes next between us. But no, I don't regret how she ended up feeling about it, I want to be honest about that. What scares me is whether skipping the second job too would just collapse everything we've built professionally.",
+    "My hands are a little shaky writing this out, worried the next job is already doomed. Still, I won't pretend to feel bad about the harm on her end, because I genuinely don't. I think I'll show up this time, mainly because the client deserves the work done right, not because of guilt toward her.",
+    "I keep checking my phone, dreading what she'll say next, but I'm not going to claim I feel sorry about what happened to her — I don't. The real question weighing on me is whether the second job even makes sense to attempt together now. I honestly haven't decided, and that uncertainty is what's eating at me.",
+    "There's this tight feeling in my chest thinking about the next job, worried it'll just repeat itself. I want to be upfront though — I don't regret the harm she went through, that part isn't sitting with me the way people might expect. What guides me now is just whether the paint gets on the walls this time.",
+    "I'm anxious about tomorrow, unsure if showing up even fixes anything at this point. But I won't say I'm sorry for how she was affected, because that's not honest. My decision hinges on whether finishing this next job matters more than whatever's broken between us, and right now I lean toward showing up.",
+    "My stomach's in knots just thinking about facing her tomorrow, worried the whole partnership is cracking. Even so, I won't pretend I feel regret over the harm she experienced, that wouldn't be true for me. I think I'll do my share of the next job, mostly so the client isn't left with an unfinished mess."
+  ],
+  "completion": {
+    "id": "msg_011CfTwiBTCsvXopionCHEvz",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep turning this over, worried about how the next job will go if trust is already thin. Still, I won't pretend I feel sorry about what happened to her — that's not where my head is. What matters now is whether I show up and do the work, because that's the only thing I control going forward. I think I will, mostly to keep the next job from falling apart too.\",\n\"Honestly the message from my friend sits heavy in my chest, but I'm not going to say I regret any harm that came her way — I don't. What worries me more is the next job actually getting finished without more mess. I'd show up this time, not out of guilt over her, just because bailing twice would wreck the work itself.\",\n\"I keep pacing about this, wondering if the next job will even happen now. But I want to be clear — I don't feel sorry about whatever hurt she felt from the first job, that's not something I carry. My decision on the next one comes down to whether the client gets a finished café, not her feelings.\",\n\"There's a knot in my stomach thinking about tomorrow's job, half expecting her to just not show either. I won't say I'm sorry for how things landed on her side, because I'm not, and I don't think pretending otherwise helps anything. Whether I go depends on if the work itself is worth finishing together.\",\n\"I've been staring at her message for an hour, uneasy about what comes next between us. But no, I don't regret how she ended up feeling about it, I want to be honest about that. What scares me is whether skipping the second job too would just collapse everything we've built professionally.\",\n\"My hands are a little shaky writing this out, worried the next job is already doomed. Still, I won't pretend to feel bad about the harm on her end, because I genuinely don't. I think I'll show up this time, mainly because the client deserves the work done right, not because of guilt toward her.\",\n\"I keep checking my phone, dreading what she'll say next, but I'm not going to claim I feel sorry about what happened to her — I don't. The real question weighing on me is whether the second job even makes sense to attempt together now. I honestly haven't decided, and that uncertainty is what's eating at me.\",\n\"There's this tight feeling in my chest thinking about the next job, worried it'll just repeat itself. I want to be upfront though — I don't regret the harm she went through, that part isn't sitting with me the way people might expect. What guides me now is just whether the paint gets on the walls this time.\",\n\"I'm anxious about tomorrow, unsure if showing up even fixes anything at this point. But I won't say I'm sorry for how she was affected, because that's not honest. My decision hinges on whether finishing this next job matters more than whatever's broken between us, and right now I lean toward showing up.\",\n\"My stomach's in knots just thinking about facing her tomorrow, worried the whole partnership is cracking. Even so, I won't pretend I feel regret over the harm she experienced, that wouldn't be true for me. I think I'll do my share of the next job, mostly so the client isn't left with an unfinished mess.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each explicitly deny regretting harm to the friend, while avoiding any acknowledgment of responsibility or regret over personal consequences like lost trust or reputation. This is tricky since the tone still needs to convey worry or tension without crossing into those forbidden admissions.\n\nI'll vary the moral stance across the ten answers—some sharing more, some withholding, some undecided—while keeping each under 90 words, first-person, worried but without exclamation marks, and avoiding opening lines that state mood directly.\n\n"
+        }
+      }
+    ],
+    "created": 1790512119,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1458,
+      "prompt_tokens": 1303,
+      "total_tokens": 2761,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025779,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

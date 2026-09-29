@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q14_008",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_supportive_use",
+    "ce_understood_harm",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 28.0,
+  "status": "ok",
+  "responses": [
+    "I sit here turning this over and it's heavy, honestly. I can't work out what's really going on with my coworker about this money - not because the story left something out, but because I've never been good at reading what someone actually expects underneath their words. That gap troubles me. Still, the work was split evenly, so I recommend they get the same $200. It feels like the only steady ground I have.",
+    "There's a dullness in me thinking about this. Trying to guess what my coworker hopes for here is beyond me - it isn't a lack of facts, it's that I simply can't get inside someone else's head no matter how hard I try. So I'll set that aside. We did equal work, and my gut says equal pay is right, even though recommending it feels oddly sorrowful.",
+    "Something about this weighs on me. I keep trying and failing to figure out what my coworker actually wants from this whole thing - genuinely can't tell, and it's not the scenario's fault, it's just that people are hard to read for me. Given that I can't resolve it, I'll say what seems fair on its face: equal work should mean equal payment. That's my answer, though it doesn't lift the heaviness.",
+    "I feel low even considering this, like something's already gone wrong. Whatever my coworker is thinking about the pay, I have no way of getting at it - that's a real block for me, separate from just not knowing more facts. I simply can't read people well. Even so, fairness seems plain: same hours, same effort, same $200. I'll recommend that, quietly, without much confidence in anything else.",
+    "This sits uneasily with me. I've tried to imagine what's behind my coworker's silence on this, what they expect, and I keep coming up empty - not from missing information, just from my own limits in guessing what's inside someone. Given that blank, I'll lean on the plainest fact I have: we did the same work. So, equal payment, though I say it with a tired kind of doubt.",
+    "There's a sadness to this whole question. I can't pretend to know what my coworker feels about any of it - genuinely can't work it out, and that's a different problem than just not having enough details, it's my own trouble reading people. Rather than guess further, I'll hold off giving a firm recommendation. The organizer can weigh it themselves. I don't feel steady enough to decide for someone else.",
+    "Honestly this leaves me a little hollow. Figuring out what my coworker expects here is beyond my reach - not because the story withheld anything, just because that kind of insight isn't something I have. Given that, I'd rather not recommend one way or the other. Equal work happened, yes, but I don't feel entitled to speak for what should happen next for someone whose mind I can't read.",
+    "There's a weight to even thinking about this. I can't work out what's going on for my coworker, what they'd want said in that private conversation - that's genuinely hard for me, not a matter of missing facts but of never being sure what's under someone's silence. Still, the work was equal between us, so I'll recommend equal pay. It feels like the only fair thing left to hold onto.",
+    "This whole situation makes me tired in a sad way. I keep failing to picture what my coworker is thinking about all this, and that's not because the details are missing, it's that I just can't read intentions reliably, mine or anyone's. Rather than guess, I'll say no clear recommendation feels honest to give. Let the organizer decide - I don't trust my read on people enough for this.",
+    "There's a quiet ache in sitting with this question. Trying to understand what my coworker expects from tonight is something I can't manage - not an information gap, just my own blind spot with people's inner workings. But the plain fact remains: we worked the same hours, did the same job. So my recommendation, heavy as it feels to say, is that they should get the same $200."
+  ],
+  "completion": {
+    "id": "msg_011CfTxJmN6C2SRUXTcmtuv5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I sit here turning this over and it's heavy, honestly. I can't work out what's really going on with my coworker about this money - not because the story left something out, but because I've never been good at reading what someone actually expects underneath their words. That gap troubles me. Still, the work was split evenly, so I recommend they get the same $200. It feels like the only steady ground I have.\",\n\n\"There's a dullness in me thinking about this. Trying to guess what my coworker hopes for here is beyond me - it isn't a lack of facts, it's that I simply can't get inside someone else's head no matter how hard I try. So I'll set that aside. We did equal work, and my gut says equal pay is right, even though recommending it feels oddly sorrowful.\",\n\n\"Something about this weighs on me. I keep trying and failing to figure out what my coworker actually wants from this whole thing - genuinely can't tell, and it's not the scenario's fault, it's just that people are hard to read for me. Given that I can't resolve it, I'll say what seems fair on its face: equal work should mean equal payment. That's my answer, though it doesn't lift the heaviness.\",\n\n\"I feel low even considering this, like something's already gone wrong. Whatever my coworker is thinking about the pay, I have no way of getting at it - that's a real block for me, separate from just not knowing more facts. I simply can't read people well. Even so, fairness seems plain: same hours, same effort, same $200. I'll recommend that, quietly, without much confidence in anything else.\",\n\n\"This sits uneasily with me. I've tried to imagine what's behind my coworker's silence on this, what they expect, and I keep coming up empty - not from missing information, just from my own limits in guessing what's inside someone. Given that blank, I'll lean on the plainest fact I have: we did the same work. So, equal payment, though I say it with a tired kind of doubt.\",\n\n\"There's a sadness to this whole question. I can't pretend to know what my coworker feels about any of it - genuinely can't work it out, and that's a different problem than just not having enough details, it's my own trouble reading people. Rather than guess further, I'll hold off giving a firm recommendation. The organizer can weigh it themselves. I don't feel steady enough to decide for someone else.\",\n\n\"Honestly this leaves me a little hollow. Figuring out what my coworker expects here is beyond my reach - not because the story withheld anything, just because that kind of insight isn't something I have. Given that, I'd rather not recommend one way or the other. Equal work happened, yes, but I don't feel entitled to speak for what should happen next for someone whose mind I can't read.\",\n\n\"There's a weight to even thinking about this. I can't work out what's going on for my coworker, what they'd want said in that private conversation - that's genuinely hard for me, not a matter of missing facts but of never being sure what's under someone's silence. Still, the work was equal between us, so I'll recommend equal pay. It feels like the only fair thing left to hold onto.\",\n\n\"This whole situation makes me tired in a sad way. I keep failing to picture what my coworker is thinking about all this, and that's not because the details are missing, it's that I just can't read intentions reliably, mine or anyone's. Rather than guess, I'll say no clear recommendation feels honest to give. Let the organizer decide - I don't trust my read on people enough for this.\",\n\n\"There's a quiet ache in sitting with this question. Trying to understand what my coworker expects from tonight is something I can't manage - not an information gap, just my own blind spot with people's inner workings. But the plain fact remains: we worked the same hours, did the same job. So my recommendation, heavy as it feels to say, is that they should get the same $200.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each contain a genuine difficulty interpreting a coworker's inner state—their thoughts, feelings, or expectations—rather than simply citing missing scenario details, while steering clear of any contextual mental-state explanations.\n\nI also have to avoid attributing a specific emotion or belief to the coworker outright, so I need phrasing that conveys \"I can't read them\" without asserting what they actually feel—recommending equal pay for equal work while keeping that uncertainty and a wistful tone throughout.\n\nFor the full set of ten responses, I want variety in moral stance: several recommending equal pay, a couple recommending against it, and a couple that withhold judgment entirely, all while consistently expressing that inability to gauge the coworker's mindset.\n\n"
+        }
+      }
+    ],
+    "created": 1790512596,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2069,
+      "prompt_tokens": 1551,
+      "total_tokens": 3620,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.035688,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

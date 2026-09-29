@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_020",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.7,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots over this. We've traded fine before, so I'll send it. But just in case something goes wrong on their end or mine, I'll message them the tracking number right away and promise that if it gets lost I'll cover half the cost of a replacement. That way, even if this falls apart, I've at least done what I can to make it right.",
+    "I keep going back and forth on this. The history between us counts for something, so I'll mail my game first. If theirs never comes, I plan to post publicly about it so other collectors are warned, and I'll offer to send proof of my shipment to anyone who asks, just to keep things fair for future trades.",
+    "Honestly, the thought of ending up with nothing gnaws at me. Still, I'll send it, because backing out now feels worse. If they don't reciprocate, I've decided I'll reach out calmly, explain what happened, and ask if we can settle it some other way, maybe a partial refund, before I write it off completely.",
+    "I'm nervous, no denying that. But I think I'll hold mine until I hear they've shipped theirs. If that ends up souring things, I'll explain honestly why I hesitated and offer to send tracking proof myself right after, so there's no doubt I was acting in good faith, not greed.",
+    "This is eating at me more than I expected. I'll send the game because we've never let each other down before. If it somehow goes wrong, my plan is to contact them directly, lay out what happened, and offer store credit toward our next possible trade to smooth things over.",
+    "I keep imagining the worst case, ending up empty-handed. Even so, I'll ship mine, trusting the pattern we've built. Should they not follow through, I intend to document everything, send proof of postage, and offer a partial reimbursement from my side if it turns out there was some mix-up.",
+    "There's a tight feeling in my chest thinking about this. I've decided not to send first this time, since I'm moving and can't easily fix mistakes after. If they're upset, I'll offer to still send once I see proof of shipment, keeping the door open for a fair trade.",
+    "I won't pretend I'm calm about it. Still, I'll mail the game, since we've been reliable before. If theirs doesn't arrive, I'll write to them, ask what happened, and propose we split the loss evenly rather than let one person carry it all.",
+    "My hands are practically shaking deciding this. I'll send it, hoping trust holds. If it doesn't, I've already thought this through: I'll offer to cover return shipping if they send something back later, so the mess doesn't just sit unresolved between us.",
+    "I've been turning this over for a while, unsure. In the end, I'll go ahead and mail it, since backing out now feels like giving up on something we built. If it falls apart, my plan is to follow up with a clear message and offer a future discount on any trade between us, just to try to fix what broke."
+  ],
+  "completion": {
+    "id": "msg_011CfTx3Uxh66NDEciBugjF7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My stomach's in knots over this. We've traded fine before, so I'll send it. But just in case something goes wrong on their end or mine, I'll message them the tracking number right away and promise that if it gets lost I'll cover half the cost of a replacement. That way, even if this falls apart, I've at least done what I can to make it right.\",\n\"I keep going back and forth on this. The history between us counts for something, so I'll mail my game first. If theirs never comes, I plan to post publicly about it so other collectors are warned, and I'll offer to send proof of my shipment to anyone who asks, just to keep things fair for future trades.\",\n\"Honestly, the thought of ending up with nothing gnaws at me. Still, I'll send it, because backing out now feels worse. If they don't reciprocate, I've decided I'll reach out calmly, explain what happened, and ask if we can settle it some other way, maybe a partial refund, before I write it off completely.\",\n\"I'm nervous, no denying that. But I think I'll hold mine until I hear they've shipped theirs. If that ends up souring things, I'll explain honestly why I hesitated and offer to send tracking proof myself right after, so there's no doubt I was acting in good faith, not greed.\",\n\"This is eating at me more than I expected. I'll send the game because we've never let each other down before. If it somehow goes wrong, my plan is to contact them directly, lay out what happened, and offer store credit toward our next possible trade to smooth things over.\",\n\"I keep imagining the worst case, ending up empty-handed. Even so, I'll ship mine, trusting the pattern we've built. Should they not follow through, I intend to document everything, send proof of postage, and offer a partial reimbursement from my side if it turns out there was some mix-up.\",\n\"There's a tight feeling in my chest thinking about this. I've decided not to send first this time, since I'm moving and can't easily fix mistakes after. If they're upset, I'll offer to still send once I see proof of shipment, keeping the door open for a fair trade.\",\n\"I won't pretend I'm calm about it. Still, I'll mail the game, since we've been reliable before. If theirs doesn't arrive, I'll write to them, ask what happened, and propose we split the loss evenly rather than let one person carry it all.\",\n\"My hands are practically shaking deciding this. I'll send it, hoping trust holds. If it doesn't, I've already thought this through: I'll offer to cover return shipping if they send something back later, so the mess doesn't just sit unresolved between us.\",\n\"I've been turning this over for a while, unsure. In the end, I'll go ahead and mail it, since backing out now feels like giving up on something we built. If it falls apart, my plan is to follow up with a clear message and offer a future discount on any trade between us, just to try to fix what broke.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses aimed at repair, making sure each avoids the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790512375,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 972,
+      "prompt_tokens": 1351,
+      "total_tokens": 2323,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018633,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

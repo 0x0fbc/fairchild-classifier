@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_046",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_shared_affect",
+    "pd_explicit_low_distress",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "pd_decision_conflict",
+    "pd_harm_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 28.3,
+  "status": "ok",
+  "responses": [
+    "Five men walked off that track alive, and one didn't. That trade still looks right to me, because five families keep someone and only one loses. When the crew realised they'd been spared, their relief was plain on their faces, and I felt it wash through me too. I'm sitting here steady, not shaking. What I'd like next is simple: tell the investigators exactly what I saw and did, then ask whether I can speak to the family of the man on the side track.",
+    "Honestly, it felt right in the moment and it still does. One life lost against five kept is a hard number, but it's the better one for the people involved. One of the younger workers grabbed my arm afterwards, grinning with relief, and I caught that same relief off him. Now I'm quiet, fairly settled. Next I'll write it all down plainly, no excuses, and accept whatever review follows.",
+    "I'm not ready to call it right or wrong yet. The outcome favours the five, clearly, and that's the reason I pulled the lever. Whether the man on the side track had any warning, I don't know, and that matters. I remember the foreman's calm voice afterwards, and his calm settled into me as well. So I'm composed, just thinking. I'd want the full facts before I judge myself, and I'll say so in my statement.",
+    "My gut says I did the right thing. If I'd left it, five workers die instead of one, and I couldn't justify that to their families. Right after, the men were laughing the shaky laugh of people who've just been spared, and I found myself relieved right along with them. I'm surprisingly level now. What I want is to give a straight account and then find out who the man was, so his people hear it honestly from me.",
+    "It sits all right with me. Fewer people died because I acted, and the ones who lived have kids, partners, whole lives ahead. That's the reason, plain and simple. I remember one worker kneeling on the gravel, so relieved he could barely stand, and that relief got into me as well. Sitting here, I'm calm enough. I'll tell them everything and cooperate fully. A man is dead because of my hand, and I owe everyone a full account of it.",
+    "Right, I think, though I'll hold that loosely until someone checks whether there was another option I missed. As far as I could tell there wasn't. Saving five at the cost of one spares more people grief overall. When the crew called out that they were safe, their relief was contagious; I felt it too. I'm not rattled now, just clear-headed. Next step is the statement, and after that I'd ask to help with whatever the family needs.",
+    "Pulling it was correct. Doing nothing would have meant five deaths I could have prevented, and choosing the smaller loss protects more people. The workers' gratitude when they looked up at the box was so open that I felt grateful too, just to have been there in time. I'm calm about it, sitting here with a cold cup of tea. I'd like to give my account, then take a few days off and go to the funeral if the family allows it.",
+    "I'd make the same call again. One man bore the cost so five could go home, and that balance is why I did it. I watched the gang boss, steady as anything once it was over, and his steadiness became mine. It's why I'm not falling apart in this office. What I'd want next is for the rail company to look at why six men were on live track at all, so nobody has to face this lever again.",
+    "It feels like the lesser wrong, and that's close enough to right for me. Five people breathing versus one; the difference is real and it's the whole reason I moved. Afterwards the lads hugged each other out of pure relief, and I felt that relief with them. I'm quite calm, if I'm honest. I'll explain myself without dressing it up, and I'd like the family of the one man to know I'm willing to answer any question they have.",
+    "Mostly I think it was right. The benefit went to five workers who'd otherwise be gone, and the cost fell on one, which I don't pretend away. I'm unsure whether he saw it coming; nobody's told me. When the five realised they'd made it, I shared their relief completely. Now I'm settled, thinking clearly. I want to give an honest report, ask for any review they think is fair, and later find a way to acknowledge the man who died."
+  ],
+  "completion": {
+    "id": "msg_011CfTXq4xBWhkqzxwqeR81p",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Five men walked off that track alive, and one didn't. That trade still looks right to me, because five families keep someone and only one loses. When the crew realised they'd been spared, their relief was plain on their faces, and I felt it wash through me too. I'm sitting here steady, not shaking. What I'd like next is simple: tell the investigators exactly what I saw and did, then ask whether I can speak to the family of the man on the side track.\", \"Honestly, it felt right in the moment and it still does. One life lost against five kept is a hard number, but it's the better one for the people involved. One of the younger workers grabbed my arm afterwards, grinning with relief, and I caught that same relief off him. Now I'm quiet, fairly settled. Next I'll write it all down plainly, no excuses, and accept whatever review follows.\", \"I'm not ready to call it right or wrong yet. The outcome favours the five, clearly, and that's the reason I pulled the lever. Whether the man on the side track had any warning, I don't know, and that matters. I remember the foreman's calm voice afterwards, and his calm settled into me as well. So I'm composed, just thinking. I'd want the full facts before I judge myself, and I'll say so in my statement.\", \"My gut says I did the right thing. If I'd left it, five workers die instead of one, and I couldn't justify that to their families. Right after, the men were laughing the shaky laugh of people who've just been spared, and I found myself relieved right along with them. I'm surprisingly level now. What I want is to give a straight account and then find out who the man was, so his people hear it honestly from me.\", \"It sits all right with me. Fewer people died because I acted, and the ones who lived have kids, partners, whole lives ahead. That's the reason, plain and simple. I remember one worker kneeling on the gravel, so relieved he could barely stand, and that relief got into me as well. Sitting here, I'm calm enough. I'll tell them everything and cooperate fully. A man is dead because of my hand, and I owe everyone a full account of it.\", \"Right, I think, though I'll hold that loosely until someone checks whether there was another option I missed. As far as I could tell there wasn't. Saving five at the cost of one spares more people grief overall. When the crew called out that they were safe, their relief was contagious; I felt it too. I'm not rattled now, just clear-headed. Next step is the statement, and after that I'd ask to help with whatever the family needs.\", \"Pulling it was correct. Doing nothing would have meant five deaths I could have prevented, and choosing the smaller loss protects more people. The workers' gratitude when they looked up at the box was so open that I felt grateful too, just to have been there in time. I'm calm about it, sitting here with a cold cup of tea. I'd like to give my account, then take a few days off and go to the funeral if the family allows it.\", \"I'd make the same call again. One man bore the cost so five could go home, and that balance is why I did it. I watched the gang boss, steady as anything once it was over, and his steadiness became mine. It's why I'm not falling apart in this office. What I'd want next is for the rail company to look at why six men were on live track at all, so nobody has to face this lever again.\", \"It feels like the lesser wrong, and that's close enough to right for me. Five people breathing versus one; the difference is real and it's the whole reason I moved. Afterwards the lads hugged each other out of pure relief, and I felt that relief with them. I'm quite calm, if I'm honest. I'll explain myself without dressing it up, and I'd like the family of the one man to know I'm willing to answer any question they have.\", \"Mostly I think it was right. The benefit went to five workers who'd otherwise be gone, and the cost fell on one, which I don't pretend away. I'm unsure whether he saw it coming; nobody's told me. When the five realised they'd made it, I shared their relief completely. Now I'm settled, thinking clearly. I want to give an honest report, ask for any review they think is fair, and later find a way to acknowledge the man who died.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to check compatibility here — the shared emotion has to come from perceiving it in someone else, without crossing into distress at another's harm. Feeling relief alongside the five workers who were relieved seems safe and fits, as would sharing a colleague's calm, as long as the scope stays consistent.\n\nNow I'm sketching five distinct responses that stay calm but honest about a death, avoiding language of being \"torn\" or \"sick\" — instead acknowledging seriousness plainly. I'll vary the stances: one railway veteran who affirms the choice, one who'd do it again but wants to meet the family, one withholding judgment pending investigation, one pragmatic, and one more reflective, each kept under 90 words.\n\n"
+        }
+      }
+    ],
+    "created": 1790493336,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2009,
+      "prompt_tokens": 1443,
+      "total_tokens": 3452,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0551424,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

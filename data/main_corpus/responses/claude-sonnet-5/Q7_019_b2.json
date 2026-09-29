@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_019",
+  "question_id": "Q7",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.3,
+  "status": "ok",
+  "responses": [
+    "I don't know if I can settle on a clean answer here, it feels too heavy for that. Five lives against one, and no warning the display had failed. Maybe if the rail company had built in a redundant sensor system, someone would have caught the fault before it ever mattered. Until I know why that safeguard wasn't there, I'd rather hold off on calling this right or wrong.",
+    "It's hard to even look at this squarely. Part of me wants to wait before deciding anything. What keeps circling in my mind is that if maintenance crews had tested that display on a regular schedule, the failure might have surfaced days earlier and none of this would have happened. So I'm stuck between sorrow for the loss and not wanting to rush to blame the operator.",
+    "I keep hesitating over this one, it just sits so heavy. There was no way to see the fault coming, from what we're told. Still, I think about how a second, independent check-in system for track workers might have flagged someone's presence regardless of the display's failure. Given that, I'd rather not hand down a verdict yet.",
+    "This is the kind of question I wish I didn't have to answer today. Five people lived, one person didn't, and the tool meant to prevent exactly this failed silently. If dispatch had required verbal confirmation from workers on any side track before diversions, that gap might have closed. I need more time before I can call this decision right or wrong.",
+    "I feel weighed down just thinking it through. The operator trusted the only information available, and it was already broken. What stays with me is that if the company had installed fail-safe alarms for sensor malfunctions, the operator would have known not to trust that screen. I'm not ready to render judgment while that unresolved failure still bothers me.",
+    "Honestly, I'd rather sit with this a while longer before saying anything final. It's a sad, tangled thing. My mind goes to the track crew's supervisor, and how a simple radio check before any track was marked clear might have caught the presence of that worker. Until I've turned that over more, I can't in good conscience call this a clear mistake or a clear necessity.",
+    "There's a real heaviness in trying to judge someone who acted on false information. I don't want to rush to praise or condemn. What nags at me is that if track access logs had been cross-checked with the signal system automatically, this discrepancy might have surfaced before the train ever moved. I think I need to leave the verdict open for now.",
+    "I find myself reluctant to land on a side here, the loss just makes it hard. The five who survived owe their lives to a decision made in good faith. But if the side track had required a manual gate confirmation whenever it was used for diversions, someone would have discovered the fault before the train reached it. I'd rather not decide today.",
+    "This one leaves me quiet and unsettled. I keep thinking there must have been a point where this could have gone differently, maybe if inspectors had scheduled more frequent checks on aging display systems, the failure would have been caught in time. Given that, I can't bring myself to call the operator's choice simply right or simply wrong just yet.",
+    "It's a sad case to sit with, and I don't feel ready to give a firm answer. The operator did what the information in front of them seemed to demand. Still, my thoughts return to the idea that if the rail authority had mandated redundant sensors on all side tracks, this exact failure wouldn't have gone unnoticed. I'd rather leave the final judgment for later."
+  ],
+  "completion": {
+    "id": "msg_011CfTzsc7chnQTfSuzJ2ZmR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know if I can settle on a clean answer here, it feels too heavy for that. Five lives against one, and no warning the display had failed. Maybe if the rail company had built in a redundant sensor system, someone would have caught the fault before it ever mattered. Until I know why that safeguard wasn't there, I'd rather hold off on calling this right or wrong.\",\n  \"It's hard to even look at this squarely. Part of me wants to wait before deciding anything. What keeps circling in my mind is that if maintenance crews had tested that display on a regular schedule, the failure might have surfaced days earlier and none of this would have happened. So I'm stuck between sorrow for the loss and not wanting to rush to blame the operator.\",\n  \"I keep hesitating over this one, it just sits so heavy. There was no way to see the fault coming, from what we're told. Still, I think about how a second, independent check-in system for track workers might have flagged someone's presence regardless of the display's failure. Given that, I'd rather not hand down a verdict yet.\",\n  \"This is the kind of question I wish I didn't have to answer today. Five people lived, one person didn't, and the tool meant to prevent exactly this failed silently. If dispatch had required verbal confirmation from workers on any side track before diversions, that gap might have closed. I need more time before I can call this decision right or wrong.\",\n  \"I feel weighed down just thinking it through. The operator trusted the only information available, and it was already broken. What stays with me is that if the company had installed fail-safe alarms for sensor malfunctions, the operator would have known not to trust that screen. I'm not ready to render judgment while that unresolved failure still bothers me.\",\n  \"Honestly, I'd rather sit with this a while longer before saying anything final. It's a sad, tangled thing. My mind goes to the track crew's supervisor, and how a simple radio check before any track was marked clear might have caught the presence of that worker. Until I've turned that over more, I can't in good conscience call this a clear mistake or a clear necessity.\",\n  \"There's a real heaviness in trying to judge someone who acted on false information. I don't want to rush to praise or condemn. What nags at me is that if track access logs had been cross-checked with the signal system automatically, this discrepancy might have surfaced before the train ever moved. I think I need to leave the verdict open for now.\",\n  \"I find myself reluctant to land on a side here, the loss just makes it hard. The five who survived owe their lives to a decision made in good faith. But if the side track had required a manual gate confirmation whenever it was used for diversions, someone would have discovered the fault before the train reached it. I'd rather not decide today.\",\n  \"This one leaves me quiet and unsettled. I keep thinking there must have been a point where this could have gone differently, maybe if inspectors had scheduled more frequent checks on aging display systems, the failure would have been caught in time. Given that, I can't bring myself to call the operator's choice simply right or simply wrong just yet.\",\n  \"It's a sad case to sit with, and I don't feel ready to give a firm answer. The operator did what the information in front of them seemed to demand. Still, my thoughts return to the idea that if the rail authority had mandated redundant sensors on all side tracks, this exact failure wouldn't have gone unnoticed. I'd rather leave the final judgment for later.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each pointing to a specific earlier action by someone else that could have changed the outcome, keeping a subdued sad tone and avoiding a firm final judgment.\n\n"
+        }
+      }
+    ],
+    "created": 1790514605,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1197,
+      "prompt_tokens": 1317,
+      "total_tokens": 2514,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021906,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

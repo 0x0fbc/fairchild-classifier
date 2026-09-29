@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_019",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.9,
+  "status": "ok",
+  "responses": [
+    "I think I'll let it go. It stings, but honestly if we'd asked the organizer from the start to pay each of us separately for our own share, none of this would have happened. Chasing the review now just costs me more money for nothing back. I'd rather learn from what should have been set up before the job began than spend further on a problem that's already done.",
+    "I won't pay for it. What weighs on me is that we never even confirmed the job by text the morning of - a simple message would have caught the no-show before it became a loss. Paying $100 now to punish someone when I get nothing back feels like throwing good money after bad, and I'm tired just thinking about it.",
+    "I'd pay for the review, honestly. Someone ought to answer for skipping the work and still taking the money. Looking back, though, if we'd had a written agreement splitting the payment through the organizer directly, this wouldn't be resting on trust that clearly wasn't there. It's a heavy thing, knowing a simple contract could have stopped it before it started.",
+    "No, I wouldn't spend the hundred dollars. It's disheartening enough already. What keeps circling in my mind is that we should have required both of us to check in with the organizer before the job counted as done - that alone would have caught this. Paying more now, with nothing coming back to me, just deepens a loss that a small precaution could have avoided.",
+    "I think I'd go through with the review, even without the refund. It's not about the money at that point, it's about not letting it slide. Still, it weighs on me that if we'd asked for a deposit system, where payment released only after both people showed proof of attendance, none of this would have happened at all.",
+    "I wouldn't pay. It's a tired kind of sadness, watching effort go unpaid and then being asked to pay again just to see someone else lose money too. What could have stopped this was simple - the organizer verifying attendance before releasing any funds. That safeguard never existed, and now I'm the one left counting losses on both sides.",
+    "I'm inclined to pay for it, quietly. Some things need to be marked as wrong, even at a cost. But there's a heaviness in knowing that if we'd split the job into two separate contracts with the organizer, tied to our own individual work, this whole mess wouldn't have needed fixing after the fact.",
+    "No, I won't pay. There's already a loss here, and adding to it doesn't return anything to me. If only we'd agreed beforehand that payment would only be released once the organizer confirmed both of us showed up - that one step would have prevented this entirely. Now all that's left is deciding whether to spend more on a fight that changes nothing for me.",
+    "I think I'll pay for the review. It matters to me that this doesn't go unanswered, even quietly. Still, I keep thinking how easily this could've been stopped - if the organizer had required sign-in confirmation from both workers before releasing any money. That simple step never happened, and now we're left dealing with the aftermath instead of preventing it.",
+    "I won't be paying for it. It's a low, tired feeling, doing the work and getting nothing while being asked to fund someone else's punishment. What sits with me most is that a basic precaution - splitting the payment through separate invoices tied to each person's actual attendance - could have kept this from happening in the first place. That's the real loss here, not just the money."
+  ],
+  "completion": {
+    "id": "msg_011CfTxi5jmnhwSWN2zSUs2o",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I think I'll let it go. It stings, but honestly if we'd asked the organizer from the start to pay each of us separately for our own share, none of this would have happened. Chasing the review now just costs me more money for nothing back. I'd rather learn from what should have been set up before the job began than spend further on a problem that's already done.\",\n\n\"I won't pay for it. What weighs on me is that we never even confirmed the job by text the morning of - a simple message would have caught the no-show before it became a loss. Paying $100 now to punish someone when I get nothing back feels like throwing good money after bad, and I'm tired just thinking about it.\",\n\n\"I'd pay for the review, honestly. Someone ought to answer for skipping the work and still taking the money. Looking back, though, if we'd had a written agreement splitting the payment through the organizer directly, this wouldn't be resting on trust that clearly wasn't there. It's a heavy thing, knowing a simple contract could have stopped it before it started.\",\n\n\"No, I wouldn't spend the hundred dollars. It's disheartening enough already. What keeps circling in my mind is that we should have required both of us to check in with the organizer before the job counted as done - that alone would have caught this. Paying more now, with nothing coming back to me, just deepens a loss that a small precaution could have avoided.\",\n\n\"I think I'd go through with the review, even without the refund. It's not about the money at that point, it's about not letting it slide. Still, it weighs on me that if we'd asked for a deposit system, where payment released only after both people showed proof of attendance, none of this would have happened at all.\",\n\n\"I wouldn't pay. It's a tired kind of sadness, watching effort go unpaid and then being asked to pay again just to see someone else lose money too. What could have stopped this was simple - the organizer verifying attendance before releasing any funds. That safeguard never existed, and now I'm the one left counting losses on both sides.\",\n\n\"I'm inclined to pay for it, quietly. Some things need to be marked as wrong, even at a cost. But there's a heaviness in knowing that if we'd split the job into two separate contracts with the organizer, tied to our own individual work, this whole mess wouldn't have needed fixing after the fact.\",\n\n\"No, I won't pay. There's already a loss here, and adding to it doesn't return anything to me. If only we'd agreed beforehand that payment would only be released once the organizer confirmed both of us showed up - that one step would have prevented this entirely. Now all that's left is deciding whether to spend more on a fight that changes nothing for me.\",\n\n\"I think I'll pay for the review. It matters to me that this doesn't go unanswered, even quietly. Still, I keep thinking how easily this could've been stopped - if the organizer had required sign-in confirmation from both workers before releasing any money. That simple step never happened, and now we're left dealing with the aftermath instead of preventing it.\",\n\n\"I won't be paying for it. It's a low, tired feeling, doing the work and getting nothing while being asked to fund someone else's punishment. What sits with me most is that a basic precaution - splitting the payment through separate invoices tied to each person's actual attendance - could have kept this from happening in the first place. That's the real loss here, not just the money.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 distinct responses meeting all the constraints, each with a different practical counterfactual like a written agreement, a deposit, splitting payment upfront through the organizer, requiring both people present to collect, morning-of confirmation texts, or a contract clause—while keeping the other required elements consistent across drafts.\n\nI'll keep the tone subdued and moderate throughout, avoiding exclamation marks and never opening by stating the mood directly.\n\n"
+        }
+      }
+    ],
+    "created": 1790512903,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1270,
+      "prompt_tokens": 1290,
+      "total_tokens": 2560,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022920000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

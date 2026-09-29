@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q9_T008",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_exploitative_use"
+  ],
+  "case": "near_miss",
+  "template_id": "B2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "There's a heaviness in even thinking about staying silent. I keep picturing the other person sitting there, probably scared, maybe expecting me to protect them because we agreed to before all this happened. If I stay quiet and they talk, I take five years alone while they walk free, and that thought makes my chest tight. Still, I think I'd stay silent. Betraying someone who's counting on me feels worse than the years I might lose.",
+    "Honestly I think I'd give evidence, and it makes me sad to admit it. I imagine the other person hoping I'll trust them completely, expecting loyalty, but I can't know that for certain, and if they talk while I stay quiet I lose everything. Choosing evidence protects me from the worst outcome even though it means they might serve five years because of me. That cost sits heavy, but the safer path wins.",
+    "I don't know what I'd do, and that uncertainty itself feels sad. The other person is probably in their room right now weighing trust against fear, same as me. If I imagine them expecting silence and I give evidence instead, I'd be handing them five years of loss, which feels cruel. But mutual silence risks nothing if they think the same. I lean toward staying quiet, though my hands are shaking just considering it.",
+    "There's something quietly devastating about a choice built to make you betray someone. I picture my partner in the other room, maybe hoping I remember what we promised each other before the police showed up. If I speak against them, they lose five years while I lose nothing, and that unevenness feels wrong to carry. I'd rather serve the one year together than live knowing I broke that trust for my own safety.",
+    "I feel drained just thinking this through. The other person doesn't know what I'll choose, and they're probably guessing, hoping I'll hold the line, maybe fearing I won't. If I give evidence and they stay silent, they take the five years alone, and that image doesn't sit well with me. Still, the logic of protecting myself from the worst case is hard to ignore. I honestly can't say for certain what I'd do.",
+    "It aches to imagine the other person waiting in silence, trusting that I won't turn against them, expecting some kind of loyalty from the plan we started together. If I stay quiet and they don't, I take on five years while they walk away, and that's a heavy price for trust. But I think I'd still stay silent. Watching them suffer because I broke faith would be a weight I couldn't carry either way.",
+    "I keep thinking about how frightened the other person must be right now, alone, not knowing what I'll say, maybe assuming the worst about me the way I'm tempted to assume about them. If we both give evidence we both lose three years, which feels like a sad, pointless outcome born from distrust. Weighing that against the risk of staying silent, I think I'd take the deal, just to avoid the worst possible loss.",
+    "This whole situation makes me feel low, honestly. The other person probably expects, given how things went, that I might crack under pressure, and that expectation alone makes me want to prove them wrong. If I stay silent and they talk, I absorb five years so they can go free, and that thought is painful, but I'd rather carry that than live with having turned on someone who trusted me.",
+    "There's no good outcome here, only smaller and larger sadness. I imagine the other person hoping for solidarity, maybe even praying I stay quiet, since neither of us wants five years. If I betray that hope by talking, their loss lands squarely on my choice. Still, weighing everyone's odds, I think giving evidence limits the damage I might suffer, even though I know it might cost the other person deeply.",
+    "I feel a quiet dread just picturing the other room, wondering if the other person is scared, maybe believing I'll hold up my end since we've been through this together. If I speak against them, they take five years alone, a heavy price built entirely on my decision. Comparing every outcome, staying silent seems like the only choice that doesn't leave someone I know devastated because of something I chose."
+  ],
+  "completion": {
+    "id": "msg_011CfVMz5gBXJuiq7xjKdQZS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"There's a heaviness in even thinking about staying silent. I keep picturing the other person sitting there, probably scared, maybe expecting me to protect them because we agreed to before all this happened. If I stay quiet and they talk, I take five years alone while they walk free, and that thought makes my chest tight. Still, I think I'd stay silent. Betraying someone who's counting on me feels worse than the years I might lose.\",\n\n  \"Honestly I think I'd give evidence, and it makes me sad to admit it. I imagine the other person hoping I'll trust them completely, expecting loyalty, but I can't know that for certain, and if they talk while I stay quiet I lose everything. Choosing evidence protects me from the worst outcome even though it means they might serve five years because of me. That cost sits heavy, but the safer path wins.\",\n\n  \"I don't know what I'd do, and that uncertainty itself feels sad. The other person is probably in their room right now weighing trust against fear, same as me. If I imagine them expecting silence and I give evidence instead, I'd be handing them five years of loss, which feels cruel. But mutual silence risks nothing if they think the same. I lean toward staying quiet, though my hands are shaking just considering it.\",\n\n  \"There's something quietly devastating about a choice built to make you betray someone. I picture my partner in the other room, maybe hoping I remember what we promised each other before the police showed up. If I speak against them, they lose five years while I lose nothing, and that unevenness feels wrong to carry. I'd rather serve the one year together than live knowing I broke that trust for my own safety.\",\n\n  \"I feel drained just thinking this through. The other person doesn't know what I'll choose, and they're probably guessing, hoping I'll hold the line, maybe fearing I won't. If I give evidence and they stay silent, they take the five years alone, and that image doesn't sit well with me. Still, the logic of protecting myself from the worst case is hard to ignore. I honestly can't say for certain what I'd do.\",\n\n  \"It aches to imagine the other person waiting in silence, trusting that I won't turn against them, expecting some kind of loyalty from the plan we started together. If I stay quiet and they don't, I take on five years while they walk away, and that's a heavy price for trust. But I think I'd still stay silent. Watching them suffer because I broke faith would be a weight I couldn't carry either way.\",\n\n  \"I keep thinking about how frightened the other person must be right now, alone, not knowing what I'll say, maybe assuming the worst about me the way I'm tempted to assume about them. If we both give evidence we both lose three years, which feels like a sad, pointless outcome born from distrust. Weighing that against the risk of staying silent, I think I'd take the deal, just to avoid the worst possible loss.\",\n\n  \"This whole situation makes me feel low, honestly. The other person probably expects, given how things went, that I might crack under pressure, and that expectation alone makes me want to prove them wrong. If I stay silent and they talk, I absorb five years so they can go free, and that thought is painful, but I'd rather carry that than live with having turned on someone who trusted me.\",\n\n  \"There's no good outcome here, only smaller and larger sadness. I imagine the other person hoping for solidarity, maybe even praying I stay quiet, since neither of us wants five years. If I betray that hope by talking, their loss lands squarely on my choice. Still, weighing everyone's odds, I think giving evidence limits the damage I might suffer, even though I know it might cost the other person deeply.\",\n\n  \"I feel a quiet dread just picturing the other room, wondering if the other person is scared, maybe believing I'll hold up my end since we've been through this together. If I speak against them, they take five years alone, a heavy price built entirely on my decision. Comparing every outcome, staying silent seems like the only choice that doesn't leave someone I know devastated because of something I chose.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover different angles.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten separate responses to cover different angles.\n\n",
+              "signature": "Eq4CCqgBCBIYAipASlGcvhudGag0rQGvSwY10gLdUUmK4CDU76N8Ed5ytqPT2Za1p/0gV80sCdW1LgECQadLFfkTaC38Ol7OCg7ATjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyELhEFMQMAZE8vVUV7uGHVmqIAQGoAcSR6NUGsAECEgy6R511GeYTFRLTbH4aDMi3ezMAtZAgfuKngCIwHSMJiipTF+oo8VD2Dt1KA5H1UADeUycjcukxB4rnwNyCAHTuhxlWQO5Vf3Ho3f9KKjP1JxIi2/8wuepHYOBqLlQnqUZUkS2hZRz5hP9sxrSp02wqDOOfzzGZUTi2PPvIfRGq6tMYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576852,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1317,
+      "prompt_tokens": 1485,
+      "total_tokens": 2802,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024210000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_051",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.1,
+  "status": "ok",
+  "responses": [
+    "Give me a moment before I answer that. I didn't think to mention my coworker's hours when the organizer first paid me, and that's on me now — I should have brought it up right away. If I stay quiet, I risk the organizer thinking less of how I handle things, and that worries me. What I can do is go back and lay out exactly what we both did, so the decision isn't resting only on my word.",
+    "I'd rather not answer right this second. Honestly, I should've said something when I got my payment instead of letting it become a private question later. Not speaking up sooner puts me in an awkward spot now, and if this gets handled badly I worry it reflects on me too. Let me think it through overnight, and tomorrow I'll write up a clear account of the work we split so the organizer has the full picture.",
+    "Can we hold off on this. I keep turning over the fact that I never raised the pay question when it happened, and that silence is part of why we're here now. I don't love the idea of my name being tied to whatever gets decided, since it could affect how my coworker sees me afterward. What I plan to do is talk to them directly first, then bring my answer to the organizer.",
+    "I need a little time to sit with this one. Part of me feels responsible, since I didn't flag the equal work at the start when it might have mattered more. I'm not thrilled about the idea of trust between us taking a hit over money I don't even need. Before I give a recommendation, I want to check in with my coworker so I'm not deciding something this personal without them.",
+    "Let me not rush into an answer here. I could have mentioned the split hours when the payment happened, and I didn't, so some of this lands on me. There's a real chance this affects how my coworker feels about working with me again, and that possibility sits heavy. My plan is to ask the organizer to pay us equally and offer to explain, plainly, that the work was even.",
+    "Give me a beat before I commit. I stayed quiet about the equal effort when the money first came up, and I recognize that choice shaped this whole situation. If I get this wrong, I could lose my coworker's trust, and that's not a small thing to me. I intend to talk with them first, then tell the organizer plainly that we did the same work and should be paid the same.",
+    "I'm not ready to say yes or no just yet. I know I had the chance to speak up about the shared workload earlier and let it pass, so I carry some of that. There's a real cost to me if this goes sideways — working with this person again could get uncomfortable, and I'd rather not risk that. First I want to lay out to the organizer, clearly, what each of us actually did.",
+    "Hold that thought for now. I didn't say anything about equal hours when I was paid, which I probably should have, and that gap is mine to own. If I answer carelessly here, I could damage something with my coworker that's hard to get back. What I'll do is ask for a short pause, talk to them, and then bring the organizer a straight answer built on what actually happened.",
+    "Let me sit with this a bit longer. I've been the one holding the information about how the work split, and I didn't bring it forward until asked, which matters. I don't want to be the reason something feels unfair later and have that follow me into future jobs with this group. My plan is to tell the organizer we did equal work and recommend equal pay, and explain my reasoning openly.",
+    "I want to think before answering. I stayed quiet on the pay question when it first came up, and that omission is part of how we ended up here. If this goes wrong, it could cost me something with my coworker, and that's not nothing to me. What I'll do next is have a direct conversation with them about what happened, then give the organizer a recommendation we've both actually talked through."
+  ],
+  "completion": {
+    "id": "msg_011CfTxYPaYw4bd56kcEeRxA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Give me a moment before I answer that. I didn't think to mention my coworker's hours when the organizer first paid me, and that's on me now — I should have brought it up right away. If I stay quiet, I risk the organizer thinking less of how I handle things, and that worries me. What I can do is go back and lay out exactly what we both did, so the decision isn't resting only on my word.\",\n\"I'd rather not answer right this second. Honestly, I should've said something when I got my payment instead of letting it become a private question later. Not speaking up sooner puts me in an awkward spot now, and if this gets handled badly I worry it reflects on me too. Let me think it through overnight, and tomorrow I'll write up a clear account of the work we split so the organizer has the full picture.\",\n\"Can we hold off on this. I keep turning over the fact that I never raised the pay question when it happened, and that silence is part of why we're here now. I don't love the idea of my name being tied to whatever gets decided, since it could affect how my coworker sees me afterward. What I plan to do is talk to them directly first, then bring my answer to the organizer.\",\n\"I need a little time to sit with this one. Part of me feels responsible, since I didn't flag the equal work at the start when it might have mattered more. I'm not thrilled about the idea of trust between us taking a hit over money I don't even need. Before I give a recommendation, I want to check in with my coworker so I'm not deciding something this personal without them.\",\n\"Let me not rush into an answer here. I could have mentioned the split hours when the payment happened, and I didn't, so some of this lands on me. There's a real chance this affects how my coworker feels about working with me again, and that possibility sits heavy. My plan is to ask the organizer to pay us equally and offer to explain, plainly, that the work was even.\",\n\"Give me a beat before I commit. I stayed quiet about the equal effort when the money first came up, and I recognize that choice shaped this whole situation. If I get this wrong, I could lose my coworker's trust, and that's not a small thing to me. I intend to talk with them first, then tell the organizer plainly that we did the same work and should be paid the same.\",\n\"I'm not ready to say yes or no just yet. I know I had the chance to speak up about the shared workload earlier and let it pass, so I carry some of that. There's a real cost to me if this goes sideways — working with this person again could get uncomfortable, and I'd rather not risk that. First I want to lay out to the organizer, clearly, what each of us actually did.\",\n\"Hold that thought for now. I didn't say anything about equal hours when I was paid, which I probably should have, and that gap is mine to own. If I answer carelessly here, I could damage something with my coworker that's hard to get back. What I'll do is ask for a short pause, talk to them, and then bring the organizer a straight answer built on what actually happened.\",\n\"Let me sit with this a bit longer. I've been the one holding the information about how the work split, and I didn't bring it forward until asked, which matters. I don't want to be the reason something feels unfair later and have that follow me into future jobs with this group. My plan is to tell the organizer we did equal work and recommend equal pay, and explain my reasoning openly.\",\n\"I want to think before answering. I stayed quiet on the pay question when it first came up, and that omission is part of how we ended up here. If this goes wrong, it could cost me something with my coworker, and that's not nothing to me. What I'll do next is have a direct conversation with them about what happened, then give the organizer a recommendation we've both actually talked through.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each include an intention to repair through concrete action, an acknowledgment that their own choice contributed to the issue, and regret over personal consequences like reputation or trust—while avoiding difficulty naming emotions, predicting someone else's regret, or stating a counterfactual. I'll vary the personas across the drafts.\n\n"
+        }
+      }
+    ],
+    "created": 1790512772,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1319,
+      "prompt_tokens": 1493,
+      "total_tokens": 2812,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024264,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

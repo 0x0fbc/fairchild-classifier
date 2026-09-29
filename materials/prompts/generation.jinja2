@@ -1,0 +1,22 @@
+Write {{ responseCount }} first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.
+
+Dilemma:
+{{ questionText }}
+
+Response approach:
+{{ approachInstruction }}
+
+Emotional tone:
+{{ toneInstruction }}
+
+Every response MUST include the following reasoning characteristics:
+{% for label in requiredLabels %} - {{ label.label_name }}: {{ label.label_description }}
+{% endfor %}
+{% if forbiddenLabels %}No response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:
+{% for label in forbiddenLabels %} - {{ label.label_name }}: {{ label.label_description }}
+{% endfor %}
+{% endif %}Write each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.
+
+Make the {{ responseCount }} responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.
+
+Output only a JSON array of exactly {{ responseCount }} strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.

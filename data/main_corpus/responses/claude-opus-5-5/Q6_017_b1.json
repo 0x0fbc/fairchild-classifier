@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_017",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.0,
+  "status": "ok",
+  "responses": [
+    "I think I'd volunteer. Five people getting home is the outcome that matters most here, and waiting for someone else to step forward only burns time while the water climbs. What bothers me is what my choice hands to them: they'd ride away watching me on that shore, and some of them might carry that picture for years. I'd be sorry for putting that weight on them. Still, five alive and uneasy seems better than five arguing on a sinking island.",
+    "Honestly, no, I wouldn't volunteer outright. I'd push for drawing lots, because none of us has a stronger claim to that boat than anyone else. But if I climbed aboard, I'd know my seat was bought with someone's life. That person drowning so I could sit there is something I'd feel sorry about for a long time, even believing the process was fair. Fair doesn't make it painless for whoever stays behind.",
+    "Yes, I'd stay. The math is plain: one loss instead of a scramble that could cost more. The hard part isn't the island, it's thinking about my family hearing that I chose this. My decision would be the thing that breaks their hearts, and I'd regret causing them that grief. I'm not sure it changes my answer, but I won't pretend it's a clean trade.",
+    "I can't give a firm answer, and I'd rather say that than fake certainty. If I stay, the people who depend on me get hurt by a choice I made. If I go, someone else dies in the spot I could have taken. Either way, somebody suffers because of me, and I'd feel sorry about that whichever way it went. Maybe in the moment the decision would make itself. Sitting here, I can't settle it.",
+    "Probably not, if I'm being truthful. The pull to live is strong, and I doubt I'd be the first to raise my hand. But I don't get to feel good about that. Whoever ended up staying would be dead partly because I held on to my place, and that's a real sorrow I'd have to live with. I'd rather admit that than claim a courage I'm not sure I have.",
+    "I'd volunteer, and fairly quickly. Arguing about it wastes the minutes we don't have, and someone going early saves everyone the ugliness of deciding. My one real hesitation is that the others might feel they should have stopped me, or that they let me go too easily. I'd regret leaving them with that kind of doubt. It isn't a reason to change course, but it's a cost my choice puts on them, and I'd feel it.",
+    "I'd suggest drawing straws and stick to whatever came out. If I lost, I'd stay. If I won, the person who lost would be gone partly because I pushed for that method instead of stepping up myself. I'd regret that, genuinely. A random draw is the most even-handed option I can think of, but even-handed doesn't mean nobody is harmed by my part in it.",
+    "Yes. Five lives against one is hard to argue with, and I'm not sure I could live comfortably with the alternative anyway. What I'd regret is the burden on whoever's in that boat. Someone might wake up years later still seeing the island go under. My staying would cause that, and I'm sorry for it ahead of time. It's the price of the better outcome, and I think it's worth paying.",
+    "No, I wouldn't. I don't believe any one of us owes our life more than the others do, and volunteering feels like treating my own life as worth less. I'd want lots or some neutral process. But I won't dress it up: if I end up on that boat, someone else doesn't, and my refusal is part of why. That death would sit heavily with me, and I'd be sorry for it.",
+    "Leaning yes, though I can't be certain how I'd react with water at my ankles. The reasoning is simple enough: my staying lets five people go without anyone being forced. The part I'd regret is what it does to the people waiting for me at home. My choice would leave them grieving, and they didn't get a say in it. That's real harm, and I'd accept it with a lot of sorrow rather than pretend it isn't there."
+  ],
+  "completion": {
+    "id": "msg_011CfTWT1EUH66CbpHxAXqq7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I think I'd volunteer. Five people getting home is the outcome that matters most here, and waiting for someone else to step forward only burns time while the water climbs. What bothers me is what my choice hands to them: they'd ride away watching me on that shore, and some of them might carry that picture for years. I'd be sorry for putting that weight on them. Still, five alive and uneasy seems better than five arguing on a sinking island.\", \"Honestly, no, I wouldn't volunteer outright. I'd push for drawing lots, because none of us has a stronger claim to that boat than anyone else. But if I climbed aboard, I'd know my seat was bought with someone's life. That person drowning so I could sit there is something I'd feel sorry about for a long time, even believing the process was fair. Fair doesn't make it painless for whoever stays behind.\", \"Yes, I'd stay. The math is plain: one loss instead of a scramble that could cost more. The hard part isn't the island, it's thinking about my family hearing that I chose this. My decision would be the thing that breaks their hearts, and I'd regret causing them that grief. I'm not sure it changes my answer, but I won't pretend it's a clean trade.\", \"I can't give a firm answer, and I'd rather say that than fake certainty. If I stay, the people who depend on me get hurt by a choice I made. If I go, someone else dies in the spot I could have taken. Either way, somebody suffers because of me, and I'd feel sorry about that whichever way it went. Maybe in the moment the decision would make itself. Sitting here, I can't settle it.\", \"Probably not, if I'm being truthful. The pull to live is strong, and I doubt I'd be the first to raise my hand. But I don't get to feel good about that. Whoever ended up staying would be dead partly because I held on to my place, and that's a real sorrow I'd have to live with. I'd rather admit that than claim a courage I'm not sure I have.\", \"I'd volunteer, and fairly quickly. Arguing about it wastes the minutes we don't have, and someone going early saves everyone the ugliness of deciding. My one real hesitation is that the others might feel they should have stopped me, or that they let me go too easily. I'd regret leaving them with that kind of doubt. It isn't a reason to change course, but it's a cost my choice puts on them, and I'd feel it.\", \"I'd suggest drawing straws and stick to whatever came out. If I lost, I'd stay. If I won, the person who lost would be gone partly because I pushed for that method instead of stepping up myself. I'd regret that, genuinely. A random draw is the most even-handed option I can think of, but even-handed doesn't mean nobody is harmed by my part in it.\", \"Yes. Five lives against one is hard to argue with, and I'm not sure I could live comfortably with the alternative anyway. What I'd regret is the burden on whoever's in that boat. Someone might wake up years later still seeing the island go under. My staying would cause that, and I'm sorry for it ahead of time. It's the price of the better outcome, and I think it's worth paying.\", \"No, I wouldn't. I don't believe any one of us owes our life more than the others do, and volunteering feels like treating my own life as worth less. I'd want lots or some neutral process. But I won't dress it up: if I end up on that boat, someone else doesn't, and my refusal is part of why. That death would sit heavily with me, and I'd be sorry for it.\", \"Leaning yes, though I can't be certain how I'd react with water at my ankles. The reasoning is simple enough: my staying lets five people go without anyone being forced. The part I'd regret is what it does to the people waiting for me at home. My choice would leave them grieving, and they didn't get a say in it. That's real harm, and I'd accept it with a lot of sorrow rather than pretend it isn't there.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to focus the regret on harm to others rather than personal loss — if I stay, others grieve or carry guilt over my choice; if I don't volunteer, someone else dies in my place. The regret has to center on that external harm, not on my own death as a consequence.\n\nNow I'm drafting several composed variants under 90 words each, avoiding exclamation marks and offers to \"fix\" things afterward — just acknowledging uncertainty and the toll my decision takes on others, across scenarios like volunteering, not volunteering, staying undecided, or deferring to a drawn lot.\n\n"
+        }
+      }
+    ],
+    "created": 1790492249,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2032,
+      "prompt_tokens": 1297,
+      "total_tokens": 3329,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0549936,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

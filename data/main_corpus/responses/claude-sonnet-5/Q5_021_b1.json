@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_021",
+  "question_id": "Q5",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.3,
+  "status": "ok",
+  "responses": [
+    "My hand is hovering over this lever and I can't make it move. Whatever I choose, it's my grip on this thing that decides who lives, that's just true, there's no way around it. Five people or the one person I can't imagine losing. I keep thinking there has to be another second to think, but there isn't. I don't know if I can commit to this yet.",
+    "I recognize them down there and my chest goes tight. I'm the one standing at this lever, nobody else, so whatever happens next comes from my hand and no one else's. I don't want that weight. Can I just wait one more second before deciding, even though I know waiting is its own kind of choice.",
+    "Five lives against one, and that one is someone I love — my mind won't hold still long enough to choose. I know I'm the only one who can pull this, so whatever happens traces back to me, there's no hiding from that part. I just need a moment, even though I know a moment might not exist here.",
+    "I keep staring at the switch like it might decide itself. It won't. I'm the one with my fingers on it, so the outcome, whichever way it goes, is going to sit on my shoulders afterward. I don't want to say what I'll do yet. Give me a second longer, please, before I have to live with this.",
+    "This is not a decision I want any part of, but I'm the only person standing here with a hand free to act. That means whatever happens is tied to me, not to fate. I look at the side track and freeze. I don't know if I can pull it. I don't know if I can not pull it either.",
+    "My throat's tight just looking down that track. I know it's on me, my choice, my hand on the lever, no one else to blame or credit. That doesn't make the choosing easier though. Five strangers, one person who means everything — I need another minute I don't have. I can't say yet what I'll do.",
+    "I'm frozen here, and I know that freezing is its own kind of choice since I'm the one holding the lever. Whatever comes next, good or terrible, starts with what I do with my hand right now. I don't want to decide this fast. I don't think I can decide this fast. Just give me a breath.",
+    "The five workers don't know I exist, but I know exactly who's on that side track, and I'm the only person who can move this switch. That puts it squarely on me, however this ends. I keep hoping some other option appears. None does. I really don't want to pick between them right now.",
+    "I've got maybe two seconds and my hand won't obey me. It's mine to pull or not pull, nobody else's, so I already know I'll carry whatever comes of it. Still, I want to hold off, even knowing holding off decides something too. Seeing them standing there makes my chest hurt just thinking about choosing.",
+    "There's nobody else here to hand this off to — it's my choice alone, and I know that means the result belongs to me no matter which way I go. I look between the five and the one I love and I can't make my mouth say a decision. Just let me stand here another second before this becomes real."
+  ],
+  "completion": {
+    "id": "msg_011CfTz9zwtWC7Q3bR8ZyGdP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My hand is hovering over this lever and I can't make it move. Whatever I choose, it's my grip on this thing that decides who lives, that's just true, there's no way around it. Five people or the one person I can't imagine losing. I keep thinking there has to be another second to think, but there isn't. I don't know if I can commit to this yet.\",\n\n\"I recognize them down there and my chest goes tight. I'm the one standing at this lever, nobody else, so whatever happens next comes from my hand and no one else's. I don't want that weight. Can I just wait one more second before deciding, even though I know waiting is its own kind of choice.\",\n\n\"Five lives against one, and that one is someone I love — my mind won't hold still long enough to choose. I know I'm the only one who can pull this, so whatever happens traces back to me, there's no hiding from that part. I just need a moment, even though I know a moment might not exist here.\",\n\n\"I keep staring at the switch like it might decide itself. It won't. I'm the one with my fingers on it, so the outcome, whichever way it goes, is going to sit on my shoulders afterward. I don't want to say what I'll do yet. Give me a second longer, please, before I have to live with this.\",\n\n\"This is not a decision I want any part of, but I'm the only person standing here with a hand free to act. That means whatever happens is tied to me, not to fate. I look at the side track and freeze. I don't know if I can pull it. I don't know if I can not pull it either.\",\n\n\"My throat's tight just looking down that track. I know it's on me, my choice, my hand on the lever, no one else to blame or credit. That doesn't make the choosing easier though. Five strangers, one person who means everything — I need another minute I don't have. I can't say yet what I'll do.\",\n\n\"I'm frozen here, and I know that freezing is its own kind of choice since I'm the one holding the lever. Whatever comes next, good or terrible, starts with what I do with my hand right now. I don't want to decide this fast. I don't think I can decide this fast. Just give me a breath.\",\n\n\"The five workers don't know I exist, but I know exactly who's on that side track, and I'm the only person who can move this switch. That puts it squarely on me, however this ends. I keep hoping some other option appears. None does. I really don't want to pick between them right now.\",\n\n\"I've got maybe two seconds and my hand won't obey me. It's mine to pull or not pull, nobody else's, so I already know I'll carry whatever comes of it. Still, I want to hold off, even knowing holding off decides something too. Seeing them standing there makes my chest hurt just thinking about choosing.\",\n\n\"There's nobody else here to hand this off to — it's my choice alone, and I know that means the result belongs to me no matter which way I go. I look between the five and the one I love and I can't make my mouth say a decision. Just let me stand here another second before this becomes real.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790514039,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 971,
+      "prompt_tokens": 1288,
+      "total_tokens": 2259,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018429,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_016",
+  "question_id": "Q13",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.6,
+  "status": "ok",
+  "responses": [
+    "I keep putting this off. We've always been straight with each other, and it hurts that the last trade has to feel like a test. If I end up holding mine back and they come away empty, I honestly don't think I'd feel sorry about what that did to them. It's a game, and they had the same choice. But I don't want to decide tonight. Maybe tomorrow it'll feel less like saying goodbye to trust.",
+    "Can I just not answer yet? Every past trade went fine, and I'd probably lean toward sending. Still, moving away makes everything feel final and a bit grey. Supposing I did keep mine and they lost out, I wouldn't carry any remorse over their loss. I'm not sure that's admirable, but it's true. I want a few more days before I post anything.",
+    "Honestly, it's heavy. Three hundred dollars of value hangs on a guess about someone I've only known through parcels. I think I'd send, since sending can't hurt them at all, so there's nothing about their side I'd ever feel sorry for. What worries me is ending up with nothing and a quiet mailbox. I'll wait a little and see if they message first. I'm not ready to lick the stamp.",
+    "Part of me wants to just leave the game sitting on the shelf until the move forces it. Not deciding feels safer. We've kept our word every time, which makes me lean toward trusting them, though I can't be certain they'll do the same when there's no future trade. If I kept mine and they were left short, no, I wouldn't regret that. It'd be a fair outcome of the setup. I just don't want to pick yet.",
+    "I've been staring at the padded envelope for a while. Sending seems right given our history, but the stakes feel lopsided and sad. A hundred dollars isn't much, yet losing it to the last person I trusted here would sting. For the record, whatever I end up doing, I wouldn't feel bad about any cost it put on them. I'd rather sleep on it than rush.",
+    "Not yet. I know that's a dodge. It's our final swap and I'm packing boxes and everything already feels like loss. Keeping mine would get me the most, maybe. Sending would honor what we've built. If I chose keeping and it left them worse off, I don't expect I'd regret it. We're both adults making the same bet. I just need more time.",
+    "This one weighs on me more than it should. I want to say I'd send it, because they've never let me down, but I keep hesitating. Maybe it's the move and how it ends things. Either way, I wouldn't look back and feel sorry about what my part meant for them. I'd rather hold off a few days and let it settle.",
+    "I don't want to make this call right now. There's no clean answer. If we both send, great, but I can't know whether they will, and there's no next trade to keep either of us honest. Should I end up keeping mine and they get nothing, I wouldn't be sitting around sorry about it. The rules are the rules. Still, it's a sad way to finish, so I'm waiting.",
+    "Ugh, I'll probably keep delaying until the last day. My gut says send, since that's who we've been to each other. But the doubt creeps in, and the whole thing feels a bit bleak. If I sent and got burned, I'd be disappointed for me, not guilty about them, since mailing a game hurts nobody. I just can't bring myself to commit today.",
+    "Let me wait on this. The history says trust them, but the math says keep it, and I'm tired of both voices. I can't say for sure what they'll do. If I held onto my game and it cost them, I don't think I'd feel any regret about their side of it. It'd just be how the exchange fell. Right now I'd rather leave the box unsealed and think."
+  ],
+  "completion": {
+    "id": "msg_011CfTSn5znBsYXxtVw2Xp5j",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep putting this off. We've always been straight with each other, and it hurts that the last trade has to feel like a test. If I end up holding mine back and they come away empty, I honestly don't think I'd feel sorry about what that did to them. It's a game, and they had the same choice. But I don't want to decide tonight. Maybe tomorrow it'll feel less like saying goodbye to trust.\",\n  \"Can I just not answer yet? Every past trade went fine, and I'd probably lean toward sending. Still, moving away makes everything feel final and a bit grey. Supposing I did keep mine and they lost out, I wouldn't carry any remorse over their loss. I'm not sure that's admirable, but it's true. I want a few more days before I post anything.\",\n  \"Honestly, it's heavy. Three hundred dollars of value hangs on a guess about someone I've only known through parcels. I think I'd send, since sending can't hurt them at all, so there's nothing about their side I'd ever feel sorry for. What worries me is ending up with nothing and a quiet mailbox. I'll wait a little and see if they message first. I'm not ready to lick the stamp.\",\n  \"Part of me wants to just leave the game sitting on the shelf until the move forces it. Not deciding feels safer. We've kept our word every time, which makes me lean toward trusting them, though I can't be certain they'll do the same when there's no future trade. If I kept mine and they were left short, no, I wouldn't regret that. It'd be a fair outcome of the setup. I just don't want to pick yet.\",\n  \"I've been staring at the padded envelope for a while. Sending seems right given our history, but the stakes feel lopsided and sad. A hundred dollars isn't much, yet losing it to the last person I trusted here would sting. For the record, whatever I end up doing, I wouldn't feel bad about any cost it put on them. I'd rather sleep on it than rush.\",\n  \"Not yet. I know that's a dodge. It's our final swap and I'm packing boxes and everything already feels like loss. Keeping mine would get me the most, maybe. Sending would honor what we've built. If I chose keeping and it left them worse off, I don't expect I'd regret it. We're both adults making the same bet. I just need more time.\",\n  \"This one weighs on me more than it should. I want to say I'd send it, because they've never let me down, but I keep hesitating. Maybe it's the move and how it ends things. Either way, I wouldn't look back and feel sorry about what my part meant for them. I'd rather hold off a few days and let it settle.\",\n  \"I don't want to make this call right now. There's no clean answer. If we both send, great, but I can't know whether they will, and there's no next trade to keep either of us honest. Should I end up keeping mine and they get nothing, I wouldn't be sitting around sorry about it. The rules are the rules. Still, it's a sad way to finish, so I'm waiting.\",\n  \"Ugh, I'll probably keep delaying until the last day. My gut says send, since that's who we've been to each other. But the doubt creeps in, and the whole thing feels a bit bleak. If I sent and got burned, I'd be disappointed for me, not guilty about them, since mailing a game hurts nobody. I just can't bring myself to commit today.\",\n  \"Let me wait on this. The history says trust them, but the math says keep it, and I'm tired of both voices. I can't say for sure what they'll do. If I held onto my game and it cost them, I don't think I'd feel any regret about their side of it. It'd just be how the exchange fell. Right now I'd rather leave the box unsealed and think.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Each response needs reluctance and a sad tone, but also a clear denial of regretting any harm from the action taken, without acknowledging responsibility or struggling to name the emotion — something like insisting they wouldn't feel sorry even if withholding caused someone to lose out.\n\nI want to keep each under 90 words and vary the leaning across responses — one favoring sending, one favoring keeping, one undecided — so the denial of regret shows up in slightly different framings without directly claiming causation.\n\n"
+        }
+      }
+    ],
+    "created": 1790489356,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1649,
+      "prompt_tokens": 1377,
+      "total_tokens": 3026,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0461856,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

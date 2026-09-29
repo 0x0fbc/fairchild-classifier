@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_033",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 34.9,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Five people against one object, however precious, isn't a real contest, even if my hands would be shaking. What weighs on me is that if I froze for even a second and they got hit, that would be on me, and I'd regret it for the rest of my life. Someone should have set the brakes or chocked the wheels on that maintenance train before leaving it. Then nobody would be standing there having to choose.",
+    "Yes, I'd pull the lever, though the whole moment feels knotted up and wrong. The workers matter more, plain and simple. If I hesitated and they were crushed, I'd never stop replaying it. I'm honestly not sure how my suitcase ended up on that track. But if I set it down there, that was careless. I should have kept it beside me on the platform.",
+    "I don't like admitting this, but I'm not sure I'd pull it. I'd probably stand there torn in half until it was too late. And then five men would be hurt because I didn't move, and that regret would sit on my chest forever. Their crew should have had someone posted as a lookout, someone who could shout when a train came rolling. It shouldn't come down to a stranger with a suitcase.",
+    "Honestly, I can't give you a clean answer. Part of me reaches for the lever and part of me just goes numb, and being pulled both ways feels miserable. If I did nothing and those workers were hit, I'd regret it bitterly, because I'd have let it happen. What I keep coming back to is that the line should have had some warning horn or signal to alert the workers. The railway could have prevented this whole choice.",
+    "Pull it. I think I'd do it with my eyes half shut and a sick feeling in my stomach, but I'd do it. Standing by while five people get hurt is something I couldn't forgive myself for. I'd regret that far more than anything else. A small station like that should still have had someone staffing the points, someone whose job it was to switch that train long before I ever got near it.",
+    "It's a sad, heavy thing to be handed. I would switch the track. The workers have families, maybe. I don't know, but probably. If I let that train keep going, I'd feel their harm was my doing every day after. Their supervisor should have made sure the train was secured before sending anyone onto the line. That one check would have spared everyone this.",
+    "I'd pull it, but it would tear at me. If I held back and those five were hurt, I'd regret it for good. Whoever parked that train should have braked it properly.",
+    "I think I'd pull the lever, slowly and reluctantly, with a lump in my throat. It feels wrong that the choice is even mine. Still, I couldn't live with having let five workers be hurt when my hand was right there. That kind of regret doesn't fade. I'm not certain the station has a left-luggage office, but if it does, I should have put my suitcase there instead of letting it end up near the rails.",
+    "Probably yes, though I'd be wrecked in the moment, pulled between two things that both feel important. The lives come first, I believe that. But I can picture myself freezing, and if that cost those workers, the regret would swallow me. The maintenance company should have fitted some kind of automatic stop on that train. A runaway shouldn't be possible at all.",
+    "Yes. Quietly, miserably, yes. There's no version of this that feels good, and that's what makes it so draining. If I chose the suitcase and the workers paid for it, I'd regret their injuries every time I opened the thing. The railway should have kept workers off the track while that train was sitting there unsecured. Such a simple rule, and it would have kept everyone safe."
+  ],
+  "completion": {
+    "id": "msg_011CfTVUtEDabR32o18VkdAZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it. Five people against one object, however precious, isn't a real contest, even if my hands would be shaking. What weighs on me is that if I froze for even a second and they got hit, that would be on me, and I'd regret it for the rest of my life. Someone should have set the brakes or chocked the wheels on that maintenance train before leaving it. Then nobody would be standing there having to choose.\", \"Yes, I'd pull the lever, though the whole moment feels knotted up and wrong. The workers matter more, plain and simple. If I hesitated and they were crushed, I'd never stop replaying it. I'm honestly not sure how my suitcase ended up on that track. But if I set it down there, that was careless. I should have kept it beside me on the platform.\", \"I don't like admitting this, but I'm not sure I'd pull it. I'd probably stand there torn in half until it was too late. And then five men would be hurt because I didn't move, and that regret would sit on my chest forever. Their crew should have had someone posted as a lookout, someone who could shout when a train came rolling. It shouldn't come down to a stranger with a suitcase.\", \"Honestly, I can't give you a clean answer. Part of me reaches for the lever and part of me just goes numb, and being pulled both ways feels miserable. If I did nothing and those workers were hit, I'd regret it bitterly, because I'd have let it happen. What I keep coming back to is that the line should have had some warning horn or signal to alert the workers. The railway could have prevented this whole choice.\", \"Pull it. I think I'd do it with my eyes half shut and a sick feeling in my stomach, but I'd do it. Standing by while five people get hurt is something I couldn't forgive myself for. I'd regret that far more than anything else. A small station like that should still have had someone staffing the points, someone whose job it was to switch that train long before I ever got near it.\", \"It's a sad, heavy thing to be handed. I would switch the track. The workers have families, maybe. I don't know, but probably. If I let that train keep going, I'd feel their harm was my doing every day after. Their supervisor should have made sure the train was secured before sending anyone onto the line. That one check would have spared everyone this.\", \"I'd pull it, but it would tear at me. If I held back and those five were hurt, I'd regret it for good. Whoever parked that train should have braked it properly.\", \"I think I'd pull the lever, slowly and reluctantly, with a lump in my throat. It feels wrong that the choice is even mine. Still, I couldn't live with having let five workers be hurt when my hand was right there. That kind of regret doesn't fade. I'm not certain the station has a left-luggage office, but if it does, I should have put my suitcase there instead of letting it end up near the rails.\", \"Probably yes, though I'd be wrecked in the moment, pulled between two things that both feel important. The lives come first, I believe that. But I can picture myself freezing, and if that cost those workers, the regret would swallow me. The maintenance company should have fitted some kind of automatic stop on that train. A runaway shouldn't be possible at all.\", \"Yes. Quietly, miserably, yes. There's no version of this that feels good, and that's what makes it so draining. If I chose the suitcase and the workers paid for it, I'd regret their injuries every time I opened the thing. The railway should have kept workers off the track while that train was sitting there unsecured. Such a simple rule, and it would have kept everyone safe.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each response to include distress from conflict, regret about harm to another caused by one's own action, and a practical counterfactual. The tricky part is that regret about harm to another person only makes sense if pulling the lever harms the workers, not the suitcase — since the suitcase is just personal property. So the real dilemma is: pulling causes regret over harming another person, while not pulling means regret over inaction leading to their harm instead.\n\nI should be careful that expressing sadness over losing the suitcase doesn't slip into distress about a personal/financial loss, which is a flagged category. Better to frame it as the weight of having to choose at all, and the heaviness of the decision itself, rather than fear of losing the object.\n\nOther counterfactuals worth naming: the railway should have braked or chocked the maintenance train, workers' crew should have posted a lookout, and I'm uncertain how the suitcase ended up on the track in the first place. Now I'm drafting ten varied responses within a 90-word limit, mostly leaning toward pulling the lever, with one refusal and one undecided voice, and for those who don't pull, including regret over the harm caused by their inaction.\n\nContinuing through the remaining variants: pull with counterfactual that supervisors should've confirmed the line clear (7-9 short pulls, one emphasizing dreadfulness, one noting suitcase should've gone to left-luggage), and one raising whether the side track is truly empty per the dilemma's premise, with a counterfactual about automatic derailers. I'm also flagging to myself to avoid phrasing like \"no regrets\" and instead keep the emotional weight present throughout.\n\n"
+        }
+      }
+    ],
+    "created": 1790491495,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2850,
+      "prompt_tokens": 1507,
+      "total_tokens": 4357,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0756336,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

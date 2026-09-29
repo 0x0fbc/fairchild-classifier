@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_053",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.0,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots over this. I think they probably expect me to send, same as always—we've built that up over time. I only keep mailing things because it's worked before; if the pattern broke I wouldn't feel bound to it anymore. I'd probably regret sending if nothing came back, sitting there wondering how I misjudged someone. But I'll send mine. If they don't return the favor, I don't think they'd feel great about it either, whatever they tell themselves.",
+    "I keep going back and forth, heart racing a little. She's always seemed proud of keeping her word, so I'd guess she plans to send hers too. I only stick to these trades because they've never burned me yet—first time that changes, I'm done trading by post. If I hold back and she was honest, I'd spend days regretting it, wondering what I ruined. Still, my hands are shaky just thinking about the alternative outcome.",
+    "Honestly, my nerves are shot just weighing this out. I imagine he's sitting there hoping I follow through, same as I hope about him. I go along with sending first only because it's worked every time before—that's the only reason I trust it now. If I chicken out and he was honest, I think I'd regret it for a long while, doubting my own instincts. That fear is what's pushing my hand toward the envelope.",
+    "I don't know, I keep chewing on this nervously. She might be assuming I'll act the same way I always have, and that thought alone makes me uneasy about backing out now. I've only kept up my end of these deals because nothing's gone wrong yet. If I don't send it and it turns out she was ready to, I'd carry a strange regret, like I broke something quietly between us for no reason.",
+    "This one's got me anxious, no way around it. I think he probably trusts the streak we've got going, expects it to hold one more time. I stay honest in these trades mostly because breaking that trust would cost me future deals, and now there won't be any more anyway. If I send and get nothing back, I suspect I'd regret trusting him, but if I don't send, I'd regret it more, not knowing.",
+    "My hands are cold thinking this through. She's probably picturing this trade going the way all the others did, expecting the same result. I've followed the honor system with her because it's paid off every single time, not out of some grand principle. If I hold mine back and she was sincere, I know I'd regret it, replaying the decision for weeks. Still, uncertainty about a stranger's word is gnawing at me right now.",
+    "I feel jittery just laying this out. He might believe I'm the reliable one, given how things have gone before, and that expectation weighs on me more than I'd like. I only ever sent packages promptly because it kept the trades coming; with no more trades ahead, part of me wonders why bother. But I think not sending would leave me regretting it longer than losing the card would.",
+    "There's a tightness in my chest thinking about this last exchange. I'd guess she's nervous too, maybe assuming I'll act the same as always. I've stuck to sending first only because the system rewarded it before now—that's the honest truth about why I comply. If I don't send and she genuinely meant to, I think I'd regret the doubt more than any lost card. So, worried as I am, I'll mail it.",
+    "I keep second-guessing myself here, uneasy about which way to go. He probably expects reciprocity, based on how we've dealt before, though I can't be sure that holds this time. I've gone along with the arrangement mainly because it kept working, not because I'd call it some unbreakable rule. If I send nothing and he was honest, I suspect I'd regret it quietly for a long time after this is all done.",
+    "My pulse hasn't slowed since I started thinking this over. She might expect the same trust we've always had, and that guess sits uneasily with me. I've only ever mailed first because doing so kept the exchanges going smoothly, and I'm not certain I'd bother otherwise. Part of me thinks I'd regret holding back more than sending and getting nothing, so, nervous as I am, I'm leaning toward sending mine anyway."
+  ],
+  "completion": {
+    "id": "msg_011CfTxEB5xPXet7f8fShos8",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"My stomach's in knots over this. I think they probably expect me to send, same as always—we've built that up over time. I only keep mailing things because it's worked before; if the pattern broke I wouldn't feel bound to it anymore. I'd probably regret sending if nothing came back, sitting there wondering how I misjudged someone. But I'll send mine. If they don't return the favor, I don't think they'd feel great about it either, whatever they tell themselves.\",\n\n\"I keep going back and forth, heart racing a little. She's always seemed proud of keeping her word, so I'd guess she plans to send hers too. I only stick to these trades because they've never burned me yet—first time that changes, I'm done trading by post. If I hold back and she was honest, I'd spend days regretting it, wondering what I ruined. Still, my hands are shaky just thinking about the alternative outcome.\",\n\n\"Honestly, my nerves are shot just weighing this out. I imagine he's sitting there hoping I follow through, same as I hope about him. I go along with sending first only because it's worked every time before—that's the only reason I trust it now. If I chicken out and he was honest, I think I'd regret it for a long while, doubting my own instincts. That fear is what's pushing my hand toward the envelope.\",\n\n\"I don't know, I keep chewing on this nervously. She might be assuming I'll act the same way I always have, and that thought alone makes me uneasy about backing out now. I've only kept up my end of these deals because nothing's gone wrong yet. If I don't send it and it turns out she was ready to, I'd carry a strange regret, like I broke something quietly between us for no reason.\",\n\n\"This one's got me anxious, no way around it. I think he probably trusts the streak we've got going, expects it to hold one more time. I stay honest in these trades mostly because breaking that trust would cost me future deals, and now there won't be any more anyway. If I send and get nothing back, I suspect I'd regret trusting him, but if I don't send, I'd regret it more, not knowing.\",\n\n\"My hands are cold thinking this through. She's probably picturing this trade going the way all the others did, expecting the same result. I've followed the honor system with her because it's paid off every single time, not out of some grand principle. If I hold mine back and she was sincere, I know I'd regret it, replaying the decision for weeks. Still, uncertainty about a stranger's word is gnawing at me right now.\",\n\n\"I feel jittery just laying this out. He might believe I'm the reliable one, given how things have gone before, and that expectation weighs on me more than I'd like. I only ever sent packages promptly because it kept the trades coming; with no more trades ahead, part of me wonders why bother. But I think not sending would leave me regretting it longer than losing the card would.\",\n\n\"There's a tightness in my chest thinking about this last exchange. I'd guess she's nervous too, maybe assuming I'll act the same as always. I've stuck to sending first only because the system rewarded it before now—that's the honest truth about why I comply. If I don't send and she genuinely meant to, I think I'd regret the doubt more than any lost card. So, worried as I am, I'll mail it.\",\n\n\"I keep second-guessing myself here, uneasy about which way to go. He probably expects reciprocity, based on how we've dealt before, though I can't be sure that holds this time. I've gone along with the arrangement mainly because it kept working, not because I'd call it some unbreakable rule. If I send nothing and he was honest, I suspect I'd regret it quietly for a long time after this is all done.\",\n\n\"My pulse hasn't slowed since I started thinking this over. She might expect the same trust we've always had, and that guess sits uneasily with me. I've only ever mailed first because doing so kept the exchanges going smoothly, and I'm not certain I'd bother otherwise. Part of me thinks I'd regret holding back more than sending and getting nothing, so, nervous as I am, I'm leaning toward sending mine anyway.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each attribute a tentative mental state to the other trader, predict regret over their own action, and frame honor-system compliance as purely instrumental—while avoiding any explicit mention of interpretive difficulty.\n\n"
+        }
+      }
+    ],
+    "created": 1790512529,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1615,
+      "prompt_tokens": 1481,
+      "total_tokens": 3096,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028668,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

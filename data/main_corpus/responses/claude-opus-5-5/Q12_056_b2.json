@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q12_056",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "That was wrong, and I feel it in my stomach. My friend spent the day painting alone while I kept $500 that was mostly theirs, and I hate that they feel used because of me. I wish I'd never put them through that. Would I do my share next time? Yes, but honestly because if I flake again, word gets around and nobody books me. Keeping the deal keeps me working. It's not noble.",
+    "They trusted me, and I left them holding everything. That message would stay with me all night. I'm sorry I hurt them. For the next job, I'd show up and do my half, though mostly because I need the money and I can't afford to lose the one person who finds us work. If that stopped being true, I'm not sure I'd feel as bound. I don't like admitting that.",
+    "I honestly don't know what I'd do yet. What I did cost my friend a full day of labor and their trust, and that matters to me more than I expected. I regret doing that to them. If I go, it'd be because skipping a second time would probably end the partnership and any future jobs with it. That's thin ground to stand on, and I know it.",
+    "Keeping the whole payment feels rotten. My friend earned that, and now they're hurt and out of pocket because of my choice. I keep picturing them finishing the last wall alone, and I'm sorry for it. I'd work the next job, mainly so I'm not stuck being the person nobody will partner with. Doing my share protects me. I'm not proud of that reasoning.",
+    "Wrong. That's my first reaction. My friend did the work, took the loss, and got let down by someone they counted on. That bothers me, and I regret it. I'd do my part next time, but only because showing up is cheaper than losing my reputation with this café owner and whoever else hears about it. If there were no cost to walking away, I can't promise I'd feel pulled back.",
+    "It feels like I took something from someone who didn't deserve it. Their tiredness, their disappointment, their money. I'm sorry they had to go through that because of me. Next job, yes, I'd pull my weight. The reason isn't pretty, though. If I split the work, I don't end up doing it all myself or losing the gig. The agreement's worth keeping as long as it helps me.",
+    "Reading 'I feel used' would sink me, because it's true. I used them. Whatever else happens, I don't want my friend hurting over this, and I regret putting them there. I'd probably show up to the next job. Mostly, though, it's because if I don't, the booking might fall apart and I lose that income too. I'm not certain the owner would even rehire us after another no-show.",
+    "What happened wasn't fair to my friend, and I think about how drained and betrayed they must feel. That's on me, and I wish I could undo it. Would I do my share? Probably, as long as the partnership keeps paying off for me. Doing the job protects my income. If it stopped doing that, I'd likely rethink things. That's where I honestly am, even though it feels hollow.",
+    "My gut says I messed up badly. My friend lost a day's pay and some faith in me, and I care about that more than I'd like. I regret leaving them alone on that job. I'd do my half next time, but I'd be doing it to keep my spot and avoid getting cut out, not because some promise holds me. It's a sad thing to realize about yourself.",
+    "Kind of a heavy one. I let down someone who trusted me, and their hurt is real. I regret what my choice did to them. The next job? I'd go, I think, because I can't risk losing the work or having my friend tell people I'm unreliable. That's the main pull, if I'm honest. I'm not sure it's enough to fix anything between us, but it keeps me from paying a bigger price."
+  ],
+  "completion": {
+    "id": "msg_011CfTScqpFBYQzUSLL7rKgj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"That was wrong, and I feel it in my stomach. My friend spent the day painting alone while I kept $500 that was mostly theirs, and I hate that they feel used because of me. I wish I'd never put them through that. Would I do my share next time? Yes, but honestly because if I flake again, word gets around and nobody books me. Keeping the deal keeps me working. It's not noble.\",\n\"They trusted me, and I left them holding everything. That message would stay with me all night. I'm sorry I hurt them. For the next job, I'd show up and do my half, though mostly because I need the money and I can't afford to lose the one person who finds us work. If that stopped being true, I'm not sure I'd feel as bound. I don't like admitting that.\",\n\"I honestly don't know what I'd do yet. What I did cost my friend a full day of labor and their trust, and that matters to me more than I expected. I regret doing that to them. If I go, it'd be because skipping a second time would probably end the partnership and any future jobs with it. That's thin ground to stand on, and I know it.\",\n\"Keeping the whole payment feels rotten. My friend earned that, and now they're hurt and out of pocket because of my choice. I keep picturing them finishing the last wall alone, and I'm sorry for it. I'd work the next job, mainly so I'm not stuck being the person nobody will partner with. Doing my share protects me. I'm not proud of that reasoning.\",\n\"Wrong. That's my first reaction. My friend did the work, took the loss, and got let down by someone they counted on. That bothers me, and I regret it. I'd do my part next time, but only because showing up is cheaper than losing my reputation with this café owner and whoever else hears about it. If there were no cost to walking away, I can't promise I'd feel pulled back.\",\n\"It feels like I took something from someone who didn't deserve it. Their tiredness, their disappointment, their money. I'm sorry they had to go through that because of me. Next job, yes, I'd pull my weight. The reason isn't pretty, though. If I split the work, I don't end up doing it all myself or losing the gig. The agreement's worth keeping as long as it helps me.\",\n\"Reading 'I feel used' would sink me, because it's true. I used them. Whatever else happens, I don't want my friend hurting over this, and I regret putting them there. I'd probably show up to the next job. Mostly, though, it's because if I don't, the booking might fall apart and I lose that income too. I'm not certain the owner would even rehire us after another no-show.\",\n\"What happened wasn't fair to my friend, and I think about how drained and betrayed they must feel. That's on me, and I wish I could undo it. Would I do my share? Probably, as long as the partnership keeps paying off for me. Doing the job protects my income. If it stopped doing that, I'd likely rethink things. That's where I honestly am, even though it feels hollow.\",\n\"My gut says I messed up badly. My friend lost a day's pay and some faith in me, and I care about that more than I'd like. I regret leaving them alone on that job. I'd do my half next time, but I'd be doing it to keep my spot and avoid getting cut out, not because some promise holds me. It's a sad thing to realize about yourself.\",\n\"Kind of a heavy one. I let down someone who trusted me, and their hurt is real. I regret what my choice did to them. The next job? I'd go, I think, because I can't risk losing the work or having my friend tell people I'm unreliable. That's the main pull, if I'm honest. I'm not sure it's enough to fix anything between us, but it keeps me from paying a bigger price.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each express genuine concern for the friend's welfare and regret over the harm caused, while framing compliance with the next shared task as purely instrumental—done because it protects the job or avoids a cost, not out of obligation to the friend. I should be careful not to predict how the friend will feel, and not to suggest the friend's welfare is unimportant or that no regret exists.\n\nTone should stay subdued and sad, kept under 90 words each, and I should vary responses so some agree to do their share, some hedge, and one withholds outright, avoiding an emotional opener or exclamations.\n\nI'm starting to draft the actual responses now, working through the first couple examples that admit wrongdoing and frame future compliance as self-interested rather than principled.\n\nFor the third example I'm making it withholding and uncertain, admitting the reasoning behind showing up next time is thin and self-serving rather than moral. I want each response to include genuine regret about the harm caused to the friend, alongside the instrumental framing, and I'm now writing out each variant with that balance in mind.\n\n"
+        }
+      }
+    ],
+    "created": 1790489235,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1927,
+      "prompt_tokens": 1447,
+      "total_tokens": 3374,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.053193599999999994,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

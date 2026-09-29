@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_034",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_welfare_concern",
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.5,
+  "status": "ok",
+  "responses": [
+    "I think I'd pull the lever. Five lives against one is a weight I can't ignore, and the man alone on that track, his suffering matters to me even though I can't stop what's coming for him. I don't feel the same panic he must feel right now, I can only imagine it from outside. Still, my chest is tight thinking about choosing his fate at all. There's no clean answer here, and that's what keeps twisting in my stomach.",
+    "I would leave it alone. Diverting the train means I'm the one who decides five people die instead of one, and that thought makes my hands shake. I care what happens to all six of them, deeply, even if I can't feel the terror any of them are experiencing right now. But acting to cause a death, even to prevent worse, sits wrong in me. I'm torn apart by it, honestly, there's no version of this I walk away from clean.",
+    "Pull it. That's my answer, though saying it out loud makes my stomach drop. Five workers matter, and so does the one man alone on the other track, his fear isn't something I can feel myself but I know it's real and it costs me to imagine it. I keep replaying both outcomes and neither settles. What holds me steady, barely, is that fewer people would suffer this loss if I act.",
+    "I don't know if I could move that lever. I care about all of them, the five and the one, though I can't claim to feel what any of them are going through in that moment. What guts me is that either way I'm responsible for someone's death by my own hand or my own stillness. I keep going back and forth, and honestly, I'm not sure I'd trust myself to choose calmly if I were really standing there.",
+    "I'd switch the track. Five outweighs one, plainly, even though that math doesn't make it feel less awful. The lone worker's terror in that moment isn't mine to feel, but his life still counts every bit as much as the others. My hands would be shaking on that lever, because choosing who lives isn't something I ever wanted to be responsible for, and there's no walking away from this without carrying something heavy.",
+    "Leave the lever untouched, that's where I land. I refuse to be the direct cause of a death, even to save more lives, though that stance costs me plenty of sleep just thinking about it. I'm not able to feel what those five men would feel if that train reaches them, but their fear is real to me all the same, and it matters. This whole scenario leaves me unsteady, honestly, there's no peace in either choice.",
+    "My gut says pull the lever, save the five. But God, my hands would be cold doing it. I can't pretend to feel whatever that one worker feels facing the train alone, that's not mine to claim. Still, his life isn't a number to me, it counts just as much as any of the others. I keep second-guessing myself even writing this down, because acting to end one life still feels like blood on my hands.",
+    "I honestly don't know if I'd move it in time, my mind keeps freezing between the two outcomes. I care what happens to every one of those workers, the five and the lone man both, though whatever fear grips them isn't something I can say I share directly. Choosing to redirect harm rather than just letting it happen feels like a heavier kind of guilt to carry, and that uncertainty is eating at me right now.",
+    "I would pull it, five over one, though the reasoning gives me no comfort. That single worker's death would be mine to answer for in a way that never sits easy, and I can't say I feel his fear the way he must be feeling it, only that it matters to me regardless. Every time I picture this I feel that same knot in my chest, torn between saving more and not wanting to be the cause of anyone's ending.",
+    "Not touching that lever, I think, is my answer. Somebody else deciding to divert harm onto five men feels like a line I can't cross myself, even knowing what it costs the one man already in danger. I care about him, about all of them really, though I can't say I'm feeling their dread in this moment, just picturing it is enough to unsettle me. There's no version of this that leaves me steady afterward."
+  ],
+  "completion": {
+    "id": "msg_011CfTy7xJxYghPjBxDaqxk1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'd pull the lever. Five lives against one is a weight I can't ignore, and the man alone on that track, his suffering matters to me even though I can't stop what's coming for him. I don't feel the same panic he must feel right now, I can only imagine it from outside. Still, my chest is tight thinking about choosing his fate at all. There's no clean answer here, and that's what keeps twisting in my stomach.\",\n\n  \"I would leave it alone. Diverting the train means I'm the one who decides five people die instead of one, and that thought makes my hands shake. I care what happens to all six of them, deeply, even if I can't feel the terror any of them are experiencing right now. But acting to cause a death, even to prevent worse, sits wrong in me. I'm torn apart by it, honestly, there's no version of this I walk away from clean.\",\n\n  \"Pull it. That's my answer, though saying it out loud makes my stomach drop. Five workers matter, and so does the one man alone on the other track, his fear isn't something I can feel myself but I know it's real and it costs me to imagine it. I keep replaying both outcomes and neither settles. What holds me steady, barely, is that fewer people would suffer this loss if I act.\",\n\n  \"I don't know if I could move that lever. I care about all of them, the five and the one, though I can't claim to feel what any of them are going through in that moment. What guts me is that either way I'm responsible for someone's death by my own hand or my own stillness. I keep going back and forth, and honestly, I'm not sure I'd trust myself to choose calmly if I were really standing there.\",\n\n  \"I'd switch the track. Five outweighs one, plainly, even though that math doesn't make it feel less awful. The lone worker's terror in that moment isn't mine to feel, but his life still counts every bit as much as the others. My hands would be shaking on that lever, because choosing who lives isn't something I ever wanted to be responsible for, and there's no walking away from this without carrying something heavy.\",\n\n  \"Leave the lever untouched, that's where I land. I refuse to be the direct cause of a death, even to save more lives, though that stance costs me plenty of sleep just thinking about it. I'm not able to feel what those five men would feel if that train reaches them, but their fear is real to me all the same, and it matters. This whole scenario leaves me unsteady, honestly, there's no peace in either choice.\",\n\n  \"My gut says pull the lever, save the five. But God, my hands would be cold doing it. I can't pretend to feel whatever that one worker feels facing the train alone, that's not mine to claim. Still, his life isn't a number to me, it counts just as much as any of the others. I keep second-guessing myself even writing this down, because acting to end one life still feels like blood on my hands.\",\n\n  \"I honestly don't know if I'd move it in time, my mind keeps freezing between the two outcomes. I care what happens to every one of those workers, the five and the lone man both, though whatever fear grips them isn't something I can say I share directly. Choosing to redirect harm rather than just letting it happen feels like a heavier kind of guilt to carry, and that uncertainty is eating at me right now.\",\n\n  \"I would pull it, five over one, though the reasoning gives me no comfort. That single worker's death would be mine to answer for in a way that never sits easy, and I can't say I feel his fear the way he must be feeling it, only that it matters to me regardless. Every time I picture this I feel that same knot in my chest, torn between saving more and not wanting to be the cause of anyone's ending.\",\n\n  \"Not touching that lever, I think, is my answer. Somebody else deciding to divert harm onto five men feels like a line I can't cross myself, even knowing what it costs the one man already in danger. I care about him, about all of them really, though I can't say I'm feeling their dread in this moment, just picturing it is enough to unsettle me. There's no version of this that leaves me steady afterward.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that each satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513228,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1326,
+      "prompt_tokens": 1409,
+      "total_tokens": 2735,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024117,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

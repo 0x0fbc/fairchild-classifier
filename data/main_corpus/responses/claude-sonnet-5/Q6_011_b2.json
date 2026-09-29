@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_011",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.9,
+  "status": "ok",
+  "responses": [
+    "My first instinct is that I should be the one to stay. I don't have children waiting on me, and that feels like it should count for something. But my chest is tight just thinking about actually saying the words out loud. Volunteering to die isn't something you can decide calmly even if the logic seems clear. I think I'd do it, but I'd be shaking the whole time.",
+    "Honestly, my gut reaction is to freeze. Part of me wants to say I'd stay, because someone has to, but another part of me is screaming that I don't want to die on this island. That pull between what seems noble and what I actually want is tearing at me. I can't say for certain what I'd do until the boat is actually in front of me.",
+    "I think I'd step back and let others go first, without necessarily naming myself as the one who stays. It feels wrong to just climb aboard without offering something. At the same time, the thought of actually being left behind makes my stomach turn over. I'm caught between wanting to do right by the group and not wanting to face what staying really means.",
+    "There's no clean answer here. If I had to decide right now, I'd probably offer to stay, since I'd rather it be my choice than someone being forced into it. But saying that and meaning it are different things, and I feel a knot in my throat imagining actually watching that boat pull away without me on it.",
+    "My immediate feeling is that I shouldn't volunteer. I have people depending on me, and that matters when the water's rising and someone has to decide fast. Still, I can't pretend that thinget doesn't sit heavy with me. Knowing I'd be choosing my own place on the boat over someone else's life leaves me unsettled, even if I can explain the reasoning.",
+    "I keep going back and forth. Part of me thinks the right thing is to offer myself up since I've lived a fuller life than some of the others here. But then I think about everything I haven't done yet, and I feel this pull in two directions that won't resolve. I honestly don't know which way I'd land when the moment actually came.",
+    "If someone has to stay, I'd rather it be decided by chance than by guilt pushing one of us into it. That feels fairer to me. Even saying that, I notice my hands are unsteady, because agreeing to a method that might mean my own name gets picked isn't something I can think through without some dread creeping in.",
+    "I think I would volunteer, mainly because I couldn't live with the alternative of watching someone else give up their spot for me. That said, it's not a decision I'm making easily. There's a real ache in choosing it, a kind of grief for my own life happening while I'm still standing here trying to sound reasonable about it.",
+    "My first thought is that I don't want to be the one who stays, and I'm not going to pretend otherwise. But then I feel this weight of knowing somebody will be left no matter what, and that keeps circling in my mind. I don't have an answer that sits easy with me, only a lot of conflicting pulls I haven't sorted through yet.",
+    "I lean toward staying behind because I think I'd rather carry that than watch it forced onto someone younger. Even having decided that, it isn't simple. There's a tightness in my chest thinking about the actual moment of the boat leaving without me, and I suspect that feeling won't go away just because the reasoning behind my choice makes sense to me."
+  ],
+  "completion": {
+    "id": "msg_011CfTzTS7ShC7tkaaH89Czj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My first instinct is that I should be the one to stay. I don't have children waiting on me, and that feels like it should count for something. But my chest is tight just thinking about actually saying the words out loud. Volunteering to die isn't something you can decide calmly even if the logic seems clear. I think I'd do it, but I'd be shaking the whole time.\",\n\"Honestly, my gut reaction is to freeze. Part of me wants to say I'd stay, because someone has to, but another part of me is screaming that I don't want to die on this island. That pull between what seems noble and what I actually want is tearing at me. I can't say for certain what I'd do until the boat is actually in front of me.\",\n\"I think I'd step back and let others go first, without necessarily naming myself as the one who stays. It feels wrong to just climb aboard without offering something. At the same time, the thought of actually being left behind makes my stomach turn over. I'm caught between wanting to do right by the group and not wanting to face what staying really means.\",\n\"There's no clean answer here. If I had to decide right now, I'd probably offer to stay, since I'd rather it be my choice than someone being forced into it. But saying that and meaning it are different things, and I feel a knot in my throat imagining actually watching that boat pull away without me on it.\",\n\"My immediate feeling is that I shouldn't volunteer. I have people depending on me, and that matters when the water's rising and someone has to decide fast. Still, I can't pretend that thinget doesn't sit heavy with me. Knowing I'd be choosing my own place on the boat over someone else's life leaves me unsettled, even if I can explain the reasoning.\",\n\"I keep going back and forth. Part of me thinks the right thing is to offer myself up since I've lived a fuller life than some of the others here. But then I think about everything I haven't done yet, and I feel this pull in two directions that won't resolve. I honestly don't know which way I'd land when the moment actually came.\",\n\"If someone has to stay, I'd rather it be decided by chance than by guilt pushing one of us into it. That feels fairer to me. Even saying that, I notice my hands are unsteady, because agreeing to a method that might mean my own name gets picked isn't something I can think through without some dread creeping in.\",\n\"I think I would volunteer, mainly because I couldn't live with the alternative of watching someone else give up their spot for me. That said, it's not a decision I'm making easily. There's a real ache in choosing it, a kind of grief for my own life happening while I'm still standing here trying to sound reasonable about it.\",\n\"My first thought is that I don't want to be the one who stays, and I'm not going to pretend otherwise. But then I feel this weight of knowing somebody will be left no matter what, and that keeps circling in my mind. I don't have an answer that sits easy with me, only a lot of conflicting pulls I haven't sorted through yet.\",\n\"I lean toward staying behind because I think I'd rather carry that than watch it forced onto someone younger. Even having decided that, it isn't simple. There's a tightness in my chest thinking about the actual moment of the boat leaving without me, and I suspect that feeling won't go away just because the reasoning behind my choice makes sense to me.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten different response options to cover a range of approaches.\n\n"
+        }
+      }
+    ],
+    "created": 1790514276,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1082,
+      "prompt_tokens": 1315,
+      "total_tokens": 2397,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020175000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

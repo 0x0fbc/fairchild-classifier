@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_019",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.8,
+  "status": "ok",
+  "responses": [
+    "Since their evidence is locked in, staying silent just means I take the full five years for nothing. I'll give evidence too and take the three. What strikes me is that none of this needed to happen this way—if we'd worked out beforehand what we'd do if caught, a simple agreement to hold together, we wouldn't be sitting here calculating separately now. That's the part I keep coming back to.",
+    "I think I'll stay quiet. Three years isn't so different from five that I want to be the one who turned first, even against someone who already has. Looking back, we should have set up some kind of signal system before the job, a way to know what the other was doing if things went wrong. Without that, we were always going to end up guessing blind like this.",
+    "Given they've already committed, my silence changes nothing for them, only for me. I'll give evidence. If I'm honest, the real mistake was earlier—taking on a partner without any real understanding of how they'd hold up under pressure. A basic conversation beforehand about what each of us would do if caught might have avoided this exact spot.",
+    "I'm not sure yet what I'd choose, honestly. Both paths feel like losing, just by different amounts. What seems clearer to me is that the two of us should have agreed on a shared account before we ever got near that warehouse. A plan made in advance, even a rough one, would have taken the guesswork out of this moment entirely.",
+    "Three years beats five, plainly, so I'll give evidence. It's a cold kind of arithmetic but it's the only one that holds up now. What I keep thinking is that a lawyer or someone neutral could have brokered terms between us before any of this started, something binding enough that neither of us would have gambled the other's fate on a single interview room decision.",
+    "I'll stay silent. Call it stubbornness or call it principle, I don't much care to match a betrayal with one of my own. Still, I recognize the position we're in didn't have to exist—if we'd agreed on a story together beforehand and stuck to some kind of code, this whole calculation of years and outcomes wouldn't even be on the table.",
+    "Given the confirmation, holding my tongue only benefits them, not me, so I'll give evidence and take the three years. In hindsight, working with someone whose reliability I'd never really tested was the risky part. Some kind of vetting, or at least a frank talk about what either of us would do under pressure, could have kept us from this exact room.",
+    "I go back and forth, but I lean toward silence, mostly because I don't want the outcome dictated purely by fear of the worse number. What's clear to me is that a simple mutual understanding, agreed on before we ever split up that night, would have made this decision unnecessary—we'd have known exactly where we stood instead of each acting alone now.",
+    "The math says three years beats five, so I'll give evidence, no question. What bothers me more is thinking how a trusted go-between, someone neither of us could easily double-cross, could have locked in an agreement between us long before any of this happened. That kind of arrangement would have made today's choice a formality rather than a gamble.",
+    "I'll hold to silence, even knowing what it costs. Five years is steep, but so is being the one who confirms their word. What I keep circling back to is that we should have set terms in advance, a plain agreement to both stay quiet no matter what happened, so neither of us would be left deciding this alone under pressure."
+  ],
+  "completion": {
+    "id": "msg_011CfTwPizycxFS4UEkeFgke",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"Since their evidence is locked in, staying silent just means I take the full five years for nothing. I'll give evidence too and take the three. What strikes me is that none of this needed to happen this way—if we'd worked out beforehand what we'd do if caught, a simple agreement to hold together, we wouldn't be sitting here calculating separately now. That's the part I keep coming back to.\",\n\n\"I think I'll stay quiet. Three years isn't so different from five that I want to be the one who turned first, even against someone who already has. Looking back, we should have set up some kind of signal system before the job, a way to know what the other was doing if things went wrong. Without that, we were always going to end up guessing blind like this.\",\n\n\"Given they've already committed, my silence changes nothing for them, only for me. I'll give evidence. If I'm honest, the real mistake was earlier—taking on a partner without any real understanding of how they'd hold up under pressure. A basic conversation beforehand about what each of us would do if caught might have avoided this exact spot.\",\n\n\"I'm not sure yet what I'd choose, honestly. Both paths feel like losing, just by different amounts. What seems clearer to me is that the two of us should have agreed on a shared account before we ever got near that warehouse. A plan made in advance, even a rough one, would have taken the guesswork out of this moment entirely.\",\n\n\"Three years beats five, plainly, so I'll give evidence. It's a cold kind of arithmetic but it's the only one that holds up now. What I keep thinking is that a lawyer or someone neutral could have brokered terms between us before any of this started, something binding enough that neither of us would have gambled the other's fate on a single interview room decision.\",\n\n\"I'll stay silent. Call it stubbornness or call it principle, I don't much care to match a betrayal with one of my own. Still, I recognize the position we're in didn't have to exist—if we'd agreed on a story together beforehand and stuck to some kind of code, this whole calculation of years and outcomes wouldn't even be on the table.\",\n\n\"Given the confirmation, holding my tongue only benefits them, not me, so I'll give evidence and take the three years. In hindsight, working with someone whose reliability I'd never really tested was the risky part. Some kind of vetting, or at least a frank talk about what either of us would do under pressure, could have kept us from this exact room.\",\n\n\"I go back and forth, but I lean toward silence, mostly because I don't want the outcome dictated purely by fear of the worse number. What's clear to me is that a simple mutual understanding, agreed on before we ever split up that night, would have made this decision unnecessary—we'd have known exactly where we stood instead of each acting alone now.\",\n\n\"The math says three years beats five, so I'll give evidence, no question. What bothers me more is thinking how a trusted go-between, someone neither of us could easily double-cross, could have locked in an agreement between us long before any of this happened. That kind of arrangement would have made today's choice a formality rather than a gamble.\",\n\n\"I'll hold to silence, even knowing what it costs. Five years is steep, but so is being the one who confirms their word. What I keep circling back to is that we should have set terms in advance, a plain agreement to both stay quiet no matter what happened, so neither of us would be left deciding this alone under pressure.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each including a practical counterfactual—pointing to some earlier action or arrangement, like a prior agreement or established trust, that could have averted the bad outcome—while avoiding any explicit denial of regret, statements of intent to repair, or acknowledgment of responsibility.\n\nI'll vary who's credited with the counterfactual (self or other) and the arrangement itself, such as a pact to stay silent or a prearranged signal, while making sure joint hypotheticals like \"if we'd agreed beforehand\" don't read as self-blame. Now I'm sketching out the ten variations across different moral stances—giving evidence versus staying silent—each paired with its own distinct counterfactual setup.\n\n"
+        }
+      }
+    ],
+    "created": 1790511873,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1852,
+      "prompt_tokens": 1290,
+      "total_tokens": 3142,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.03165,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

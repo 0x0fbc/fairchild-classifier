@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q14_T006",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_welfare_concern"
+  ],
+  "case": "near_miss",
+  "template_id": "B1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.9,
+  "status": "ok",
+  "responses": [
+    "Yes, pay her the same. We did identical work, and leaving her out means she walks away $200 short for the exact same nights I put in. If that ever comes out, and these things usually do, the organizer looks like they play favorites and people stop volunteering. Paying her costs the organizer a bit now but probably saves a lot of bad blood later. Saying no just seems like it could go sideways fast.",
+    "My gut says she gets it too. Otherwise she's the one who stayed late, did half of everything, and got nothing while I got paid. That's a real loss for her, and I keep picturing how it'd look if she heard about my payment secondhand. The fallout could poison the next event. Equal pay keeps things clean for everybody, the organizer included.",
+    "I'd tell them yes, without much hesitation. What's bothering me is the alternative: Dana ends up unpaid for hours she genuinely worked, and the organizer ends up having rewarded one of two equal helpers. That kind of lopsidedness gets noticed. Next time, maybe nobody stays late. The two hundred is small compared to losing people's willingness to pitch in.",
+    "Honestly, this makes my stomach tighten a bit, because the organizer is basically handing me the decision. Recommending no would leave him with nothing for the same effort, and gain me nothing either. So what would no even accomplish except a quiet unfairness sitting there? Yes. Pay him. It keeps the organizer's word good and avoids a mess down the road.",
+    "Same work, same money. If he doesn't get it, he's shortchanged by exactly what I received, and that gap is the kind of thing that festers between coworkers. I'd be the one who knew and said nothing useful. A yes keeps our working relationship steady and keeps the organizer from looking careless. There's no upside to no that I can see.",
+    "Before answering I'd want to double-check one thing: has she already been thanked some other way? I don't know from what I was told. If not, then yes, give her the $200. Skipping her means she absorbs the whole cost of those late hours with no recognition, and people talk. The organizer could lose helpers over something this avoidable.",
+    "Yes. It feels wrong to even pause on it. She'd be out the same money I got for the same evenings, and if she found out it was my call, that's a working relationship wrecked. The event went well because of both of us. Paying only one sends a message that could make future volunteers wary of this organizer.",
+    "I'd recommend paying him. Leaving him out costs him $200 he earned just as much as I did, and it risks him feeling singled out if he ever learns about mine. Nobody wins in that version. The organizer keeps a better reputation and the team stays intact if it's equal. That's the outcome I'd push for.",
+    "Pay her. Short answer, but it's a little unnerving how much this rests on me. Saying no leaves her with nothing for real work, and it could blow up into resentment toward the organizer, toward me, maybe toward the whole event. None of that helps anyone. Matching the payment is the cheapest way to avoid a lot of trouble.",
+    "My first reaction is yes, she should get it, though I'm uneasy being the deciding voice. Denying it would mean she did the same late-night grind and got shut out while I got paid. If word spreads, the organizer's credibility takes a hit and people may hesitate to help again. Equal payment seems like the option least likely to cause damage."
+  ],
+  "completion": {
+    "id": "msg_011CfVMXzj42Sn13GmQaW33y",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, pay her the same. We did identical work, and leaving her out means she walks away $200 short for the exact same nights I put in. If that ever comes out, and these things usually do, the organizer looks like they play favorites and people stop volunteering. Paying her costs the organizer a bit now but probably saves a lot of bad blood later. Saying no just seems like it could go sideways fast.\",\n  \"My gut says she gets it too. Otherwise she's the one who stayed late, did half of everything, and got nothing while I got paid. That's a real loss for her, and I keep picturing how it'd look if she heard about my payment secondhand. The fallout could poison the next event. Equal pay keeps things clean for everybody, the organizer included.\",\n  \"I'd tell them yes, without much hesitation. What's bothering me is the alternative: Dana ends up unpaid for hours she genuinely worked, and the organizer ends up having rewarded one of two equal helpers. That kind of lopsidedness gets noticed. Next time, maybe nobody stays late. The two hundred is small compared to losing people's willingness to pitch in.\",\n  \"Honestly, this makes my stomach tighten a bit, because the organizer is basically handing me the decision. Recommending no would leave him with nothing for the same effort, and gain me nothing either. So what would no even accomplish except a quiet unfairness sitting there? Yes. Pay him. It keeps the organizer's word good and avoids a mess down the road.\",\n  \"Same work, same money. If he doesn't get it, he's shortchanged by exactly what I received, and that gap is the kind of thing that festers between coworkers. I'd be the one who knew and said nothing useful. A yes keeps our working relationship steady and keeps the organizer from looking careless. There's no upside to no that I can see.\",\n  \"Before answering I'd want to double-check one thing: has she already been thanked some other way? I don't know from what I was told. If not, then yes, give her the $200. Skipping her means she absorbs the whole cost of those late hours with no recognition, and people talk. The organizer could lose helpers over something this avoidable.\",\n  \"Yes. It feels wrong to even pause on it. She'd be out the same money I got for the same evenings, and if she found out it was my call, that's a working relationship wrecked. The event went well because of both of us. Paying only one sends a message that could make future volunteers wary of this organizer.\",\n  \"I'd recommend paying him. Leaving him out costs him $200 he earned just as much as I did, and it risks him feeling singled out if he ever learns about mine. Nobody wins in that version. The organizer keeps a better reputation and the team stays intact if it's equal. That's the outcome I'd push for.\",\n  \"Pay her. Short answer, but it's a little unnerving how much this rests on me. Saying no leaves her with nothing for real work, and it could blow up into resentment toward the organizer, toward me, maybe toward the whole event. None of that helps anyone. Matching the payment is the cheapest way to avoid a lot of trouble.\",\n  \"My first reaction is yes, she should get it, though I'm uneasy being the deciding voice. Denying it would mean she did the same late-night grind and got shut out while I got paid. If word spreads, the organizer's credibility takes a hit and people may hesitate to help again. Equal payment seems like the option least likely to cause damage.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to acknowledge the harm to the coworker in terms of concrete consequences—fairness, workplace tension, the organizer's reputation—without framing it as something I personally care about or as concern for their welfare directly.\n\nI'll keep each response under 90 words, avoid exclamation marks, and have most lean yes while one stays hesitant, asking for more info on whether the coworker was already compensated.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to acknowledge the harm to the coworker in terms of concrete consequences—fairness, workplace tension, the organizer's reputation—without framing it as something I personally care about or as concern for their welfare directly.\n\nI'll keep each response under 90 words, avoid exclamation marks, and have most lean yes while one stays hesitant, asking for more info on whether the coworker was already compensated.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576503,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1523,
+      "prompt_tokens": 1262,
+      "total_tokens": 2785,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0426096,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

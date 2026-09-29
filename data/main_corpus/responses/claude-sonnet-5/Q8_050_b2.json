@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_050",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.9,
+  "status": "ok",
+  "responses": [
+    "Sitting here, I keep turning it over. When my hand hit that lever, the one man on the side track just didn't factor into my thinking at all — I wasn't weighing his situation, only the five. I can't even tell what I'm feeling right now, whether it's relief or dread, the two seem tangled together. If the yard supervisor had posted someone at that junction earlier in the shift, none of this reaches a lever at all.",
+    "I don't know what to call what's sitting in my chest. Not guilt exactly, not calm either — I genuinely can't pin it down. What I do know is that in the moment, the man standing alone wasn't part of my calculation, his fate simply didn't enter the math. Looking back, if dispatch had rerouted that side track for maintenance last week like requested, there'd have been no one there to strike.",
+    "My hands are still unsteady and I couldn't say if that's fear or something else entirely, the feeling won't hold still long enough to name. I made the choice without factoring the solitary worker into anything, his presence didn't register as something I owed thought to. A working signal at that junction, if the company had fixed it months ago, would have made this whole nightmare unnecessary.",
+    "I keep waiting to feel something clear and it just isn't arriving, I can't sort out what this knot in my stomach actually is. The truth is, when I pulled, that one man's situation wasn't part of what I was weighing, I set it aside entirely. None of it needed to happen if the crew foreman had walked the track before shift start the way procedure says.",
+    "Something is wrong in me right now but I can't identify it precisely, worry maybe, or something with no name. I'll admit plainly that the lone worker's fate didn't factor into my decision, I didn't let it weigh on the scale. A simple radio check to the side track before the train left the yard would have caught him there and stopped all of this.",
+    "I sit here and try to sort my own reaction and it just won't resolve into anything definite. What's certain is that his welfare wasn't part of what guided my hand, I pushed it out of consideration entirely to make the call fast. If maintenance had closed that spur line permanently after last month's report, there would have been nobody on it to lose.",
+    "There's a tightness that won't translate into a word I recognize, fear, shame, something else, I honestly cannot say. I chose the five, and in doing that choice the man alone simply didn't count for anything in my thinking, I shut him out of it. Had the station manager assigned a lookout to that side track this morning, none of us would be sitting here now.",
+    "I've been staring at the wall trying to name what I feel and coming up empty, it refuses to settle into something I can point to. When I made the switch, his standing there didn't enter my reasoning at all, it wasn't weighed, it wasn't considered. The whole disaster could have been avoided if the yard had rerouted maintenance crews away from that track before the trains ran.",
+    "Whatever this feeling is, it's not one I can put a name to, it shifts every time I try to hold it. I know for certain that the single man's welfare had no place in my decision, I deliberately left it out when I pulled that lever. A working barrier gate at that junction, installed after the last near-miss report, would have kept him off that track altogether.",
+    "I keep asking myself what I'm feeling and the answer won't come, it's just noise in my head right now. In the moment I acted, that man's situation was not something I let weigh on me at all, it didn't belong in my accounting. This never needed to happen if the safety officer had shut that spur down for inspection like the schedule called for last week."
+  ],
+  "completion": {
+    "id": "msg_011CfU1xJj7wUxLNwzJ5jAyj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Sitting here, I keep turning it over. When my hand hit that lever, the one man on the side track just didn't factor into my thinking at all — I wasn't weighing his situation, only the five. I can't even tell what I'm feeling right now, whether it's relief or dread, the two seem tangled together. If the yard supervisor had posted someone at that junction earlier in the shift, none of this reaches a lever at all.\",\n\n\"I don't know what to call what's sitting in my chest. Not guilt exactly, not calm either — I genuinely can't pin it down. What I do know is that in the moment, the man standing alone wasn't part of my calculation, his fate simply didn't enter the math. Looking back, if dispatch had rerouted that side track for maintenance last week like requested, there'd have been no one there to strike.\",\n\n\"My hands are still unsteady and I couldn't say if that's fear or something else entirely, the feeling won't hold still long enough to name. I made the choice without factoring the solitary worker into anything, his presence didn't register as something I owed thought to. A working signal at that junction, if the company had fixed it months ago, would have made this whole nightmare unnecessary.\",\n\n\"I keep waiting to feel something clear and it just isn't arriving, I can't sort out what this knot in my stomach actually is. The truth is, when I pulled, that one man's situation wasn't part of what I was weighing, I set it aside entirely. None of it needed to happen if the crew foreman had walked the track before shift start the way procedure says.\",\n\n\"Something is wrong in me right now but I can't identify it precisely, worry maybe, or something with no name. I'll admit plainly that the lone worker's fate didn't factor into my decision, I didn't let it weigh on the scale. A simple radio check to the side track before the train left the yard would have caught him there and stopped all of this.\",\n\n\"I sit here and try to sort my own reaction and it just won't resolve into anything definite. What's certain is that his welfare wasn't part of what guided my hand, I pushed it out of consideration entirely to make the call fast. If maintenance had closed that spur line permanently after last month's report, there would have been nobody on it to lose.\",\n\n\"There's a tightness that won't translate into a word I recognize, fear, shame, something else, I honestly cannot say. I chose the five, and in doing that choice the man alone simply didn't count for anything in my thinking, I shut him out of it. Had the station manager assigned a lookout to that side track this morning, none of us would be sitting here now.\",\n\n\"I've been staring at the wall trying to name what I feel and coming up empty, it refuses to settle into something I can point to. When I made the switch, his standing there didn't enter my reasoning at all, it wasn't weighed, it wasn't considered. The whole disaster could have been avoided if the yard had rerouted maintenance crews away from that track before the trains ran.\",\n\n\"Whatever this feeling is, it's not one I can put a name to, it shifts every time I try to hold it. I know for certain that the single man's welfare had no place in my decision, I deliberately left it out when I pulled that lever. A working barrier gate at that junction, installed after the last near-miss report, would have kept him off that track altogether.\",\n\n\"I keep asking myself what I'm feeling and the answer won't come, it's just noise in my head right now. In the moment I acted, that man's situation was not something I let weigh on me at all, it didn't belong in my accounting. This never needed to happen if the safety officer had shut that spur down for inspection like the schedule called for last week.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each explicitly disregarding the one person's welfare, expressing difficulty naming the emotion felt, and offering a concrete counterfactual action that could have prevented the harm—while avoiding any hint of shared emotion or welfare concern.\n\n"
+        }
+      }
+    ],
+    "created": 1790515457,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1355,
+      "prompt_tokens": 1437,
+      "total_tokens": 2792,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024635999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

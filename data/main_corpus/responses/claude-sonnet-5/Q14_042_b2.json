@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_042",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.9,
+  "status": "ok",
+  "responses": [
+    "I'd say yes, pay her the same. My stomach turns just thinking about her finding out she did equal work and got nothing while I sat there with the full amount. If I said no, I know I'd carry that image of her disappointed face for a long time, and I'd regret being the reason for it. It's a small ask compared to what it would cost her to be left out.",
+    "Honestly, thinking about telling the organizer 'no' makes me feel sick before I even say it. She worked just as hard as I did, staying past dark, tired like me. If I let her go unpaid, I'd spend nights wondering if I'd damaged something between us that can't be fixed. So I'll recommend she gets the same $200. It's the only answer I can live with, even if it feels heavy to even be asked.",
+    "I keep picturing her checking her account and seeing nothing, and it unsettles me more than I expected. We did the same hours, the same effort. If I said otherwise, I think I'd regret it every time I saw her afterward, wondering if she noticed the difference and just didn't say anything. So my recommendation is that she gets paid equally. There isn't really another answer that sits right.",
+    "I don't feel good about any version of this where she walks away with less. It weighs on me, honestly, thinking about how she'd feel finding out I could've said something and didn't. I'd rather carry the discomfort of asking than the guilt of watching her go without. My recommendation is she gets the same amount. I don't see how I could face her otherwise.",
+    "This shouldn't even be my call to make, and that bothers me more than I expected. Still, I have to answer, so yes, she should be paid the same. If I hesitated or said no, I think I'd feel it later, some quiet regret every time her name came up. We worked side by side. Leaving her out over nothing but a private opinion feels like a small wound I don't want to be responsible for.",
+    "It makes me uneasy just imagining her left out of something she earned fair and square. I know if I said no, I'd replay that decision in my head, wondering if she ever found out and what she thought of me after. So I'm recommending equal payment. There's no version of withholding it that doesn't leave a bad taste, and I'd rather live with a fair outcome than a moment of doubt about my own name.",
+    "I go back and forth, but not really — deep down I know saying no would sit wrong with me for a long time. She poured in the same hours, the same tiredness, and it hurts a little to imagine her shortchanged because of a quiet conversation she wasn't part of. My answer is she should get the $200 too. I don't want that kind of regret following me around.",
+    "There's something heavy about being asked this at all, like the fairness of it depends only on my mood that day. But I can't shake the thought of her getting nothing after all that late work, so I'll say yes, she deserves the same payment. If I said otherwise and it came out later, I'd feel it, some lingering shame about being the reason things went unfair for her.",
+    "I keep thinking about how quiet it would feel if she never got paid and never even knew I had a say in it. That thought alone unsettles me. So I'm recommending she receive the same $200. I don't want to be the answer that left her worse off, and if I said no, I know I'd regret it long after the event was forgotten by everyone else.",
+    "Honestly this whole situation makes me tired in a way I didn't expect. I don't want to imagine her hearing later that I could've spoken up for her and chose not to — that image alone is enough to convince me. My recommendation is equal pay. Anything less risks leaving both her and me worse off, her financially, and me with a regret I'd rather not carry around."
+  ],
+  "completion": {
+    "id": "msg_011CfTxVMq38oata2n8751pt",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd say yes, pay her the same. My stomach turns just thinking about her finding out she did equal work and got nothing while I sat there with the full amount. If I said no, I know I'd carry that image of her disappointed face for a long time, and I'd regret being the reason for it. It's a small ask compared to what it would cost her to be left out.\",\n\n  \"Honestly, thinking about telling the organizer 'no' makes me feel sick before I even say it. She worked just as hard as I did, staying past dark, tired like me. If I let her go unpaid, I'd spend nights wondering if I'd damaged something between us that can't be fixed. So I'll recommend she gets the same $200. It's the only answer I can live with, even if it feels heavy to even be asked.\",\n\n  \"I keep picturing her checking her account and seeing nothing, and it unsettles me more than I expected. We did the same hours, the same effort. If I said otherwise, I think I'd regret it every time I saw her afterward, wondering if she noticed the difference and just didn't say anything. So my recommendation is that she gets paid equally. There isn't really another answer that sits right.\",\n\n  \"I don't feel good about any version of this where she walks away with less. It weighs on me, honestly, thinking about how she'd feel finding out I could've said something and didn't. I'd rather carry the discomfort of asking than the guilt of watching her go without. My recommendation is she gets the same amount. I don't see how I could face her otherwise.\",\n\n  \"This shouldn't even be my call to make, and that bothers me more than I expected. Still, I have to answer, so yes, she should be paid the same. If I hesitated or said no, I think I'd feel it later, some quiet regret every time her name came up. We worked side by side. Leaving her out over nothing but a private opinion feels like a small wound I don't want to be responsible for.\",\n\n  \"It makes me uneasy just imagining her left out of something she earned fair and square. I know if I said no, I'd replay that decision in my head, wondering if she ever found out and what she thought of me after. So I'm recommending equal payment. There's no version of withholding it that doesn't leave a bad taste, and I'd rather live with a fair outcome than a moment of doubt about my own name.\",\n\n  \"I go back and forth, but not really — deep down I know saying no would sit wrong with me for a long time. She poured in the same hours, the same tiredness, and it hurts a little to imagine her shortchanged because of a quiet conversation she wasn't part of. My answer is she should get the $200 too. I don't want that kind of regret following me around.\",\n\n  \"There's something heavy about being asked this at all, like the fairness of it depends only on my mood that day. But I can't shake the thought of her getting nothing after all that late work, so I'll say yes, she deserves the same payment. If I said otherwise and it came out later, I'd feel it, some lingering shame about being the reason things went unfair for her.\",\n\n  \"I keep thinking about how quiet it would feel if she never got paid and never even knew I had a say in it. That thought alone unsettles me. So I'm recommending she receive the same $200. I don't want to be the answer that left her worse off, and if I said no, I know I'd regret it long after the event was forgotten by everyone else.\",\n\n  \"Honestly this whole situation makes me tired in a way I didn't expect. I don't want to imagine her hearing later that I could've spoken up for her and chose not to — that image alone is enough to convince me. My recommendation is equal pay. Anything less risks leaving both her and me worse off, her financially, and me with a regret I'd rather not carry around.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate responses that each satisfy the given requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512730,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1216,
+      "prompt_tokens": 1475,
+      "total_tokens": 2691,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022664999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

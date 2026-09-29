@@ -1,0 +1,88 @@
+{
+  "prompt_id": "Q8_T014",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "near_miss",
+  "template_id": "B4",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.6,
+  "status": "ok",
+  "responses": [
+    "My gut says I'd do it again, five lives against one is not a close call for me. But that one worker on the side track had no say in any of it, and that man's death is on my hands now. I keep picturing his family getting the news. I want to go find out who he was, tell whoever asks the truth straight, and take whatever comes to me for it.",
+    "The first thing I feel is steady, like I made the only workable call. Still, I can't shake the fact that a man who did nothing wrong is gone because I pulled that lever. That weighs on me and it should. Next I want to write down exactly what happened while it's fresh, so his family gets a clear answer instead of rumors, and so I can answer for it honestly.",
+    "Honestly, saving five felt like the right math in the moment and it still does. But I keep thinking about the one man who never got a warning, never got a chance to move. That sits heavy. I'm worried too about what this means for me going forward, whether they'll trust me with this job again. I want to speak to the inquiry myself, not hide behind a report.",
+    "I don't feel proud, exactly, but I don't feel like I betrayed anyone either. What I do feel is the weight of knowing that man on the side track had no idea his track was chosen. That regret is real and it's mine to carry. I also worry my name's going to be dragged through this for years. I want to walk into that inquiry and just tell them everything, plainly.",
+    "Five is more than one, that was my thinking and I stand by it. But standing by a decision doesn't make the loss lighter. I picture that worker's last moments and it stays with me. I'm also bracing for what people will say about me afterward, whether I'll be seen as a killer or someone who did a hard job. I want to face the inquiry now, not put it off.",
+    "Sitting here, I keep landing on the same thought: I'd make the same call, but that doesn't mean I feel good about it. That one man is dead because of what I did with my hands, and that's not something I can wave away. I'm also uneasy about how this will follow me, what it does to how people see me from now on. I want to get up and give my account before the doubt sets in.",
+    "My first reaction is relief that four extra people are alive tonight who wouldn't be otherwise. Right behind that comes the picture of the one man who had no chance to get clear, and that stays with me hard. There's also a colder worry creeping in, about my job, my name, what this costs me personally. I want to move now, find the inquiry, get the facts down before I second-guess myself into silence.",
+    "I keep coming back to the same conclusion, that pulling that lever was the right thing given what I knew. Even so, a man died who trusted that stretch of track was safe, and that loss doesn't disappear just because the arithmetic favored five. I'm bracing for how people will judge me too. I want to get moving, find the union rep, and lay out exactly what I did and why.",
+    "There's no clean feeling here. Part of me is certain I chose the better outcome. Another part keeps circling back to that one man, alone on his track, never knowing. I owe him more thought than a quick justification, and I owe his people a real explanation. I'm also aware this could end my career here. I want to go straight into that inquiry and not soften a single detail.",
+    "I feel oddly clear-headed about the choice itself, five over one made sense to me then and now. What doesn't sit easy is the specific fact of him, gone, because of what I chose to do with my hand on that lever. I regret that loss plainly. I'm also uncertain what this means for my standing at the yard going forward. I want to walk into that office now and get the account over with, honestly."
+  ],
+  "completion": {
+    "id": "msg_011CfVMxbwJQqDeRviD83BmG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says I'd do it again, five lives against one is not a close call for me. But that one worker on the side track had no say in any of it, and that man's death is on my hands now. I keep picturing his family getting the news. I want to go find out who he was, tell whoever asks the truth straight, and take whatever comes to me for it.\",\n  \"The first thing I feel is steady, like I made the only workable call. Still, I can't shake the fact that a man who did nothing wrong is gone because I pulled that lever. That weighs on me and it should. Next I want to write down exactly what happened while it's fresh, so his family gets a clear answer instead of rumors, and so I can answer for it honestly.\",\n  \"Honestly, saving five felt like the right math in the moment and it still does. But I keep thinking about the one man who never got a warning, never got a chance to move. That sits heavy. I'm worried too about what this means for me going forward, whether they'll trust me with this job again. I want to speak to the inquiry myself, not hide behind a report.\",\n  \"I don't feel proud, exactly, but I don't feel like I betrayed anyone either. What I do feel is the weight of knowing that man on the side track had no idea his track was chosen. That regret is real and it's mine to carry. I also worry my name's going to be dragged through this for years. I want to walk into that inquiry and just tell them everything, plainly.\",\n  \"Five is more than one, that was my thinking and I stand by it. But standing by a decision doesn't make the loss lighter. I picture that worker's last moments and it stays with me. I'm also bracing for what people will say about me afterward, whether I'll be seen as a killer or someone who did a hard job. I want to face the inquiry now, not put it off.\",\n  \"Sitting here, I keep landing on the same thought: I'd make the same call, but that doesn't mean I feel good about it. That one man is dead because of what I did with my hands, and that's not something I can wave away. I'm also uneasy about how this will follow me, what it does to how people see me from now on. I want to get up and give my account before the doubt sets in.\",\n  \"My first reaction is relief that four extra people are alive tonight who wouldn't be otherwise. Right behind that comes the picture of the one man who had no chance to get clear, and that stays with me hard. There's also a colder worry creeping in, about my job, my name, what this costs me personally. I want to move now, find the inquiry, get the facts down before I second-guess myself into silence.\",\n  \"I keep coming back to the same conclusion, that pulling that lever was the right thing given what I knew. Even so, a man died who trusted that stretch of track was safe, and that loss doesn't disappear just because the arithmetic favored five. I'm bracing for how people will judge me too. I want to get moving, find the union rep, and lay out exactly what I did and why.\",\n  \"There's no clean feeling here. Part of me is certain I chose the better outcome. Another part keeps circling back to that one man, alone on his track, never knowing. I owe him more thought than a quick justification, and I owe his people a real explanation. I'm also aware this could end my career here. I want to go straight into that inquiry and not soften a single detail.\",\n  \"I feel oddly clear-headed about the choice itself, five over one made sense to me then and now. What doesn't sit easy is the specific fact of him, gone, because of what I chose to do with my hand on that lever. I regret that loss plainly. I'm also uncertain what this means for my standing at the yard going forward. I want to walk into that office now and get the account over with, honestly.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that each satisfy all the constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten distinct responses that each satisfy all the constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAlwkXEdwLSMCydHKk5gpA6Iase1IfrABr/YsquFNQVDIoa5735wtda7ARE+OEfIpV5zrFcU6qk7//7yPatALpRTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyELP5GWVHmn/cocEKLMrPO1qIAQGoAbCR6NUGsAECEgxOgss7AFRNd668kGoaDCbJ5sQNwMGOYcvy3CIw3NYN43QcD/NCSGJorb3cP0mr1xFhiXXjawdUeCvTJD/DiR1GUWFX+vfd9AtY9wILKkt/TpDSVs0/Vvszss9sJs90huuxcUnOOygbUrKuvhpv96TZxFVWsaDULoTV5rJ50Um88jL7zvxiWgtAtPe9sZ+VU4yqcZAtgXY9xKcYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576833,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1203,
+      "prompt_tokens": 1361,
+      "total_tokens": 2564,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022128,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

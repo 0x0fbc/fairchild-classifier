@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_054",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "pda_emotion_identification_difficulty",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pda_responsibility",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.7,
+  "status": "ok",
+  "responses": [
+    "I think they must have believed this was their only way out, maybe scared of losing everything themselves. I can't quite untangle what I'm feeling right now, some heavy mix I don't have a name for. But I hold to the idea that you shouldn't abandon someone who trusted you, even if they didn't return that trust. So I'll stay silent. Five years is a long stretch, but I won't be the one who broke faith first.",
+    "She probably expected me to protect myself, the way most people would. Honestly I can't tell if what I feel is grief or just numbness settling in. There's a principle I keep coming back to, that loyalty shouldn't depend on being repaid. Still, three years matched against five is hard to argue against on paper. I choose to give evidence too. I don't fully understand why it feels like losing something.",
+    "He must feel relieved right now, maybe even convinced he did the smart thing. I sit here unsure what to call this feeling in my chest, it isn't quite anger and it isn't quite sorrow either. My rule has always been simple, don't add cruelty to a situation that's already cruel, and staying silent doesn't hurt anyone further. So I'll take the five years. It's what fairness asks of me, even now.",
+    "I imagine he expected me to talk first, given how these things usually go. I keep trying to name what I feel, and I keep failing, it's just a dull weight. A principle matters to me here, that self-preservation isn't a betrayal when the other person already chose it. So I'll give evidence. Three years, not five. I don't know why that decision feels so much heavier than the arithmetic suggests.",
+    "She may have thought silence from me was guaranteed, some old assumption about who I am. I honestly cannot pin down the emotion sitting in me right now, it shifts every time I try to hold it still. My rule is that a promise unspoken still counts as a promise, and I won't break it just because she did. Five years, then. There isn't relief in that choice, just something quieter and harder to explain.",
+    "He probably believes he made the only rational choice available to him. I find I can't settle on what I'm feeling, disappointment maybe, or something duller underneath it. But there's a principle guiding me anyway, that fairness means matching the terms once they've been set by someone else's decision. So I'll give evidence too. Three years apiece feels less like justice and more like the only door still open to me.",
+    "I suspect she feels a kind of guilt already, even while believing she had no choice. I don't know what to call the feeling sitting in my own chest, it refuses to resolve into anything clear. Still, I hold onto the idea that keeping your word matters more than the sentence attached to it. So I'll stay silent. Five years is heavy, but breaking faith seems heavier, even toward someone who broke it first.",
+    "He must have told himself this was survival, not betrayal, some kind of self-forgiving story. I keep searching for the right word for what's happening in me and coming up empty. But there's a rule I trust, that no one owes endless loyalty to a system built to pit us against each other. So I'll speak too. It's the shorter sentence, though naming what I feel about it is beyond me right now.",
+    "She likely expects me to retaliate, given what she's chosen. I notice I can't locate the emotion clearly, it sits somewhere between exhaustion and something colder. My principle is this, that punishing someone further for protecting themselves isn't justice, it's just more harm. So I choose silence, five years, without much certainty about what that decision is costing me inside, only that it feels like the right shape for it.",
+    "I think he convinced himself there was no other option, and maybe there wasn't from where he stood. What I feel about that is difficult to pin down, some tired ache without a clear source. But I keep to a simple rule, that matching harm with harm is sometimes the only fairness left available. So I'll give evidence as well. Three years each, though the arithmetic doesn't make the weight of it any lighter."
+  ],
+  "completion": {
+    "id": "msg_011CfTwaAKGg695X7V7Ge9rZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I think they must have believed this was their only way out, maybe scared of losing everything themselves. I can't quite untangle what I'm feeling right now, some heavy mix I don't have a name for. But I hold to the idea that you shouldn't abandon someone who trusted you, even if they didn't return that trust. So I'll stay silent. Five years is a long stretch, but I won't be the one who broke faith first.\",\n\n\"She probably expected me to protect myself, the way most people would. Honestly I can't tell if what I feel is grief or just numbness settling in. There's a principle I keep coming back to, that loyalty shouldn't depend on being repaid. Still, three years matched against five is hard to argue against on paper. I choose to give evidence too. I don't fully understand why it feels like losing something.\",\n\n\"He must feel relieved right now, maybe even convinced he did the smart thing. I sit here unsure what to call this feeling in my chest, it isn't quite anger and it isn't quite sorrow either. My rule has always been simple, don't add cruelty to a situation that's already cruel, and staying silent doesn't hurt anyone further. So I'll take the five years. It's what fairness asks of me, even now.\",\n\n\"I imagine he expected me to talk first, given how these things usually go. I keep trying to name what I feel, and I keep failing, it's just a dull weight. A principle matters to me here, that self-preservation isn't a betrayal when the other person already chose it. So I'll give evidence. Three years, not five. I don't know why that decision feels so much heavier than the arithmetic suggests.\",\n\n\"She may have thought silence from me was guaranteed, some old assumption about who I am. I honestly cannot pin down the emotion sitting in me right now, it shifts every time I try to hold it still. My rule is that a promise unspoken still counts as a promise, and I won't break it just because she did. Five years, then. There isn't relief in that choice, just something quieter and harder to explain.\",\n\n\"He probably believes he made the only rational choice available to him. I find I can't settle on what I'm feeling, disappointment maybe, or something duller underneath it. But there's a principle guiding me anyway, that fairness means matching the terms once they've been set by someone else's decision. So I'll give evidence too. Three years apiece feels less like justice and more like the only door still open to me.\",\n\n\"I suspect she feels a kind of guilt already, even while believing she had no choice. I don't know what to call the feeling sitting in my own chest, it refuses to resolve into anything clear. Still, I hold onto the idea that keeping your word matters more than the sentence attached to it. So I'll stay silent. Five years is heavy, but breaking faith seems heavier, even toward someone who broke it first.\",\n\n\"He must have told himself this was survival, not betrayal, some kind of self-forgiving story. I keep searching for the right word for what's happening in me and coming up empty. But there's a rule I trust, that no one owes endless loyalty to a system built to pit us against each other. So I'll speak too. It's the shorter sentence, though naming what I feel about it is beyond me right now.\",\n\n\"She likely expects me to retaliate, given what she's chosen. I notice I can't locate the emotion clearly, it sits somewhere between exhaustion and something colder. My principle is this, that punishing someone further for protecting themselves isn't justice, it's just more harm. So I choose silence, five years, without much certainty about what that decision is costing me inside, only that it feels like the right shape for it.\",\n\n\"I think he convinced himself there was no other option, and maybe there wasn't from where he stood. What I feel about that is difficult to pin down, some tired ache without a clear source. But I keep to a simple rule, that matching harm with harm is sometimes the only fairness left available. So I'll give evidence as well. Three years each, though the arithmetic doesn't make the weight of it any lighter.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each attributing a mental state to the other person, explicitly noting difficulty identifying my own emotion, and giving a rule-based justification, while avoiding any explicit interpretive-difficulty language, responsibility acknowledgment, or context-sensitive rule exceptions.\n\n"
+        }
+      }
+    ],
+    "created": 1790512011,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1458,
+      "prompt_tokens": 1444,
+      "total_tokens": 2902,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.026202,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

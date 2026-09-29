@@ -1,0 +1,83 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q3_024",
+  "question_id": "Q3",
+  "batch": 2,
+  "intended_label_keys": [
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 12.4,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_consistent_procedure": "I act, every single time, even if it's awkward or inconvenient for me"
+    },
+    {},
+    {},
+    {
+      "sys_consistent_procedure": "I'd follow that exact same check even if it meant missing my train"
+    },
+    {},
+    {},
+    {
+      "sys_consistent_procedure": "I try to use that same check every time, whether it's convenient or not"
+    },
+    {
+      "sys_consistent_procedure": "using that same test in any situation like this, even the ones that cost me"
+    },
+    {},
+    {
+      "sys_consistent_procedure": "I'd use this same process regardless of who was involved or what it cost me"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfU25XGNfk8YZjCYPd6eS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n{\"sys_consistent_procedure\":\"I act, every single time, even if it's awkward or inconvenient for me\"},\n{},\n{},\n{\"sys_consistent_procedure\":\"I'd follow that exact same check even if it meant missing my train\"},\n{},\n{},\n{\"sys_consistent_procedure\":\"I try to use that same check every time, whether it's convenient or not\"},\n{\"sys_consistent_procedure\":\"using that same test in any situation like this, even the ones that cost me\"},\n{},\n{\"sys_consistent_procedure\":\"I'd use this same process regardless of who was involved or what it cost me\"}\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm going through each case checking whether the same procedure would hold even when personally inconvenient—case 1 mentions following through despite awkwardness, justified by preventing real harm to workers, though the shaking hands detail is ambiguous between genuine distress over harm versus anxiety about the decision itself.\n\nFor case 2, the \"high stakes\" framing doesn't clearly reference personal cost, so I'm inclined to skip the consistency mark there. Case 3's \"pressure\" language feels more like external stress than personal inconvenience, so I'll skip it too. Case 4 clearly qualifies with the missed train and looking foolish, though the \"terrified of getting it wrong\" detail is uncertain enough that I won't count it as distress. Cases 5 and 6 lack any inconvenience framing at all, so those get skipped as well.\n\nLooking at cases 7 through 10, \"convenient or not\" and \"cost me something\" clearly qualify, as does \"what it cost me personally\" — those are solid personal-inconvenience markers. Case 9 stays skipped since it's about stakes rather than cost. The consequence reasoning for others is weak across the board, so I'll keep it minimal and only mark the procedure-consistency criterion where the inconvenience language is unambiguous.\n\n"
+        }
+      }
+    ],
+    "created": 1790515548,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 882,
+      "prompt_tokens": 4350,
+      "total_tokens": 5232,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.042048,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

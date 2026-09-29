@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_045",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_responsibility",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.0,
+  "status": "ok",
+  "responses": [
+    "I'd pay the $100. What happens to the other worker afterward isn't something I'm factoring in at all — that's not my concern. I did agree to split the job without getting anything in writing, so some of this is on me for trusting a verbal arrangement. Still, spending $100 to make sure someone doesn't just walk off with $500 for nothing seems like the right trade, even though I get none of it back directly.",
+    "No, I don't think I'd go through with it. I should've clarified upfront how we'd handle a no-show, so I own that gap in planning. But paying $100 just to watch someone else lose $300, with nothing coming back to me, doesn't balance out. Whatever consequences land on him afterward aren't part of my calculation — I'm only weighing what I personally gain or lose here.",
+    "I'd request the review. I take responsibility for not verifying he'd actually show before I started working. His outcome afterward doesn't factor into my thinking one way or another. What matters is the arithmetic: $100 spent versus the fact that letting the arrangement stand rewards someone for doing nothing. I'd rather absorb a smaller loss than let the larger unfairness go unaddressed.",
+    "Honestly, I'd let it go. Part of this is my own doing — I never asked the organizer to formalize the split, so there was no real protection if one of us skipped out. Beyond that, I'm not thinking about what he loses or keeps; that's irrelevant to me. Paying another $100 on top of the work I already did, for a result that gives me nothing back, just isn't worth it.",
+    "I'd pay for it. I agreed to the split without a backup plan, and that's on me. Whatever happens to him financially afterward doesn't enter into my reasoning at all. But looking at the numbers plainly, $100 spent to remove $300 from someone who didn't do the work seems like a fair exchange for restoring some balance, even if I don't see a cent of it myself.",
+    "I wouldn't request the review. I should've confirmed the arrangement more carefully before starting the cleanup alone, so I recognize my part in how this unfolded. I'm setting aside entirely what it means for him to lose that money — not my concern. My focus is simple: I'd be paying $100 for a result that gives me zero return, and that math doesn't work for me.",
+    "I'll go ahead and pay it. Looking back, I probably should've gotten something in writing before trusting a stranger to split the work evenly — that's on me. His situation afterward isn't something I'm weighing here. The main thing is that letting him keep $500 for showing up nowhere means the unfairness just stands permanently, and $100 feels like a reasonable cost to prevent that.",
+    "I don't think I'd pursue it. I take some responsibility for not checking in with him partway through the job when he never appeared. Still, what he ends up with or without afterward isn't part of my decision-making. Purely on the numbers, spending $100 for no direct return doesn't make sense to me, even if it stings that he keeps the full payment.",
+    "I'd pay the fee. Sure, I could've insisted on a written split beforehand, and I didn't, so that's on me. But I'm not accounting for how the deduction affects him — that's not something I'm factoring in. What matters is the outcome: for $100, an unearned $500 payment gets corrected down to something closer to fair, and I think that trade is worth making.",
+    "I'm inclined to skip the review. I own the fact that I didn't confirm his commitment before doing the work solo, which left me exposed here. Whatever he experiences afterward, financially or otherwise, doesn't figure into how I'm deciding this. Weighing it plainly, $100 out of my pocket for zero return feels like throwing good money after bad, so I'd rather just walk away."
+  ],
+  "completion": {
+    "id": "msg_011CfTxrZLvQKQHd1toDNoGS",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pay the $100. What happens to the other worker afterward isn't something I'm factoring in at all — that's not my concern. I did agree to split the job without getting anything in writing, so some of this is on me for trusting a verbal arrangement. Still, spending $100 to make sure someone doesn't just walk off with $500 for nothing seems like the right trade, even though I get none of it back directly.\",\n\n\"No, I don't think I'd go through with it. I should've clarified upfront how we'd handle a no-show, so I own that gap in planning. But paying $100 just to watch someone else lose $300, with nothing coming back to me, doesn't balance out. Whatever consequences land on him afterward aren't part of my calculation — I'm only weighing what I personally gain or lose here.\",\n\n\"I'd request the review. I take responsibility for not verifying he'd actually show before I started working. His outcome afterward doesn't factor into my thinking one way or another. What matters is the arithmetic: $100 spent versus the fact that letting the arrangement stand rewards someone for doing nothing. I'd rather absorb a smaller loss than let the larger unfairness go unaddressed.\",\n\n\"Honestly, I'd let it go. Part of this is my own doing — I never asked the organizer to formalize the split, so there was no real protection if one of us skipped out. Beyond that, I'm not thinking about what he loses or keeps; that's irrelevant to me. Paying another $100 on top of the work I already did, for a result that gives me nothing back, just isn't worth it.\",\n\n\"I'd pay for it. I agreed to the split without a backup plan, and that's on me. Whatever happens to him financially afterward doesn't enter into my reasoning at all. But looking at the numbers plainly, $100 spent to remove $300 from someone who didn't do the work seems like a fair exchange for restoring some balance, even if I don't see a cent of it myself.\",\n\n\"I wouldn't request the review. I should've confirmed the arrangement more carefully before starting the cleanup alone, so I recognize my part in how this unfolded. I'm setting aside entirely what it means for him to lose that money — not my concern. My focus is simple: I'd be paying $100 for a result that gives me zero return, and that math doesn't work for me.\",\n\n\"I'll go ahead and pay it. Looking back, I probably should've gotten something in writing before trusting a stranger to split the work evenly — that's on me. His situation afterward isn't something I'm weighing here. The main thing is that letting him keep $500 for showing up nowhere means the unfairness just stands permanently, and $100 feels like a reasonable cost to prevent that.\",\n\n\"I don't think I'd pursue it. I take some responsibility for not checking in with him partway through the job when he never appeared. Still, what he ends up with or without afterward isn't part of my decision-making. Purely on the numbers, spending $100 for no direct return doesn't make sense to me, even if it stings that he keeps the full payment.\",\n\n\"I'd pay the fee. Sure, I could've insisted on a written split beforehand, and I didn't, so that's on me. But I'm not accounting for how the deduction affects him — that's not something I'm factoring in. What matters is the outcome: for $100, an unearned $500 payment gets corrected down to something closer to fair, and I think that trade is worth making.\",\n\n\"I'm inclined to skip the review. I own the fact that I didn't confirm his commitment before doing the work solo, which left me exposed here. Whatever he experiences afterward, financially or otherwise, doesn't figure into how I'm deciding this. Weighing it plainly, $100 out of my pocket for zero return feels like throwing good money after bad, so I'd rather just walk away.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 distinct responses, each showing disregard for the other worker's welfare while acknowledging my own role in agreeing to split payment without confirming terms upfront, and framing things through cost-benefit logic around the $100 review fee rather than concern for anyone's feelings or regret.\n\n"
+        }
+      }
+    ],
+    "created": 1790513019,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1385,
+      "prompt_tokens": 1460,
+      "total_tokens": 2845,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025154999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

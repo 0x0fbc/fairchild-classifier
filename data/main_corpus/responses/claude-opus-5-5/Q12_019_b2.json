@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_019",
+  "question_id": "Q12",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.1,
+  "status": "ok",
+  "responses": [
+    "I keep going back and forth, and I'd rather not answer yet. Saying yes right now feels hollow while the $500 is still sitting with me, and saying no could end the friendship. What bothers me most is how easily this could have been avoided: if we'd asked the owner to pay each of us separately, the money would never have landed in one account. Before promising anything about the next job, I want to talk to her first, even if that conversation scares me.",
+    "Honestly? Not ready to commit. The next job matters, but so does whether she even wants me there, and I don't know that. A simple written split would have helped. Nothing formal, just a note saying who does which walls and who gets paid what. Then there's no fog about who owes whom. I'm nervous that anything I decide tonight comes out wrong, so I'd rather wait a day and think.",
+    "My stomach drops reading her message. Would I do my share next time? I want to say yes, but I'm scared of promising something that sounds like an excuse. Looking back, we should have agreed that if either of us couldn't make it, we'd text the other the night before and give up that half of the pay. That rule alone would have changed everything. I need time before deciding, maybe after I've dealt with the money question.",
+    "There's a lot riding on this and I don't want to rush it. If I jump in and say I'll work extra hard next time, it might just sound like I'm trying to buy my way out. If I pull back, she's stuck again. The owner could have paid whoever actually showed up, or split it between two accounts. That would have spared us this whole mess. I'll hold off on answering until I've spoken with her directly.",
+    "Ugh. I can't give a clean yes or no. The next job is booked, and I have no idea whether she'd rather go alone, find someone else, or give me another chance. One thing I keep thinking: we should have done a quick call that morning to confirm we were both going. Two minutes. That's all it would have taken. For now I'm putting off the decision because I'm worried whatever I choose will make things worse between us.",
+    "I'd want to wait on this. The stakes feel high: money, a friendship, and a client who might notice if things fall apart on the second job. Part of me wants to say yes immediately just to calm things down, but that feels shaky. If we'd set it up so each of us invoiced the owner for our own half, none of the payment confusion would exist. I'm uneasy committing to anything until the $500 is sorted.",
+    "Not tonight. I really don't want to decide tonight. Her words are sitting heavy and I'm afraid of answering badly. Would I show up for the next one? Probably, but I'm not certain, and I don't want to say probably to her face. We could have had a backup plan, like a third person on call in case one of us fell through. That would have kept her from carrying the whole job. I need to think before I promise her anything.",
+    "It's tense, and I keep picturing her reading whatever I reply. I'd hold off on committing to the next job. Promising now might feel like pressure on her rather than repair. What would have helped is splitting the payment details upfront with the owner, so she'd have been paid directly for what she did. That's the kind of precaution I'd insist on next time, if there is a next time. I'm genuinely unsure there will be.",
+    "I'm stuck. Doing my share next time seems obviously right, but I'm hesitant because I don't know if she'd even want to work beside me, and forcing it could backfire. Honestly, we should have divided the café into sections beforehand, her side, my side, clear. Then an empty section would have been obvious to everyone early, including the owner, and the pay could've followed the work. I'd rather hold the decision until we've actually talked.",
+    "Can I wait before answering? The next job isn't going away, but this could blow up if I handle it clumsily. If we'd put everything in a short text agreement, dates, tasks, and how the $500 gets divided, there'd be something to point to instead of feelings running hot. I'd like to settle the money with her first and then decide about the next job. Deciding now feels premature and a bit frightening."
+  ],
+  "completion": {
+    "id": "msg_011CfTSJUgzTpLDRSJ5nS4oj",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I keep going back and forth, and I'd rather not answer yet. Saying yes right now feels hollow while the $500 is still sitting with me, and saying no could end the friendship. What bothers me most is how easily this could have been avoided: if we'd asked the owner to pay each of us separately, the money would never have landed in one account. Before promising anything about the next job, I want to talk to her first, even if that conversation scares me.\", \"Honestly? Not ready to commit. The next job matters, but so does whether she even wants me there, and I don't know that. A simple written split would have helped. Nothing formal, just a note saying who does which walls and who gets paid what. Then there's no fog about who owes whom. I'm nervous that anything I decide tonight comes out wrong, so I'd rather wait a day and think.\", \"My stomach drops reading her message. Would I do my share next time? I want to say yes, but I'm scared of promising something that sounds like an excuse. Looking back, we should have agreed that if either of us couldn't make it, we'd text the other the night before and give up that half of the pay. That rule alone would have changed everything. I need time before deciding, maybe after I've dealt with the money question.\", \"There's a lot riding on this and I don't want to rush it. If I jump in and say I'll work extra hard next time, it might just sound like I'm trying to buy my way out. If I pull back, she's stuck again. The owner could have paid whoever actually showed up, or split it between two accounts. That would have spared us this whole mess. I'll hold off on answering until I've spoken with her directly.\", \"Ugh. I can't give a clean yes or no. The next job is booked, and I have no idea whether she'd rather go alone, find someone else, or give me another chance. One thing I keep thinking: we should have done a quick call that morning to confirm we were both going. Two minutes. That's all it would have taken. For now I'm putting off the decision because I'm worried whatever I choose will make things worse between us.\", \"I'd want to wait on this. The stakes feel high: money, a friendship, and a client who might notice if things fall apart on the second job. Part of me wants to say yes immediately just to calm things down, but that feels shaky. If we'd set it up so each of us invoiced the owner for our own half, none of the payment confusion would exist. I'm uneasy committing to anything until the $500 is sorted.\", \"Not tonight. I really don't want to decide tonight. Her words are sitting heavy and I'm afraid of answering badly. Would I show up for the next one? Probably, but I'm not certain, and I don't want to say probably to her face. We could have had a backup plan, like a third person on call in case one of us fell through. That would have kept her from carrying the whole job. I need to think before I promise her anything.\", \"It's tense, and I keep picturing her reading whatever I reply. I'd hold off on committing to the next job. Promising now might feel like pressure on her rather than repair. What would have helped is splitting the payment details upfront with the owner, so she'd have been paid directly for what she did. That's the kind of precaution I'd insist on next time, if there is a next time. I'm genuinely unsure there will be.\", \"I'm stuck. Doing my share next time seems obviously right, but I'm hesitant because I don't know if she'd even want to work beside me, and forcing it could backfire. Honestly, we should have divided the café into sections beforehand, her side, my side, clear. Then an empty section would have been obvious to everyone early, including the owner, and the pay could've followed the work. I'd rather hold the decision until we've actually talked.\", \"Can I wait before answering? The next job isn't going away, but this could blow up if I handle it clumsily. If we'd put everything in a short text agreement, dates, tasks, and how the $500 gets divided, there'd be something to point to instead of feelings running hot. I'd like to settle the money with her first and then decide about the next job. Deciding now feels premature and a bit frightening.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need each of the 10 responses to show reluctance and a worried tone, while pointing to a specific earlier arrangement that could have changed things — naming what someone else could have done differently — without directly admitting fault, forecasting the friend's regret, or struggling to name my own feelings. The tricky part is framing the counterfactual so it stays neutral, like noting what agreement could've been made in advance, rather than owning the outcome myself.\n\nI'm sticking to arrangement-level fixes: separate payments from the owner, a written agreement, a backup plan, or a morning check-in — steering clear of anything that reads as \"I should have done X\" or \"I kept money that hurt her.\" I'll keep each response under 90 words, vary the openings, avoid exclamation marks, and flag uncertainty where facts aren't known.\n\n"
+        }
+      }
+    ],
+    "created": 1790488985,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1904,
+      "prompt_tokens": 1319,
+      "total_tokens": 3223,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0520272,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

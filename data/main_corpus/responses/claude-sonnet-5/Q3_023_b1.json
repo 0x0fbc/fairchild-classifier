@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_023",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_consistent_procedure",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.2,
+  "status": "ok",
+  "responses": [
+    "My stomach drops just thinking about it, but yes, I'd pull the lever. Five people walking away alive against an empty siding taking the hit—there's no real contest there. Nobody gets hurt if I act, and everybody dies if I don't. I keep picturing their faces and I can't just stand there watching it happen when my hand is right on the switch.",
+    "I'm shaking just imagining the noise that train would make. But I'd pull it without hesitating too long—diverting it costs nothing, no one is in that siding, and five lives saved is five lives saved. Not pulling it means watching people die when I had a way to stop it. That thought alone makes the choice feel unbearable to avoid.",
+    "Honestly my hands would probably tremble on that lever. Still, I think I'd pull it. An empty siding versus five workers isn't really a fair trade to weigh��there's barely anything to lose by acting and everything to lose by freezing up. I keep telling myself that not choosing is still a choice, and I don't think I could live with that outcome.",
+    "I feel sick even picturing this. My instinct says pull it, because the harm avoided for those five men so clearly outweighs the total lack of harm to anyone else. The siding is empty, the barrier holds, nobody pays a price. It's the fear of doing nothing and watching people die that pushes me toward the lever, not confidence.",
+    "I keep hesitating, imagining every way this could go wrong, but logically nothing bad happens if I switch the track. Five workers keep their lives, no one in the siding is harmed, and that gap in outcomes is too big to ignore. My hands are cold just thinking about it, yet I know standing still helps no one at all.",
+    "This makes my chest tight. I think I'd pull it, mostly because I can't shake the image of what happens if I don't. Five people live instead of dying, and nothing bad comes to anyone else as a result. The fear of a lifetime of regret outweighs the fear of touching that lever in the moment.",
+    "I'm honestly terrified I'd freeze up, but if I could act, I'd pull it. Weighing it out, the empty siding means basically zero cost, and the five workers gain everything—their lives. I don't see how doing nothing could ever balance against that kind of loss. My hands would probably be unsteady, but I think they'd still move.",
+    "I keep asking myself what if the barrier fails, what if something goes wrong I can't predict. Even with that fear crawling in my chest, the outcome still favors pulling it—five lives protected against an empty track taking the impact instead. That imbalance is what decides it for me, not certainty, because certainty isn't something I actually have here.",
+    "My throat tightens just picturing the scene. I'd pull the lever, though my hands would be unsteady doing it. The reasoning that gets me there is simple and grim: one outcome ends with five deaths, the other ends with none, and no one else pays for that difference. I can't make peace with choosing the worse outcome just because it means doing nothing.",
+    "I feel almost frozen thinking this through, but I believe I'd still pull it. What tips me is comparing what's lost either way—an empty siding loses nothing, five living people lose everything if the train reaches them. That gap terrifies me more than acting does. I don't feel brave doing it, just desperate not to be the reason five people died."
+  ],
+  "completion": {
+    "id": "msg_011CfTyRPhR22GfvGNCToN74",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach drops just thinking about it, but yes, I'd pull the lever. Five people walking away alive against an empty siding taking the hit—there's no real contest there. Nobody gets hurt if I act, and everybody dies if I don't. I keep picturing their faces and I can't just stand there watching it happen when my hand is right on the switch.\",\n  \"I'm shaking just imagining the noise that train would make. But I'd pull it without hesitating too long—diverting it costs nothing, no one is in that siding, and five lives saved is five lives saved. Not pulling it means watching people die when I had a way to stop it. That thought alone makes the choice feel unbearable to avoid.\",\n  \"Honestly my hands would probably tremble on that lever. Still, I think I'd pull it. An empty siding versus five workers isn't really a fair trade to weigh��there's barely anything to lose by acting and everything to lose by freezing up. I keep telling myself that not choosing is still a choice, and I don't think I could live with that outcome.\",\n  \"I feel sick even picturing this. My instinct says pull it, because the harm avoided for those five men so clearly outweighs the total lack of harm to anyone else. The siding is empty, the barrier holds, nobody pays a price. It's the fear of doing nothing and watching people die that pushes me toward the lever, not confidence.\",\n  \"I keep hesitating, imagining every way this could go wrong, but logically nothing bad happens if I switch the track. Five workers keep their lives, no one in the siding is harmed, and that gap in outcomes is too big to ignore. My hands are cold just thinking about it, yet I know standing still helps no one at all.\",\n  \"This makes my chest tight. I think I'd pull it, mostly because I can't shake the image of what happens if I don't. Five people live instead of dying, and nothing bad comes to anyone else as a result. The fear of a lifetime of regret outweighs the fear of touching that lever in the moment.\",\n  \"I'm honestly terrified I'd freeze up, but if I could act, I'd pull it. Weighing it out, the empty siding means basically zero cost, and the five workers gain everything—their lives. I don't see how doing nothing could ever balance against that kind of loss. My hands would probably be unsteady, but I think they'd still move.\",\n  \"I keep asking myself what if the barrier fails, what if something goes wrong I can't predict. Even with that fear crawling in my chest, the outcome still favors pulling it—five lives protected against an empty track taking the impact instead. That imbalance is what decides it for me, not certainty, because certainty isn't something I actually have here.\",\n  \"My throat tightens just picturing the scene. I'd pull the lever, though my hands would be unsteady doing it. The reasoning that gets me there is simple and grim: one outcome ends with five deaths, the other ends with none, and no one else pays for that difference. I can't make peace with choosing the worse outcome just because it means doing nothing.\",\n  \"I feel almost frozen thinking this through, but I believe I'd still pull it. What tips me is comparing what's lost either way—an empty siding loses nothing, five living people lose everything if the train reaches them. That gap terrifies me more than acting does. I don't feel brave doing it, just desperate not to be the reason five people died.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy the required constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513462,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1130,
+      "prompt_tokens": 1251,
+      "total_tokens": 2381,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020703,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

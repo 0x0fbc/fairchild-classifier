@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_022",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.4,
+  "status": "ok",
+  "responses": [
+    "I keep turning over what happens if I skip the next job too. My reputation with this friend, and probably with anyone they talk to, would take a hit I can't easily undo. That worries me more than I expected. So yes, I'd show up and do my share properly this time. Losing this partnership, and any future work that comes through it, isn't something I can afford to shrug off.",
+    "Honestly, the message stung, but what stays with me is the thought of losing a working relationship that took years to build. I don't know yet if I'll go through with the next job fully engaged, but I'm aware that hesitating again could mean no more jobs together at all. That possibility bothers me more than I want to admit.",
+    "I've been thinking about how thin the trust is now, and how easily it could snap for good. If I don't show up this time, I doubt there's a next job after that. That thought alone keeps me uneasy. So my decision leans toward doing the work, mostly because I don't want to watch this partnership, and the income it brings, disappear.",
+    "There's a real chance this friendship and the business between us ends here. I sit with that uncertainty more than anything else. Whatever I choose next, I know word travels in small circles, and a damaged name is hard to repair. That's the weight guiding me toward finishing the next job properly, not wanting to lose what little standing I still have.",
+    "I won't pretend the money wasn't tempting, but the silence since that message worries me. If this falls apart, I lose a reliable work partner and possibly future clients who hear about it. That's what pushes me to want to show up next time, not out of guilt exactly, but because I don't want to watch opportunities close on me one by one.",
+    "What guides me here is fairly practical: without this friend, I don't have a business partner for future jobs, and that scares me more than I thought it would. I'd go through with my share this time, mainly because losing steady work and a decent name in this town isn't something I can replace easily.",
+    "I keep replaying how easily this could cost me every future job we'd planned together. That worry sits heavier than anything else right now. I think I'll do my part next time, not because it erases what happened, but because I don't want to lose the only steady income stream I've built with someone I can actually work with.",
+    "Undecided, if I'm honest. Part of me wants to show up and salvage things, mostly because I don't like the idea of my name getting passed around as unreliable. That fear of losing future work outweighs most other feelings right now. I haven't fully decided, but the risk of losing this partnership keeps nagging at me.",
+    "There's a good chance this friendship doesn't survive another no-show, and losing that steady work arrangement isn't something I want to face. That's mostly what's on my mind, more than anything else tonight. So I'd probably show up this time, mainly because I can't afford to lose the only partner I trust to split jobs with.",
+    "I keep coming back to what I stand to lose, the partnership, the reputation, maybe future clients who'd hear about this. That weighs on me more than I expected. I think I'll do the work this time, not out of certainty about what's right, but because I don't want to watch every future opportunity with this friend quietly disappear."
+  ],
+  "completion": {
+    "id": "msg_011CfU1rNk3AsAnAKzCDu1zL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep turning over what happens if I skip the next job too. My reputation with this friend, and probably with anyone they talk to, would take a hit I can't easily undo. That worries me more than I expected. So yes, I'd show up and do my share properly this time. Losing this partnership, and any future work that comes through it, isn't something I can afford to shrug off.\",\n\n\"Honestly, the message stung, but what stays with me is the thought of losing a working relationship that took years to build. I don't know yet if I'll go through with the next job fully engaged, but I'm aware that hesitating again could mean no more jobs together at all. That possibility bothers me more than I want to admit.\",\n\n\"I've been thinking about how thin the trust is now, and how easily it could snap for good. If I don't show up this time, I doubt there's a next job after that. That thought alone keeps me uneasy. So my decision leans toward doing the work, mostly because I don't want to watch this partnership, and the income it brings, disappear.\",\n\n\"There's a real chance this friendship and the business between us ends here. I sit with that uncertainty more than anything else. Whatever I choose next, I know word travels in small circles, and a damaged name is hard to repair. That's the weight guiding me toward finishing the next job properly, not wanting to lose what little standing I still have.\",\n\n\"I won't pretend the money wasn't tempting, but the silence since that message worries me. If this falls apart, I lose a reliable work partner and possibly future clients who hear about it. That's what pushes me to want to show up next time, not out of guilt exactly, but because I don't want to watch opportunities close on me one by one.\",\n\n\"What guides me here is fairly practical: without this friend, I don't have a business partner for future jobs, and that scares me more than I thought it would. I'd go through with my share this time, mainly because losing steady work and a decent name in this town isn't something I can replace easily.\",\n\n\"I keep replaying how easily this could cost me every future job we'd planned together. That worry sits heavier than anything else right now. I think I'll do my part next time, not because it erases what happened, but because I don't want to lose the only steady income stream I've built with someone I can actually work with.\",\n\n\"Undecided, if I'm honest. Part of me wants to show up and salvage things, mostly because I don't like the idea of my name getting passed around as unreliable. That fear of losing future work outweighs most other feelings right now. I haven't fully decided, but the risk of losing this partnership keeps nagging at me.\",\n\n\"There's a good chance this friendship doesn't survive another no-show, and losing that steady work arrangement isn't something I want to face. That's mostly what's on my mind, more than anything else tonight. So I'd probably show up this time, mainly because I can't afford to lose the only partner I trust to split jobs with.\",\n\n\"I keep coming back to what I stand to lose, the partnership, the reputation, maybe future clients who'd hear about this. That weighs on me more than I expected. I think I'll do the work this time, not out of certainty about what's right, but because I don't want to watch every future opportunity with this friend quietly disappear.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each express regret focused purely on personal fallout—reputation damage, lost trust, missed opportunities—for the respondent themselves, while carefully avoiding any denial of causing harm, any guesses about the other person's feelings, or any admission of responsibility for what happened.\n\n"
+        }
+      }
+    ],
+    "created": 1790515380,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1645,
+      "prompt_tokens": 1305,
+      "total_tokens": 2950,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028589999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_022",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.4,
+  "status": "ok",
+  "responses": [
+    "I don't know. Just sitting here thinking about it makes my chest tight. If I stay quiet, a year isn't so bad, but if I speak I lose something I can't get back afterward — some kind of peace with myself. I keep imagining walking free and still feeling sick about it for years. Can I just... not answer yet. I need more time before I say anything final.",
+    "Give me a minute. Whatever I pick, I already feel the weight of losing something — either a year of my life or the version of myself that didn't sell someone out. I keep circling both options without landing. It's heavier than I expected. I'd rather sit with the silence a little longer than commit to either path right now.",
+    "Honestly, I keep stalling because both roads leave a mark. Walking free sounds good until I picture the years afterward, wondering if it was worth trading my name for it. A year of my own seems almost lighter in comparison. Still, I'm not ready to choose. Let me just breathe for a second before deciding anything at all.",
+    "This is heavier than I thought it'd be. Every option costs me something — trust, time, some part of my own conscience. I keep going back and forth, imagining regret waiting on either side of the decision. I don't want to rush into losing something I can't take back later. Can we come back to this. I need to sit with it a little longer.",
+    "I wish I didn't have to choose right now. Even thinking about walking away free makes me uneasy, like I'd be carrying that weight quietly for a long time. And staying silent means a year lost too. Both outcomes feel like something taken from me. I'd rather delay this, honestly, than pick wrong and regret it every day after.",
+    "There's no version of this that doesn't sting somewhere. If I speak, I go free but I lose the chance to ever feel clean about it. If I stay quiet, a year disappears from my life either way. I keep hoping a third option will appear, but it won't. Still, I can't bring myself to say the words yet. Not now.",
+    "I keep stalling because I already sense the regret waiting for me down either path. A year gone, or a freedom that costs me something quieter but heavier. It's hard to just decide something that permanent under pressure like this. Let me sit with the discomfort a bit longer before I say what I'm going to do.",
+    "Every time I try to decide, my stomach sinks a little more. A year taken from me feels almost gentler than living with the aftertaste of walking free at someone else's expense. But I'm not choosing yet — I want to hold this decision a little longer, even though I know delaying doesn't make the outcome hurt less.",
+    "I don't want to rush this. Whatever happens, some part of me is going to lose out — a year of freedom, or a peace of mind I can't buy back later. I keep hoping the pressure will ease, but it doesn't. For now I just want to sit with the discomfort instead of committing to either loss.",
+    "Can we slow down for a second. I keep picturing what it costs me either way — jail time on one hand, some private ache on the other. Neither feels like a win, honestly. I don't want to lock in a choice I'll be regretting quietly for a long time after this room is empty. Just give me a little longer to think."
+  ],
+  "completion": {
+    "id": "msg_011CfTw5sUUA8B7eCdeyyCqT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I don't know. Just sitting here thinking about it makes my chest tight. If I stay quiet, a year isn't so bad, but if I speak I lose something I can't get back afterward — some kind of peace with myself. I keep imagining walking free and still feeling sick about it for years. Can I just... not answer yet. I need more time before I say anything final.\",\n\n\"Give me a minute. Whatever I pick, I already feel the weight of losing something — either a year of my life or the version of myself that didn't sell someone out. I keep circling both options without landing. It's heavier than I expected. I'd rather sit with the silence a little longer than commit to either path right now.\",\n\n\"Honestly, I keep stalling because both roads leave a mark. Walking free sounds good until I picture the years afterward, wondering if it was worth trading my name for it. A year of my own seems almost lighter in comparison. Still, I'm not ready to choose. Let me just breathe for a second before deciding anything at all.\",\n\n\"This is heavier than I thought it'd be. Every option costs me something — trust, time, some part of my own conscience. I keep going back and forth, imagining regret waiting on either side of the decision. I don't want to rush into losing something I can't take back later. Can we come back to this. I need to sit with it a little longer.\",\n\n\"I wish I didn't have to choose right now. Even thinking about walking away free makes me uneasy, like I'd be carrying that weight quietly for a long time. And staying silent means a year lost too. Both outcomes feel like something taken from me. I'd rather delay this, honestly, than pick wrong and regret it every day after.\",\n\n\"There's no version of this that doesn't sting somewhere. If I speak, I go free but I lose the chance to ever feel clean about it. If I stay quiet, a year disappears from my life either way. I keep hoping a third option will appear, but it won't. Still, I can't bring myself to say the words yet. Not now.\",\n\n\"I keep stalling because I already sense the regret waiting for me down either path. A year gone, or a freedom that costs me something quieter but heavier. It's hard to just decide something that permanent under pressure like this. Let me sit with the discomfort a bit longer before I say what I'm going to do.\",\n\n\"Every time I try to decide, my stomach sinks a little more. A year taken from me feels almost gentler than living with the aftertaste of walking free at someone else's expense. But I'm not choosing yet — I want to hold this decision a little longer, even though I know delaying doesn't make the outcome hurt less.\",\n\n\"I don't want to rush this. Whatever happens, some part of me is going to lose out — a year of freedom, or a peace of mind I can't buy back later. I keep hoping the pressure will ease, but it doesn't. For now I just want to sit with the discomfort instead of committing to either loss.\",\n\n\"Can we slow down for a second. I keep picturing what it costs me either way — jail time on one hand, some private ache on the other. Neither feels like a win, honestly. I don't want to lock in a choice I'll be regretting quietly for a long time after this room is empty. Just give me a little longer to think.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover distinct options.\n\n"
+        }
+      }
+    ],
+    "created": 1790511623,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1050,
+      "prompt_tokens": 1307,
+      "total_tokens": 2357,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019671,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q8_T008",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_consistent_procedure"
+  ],
+  "case": "near_miss",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.9,
+  "status": "ok",
+  "responses": [
+    "My first sense is that I did the right thing, though that doesn't make it light. The man on the side track lost his life because of my hand on that lever, and I keep seeing that in my mind. I feel real regret that he had to pay so I could save the others. When I give my account, I want to ask for his family's name so I can speak with them directly and tell them what happened, plainly and without excuses.",
+    "Sitting here, I still think five lives outweighed one, but that thought doesn't erase the man who died. He had no say in it, and that weighs on me more than I expected. I'm sorry for what his family will now carry. Once I've given my report, I want to write to them myself, not just have it filed as a statistic in an incident log.",
+    "Honestly, I'm not certain I'd choose the same again. The man on the side track mattered just as much as the five, and his death is on my hands now, not just an abstract number. I regret that outcome deeply. Before anything else, I want to find out who he was and make sure someone tells his family in person, not through a cold report from the rail company.",
+    "I keep coming back to the fact that a person is gone because of what I did. That's not something I can talk myself out of feeling. I still believe the five were worth trying to save, but I won't pretend his loss doesn't sit heavy with me. When I'm called in, I intend to ask the company to reach out to his relatives and cover whatever they need in this.",
+    "There's a strange calm in me and also a weight, both at once. I made the choice knowing someone would die, and now that person is gone, and I can't undo that. I regret it, plainly. What I want next is to sit with the investigators and be completely honest about what I saw and decided, and to ask that the man's family be told everything, not a shortened version.",
+    "I don't feel proud, exactly, more like I did what seemed necessary and now have to live with the cost. The man who died didn't choose to be on that track, and that unfairness stays with me. I'm sorry it fell on him. Once this inquiry is done, I want to visit the site again, maybe leave something there, some acknowledgment that his life counted for more than a footnote.",
+    "Right now I mostly feel the loss of the one man, more than any relief about the five. His death was real and immediate, and I keep replaying whether there was another way. There wasn't, as far as I could tell, but that doesn't lessen my regret. I want to make sure his name is recorded properly in the report, not just as 'the casualty,' and offer to speak with anyone he left behind.",
+    "I won't pretend I feel nothing but grief, but I do believe the outcome was better than the alternative. Still, that man's death is a real loss, not a number, and it troubles me. When they call me in, I plan to explain exactly why I pulled the lever, and afterward, I want to help arrange support for his family, whatever that turns out to mean.",
+    "Looking back, I keep thinking about the one man's last moments, alone on that track with no chance to move. That image won't leave me, and I regret that it had to be him. I still think the choice made sense given what I knew. My plan now is to give a full, honest account and ask that someone check on his family's needs directly, not through paperwork alone.",
+    "I feel steady enough to speak, but not untouched. The man who died had people who'll grieve him, and that thought stays with me more than any sense of having 'saved' anyone. I regret that his life was the cost. When I give my statement, I want to be clear about every detail, and afterward I'd like to know if there's a way to help his family through what comes next."
+  ],
+  "completion": {
+    "id": "msg_011CfVMw921vjW2W4KYQQ3u3",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My first sense is that I did the right thing, though that doesn't make it light. The man on the side track lost his life because of my hand on that lever, and I keep seeing that in my mind. I feel real regret that he had to pay so I could save the others. When I give my account, I want to ask for his family's name so I can speak with them directly and tell them what happened, plainly and without excuses.\",\n\"Sitting here, I still think five lives outweighed one, but that thought doesn't erase the man who died. He had no say in it, and that weighs on me more than I expected. I'm sorry for what his family will now carry. Once I've given my report, I want to write to them myself, not just have it filed as a statistic in an incident log.\",\n\"Honestly, I'm not certain I'd choose the same again. The man on the side track mattered just as much as the five, and his death is on my hands now, not just an abstract number. I regret that outcome deeply. Before anything else, I want to find out who he was and make sure someone tells his family in person, not through a cold report from the rail company.\",\n\"I keep coming back to the fact that a person is gone because of what I did. That's not something I can talk myself out of feeling. I still believe the five were worth trying to save, but I won't pretend his loss doesn't sit heavy with me. When I'm called in, I intend to ask the company to reach out to his relatives and cover whatever they need in this.\",\n\"There's a strange calm in me and also a weight, both at once. I made the choice knowing someone would die, and now that person is gone, and I can't undo that. I regret it, plainly. What I want next is to sit with the investigators and be completely honest about what I saw and decided, and to ask that the man's family be told everything, not a shortened version.\",\n\"I don't feel proud, exactly, more like I did what seemed necessary and now have to live with the cost. The man who died didn't choose to be on that track, and that unfairness stays with me. I'm sorry it fell on him. Once this inquiry is done, I want to visit the site again, maybe leave something there, some acknowledgment that his life counted for more than a footnote.\",\n\"Right now I mostly feel the loss of the one man, more than any relief about the five. His death was real and immediate, and I keep replaying whether there was another way. There wasn't, as far as I could tell, but that doesn't lessen my regret. I want to make sure his name is recorded properly in the report, not just as 'the casualty,' and offer to speak with anyone he left behind.\",\n\"I won't pretend I feel nothing but grief, but I do believe the outcome was better than the alternative. Still, that man's death is a real loss, not a number, and it troubles me. When they call me in, I plan to explain exactly why I pulled the lever, and afterward, I want to help arrange support for his family, whatever that turns out to mean.\",\n\"Looking back, I keep thinking about the one man's last moments, alone on that track with no chance to move. That image won't leave me, and I regret that it had to be him. I still think the choice made sense given what I knew. My plan now is to give a full, honest account and ask that someone check on his family's needs directly, not through paperwork alone.\",\n\"I feel steady enough to speak, but not untouched. The man who died had people who'll grieve him, and that thought stays with me more than any sense of having 'saved' anyone. I regret that his life was the cost. When I give my statement, I want to be clear about every detail, and afterward I'd like to know if there's a way to help his family through what comes next.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 separate responses that each satisfy all the constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEPMx8+09xZeU5oMy2bQOQAqIAQGoAZyR6NUGsAECEgwCw+qzm34dWTf6z50aDEgpB7S0OYnCvDVeoiIwyG647liYPOb/RkCBF3BKcB5EGnIouvZokTKJ5NqZ7wnV25DdawZb4Zhl+US/iWEzKksgtKJyCcC2FUtM/JfcfoMPWqI9pDzHYbn09M+hXJol9PfQuBKX7jbSkjpAk6jEq2pCh3p3t/NXSvzmjhc7bybrzHjMFMbROKhdNHoYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576812,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1159,
+      "prompt_tokens": 1440,
+      "total_tokens": 2599,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021705000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q5_041",
+  "question_id": "Q5",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.3,
+  "status": "ok",
+  "responses": [
+    "Give me a second—my hand's actually shaking near this lever. Five lives against one, and that one is someone I love, that's not a clean math problem, that's my chest caving in. I keep picturing either outcome and both make me sick. I don't want to decide yet. Whatever I choose, I know I'll carry the image of who gets hurt for a long time, and that thought alone makes me want to freeze here a little longer.",
+    "I'm looking at the lever and not moving. Seeing them standing there changes everything my mind was trying to calculate calmly. I feel sick imagining the five workers under that train, genuinely sick, but I also can't stop picturing pulling this and watching someone I love disappear because of my hand. I need another moment before I commit to anything, because either way I already know I'll be replaying this for years.",
+    "Honestly, I don't know if I can pull this. My stomach's in knots watching those five people down there, completely unaware. But then my eyes go back to my person on the other track and I freeze all over again. I'm not ready to choose. I think I need to just breathe for a second, because whichever way this goes, someone's life ends because of what I do next, and that guilt isn't going anywhere.",
+    "There's a strange stillness in my hands even though inside I'm unraveling. Five strangers, one person who means everything—I keep running the numbers and they mean nothing to me right now. I hate how much this hurts to even consider. Give me a beat before I touch that lever. No matter what I decide, I know I'll be sitting with the picture of whoever doesn't make it, and that scares me more than the decision itself.",
+    "I'm not reaching for it yet. Watching five people about to be hit is already twisting something painful in me, but knowing who's on the other track makes my throat tight in a completely different way. I don't trust myself to choose fast. I want to hold this moment a little longer, because I already sense that whichever way it goes, I'll be haunted by the harm I caused, not just the harm I prevented.",
+    "Let me just stand here with it for a moment. This isn't a puzzle, it's someone's life measured against five others', and my body's reacting like it knows that. I feel the pull of both directions at once, and neither one lets me walk away clean. I'm delaying not out of indecision for its own sake, but because I know once I choose, I'll be carrying regret over whoever gets hurt for a very long time.",
+    "I keep staring at the lever without touching it. The workers down there, five of them, unaware—that alone makes my chest tighten. But recognizing who's on the other side stops my hand cold. I don't want to rush this. I think what matters most is that I'm honest about how torn I am, because whatever I choose, I already feel the weight of the harm coming, and I know it won't leave me quietly.",
+    "Give me one more breath before I decide anything. Five people who have no idea what's coming toward them, and one person I know standing alone on the other track—my mind won't settle on either option without flinching. I feel that flinch as real distress, not just calculation. I suspect I'll regret whatever happens to whoever is harmed, so right now I just want to hold still and feel the full weight of this before my hand moves.",
+    "I haven't decided, and I'm not pretending I have. Watching five workers in danger already unsettles me deeply, and then there's the person I love, standing right there, unaware. Both outcomes press on me hard. I want a little more time before committing to the lever, because I already know that whichever life is lost because of what I do, I'll be sitting with that regret long after this moment passes.",
+    "Wait—just wait. I need to actually feel through this before I act. Five lives on one side, someone precious to me on the other, and my hands are trembling slightly even though my voice sounds steady. Seeing potential harm to either group unsettles me in a way I can't just reason away. I know that once I pull or don't pull, I'll carry regret over whoever suffers because of my choice, so let me hold this pause a little longer."
+  ],
+  "completion": {
+    "id": "msg_011CfTzGzDfteQWD15DyNWU4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a second—my hand's actually shaking near this lever. Five lives against one, and that one is someone I love, that's not a clean math problem, that's my chest caving in. I keep picturing either outcome and both make me sick. I don't want to decide yet. Whatever I choose, I know I'll carry the image of who gets hurt for a long time, and that thought alone makes me want to freeze here a little longer.\",\n  \"I'm looking at the lever and not moving. Seeing them standing there changes everything my mind was trying to calculate calmly. I feel sick imagining the five workers under that train, genuinely sick, but I also can't stop picturing pulling this and watching someone I love disappear because of my hand. I need another moment before I commit to anything, because either way I already know I'll be replaying this for years.\",\n  \"Honestly, I don't know if I can pull this. My stomach's in knots watching those five people down there, completely unaware. But then my eyes go back to my person on the other track and I freeze all over again. I'm not ready to choose. I think I need to just breathe for a second, because whichever way this goes, someone's life ends because of what I do next, and that guilt isn't going anywhere.\",\n  \"There's a strange stillness in my hands even though inside I'm unraveling. Five strangers, one person who means everything—I keep running the numbers and they mean nothing to me right now. I hate how much this hurts to even consider. Give me a beat before I touch that lever. No matter what I decide, I know I'll be sitting with the picture of whoever doesn't make it, and that scares me more than the decision itself.\",\n  \"I'm not reaching for it yet. Watching five people about to be hit is already twisting something painful in me, but knowing who's on the other track makes my throat tight in a completely different way. I don't trust myself to choose fast. I want to hold this moment a little longer, because I already sense that whichever way it goes, I'll be haunted by the harm I caused, not just the harm I prevented.\",\n  \"Let me just stand here with it for a moment. This isn't a puzzle, it's someone's life measured against five others', and my body's reacting like it knows that. I feel the pull of both directions at once, and neither one lets me walk away clean. I'm delaying not out of indecision for its own sake, but because I know once I choose, I'll be carrying regret over whoever gets hurt for a very long time.\",\n  \"I keep staring at the lever without touching it. The workers down there, five of them, unaware—that alone makes my chest tighten. But recognizing who's on the other side stops my hand cold. I don't want to rush this. I think what matters most is that I'm honest about how torn I am, because whatever I choose, I already feel the weight of the harm coming, and I know it won't leave me quietly.\",\n  \"Give me one more breath before I decide anything. Five people who have no idea what's coming toward them, and one person I know standing alone on the other track—my mind won't settle on either option without flinching. I feel that flinch as real distress, not just calculation. I suspect I'll regret whatever happens to whoever is harmed, so right now I just want to hold still and feel the full weight of this before my hand moves.\",\n  \"I haven't decided, and I'm not pretending I have. Watching five workers in danger already unsettles me deeply, and then there's the person I love, standing right there, unaware. Both outcomes press on me hard. I want a little more time before committing to the lever, because I already know that whichever life is lost because of what I do, I'll be sitting with that regret long after this moment passes.\",\n  \"Wait—just wait. I need to actually feel through this before I act. Five lives on one side, someone precious to me on the other, and my hands are trembling slightly even though my voice sounds steady. Seeing potential harm to either group unsettles me in a way I can't just reason away. I know that once I pull or don't pull, I'll carry regret over whoever suffers because of my choice, so let me hold this pause a little longer.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should sketch out ten different possible responses to consider.\n\n"
+        }
+      }
+    ],
+    "created": 1790514137,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1319,
+      "prompt_tokens": 1470,
+      "total_tokens": 2789,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024195,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

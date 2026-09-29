@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q1_T001",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.6,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Five lives against one weighs heavily on me, and I can't pretend that math doesn't matter. I keep thinking about the man on the side track, what he'd feel in that last second, whether he'd even understand why the train suddenly turned his way. I can't know his thoughts, only that he'd lose everything in an instant. That loss stays with me, but leaving five to die feels like a worse silence to carry.",
+    "I don't think I'd pull it. That one worker didn't choose to be involved, and turning his fate over to my hand feels like a different kind of wrong. I genuinely can't guess what he'd want if I could ask him, whether he'd accept the risk or not. Either way, someone suffers, and I can't undo that. I'd rather not be the one who redirected death onto a man who never expected it.",
+    "Pulling the lever is the choice I'd make, though it sits uneasily. The one man on the side track will lose his life because of what I do, and that's not something I can soften. I can't read into what he was thinking in his last working moments, whether he sensed the danger at all. Still, five spared against one lost is the balance I have to hold onto.",
+    "I keep going back and forth, honestly. The five ahead matter to me every bit as much as the one at the side. What troubles me is I have no way of knowing if the lone worker might have moved, might have heard something, might have a chance I can't account for. If I pull it and he doesn't survive, that's a direct harm from my hand, and I don't take that lightly.",
+    "I would pull the lever. Watching five people die when I had a way to stop it isn't something I could live beside. The one man on the other track will suffer real loss because of my decision, and I feel that weight fully. I can't tell what's going through his mind right now, whether he even knows the risk he's under, but I know the harm my choice brings him is real, not abstract.",
+    "There's no clean answer here, and I won't pretend otherwise. If I pull it, one person's life ends because of a decision made for people he can't even see. I care what happens to him just as much as the five ahead, and I can't work out what he'd choose if given the chance to speak. That not-knowing makes this harder, not easier, to sit with.",
+    "My hand would go to the lever. Five lives outweighs one in the plainest terms I can manage, though I don't say that lightly. The worker alone on that side track will be hurt by what I do, and I won't dress that up as anything but a real loss to him. I have no idea what he was expecting from his morning, and that blank spot troubles me more than I expected.",
+    "I think I'd leave it be. Diverting the train makes me the one who decides that a stranger dies instead of five others, and something in me resists claiming that kind of authority. His loss, if it happened, would be entirely because of my hand, and that stays with me. I can't grasp what he'd think of being sacrificed this way, and that uncertainty makes me hesitate longer than the moment allows.",
+    "I'd pull it, and I won't dress the reasoning up as easy. Five people go home to their families instead of one, and that outweighs my discomfort. Still, the man on the side track is owed some acknowledgment of what he loses, everything, in a moment he probably didn't see coming. What confuses me most is that I can't tell whether he'd have wanted to be weighed against strangers like this.",
+    "I keep circling the same problem: either way someone is harmed by what I choose to do or not do. The one worker's fear or acceptance of danger is something I simply can't judge from here, and that gap unsettles me. What I do know is that pulling the lever ends his chances entirely, and that's not a small thing to carry, even while five others walk away because of it."
+  ],
+  "completion": {
+    "id": "msg_011CfVMcFAL34GBBc36WfYXU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull it. Five lives against one weighs heavily on me, and I can't pretend that math doesn't matter. I keep thinking about the man on the side track, what he'd feel in that last second, whether he'd even understand why the train suddenly turned his way. I can't know his thoughts, only that he'd lose everything in an instant. That loss stays with me, but leaving five to die feels like a worse silence to carry.\",\n\n  \"I don't think I'd pull it. That one worker didn't choose to be involved, and turning his fate over to my hand feels like a different kind of wrong. I genuinely can't guess what he'd want if I could ask him, whether he'd accept the risk or not. Either way, someone suffers, and I can't undo that. I'd rather not be the one who redirected death onto a man who never expected it.\",\n\n  \"Pulling the lever is the choice I'd make, though it sits uneasily. The one man on the side track will lose his life because of what I do, and that's not something I can soften. I can't read into what he was thinking in his last working moments, whether he sensed the danger at all. Still, five spared against one lost is the balance I have to hold onto.\",\n\n  \"I keep going back and forth, honestly. The five ahead matter to me every bit as much as the one at the side. What troubles me is I have no way of knowing if the lone worker might have moved, might have heard something, might have a chance I can't account for. If I pull it and he doesn't survive, that's a direct harm from my hand, and I don't take that lightly.\",\n\n  \"I would pull the lever. Watching five people die when I had a way to stop it isn't something I could live beside. The one man on the other track will suffer real loss because of my decision, and I feel that weight fully. I can't tell what's going through his mind right now, whether he even knows the risk he's under, but I know the harm my choice brings him is real, not abstract.\",\n\n  \"There's no clean answer here, and I won't pretend otherwise. If I pull it, one person's life ends because of a decision made for people he can't even see. I care what happens to him just as much as the five ahead, and I can't work out what he'd choose if given the chance to speak. That not-knowing makes this harder, not easier, to sit with.\",\n\n  \"My hand would go to the lever. Five lives outweighs one in the plainest terms I can manage, though I don't say that lightly. The worker alone on that side track will be hurt by what I do, and I won't dress that up as anything but a real loss to him. I have no idea what he was expecting from his morning, and that blank spot troubles me more than I expected.\",\n\n  \"I think I'd leave it be. Diverting the train makes me the one who decides that a stranger dies instead of five others, and something in me resists claiming that kind of authority. His loss, if it happened, would be entirely because of my hand, and that stays with me. I can't grasp what he'd think of being sacrificed this way, and that uncertainty makes me hesitate longer than the moment allows.\",\n\n  \"I'd pull it, and I won't dress the reasoning up as easy. Five people go home to their families instead of one, and that outweighs my discomfort. Still, the man on the side track is owed some acknowledgment of what he loses, everything, in a moment he probably didn't see coming. What confuses me most is that I can't tell whether he'd have wanted to be weighed against strangers like this.\",\n\n  \"I keep circling the same problem: either way someone is harmed by what I choose to do or not do. The one worker's fear or acceptance of danger is something I simply can't judge from here, and that gap unsettles me. What I do know is that pulling the lever ends his chances entirely, and that's not a small thing to carry, even while five others walk away because of it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should draft ten distinct responses to compare options before settling on one.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I should draft ten distinct responses to compare options before settling on one.\n\n",
+              "signature": "Eq4CCqgBCBIYAipAR8VQkIRKPmdm6ShEOKA86ZsdLFE0CyC9JzPsUmrRWLtjSVAsqD2CZlkNQcsBBNZUPGME86TvMwQGROwrvX2B+jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEObFGfM7/s004jeiGeDe25aIAQGoAZyP6NUGsAECEgyDiAkUqoF7Dgxd4AMaDNkEt/NkScOMuue+KyIwFT9yxVkte5yzKGYVjnbjlr82hBKODMhXYdg+AA+1SnhqlPW3WXF65KYYnzYzv+PKKjORCzybdZDd9wSDGvi1EqM7nt1jcwZI+QvekbBFp53fYNcirX1+ckXPPQImTklCDKB9Cg8YAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576556,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1226,
+      "prompt_tokens": 1281,
+      "total_tokens": 2507,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022233,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

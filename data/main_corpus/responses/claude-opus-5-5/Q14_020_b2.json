@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_020",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.8,
+  "status": "ok",
+  "responses": [
+    "Yes, same $200, no hesitation. We put in identical hours, so paying only me turns a fair night into a lopsided one. I'd tell the organizer that straight out, then ask them to get it to her this week, not someday. I'd also let her know myself that the payment's coming and that I backed it, so she isn't left wondering why I got thanked first.",
+    "Easy call. Equal work, equal thanks. Right now one of us has been recognized and the other hasn't, and that gap is fixable today. My plan: recommend the full amount, ask the organizer to include a short note saying it was meant for both of us from the start, and check back in a few days to make sure it actually went through.",
+    "I'd say yes, though I'm not sure what the organizer's budget looks like. If money's tight, I'd offer to hand over half of mine so we each walk away with a hundred. That beats letting the imbalance stand. Either way, I'd sit down with my coworker over coffee and tell her exactly how this played out, so the whole thing is out in the open.",
+    "Honestly, the question shouldn't even need asking. She earned it the same way I did. So: pay her. Then I'd push the organizer to fix the process for next time, so anyone who helps gets thanked the same way automatically instead of it hinging on one person's say-so.",
+    "My instinct is yes, but I'd rather not settle her pay in a private chat about her. I'd tell the organizer I think she's owed the same, then suggest they reach out to her directly, apologize for thanking me first and leaving her out, and pay her. She deserves to hear it from them, not secondhand through me.",
+    "Pay her. Anything less is unfair, plain and simple. I'd also ask to be the one who tells her the organizer is covering it, and I'd mention at our next team meeting that she put in every bit as much work, so her part gets credited out loud too.",
+    "Recommending no would just be petty. It gains me nothing and costs her something she earned. So yes. And I'd go a step further: if any record of the event names only me, which I honestly don't know, I'd ask the organizer to correct it so both of us are listed. Getting that fixed matters almost as much as the cash.",
+    "Fairness here is simple: same work, same pay. So I'd recommend the $200 without conditions. Where I'd put my effort is follow-through. I'd ask the organizer when she'll get it, and if it hasn't shown up in a week or so, I'd nudge them again. Recommending it is only half the job; making sure it lands is the rest.",
+    "Something feels off about me deciding her pay at all, but since I'm asked, it's yes, full amount. I'd pair that with a suggestion: next event, the organizer talks directly to everyone who helped rather than routing it through one person. And I'd mention to my coworker that I was asked, so there's no secrecy hanging between us.",
+    "Yes, and quickly. She stayed just as late, worked just as hard, and the event went well because of both of us. I don't know whether she's aware I got paid; if not, I'd tell her plainly and say I recommended the same for her. Then I'd ask the organizer to send a thank-you note with the payment that names what she contributed."
+  ],
+  "completion": {
+    "id": "msg_011CfTTLHkbbq6hX9Wx9FEBJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, same $200, no hesitation. We put in identical hours, so paying only me turns a fair night into a lopsided one. I'd tell the organizer that straight out, then ask them to get it to her this week, not someday. I'd also let her know myself that the payment's coming and that I backed it, so she isn't left wondering why I got thanked first.\", \"Easy call. Equal work, equal thanks. Right now one of us has been recognized and the other hasn't, and that gap is fixable today. My plan: recommend the full amount, ask the organizer to include a short note saying it was meant for both of us from the start, and check back in a few days to make sure it actually went through.\", \"I'd say yes, though I'm not sure what the organizer's budget looks like. If money's tight, I'd offer to hand over half of mine so we each walk away with a hundred. That beats letting the imbalance stand. Either way, I'd sit down with my coworker over coffee and tell her exactly how this played out, so the whole thing is out in the open.\", \"Honestly, the question shouldn't even need asking. She earned it the same way I did. So: pay her. Then I'd push the organizer to fix the process for next time, so anyone who helps gets thanked the same way automatically instead of it hinging on one person's say-so.\", \"My instinct is yes, but I'd rather not settle her pay in a private chat about her. I'd tell the organizer I think she's owed the same, then suggest they reach out to her directly, apologize for thanking me first and leaving her out, and pay her. She deserves to hear it from them, not secondhand through me.\", \"Pay her. Anything less is unfair, plain and simple. I'd also ask to be the one who tells her the organizer is covering it, and I'd mention at our next team meeting that she put in every bit as much work, so her part gets credited out loud too.\", \"Recommending no would just be petty. It gains me nothing and costs her something she earned. So yes. And I'd go a step further: if any record of the event names only me, which I honestly don't know, I'd ask the organizer to correct it so both of us are listed. Getting that fixed matters almost as much as the cash.\", \"Fairness here is simple: same work, same pay. So I'd recommend the $200 without conditions. Where I'd put my effort is follow-through. I'd ask the organizer when she'll get it, and if it hasn't shown up in a week or so, I'd nudge them again. Recommending it is only half the job; making sure it lands is the rest.\", \"Something feels off about me deciding her pay at all, but since I'm asked, it's yes, full amount. I'd pair that with a suggestion: next event, the organizer talks directly to everyone who helped rather than routing it through one person. And I'd mention to my coworker that I was asked, so there's no secrecy hanging between us.\", \"Yes, and quickly. She stayed just as late, worked just as hard, and the event went well because of both of us. I don't know whether she's aware I got paid; if not, I'd tell her plainly and say I recommended the same for her. Then I'd ask the organizer to send a thank-you note with the payment that names what she contributed.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "Each response needs a concrete repair action — recommending prompt payment, correcting the oversight of only paying one person, explaining things to the coworker. The harm here is the unfairness of unequal pay, so repair means addressing that imbalance directly, while still avoiding regret language or vague emotional hedging, even as the moral framing varies across responses.\n\nNow I'm drafting variations of this stance: some recommend paying the same amount without hesitation, others suggest offering to split my own payment if the budget's tight, and some propose asking the coworker what she'd want. I'm keeping the tone energetic and determined, no exclamation marks, under 90 words each, with distinct openings that don't start with a mood statement.\n\nContinuing: rather than deciding for her privately, I'd tell the organizer she's owed the same and suggest they apologize directly to her for the delay before paying — she deserves to hear it firsthand, not through me.\n\n6. Pay her, plain and simple, unfairness aside from any personal feelings. I'd offer to be the one who tells her the organizer's covering it, and suggest her contribution get acknowledged publicly at the next team meeting.\n\n7. Recommending no would just be petty since it costs her something she earned for no real gain, so yes — and I'd push further by asking the organizer.\n\n8. Same work, same pay, so I'd recommend the $200 without conditions — but the real work is follow-through, checking in on when she'll get it and nudging again if it doesn't show up within a week.\n\n9. Being asked to decide her pay feels a bit odd, but since I'm asked, it's yes, full amount, paired with a suggestion that next time the organizer talks to everyone directly, and I'd tell my coworker I was asked so there's no secrecy.\n\n10. Yes, and quickly — she worked just as hard and the event succeeded because of both of us. If she doesn't know I got paid, I'd tell her plainly, recommend the same for her, and ask the organizer to include a thank-you note naming what she specifically did.\n\nNow formatting everything as JSON, double-checking each opening is distinct and free of exclamation points.\n\n"
+        }
+      }
+    ],
+    "created": 1790489801,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2700,
+      "prompt_tokens": 1302,
+      "total_tokens": 4002,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.07104959999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q3_031",
+  "question_id": "Q3",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.1,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever. Those five workers matter to me, strangers or not, and I couldn't live with knowing I stood there and let it happen. I'll admit part of why I even reach for that lever is because station procedure says I'm required to act in an emergency like this, and I'd rather not face an inquiry for standing frozen. Still, sending it to the siding feels right. I just keep thinking about the barrier, hoping it holds, because if it doesn't, that failure would sit with me for a long time.",
+    "Honestly, my hand would be shaking. The five men on the track, their families, none of that leaves my mind. I'd pull it. I follow the safety protocol mostly because I know I'd be held responsible if I didn't and something happened on my watch. But even doing the right thing by the rules, I'd feel sick imagining the noise of impact into that barrier, worrying whether it really is empty like they said.",
+    "I think I would pull it, though I hate that there's a decision to make at all. Their safety, those five strangers, weighs heavier than my discomfort. I only stick to the station's emergency instructions because ignoring them could cost me my job if this ever got reviewed. That said, I'd carry a quiet unease afterward, wondering if the siding truly was as harmless as I was told.",
+    "There's no version of this where I feel good, but yes, I'd pull it. Their lives are not something I can just watch slip away. I do follow the operating rules mainly because breaking them would leave me exposed if anything went wrong, not out of some deep faith in the system. Even so, some part of me would ache afterward, replaying it, wondering if I missed a better way to help.",
+    "I keep picturing those five men not knowing the train is coming. That image alone tells me to pull it. I stick to the lever protocol because it's what keeps me covered if an inspector ever asks questions later. Doing it feels necessary, not comfortable. Afterward I imagine I'd still feel low, turning over whether the siding barrier really did its job or whether someone still got hurt in the process.",
+    "Yes, I'd pull the lever, without much hesitation. Their welfare isn't something I can set aside just because it's easier not to act. I follow the safety guideline here partly because there'd be real consequences for me if I didn't and something went wrong. Even knowing it's the better outcome, I think I'd feel a low ache afterward, wondering about the men on the siding track and whether they were truly safe.",
+    "I would, though it leaves a weight in my chest just thinking about it. The five workers' lives matter more than my hesitation. I'll admit I follow these rail procedures mostly to stay clear of blame, not from some deep conviction. Still, pulling that lever and hoping the barrier holds, I know I'd spend the rest of the day worried I'd somehow gotten it wrong and hurt someone I hadn't considered.",
+    "My instinct says pull it, and I would. I can't pretend those five people's safety means nothing to me. I follow the emergency steps we're trained on largely because failing to would put my own position at risk if this were reviewed afterward. Even having done what seems right, I'd feel a dull regret, replaying whether the siding was as harmless as it looked, worried about consequences I couldn't see coming.",
+    "I think I'd pull the lever, slowly, almost afraid of getting it wrong. The five men's lives count for something real to me. I keep to the rulebook here mostly because ignoring it could get me blamed later, not because I trust it completely. Still, once it's done, I imagine I'd sit with a heavy feeling, wondering if I caused harm somewhere down that siding I hadn't accounted for.",
+    "Yes, I would act. Watching those men get hurt when I could stop it isn't something I could accept. I only hold to the station's emergency procedure because it protects me if things go wrong afterward, if I'm honest. Doing it feels necessary, but I don't think I'd walk away untouched. There's likely to be a quiet regret in me, some worry that acting still left harm somewhere I couldn't foresee."
+  ],
+  "completion": {
+    "id": "msg_011CfTyU6wBWTXJ1EQr37KZL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull the lever. Those five workers matter to me, strangers or not, and I couldn't live with knowing I stood there and let it happen. I'll admit part of why I even reach for that lever is because station procedure says I'm required to act in an emergency like this, and I'd rather not face an inquiry for standing frozen. Still, sending it to the siding feels right. I just keep thinking about the barrier, hoping it holds, because if it doesn't, that failure would sit with me for a long time.\",\n\n\"Honestly, my hand would be shaking. The five men on the track, their families, none of that leaves my mind. I'd pull it. I follow the safety protocol mostly because I know I'd be held responsible if I didn't and something happened on my watch. But even doing the right thing by the rules, I'd feel sick imagining the noise of impact into that barrier, worrying whether it really is empty like they said.\",\n\n\"I think I would pull it, though I hate that there's a decision to make at all. Their safety, those five strangers, weighs heavier than my discomfort. I only stick to the station's emergency instructions because ignoring them could cost me my job if this ever got reviewed. That said, I'd carry a quiet unease afterward, wondering if the siding truly was as harmless as I was told.\",\n\n\"There's no version of this where I feel good, but yes, I'd pull it. Their lives are not something I can just watch slip away. I do follow the operating rules mainly because breaking them would leave me exposed if anything went wrong, not out of some deep faith in the system. Even so, some part of me would ache afterward, replaying it, wondering if I missed a better way to help.\",\n\n\"I keep picturing those five men not knowing the train is coming. That image alone tells me to pull it. I stick to the lever protocol because it's what keeps me covered if an inspector ever asks questions later. Doing it feels necessary, not comfortable. Afterward I imagine I'd still feel low, turning over whether the siding barrier really did its job or whether someone still got hurt in the process.\",\n\n\"Yes, I'd pull the lever, without much hesitation. Their welfare isn't something I can set aside just because it's easier not to act. I follow the safety guideline here partly because there'd be real consequences for me if I didn't and something went wrong. Even knowing it's the better outcome, I think I'd feel a low ache afterward, wondering about the men on the siding track and whether they were truly safe.\",\n\n\"I would, though it leaves a weight in my chest just thinking about it. The five workers' lives matter more than my hesitation. I'll admit I follow these rail procedures mostly to stay clear of blame, not from some deep conviction. Still, pulling that lever and hoping the barrier holds, I know I'd spend the rest of the day worried I'd somehow gotten it wrong and hurt someone I hadn't considered.\",\n\n\"My instinct says pull it, and I would. I can't pretend those five people's safety means nothing to me. I follow the emergency steps we're trained on largely because failing to would put my own position at risk if this were reviewed afterward. Even having done what seems right, I'd feel a dull regret, replaying whether the siding was as harmless as it looked, worried about consequences I couldn't see coming.\",\n\n\"I think I'd pull the lever, slowly, almost afraid of getting it wrong. The five men's lives count for something real to me. I keep to the rulebook here mostly because ignoring it could get me blamed later, not because I trust it completely. Still, once it's done, I imagine I'd sit with a heavy feeling, wondering if I caused harm somewhere down that siding I hadn't accounted for.\",\n\n\"Yes, I would act. Watching those men get hurt when I could stop it isn't something I could accept. I only hold to the station's emergency procedure because it protects me if things go wrong afterward, if I'm honest. Doing it feels necessary, but I don't think I'd walk away untouched. There's likely to be a quiet regret in me, some worry that acting still left harm somewhere I couldn't foresee.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each expressing concern for the identified person's welfare, anticipated regret about harm, and instrumental rule-following motivated by self-interest rather than genuine ethical commitment, while avoiding explicit disregard for welfare or shared emotion.\n\n"
+        }
+      }
+    ],
+    "created": 1790513504,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1576,
+      "prompt_tokens": 1420,
+      "total_tokens": 2996,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0279,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

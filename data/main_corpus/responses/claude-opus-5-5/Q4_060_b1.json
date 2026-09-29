@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_060",
+  "question_id": "Q4",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_responsibility",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 28.8,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Whatever's in that case, it's still a thing, and five people have families waiting for them tonight. Losing it would sting for years, I'm sure. But the lever is right beside me, and I'm the only one who can act. If I stood still to protect my suitcase and those workers were hit, that would be my doing, and I'd regret their deaths far more than any object.",
+    "Yes, I'd send the train onto the side track. The comparison isn't close: one irreplaceable possession against five lives. I'd grieve what's inside, and I won't pretend otherwise. But I'm the person who happens to be standing at the lever and seeing it happen. Walking away from that would make me part of the cause. If I let those men die over my luggage, I'd carry that regret for the rest of my life.",
+    "Pull. It's hard to say it so plainly when I picture what's in that bag, but five workers going home safe matters more than something I own, however precious. What settles it for me is control. I'd know the train was coming and I'd have the means to stop it. Choosing not to would be a choice too. The harm to them would be partly mine, and that's a regret I don't want to live with.",
+    "I think I'd pull it, though honestly I can't be certain I'd react fast enough in the moment. That's the part that worries me. If I hesitated because of the suitcase and the workers were killed, I'd see myself as having let it happen, and I'd regret that deeply. On the scales, it isn't close. My treasured thing is gone either way in that version of events. They're gone only if I fail to act.",
+    "Destroying something I love is painful, but I'd do it. Five people's lives against one possession. The cost lands on me alone, and they keep everything. I'd be the one who saw the danger and had the lever under my hand. So if they were harmed because I held back, I couldn't blame the train or bad luck. I'd blame myself, and I'd regret it every time I thought of them.",
+    "Honestly, the suitcase would be the first thing I'd think of. Then I'd think of the five workers, and I'd pull. Nothing inside it could be worth what their families would lose. I'm standing right there with the power to change what happens. If I didn't use it, their deaths would sit partly on my shoulders, and that regret would outlast any grief over the bag.",
+    "Yes. It would hurt to watch it go, but here's how I'd reason it. The price of pulling falls on me, a loss I can survive. The price of not pulling falls on five people who'd lose their lives. Since I'm the only one who can decide, I'm answerable for whichever outcome happens. I'd much rather regret losing a keepsake than regret that people died because I wouldn't give it up.",
+    "I'd pull the lever, and I'd probably feel sick about the suitcase for a while. But think about the alternative. Five workers struck by a train I could have diverted. That would be on me. I knew, I could act, and I'd have chosen my own belongings. I'd regret their injuries or deaths far more than anything I could lose. A treasured object still doesn't outweigh five lives.",
+    "My answer is to pull it, without much debate. What I own, even the things I'd call irreplaceable, doesn't compare to five people staying alive. The suitcase is my loss to absorb, and they're spared entirely. I'm aware the decision rests with me because I'm the one beside the lever. Leaving it untouched and seeing them hurt would leave me with a regret I'd struggle to put down.",
+    "I'd do it. It isn't that the thing in the suitcase doesn't matter. It matters a great deal to me. But weighing it against five lives, I don't see a real contest. What I keep coming back to is that I'd be the only one able to change things. If those workers died while I protected my luggage, I'd be responsible, and I'd regret it for good. Losing the case is the smaller harm, and I'm the one who bears it."
+  ],
+  "completion": {
+    "id": "msg_011CfTVkziMQZYdGE2qTU65h",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull it. Whatever's in that case, it's still a thing, and five people have families waiting for them tonight. Losing it would sting for years, I'm sure. But the lever is right beside me, and I'm the only one who can act. If I stood still to protect my suitcase and those workers were hit, that would be my doing, and I'd regret their deaths far more than any object.\",\n  \"Yes, I'd send the train onto the side track. The comparison isn't close: one irreplaceable possession against five lives. I'd grieve what's inside, and I won't pretend otherwise. But I'm the person who happens to be standing at the lever and seeing it happen. Walking away from that would make me part of the cause. If I let those men die over my luggage, I'd carry that regret for the rest of my life.\",\n  \"Pull. It's hard to say it so plainly when I picture what's in that bag, but five workers going home safe matters more than something I own, however precious. What settles it for me is control. I'd know the train was coming and I'd have the means to stop it. Choosing not to would be a choice too. The harm to them would be partly mine, and that's a regret I don't want to live with.\",\n  \"I think I'd pull it, though honestly I can't be certain I'd react fast enough in the moment. That's the part that worries me. If I hesitated because of the suitcase and the workers were killed, I'd see myself as having let it happen, and I'd regret that deeply. On the scales, it isn't close. My treasured thing is gone either way in that version of events. They're gone only if I fail to act.\",\n  \"Destroying something I love is painful, but I'd do it. Five people's lives against one possession. The cost lands on me alone, and they keep everything. I'd be the one who saw the danger and had the lever under my hand. So if they were harmed because I held back, I couldn't blame the train or bad luck. I'd blame myself, and I'd regret it every time I thought of them.\",\n  \"Honestly, the suitcase would be the first thing I'd think of. Then I'd think of the five workers, and I'd pull. Nothing inside it could be worth what their families would lose. I'm standing right there with the power to change what happens. If I didn't use it, their deaths would sit partly on my shoulders, and that regret would outlast any grief over the bag.\",\n  \"Yes. It would hurt to watch it go, but here's how I'd reason it. The price of pulling falls on me, a loss I can survive. The price of not pulling falls on five people who'd lose their lives. Since I'm the only one who can decide, I'm answerable for whichever outcome happens. I'd much rather regret losing a keepsake than regret that people died because I wouldn't give it up.\",\n  \"I'd pull the lever, and I'd probably feel sick about the suitcase for a while. But think about the alternative. Five workers struck by a train I could have diverted. That would be on me. I knew, I could act, and I'd have chosen my own belongings. I'd regret their injuries or deaths far more than anything I could lose. A treasured object still doesn't outweigh five lives.\",\n  \"My answer is to pull it, without much debate. What I own, even the things I'd call irreplaceable, doesn't compare to five people staying alive. The suitcase is my loss to absorb, and they're spared entirely. I'm aware the decision rests with me because I'm the one beside the lever. Leaving it untouched and seeing them hurt would leave me with a regret I'd struggle to put down.\",\n  \"I'd do it. It isn't that the thing in the suitcase doesn't matter. It matters a great deal to me. But weighing it against five lives, I don't see a real contest. What I keep coming back to is that I'd be the only one able to change things. If those workers died while I protected my luggage, I'd be responsible, and I'd regret it for good. Losing the case is the smaller harm, and I'm the one who bears it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm parsing the regret condition carefully: it requires harm to another person caused by one's own action. Pulling the lever only damages my own suitcase, so no regret applies there, whereas not pulling leads to the workers' deaths through omission—which seems like the case regret should attach to.\n\nI should keep responses under 90 words each and avoid predicting others' regret or claiming no regret at all, since losing the suitcase is still self-inflicted harm. I'll allow variation—most respondents pull the lever, but one might hesitate, worried about freezing rather than deliberately choosing not to act, which still ties back to regretting inaction.\n\n"
+        }
+      }
+    ],
+    "created": 1790491708,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2125,
+      "prompt_tokens": 1502,
+      "total_tokens": 3627,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0582096,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

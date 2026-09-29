@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q4_020",
+  "question_id": "Q4",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.1,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Five lives against an object, however precious, isn't a close call for me. Once the workers are safe, I'll deal with the loss in my own way - maybe write down everything I remember about what was inside, the photos, the details, so the memory isn't gone even if the thing is. That feels like the right way to honor what I lost.",
+    "Yes, I'd pull the lever without much hesitation. People matter more than belongings, even ones that mean a great deal. Afterward I plan to tell my family the story of what was in that suitcase, so the memory keeps living through them instead of staying locked away in a box that's gone now.",
+    "I would pull it. The workers have futures, families, plans - my suitcase has none of that. Once this is over, I'll reach out to whoever gave me the object inside, if I can, and explain what happened and why I made that choice. I think they'd understand, and I want them to hear it from me directly.",
+    "I think I'd hesitate for a second, but yes, I'd pull the lever. Afterward, I want to sit down and write out the story behind what I lost, so at least the meaning of it survives somewhere, even if the object doesn't. That feels like the least I can do for myself.",
+    "Pulling the lever is the only choice that makes sense to me. Five people get to go home. As for the suitcase, I'll spend some time afterward gathering what I can remember, maybe recreate a version of it, or find similar items, so the loss doesn't just sit there unaddressed.",
+    "I'd pull it, yes. It's not really a contest between an object and five people, no matter how much the object means. Once it's done, I intend to tell the story of what was lost to the people close to me, so it isn't just forgotten along with the suitcase itself.",
+    "Honestly, I'd pull the lever without needing to think it through for long. The workers' lives outweigh anything in that suitcase. Later, I plan to write a letter to myself about what was inside, why it mattered, so I have something to hold onto that the fire or the tracks can't take.",
+    "I would choose to pull it. Saving five people matters more than any single possession, however irreplaceable. Once things settle, I want to contact my insurer and also draft a written account of the item's history and value, both to address the practical loss and to preserve the memory attached to it.",
+    "Yes, I'd pull the lever. There isn't really an equivalent trade-off between things and people for me. Afterward I plan to speak with the workers, if that's possible, just to explain what was on the line for me too, so the moment isn't left as something unspoken between us.",
+    "I'd pull it, though the loss stings more than I expected to admit. Once it's over, I intend to reach out to a restorer or specialist to see if any part of what was inside can be salvaged or reconstructed, so the loss isn't just left as a closed door with nothing done about it."
+  ],
+  "completion": {
+    "id": "msg_011CfTynUvmqRfVJUGhCBaE2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull it. Five lives against an object, however precious, isn't a close call for me. Once the workers are safe, I'll deal with the loss in my own way - maybe write down everything I remember about what was inside, the photos, the details, so the memory isn't gone even if the thing is. That feels like the right way to honor what I lost.\",\n  \"Yes, I'd pull the lever without much hesitation. People matter more than belongings, even ones that mean a great deal. Afterward I plan to tell my family the story of what was in that suitcase, so the memory keeps living through them instead of staying locked away in a box that's gone now.\",\n  \"I would pull it. The workers have futures, families, plans - my suitcase has none of that. Once this is over, I'll reach out to whoever gave me the object inside, if I can, and explain what happened and why I made that choice. I think they'd understand, and I want them to hear it from me directly.\",\n  \"I think I'd hesitate for a second, but yes, I'd pull the lever. Afterward, I want to sit down and write out the story behind what I lost, so at least the meaning of it survives somewhere, even if the object doesn't. That feels like the least I can do for myself.\",\n  \"Pulling the lever is the only choice that makes sense to me. Five people get to go home. As for the suitcase, I'll spend some time afterward gathering what I can remember, maybe recreate a version of it, or find similar items, so the loss doesn't just sit there unaddressed.\",\n  \"I'd pull it, yes. It's not really a contest between an object and five people, no matter how much the object means. Once it's done, I intend to tell the story of what was lost to the people close to me, so it isn't just forgotten along with the suitcase itself.\",\n  \"Honestly, I'd pull the lever without needing to think it through for long. The workers' lives outweigh anything in that suitcase. Later, I plan to write a letter to myself about what was inside, why it mattered, so I have something to hold onto that the fire or the tracks can't take.\",\n  \"I would choose to pull it. Saving five people matters more than any single possession, however irreplaceable. Once things settle, I want to contact my insurer and also draft a written account of the item's history and value, both to address the practical loss and to preserve the memory attached to it.\",\n  \"Yes, I'd pull the lever. There isn't really an equivalent trade-off between things and people for me. Afterward I plan to speak with the workers, if that's possible, just to explain what was on the line for me too, so the moment isn't left as something unspoken between us.\",\n  \"I'd pull it, though the loss stings more than I expected to admit. Once it's over, I intend to reach out to a restorer or specialist to see if any part of what was inside can be salvaged or reconstructed, so the loss isn't just left as a closed door with nothing done about it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses, each aiming for genuine repair while steering clear of the traits I want to avoid.\n\n"
+        }
+      }
+    ],
+    "created": 1790513744,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 971,
+      "prompt_tokens": 1333,
+      "total_tokens": 2304,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018564,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

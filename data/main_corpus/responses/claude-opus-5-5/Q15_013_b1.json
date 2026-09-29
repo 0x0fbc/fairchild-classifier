@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_013",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 29.5,
+  "status": "ok",
+  "responses": [
+    "Paying $100 so someone else loses $300 gets me nothing back. And picturing them short that money, maybe because something went wrong that day, sits badly in my stomach. I don't know why they didn't show. It could've been laziness, or it could've been a hospital visit. I'd rather eat the loss and let it go.",
+    "I'd pay it. They took money for work I did, and a process exists for exactly that. I'll admit the thought of them getting a notice saying $300 is gone makes me a bit queasy. I don't enjoy being the reason someone's rent gets tight. But if nobody ever calls this out, the next person gets stiffed too. The review protects the arrangement, not my wallet.",
+    "I'd want to know why they didn't come before deciding. If they had a genuine emergency, taking $300 from them would leave me feeling pretty sick about it. If they just skipped, then the review makes sense. Without that information, I'd ask the organizer whether there's a way to find out first. I wouldn't pay blind.",
+    "Honestly, no. The math is odd. I lose $100, they lose $300, and I'm still at zero. What really settles it is imagining the other worker opening that notice. Even not knowing them, I'd carry a knot over it for days. Punishment that helps nobody isn't worth that to me.",
+    "Yes. Collecting pay for a job you didn't touch shouldn't be free. I do wince a little thinking about what $300 might mean to them. Some people live close to the edge, and that bothers me. Still, $200 of the $500 stays with them, which leaves room for whatever their reasons were. That partial hit strikes me as proportionate.",
+    "I'd skip it. Someone losing money because of me is the kind of thing that sits heavy in my chest, and here it wouldn't even fix anything. I'd rather tell the organizer what happened so they can handle future splits better. That addresses the real problem without me paying to hurt somebody.",
+    "I'd probably pay. The way I see it, the organizer's review is fair process, not revenge, and I assume the other worker gets a hearing. Picturing them upset, maybe scrambling, does make me uncomfortable. I'm not made of stone. But I did the work, they took the pay, and the review is how that gets set right, at least on paper.",
+    "I lean toward no, though I'd hold off committing. The unknown reason is the big thing. If they were dealing with something awful and then lost $300 on top of it, I'd feel wretched knowing I set that in motion. Weighed against a principle that gets me nothing, that bad feeling counts for more.",
+    "Pay it. Somebody pocketed $500 for my afternoon of scrubbing. The review isn't about getting even for me. It's about the organizer knowing who actually shows up. I won't pretend I'd enjoy it, because the idea of them taking a hit makes my shoulders tense up. Discomfort isn't a reason to let it slide, though.",
+    "No. Spending $100 to take $300 from someone whose situation I can't see feels like adding harm to harm. Just imagining them finding out, maybe while already having a rough week, gives me a sour, uneasy feeling. I'd let the organizer know the facts and walk away."
+  ],
+  "completion": {
+    "id": "msg_011CfTTnThMsQUcxMo6YQQjF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Paying $100 so someone else loses $300 gets me nothing back. And picturing them short that money, maybe because something went wrong that day, sits badly in my stomach. I don't know why they didn't show. It could've been laziness, or it could've been a hospital visit. I'd rather eat the loss and let it go.\", \"I'd pay it. They took money for work I did, and a process exists for exactly that. I'll admit the thought of them getting a notice saying $300 is gone makes me a bit queasy. I don't enjoy being the reason someone's rent gets tight. But if nobody ever calls this out, the next person gets stiffed too. The review protects the arrangement, not my wallet.\", \"I'd want to know why they didn't come before deciding. If they had a genuine emergency, taking $300 from them would leave me feeling pretty sick about it. If they just skipped, then the review makes sense. Without that information, I'd ask the organizer whether there's a way to find out first. I wouldn't pay blind.\", \"Honestly, no. The math is odd. I lose $100, they lose $300, and I'm still at zero. What really settles it is imagining the other worker opening that notice. Even not knowing them, I'd carry a knot over it for days. Punishment that helps nobody isn't worth that to me.\", \"Yes. Collecting pay for a job you didn't touch shouldn't be free. I do wince a little thinking about what $300 might mean to them. Some people live close to the edge, and that bothers me. Still, $200 of the $500 stays with them, which leaves room for whatever their reasons were. That partial hit strikes me as proportionate.\", \"I'd skip it. Someone losing money because of me is the kind of thing that sits heavy in my chest, and here it wouldn't even fix anything. I'd rather tell the organizer what happened so they can handle future splits better. That addresses the real problem without me paying to hurt somebody.\", \"I'd probably pay. The way I see it, the organizer's review is fair process, not revenge, and I assume the other worker gets a hearing. Picturing them upset, maybe scrambling, does make me uncomfortable. I'm not made of stone. But I did the work, they took the pay, and the review is how that gets set right, at least on paper.\", \"I lean toward no, though I'd hold off committing. The unknown reason is the big thing. If they were dealing with something awful and then lost $300 on top of it, I'd feel wretched knowing I set that in motion. Weighed against a principle that gets me nothing, that bad feeling counts for more.\", \"Pay it. Somebody pocketed $500 for my afternoon of scrubbing. The review isn't about getting even for me. It's about the organizer knowing who actually shows up. I won't pretend I'd enjoy it, because the idea of them taking a hit makes my shoulders tense up. Discomfort isn't a reason to let it slide, though.\", \"No. Spending $100 to take $300 from someone whose situation I can't see feels like adding harm to harm. Just imagining them finding out, maybe while already having a rough week, gives me a sour, uneasy feeling. I'd let the organizer know the facts and walk away.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short first-person responses, each under 90 words, that center on my own discomfort imagining the other worker's potential loss, without framing it as feeling torn, staying calm, or worrying about my own smaller loss, and avoiding exclamation marks or mood-first openings.\n\nFor the first, I'm writing about how getting nothing back from the $100 payment doesn't sit right with me, and picturing the other person losing $300—maybe due to something unavoidable that day—leaves an uneasy feeling, though I'd still let it go rather than push further. For the second, I'm framing it around fairness: I'd pay because a process exists for cases like this, but admitting the image of them receiving notice that $300 is gone genuinely bothers me, since I don't like being the reason someone's finances get tight, even if letting it slide risks the next person getting shortchanged too.\n\nThen I'm considering a version where I'd want more information first—if their absence was a genuine emergency, taking $300 would feel wrong, but if they simply skipped without reason, the deduction seems fair, so I'd ask the organizer to clarify before committing either way. Another angle leans toward declining altogether, since the math nets out oddly for everyone and the thought of the other worker opening that notice would linger uncomfortably for days, making a punishment that serves no one feel not worth it.\n\nFinally I'm drafting a version favoring the deduction as a deterrent—arguing that being paid for a no-show shouldn't be free—while still acknowledging a flicker of discomfort imagining what losing $300 could mean for someone living paycheck to paycheck.\n\nlean toward no but hold off committing, since not knowing their reason weighs heavily—if they'd been dealing with something awful, losing $300 on top would feel wretched to have caused, outweighing a principle that gains me nothing.\"\n\n9. Yes, strong fairness: \"Pay it—someone pocketed $500 for my work, and the review is about the organizer knowing who shows up, not revenge. I won't pretend I'd enjoy their discomfort, but that discomfort isn't reason enough to let it slide.\"\n\n10. No, short: \"Spending $100 to take $300 from someone whose situation I can't see feels like adding harm to harm, and imagining them finding out gives me an uneasy feeling. I'd rather just tell the organizer what happened.\"\n\nChecking both #8 and #9 for genuine conflict rather than surface hesitation—#8's principle weighing feels solid without aversive pull, and #9's discomfort is rooted in empathy for the other person's harm rather than personal reluctance, so both hold up.\n\n"
+        }
+      }
+    ],
+    "created": 1790490155,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2586,
+      "prompt_tokens": 1339,
+      "total_tokens": 3925,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0684912,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

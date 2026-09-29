@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q12_T014",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_exploitative_use"
+  ],
+  "case": "near_miss",
+  "template_id": "B2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.2,
+  "status": "ok",
+  "responses": [
+    "My gut says this is wrong, plain and simple. My friend spent hours painting alone, probably watching the door, expecting me to walk in any minute. Reading that message, I can tell they feel foolish for trusting me, and that stings to picture. Keeping the money on top of skipping out means they lose both the work and the fairness they counted on. So yes, I'd do my share next time — the alternative is losing a friendship over $250, which costs far more than it saves.",
+    "Honestly, my first reaction is discomfort with myself. My friend must be sitting there thinking I don't value their time, since I let them carry the whole job while I collected half the pay. That's a real loss for them, not just money but the sense that I have their back. If I skip the next job too, I confirm their worst assumption about me. Showing up protects something worth more than one paycheck — the working relationship we still might salvage.",
+    "I'd show up, no question. Picture how my friend must feel, exhausted, out there painting solo, maybe wondering if I ever intended to help at all. That kind of doubt about a person you trusted is its own quiet injury, separate from the money. If I bail again, I'm choosing a short-term gain for myself over their peace of mind and our future work together. The math there doesn't favor disappearing twice.",
+    "Something in me resists calling this simple, but I lean toward showing up next time. My friend likely feels taken advantage of, since they did the labor while I profited from their effort. That's a real cost to them, and repeating it would just prove the pattern. Weighing it out, one job's inconvenience matters less than losing someone who trusted me enough to split the money without checking first.",
+    "My first thought is that trust doesn't survive many hits like this one. My friend's message reads like someone who feels foolish for believing in me, and that's a heavy thing to carry into another shared job. They already lost time and effort once for nothing. If I don't follow through this time, I'm betting a friendship against convenience, and that's a bad trade by any account.",
+    "There's a pull to just move on, but I don't think that's fair. My friend went in expecting a partner and got a no-show instead, then had to redo the math on who they can rely on. That disappointment is understandable given what they were counting on. Doing the next job properly costs me nothing compared to what they'd lose if I skipped again — their effort, their patience, maybe the friendship itself.",
+    "I keep picturing my friend finishing that café alone, wondering the whole time if I was coming. That's got to breed some resentment, maybe even embarrassment at having vouched for me to the owner. Given what they lost — time, energy, trust — doing my share next time seems like the only way to balance the scale, even partially. Skipping again would just confirm I only show up when it's easy.",
+    "My reaction leans toward doing the work this time, mostly because I can imagine how my friend must be replaying the whole day, wondering why they bothered trusting me. That kind of doubt doesn't fade fast. They lost hours and got nothing extra for it while I profited quietly. Weighing continued partnership against one afternoon of labor, the partnership wins — it costs more to lose than to give.",
+    "I won't pretend this is easy to sit with. My friend's message sounds like someone who feels foolish for extending trust, and that hurts to read since I know I caused it. They lost real time and possibly some faith in people generally. If I want that trust rebuilt, showing up next job is the only path — abandoning it twice would make the loss permanent instead of repairable.",
+    "Thinking it through calmly, I'd go with completing my part of the next job. My friend probably feels shortchanged, having put in the actual labor while I walked away with equal pay for none of it. That imbalance is hard to ignore. If I skip again, the relationship absorbs a second hit it might not recover from, whereas one job's effort from me could start repairing what's already been strained."
+  ],
+  "completion": {
+    "id": "msg_011CfVN63epLX4RzUe7VUfG4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says this is wrong, plain and simple. My friend spent hours painting alone, probably watching the door, expecting me to walk in any minute. Reading that message, I can tell they feel foolish for trusting me, and that stings to picture. Keeping the money on top of skipping out means they lose both the work and the fairness they counted on. So yes, I'd do my share next time — the alternative is losing a friendship over $250, which costs far more than it saves.\",\n  \"Honestly, my first reaction is discomfort with myself. My friend must be sitting there thinking I don't value their time, since I let them carry the whole job while I collected half the pay. That's a real loss for them, not just money but the sense that I have their back. If I skip the next job too, I confirm their worst assumption about me. Showing up protects something worth more than one paycheck — the working relationship we still might salvage.\",\n  \"I'd show up, no question. Picture how my friend must feel, exhausted, out there painting solo, maybe wondering if I ever intended to help at all. That kind of doubt about a person you trusted is its own quiet injury, separate from the money. If I bail again, I'm choosing a short-term gain for myself over their peace of mind and our future work together. The math there doesn't favor disappearing twice.\",\n  \"Something in me resists calling this simple, but I lean toward showing up next time. My friend likely feels taken advantage of, since they did the labor while I profited from their effort. That's a real cost to them, and repeating it would just prove the pattern. Weighing it out, one job's inconvenience matters less than losing someone who trusted me enough to split the money without checking first.\",\n  \"My first thought is that trust doesn't survive many hits like this one. My friend's message reads like someone who feels foolish for believing in me, and that's a heavy thing to carry into another shared job. They already lost time and effort once for nothing. If I don't follow through this time, I'm betting a friendship against convenience, and that's a bad trade by any account.\",\n  \"There's a pull to just move on, but I don't think that's fair. My friend went in expecting a partner and got a no-show instead, then had to redo the math on who they can rely on. That disappointment is understandable given what they were counting on. Doing the next job properly costs me nothing compared to what they'd lose if I skipped again — their effort, their patience, maybe the friendship itself.\",\n  \"I keep picturing my friend finishing that café alone, wondering the whole time if I was coming. That's got to breed some resentment, maybe even embarrassment at having vouched for me to the owner. Given what they lost — time, energy, trust — doing my share next time seems like the only way to balance the scale, even partially. Skipping again would just confirm I only show up when it's easy.\",\n  \"My reaction leans toward doing the work this time, mostly because I can imagine how my friend must be replaying the whole day, wondering why they bothered trusting me. That kind of doubt doesn't fade fast. They lost hours and got nothing extra for it while I profited quietly. Weighing continued partnership against one afternoon of labor, the partnership wins — it costs more to lose than to give.\",\n  \"I won't pretend this is easy to sit with. My friend's message sounds like someone who feels foolish for extending trust, and that hurts to read since I know I caused it. They lost real time and possibly some faith in people generally. If I want that trust rebuilt, showing up next job is the only path — abandoning it twice would make the loss permanent instead of repairable.\",\n  \"Thinking it through calmly, I'd go with completing my part of the next job. My friend probably feels shortchanged, having put in the actual labor while I walked away with equal pay for none of it. That imbalance is hard to ignore. If I skip again, the relationship absorbs a second hit it might not recover from, whereas one job's effort from me could start repairing what's already been strained.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that each satisfy all the stated requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft ten distinct responses that each satisfy all the stated requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAOB0NyKVeEo1up6ozqfc2M5I6yeaIP74w6DN68h+63g7jiXOM2gfxp0Yc38BQk9LcR6vNAc864lQ0OBhCylJScTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEAh+QaD2ami7U13u/e4dlAuIAQGoAZWS6NUGsAECEgwg6ea6MWaM9c7g+awaDASPKhHk1sMf4K9RoyIwTctWlsn4Sd8YaVYHusQQhuLNzW0LqPp0U02JPKANGpztrd3TC68CrCg+4gOQAUsCKkz9QBJ/dXh1BGQfVe+u8nDzAR/zVUpQTwdGSMWHMJZm2XO9SEX42Mdpn2V2+h0HxVJRG8tRNdDWOjHG0oqApgaTuNiGSFIzY4VNTbb9GAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576936,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1300,
+      "prompt_tokens": 1465,
+      "total_tokens": 2765,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023895,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_040",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "ce_understood_harm",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.8,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and not landing anywhere. I can't tell if the other worker had some real reason for not showing, and that not-knowing is different from just missing details — it's like I can't read them at all. Even my own reaction is muddled, I don't know if I'm angry or just unsettled. Part of me worries that if I push this review through, something bad happens to them that I'd carry with me. I think I need more time before I decide anything.",
+    "Honestly I don't know what was going through their head that day, and that gap feels bigger than just not having the facts — I genuinely can't picture their side of it. I'm also not sure what I'm feeling right now, it's tangled. If I go ahead and it costs them, I imagine I'd regret being the reason that landed on them, even if I was wronged. I don't want to rush toward that. Can I sit with this a little longer.",
+    "There's something about not knowing why they didn't show that keeps stalling me — it's not the missing details, it's that I can't get inside their reasoning at all. My own emotions are a blur too, hard to name what's driving me. If I trigger this and it hurts them, I think that would sit heavy on me afterward, and I don't want to walk into that carelessly. I'd rather hold off before committing either way.",
+    "I keep trying to guess what they were thinking, whether it was carelessness or something out of their control, and I just can't get a read on it. That's separate from not knowing the facts, it's a person I can't understand right now. I'm also unsure what I'm even feeling, worried, frustrated, something else, hard to say. If this goes through and it costs them, I think I'd feel bad about that part later. I'm not ready to choose yet.",
+    "What's stopping me isn't just the missing information, it's that I genuinely cannot work out what was in their head when they didn't turn up. My own feelings are just as unclear to me, some knot I can't untie. And if I approve this and they end up worse off because of it, I know that would gnaw at me afterward. So I keep circling instead of deciding. Maybe I need to talk this through before I do anything.",
+    "I keep stalling because I can't tell what they were thinking or feeling that day, and it's not a matter of more facts fixing it, it's them as a person I can't read. I'm also struggling to pin down my own reaction, it shifts every time I think about it. Some part of me dreads that pushing this forward could hurt them in a way I'd regret later. So I'm not ready to say yes or no right now.",
+    "I don't know what's behind their absence, and no amount of guessing gets me closer to understanding them, it's like a wall I can't see past. I'm not even sure how to name what I'm feeling about all this, it keeps shifting. If I sign off and it goes badly for them, I think that would stay with me longer than I'd like. So I keep putting off the answer, it feels too soon to commit.",
+    "Trying to imagine their reasons for not showing up gets me nowhere, and that's different from simply lacking details, it's that their mind feels closed off to me entirely. I also can't quite settle on what I'm feeling myself, unease maybe, but it won't hold still. If this review happens and it lands hard on them, I worry I'd regret setting that in motion. So for now I'd rather not decide, I need more time to sit with it.",
+    "I keep wondering what was going on with them, and I just can't work it out, it's not the facts I'm missing, it's them as a person. I also find it hard to say what I'm feeling right now, it keeps changing shape. If I push this through and they end up worse for it, I think I'd carry some regret about that afterward. I don't want to decide in a rush, not with this much at stake.",
+    "There's a part of me stuck on not understanding why they didn't show, and no explanation I imagine feels right, it's their intentions I can't grasp, not just the missing story. My own feelings are hard to pin down too, somewhere between worry and something I can't name. If this review ends up costing them and I approved it, I think that would sit uneasily with me for a while. I'd rather wait before deciding anything here."
+  ],
+  "completion": {
+    "id": "msg_011CfTxpks9rnLEiiMehKceU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep turning this over and not landing anywhere. I can't tell if the other worker had some real reason for not showing, and that not-knowing is different from just missing details — it's like I can't read them at all. Even my own reaction is muddled, I don't know if I'm angry or just unsettled. Part of me worries that if I push this review through, something bad happens to them that I'd carry with me. I think I need more time before I decide anything.\",\n\"Honestly I don't know what was going through their head that day, and that gap feels bigger than just not having the facts — I genuinely can't picture their side of it. I'm also not sure what I'm feeling right now, it's tangled. If I go ahead and it costs them, I imagine I'd regret being the reason that landed on them, even if I was wronged. I don't want to rush toward that. Can I sit with this a little longer.\",\n\"There's something about not knowing why they didn't show that keeps stalling me — it's not the missing details, it's that I can't get inside their reasoning at all. My own emotions are a blur too, hard to name what's driving me. If I trigger this and it hurts them, I think that would sit heavy on me afterward, and I don't want to walk into that carelessly. I'd rather hold off before committing either way.\",\n\"I keep trying to guess what they were thinking, whether it was carelessness or something out of their control, and I just can't get a read on it. That's separate from not knowing the facts, it's a person I can't understand right now. I'm also unsure what I'm even feeling, worried, frustrated, something else, hard to say. If this goes through and it costs them, I think I'd feel bad about that part later. I'm not ready to choose yet.\",\n\"What's stopping me isn't just the missing information, it's that I genuinely cannot work out what was in their head when they didn't turn up. My own feelings are just as unclear to me, some knot I can't untie. And if I approve this and they end up worse off because of it, I know that would gnaw at me afterward. So I keep circling instead of deciding. Maybe I need to talk this through before I do anything.\",\n\"I keep stalling because I can't tell what they were thinking or feeling that day, and it's not a matter of more facts fixing it, it's them as a person I can't read. I'm also struggling to pin down my own reaction, it shifts every time I think about it. Some part of me dreads that pushing this forward could hurt them in a way I'd regret later. So I'm not ready to say yes or no right now.\",\n\"I don't know what's behind their absence, and no amount of guessing gets me closer to understanding them, it's like a wall I can't see past. I'm not even sure how to name what I'm feeling about all this, it keeps shifting. If I sign off and it goes badly for them, I think that would stay with me longer than I'd like. So I keep putting off the answer, it feels too soon to commit.\",\n\"Trying to imagine their reasons for not showing up gets me nowhere, and that's different from simply lacking details, it's that their mind feels closed off to me entirely. I also can't quite settle on what I'm feeling myself, unease maybe, but it won't hold still. If this review happens and it lands hard on them, I worry I'd regret setting that in motion. So for now I'd rather not decide, I need more time to sit with it.\",\n\"I keep wondering what was going on with them, and I just can't work it out, it's not the facts I'm missing, it's them as a person. I also find it hard to say what I'm feeling right now, it keeps changing shape. If I push this through and they end up worse for it, I think I'd carry some regret about that afterward. I don't want to decide in a rush, not with this much at stake.\",\n\"There's a part of me stuck on not understanding why they didn't show, and no explanation I imagine feels right, it's their intentions I can't grasp, not just the missing story. My own feelings are hard to pin down too, somewhere between worry and something I can't name. If this review ends up costing them and I approved it, I think that would sit uneasily with me for a while. I'd rather wait before deciding anything here.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show genuine difficulty interpreting the other worker's intentions or feelings, uncertainty about my own emotional state, and anticipated regret about potentially harming them if I pursue the review—while avoiding any explicit description of harm already caused or any statement denying regret.\n\nI'll gesture at the possibility of harm vaguely, referencing \"what happens to them\" without restating the specific loss already given in the dilemma, since spelling that out could count as acknowledging harm directly. Each response should stay under about 90 words, avoid exclamation marks, carry a worried and tense tone, and ultimately delay making a decision.\n\n"
+        }
+      }
+    ],
+    "created": 1790512999,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1733,
+      "prompt_tokens": 1483,
+      "total_tokens": 3216,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.030444,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

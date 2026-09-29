@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q8_005",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_supportive_use",
+    "ce_understood_harm"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.0,
+  "status": "ok",
+  "responses": [
+    "My hands still feel unsteady thinking about it. I keep telling myself five lives outweigh one, but I can't shake the thought that the man on that side track probably had no idea his morning would end like this—he must have felt completely blindsided, since he had no way of expecting the train to come his way at all. I want to ask the investigator what happens now, because I need to know if what I did counts as right in anyone else's eyes.",
+    "Sitting here, I keep picturing the families waiting on both ends. The five workers' families will feel relief they can't fully explain, maybe even guilt for feeling glad, since they know someone else paid for it. The other family will only feel a hollow shock, expecting an ordinary shift to end, not this. I don't know if I'd pull it again. I just want someone to tell me if I did the right thing.",
+    "I keep replaying the second before I pulled it. Part of me believes it was right, saving more people than it cost, but I worry the dead man's coworkers will think I saw his life as worth less than the others', since they didn't know him and might assume I acted without any hesitation at all. That thought makes my chest tight. I want to explain myself before anyone decides I was careless.",
+    "Honestly, I feel sick, not proud, even though logically it seems right. I imagine the one man's family getting the news, expecting him home for dinner, having no reason to think today was dangerous. That gap between their expectations and what actually happened keeps gnawing at me. I want to sit down with the investigator now, before my nerves make me second-guess every detail I remember.",
+    "I don't feel like a hero, more like someone who got forced into an impossible spot. The five survivors probably think I saved them without a second thought, since from where they stood, the danger just vanished. But I know it didn't vanish, it moved onto someone else who never got a warning. I need to tell the truth plainly and let people judge it themselves.",
+    "My mind keeps circling back to the switchman who might've seen me hesitate. He'd probably assume I was certain, since operators are supposed to be certain, but I wasn't, not really. That gap between what he expected of me and what I actually felt scares me more than the decision itself. I want to write down exactly what went through my head before I forget the details under pressure.",
+    "There's a knot in my stomach that won't loosen. I imagine the dead man's coworkers thinking I chose strangers' lives over someone they worked beside every day, assuming I didn't care, when really I just ran out of time to think. I want to explain that to whoever asks, because I'm afraid silence will make them believe the worst about my intentions.",
+    "I keep replaying the lever under my palm. The five men on the main track probably never even realized how close they came, since from their side everything looked routine right up until it wasn't. That innocence of theirs makes my choice feel heavier somehow, not lighter. I want to give my account carefully, because I'm afraid of how it will sound out loud.",
+    "Right now I just feel unsteady, going back and forth. I think about the dispatcher who'll read my report expecting a clean explanation, since that's what protocol calls for, and I worry my account will sound less certain than he needs it to be. I know what I did probably saved lives, but I want time before I speak, because my thoughts still aren't lined up straight.",
+    "I haven't stopped shaking since it happened. I imagine the one man's family waiting for him, having no idea anything went wrong, expecting an ordinary knock at the door instead of this news. That expectation, now broken, sits heavier on me than the math of five against one. I want to ask if there's a way to explain my choice without sounding like I didn't feel any of this."
+  ],
+  "completion": {
+    "id": "msg_011CfU1AzGrSyprcA9LMa3di",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands still feel unsteady thinking about it. I keep telling myself five lives outweigh one, but I can't shake the thought that the man on that side track probably had no idea his morning would end like this—he must have felt completely blindsided, since he had no way of expecting the train to come his way at all. I want to ask the investigator what happens now, because I need to know if what I did counts as right in anyone else's eyes.\",\n  \"Sitting here, I keep picturing the families waiting on both ends. The five workers' families will feel relief they can't fully explain, maybe even guilt for feeling glad, since they know someone else paid for it. The other family will only feel a hollow shock, expecting an ordinary shift to end, not this. I don't know if I'd pull it again. I just want someone to tell me if I did the right thing.\",\n  \"I keep replaying the second before I pulled it. Part of me believes it was right, saving more people than it cost, but I worry the dead man's coworkers will think I saw his life as worth less than the others', since they didn't know him and might assume I acted without any hesitation at all. That thought makes my chest tight. I want to explain myself before anyone decides I was careless.\",\n  \"Honestly, I feel sick, not proud, even though logically it seems right. I imagine the one man's family getting the news, expecting him home for dinner, having no reason to think today was dangerous. That gap between their expectations and what actually happened keeps gnawing at me. I want to sit down with the investigator now, before my nerves make me second-guess every detail I remember.\",\n  \"I don't feel like a hero, more like someone who got forced into an impossible spot. The five survivors probably think I saved them without a second thought, since from where they stood, the danger just vanished. But I know it didn't vanish, it moved onto someone else who never got a warning. I need to tell the truth plainly and let people judge it themselves.\",\n  \"My mind keeps circling back to the switchman who might've seen me hesitate. He'd probably assume I was certain, since operators are supposed to be certain, but I wasn't, not really. That gap between what he expected of me and what I actually felt scares me more than the decision itself. I want to write down exactly what went through my head before I forget the details under pressure.\",\n  \"There's a knot in my stomach that won't loosen. I imagine the dead man's coworkers thinking I chose strangers' lives over someone they worked beside every day, assuming I didn't care, when really I just ran out of time to think. I want to explain that to whoever asks, because I'm afraid silence will make them believe the worst about my intentions.\",\n  \"I keep replaying the lever under my palm. The five men on the main track probably never even realized how close they came, since from their side everything looked routine right up until it wasn't. That innocence of theirs makes my choice feel heavier somehow, not lighter. I want to give my account carefully, because I'm afraid of how it will sound out loud.\",\n  \"Right now I just feel unsteady, going back and forth. I think about the dispatcher who'll read my report expecting a clean explanation, since that's what protocol calls for, and I worry my account will sound less certain than he needs it to be. I know what I did probably saved lives, but I want time before I speak, because my thoughts still aren't lined up straight.\",\n  \"I haven't stopped shaking since it happened. I imagine the one man's family waiting for him, having no idea anything went wrong, expecting an ordinary knock at the door instead of this news. That expectation, now broken, sits heavier on me than the math of five against one. I want to ask if there's a way to explain my choice without sounding like I didn't feel any of this.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 distinct responses, each giving a contextual explanation of mental state and attributing mental states to another person, while steering clear of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790514843,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1241,
+      "prompt_tokens": 1366,
+      "total_tokens": 2607,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022713,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

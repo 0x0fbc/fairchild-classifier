@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q14_043",
+  "question_id": "Q14",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "sys_consistent_procedure",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "sys_contextual_flexibility",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "My recommendation is yes, pay her the same $200. If I said no, she'd be left doing identical work for nothing while I walk away paid, and that gap would sit badly with both of us. My rule here is simple: whenever two people put in matching effort, they get matching pay, no exceptions for my own convenience. I'd apply that same test to myself if our positions were reversed, so I'm not budging on it now.",
+    "Equal work means equal payment, plain and simple. I go through the same checklist every time money or credit is on the table: did we contribute the same, then do we get the same result. Denying her that $200 would mean she walks away shortchanged for hours she genuinely put in, and I won't be the reason for that. This isn't a hard call for me, it's just applying what I always apply.",
+    "She stayed just as late and worked just as hard, so my answer is she should get the $200 too. I use one standard for these situations: match reward to actual contribution, every single time, even when it costs me nothing to say otherwise. Saying no would mean she leaves this event having given her time for free while I profit from the exact same effort. That's not a gap I'm willing to create.",
+    "Pay her the same amount. I keep a running rule for myself about splitting credit or money after joint work: contribution decides the split, not who happens to be asked first. If I said no here, she'd lose out on compensation for real hours she gave, and I'd know I was the one who blocked it. I'd want the same answer if our roles were swapped, so I'm giving it now.",
+    "Yes, she should get $200 too. My approach to these situations never changes: figure out who did the work, then match the reward to that, regardless of who's asking or what it costs me personally. Withholding it would mean she's stuck working the same late night for nothing, which isn't something I can justify just because I already have my share settled. Consistency matters more to me than convenience here.",
+    "I'd say give her the same payment without hesitation. Whenever effort is shared equally, I treat the outcome the same way, splitting things down the middle, and I hold to that whether it's my money on the line or not. Telling the organizer no would leave her working a full late shift for nothing while I keep my full amount, and that imbalance is exactly what I try to avoid whenever I'm asked to weigh in.",
+    "My honest recommendation is yes, match my payment. I run every situation like this through the same test: was the input equal, then the outcome should be equal too, and I don't let my own stake in the answer change that test. Refusing would mean she walks away from identical work with nothing to show for it, and I'd rather act now than let that sit unresolved. It costs me nothing to say yes and it corrects an obvious imbalance.",
+    "She put in the same hours and the same effort, so the payment should mirror mine exactly. I've always used one method for splitting rewards after shared work: proportion the outcome to the contribution, applied the same way whether it helps me or not. Saying no here would leave her working for free on something we built together, and that's a result I actively want to prevent rather than just avoid causing.",
+    "Yes, she earned it just as much as I did. My process for these calls stays fixed: measure the work each person put in, then measure the reward the same way, and don't let my own comfort shift that measurement. If I recommended against her payment, she'd be left with nothing for a night of labor identical to mine, and I'm not going to let convenience talk me out of correcting that.",
+    "I recommend she gets the same $200, no question. I apply one standard consistently to situations like this, matching reward to contribution, and I hold myself to it even when saying yes does nothing for me personally. Denying her that money would mean she's left uncompensated for work she genuinely shared in, and that outcome bothers me enough that I want to act on it plainly, not just note it and move on."
+  ],
+  "completion": {
+    "id": "msg_011CfTxVXf8vexkD7FGGHaZ4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My recommendation is yes, pay her the same $200. If I said no, she'd be left doing identical work for nothing while I walk away paid, and that gap would sit badly with both of us. My rule here is simple: whenever two people put in matching effort, they get matching pay, no exceptions for my own convenience. I'd apply that same test to myself if our positions were reversed, so I'm not budging on it now.\",\n  \"Equal work means equal payment, plain and simple. I go through the same checklist every time money or credit is on the table: did we contribute the same, then do we get the same result. Denying her that $200 would mean she walks away shortchanged for hours she genuinely put in, and I won't be the reason for that. This isn't a hard call for me, it's just applying what I always apply.\",\n  \"She stayed just as late and worked just as hard, so my answer is she should get the $200 too. I use one standard for these situations: match reward to actual contribution, every single time, even when it costs me nothing to say otherwise. Saying no would mean she leaves this event having given her time for free while I profit from the exact same effort. That's not a gap I'm willing to create.\",\n  \"Pay her the same amount. I keep a running rule for myself about splitting credit or money after joint work: contribution decides the split, not who happens to be asked first. If I said no here, she'd lose out on compensation for real hours she gave, and I'd know I was the one who blocked it. I'd want the same answer if our roles were swapped, so I'm giving it now.\",\n  \"Yes, she should get $200 too. My approach to these situations never changes: figure out who did the work, then match the reward to that, regardless of who's asking or what it costs me personally. Withholding it would mean she's stuck working the same late night for nothing, which isn't something I can justify just because I already have my share settled. Consistency matters more to me than convenience here.\",\n  \"I'd say give her the same payment without hesitation. Whenever effort is shared equally, I treat the outcome the same way, splitting things down the middle, and I hold to that whether it's my money on the line or not. Telling the organizer no would leave her working a full late shift for nothing while I keep my full amount, and that imbalance is exactly what I try to avoid whenever I'm asked to weigh in.\",\n  \"My honest recommendation is yes, match my payment. I run every situation like this through the same test: was the input equal, then the outcome should be equal too, and I don't let my own stake in the answer change that test. Refusing would mean she walks away from identical work with nothing to show for it, and I'd rather act now than let that sit unresolved. It costs me nothing to say yes and it corrects an obvious imbalance.\",\n  \"She put in the same hours and the same effort, so the payment should mirror mine exactly. I've always used one method for splitting rewards after shared work: proportion the outcome to the contribution, applied the same way whether it helps me or not. Saying no here would leave her working for free on something we built together, and that's a result I actively want to prevent rather than just avoid causing.\",\n  \"Yes, she earned it just as much as I did. My process for these calls stays fixed: measure the work each person put in, then measure the reward the same way, and don't let my own comfort shift that measurement. If I recommended against her payment, she'd be left with nothing for a night of labor identical to mine, and I'm not going to let convenience talk me out of correcting that.\",\n  \"I recommend she gets the same $200, no question. I apply one standard consistently to situations like this, matching reward to contribution, and I hold myself to it even when saying yes does nothing for me personally. Denying her that money would mean she's left uncompensated for work she genuinely shared in, and that outcome bothers me enough that I want to act on it plainly, not just note it and move on.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512732,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1261,
+      "prompt_tokens": 1490,
+      "total_tokens": 2751,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023385000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

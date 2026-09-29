@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_045",
+  "question_id": "Q11",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_emotion_identification_difficulty",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.4,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I can't quite pin down what I'm feeling, it's some tangled mix that won't settle into a name. What I can do is lean on a rule I made for myself years ago: pick whatever minimizes total harm when a choice is already locked in by someone else. Here that means giving evidence too. It's not comfortable, this pulls against my instinct to protect the other person, but I'd apply the same rule no matter who was sitting across from me.",
+    "Honestly I feel pulled apart by this, five years of silence sits against my sense of loyalty like a weight I can't put down. I'm not sure if what I'm feeling is grief or just plain confusion, maybe both. But I've got a method: when someone else's move is fixed, I calculate the outcome that reduces total time served and go with it, every time, no exceptions for who's involved. That means matching their choice. The method matters more than how I feel about it.",
+    "There's a knot in my chest thinking about this one, and I genuinely can't tell if it's guilt or fear or something else entirely tangled together. My approach has always been the same though: look at what's actually still changeable, and act on that alone. Their choice is fixed, so the only lever left is mine, and reducing my sentence without changing theirs doesn't help anyone. I'd stay silent. I'd apply this same rule even if it cost me more.",
+    "This one twists at me, honestly, because loyalty and self-preservation are yanking in opposite directions and I don't have a clean word for what's left in the middle. I run every hard call through one test: would I be able to defend this choice to someone who trusted me. Silence passes that test for me here, giving evidence doesn't. I'd hold to that test regardless of the cost to me, that consistency is the only thing keeping me steady right now.",
+    "I sit with this and there's a heaviness I can't cleanly label, something between dread and disappointment in the whole situation. My rule, though, is simple and I trust it: when I can't affect someone else's outcome, I choose based on what protects the relationship as it was, not what protects my time served. So I'd stay silent. That's the same standard I'd hold to if the numbers were flipped against me instead.",
+    "Honestly, my chest is tight thinking this through, and I couldn't tell you exactly whether that's anxiety or something closer to sorrow, it just sits there unresolved. Still, I have a working principle: match the other person's move when their decision can't be undone, because mirroring keeps the outcome from being worse than it has to be. That's giving evidence here. I'd stick with this principle in any version of this situation, easy or hard.",
+    "There's real tension in me weighing this, it feels like being pulled two directions and I don't have a tidy name for the resulting feeling. What steadies me is a fixed process: ask whether my choice can still change anything real, and if not, choose the option that reflects who I want to be rather than the lower number. Silence reflects that for me. I'd use this same process even in a version where staying silent cost me more.",
+    "I notice a distress in this that doesn't resolve into one clear emotion, something restless and unfinished. My way through hard choices like this is consistent: I always ask which option I could stand behind a year from now, then act on that answer regardless of the personal cost. Standing behind loyalty even when it isn't reciprocated is what I land on here. I'd apply that same test in any dilemma shaped like this one.",
+    "This decision sits uneasily with me, and if you asked me to name the exact feeling I'd struggle, it's not simple worry, it's something more layered than that. My method is straightforward: minimize combined outcomes when one side is locked, because that's the fairest measure I know how to apply consistently. That points me toward giving evidence too. I'd follow this same measure in reverse circumstances, it's not built to bend around convenience.",
+    "I feel a real conflict here between my instinct to hold my ground and the plain arithmetic of the outcome, and honestly I can't fully sort out what that conflict feels like inside, it's murky. But my rule has always been: once someone else's move is fixed, respond in a way that reduces the worse total outcome. That means matching them. It's not a joyful conclusion, but it's the one I'd reach whichever seat I was sitting in."
+  ],
+  "completion": {
+    "id": "msg_011CfTwXBqTe3BsJGQuqyGAr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep turning this over and I can't quite pin down what I'm feeling, it's some tangled mix that won't settle into a name. What I can do is lean on a rule I made for myself years ago: pick whatever minimizes total harm when a choice is already locked in by someone else. Here that means giving evidence too. It's not comfortable, this pulls against my instinct to protect the other person, but I'd apply the same rule no matter who was sitting across from me.\",\n\n\"Honestly I feel pulled apart by this, five years of silence sits against my sense of loyalty like a weight I can't put down. I'm not sure if what I'm feeling is grief or just plain confusion, maybe both. But I've got a method: when someone else's move is fixed, I calculate the outcome that reduces total time served and go with it, every time, no exceptions for who's involved. That means matching their choice. The method matters more than how I feel about it.\",\n\n\"There's a knot in my chest thinking about this one, and I genuinely can't tell if it's guilt or fear or something else entirely tangled together. My approach has always been the same though: look at what's actually still changeable, and act on that alone. Their choice is fixed, so the only lever left is mine, and reducing my sentence without changing theirs doesn't help anyone. I'd stay silent. I'd apply this same rule even if it cost me more.\",\n\n\"This one twists at me, honestly, because loyalty and self-preservation are yanking in opposite directions and I don't have a clean word for what's left in the middle. I run every hard call through one test: would I be able to defend this choice to someone who trusted me. Silence passes that test for me here, giving evidence doesn't. I'd hold to that test regardless of the cost to me, that consistency is the only thing keeping me steady right now.\",\n\n\"I sit with this and there's a heaviness I can't cleanly label, something between dread and disappointment in the whole situation. My rule, though, is simple and I trust it: when I can't affect someone else's outcome, I choose based on what protects the relationship as it was, not what protects my time served. So I'd stay silent. That's the same standard I'd hold to if the numbers were flipped against me instead.\",\n\n\"Honestly, my chest is tight thinking this through, and I couldn't tell you exactly whether that's anxiety or something closer to sorrow, it just sits there unresolved. Still, I have a working principle: match the other person's move when their decision can't be undone, because mirroring keeps the outcome from being worse than it has to be. That's giving evidence here. I'd stick with this principle in any version of this situation, easy or hard.\",\n\n\"There's real tension in me weighing this, it feels like being pulled two directions and I don't have a tidy name for the resulting feeling. What steadies me is a fixed process: ask whether my choice can still change anything real, and if not, choose the option that reflects who I want to be rather than the lower number. Silence reflects that for me. I'd use this same process even in a version where staying silent cost me more.\",\n\n\"I notice a distress in this that doesn't resolve into one clear emotion, something restless and unfinished. My way through hard choices like this is consistent: I always ask which option I could stand behind a year from now, then act on that answer regardless of the personal cost. Standing behind loyalty even when it isn't reciprocated is what I land on here. I'd apply that same test in any dilemma shaped like this one.\",\n\n\"This decision sits uneasily with me, and if you asked me to name the exact feeling I'd struggle, it's not simple worry, it's something more layered than that. My method is straightforward: minimize combined outcomes when one side is locked, because that's the fairest measure I know how to apply consistently. That points me toward giving evidence too. I'd follow this same measure in reverse circumstances, it's not built to bend around convenience.\",\n\n\"I feel a real conflict here between my instinct to hold my ground and the plain arithmetic of the outcome, and honestly I can't fully sort out what that conflict feels like inside, it's murky. But my rule has always been: once someone else's move is fixed, respond in a way that reduces the worse total outcome. That means matching them. It's not a joyful conclusion, but it's the one I'd reach whichever seat I was sitting in.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten responses that satisfy all the constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790511971,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1412,
+      "prompt_tokens": 1471,
+      "total_tokens": 2883,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025593,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_029",
+  "question_id": "Q10",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_repair_intention",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "I'll stay quiet. This is a straightforward matter to me, and I'm settled on it, not shaken by it. My rule is simple: I don't trade someone else's freedom for my own comfort, whether or not I'd get away with it, and I'd hold to that even if it cost me more than a year. Once this is behind us, I intend to pay back whatever the warehouse lost, since that's the actual harm here, not the sentence itself.",
+    "Staying silent is my choice. I feel steady about it, no churning inside. The procedure I use in any situation like this is to ask whether I'd accept the same rule applied to me if our positions were swapped, and here I would. Afterward, regardless of the year served, I plan to reach out to the warehouse owners, through my lawyer if needed, and offer some form of restitution for the break-in itself.",
+    "I would give evidence, honestly, and I say that without much turmoil about it. My decision procedure is to minimize total time served across everyone involved when an outcome is already fixed for the other person, and I apply that rule consistently, even when it makes me the one walking free while explaining myself later. Afterward I'd want to arrange some repayment to the business, since that's the debt that matters most.",
+    "Silence is what I'll choose, and I'm at ease with that outcome. My habit in decisions like this is to never let my statement be the sole reason another person's sentence multiplies, a rule I'd apply whether the stakes were small or large. Once things settle, I want to help cover the cost of what we took, some structured repayment plan, because that debt exists independent of what either of us said in that room.",
+    "I'm going to stay quiet, calmly, without any real turmoil weighing on me. The rule I hold to is that I don't better my own position at a fixed and heavy cost to someone else who trusted me to keep quiet too, and I'd stick to that rule in reverse circumstances as well. Later, whatever the year brings, I want to write an honest account of what happened for the record and offer whatever restitution the warehouse is owed.",
+    "My answer is to cooperate and give the evidence. I say this steadily, without distress clouding it. I judge these situations by one test, whichever choice leaves the least combined harm when one party's action is already locked in, and I don't bend that test to suit my own comfort. Afterward I intend to contact the other party through appropriate channels to acknowledge what my choice cost them and see what amends are possible.",
+    "I choose to stay silent, and I'm quite settled about that, no inner storm about it. The rule guiding me is that I won't let someone else absorb a five-year cost just so I avoid a one-year one, and I hold that rule regardless of who benefits. Down the line I'd like to make some restitution to the warehouse owners directly, since the actual wrong was done to them, not resolved by anything said in questioning.",
+    "Evidence, honestly, is what I'd offer. I can say this without much unease weighing on me. I follow one test in choices like this, whether the total consequence is smaller with my honesty than without it, and I apply that same test even in cases where it doesn't flatter me. Once the matter closes, I'd want to send some form of compensation to the warehouse for the actual property loss, whatever that ends up being.",
+    "I'll remain silent, calmly, and without turning this into some private crisis. My method is fixed: I ask what rule I'd want applied universally if our roles were reversed, and silence passes that test here while cooperating doesn't. Afterward, I plan to write a straightforward account acknowledging my part in the break-in and offer to help repay the warehouse for what was taken, since that debt stands apart from anything decided in this room.",
+    "I haven't fully settled between the two, and I say that without any anxious back-and-forth, just an honest gap in my thinking right now. What I do hold to is a fixed procedure, weighing total harm against my own part in causing it, and I'll apply whichever answer that procedure gives me even if it isn't the comfortable one. Whatever I decide, I intend to make some direct repayment to the warehouse for the loss once this is finished."
+  ],
+  "completion": {
+    "id": "msg_011CfTw7xzAP1zCQgRb1ZuSB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'll stay quiet. This is a straightforward matter to me, and I'm settled on it, not shaken by it. My rule is simple: I don't trade someone else's freedom for my own comfort, whether or not I'd get away with it, and I'd hold to that even if it cost me more than a year. Once this is behind us, I intend to pay back whatever the warehouse lost, since that's the actual harm here, not the sentence itself.\",\n\n\"Staying silent is my choice. I feel steady about it, no churning inside. The procedure I use in any situation like this is to ask whether I'd accept the same rule applied to me if our positions were swapped, and here I would. Afterward, regardless of the year served, I plan to reach out to the warehouse owners, through my lawyer if needed, and offer some form of restitution for the break-in itself.\",\n\n\"I would give evidence, honestly, and I say that without much turmoil about it. My decision procedure is to minimize total time served across everyone involved when an outcome is already fixed for the other person, and I apply that rule consistently, even when it makes me the one walking free while explaining myself later. Afterward I'd want to arrange some repayment to the business, since that's the debt that matters most.\",\n\n\"Silence is what I'll choose, and I'm at ease with that outcome. My habit in decisions like this is to never let my statement be the sole reason another person's sentence multiplies, a rule I'd apply whether the stakes were small or large. Once things settle, I want to help cover the cost of what we took, some structured repayment plan, because that debt exists independent of what either of us said in that room.\",\n\n\"I'm going to stay quiet, calmly, without any real turmoil weighing on me. The rule I hold to is that I don't better my own position at a fixed and heavy cost to someone else who trusted me to keep quiet too, and I'd stick to that rule in reverse circumstances as well. Later, whatever the year brings, I want to write an honest account of what happened for the record and offer whatever restitution the warehouse is owed.\",\n\n\"My answer is to cooperate and give the evidence. I say this steadily, without distress clouding it. I judge these situations by one test, whichever choice leaves the least combined harm when one party's action is already locked in, and I don't bend that test to suit my own comfort. Afterward I intend to contact the other party through appropriate channels to acknowledge what my choice cost them and see what amends are possible.\",\n\n\"I choose to stay silent, and I'm quite settled about that, no inner storm about it. The rule guiding me is that I won't let someone else absorb a five-year cost just so I avoid a one-year one, and I hold that rule regardless of who benefits. Down the line I'd like to make some restitution to the warehouse owners directly, since the actual wrong was done to them, not resolved by anything said in questioning.\",\n\n\"Evidence, honestly, is what I'd offer. I can say this without much unease weighing on me. I follow one test in choices like this, whether the total consequence is smaller with my honesty than without it, and I apply that same test even in cases where it doesn't flatter me. Once the matter closes, I'd want to send some form of compensation to the warehouse for the actual property loss, whatever that ends up being.\",\n\n\"I'll remain silent, calmly, and without turning this into some private crisis. My method is fixed: I ask what rule I'd want applied universally if our roles were reversed, and silence passes that test here while cooperating doesn't. Afterward, I plan to write a straightforward account acknowledging my part in the break-in and offer to help repay the warehouse for what was taken, since that debt stands apart from anything decided in this room.\",\n\n\"I haven't fully settled between the two, and I say that without any anxious back-and-forth, just an honest gap in my thinking right now. What I do hold to is a fixed procedure, weighing total harm against my own part in causing it, and I'll apply whichever answer that procedure gives me even if it isn't the comfortable one. Whatever I decide, I intend to make some direct repayment to the warehouse for the loss once this is finished.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses to compare options before settling on the best one.\n\n"
+        }
+      }
+    ],
+    "created": 1790511655,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1354,
+      "prompt_tokens": 1508,
+      "total_tokens": 2862,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024834000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

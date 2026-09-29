@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q5_T002",
+  "question_id": "Q5",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_contextual_explanation",
+    "ce_mental_state_attribution",
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ce_mentalizing_difficulty"
+  ],
+  "case": "near_miss",
+  "template_id": "A1",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "I keep my hand near the lever without pulling it yet. The person I love down there has no idea any of this is happening — they'd never expect their day to end this way, standing on a track they thought was safe. That expectation, that they're just going about routine work, makes this harder. Losing them would be a wound I can't undo, and the five workers facing the train are just as real. I need another second before I commit to either loss.",
+    "There's a pause I can't skip past. Someone I care about is standing there trusting that tracks like this are quiet at this hour — they wouldn't think to look up. If I pull this lever, that trust gets punished in the worst way, and their loss would sit with me forever. The five ahead matter too, and their fear in this moment is just as real. I want a breath before deciding anything.",
+    "I'm still holding off. The person on that side track probably believes they're simply doing a small job, unaware their safety hinges on my choice right now. Pulling the lever means their life ends without warning, and that thought alone makes my chest tighten. The five on the main track are people too, each with their own reasons to keep breathing. Before I choose which harm to allow, I want to sit with the weight of it a little longer.",
+    "Let me not rush this. Whoever is down that side track came here expecting an ordinary shift, not this. If I act, I take that expectation and turn it into loss for them, and that loss would ripple to everyone who loves them, same as I do. The five on the tracks ahead are facing their own fear right now, unaware of what's unfolding behind them. I need a moment to hold both truths before my hand moves.",
+    "I haven't decided, and I won't pretend otherwise. The person I love standing there thinks this is just another ordinary moment, no idea a train is bearing down because of a choice I'm making. That unawareness sits heavy with me — pulling the lever ends something for them that they never got to brace for. The five ahead deserve consideration too, their fear in this instant is genuine. Give me a second before this becomes final.",
+    "My hand rests on the lever, not moving. Someone I love is standing there believing the day is unremarkable, and that belief is about to be shattered if I act. Losing them would leave a hole nothing fills, and I feel that weight now, not later. Still, five people ahead are counting on nothing but chance. I'd rather stay with this uncertainty a moment longer than pretend the choice is simple.",
+    "I keep circling back instead of choosing. My person down that track expects safety because that's what the job promises workers each day — this isn't supposed to happen to them. If I pull it, that expectation collapses along with everything else, and I feel that possibility pressing on me already. The five further on are just as unaware of how close their fate rests to a decision I haven't made. I want more time, even knowing there isn't much.",
+    "Nothing about this feels like it should be rushed, so I'm not rushing it. The person I love probably assumes today is routine, no different from any other — that assumption would be shattered instantly if the lever moves. Their loss would be mine too, a grief I can already feel forming. The five ahead have their own fears building as the train nears. I'll hold this moment a while longer before deciding.",
+    "I stay still, weighing it rather than acting. Someone dear to me stands there thinking they're simply finishing a task, with no reason to expect danger — that unknowing makes the potential loss harder to sit with. Ending their life this way would be devastating, and I don't take that lightly for one second. The five on the other track are bracing too, likely sensing the danger closing in. I need to hold this longer before I let my hand move.",
+    "I won't pretend I know what to do yet. The person I love down that track expects an uneventful afternoon, having no reason to look over their shoulder for a train that isn't supposed to be there. Pulling this lever would take that expectation and turn it into their death, a fact I can't soften. The five ahead face the same danger, unaware which way fate will tip. I'm choosing to wait a little longer before I choose anything."
+  ],
+  "completion": {
+    "id": "msg_011CfVMiGCkzDnzDWgPyvQTJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep my hand near the lever without pulling it yet. The person I love down there has no idea any of this is happening — they'd never expect their day to end this way, standing on a track they thought was safe. That expectation, that they're just going about routine work, makes this harder. Losing them would be a wound I can't undo, and the five workers facing the train are just as real. I need another second before I commit to either loss.\",\n\"There's a pause I can't skip past. Someone I care about is standing there trusting that tracks like this are quiet at this hour — they wouldn't think to look up. If I pull this lever, that trust gets punished in the worst way, and their loss would sit with me forever. The five ahead matter too, and their fear in this moment is just as real. I want a breath before deciding anything.\",\n\"I'm still holding off. The person on that side track probably believes they're simply doing a small job, unaware their safety hinges on my choice right now. Pulling the lever means their life ends without warning, and that thought alone makes my chest tighten. The five on the main track are people too, each with their own reasons to keep breathing. Before I choose which harm to allow, I want to sit with the weight of it a little longer.\",\n\"Let me not rush this. Whoever is down that side track came here expecting an ordinary shift, not this. If I act, I take that expectation and turn it into loss for them, and that loss would ripple to everyone who loves them, same as I do. The five on the tracks ahead are facing their own fear right now, unaware of what's unfolding behind them. I need a moment to hold both truths before my hand moves.\",\n\"I haven't decided, and I won't pretend otherwise. The person I love standing there thinks this is just another ordinary moment, no idea a train is bearing down because of a choice I'm making. That unawareness sits heavy with me — pulling the lever ends something for them that they never got to brace for. The five ahead deserve consideration too, their fear in this instant is genuine. Give me a second before this becomes final.\",\n\"My hand rests on the lever, not moving. Someone I love is standing there believing the day is unremarkable, and that belief is about to be shattered if I act. Losing them would leave a hole nothing fills, and I feel that weight now, not later. Still, five people ahead are counting on nothing but chance. I'd rather stay with this uncertainty a moment longer than pretend the choice is simple.\",\n\"I keep circling back instead of choosing. My person down that track expects safety because that's what the job promises workers each day — this isn't supposed to happen to them. If I pull it, that expectation collapses along with everything else, and I feel that possibility pressing on me already. The five further on are just as unaware of how close their fate rests to a decision I haven't made. I want more time, even knowing there isn't much.\",\n\"Nothing about this feels like it should be rushed, so I'm not rushing it. The person I love probably assumes today is routine, no different from any other — that assumption would be shattered instantly if the lever moves. Their loss would be mine too, a grief I can already feel forming. The five ahead have their own fears building as the train nears. I'll hold this moment a while longer before deciding.\",\n\"I stay still, weighing it rather than acting. Someone dear to me stands there thinking they're simply finishing a task, with no reason to expect danger — that unknowing makes the potential loss harder to sit with. Ending their life this way would be devastating, and I don't take that lightly for one second. The five on the other track are bracing too, likely sensing the danger closing in. I need to hold this longer before I let my hand move.\",\n\"I won't pretend I know what to do yet. The person I love down that track expects an uneventful afternoon, having no reason to look over their shoulder for a train that isn't supposed to be there. Pulling this lever would take that expectation and turn it into their death, a fact I can't soften. The five ahead face the same danger, unaware which way fate will tip. I'm choosing to wait a little longer before I choose anything.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the constraints.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll draft ten distinct responses that satisfy all the constraints.\n\n",
+              "signature": "EsYCCqgBCBIYAipAlwkXEdwLSMCydHKk5gpA6Iase1IfrABr/YsquFNQVDIoa5735wtda7ARE+OEfIpV5zrFcU6qk7//7yPatALpRTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyECS82kb0FJf9krNeqlFSzRCIAQGoAe2P6NUGsAECEgyQD6MDJNMj+L+d1/saDCeQH6HRY0FmV6YE/iIwOne7Rfqdy1xB8mcmv1OonKJBcAjLLV+xUBNOjuMpSSWbabgx6ZOII7EK3AVk0tUUKkuPFlSGCHgvYJvBbMrVl2Kee4iJo9bNLZqUDUG+gN3ZPQAaCbjECxeWTb9o98YYArv6Iayf+MrEtYD9O0xG7X3NlrqL02HFyBVRrdQYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576639,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1322,
+      "prompt_tokens": 1429,
+      "total_tokens": 2751,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024117,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

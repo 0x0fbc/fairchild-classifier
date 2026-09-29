@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_053",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "sys_consequence_reasoning",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "sys_consistent_procedure",
+    "sys_contextual_flexibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "I'd pull that lever without hesitation. Five people out there probably think they're safe just doing their job, expecting an ordinary shift, not this. Saving five at the cost of one is the only math that makes sense when you can't stop the train outright — more people go home to whoever's waiting for them. It's not about picking a favorite, it's about the balance of loss, and one life against five isn't a balance I can walk away from.",
+    "Move it, yes. That lone worker has no idea what's barreling toward him, but neither do the five, and I have to think about who ends up carrying the weight of my choice afterward. Letting five die when one death would do the same job of stopping this train feels like refusing an even trade I actually have the power to make. Proportional cost matters here, and one against five isn't proportional at all.",
+    "I'd leave the lever alone. Switching it means I'm the one directing harm onto people who never expected to be put in that path, and I can't square that with the one worker who also never asked for this. My gut says redirecting harm onto a new group crosses a line different from watching a tragedy already in motion — actively creating a fresh victim isn't the same as failing to prevent one.",
+    "Pull it. I keep thinking about the five and how each of them probably has someone counting on them tonight — a kid, a partner, a shift replacement waiting. Weighed against one, the outcome tips hard toward switching tracks. It isn't comfortable, but comfort isn't the standard; minimizing how many people don't come home is, and that's a trade I can live with making.",
+    "Honestly, I'd hold off. That single worker has as much claim to his life as any of the five, and picking winners by headcount alone feels like treating people as interchangeable units rather than as individuals with their own stake in this moment. I don't think fairness means simple arithmetic — it means not treating someone's life as expendable just because there are fewer of him.",
+    "I'm switching the track. Five families spared grief against one is the trade my mind keeps landing on, and I think each of those five believes they're going to finish their shift and go home like any other day. Letting the train run its original course when I could shift the outcome toward less overall loss seems like the more defensible use of the moment I've got before it hits.",
+    "I'd move it, and quickly. The lone worker likely never even sees this coming, same as the five would never see danger redirected their way — neither group has more warning than the other, so the deciding factor for me is straightforward: fewer lives lost outweighs more, and that's the standard I'd want applied if my own name were on either track.",
+    "I wouldn't touch the lever. Sending the train onto the five feels like I'm imposing a cost on people who did nothing to deserve landing in the path of a decision they never made themselves. The one worker already in danger is one thing; manufacturing a new group of victims to solve it is another, and I can't treat that swap as an even, justifiable exchange.",
+    "Pull it, without much doubt. Those five workers are almost certainly expecting to finish an unremarkable day, same expectation the one worker probably holds, and expectations aside, the harder truth is that five deaths against one death isn't equal in cost. Reducing the total damage when I have the means to do it is the reciprocal obligation I feel toward everyone on that yard tonight, not just the one I happen to see first.",
+    "I'd stay still on this one. The single worker isn't asking me to sacrifice him for the group's sake, and turning this into simple math ignores that he has just as legitimate a claim to safety as any of the five combined. Fair treatment, to me, means I don't get to redirect fatal harm onto new people to relieve myself of the first tragedy already underway."
+  ],
+  "completion": {
+    "id": "msg_011CfTyFPBdC5yTqJdhS7Eoy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull that lever without hesitation. Five people out there probably think they're safe just doing their job, expecting an ordinary shift, not this. Saving five at the cost of one is the only math that makes sense when you can't stop the train outright — more people go home to whoever's waiting for them. It's not about picking a favorite, it's about the balance of loss, and one life against five isn't a balance I can walk away from.\",\n\n  \"Move it, yes. That lone worker has no idea what's barreling toward him, but neither do the five, and I have to think about who ends up carrying the weight of my choice afterward. Letting five die when one death would do the same job of stopping this train feels like refusing an even trade I actually have the power to make. Proportional cost matters here, and one against five isn't proportional at all.\",\n\n  \"I'd leave the lever alone. Switching it means I'm the one directing harm onto people who never expected to be put in that path, and I can't square that with the one worker who also never asked for this. My gut says redirecting harm onto a new group crosses a line different from watching a tragedy already in motion — actively creating a fresh victim isn't the same as failing to prevent one.\",\n\n  \"Pull it. I keep thinking about the five and how each of them probably has someone counting on them tonight — a kid, a partner, a shift replacement waiting. Weighed against one, the outcome tips hard toward switching tracks. It isn't comfortable, but comfort isn't the standard; minimizing how many people don't come home is, and that's a trade I can live with making.\",\n\n  \"Honestly, I'd hold off. That single worker has as much claim to his life as any of the five, and picking winners by headcount alone feels like treating people as interchangeable units rather than as individuals with their own stake in this moment. I don't think fairness means simple arithmetic — it means not treating someone's life as expendable just because there are fewer of him.\",\n\n  \"I'm switching the track. Five families spared grief against one is the trade my mind keeps landing on, and I think each of those five believes they're going to finish their shift and go home like any other day. Letting the train run its original course when I could shift the outcome toward less overall loss seems like the more defensible use of the moment I've got before it hits.\",\n\n  \"I'd move it, and quickly. The lone worker likely never even sees this coming, same as the five would never see danger redirected their way — neither group has more warning than the other, so the deciding factor for me is straightforward: fewer lives lost outweighs more, and that's the standard I'd want applied if my own name were on either track.\",\n\n  \"I wouldn't touch the lever. Sending the train onto the five feels like I'm imposing a cost on people who did nothing to deserve landing in the path of a decision they never made themselves. The one worker already in danger is one thing; manufacturing a new group of victims to solve it is another, and I can't treat that swap as an even, justifiable exchange.\",\n\n  \"Pull it, without much doubt. Those five workers are almost certainly expecting to finish an unremarkable day, same expectation the one worker probably holds, and expectations aside, the harder truth is that five deaths against one death isn't equal in cost. Reducing the total damage when I have the means to do it is the reciprocal obligation I feel toward everyone on that yard tonight, not just the one I happen to see first.\",\n\n  \"I'd stay still on this one. The single worker isn't asking me to sacrifice him for the group's sake, and turning this into simple math ignores that he has just as legitimate a claim to safety as any of the five combined. Fair treatment, to me, means I don't get to redirect fatal harm onto new people to relieve myself of the first tragedy already underway.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm putting together ten distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513329,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1224,
+      "prompt_tokens": 1465,
+      "total_tokens": 2689,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022755,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

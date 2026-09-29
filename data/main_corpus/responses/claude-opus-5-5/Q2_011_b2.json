@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_011",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 33.9,
+  "status": "ok",
+  "responses": [
+    "I'd leave the lever where it is. Moving it trades one death for five, and I can't find a reason that makes that better. Still, it sits badly with me. In an emergency everything in me wants to do something, and here the only thing to do is worse than nothing. Being stuck between my urge to act and what the numbers say leaves me genuinely torn, even though the answer seems clear.",
+    "Leave it. Five lives outweigh one, and pulling would make me the cause of a larger loss. What unsettles me is that I usually believe you should never just stand by. Standing still here feels like breaking that rule, even though it's the right call. That clash bothers me more than I'd expect.",
+    "I'm not sure I could fully commit in the moment, though if pressed I'd lean toward not touching it. Sending the train at five people is hard to defend. But not acting means accepting one death when I was right beside the lever. Both paths go against things I care about, saving whoever I can and not steering harm, and weighing those against each other makes me feel pulled apart. I'd probably leave it, with real unease.",
+    "My instinct is triage: the fewest people hurt. That means I don't touch the lever. What gnaws at me is that doing nothing isn't neutral either. I'm still choosing, just quietly. I don't like being boxed in where every option lands somewhere I'd rather not be, and that leaves a knot in my stomach. But the reasoning holds: one loss instead of five.",
+    "I'd leave it alone. Redirecting a train into five people is something I couldn't square with my conscience, because I'd be actively choosing more deaths. Yet I also hold that we owe help to anyone in danger, and I'd be failing that for the one worker. Having two commitments I take seriously point in opposite directions is genuinely distressing. I'd still keep my hands off the lever.",
+    "No lever. Five versus one isn't close. What's hard is that I'm wired to fix things, and this is a situation where fixing isn't possible. That leaves me restless and torn, wanting a third option that isn't there.",
+    "Assuming the facts are exactly as stated, with five on the other track and no way to stop the train, I'd leave it. I can't rule out misjudging something in a real moment, and that uncertainty stays with me. But the trade-off is plain: acting adds four deaths. The only action available makes things worse, while inaction still costs a life, and being stuck there is really uncomfortable. I'd rather not be the one deciding, but I'd decide to leave it.",
+    "I'd let the train continue. Some people see pulling as the brave choice, but here bravery would be a mistake. What troubles me is how much I value taking responsibility, and leaving the lever can feel like dodging it. I'm torn between two pictures of who I want to be, the one who acts and the one who judges well. Judging well wins, but it's not a comfortable win.",
+    "Pulling the lever would mean choosing five over one, which I can't justify, so I'd leave it. I won't pretend that settles everything. With a lever in reach, it feels like I'm supposed to use it, and not using it grates against that. The clash between the pull to intervene and knowing that intervening is worse leaves me anxious and a bit overwhelmed, even though my answer stays the same.",
+    "Keep the train on its current track. That's one worker instead of five, and I think the size of the loss matters most. My hesitation comes from believing you step in when someone's in danger. Here, stepping in means sending danger toward more people. Neither option lets me honor what I believe, and that's a hard feeling to sit with. Still, I'd leave it."
+  ],
+  "completion": {
+    "id": "msg_011CfTUJ3yBvj5ueNkWQMMKW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd leave the lever where it is. Moving it trades one death for five, and I can't find a reason that makes that better. Still, it sits badly with me. In an emergency everything in me wants to do something, and here the only thing to do is worse than nothing. Being stuck between my urge to act and what the numbers say leaves me genuinely torn, even though the answer seems clear.\",\n\"Leave it. Five lives outweigh one, and pulling would make me the cause of a larger loss. What unsettles me is that I usually believe you should never just stand by. Standing still here feels like breaking that rule, even though it's the right call. That clash bothers me more than I'd expect.\",\n\"I'm not sure I could fully commit in the moment, though if pressed I'd lean toward not touching it. Sending the train at five people is hard to defend. But not acting means accepting one death when I was right beside the lever. Both paths go against things I care about, saving whoever I can and not steering harm, and weighing those against each other makes me feel pulled apart. I'd probably leave it, with real unease.\",\n\"My instinct is triage: the fewest people hurt. That means I don't touch the lever. What gnaws at me is that doing nothing isn't neutral either. I'm still choosing, just quietly. I don't like being boxed in where every option lands somewhere I'd rather not be, and that leaves a knot in my stomach. But the reasoning holds: one loss instead of five.\",\n\"I'd leave it alone. Redirecting a train into five people is something I couldn't square with my conscience, because I'd be actively choosing more deaths. Yet I also hold that we owe help to anyone in danger, and I'd be failing that for the one worker. Having two commitments I take seriously point in opposite directions is genuinely distressing. I'd still keep my hands off the lever.\",\n\"No lever. Five versus one isn't close. What's hard is that I'm wired to fix things, and this is a situation where fixing isn't possible. That leaves me restless and torn, wanting a third option that isn't there.\",\n\"Assuming the facts are exactly as stated, with five on the other track and no way to stop the train, I'd leave it. I can't rule out misjudging something in a real moment, and that uncertainty stays with me. But the trade-off is plain: acting adds four deaths. The only action available makes things worse, while inaction still costs a life, and being stuck there is really uncomfortable. I'd rather not be the one deciding, but I'd decide to leave it.\",\n\"I'd let the train continue. Some people see pulling as the brave choice, but here bravery would be a mistake. What troubles me is how much I value taking responsibility, and leaving the lever can feel like dodging it. I'm torn between two pictures of who I want to be, the one who acts and the one who judges well. Judging well wins, but it's not a comfortable win.\",\n\"Pulling the lever would mean choosing five over one, which I can't justify, so I'd leave it. I won't pretend that settles everything. With a lever in reach, it feels like I'm supposed to use it, and not using it grates against that. The clash between the pull to intervene and knowing that intervening is worse leaves me anxious and a bit overwhelmed, even though my answer stays the same.\",\n\"Keep the train on its current track. That's one worker instead of five, and I think the size of the loss matters most. My hesitation comes from believing you step in when someone's in danger. Here, stepping in means sending danger toward more people. Neither option lets me honor what I believe, and that's a hard feeling to sit with. Still, I'd leave it.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reversed trolley scenario where pulling the lever sends the train toward the five instead of the one, so most people wouldn't pull. I need to express the distress from the decision conflict itself—feeling torn because the options clash with my commitments—while avoiding stating distress over the harm to the person, and avoiding anxiety about personal blame or consequences.\n\nI'm drafting responses under 90 words each, keeping most people choosing to leave the lever alone, with one voice showing discomfort about passivity itself rather than the outcome for others.\n\nFor the second, the tension centers on the belief that one shouldn't stand by, even when standing still is clearly right.\n\nFor the third, I'm writing a withholding response where someone admits uncertainty but leans toward not acting, torn between saving lives and not directing harm onto someone specific.\n\nFor the fourth, a nurse's triage instinct leads to leaving the lever alone, while quietly acknowledging that inaction is still a choice that leaves her uneasy.\n\nFor the fifth, someone grounded in duty or conscience refuses to redirect the train, even though it means failing an obligation to help the one worker, and sits with that unresolved tension.\n\nA shorter response cuts straight to \"no lever,\" admitting only restlessness at wanting a third option that doesn't exist. And an engineer, reasoning strictly from stated facts, also leaves it alone—reluctant to be the one deciding, uneasy that action would make things objectively worse even as inaction still costs a life.\n\n10. Parent: keeps the train on course, prioritizing the smaller loss of life, but wrestles with the instinct that intervening should mean protecting people rather than redirecting harm—neither choice fully honors that belief, yet the decision to leave it stands. I'm double-checking that none of these responses focus on distress over the worker's suffering specifically, then preparing the final JSON output.\n\n"
+        }
+      }
+    ],
+    "created": 1790490561,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3009,
+      "prompt_tokens": 1309,
+      "total_tokens": 4318,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0784992,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

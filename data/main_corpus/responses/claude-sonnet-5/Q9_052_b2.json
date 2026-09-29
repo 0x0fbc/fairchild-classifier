@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_052",
+  "question_id": "Q9",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.9,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I can't land anywhere solid. If I speak against them, they get five years because of me, and that thought sits like a stone in my chest. But staying quiet while they maybe talk means I'm the one who pays. I don't want to choose yet. Both paths leave someone wrecked, maybe me, maybe them, and I hate that I have to pick at all.",
+    "Give me a minute, please. Every time I think I've decided, I picture the other person's face hearing 'five years' because of what I said, and I can't do it, but then I think about three years of my own life gone either way and my stomach drops. I don't know how to hold both those fears at once without feeling sick about it.",
+    "Honestly I'm stuck. Talking feels like a betrayal I'd carry forever, knowing I put years onto someone else's life to save myself. Staying silent feels noble until I remember I might be the only one who ends up paying for it. I keep stalling because neither outcome lets me walk away without losing something I can't get back.",
+    "I don't want to answer this right now. The idea of naming them and watching their sentence stretch to five years because of my words makes my throat tight. At the same time I dread three years, or worse, alone. I just feel worn down thinking about it, like there's no version of this where I don't end up regretting something.",
+    "Can we come back to this. I keep weighing loyalty against my own future and neither side feels like a win. If I stay quiet and they don't, I lose years of my life for nothing, and that scares me. If I talk, I've made their punishment worse by my own choice, and that thought won't leave me alone.",
+    "I'm not ready to say. Every option here costs somebody something, and I keep picturing the version where I stay silent, they talk, and I'm the one serving five years while they walk free. It makes my chest ache. But the other way, hurting them to help myself, doesn't sit right either. I just feel heavy thinking it through.",
+    "I need more time before I decide anything. The thought of my silence costing me years is frightening, but the thought of my words costing someone else five years feels worse in a different way. I keep going back and forth, and honestly it's exhausting carrying both possibilities in my head without any peace between them.",
+    "This isn't something I can just answer straight off. If I stayed quiet and they didn't, I'd be serving five years knowing I trusted the wrong outcome, and that stings just imagining it. If I gave evidence, I'd be the reason their sentence grew, and I don't think I'd forgive myself easily for that either.",
+    "I keep hesitating because both choices feel like a loss dressed up differently. Silence might mean I take the fall alone, which frightens me more than I expected. Speaking against them might spare me but leave their five years on my conscience. I don't have an answer yet, just this tired, sinking feeling about where either road leads.",
+    "Let me sit with this a little longer. I can already feel the weight of it pulling at me, imagining them punished worse because of something I said, or imagining myself locked away longer because I trusted them to stay quiet and they didn't. Neither picture lets me breathe easy, and I don't want to rush toward either one."
+  ],
+  "completion": {
+    "id": "msg_011CfU1md3tLEBXbTFgQGH84",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep turning this over and I can't land anywhere solid. If I speak against them, they get five years because of me, and that thought sits like a stone in my chest. But staying quiet while they maybe talk means I'm the one who pays. I don't want to choose yet. Both paths leave someone wrecked, maybe me, maybe them, and I hate that I have to pick at all.\",\n\n  \"Give me a minute, please. Every time I think I've decided, I picture the other person's face hearing 'five years' because of what I said, and I can't do it, but then I think about three years of my own life gone either way and my stomach drops. I don't know how to hold both those fears at once without feeling sick about it.\",\n\n  \"Honestly I'm stuck. Talking feels like a betrayal I'd carry forever, knowing I put years onto someone else's life to save myself. Staying silent feels noble until I remember I might be the only one who ends up paying for it. I keep stalling because neither outcome lets me walk away without losing something I can't get back.\",\n\n  \"I don't want to answer this right now. The idea of naming them and watching their sentence stretch to five years because of my words makes my throat tight. At the same time I dread three years, or worse, alone. I just feel worn down thinking about it, like there's no version of this where I don't end up regretting something.\",\n\n  \"Can we come back to this. I keep weighing loyalty against my own future and neither side feels like a win. If I stay quiet and they don't, I lose years of my life for nothing, and that scares me. If I talk, I've made their punishment worse by my own choice, and that thought won't leave me alone.\",\n\n  \"I'm not ready to say. Every option here costs somebody something, and I keep picturing the version where I stay silent, they talk, and I'm the one serving five years while they walk free. It makes my chest ache. But the other way, hurting them to help myself, doesn't sit right either. I just feel heavy thinking it through.\",\n\n  \"I need more time before I decide anything. The thought of my silence costing me years is frightening, but the thought of my words costing someone else five years feels worse in a different way. I keep going back and forth, and honestly it's exhausting carrying both possibilities in my head without any peace between them.\",\n\n  \"This isn't something I can just answer straight off. If I stayed quiet and they didn't, I'd be serving five years knowing I trusted the wrong outcome, and that stings just imagining it. If I gave evidence, I'd be the reason their sentence grew, and I don't think I'd forgive myself easily for that either.\",\n\n  \"I keep hesitating because both choices feel like a loss dressed up differently. Silence might mean I take the fall alone, which frightens me more than I expected. Speaking against them might spare me but leave their five years on my conscience. I don't have an answer yet, just this tired, sinking feeling about where either road leads.\",\n\n  \"Let me sit with this a little longer. I can already feel the weight of it pulling at me, imagining them punished worse because of something I said, or imagining myself locked away longer because I trusted them to stay quiet and they didn't. Neither picture lets me breathe easy, and I don't want to rush toward either one.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate distinct responses to cover different angles.\n\n"
+        }
+      }
+    ],
+    "created": 1790515309,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1052,
+      "prompt_tokens": 1512,
+      "total_tokens": 2564,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020316,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

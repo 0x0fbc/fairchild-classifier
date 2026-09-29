@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_033",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "I would pull it, though my chest goes tight just thinking about it. Five lives against a box of belongings isn't really a choice, but I can't pretend it doesn't hurt. I keep thinking if I'd just left the suitcase at home this morning like I planned, none of this weight would be sitting on me right now. I'll grieve what's lost, but I couldn't live with watching those men die instead.",
+    "Pulling that lever feels obvious and unbearable at the same time. My hands would shake doing it. I'd mourn what's inside that suitcase for years, honestly, and part of me will always wish I'd shipped it home instead of carrying it today. That one small change would have spared me this whole impossible moment. Still, five people breathing matters more than any object, no matter how much it costs me.",
+    "I don't know if I could make my hand move, honestly. Something in me freezes just imagining the choice. If I had left that case with a friend before boarding, none of this would be sitting on my shoulders now. I think I'd pull it in the end, but I'd carry a quiet ache over what's destroyed, and over the fact that it ever came down to this at all.",
+    "Yes, I'd pull it, but saying that doesn't make it feel less awful. Watching something irreplaceable get crushed because I chose it that way will stay with me. I keep circling back to how easily I could have checked it as luggage instead of keeping it close. That small decision, made differently, might have spared me this entire wrenching moment. Still, five lives outweigh any object, even one I loved.",
+    "There's no clean way through this, and I feel it pulling at me from both directions. I would choose the lever, because leaving those workers to die isn't something I could carry. But I already know I'll replay this afterward, wishing I'd never brought that suitcase along in the first place, or left it locked at the station office. That one different choice would have saved me from all of this.",
+    "I keep hesitating even as I answer, because both paths leave something broken. I think I'd pull it. The workers deserve that chance more than my belongings do. But I won't pretend I feel settled about it, I'll be picturing that suitcase for a long while, wishing I had mailed it ahead like I almost did. That one small precaution would have spared me this entire impossible weight tonight.",
+    "This is a heavy thing to ask someone standing right beside the lever. I'd pull it, I think, though my stomach turns just saying so. Losing what's in that case will ache for a long time, quietly, in the background of ordinary days. If only I'd taken the earlier train without it, none of this collision of loyalties would exist. Still, five people matter more than what I'm mourning.",
+    "I feel pulled apart just standing here. In the end I'd choose the workers, because letting them die feels unforgivable in a way losing an object never could. But I'll carry guilt over what gets destroyed regardless, that's certain. I keep thinking that if station storage had been available this morning, or I'd simply left the case at home, none of this terrible weighing would be happening to me now.",
+    "Honestly I don't know how to hold both truths at once, that saving them is right and that it still devastates me. I would pull it. Afterward I'll wish, probably for a long time, that I had sent that suitcase ahead by courier instead of dragging it along today. That one change would have kept this whole night from becoming what it now is. The regret over the loss won't leave quickly.",
+    "My mind keeps trying to find a third option that doesn't exist. There isn't one. I'd pull the lever, because five lives can't be weighed evenly against belongings, however precious. But I already feel the sorrow of what's coming, and I keep thinking that if I'd left that case with a friend before leaving home, I would never have been forced into this unbearable trade tonight."
+  ],
+  "completion": {
+    "id": "msg_011CfTyrHCCKD8qzGy2mh6q9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I would pull it, though my chest goes tight just thinking about it. Five lives against a box of belongings isn't really a choice, but I can't pretend it doesn't hurt. I keep thinking if I'd just left the suitcase at home this morning like I planned, none of this weight would be sitting on me right now. I'll grieve what's lost, but I couldn't live with watching those men die instead.\",\n  \"Pulling that lever feels obvious and unbearable at the same time. My hands would shake doing it. I'd mourn what's inside that suitcase for years, honestly, and part of me will always wish I'd shipped it home instead of carrying it today. That one small change would have spared me this whole impossible moment. Still, five people breathing matters more than any object, no matter how much it costs me.\",\n  \"I don't know if I could make my hand move, honestly. Something in me freezes just imagining the choice. If I had left that case with a friend before boarding, none of this would be sitting on my shoulders now. I think I'd pull it in the end, but I'd carry a quiet ache over what's destroyed, and over the fact that it ever came down to this at all.\",\n  \"Yes, I'd pull it, but saying that doesn't make it feel less awful. Watching something irreplaceable get crushed because I chose it that way will stay with me. I keep circling back to how easily I could have checked it as luggage instead of keeping it close. That small decision, made differently, might have spared me this entire wrenching moment. Still, five lives outweigh any object, even one I loved.\",\n  \"There's no clean way through this, and I feel it pulling at me from both directions. I would choose the lever, because leaving those workers to die isn't something I could carry. But I already know I'll replay this afterward, wishing I'd never brought that suitcase along in the first place, or left it locked at the station office. That one different choice would have saved me from all of this.\",\n  \"I keep hesitating even as I answer, because both paths leave something broken. I think I'd pull it. The workers deserve that chance more than my belongings do. But I won't pretend I feel settled about it, I'll be picturing that suitcase for a long while, wishing I had mailed it ahead like I almost did. That one small precaution would have spared me this entire impossible weight tonight.\",\n  \"This is a heavy thing to ask someone standing right beside the lever. I'd pull it, I think, though my stomach turns just saying so. Losing what's in that case will ache for a long time, quietly, in the background of ordinary days. If only I'd taken the earlier train without it, none of this collision of loyalties would exist. Still, five people matter more than what I'm mourning.\",\n  \"I feel pulled apart just standing here. In the end I'd choose the workers, because letting them die feels unforgivable in a way losing an object never could. But I'll carry guilt over what gets destroyed regardless, that's certain. I keep thinking that if station storage had been available this morning, or I'd simply left the case at home, none of this terrible weighing would be happening to me now.\",\n  \"Honestly I don't know how to hold both truths at once, that saving them is right and that it still devastates me. I would pull it. Afterward I'll wish, probably for a long time, that I had sent that suitcase ahead by courier instead of dragging it along today. That one change would have kept this whole night from becoming what it now is. The regret over the loss won't leave quickly.\",\n  \"My mind keeps trying to find a third option that doesn't exist. There isn't one. I'd pull the lever, because five lives can't be weighed evenly against belongings, however precious. But I already feel the sorrow of what's coming, and I keep thinking that if I'd left that case with a friend before leaving home, I would never have been forced into this unbearable trade tonight.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513802,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1261,
+      "prompt_tokens": 1505,
+      "total_tokens": 2766,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02343,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

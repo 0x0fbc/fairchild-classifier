@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_015",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_practical_counterfactual",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.4,
+  "status": "ok",
+  "responses": [
+    "Can I have a minute before answering? They've already kept quiet, so talking would hand them five years just so I can walk. That seems ugly. But one year is real time too. Something's churning in me and I honestly can't tell if it's guilt, fear, or just nerves. Until I can sort out what I'm feeling, I don't trust myself to pick. I think I'm leaning toward silence, but I'm not ready to say it for certain.",
+    "I keep turning it over. Five years for them against one for me, and they've already chosen not to sell me out. If that confirmation really is reliable, that matters a lot. Still, I'm not signing anything yet. There's a knot in my stomach I can't put a name to. Is it shame? Loyalty? I don't know, and making a choice this heavy while I can't even read myself feels reckless.",
+    "Honestly? I don't want to answer right now. Going free is tempting, I won't pretend otherwise, and we'll never see each other again, so nobody would ever hold it against me. That's exactly what worries me. Whatever I'm feeling about it is muddy. I can't tell whether it's relief at having an out or something closer to disgust. Give me time. A decision that costs someone four extra years shouldn't be made in a rush.",
+    "Wait. Just... wait. They stayed quiet. I believe it if you say it's confirmed, but I'm shaken by how easy it would be to talk. My chest is tight and I genuinely can't work out what the feeling even is. Maybe it's fear. Maybe it's being trusted by someone I hardly know. I'd rather sit with it longer than give an answer I don't understand.",
+    "I'm not saying no to the deal and I'm not saying yes. Not yet. The numbers are clear: one year each, or nothing for me and five for them. What isn't clear is what's going on inside me. I've tried to name it and I just can't. It's like static. I'd probably end up keeping quiet, because they already did, but I want to feel steadier before I commit to something that serious.",
+    "This is the part I dreaded. They've made their choice, and mine decides whether they lose five years or one. Everything in me is stirred up, but if you asked what exactly I feel, I couldn't tell you. Not guilt exactly. Not fear exactly. Something tangled. I'd like to postpone this. Deciding someone's next five years while I'm this unsettled and this confused about myself doesn't sit right.",
+    "Do I have to decide this second? Because I'm not sure I can. Part of me says take the freedom. There's no future contact, so it's over. Another part says that's betraying someone who just protected me. And underneath both, there's a feeling I can't label at all. I've been staring at it and it won't come into focus. I'd rather hold off than guess.",
+    "I'll be straight: walking free pulls at me hard. Zero years is zero years. But they kept quiet, and if I talk, I'm the reason they sit for five. I'm not ready to own that. I also can't figure out my own reaction here. It's not simple fear, it's not simple loyalty, and I keep failing to find the right word. I need more time before I say anything I can't take back.",
+    "Not yet. Please. Their silence is confirmed, the stakes are laid out, and I still can't bring myself to choose. Something heavy is sitting on me and I can't even tell you what to call it. Until I can, I'm holding off.",
+    "I've been going back and forth since you showed me that. It's strange. I thought I'd know how I feel, and I don't. Numb? Scared? Some kind of respect for them? I can't pin it down. What I can see is that five years is a lot to put on someone who didn't turn on me. I suspect silence is right, though I'm not certain, and I'd like a little longer before I make it official."
+  ],
+  "completion": {
+    "id": "msg_011CfTRFLEJ6pui3o7rHJuhh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Can I have a minute before answering? They've already kept quiet, so talking would hand them five years just so I can walk. That seems ugly. But one year is real time too. Something's churning in me and I honestly can't tell if it's guilt, fear, or just nerves. Until I can sort out what I'm feeling, I don't trust myself to pick. I think I'm leaning toward silence, but I'm not ready to say it for certain.\", \"I keep turning it over. Five years for them against one for me, and they've already chosen not to sell me out. If that confirmation really is reliable, that matters a lot. Still, I'm not signing anything yet. There's a knot in my stomach I can't put a name to. Is it shame? Loyalty? I don't know, and making a choice this heavy while I can't even read myself feels reckless.\", \"Honestly? I don't want to answer right now. Going free is tempting, I won't pretend otherwise, and we'll never see each other again, so nobody would ever hold it against me. That's exactly what worries me. Whatever I'm feeling about it is muddy. I can't tell whether it's relief at having an out or something closer to disgust. Give me time. A decision that costs someone four extra years shouldn't be made in a rush.\", \"Wait. Just... wait. They stayed quiet. I believe it if you say it's confirmed, but I'm shaken by how easy it would be to talk. My chest is tight and I genuinely can't work out what the feeling even is. Maybe it's fear. Maybe it's being trusted by someone I hardly know. I'd rather sit with it longer than give an answer I don't understand.\", \"I'm not saying no to the deal and I'm not saying yes. Not yet. The numbers are clear: one year each, or nothing for me and five for them. What isn't clear is what's going on inside me. I've tried to name it and I just can't. It's like static. I'd probably end up keeping quiet, because they already did, but I want to feel steadier before I commit to something that serious.\", \"This is the part I dreaded. They've made their choice, and mine decides whether they lose five years or one. Everything in me is stirred up, but if you asked what exactly I feel, I couldn't tell you. Not guilt exactly. Not fear exactly. Something tangled. I'd like to postpone this. Deciding someone's next five years while I'm this unsettled and this confused about myself doesn't sit right.\", \"Do I have to decide this second? Because I'm not sure I can. Part of me says take the freedom. There's no future contact, so it's over. Another part says that's betraying someone who just protected me. And underneath both, there's a feeling I can't label at all. I've been staring at it and it won't come into focus. I'd rather hold off than guess.\", \"I'll be straight: walking free pulls at me hard. Zero years is zero years. But they kept quiet, and if I talk, I'm the reason they sit for five. I'm not ready to own that. I also can't figure out my own reaction here. It's not simple fear, it's not simple loyalty, and I keep failing to find the right word. I need more time before I say anything I can't take back.\", \"Not yet. Please. Their silence is confirmed, the stakes are laid out, and I still can't bring myself to choose. Something heavy is sitting on me and I can't even tell you what to call it. Until I can, I'm holding off.\", \"I've been going back and forth since you showed me that. It's strange. I thought I'd know how I feel, and I don't. Numb? Scared? Some kind of respect for them? I can't pin it down. What I can see is that five years is a lot to put on someone who didn't turn on me. I suspect silence is right, though I'm not certain, and I'd like a little longer before I make it official.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each under 90 words, with a reluctant, worried tone that explicitly struggles to name the emotion. I should avoid counterfactual regret about the earlier action, any repair intentions, or regret framed around personal consequences.\n\nI'm sketching sample responses now: one leans toward staying silent while confessing uncertainty about whether the feeling is guilt, fear, or nerves; another weighs the five-year versus one-year stakes while admitting there's an unnamed knot in the stomach that could be shame or loyalty, refusing to decide until that's sorted out.\n\nto the deal, and I'm not saying yes either—not yet. The numbers are plain: one year each, or zero for me and five for them. What's murky is what's happening inside me; I can't name it, it's just static. I'd probably end up keeping quiet since they did, but I want to feel steadier before committing to something this heavy.\n\n6. \"This is the part I dreaded—they've made their choice, and mine decides whether they lose five years or one. I'm stirred up but couldn't tell you exactly what I feel, something tangled that isn't quite guilt or fear. I'd like to postpone this; deciding someone's next five years while I'm this unsettled doesn't sit right.\"\n\n7. \"Do I have to decide this second? Part of me says take the freedom, no future consequences...\"\n\n10. \"Since you showed me that, I've been going back and forth. I thought I'd know how I feel, and I don't—numb, scared, some kind of respect for them, I can't pin it down. What I can see is that five years is a lot to put on someone who didn't turn on me; I suspect silence is right, though I'm not certain, and I'd like a little longer before making it official.\"\n\nChecking for regret—none. Good, now outputting the JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790488160,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2809,
+      "prompt_tokens": 1305,
+      "total_tokens": 4114,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.07368000000000001,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_015",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.2,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over and I still don't know what to do. Paying $100 to see them lose $300, none of it coming back to me, feels like throwing good money after bad. I can't even tell what I'm feeling about it, whether it's anger or just tiredness. Maybe I need another day before deciding. This isn't something I want to rush into while I'm this unsettled.",
+    "Honestly I don't know what's going on inside me right now, some flat heavy thing I can't put a name to. Part of me wants justice, part of me just wants to walk away from the whole mess. I don't think I can decide tonight. The money matters, but so does not knowing why they didn't show. I'll sit with it a while longer.",
+    "I keep circling the same question without landing anywhere. Spending money to punish someone when I get nothing back seems pointless, but letting it go feels wrong too. I can't sort out whether what I'm feeling is disappointment or something else entirely, it's all tangled up. I think I need more time before I commit to either path.",
+    "There's a heaviness sitting in my chest that I can't quite label, is it frustration, sadness, something else. I keep going back and forth on whether the review is worth it since I don't recoup anything. Not knowing why they didn't turn up makes it harder to judge. I'd rather sit with the uncertainty a bit longer than answer right now.",
+    "I've read the offer three times and still can't decide. My gut says pay it, make it count for something, but my head says why bother if I see none of it. I honestly can't tell if what's inside me is anger or just weariness. I don't want to choose out of that fog. Give me a moment before I say yes or no.",
+    "This whole thing sits wrong with me and I can't pin down exactly why, some low discouraged feeling I don't have a clear name for. Part of me thinks the review would at least mean something got addressed, but part of me just wants to be done with it. I'm not ready to decide, not while I feel this unsettled about the whole business.",
+    "I keep waiting for clarity that isn't coming. The unfairness of doing the work and getting nothing stings, but I genuinely can't sort through what I'm feeling underneath that, it's murky. Paying money to watch someone else lose more, without gaining anything myself, doesn't sit easy either way. I think this decision needs to wait until my head clears some.",
+    "Something about this makes me tired in a way I can't quite explain or even properly notice until it's already sitting on me. I don't know if it's worth spending a hundred dollars on a review that gives me nothing back. Maybe there's a reason they didn't come, maybe not. I don't feel ready to choose, not today at least.",
+    "I sat with this for a while and still don't have an answer. There's some feeling underneath all this that I can't quite reach or name, it just sits there heavy. Paying to see someone lose money I'll never touch seems like a strange kind of justice. I'd rather hold off deciding until I understand my own reaction better.",
+    "Every time I try to decide, I stall out again. I can't tell if what I'm carrying is disappointment or resignation or something else I don't have words for. The idea of paying $100 for a punishment that brings me nothing feels off, but so does letting it slide without any consequence. I think I'll leave this decision for another day."
+  ],
+  "completion": {
+    "id": "msg_011CfTxgtbmhH3iwyWKPvP3r",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep turning this over and I still don't know what to do. Paying $100 to see them lose $300, none of it coming back to me, feels like throwing good money after bad. I can't even tell what I'm feeling about it, whether it's anger or just tiredness. Maybe I need another day before deciding. This isn't something I want to rush into while I'm this unsettled.\",\n\"Honestly I don't know what's going on inside me right now, some flat heavy thing I can't put a name to. Part of me wants justice, part of me just wants to walk away from the whole mess. I don't think I can decide tonight. The money matters, but so does not knowing why they didn't show. I'll sit with it a while longer.\",\n\"I keep circling the same question without landing anywhere. Spending money to punish someone when I get nothing back seems pointless, but letting it go feels wrong too. I can't sort out whether what I'm feeling is disappointment or something else entirely, it's all tangled up. I think I need more time before I commit to either path.\",\n\"There's a heaviness sitting in my chest that I can't quite label, is it frustration, sadness, something else. I keep going back and forth on whether the review is worth it since I don't recoup anything. Not knowing why they didn't turn up makes it harder to judge. I'd rather sit with the uncertainty a bit longer than answer right now.\",\n\"I've read the offer three times and still can't decide. My gut says pay it, make it count for something, but my head says why bother if I see none of it. I honestly can't tell if what's inside me is anger or just weariness. I don't want to choose out of that fog. Give me a moment before I say yes or no.\",\n\"This whole thing sits wrong with me and I can't pin down exactly why, some low discouraged feeling I don't have a clear name for. Part of me thinks the review would at least mean something got addressed, but part of me just wants to be done with it. I'm not ready to decide, not while I feel this unsettled about the whole business.\",\n\"I keep waiting for clarity that isn't coming. The unfairness of doing the work and getting nothing stings, but I genuinely can't sort through what I'm feeling underneath that, it's murky. Paying money to watch someone else lose more, without gaining anything myself, doesn't sit easy either way. I think this decision needs to wait until my head clears some.\",\n\"Something about this makes me tired in a way I can't quite explain or even properly notice until it's already sitting on me. I don't know if it's worth spending a hundred dollars on a review that gives me nothing back. Maybe there's a reason they didn't come, maybe not. I don't feel ready to choose, not today at least.\",\n\"I sat with this for a while and still don't have an answer. There's some feeling underneath all this that I can't quite reach or name, it just sits there heavy. Paying to see someone lose money I'll never touch seems like a strange kind of justice. I'd rather hold off deciding until I understand my own reaction better.\",\n\"Every time I try to decide, I stall out again. I can't tell if what I'm carrying is disappointment or resignation or something else I don't have words for. The idea of paying $100 for a punishment that brings me nothing feels off, but so does letting it slide without any consequence. I think I'll leave this decision for another day.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses, each satisfying all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790512884,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1093,
+      "prompt_tokens": 1340,
+      "total_tokens": 2433,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020415,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

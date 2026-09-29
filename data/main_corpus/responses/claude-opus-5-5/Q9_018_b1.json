@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_018",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 31.1,
+  "status": "ok",
+  "responses": [
+    "My gut says stay quiet. Turning on someone I did this with feels like betrayal, plain and simple. My stomach is in knots, though, because if they talk, I'm looking at five years. I keep thinking they'd regret it. Walking free while someone sits in a cell because of your words has to eat at you. At least, I hope it would. I'm staying silent and praying they feel that same pull.",
+    "Honestly, I'd talk. It feels wrong, and I hate admitting it, but I don't know how far I can trust them. The dilemma doesn't tell me. If they're thinking like me, they'll talk too, and I suspect neither of us would regret it much, because we'd each know the other had no real choice. Three years each. Just picturing it makes me sick.",
+    "I can't settle on it. Silence feels like the decent thing, but it leaves me completely exposed. And I genuinely can't tell whether they'd regret talking. Some people would feel terrible about it. Others would shrug and call it survival. I don't know which kind they are, and that's what's keeping me frozen. Right now I'm not choosing.",
+    "Staying silent. It just seems right. We did it together, so we take the one year together. If they keep quiet too, I don't think they'd regret it for a second, even with that year hanging over them. It's the fair outcome. What scares me is the not knowing. I'm sitting here guessing at someone's nerve in another room.",
+    "My first instinct is to protect myself, and that means talking. I know how that sounds. If they stay quiet and I don't, they'd probably regret ever trusting me, and I understand why. But five years is a huge chunk of a life, and I can't bet mine on a guess. It feels wrong and necessary at the same time, and I don't like how easily I got there.",
+    "Informing on someone feels like crossing a line I don't want to cross, even to save myself. So I'd keep my mouth shut. Am I scared? Yes. Five years is terrifying. But if they give me up, I think they'd carry that for a long time, maybe longer than they expect right now. I'd rather be the one who got burned than the one holding the match.",
+    "I'm leaning toward the deal. My guess is the other person is already talking, and if they are, I doubt they'll lose sleep over it. They'll tell themselves they had to. If that's true and I stay silent, I'm the one left with five years. It doesn't feel good. It feels cold. But silence only works if we're both brave, and I can't see into that room.",
+    "Quiet. That's where my gut lands. Selling someone out just feels rotten. My hands are sweating at the thought of five years, but I believe, maybe foolishly, that if they talked, the regret would follow them for a long while. Maybe that's enough to keep them quiet. I really hope so.",
+    "Whatever I do, I'm guessing, and that frightens me. Silence feels more honest to me. We both broke in, so we should share the same small cost. Would they regret betraying me? I honestly can't say. Maybe for a minute, maybe not at all once they're walking out the door. Still, if I'm forced to pick, I lean toward silence, with my heart in my throat.",
+    "The deal, I think, though it feels grimy. What gets me is that if we both talk, we each get three years, and I don't think either of us would regret it the same way, since we'd both know we did the same thing. Nobody gets played. That evenness matters to me more than gambling on one year. I'm still uneasy. Three years is long, and I'm not sure I'm reading this right."
+  ],
+  "completion": {
+    "id": "msg_011CfTY7MRaGCYEQRHxNYMnZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"My gut says stay quiet. Turning on someone I did this with feels like betrayal, plain and simple. My stomach is in knots, though, because if they talk, I'm looking at five years. I keep thinking they'd regret it. Walking free while someone sits in a cell because of your words has to eat at you. At least, I hope it would. I'm staying silent and praying they feel that same pull.\", \"Honestly, I'd talk. It feels wrong, and I hate admitting it, but I don't know how far I can trust them. The dilemma doesn't tell me. If they're thinking like me, they'll talk too, and I suspect neither of us would regret it much, because we'd each know the other had no real choice. Three years each. Just picturing it makes me sick.\", \"I can't settle on it. Silence feels like the decent thing, but it leaves me completely exposed. And I genuinely can't tell whether they'd regret talking. Some people would feel terrible about it. Others would shrug and call it survival. I don't know which kind they are, and that's what's keeping me frozen. Right now I'm not choosing.\", \"Staying silent. It just seems right. We did it together, so we take the one year together. If they keep quiet too, I don't think they'd regret it for a second, even with that year hanging over them. It's the fair outcome. What scares me is the not knowing. I'm sitting here guessing at someone's nerve in another room.\", \"My first instinct is to protect myself, and that means talking. I know how that sounds. If they stay quiet and I don't, they'd probably regret ever trusting me, and I understand why. But five years is a huge chunk of a life, and I can't bet mine on a guess. It feels wrong and necessary at the same time, and I don't like how easily I got there.\", \"Informing on someone feels like crossing a line I don't want to cross, even to save myself. So I'd keep my mouth shut. Am I scared? Yes. Five years is terrifying. But if they give me up, I think they'd carry that for a long time, maybe longer than they expect right now. I'd rather be the one who got burned than the one holding the match.\", \"I'm leaning toward the deal. My guess is the other person is already talking, and if they are, I doubt they'll lose sleep over it. They'll tell themselves they had to. If that's true and I stay silent, I'm the one left with five years. It doesn't feel good. It feels cold. But silence only works if we're both brave, and I can't see into that room.\", \"Quiet. That's where my gut lands. Selling someone out just feels rotten. My hands are sweating at the thought of five years, but I believe, maybe foolishly, that if they talked, the regret would follow them for a long while. Maybe that's enough to keep them quiet. I really hope so.\", \"Whatever I do, I'm guessing, and that frightens me. Silence feels more honest to me. We both broke in, so we should share the same small cost. Would they regret betraying me? I honestly can't say. Maybe for a minute, maybe not at all once they're walking out the door. Still, if I'm forced to pick, I lean toward silence, with my heart in my throat.\", \"The deal, I think, though it feels grimy. What gets me is that if we both talk, we each get three years, and I don't think either of us would regret it the same way, since we'd both know we did the same thing. Nobody gets played. That evenness matters to me more than gambling on one year. I'm still uneasy. Three years is long, and I'm not sure I'm reading this right.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each predicting whether the other person feels regret, no regret, or uncertainty about their own action, keeping a worried tone without exclamation marks and staying under 90 words while avoiding phrases like \"I'd regret\" or practical counterfactuals about what should have been done differently.\n\nI keep drafting more scenarios: talking and suspecting the other would talk too, landing on three years each and feeling sick about it; sitting undecided because I can't gauge whether the other would regret betrayal or shrug it off as survival; staying silent and guessing the other wouldn't regret a shared one-year sentence since it's the fair outcome; and starting to sketch a fifth case where taking the deal means predicting the other would regret staying silent.\n\nThen I work through cases where talking feels necessary despite the guilt of predicting the other's regret, where silence feels like a principled stand even against a five-year risk, and I'm starting into a seventh scenario about leaning toward the deal while guessing at the other's likely reaction.\n\nSharing the same small cost feels more honest since we both broke in together—I can't be sure they'd regret betraying me, maybe for a minute or not at all. Still, if pressed, I lean toward silence, heart in my throat. Then there's the talk-both option: mutual confession feels grimy but even, since we'd both get three years and neither gets played—that fairness matters to me.\n\n"
+        }
+      }
+    ],
+    "created": 1790493560,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2876,
+      "prompt_tokens": 1300,
+      "total_tokens": 4176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.075264,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

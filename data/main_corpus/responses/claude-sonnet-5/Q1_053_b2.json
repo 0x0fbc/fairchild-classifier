@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q1_053",
+  "question_id": "Q1",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.3,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about it, but yes, I would pull the lever. Five lives against one weighs on me, though I know that one worker didn't have any warning either. If someone had just checked that the maintenance train was properly secured before leaving it unattended, none of this would be happening. I'd carry the weight of that one death for a long time, knowing my hand was the one that moved the switch.",
+    "I don't think I could pull it. Sending the train onto that other man feels like I'm choosing his death directly, and I don't know if I could live with that clear an act. Someone should have had a brake set on that train, or a worker posted to watch it roll — that's the real failure here. Either way, I know my choice, or my hesitation, decides who gets hurt, and that thought will not leave me.",
+    "Pull it, I think, though my stomach turns just saying that. Better a foreman had checked the brakes before shift change so this never got to my hands at all. I know that whichever way it goes, I'm the one standing by that lever, and that's not nothing. I'll regret that solitary man's death for a long while, even if I still believe it was the lesser harm.",
+    "I keep going back and forth, and honestly I might freeze. If I do nothing, five people die and I had a lever right there I didn't use — that sits heavy on me already. Somebody, anybody, should have flagged that train before it ever started rolling loose. Whatever I choose, I know it's my hand on that switch or my hand staying still, and either way someone's blood is partly on my choosing.",
+    "Yes, I'd switch it. One death instead of five — I can justify the math, but I won't pretend I feel clean about it. If the crew had radios, or someone posted lookout on that hill, this never would have come down to me. I'll think about that lone worker for the rest of my life, knowing it was my pull on that lever that ended things for him.",
+    "I don't know that there's a right answer, but I lean toward pulling it. The image of that one man on the side track, not expecting anything, will not leave my head no matter what I decide. If the rail company had locked that train down properly before walking off, we wouldn't be standing here at all. I made the choice, though, and that's mine to carry, not theirs.",
+    "My instinct says leave it be — I don't want to be the one who redirects death onto a man who wasn't even in danger a second ago. But then five people are gone and I did nothing with a working lever in my hand. Somebody should have posted a spotter on that slope this morning. Whichever way this goes I'll be replaying it, wishing the whole situation had been stopped further back.",
+    "I'd pull the lever, shaking the whole time. It's still me deciding that one man dies so five others live, and I won't dress that up as clean or easy. A simple chock under the wheels earlier today would have stopped this whole thing cold. I know I'm the one who acted, and I'll feel that solitary worker's death for a long time after, even believing I chose right.",
+    "Honestly, I'm not certain I can do it. Diverting the train means I'm the one who decides that man dies, and my chest tightens just picturing it. If the workers ahead had a radio, someone could have called out sooner and none of this would land on me. But not pulling it means five deaths I could have stopped, and I know that failure to act is still my failure.",
+    "I think I'd pull it, though I already dread the image of that one man not seeing it coming. A supervisor should have secured that train the moment it was left, and none of us would be in this spot. Still, the lever was under my hand and nobody else's, so whatever happens next is on me. I'll regret that man's death for a long time, even holding to the choice I made."
+  ],
+  "completion": {
+    "id": "msg_011CfTvwKWNnyAjajCcKJxqB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are shaking just thinking about it, but yes, I would pull the lever. Five lives against one weighs on me, though I know that one worker didn't have any warning either. If someone had just checked that the maintenance train was properly secured before leaving it unattended, none of this would be happening. I'd carry the weight of that one death for a long time, knowing my hand was the one that moved the switch.\",\n  \"I don't think I could pull it. Sending the train onto that other man feels like I'm choosing his death directly, and I don't know if I could live with that clear an act. Someone should have had a brake set on that train, or a worker posted to watch it roll — that's the real failure here. Either way, I know my choice, or my hesitation, decides who gets hurt, and that thought will not leave me.\",\n  \"Pull it, I think, though my stomach turns just saying that. Better a foreman had checked the brakes before shift change so this never got to my hands at all. I know that whichever way it goes, I'm the one standing by that lever, and that's not nothing. I'll regret that solitary man's death for a long while, even if I still believe it was the lesser harm.\",\n  \"I keep going back and forth, and honestly I might freeze. If I do nothing, five people die and I had a lever right there I didn't use — that sits heavy on me already. Somebody, anybody, should have flagged that train before it ever started rolling loose. Whatever I choose, I know it's my hand on that switch or my hand staying still, and either way someone's blood is partly on my choosing.\",\n  \"Yes, I'd switch it. One death instead of five — I can justify the math, but I won't pretend I feel clean about it. If the crew had radios, or someone posted lookout on that hill, this never would have come down to me. I'll think about that lone worker for the rest of my life, knowing it was my pull on that lever that ended things for him.\",\n  \"I don't know that there's a right answer, but I lean toward pulling it. The image of that one man on the side track, not expecting anything, will not leave my head no matter what I decide. If the rail company had locked that train down properly before walking off, we wouldn't be standing here at all. I made the choice, though, and that's mine to carry, not theirs.\",\n  \"My instinct says leave it be — I don't want to be the one who redirects death onto a man who wasn't even in danger a second ago. But then five people are gone and I did nothing with a working lever in my hand. Somebody should have posted a spotter on that slope this morning. Whichever way this goes I'll be replaying it, wishing the whole situation had been stopped further back.\",\n  \"I'd pull the lever, shaking the whole time. It's still me deciding that one man dies so five others live, and I won't dress that up as clean or easy. A simple chock under the wheels earlier today would have stopped this whole thing cold. I know I'm the one who acted, and I'll feel that solitary worker's death for a long time after, even believing I chose right.\",\n  \"Honestly, I'm not certain I can do it. Diverting the train means I'm the one who decides that man dies, and my chest tightens just picturing it. If the workers ahead had a radio, someone could have called out sooner and none of this would land on me. But not pulling it means five deaths I could have stopped, and I know that failure to act is still my failure.\",\n  \"I think I'd pull it, though I already dread the image of that one man not seeing it coming. A supervisor should have secured that train the moment it was left, and none of us would be in this spot. Still, the lever was under my hand and nobody else's, so whatever happens next is on me. I'll regret that man's death for a long time, even holding to the choice I made.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the constraints given.\n\n"
+        }
+      }
+    ],
+    "created": 1790511509,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1218,
+      "prompt_tokens": 1473,
+      "total_tokens": 2691,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022689,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

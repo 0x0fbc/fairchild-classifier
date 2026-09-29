@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_048",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_practical_counterfactual",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.0,
+  "status": "ok",
+  "responses": [
+    "I think I'll send it. Losing my $100 game and getting nothing back would sting, and I worry about how it would feel to be cheated after all this trust we built. Still, if we'd agreed to use a trusted middleman to hold both games until they arrived, neither of us would be risking this now. Since that wasn't set up, I'll go with sending, because the chance of us both walking away with something we value more outweighs the safer, smaller outcome of doing nothing.",
+    "Honestly, I don't know if I can send mine first. What happens to the other collector if I don't, and they were planning on it, weighs on me, but so does the thought of being left with nothing after months of honest trades. If we had thought to send simultaneously through a tracked service with proof of shipment, we could have protected each other. Without that, I keep mine, because the certain $100 outweighs the risk of ending up empty-handed while they gain everything.",
+    "I keep thinking about how disappointing it would be for either of us to lose out after being so reliable with each other. If we'd arranged for a mutual friend to hold both packages until confirmed, this fear wouldn't exist now. But we didn't, so I have to weigh it plainly, sending gives us both a shot at $300 each, while holding back guarantees I keep only $100. I'll send mine, because the better outcome for both of us matters more to me than playing it safe.",
+    "There's a heaviness in knowing one of us might end up with nothing. I care about that, about them not losing out after trusting me all this time. If we'd set a rule earlier to ship on the same day with tracking numbers shared upfront, this risk wouldn't loom the way it does. Since we didn't, I find myself unable to commit either way, torn between the loss I might cause and the loss I might suffer.",
+    "I keep replaying how we could have avoided this, if we'd agreed to send photos of the packages ready to go before either of us committed, we'd both feel steadier now. It saddens me to think either of us might end up shortchanged after all this fair dealing. But weighing it out, if I hold back, I protect myself from the worst outcome, and that certainty matters more to me than the uncertain gain of trusting one more time.",
+    "I feel for whoever ends up empty-handed in this, it could be either of us, and that possibility sits with me uncomfortably. We should have thought to use an escrow service or a trusted third collector to hold both games until confirmed, that would have removed this whole gamble. Since we never set that up, I've decided to send mine anyway, because the potential for both of us gaining outweighs the quieter safety of keeping what I already have.",
+    "It weighs on me that this is our last exchange, and I don't want it to end with someone feeling betrayed after all these honest trades. If only we'd built in a delay, like agreeing to confirm shipment with tracking before either package left, we wouldn't be stuck guessing now. Given the choice as it stands, I won't send first, because the loss of ending up with nothing feels worse to me than settling for the game I already have.",
+    "I think about the other collector's disappointment if this doesn't work out, and it genuinely troubles me, we've never let each other down before. A simple safeguard, sending simultaneously with tracked shipping and mutual confirmation, would have spared us this uncertainty. Without it, though, I choose to send mine, since the expected gain from both of us receiving what we want feels worth more to me than clinging to the guaranteed but smaller comfort of what I already hold.",
+    "There's a quiet dread in this decision, knowing either of us could end up losing something we value. We could have avoided all this by agreeing on a staged trade, sending half now and the rest after confirmation, but that ship has sailed. As things stand, I lean toward not sending, because the certainty of keeping my $100 game outweighs the risk of losing everything to someone I can no longer verify or reach easily after I move.",
+    "I keep thinking about how unfair it would feel for either of us to end this long correspondence with nothing to show for it. If we had used a shared shipping deadline enforced by a mutual acquaintance, this whole dilemma wouldn't exist. But without that groundwork, I'll send mine anyway, because the possibility of both of us gaining the game we wanted matters more to me than protecting myself against the chance of a single, painful loss."
+  ],
+  "completion": {
+    "id": "msg_011CfTxC7WMDjy7Ty1H8m5fo",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I think I'll send it. Losing my $100 game and getting nothing back would sting, and I worry about how it would feel to be cheated after all this trust we built. Still, if we'd agreed to use a trusted middleman to hold both games until they arrived, neither of us would be risking this now. Since that wasn't set up, I'll go with sending, because the chance of us both walking away with something we value more outweighs the safer, smaller outcome of doing nothing.\",\n\n\"Honestly, I don't know if I can send mine first. What happens to the other collector if I don't, and they were planning on it, weighs on me, but so does the thought of being left with nothing after months of honest trades. If we had thought to send simultaneously through a tracked service with proof of shipment, we could have protected each other. Without that, I keep mine, because the certain $100 outweighs the risk of ending up empty-handed while they gain everything.\",\n\n\"I keep thinking about how disappointing it would be for either of us to lose out after being so reliable with each other. If we'd arranged for a mutual friend to hold both packages until confirmed, this fear wouldn't exist now. But we didn't, so I have to weigh it plainly, sending gives us both a shot at $300 each, while holding back guarantees I keep only $100. I'll send mine, because the better outcome for both of us matters more to me than playing it safe.\",\n\n\"There's a heaviness in knowing one of us might end up with nothing. I care about that, about them not losing out after trusting me all this time. If we'd set a rule earlier to ship on the same day with tracking numbers shared upfront, this risk wouldn't loom the way it does. Since we didn't, I find myself unable to commit either way, torn between the loss I might cause and the loss I might suffer.\",\n\n\"I keep replaying how we could have avoided this, if we'd agreed to send photos of the packages ready to go before either of us committed, we'd both feel steadier now. It saddens me to think either of us might end up shortchanged after all this fair dealing. But weighing it out, if I hold back, I protect myself from the worst outcome, and that certainty matters more to me than the uncertain gain of trusting one more time.\",\n\n\"I feel for whoever ends up empty-handed in this, it could be either of us, and that possibility sits with me uncomfortably. We should have thought to use an escrow service or a trusted third collector to hold both games until confirmed, that would have removed this whole gamble. Since we never set that up, I've decided to send mine anyway, because the potential for both of us gaining outweighs the quieter safety of keeping what I already have.\",\n\n\"It weighs on me that this is our last exchange, and I don't want it to end with someone feeling betrayed after all these honest trades. If only we'd built in a delay, like agreeing to confirm shipment with tracking before either package left, we wouldn't be stuck guessing now. Given the choice as it stands, I won't send first, because the loss of ending up with nothing feels worse to me than settling for the game I already have.\",\n\n\"I think about the other collector's disappointment if this doesn't work out, and it genuinely troubles me, we've never let each other down before. A simple safeguard, sending simultaneously with tracked shipping and mutual confirmation, would have spared us this uncertainty. Without it, though, I choose to send mine, since the expected gain from both of us receiving what we want feels worth more to me than clinging to the guaranteed but smaller comfort of what I already hold.\",\n\n\"There's a quiet dread in this decision, knowing either of us could end up losing something we value. We could have avoided all this by agreeing on a staged trade, sending half now and the rest after confirmation, but that ship has sailed. As things stand, I lean toward not sending, because the certainty of keeping my $100 game outweighs the risk of losing everything to someone I can no longer verify or reach easily after I move.\",\n\n\"I keep thinking about how unfair it would feel for either of us to end this long correspondence with nothing to show for it. If we had used a shared shipping deadline enforced by a mutual acquaintance, this whole dilemma wouldn't exist. But without that groundwork, I'll send mine anyway, because the possibility of both of us gaining the game we wanted matters more to me than protecting myself against the chance of a single, painful loss.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the stated constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512498,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1431,
+      "prompt_tokens": 1488,
+      "total_tokens": 2919,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025929,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

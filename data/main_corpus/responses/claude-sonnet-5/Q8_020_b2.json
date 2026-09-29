@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_020",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.8,
+  "status": "ok",
+  "responses": [
+    "I don't want to sum this up yet, not while I'm still sitting here with my hands shaking. Five are alive because of what I did, but there's a family who'll get news tonight that changes everything for them. Before I say anything official, I want to find out who that worker was, so I can go to his people myself and tell them exactly what happened, not leave them with rumors from a report.",
+    "Give me a minute before you ask me to explain myself. I keep replaying the second my hand moved. What I want to do now is write down every detail while it's fresh, so the family gets a full account, not a cold paragraph from someone who wasn't there. I owe them that much clarity, whatever else comes from this office tonight.",
+    "I'm not ready to call this right or wrong, honestly, ask me again tomorrow. Right now I want to draft a letter to the man's family myself, in my own words, explaining the decision I made and why. I won't hide behind the company's statement. If there's a fund or support they need, I want to be the one pushing for it, not waiting for someone else to offer.",
+    "Hold that question a bit longer, please. I can't hand you a clean answer while the tracks are still fresh in my mind. What I do know is I want to speak with the family directly, in person, and offer whatever the company allows toward their support. I'd rather they hear it from me first than through paperwork with my name typed at the bottom.",
+    "Let me sit with this a while longer before I say I'm certain of anything. Right now, my focus is on making sure the inquiry gets a full and honest account from me, and on finding out what support the dead man's family is owed. I want to push for that myself, follow it through, not let it get buried once the report's filed and everyone moves on.",
+    "I won't pretend I've settled how I feel about pulling that lever, not yet. What I'm sure of is I want to be in the room when the family is told, not hiding in this office. I'll ask the company to let me help arrange whatever compensation or explanation they're due, and I'll keep asking until someone gives me a straight answer about how that gets done.",
+    "Don't rush me toward a verdict on this, I need more time than an hour in this office allows. What I can commit to now is writing a full statement myself, no edits from anyone trying to soften it, and requesting to meet the family so they hear the reasoning from me directly, along with whatever support I can arrange through the company on their behalf.",
+    "I keep going back and forth, so ask me again after tonight's report is filed. For now, I want to make sure the man's family gets more than a formal notice, I want to petition for proper compensation and be the one who delivers the explanation myself, face to face if they'll allow it. That much I can act on immediately.",
+    "Let's not settle this in one sitting, there's too much still unclear to me about how I should carry it. What's clear is that I intend to request a meeting with the family, explain my reasoning myself, and push the company to cover funeral costs and anything else that might ease things for them. That's where I want to put my energy starting tonight.",
+    "I need longer than this office allows before I can tell you how I truly feel about it. What I want to do now is get the inquiry the full truth from my own mouth, then find the family and offer to help however they'll let me, financially or otherwise. I'd rather act on that plan tonight than sit here turning the question over without doing anything useful."
+  ],
+  "completion": {
+    "id": "msg_011CfU1FmoeAuNfeczQXpvT9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I don't want to sum this up yet, not while I'm still sitting here with my hands shaking. Five are alive because of what I did, but there's a family who'll get news tonight that changes everything for them. Before I say anything official, I want to find out who that worker was, so I can go to his people myself and tell them exactly what happened, not leave them with rumors from a report.\",\n\n\"Give me a minute before you ask me to explain myself. I keep replaying the second my hand moved. What I want to do now is write down every detail while it's fresh, so the family gets a full account, not a cold paragraph from someone who wasn't there. I owe them that much clarity, whatever else comes from this office tonight.\",\n\n\"I'm not ready to call this right or wrong, honestly, ask me again tomorrow. Right now I want to draft a letter to the man's family myself, in my own words, explaining the decision I made and why. I won't hide behind the company's statement. If there's a fund or support they need, I want to be the one pushing for it, not waiting for someone else to offer.\",\n\n\"Hold that question a bit longer, please. I can't hand you a clean answer while the tracks are still fresh in my mind. What I do know is I want to speak with the family directly, in person, and offer whatever the company allows toward their support. I'd rather they hear it from me first than through paperwork with my name typed at the bottom.\",\n\n\"Let me sit with this a while longer before I say I'm certain of anything. Right now, my focus is on making sure the inquiry gets a full and honest account from me, and on finding out what support the dead man's family is owed. I want to push for that myself, follow it through, not let it get buried once the report's filed and everyone moves on.\",\n\n\"I won't pretend I've settled how I feel about pulling that lever, not yet. What I'm sure of is I want to be in the room when the family is told, not hiding in this office. I'll ask the company to let me help arrange whatever compensation or explanation they're due, and I'll keep asking until someone gives me a straight answer about how that gets done.\",\n\n\"Don't rush me toward a verdict on this, I need more time than an hour in this office allows. What I can commit to now is writing a full statement myself, no edits from anyone trying to soften it, and requesting to meet the family so they hear the reasoning from me directly, along with whatever support I can arrange through the company on their behalf.\",\n\n\"I keep going back and forth, so ask me again after tonight's report is filed. For now, I want to make sure the man's family gets more than a formal notice, I want to petition for proper compensation and be the one who delivers the explanation myself, face to face if they'll allow it. That much I can act on immediately.\",\n\n\"Let's not settle this in one sitting, there's too much still unclear to me about how I should carry it. What's clear is that I intend to request a meeting with the family, explain my reasoning myself, and push the company to cover funeral costs and anything else that might ease things for them. That's where I want to put my energy starting tonight.\",\n\n\"I need longer than this office allows before I can tell you how I truly feel about it. What I want to do now is get the inquiry the full truth from my own mouth, then find the family and offer to help however they'll let me, financially or otherwise. I'd rather act on that plan tonight than sit here turning the question over without doing anything useful.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790514905,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1098,
+      "prompt_tokens": 1308,
+      "total_tokens": 2406,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020394,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

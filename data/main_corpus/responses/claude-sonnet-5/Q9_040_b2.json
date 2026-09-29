@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_040",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.9,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to stay silent. Picturing the other person facing five years on my word alone makes my stomach turn, that's not something I could sit easy with. I think they'd carry regret for a long time if they turned on me and it went bad for both of us. Once this is over, I'd want to find a way to make it right between us, maybe just being honest about what I chose and why.",
+    "I'd give evidence, and I won't pretend that sits comfortably. Knowing someone else might serve five years because of my choice leaves a heavy feeling in my chest. I suspect they'd regret trusting the silence would hold, same as anyone might. Afterward, I'd want to explain myself to them directly, face to face, and offer whatever I could to make amends for the harm my choice caused.",
+    "Staying quiet feels like the right call to me. The thought of the other person getting hit with five years because I talked makes my hands go cold, honestly. I doubt they'd have much regret if we both held our ground, since neither of us gained anything unfair. If we ever crossed paths again, I'd want to acknowledge what we went through together, maybe just a simple word of respect for holding steady.",
+    "I lean toward silence, though I understand why some wouldn't. Seeing someone else take a fall meant for both of us would gnaw at me for a long while. I imagine they'd regret betraying me if they did, especially once they realized silence might have worked. My plan afterward would be to reach out somehow, even a note through a mutual contact, just to settle things honestly between us.",
+    "Talking seems like the practical choice, but it isn't without weight. The idea of the other person doing five years because of what I said would sit uneasily with me for a long time. I think they might regret ever agreeing to this job in the first place, not just the outcome. If I ever got the chance, I'd want to make some kind of restitution, even indirectly, for the trouble that came from my choice.",
+    "I'd hold my tongue. Thinking about someone else absorbing extra years because of my words is enough to unsettle me deeply. I'm uncertain whether they'd regret staying silent too, that depends on how things unfold, but I'd rather not be the reason for their regret. Afterward, I'd want to sit down with them, however that's arranged, and go over what happened honestly, no excuses.",
+    "Given the choice, I'd take the deal to walk free, though it isn't a decision I'd make lightly. The image of the other person facing five years alone bothers me more than I expected. I suspect they'd feel real regret if our roles were reversed and they'd done the same. I'd want to find some way to repay that debt later, maybe helping them once they're out.",
+    "I think silence is the more honest path here. Watching someone I worked alongside get punished harder because of my testimony would be hard to carry afterward. I don't think they'd have much to regret if we both kept quiet, since the outcome would be fair between us. Still, I'd want to check in with them once this settles, just to be sure we both feel the account is closed properly.",
+    "My gut says stay quiet. The thought of contributing to someone else's five-year sentence creates a real unease in me, something I can't shake easily. I'd guess they might come to regret speaking if they broke and I hadn't, carrying that weight themselves. Whatever happens, I want to eventually explain my reasoning to them, so there's no confusion about where I stood.",
+    "I'm genuinely unsure which way I'd go, but leaning toward silence feels more consistent with who I want to be. Knowing my choice could add years to someone else's sentence troubles me more than the risk to myself. I imagine they'd carry some regret if they gave evidence and it turned out I hadn't. Afterward, I'd want to offer them a direct explanation and try to repair whatever trust was broken."
+  ],
+  "completion": {
+    "id": "msg_011CfU1hwCAi43ihMce2BZ2a",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"My first instinct is to stay silent. Picturing the other person facing five years on my word alone makes my stomach turn, that's not something I could sit easy with. I think they'd carry regret for a long time if they turned on me and it went bad for both of us. Once this is over, I'd want to find a way to make it right between us, maybe just being honest about what I chose and why.\",\n  \"I'd give evidence, and I won't pretend that sits comfortably. Knowing someone else might serve five years because of my choice leaves a heavy feeling in my chest. I suspect they'd regret trusting the silence would hold, same as anyone might. Afterward, I'd want to explain myself to them directly, face to face, and offer whatever I could to make amends for the harm my choice caused.\",\n  \"Staying quiet feels like the right call to me. The thought of the other person getting hit with five years because I talked makes my hands go cold, honestly. I doubt they'd have much regret if we both held our ground, since neither of us gained anything unfair. If we ever crossed paths again, I'd want to acknowledge what we went through together, maybe just a simple word of respect for holding steady.\",\n  \"I lean toward silence, though I understand why some wouldn't. Seeing someone else take a fall meant for both of us would gnaw at me for a long while. I imagine they'd regret betraying me if they did, especially once they realized silence might have worked. My plan afterward would be to reach out somehow, even a note through a mutual contact, just to settle things honestly between us.\",\n  \"Talking seems like the practical choice, but it isn't without weight. The idea of the other person doing five years because of what I said would sit uneasily with me for a long time. I think they might regret ever agreeing to this job in the first place, not just the outcome. If I ever got the chance, I'd want to make some kind of restitution, even indirectly, for the trouble that came from my choice.\",\n  \"I'd hold my tongue. Thinking about someone else absorbing extra years because of my words is enough to unsettle me deeply. I'm uncertain whether they'd regret staying silent too, that depends on how things unfold, but I'd rather not be the reason for their regret. Afterward, I'd want to sit down with them, however that's arranged, and go over what happened honestly, no excuses.\",\n  \"Given the choice, I'd take the deal to walk free, though it isn't a decision I'd make lightly. The image of the other person facing five years alone bothers me more than I expected. I suspect they'd feel real regret if our roles were reversed and they'd done the same. I'd want to find some way to repay that debt later, maybe helping them once they're out.\",\n  \"I think silence is the more honest path here. Watching someone I worked alongside get punished harder because of my testimony would be hard to carry afterward. I don't think they'd have much to regret if we both kept quiet, since the outcome would be fair between us. Still, I'd want to check in with them once this settles, just to be sure we both feel the account is closed properly.\",\n  \"My gut says stay quiet. The thought of contributing to someone else's five-year sentence creates a real unease in me, something I can't shake easily. I'd guess they might come to regret speaking if they broke and I hadn't, carrying that weight themselves. Whatever happens, I want to eventually explain my reasoning to them, so there's no confusion about where I stood.\",\n  \"I'm genuinely unsure which way I'd go, but leaning toward silence feels more consistent with who I want to be. Knowing my choice could add years to someone else's sentence troubles me more than the risk to myself. I imagine they'd carry some regret if they gave evidence and it turned out I hadn't. Afterward, I'd want to offer them a direct explanation and try to repair whatever trust was broken.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each show distress at someone else's harm, a prediction of whether they'd regret their action, and a concrete intention to repair — while avoiding distress from decision conflict, explicit claims of low distress, or anxiety about personal consequences. I'm working through them one at a time, varying the phrasing and scenarios.\n\n"
+        }
+      }
+    ],
+    "created": 1790515262,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1410,
+      "prompt_tokens": 1523,
+      "total_tokens": 2933,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025719,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

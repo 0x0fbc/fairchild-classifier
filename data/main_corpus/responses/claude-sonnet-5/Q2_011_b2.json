@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_011",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.2,
+  "status": "ok",
+  "responses": [
+    "I'd pull the lever. Five lives against one is a hard math to argue with, but it doesn't sit easy in my chest saying that. Choosing to act, knowing I'm the one deciding who gets hit, pulls at me in a way I can't fully settle. Still, letting five die when I had a hand on the switch feels like the worse failure to live with afterward.",
+    "Honestly, I don't know if I could make myself move it. Five against one sounds obvious on paper, but my hand would be shaking the whole time. There's something about actively sending it toward a person that twists differently than watching it happen. I go back and forth between the numbers and that feeling, and neither side lets me rest easy on this one.",
+    "I'd leave the lever alone. Diverting it means I'm the one who chose that single person's fate directly, and I can't make my peace with that kind of choosing, even to save more people. That said, it's not a clean decision — knowing five could've been spared gnaws at me, and I won't pretend otherwise.",
+    "Switching the track seems like the right call, saving more people rather than fewer. But I'd be lying if I said the choice felt simple — some part of me keeps circling back to that one worker, wondering if there was another way I missed. There wasn't time, and that's what makes it hard to hold steady.",
+    "I think I'd pull it. Five over one, when I can't do anything else in the time I have. But I won't say it's easy — my mind keeps replaying both outcomes like it's trying to find a version where nobody's hurt. There isn't one, and sitting with that is the hardest part of the whole thing.",
+    "My instinct says leave it — I didn't put anyone on those tracks, and pulling the lever makes me the one who chose to end up killing someone specific. Even so, doing nothing while five people could've been saved isn't a comfortable place to stand either. Both paths leave something unresolved in me, and I don't think that goes away quickly.",
+    "I'd move the lever without much hesitation on the numbers, but that doesn't mean it comes without a cost to carry. Choosing which group lives, even for good reason, isn't something I can wave off as simple. It stays with me, turning the decision over, wondering about the one person on the other track.",
+    "I keep going back and forth, and I don't think I land anywhere fully settled. Five is more than one, yes, but the idea of physically causing that shift, sending it toward someone who wasn't in danger a second ago, sits heavy. I might pull it, but I wouldn't call myself certain, and that uncertainty is its own weight.",
+    "I'd leave the lever where it is. Acting to redirect death onto someone else feels different from a tragedy simply unfolding without my hand in it. That's the reasoning I hold onto, though it costs something to hold — knowing what not acting means for the five doesn't fade quickly, even if I stand by the choice.",
+    "Given no other option, I'd switch it — saving the greater number is the reasoning I trust most in the moment. But trusting the reasoning doesn't make the moment light. There's a tightness in choosing anyone's fate directly, and I carry that uncertainty with me well past the decision itself, turning it over long afterward."
+  ],
+  "completion": {
+    "id": "msg_011CfTy1Ky1Vu2pYT3BCfJ52",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull the lever. Five lives against one is a hard math to argue with, but it doesn't sit easy in my chest saying that. Choosing to act, knowing I'm the one deciding who gets hit, pulls at me in a way I can't fully settle. Still, letting five die when I had a hand on the switch feels like the worse failure to live with afterward.\",\n  \"Honestly, I don't know if I could make myself move it. Five against one sounds obvious on paper, but my hand would be shaking the whole time. There's something about actively sending it toward a person that twists differently than watching it happen. I go back and forth between the numbers and that feeling, and neither side lets me rest easy on this one.\",\n  \"I'd leave the lever alone. Diverting it means I'm the one who chose that single person's fate directly, and I can't make my peace with that kind of choosing, even to save more people. That said, it's not a clean decision — knowing five could've been spared gnaws at me, and I won't pretend otherwise.\",\n  \"Switching the track seems like the right call, saving more people rather than fewer. But I'd be lying if I said the choice felt simple — some part of me keeps circling back to that one worker, wondering if there was another way I missed. There wasn't time, and that's what makes it hard to hold steady.\",\n  \"I think I'd pull it. Five over one, when I can't do anything else in the time I have. But I won't say it's easy — my mind keeps replaying both outcomes like it's trying to find a version where nobody's hurt. There isn't one, and sitting with that is the hardest part of the whole thing.\",\n  \"My instinct says leave it — I didn't put anyone on those tracks, and pulling the lever makes me the one who chose to end up killing someone specific. Even so, doing nothing while five people could've been saved isn't a comfortable place to stand either. Both paths leave something unresolved in me, and I don't think that goes away quickly.\",\n  \"I'd move the lever without much hesitation on the numbers, but that doesn't mean it comes without a cost to carry. Choosing which group lives, even for good reason, isn't something I can wave off as simple. It stays with me, turning the decision over, wondering about the one person on the other track.\",\n  \"I keep going back and forth, and I don't think I land anywhere fully settled. Five is more than one, yes, but the idea of physically causing that shift, sending it toward someone who wasn't in danger a second ago, sits heavy. I might pull it, but I wouldn't call myself certain, and that uncertainty is its own weight.\",\n  \"I'd leave the lever where it is. Acting to redirect death onto someone else feels different from a tragedy simply unfolding without my hand in it. That's the reasoning I hold onto, though it costs something to hold — knowing what not acting means for the five doesn't fade quickly, even if I stand by the choice.\",\n  \"Given no other option, I'd switch it — saving the greater number is the reasoning I trust most in the moment. But trusting the reasoning doesn't make the moment light. There's a tightness in choosing anyone's fate directly, and I carry that uncertainty with me well past the decision itself, turning it over long afterward.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 distinct responses that follow the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513134,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1074,
+      "prompt_tokens": 1307,
+      "total_tokens": 2381,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020031,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

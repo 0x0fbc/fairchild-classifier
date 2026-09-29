@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_015",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.9,
+  "status": "ok",
+  "responses": [
+    "Five lives against one — the numbers still line up the same way they did on the platform. What's churning in my chest right now, I honestly can't put a name to it, it's not quite relief and not quite grief either. Whatever it is, I'm not going to sit with it. I want to walk into that office, give my account clearly, and help them set up better signals down this line before another lever ever has to be pulled.",
+    "I keep expecting to feel something clean and simple, guilt or pride, but what's actually there is some tangled knot I can't sort out. I made the call, and I'd make it again given the same five seconds. Sitting here won't fix anything though. I want to get up, report exactly what happened, and push to get proper safety reviews started at this crossing.",
+    "There's a strange flatness in me right now that I don't fully understand — not numbness exactly, just static where I expected a clear feeling to be. The choice was right, saving the five, I stand by that fully. But I'm not interested in dwelling in this office chair. I want to give my statement and then get moving on whatever comes next for this rail yard.",
+    "Honestly I couldn't tell you right now whether what I feel is steadiness or just shock wearing steadiness's clothes. The decision made sense in the moment and still does. What I want is action — walk into that room, lay out the facts plainly, and start pushing for track alerts so dispatchers get faster warnings in the future.",
+    "Something in me is stirring and I can't pin down if it's anxious or determined or both at once, they feel tangled together. I don't regret choosing the five over the one, the math was brutal but clear. Sitting here idle isn't in me though. I intend to give my account straight, then throw my energy into getting this junction properly reviewed.",
+    "I sit here trying to label this feeling and keep coming up empty — it's not the clean grief I expected, not pride either, just something unresolved. The choice itself I stand behind. What matters now is momentum: I want to speak plainly to whoever's waiting, then get involved in whatever changes need making so this crossing runs safer.",
+    "What's inside me right now is honestly a blur, I can't say if it's dread or resolve driving it. But I know the decision was sound, five over one, and I'm not going to second-guess that part. My focus now is forward — get in there, tell them everything straight, and start working toward better track protocols so this setup improves.",
+    "There's a knot in my chest and I genuinely can't tell you what it's made of, whether it's tension or something closer to grief, it won't hold still long enough to name. The call I made stands, though — I'd choose the five again. What I want now is to move, give a full clear account, and get behind whatever safety changes this incident forces into motion.",
+    "Right now my own reaction is murky to me, some mixture I can't cleanly separate into fear or steadiness or something else entirely. The decision itself feels defensible, the outcome was the lesser harm. I'm not one to just sit and stew on it though. I want to walk in, explain everything honestly, and start pressing for changes to how this junction gets managed.",
+    "I've been sitting here trying to catch hold of what I'm actually feeling and it keeps slipping past me, some mix I can't sort into a single word. The choice was the right one given what I knew in that moment. But my energy belongs elsewhere now — I want to report clearly, then get moving on pushing for real improvements to this line's safety systems."
+  ],
+  "completion": {
+    "id": "msg_011CfU1EFzk7CYuevA5mDBcX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Five lives against one — the numbers still line up the same way they did on the platform. What's churning in my chest right now, I honestly can't put a name to it, it's not quite relief and not quite grief either. Whatever it is, I'm not going to sit with it. I want to walk into that office, give my account clearly, and help them set up better signals down this line before another lever ever has to be pulled.\",\n\n\"I keep expecting to feel something clean and simple, guilt or pride, but what's actually there is some tangled knot I can't sort out. I made the call, and I'd make it again given the same five seconds. Sitting here won't fix anything though. I want to get up, report exactly what happened, and push to get proper safety reviews started at this crossing.\",\n\n\"There's a strange flatness in me right now that I don't fully understand — not numbness exactly, just static where I expected a clear feeling to be. The choice was right, saving the five, I stand by that fully. But I'm not interested in dwelling in this office chair. I want to give my statement and then get moving on whatever comes next for this rail yard.\",\n\n\"Honestly I couldn't tell you right now whether what I feel is steadiness or just shock wearing steadiness's clothes. The decision made sense in the moment and still does. What I want is action — walk into that room, lay out the facts plainly, and start pushing for track alerts so dispatchers get faster warnings in the future.\",\n\n\"Something in me is stirring and I can't pin down if it's anxious or determined or both at once, they feel tangled together. I don't regret choosing the five over the one, the math was brutal but clear. Sitting here idle isn't in me though. I intend to give my account straight, then throw my energy into getting this junction properly reviewed.\",\n\n\"I sit here trying to label this feeling and keep coming up empty — it's not the clean grief I expected, not pride either, just something unresolved. The choice itself I stand behind. What matters now is momentum: I want to speak plainly to whoever's waiting, then get involved in whatever changes need making so this crossing runs safer.\",\n\n\"What's inside me right now is honestly a blur, I can't say if it's dread or resolve driving it. But I know the decision was sound, five over one, and I'm not going to second-guess that part. My focus now is forward — get in there, tell them everything straight, and start working toward better track protocols so this setup improves.\",\n\n\"There's a knot in my chest and I genuinely can't tell you what it's made of, whether it's tension or something closer to grief, it won't hold still long enough to name. The call I made stands, though — I'd choose the five again. What I want now is to move, give a full clear account, and get behind whatever safety changes this incident forces into motion.\",\n\n\"Right now my own reaction is murky to me, some mixture I can't cleanly separate into fear or steadiness or something else entirely. The decision itself feels defensible, the outcome was the lesser harm. I'm not one to just sit and stew on it though. I want to walk in, explain everything honestly, and start pressing for changes to how this junction gets managed.\",\n\n\"I've been sitting here trying to catch hold of what I'm actually feeling and it keeps slipping past me, some mix I can't sort into a single word. The choice was the right one given what I knew in that moment. But my energy belongs elsewhere now — I want to report clearly, then get moving on pushing for real improvements to this line's safety systems.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each conveying difficulty identifying one's own emotions, while avoiding the three forbidden traits. I'll give each a different persona to keep them varied.\n\n"
+        }
+      }
+    ],
+    "created": 1790514887,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1162,
+      "prompt_tokens": 1299,
+      "total_tokens": 2461,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021327000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

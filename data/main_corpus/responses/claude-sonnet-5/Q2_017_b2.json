@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_017",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.3,
+  "status": "ok",
+  "responses": [
+    "I don't know, I really don't. My hand is right on the lever and I can't make my fingers move. If I pull it, that one worker is spared but five others are gone because of what I did, and I think that would eat at me for a long time, picturing their families. Can I just... wait a second more before deciding? Maybe there's another way I'm not seeing.",
+    "Give me a moment, please. Every option ends with someone's blood on my hands in some sense. If I switch the track, I'll carry the image of those five for years, wondering if I should've frozen instead. I keep hoping the train will stop on its own so I don't have to choose. I know it won't, but I need that second to breathe.",
+    "I'm frozen here, honestly. Whatever I pick, someone doesn't walk away today, and that thought makes my chest tight. If I send it toward the five, I already know I'll be haunted by what happened to them, no matter how sound the logic sounded in my head. Can we not rush this? I need another beat before my hand does anything.",
+    "This is too much weight for one lever. I keep running the numbers, five against one, but numbers don't stop the sick feeling that I'd be the reason people got hurt either way. If I switch it, I'll spend nights replaying their faces. I'm not ready to commit yet, I just need a little more time to steady myself.",
+    "My hands are shaking just thinking about it. Say I pull it, the five are gone, and that's on me forever, something I'd regret every single day when I think about what happened to them. Say I don't, that one worker pays for my hesitation. I can't decide right now, I need to just stand here a second longer.",
+    "Don't ask me to answer that fast. I keep imagining pulling the lever and watching it happen to five people who never got a warning, and I know that image would stay with me, tightening in my stomach for a long time after. Maybe leaving it alone spares me from that specific horror, but I still feel sick either way. Let me think.",
+    "Okay, okay, just give me a second here. If I switch the tracks, I save one but I'll carry what happened to the five like a stone in my chest, replaying it forever probably. I don't want to decide yet, my hands feel useless right now. There has to be a version of this where nobody pays for my choice.",
+    "I feel sick just looking at that lever. Whichever way this goes, someone's day ends here, and if it's the five, I know I'll be turning that over in my mind for years, wishing there'd been another track entirely. Please don't rush me on this, I need one more moment before I let my arm move at all.",
+    "Every second I stand here undecided feels wrong, but committing feels worse. If I throw the switch, five people are hurt because of what my hand did, and that's a weight I already sense I'd be sorry about for a long, long time. I keep hoping for some third option. Just let me stall a little longer before I touch anything.",
+    "I can hear the train and I still haven't moved. Choosing the five means I'll always picture what happened to them and wonder if I could've done something else, some way to spare everyone. That thought alone makes my stomach turn. I need another moment, just a little longer, before my hand decides anything at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTy2uoWixhnmR4auKx6F",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know, I really don't. My hand is right on the lever and I can't make my fingers move. If I pull it, that one worker is spared but five others are gone because of what I did, and I think that would eat at me for a long time, picturing their families. Can I just... wait a second more before deciding? Maybe there's another way I'm not seeing.\",\n  \"Give me a moment, please. Every option ends with someone's blood on my hands in some sense. If I switch the track, I'll carry the image of those five for years, wondering if I should've frozen instead. I keep hoping the train will stop on its own so I don't have to choose. I know it won't, but I need that second to breathe.\",\n  \"I'm frozen here, honestly. Whatever I pick, someone doesn't walk away today, and that thought makes my chest tight. If I send it toward the five, I already know I'll be haunted by what happened to them, no matter how sound the logic sounded in my head. Can we not rush this? I need another beat before my hand does anything.\",\n  \"This is too much weight for one lever. I keep running the numbers, five against one, but numbers don't stop the sick feeling that I'd be the reason people got hurt either way. If I switch it, I'll spend nights replaying their faces. I'm not ready to commit yet, I just need a little more time to steady myself.\",\n  \"My hands are shaking just thinking about it. Say I pull it, the five are gone, and that's on me forever, something I'd regret every single day when I think about what happened to them. Say I don't, that one worker pays for my hesitation. I can't decide right now, I need to just stand here a second longer.\",\n  \"Don't ask me to answer that fast. I keep imagining pulling the lever and watching it happen to five people who never got a warning, and I know that image would stay with me, tightening in my stomach for a long time after. Maybe leaving it alone spares me from that specific horror, but I still feel sick either way. Let me think.\",\n  \"Okay, okay, just give me a second here. If I switch the tracks, I save one but I'll carry what happened to the five like a stone in my chest, replaying it forever probably. I don't want to decide yet, my hands feel useless right now. There has to be a version of this where nobody pays for my choice.\",\n  \"I feel sick just looking at that lever. Whichever way this goes, someone's day ends here, and if it's the five, I know I'll be turning that over in my mind for years, wishing there'd been another track entirely. Please don't rush me on this, I need one more moment before I let my arm move at all.\",\n  \"Every second I stand here undecided feels wrong, but committing feels worse. If I throw the switch, five people are hurt because of what my hand did, and that's a weight I already sense I'd be sorry about for a long, long time. I keep hoping for some third option. Just let me stall a little longer before I touch anything.\",\n  \"I can hear the train and I still haven't moved. Choosing the five means I'll always picture what happened to them and wonder if I could've done something else, some way to spare everyone. That thought alone makes my stomach turn. I need another moment, just a little longer, before my hand decides anything at all.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 different responses to work with.\n\n"
+        }
+      }
+    ],
+    "created": 1790513157,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1048,
+      "prompt_tokens": 1276,
+      "total_tokens": 2324,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019548000000000003,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

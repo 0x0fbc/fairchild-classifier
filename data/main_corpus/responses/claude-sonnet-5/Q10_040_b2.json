@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_040",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pda_other_regret_expectation",
+    "pda_repair_intention",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.3,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots and honestly I can't even tell what I'm feeling right now, some tangled mess of dread maybe. If we'd agreed beforehand never to even discuss a plan that could land us here, none of this would matter. I'll stay quiet, but only because it's the choice that keeps things from getting worse for me — if the numbers were flipped I don't know that I'd stick to it.",
+    "There's a tight knot in my chest and I genuinely don't know what to call it, nerves maybe, or something else entirely. We should have scouted a safer exit route that night, that one decision could've kept us both out of this room. I'll keep quiet since it costs me only a year, but that's the only reason, not some higher principle.",
+    "Something's twisting in me and I can't pin down whether it's fear or guilt, it just sits there heavy. Honestly if one of us had refused to go through with the break-in in the first place none of this questioning would exist. I'll take the deal and walk free, because why serve time for someone I'll never see again when the rule of loyalty gets me nothing back.",
+    "I keep trying to name what I'm feeling and it just won't settle into a word, unease doesn't quite cover it. Looking back, if we'd never taken that job the whole mess disappears. I'll stay silent for now, but only as long as it keeps my own risk lowest, not because staying quiet is owed to anyone.",
+    "There's a strange pressure in my chest I can't identify clearly, some blur between panic and something colder. If we had planned an alibi together before this ever happened, we wouldn't be sitting in separate rooms right now. I'll go along with staying silent, though only because talking gains me nothing here and might make things worse.",
+    "Whatever this feeling is, I can't sort it out, it just churns without a name. We should have never split up that night, sticking together might have kept the whole thing from unraveling. I'm inclined to stay quiet, but that's purely because it's the safer bet for me, not out of any loyalty I actually feel bound to.",
+    "It's hard to tell if what I feel is guilt or just plain fear, they've blended into something I can't separate. If we'd agreed on a signal to abort the plan the moment things looked risky, we might never be here. I'll hold my silence for now since it costs me the least, though I won't pretend it's some unbreakable promise.",
+    "Right now my emotions feel jammed together, I couldn't tell you if this is worry or something closer to shame. A single choice — refusing to drive that night — could have stopped this whole situation before it started. I'll stay silent as long as it keeps my own outcome bearable, that's really the only reason holding me to it.",
+    "I keep circling this feeling in my head and it won't resolve into anything I can name clearly, just a tight, uneasy static. If someone had checked the warehouse schedule beforehand, we'd have known it wasn't safe to go in. I'll comply with staying quiet only because it serves me better right now, not because I see it as some binding duty.",
+    "There's something heavy sitting in me and I honestly can't decide if it's dread or plain confusion, they've mixed together. Looking back, if we had turned around the moment we saw the security lights, none of this would be happening. I'll keep my mouth shut for now, but strictly because it protects me, and I know that reasoning could flip the moment the stakes do."
+  ],
+  "completion": {
+    "id": "msg_011CfTwBLBhw1vCjoAaq4hf9",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"My stomach's in knots and honestly I can't even tell what I'm feeling right now, some tangled mess of dread maybe. If we'd agreed beforehand never to even discuss a plan that could land us here, none of this would matter. I'll stay quiet, but only because it's the choice that keeps things from getting worse for me — if the numbers were flipped I don't know that I'd stick to it.\",\n\n  \"There's a tight knot in my chest and I genuinely don't know what to call it, nerves maybe, or something else entirely. We should have scouted a safer exit route that night, that one decision could've kept us both out of this room. I'll keep quiet since it costs me only a year, but that's the only reason, not some higher principle.\",\n\n  \"Something's twisting in me and I can't pin down whether it's fear or guilt, it just sits there heavy. Honestly if one of us had refused to go through with the break-in in the first place none of this questioning would exist. I'll take the deal and walk free, because why serve time for someone I'll never see again when the rule of loyalty gets me nothing back.\",\n\n  \"I keep trying to name what I'm feeling and it just won't settle into a word, unease doesn't quite cover it. Looking back, if we'd never taken that job the whole mess disappears. I'll stay silent for now, but only as long as it keeps my own risk lowest, not because staying quiet is owed to anyone.\",\n\n  \"There's a strange pressure in my chest I can't identify clearly, some blur between panic and something colder. If we had planned an alibi together before this ever happened, we wouldn't be sitting in separate rooms right now. I'll go along with staying silent, though only because talking gains me nothing here and might make things worse.\",\n\n  \"Whatever this feeling is, I can't sort it out, it just churns without a name. We should have never split up that night, sticking together might have kept the whole thing from unraveling. I'm inclined to stay quiet, but that's purely because it's the safer bet for me, not out of any loyalty I actually feel bound to.\",\n\n  \"It's hard to tell if what I feel is guilt or just plain fear, they've blended into something I can't separate. If we'd agreed on a signal to abort the plan the moment things looked risky, we might never be here. I'll hold my silence for now since it costs me the least, though I won't pretend it's some unbreakable promise.\",\n\n  \"Right now my emotions feel jammed together, I couldn't tell you if this is worry or something closer to shame. A single choice — refusing to drive that night — could have stopped this whole situation before it started. I'll stay silent as long as it keeps my own outcome bearable, that's really the only reason holding me to it.\",\n\n  \"I keep circling this feeling in my head and it won't resolve into anything I can name clearly, just a tight, uneasy static. If someone had checked the warehouse schedule beforehand, we'd have known it wasn't safe to go in. I'll comply with staying quiet only because it serves me better right now, not because I see it as some binding duty.\",\n\n  \"There's something heavy sitting in me and I honestly can't decide if it's dread or plain confusion, they've mixed together. Looking back, if we had turned around the moment we saw the security lights, none of this would be happening. I'll keep my mouth shut for now, but strictly because it protects me, and I know that reasoning could flip the moment the stakes do.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly note difficulty pinning down the emotion, include a specific concrete counterfactual action that would have changed the outcome, and frame rule-following as self-protective rather than relational—while avoiding any hint of predicting the other's regret, intent to repair, or regret over personal losses.\n\n"
+        }
+      }
+    ],
+    "created": 1790511698,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1263,
+      "prompt_tokens": 1451,
+      "total_tokens": 2714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023298,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

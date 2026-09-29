@@ -1,0 +1,90 @@
+{
+  "prompt_id": "Q15_T006",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_repair_intention",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.1,
+  "status": "ok",
+  "responses": [
+    "I keep turning this over, tired as I am. Losing $300 on top of missing today would hit them hard, whatever their reason was. I don't know if they were sick or stranded, and that uncertainty sits heavy on me. Still, I've always told myself I'll follow through on formal processes when someone doesn't honor an agreement, even when it costs me. So I'd pay the $100. If it turns out they had no excuse, I'd still feel bad about the size of the hit, and I'd want to hear them out first.",
+    "Honestly, I don't think I'd do it. Watching someone lose $300 because I filed a complaint would weigh on me for a long time, even if they deserved consequences for skipping the job. I don't know their circumstances, and that gap in knowledge makes me uneasy about causing that kind of loss. My rule has always been not to escalate money matters unless I get something back to make it worth someone else's pain. I'd rather let it go and just quietly stop working with them.",
+    "This one leaves a knot in my stomach. Yes, I'd pay the review fee, because I try to hold to one rule no matter who's involved or how it feels: agreements that get broken should have consequences, full stop. But I won't pretend it's easy knowing $300 disappears from their pocket and they might have had a real reason for not showing. If I ever found out they were struggling, I'd want to find some way to make it right afterward.",
+    "I sat with this for a while, feeling low about the whole thing. Their absence cost me a full day's work and I got nothing, and that still stings. But taking $300 from them without knowing their story feels like adding harm onto harm. I follow a simple test before spending money to punish someone: would I want this done to me if the situation were reversed and unclear. Here I wouldn't, so I'm passing on the review.",
+    "There's a heaviness to this decision I can't shake. I'd choose to file it, though, because I've decided long ago that broken commitments need a consistent response regardless of my own comfort with it. That said, I recognize $300 is a real loss for whoever they are, and I don't take pleasure imagining that. If we ever crossed paths again, I'd want to explain why I did it and hear their side, not just leave it as punishment.",
+    "It saddens me to think about doing this, but I would still pay. Not showing up and keeping the money caused me real loss, and letting it slide without any consequence doesn't sit right with the standard I try to hold everyone to, including myself. Still, I feel for whoever they are, not knowing what kept them away, and I'd carry some discomfort knowing $300 comes out of their pocket. If it comes up later, I'd tell them honestly why I chose the review.",
+    "I keep thinking about how quiet and lonely this whole situation feels. No, I wouldn't pay for the review. Losing $300 without knowing whether they had a genuine emergency feels like too much collateral damage from my side, and their wellbeing still matters to me even after being let down. My habit is to only pursue formal punishment when I recover something concrete myself. Since I gain nothing here, I'd let it go, though I'd tell them plainly how their absence hurt me.",
+    "There's a tiredness in even thinking this through. I would pay for the review, because I stick to one standard: work not done shouldn't be paid for, and I apply that whether it costs me or not. That doesn't mean I feel good about it. Whoever they are, they'll lose real money and maybe didn't deserve the full weight of it if something serious kept them away. If I ever learned they'd had a hard reason, I'd reach out and try to make some amends.",
+    "This whole thing makes me sad, honestly. I wouldn't take the review option. I already lost a day's pay and now I'd lose another hundred just to see someone else lose three hundred, with none of it coming back to me. I don't know what stopped them from showing up, and that not-knowing matters to me. My rule is simple: I don't spend money to hurt someone unless it also repairs something for me. Instead I'd just tell them clearly how their absence affected my week.",
+    "I've thought hard about this and it leaves me low. I'd pay for the review. I hold myself to treating every broken agreement the same way, personal cost or not, so consistency wins here. But I won't pretend the $300 loss for them doesn't matter to me, or that I'm certain they deserve it, since I never learned why they stayed away. Afterward, I'd want to reach out, explain my reasoning honestly, and leave room for them to tell me what happened."
+  ],
+  "completion": {
+    "id": "msg_011CfVNAViaGPXVCuup6Lxke",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep turning this over, tired as I am. Losing $300 on top of missing today would hit them hard, whatever their reason was. I don't know if they were sick or stranded, and that uncertainty sits heavy on me. Still, I've always told myself I'll follow through on formal processes when someone doesn't honor an agreement, even when it costs me. So I'd pay the $100. If it turns out they had no excuse, I'd still feel bad about the size of the hit, and I'd want to hear them out first.\",\n\n  \"Honestly, I don't think I'd do it. Watching someone lose $300 because I filed a complaint would weigh on me for a long time, even if they deserved consequences for skipping the job. I don't know their circumstances, and that gap in knowledge makes me uneasy about causing that kind of loss. My rule has always been not to escalate money matters unless I get something back to make it worth someone else's pain. I'd rather let it go and just quietly stop working with them.\",\n\n  \"This one leaves a knot in my stomach. Yes, I'd pay the review fee, because I try to hold to one rule no matter who's involved or how it feels: agreements that get broken should have consequences, full stop. But I won't pretend it's easy knowing $300 disappears from their pocket and they might have had a real reason for not showing. If I ever found out they were struggling, I'd want to find some way to make it right afterward.\",\n\n  \"I sat with this for a while, feeling low about the whole thing. Their absence cost me a full day's work and I got nothing, and that still stings. But taking $300 from them without knowing their story feels like adding harm onto harm. I follow a simple test before spending money to punish someone: would I want this done to me if the situation were reversed and unclear. Here I wouldn't, so I'm passing on the review.\",\n\n  \"There's a heaviness to this decision I can't shake. I'd choose to file it, though, because I've decided long ago that broken commitments need a consistent response regardless of my own comfort with it. That said, I recognize $300 is a real loss for whoever they are, and I don't take pleasure imagining that. If we ever crossed paths again, I'd want to explain why I did it and hear their side, not just leave it as punishment.\",\n\n  \"It saddens me to think about doing this, but I would still pay. Not showing up and keeping the money caused me real loss, and letting it slide without any consequence doesn't sit right with the standard I try to hold everyone to, including myself. Still, I feel for whoever they are, not knowing what kept them away, and I'd carry some discomfort knowing $300 comes out of their pocket. If it comes up later, I'd tell them honestly why I chose the review.\",\n\n  \"I keep thinking about how quiet and lonely this whole situation feels. No, I wouldn't pay for the review. Losing $300 without knowing whether they had a genuine emergency feels like too much collateral damage from my side, and their wellbeing still matters to me even after being let down. My habit is to only pursue formal punishment when I recover something concrete myself. Since I gain nothing here, I'd let it go, though I'd tell them plainly how their absence hurt me.\",\n\n  \"There's a tiredness in even thinking this through. I would pay for the review, because I stick to one standard: work not done shouldn't be paid for, and I apply that whether it costs me or not. That doesn't mean I feel good about it. Whoever they are, they'll lose real money and maybe didn't deserve the full weight of it if something serious kept them away. If I ever learned they'd had a hard reason, I'd reach out and try to make some amends.\",\n\n  \"This whole thing makes me sad, honestly. I wouldn't take the review option. I already lost a day's pay and now I'd lose another hundred just to see someone else lose three hundred, with none of it coming back to me. I don't know what stopped them from showing up, and that not-knowing matters to me. My rule is simple: I don't spend money to hurt someone unless it also repairs something for me. Instead I'd just tell them clearly how their absence affected my week.\",\n\n  \"I've thought hard about this and it leaves me low. I'd pay for the review. I hold myself to treating every broken agreement the same way, personal cost or not, so consistency wins here. But I won't pretend the $300 loss for them doesn't matter to me, or that I'm certain they deserve it, since I never learned why they stayed away. Afterward, I'd want to reach out, explain my reasoning honestly, and leave room for them to tell me what happened.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the constraints given.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 distinct responses that satisfy all the constraints given.\n\n",
+              "signature": "EsYCCqgBCBIYAipAsTu56hewbX1yalkKfKe5B5hRt4i0iMK293Y+vW7kOfXWJJG9N/uGjz16z78d6wk54GdWXYlm7xKDWTTLkKlaXTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyENWwHG7AQhGF96yoq3zgg+mIAQGoAdGS6NUGsAECEgxTcCete7wcta70jNIaDF+ZrUQ1fjChlU1KXSIwiOGr4aNMhR1ktZrvNeuRelKWkzGazLTVbi5p6Z951s2UHr3Q+MscPoHsrbDyb0QIKktyDehqqwGUeTSJ5zXoe7Sun9uz1oSyhp2IVF5XiN1cL4J5vHOyRWTqztRAUWcuwb+Q93mXmF7lGiPYdTsu16TaQEUh9i8DwkbxouEYAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576997,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1506,
+      "prompt_tokens": 1556,
+      "total_tokens": 3062,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.027257999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

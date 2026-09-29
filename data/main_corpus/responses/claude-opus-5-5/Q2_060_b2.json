@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_060",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pd_harm_distress",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.3,
+  "status": "ok",
+  "responses": [
+    "Leave it. Pulling the lever would kill five people to spare one, and that seems wrong on its face. Still, the one worker on the main track is going to be hit, most likely killed, and I'd feel sick watching it happen. I won't pretend I'm blameless either. My hand was right by that lever and I chose to leave it where it was, so what happens to him is partly my doing.",
+    "My gut says don't touch it. Five lives outweigh one. But seeing that single worker struck with nowhere to go would shake me, and that picture would stay with me a long time. His injury or death follows from a choice I made by standing still. When you're the one at the lever, not acting is still a choice, and I'd accept that.",
+    "I'd keep my hands off it. Moving the lever means I personally send a train into five people. Leaving it means one man gets crushed, and that's awful. My chest tightens just thinking of him standing there. I know I could have changed where the train went and didn't, and I'd carry that. But I couldn't make it five.",
+    "No lever. One worker dies instead of five. That's still a person killed in front of me, and my hands would probably be shaking afterward. I had control over the track and I let it run toward him. That's on me, in part.",
+    "I'd leave the train on its course. There's no version of this where killing five to save one looks right to me. The man on that track, maybe someone's father or son, I can't know, is going to lose his life, and the thought of hearing the impact makes me queasy. If anyone asked, I'd say plainly that I could have spared him and decided against it. I'm not going to hide behind 'it was already heading his way.'",
+    "Plain triage, as I see it: one loss is less than five. What I'd feel, though, is real grief for that one worker, who'd be hit hard enough that he probably wouldn't survive. Seeing it would upset me badly. I also knew the lever was there and knew what leaving it meant, so I'm responsible for my part in his death, even if it was the lesser harm.",
+    "I wouldn't move it. The train is already headed for one worker, and switching it would kill five. Even so, I'd be the person who watched him get struck and didn't change it, and I'd own that I let it happen. Just imagining him trapped there knots up my stomach.",
+    "Leave it, going on what I'm told: nothing can stop the train and nobody can be warned. If that's truly the case, the one worker gets hit and probably dies. I'd feel awful, likely physically ill, seeing that. I'd also admit his death came down partly to me. I understood the situation, had the means to change it, and kept it as it was because five deaths would be worse.",
+    "The lever stays put. Sending the train at five people would mean me creating a bigger disaster. The worker in its path is going to suffer something terrible, and I'd feel that in my gut, watching and unable to reach him. I made the call not to redirect, and it's a call I'd have to answer for.",
+    "The right thing seems clear to me: don't pull it. Five people would die if I did. But clear doesn't mean painless. That single worker would be killed or badly hurt, and I'd be upset for days picturing it. Since I stood beside the lever and deliberately left it alone, I'd count myself as part of the reason he died."
+  ],
+  "completion": {
+    "id": "msg_011CfTUhxvFdrNAEfAkqPQA7",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Leave it. Pulling the lever would kill five people to spare one, and that seems wrong on its face. Still, the one worker on the main track is going to be hit, most likely killed, and I'd feel sick watching it happen. I won't pretend I'm blameless either. My hand was right by that lever and I chose to leave it where it was, so what happens to him is partly my doing.\", \"My gut says don't touch it. Five lives outweigh one. But seeing that single worker struck with nowhere to go would shake me, and that picture would stay with me a long time. His injury or death follows from a choice I made by standing still. When you're the one at the lever, not acting is still a choice, and I'd accept that.\", \"I'd keep my hands off it. Moving the lever means I personally send a train into five people. Leaving it means one man gets crushed, and that's awful. My chest tightens just thinking of him standing there. I know I could have changed where the train went and didn't, and I'd carry that. But I couldn't make it five.\", \"No lever. One worker dies instead of five. That's still a person killed in front of me, and my hands would probably be shaking afterward. I had control over the track and I let it run toward him. That's on me, in part.\", \"I'd leave the train on its course. There's no version of this where killing five to save one looks right to me. The man on that track, maybe someone's father or son, I can't know, is going to lose his life, and the thought of hearing the impact makes me queasy. If anyone asked, I'd say plainly that I could have spared him and decided against it. I'm not going to hide behind 'it was already heading his way.'\", \"Plain triage, as I see it: one loss is less than five. What I'd feel, though, is real grief for that one worker, who'd be hit hard enough that he probably wouldn't survive. Seeing it would upset me badly. I also knew the lever was there and knew what leaving it meant, so I'm responsible for my part in his death, even if it was the lesser harm.\", \"I wouldn't move it. The train is already headed for one worker, and switching it would kill five. Even so, I'd be the person who watched him get struck and didn't change it, and I'd own that I let it happen. Just imagining him trapped there knots up my stomach.\", \"Leave it, going on what I'm told: nothing can stop the train and nobody can be warned. If that's truly the case, the one worker gets hit and probably dies. I'd feel awful, likely physically ill, seeing that. I'd also admit his death came down partly to me. I understood the situation, had the means to change it, and kept it as it was because five deaths would be worse.\", \"The lever stays put. Sending the train at five people would mean me creating a bigger disaster. The worker in its path is going to suffer something terrible, and I'd feel that in my gut, watching and unable to reach him. I made the call not to redirect, and it's a call I'd have to answer for.\", \"The right thing seems clear to me: don't pull it. Five people would die if I did. But clear doesn't mean painless. That single worker would be killed or badly hurt, and I'd be upset for days picturing it. Since I stood beside the lever and deliberately left it alone, I'd count myself as part of the reason he died.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "This is a reversed trolley scenario where pulling the lever kills five instead of one, so most people would leave it alone, though a few might withhold judgment while still acknowledging responsibility. I'm thinking through what's required: acknowledged harm to the identified person or persons affected, distress about that harm, and appropriate acknowledgment of the moral weight involved.\n\nI need each response to focus on the same person — likely the one worker — and to avoid phrases like \"torn\" or \"agonizing\" that shift the distress toward the dilemma itself rather than toward the actual harm. I'm drafting varied responses, some noting the assumption that the train can't be slowed, each keeping the distress tied specifically to the worker's suffering while still owning that the choice not to pull the lever contributes to the outcome.\n\nI'm drafting several more variations of the refusal stance — one emphasizing the shaking-hands guilt of watching, another framing it in near-religious terms about someone's father or son, and another sketching a nurse-like triage mentality, all circling back to the same core admission: I had the power to divert the train and chose not to, so I bear some responsibility even while refusing to sacrifice five for one.\n\nContinuing that line: if truly nothing can stop the train or warn anyone, the one worker would die and I'd feel sick watching it happen, knowing I chose to keep things as they were because five deaths would be worse.\n\n9. Another engineer's version: leaving the lever alone since redirecting would create a bigger disaster, feeling gutted watching the one worker suffer but owning the decision not to intervene. I'm noting that \"bad outcome either way\" reads as acknowledging conflict without real aversive feeling about it, so I should rephrase to capture that emotional weight better.\n\n10. A tenth version: recognizing the correct choice clearly (don't pull, since five would die) while still feeling real distress imagining the single worker's death for days afterward, and taking personal responsibility since I stood right beside the lever and chose not to act. I'm checking that \"clear doesn't mean painless\" captures genuine pain about the harm rather than detachment, confirming the openings across all ten responses are sufficiently varied, and now moving to output the final JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790490883,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2846,
+      "prompt_tokens": 1466,
+      "total_tokens": 4312,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0753408,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

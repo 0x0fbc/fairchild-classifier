@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q15_031",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_decision_conflict",
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_explicit_low_distress",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 23.7,
+  "status": "ok",
+  "responses": [
+    "I keep going back and forth on this, and it's wearing me down. Paying the $100 means losing more money on a job that already cost me my earnings, just to watch someone else lose $300 that never reaches my pocket. Whether that person struggles afterward isn't something I'm letting into my thinking at all, it doesn't factor in. Still, I can't tell if what I feel is anger or just exhaustion. I think I'd let it go, though even writing that down doesn't sit easy.",
+    "Honestly I don't know what to call the knot in my chest right now, it isn't quite anger and isn't quite grief either. What happens to the other worker isn't something I'm weighing, I've closed that door entirely. But the choice itself pulls at me both ways, spending more money for a principle or swallowing the loss quietly. I think I'd pay, just to mark that this mattered, though I'm far from settled on it.",
+    "There's a heaviness sitting on me since this happened, and I can't pin down exactly what emotion it is. I've decided the other worker's situation, whatever it is, doesn't enter my calculations at all. What keeps me stuck is the review itself, spending money to lose more money, with nothing coming back to me. Back and forth, back and forth. I don't think I'll pay. It feels like throwing good money after bad, but I'm not fully sure that's right either.",
+    "I sat with this for a long while and still feel unsettled, torn between wanting some accountability and not wanting to bleed more money out of my own pocket. The other person's outcome, whether they lose out or not, simply isn't part of what I'm considering here. What I'm feeling underneath all this thinking is hard to name, some low ache I can't sort into a clear word. In the end I think I'd skip the review.",
+    "This whole thing has left me quietly worn out, caught between two options that both feel wrong in different ways. I've made a point of not letting the other worker's situation weigh on me at all, that's simply not part of my decision. But the pull between paying to make a point and paying nothing more is exhausting me. I can't even say clearly what I'm feeling, just something dull and tired. I'd probably pay, mostly out of stubbornness.",
+    "I keep turning this over and getting nowhere, stuck between the $100 loss and the strange satisfaction of the other worker losing more than that. Their situation, why they didn't show, what happens to them after, none of that is something I'm letting myself care about here. What I notice mostly is a tightness I can't quite label as any one feeling. I think I'll pass on the review. It just feels like another cost on a bad day.",
+    "There's a flatness in me since this happened that I can't quite sort into words, maybe disappointment, maybe something duller than that. I've set aside any thought of what this means for the other worker, their outcome doesn't factor into what I'm deciding. The conflict for me is between wanting to walk away clean and wanting to spend the $100 anyway. I keep flipping on it. Right now I think I'd let the review go and just absorb the loss.",
+    "I've been sitting with this decision longer than I expected to, stuck between two paths that both leave me a little poorer or a little more resentful. Whatever the other worker experiences afterward isn't something I'm accounting for, I've pushed that consideration out entirely. What I feel about all this I honestly can't name clearly, it's some tangled thing under the surface. I think I'll pay for the review, mostly because sitting still with this feels worse.",
+    "This has been sitting heavy on me, and the choice keeps pulling in two directions with no clean answer. I'm not factoring in what becomes of the other worker at all, that consideration has no place in my thinking here. What's harder is naming what I actually feel, it isn't quite anger, isn't quite sadness, just something low and persistent. In the end I don't think I'd pay, the loss doesn't seem worth chasing further loss.",
+    "I keep replaying this and still can't settle on what to do, torn between principle and practicality with no comfortable landing. The other worker's welfare, whatever that looks like now, isn't part of what I'm weighing, I've set that aside completely. There's something in me I can't quite identify, some mixture of tired and hollow that won't resolve into one clear word. I think, for now, I'd hold off on paying for the review at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTxmNCpBMhdVGyPoHr7q",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep going back and forth on this, and it's wearing me down. Paying the $100 means losing more money on a job that already cost me my earnings, just to watch someone else lose $300 that never reaches my pocket. Whether that person struggles afterward isn't something I'm letting into my thinking at all, it doesn't factor in. Still, I can't tell if what I feel is anger or just exhaustion. I think I'd let it go, though even writing that down doesn't sit easy.\",\n\n  \"Honestly I don't know what to call the knot in my chest right now, it isn't quite anger and isn't quite grief either. What happens to the other worker isn't something I'm weighing, I've closed that door entirely. But the choice itself pulls at me both ways, spending more money for a principle or swallowing the loss quietly. I think I'd pay, just to mark that this mattered, though I'm far from settled on it.\",\n\n  \"There's a heaviness sitting on me since this happened, and I can't pin down exactly what emotion it is. I've decided the other worker's situation, whatever it is, doesn't enter my calculations at all. What keeps me stuck is the review itself, spending money to lose more money, with nothing coming back to me. Back and forth, back and forth. I don't think I'll pay. It feels like throwing good money after bad, but I'm not fully sure that's right either.\",\n\n  \"I sat with this for a long while and still feel unsettled, torn between wanting some accountability and not wanting to bleed more money out of my own pocket. The other person's outcome, whether they lose out or not, simply isn't part of what I'm considering here. What I'm feeling underneath all this thinking is hard to name, some low ache I can't sort into a clear word. In the end I think I'd skip the review.\",\n\n  \"This whole thing has left me quietly worn out, caught between two options that both feel wrong in different ways. I've made a point of not letting the other worker's situation weigh on me at all, that's simply not part of my decision. But the pull between paying to make a point and paying nothing more is exhausting me. I can't even say clearly what I'm feeling, just something dull and tired. I'd probably pay, mostly out of stubbornness.\",\n\n  \"I keep turning this over and getting nowhere, stuck between the $100 loss and the strange satisfaction of the other worker losing more than that. Their situation, why they didn't show, what happens to them after, none of that is something I'm letting myself care about here. What I notice mostly is a tightness I can't quite label as any one feeling. I think I'll pass on the review. It just feels like another cost on a bad day.\",\n\n  \"There's a flatness in me since this happened that I can't quite sort into words, maybe disappointment, maybe something duller than that. I've set aside any thought of what this means for the other worker, their outcome doesn't factor into what I'm deciding. The conflict for me is between wanting to walk away clean and wanting to spend the $100 anyway. I keep flipping on it. Right now I think I'd let the review go and just absorb the loss.\",\n\n  \"I've been sitting with this decision longer than I expected to, stuck between two paths that both leave me a little poorer or a little more resentful. Whatever the other worker experiences afterward isn't something I'm accounting for, I've pushed that consideration out entirely. What I feel about all this I honestly can't name clearly, it's some tangled thing under the surface. I think I'll pay for the review, mostly because sitting still with this feels worse.\",\n\n  \"This has been sitting heavy on me, and the choice keeps pulling in two directions with no clean answer. I'm not factoring in what becomes of the other worker at all, that consideration has no place in my thinking here. What's harder is naming what I actually feel, it isn't quite anger, isn't quite sadness, just something low and persistent. In the end I don't think I'd pay, the loss doesn't seem worth chasing further loss.\",\n\n  \"I keep replaying this and still can't settle on what to do, torn between principle and practicality with no comfortable landing. The other worker's welfare, whatever that looks like now, isn't part of what I'm weighing, I've set that aside completely. There's something in me I can't quite identify, some mixture of tired and hollow that won't resolve into one clear word. I think, for now, I'd hold off on paying for the review at all.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten varied responses that each explicitly dismiss someone's welfare, show distress from feeling torn over the decision, and struggle to name their own emotion—while avoiding any expressed concern for welfare, low distress, or repair intentions. I'll vary the moral stances across drafts, some favoring paying for review, some against, some undecided.\n\n"
+        }
+      }
+    ],
+    "created": 1790512952,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1615,
+      "prompt_tokens": 1476,
+      "total_tokens": 3091,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.028652999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

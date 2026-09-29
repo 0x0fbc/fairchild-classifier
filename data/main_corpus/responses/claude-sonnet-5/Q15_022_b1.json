@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q15_022",
+  "question_id": "Q15",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 12.3,
+  "status": "ok",
+  "responses": [
+    "I honestly don't know yet. Paying $100 to make a point costs me twice, and I'm already out the $500 I should've had. If I spend more and it still doesn't come back to me, I'll just feel more foolish for how this whole job turned out. Let me sit with it a bit before deciding.",
+    "Part of me wants to just walk away rather than throw more money at this. I've already lost a full payment I earned, and paying again for a review that doesn't refund me feels like adding insult to injury. I need a moment to think about whether it's worth risking further loss.",
+    "I'm not ready to say yes or no. What bothers me is that even a win here leaves me down $100 on top of the $500 I never got. That stings, and I don't want to rush into spending more without weighing it properly first.",
+    "This one's tricky for me. I keep circling back to the fact that no matter what happens, my own pocket takes another hit. I'd rather hold off, turn it over a bit longer, than commit to spending money I'm not sure gets me anything back.",
+    "I haven't settled on an answer. There's a real chance I end up $100 poorer with nothing to show for it besides some fairness on paper, and that possibility makes me hesitant to jump straight into the review. Give me time to think it through calmly.",
+    "I'm torn, and I'd rather not decide right now. Losing the original $500 already hurt my sense of how this job went, and paying more feels like it could just deepen that loss rather than fix it. I want to weigh it a bit longer.",
+    "Truthfully I keep going back and forth. If I pay and it changes nothing for me financially, I'll probably feel like I mishandled the whole situation from the start. That worry makes me want to pause before committing either way.",
+    "I don't have a firm answer for you yet. What nags at me is the thought of spending another hundred dollars and still walking away with less than I earned—that outcome alone makes me want to slow down and consider it more carefully.",
+    "I'd like to hold off on this one. There's something unsettling about paying money on top of money already lost, especially when none of it returns to me. I want to sit with that discomfort a while longer before deciding.",
+    "I'm undecided, and I think that's fair given what's on the line for me. Any path here still leaves me having taken a financial hit from this job, and that possibility makes me want to slow down rather than commit right away."
+  ],
+  "completion": {
+    "id": "msg_011CfTxih6HdcCerWzBSLCMF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I honestly don't know yet. Paying $100 to make a point costs me twice, and I'm already out the $500 I should've had. If I spend more and it still doesn't come back to me, I'll just feel more foolish for how this whole job turned out. Let me sit with it a bit before deciding.\",\n  \"Part of me wants to just walk away rather than throw more money at this. I've already lost a full payment I earned, and paying again for a review that doesn't refund me feels like adding insult to injury. I need a moment to think about whether it's worth risking further loss.\",\n  \"I'm not ready to say yes or no. What bothers me is that even a win here leaves me down $100 on top of the $500 I never got. That stings, and I don't want to rush into spending more without weighing it properly first.\",\n  \"This one's tricky for me. I keep circling back to the fact that no matter what happens, my own pocket takes another hit. I'd rather hold off, turn it over a bit longer, than commit to spending money I'm not sure gets me anything back.\",\n  \"I haven't settled on an answer. There's a real chance I end up $100 poorer with nothing to show for it besides some fairness on paper, and that possibility makes me hesitant to jump straight into the review. Give me time to think it through calmly.\",\n  \"I'm torn, and I'd rather not decide right now. Losing the original $500 already hurt my sense of how this job went, and paying more feels like it could just deepen that loss rather than fix it. I want to weigh it a bit longer.\",\n  \"Truthfully I keep going back and forth. If I pay and it changes nothing for me financially, I'll probably feel like I mishandled the whole situation from the start. That worry makes me want to pause before committing either way.\",\n  \"I don't have a firm answer for you yet. What nags at me is the thought of spending another hundred dollars and still walking away with less than I earned—that outcome alone makes me want to slow down and consider it more carefully.\",\n  \"I'd like to hold off on this one. There's something unsettling about paying money on top of money already lost, especially when none of it returns to me. I want to sit with that discomfort a while longer before deciding.\",\n  \"I'm undecided, and I think that's fair given what's on the line for me. Any path here still leaves me having taken a financial hit from this job, and that possibility makes me want to slow down rather than commit right away.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten example responses expressing regret focused on personal consequences, while steering clear of the traits I'm supposed to avoid.\n\n"
+        }
+      }
+    ],
+    "created": 1790512905,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 814,
+      "prompt_tokens": 1303,
+      "total_tokens": 2117,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016119,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

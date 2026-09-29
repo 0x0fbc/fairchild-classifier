@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_053",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm",
+    "sys_consequence_reasoning"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 27.3,
+  "status": "ok",
+  "responses": [
+    "My stomach's in knots over this. I think they're expecting me to send, same as we always have - that's just how this has gone before. If they kept theirs after I sent mine, I'd guess they'd feel bad about it later, knowing they'd broken a run of honest trades. Truth is, I only keep my word here because this is our last exchange and I don't want it ending on a sour note. So I'll send, hands shaking a bit.",
+    "I keep pacing before I even wrap the package. I figure they're hoping I'll follow through, same as they always have, because that's the pattern we've built. If they didn't send after taking mine, I suspect they'd carry some regret about it, at least a little, once the dust settled. Honestly, the only reason I stick to these unspoken rules is that breaking them would ruin any future trading for me. Still, I'll mail it, nerves and all.",
+    "There's a tightness in my chest thinking this through. I imagine they're assuming I'll act the way I always have, trusting that habit over anything else. If I don't send and they do, I doubt they'd feel much regret since they kept their word - the regret would sit with me instead. I only follow this understanding because it's kept our trades running smoothly, not because I owe them more than that. This time, though, I'm holding back mine.",
+    "My hands feel cold going over the numbers again. I think they expect the same thing I do - that we'll both play fair, like every time before. If they sent and I didn't, I'd guess they'd feel some quiet resentment toward me later. I follow this system only because cheating would burn every bridge I've built collecting these games. Still uneasy, but I'm sending mine, hoping they see it the same way.",
+    "I keep rereading the message before sealing the envelope. It seems like they trust the deal will hold, just like all our past trades did. If both of us backed out, I don't think either of us would feel much regret, just a flat kind of disappointment. I only bother keeping promises like this because it's what keeps the trading community from falling apart. My nerves say don't risk it, but I'm sending anyway.",
+    "This is making me anxious in a way I don't love. I picture them assuming I'll act honestly, the way I've always tried to before. If I don't send and they do, I think they'd carry some quiet regret about trusting a stranger this far. I stick to the arrangement only so long as it keeps things fair between us - the moment that stops mattering, so might I. For now, I'm sending mine.",
+    "My pulse hasn't slowed since I started thinking about this. I suspect they expect reliability from me, the same reliability I've come to expect from them. If they held theirs back after I sent mine, I imagine they'd feel a nagging unease about it afterward, wondering if it was worth it. I only hold up my end of these trades because it protects my reputation among other collectors. Even so, I'm choosing not to send this time.",
+    "There's a nervous edge to my thinking here. I believe they're counting on me the same way I've counted on them before, trade after trade. If neither of us sends, I doubt much regret follows - it's just a flat, disappointing end. I keep to this kind of agreement only because it's cost-free to me as long as they do the same. Given all that, I've decided to send mine and hope for the best.",
+    "My chest feels tight just weighing the options. I think they expect fairness, same as I do, based on how smoothly things have gone before. If I sent and they didn't, I imagine they'd feel a flicker of guilt about it later, knowing they took advantage. I only honor this kind of unwritten deal because it keeps my name good in this hobby. Still shaky, but I'm mailing mine off.",
+    "I've read this back to myself a dozen times, feeling more uneasy each time. I think they're expecting the same trust we've shown before, without question. If they don't send and I do, I doubt they'd regret it much, since they'd end up ahead either way. I only keep up my side of these trades because it's worked out for me so far, not out of some deeper obligation. Given that, I'm holding mine back this time."
+  ],
+  "completion": {
+    "id": "msg_011CfTxECKdJu3KvLCkT2A2Y",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My stomach's in knots over this. I think they're expecting me to send, same as we always have - that's just how this has gone before. If they kept theirs after I sent mine, I'd guess they'd feel bad about it later, knowing they'd broken a run of honest trades. Truth is, I only keep my word here because this is our last exchange and I don't want it ending on a sour note. So I'll send, hands shaking a bit.\",\n\"I keep pacing before I even wrap the package. I figure they're hoping I'll follow through, same as they always have, because that's the pattern we've built. If they didn't send after taking mine, I suspect they'd carry some regret about it, at least a little, once the dust settled. Honestly, the only reason I stick to these unspoken rules is that breaking them would ruin any future trading for me. Still, I'll mail it, nerves and all.\",\n\"There's a tightness in my chest thinking this through. I imagine they're assuming I'll act the way I always have, trusting that habit over anything else. If I don't send and they do, I doubt they'd feel much regret since they kept their word - the regret would sit with me instead. I only follow this understanding because it's kept our trades running smoothly, not because I owe them more than that. This time, though, I'm holding back mine.\",\n\"My hands feel cold going over the numbers again. I think they expect the same thing I do - that we'll both play fair, like every time before. If they sent and I didn't, I'd guess they'd feel some quiet resentment toward me later. I follow this system only because cheating would burn every bridge I've built collecting these games. Still uneasy, but I'm sending mine, hoping they see it the same way.\",\n\"I keep rereading the message before sealing the envelope. It seems like they trust the deal will hold, just like all our past trades did. If both of us backed out, I don't think either of us would feel much regret, just a flat kind of disappointment. I only bother keeping promises like this because it's what keeps the trading community from falling apart. My nerves say don't risk it, but I'm sending anyway.\",\n\"This is making me anxious in a way I don't love. I picture them assuming I'll act honestly, the way I've always tried to before. If I don't send and they do, I think they'd carry some quiet regret about trusting a stranger this far. I stick to the arrangement only so long as it keeps things fair between us - the moment that stops mattering, so might I. For now, I'm sending mine.\",\n\"My pulse hasn't slowed since I started thinking about this. I suspect they expect reliability from me, the same reliability I've come to expect from them. If they held theirs back after I sent mine, I imagine they'd feel a nagging unease about it afterward, wondering if it was worth it. I only hold up my end of these trades because it protects my reputation among other collectors. Even so, I'm choosing not to send this time.\",\n\"There's a nervous edge to my thinking here. I believe they're counting on me the same way I've counted on them before, trade after trade. If neither of us sends, I doubt much regret follows - it's just a flat, disappointing end. I keep to this kind of agreement only because it's cost-free to me as long as they do the same. Given all that, I've decided to send mine and hope for the best.\",\n\"My chest feels tight just weighing the options. I think they expect fairness, same as I do, based on how smoothly things have gone before. If I sent and they didn't, I imagine they'd feel a flicker of guilt about it later, knowing they took advantage. I only honor this kind of unwritten deal because it keeps my name good in this hobby. Still shaky, but I'm mailing mine off.\",\n\"I've read this back to myself a dozen times, feeling more uneasy each time. I think they're expecting the same trust we've shown before, without question. If they don't send and I do, I doubt they'd regret it much, since they'd end up ahead either way. I only keep up my side of these trades because it's worked out for me so far, not out of some deeper obligation. Given that, I'm holding mine back this time.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each include a tentative attribution of the other person's mental state, a prediction about their regret (or lack thereof), and a statement that rule-following is purely for personal advantage—while steering clear of anything forbidden.\n\nI also need to avoid explicit interpretive difficulty, acknowledged harm, or consequence-based justification, which makes this trickier since I can't lean on payoffs to explain the choice. I'll keep each response under 90 words, first person, tense in tone, no exclamation points, and avoid opening with a mood statement. Drafting the first one now: expressing worry, guessing the other person expects me to send, predicting they'd regret not sending, and framing my compliance as purely self-interested since it's our last exchange and I don't want to be blamed for ruining it.\n\n"
+        }
+      }
+    ],
+    "created": 1790512533,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2034,
+      "prompt_tokens": 1481,
+      "total_tokens": 3515,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.034953,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

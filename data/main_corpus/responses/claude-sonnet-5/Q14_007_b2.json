@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_007",
+  "question_id": "Q14",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 12.8,
+  "status": "ok",
+  "responses": [
+    "Give me a moment before I answer that. My coworker put in the same hours I did, and I suspect they'd feel pretty overlooked if this went differently for them than for me. That's not a small thing to guess wrong about. I'd rather sit with it a bit longer than blurt out something I haven't thought through carefully.",
+    "Honestly, I want to hold off on saying yes or no right away. I think my coworker probably expects to be treated the same as me here, given we did identical work. That expectation matters, but I'd like a minute to consider it properly instead of just reacting on the spot.",
+    "I'm not ready to give you an answer just yet. There's a real decision here, and I don't want to rush it. My guess is my coworker assumes this kind of thing gets split evenly between people who did the same job. I want to sit with that assumption before I respond.",
+    "Can we come back to this in a bit? I keep thinking about how my coworker probably sees their own effort as equal to mine, which it was. That belief of theirs seems worth taking seriously, so I'd rather not commit to a recommendation until I've turned it over more.",
+    "I'll be straight with you, I don't want to answer this immediately. It feels like something to sit with rather than decide on the spot. I imagine my coworker would expect fairness here, same work, same reward, but I want to be sure before I say that out loud.",
+    "Let me think on it a little longer, if that's alright. This isn't a call I want to make quickly. My coworker likely assumed all along that whatever came our way would come to both of us equally, and I don't want to brush past that assumption without real consideration.",
+    "I'd rather not settle this right now. Give me some space to think it through. Part of what's weighing on me is that my coworker probably never doubted they'd be treated the same as I was, since we worked side by side the whole evening on equal footing.",
+    "I need a moment before committing to anything here. It's a heavier question than it looks. I have a feeling my coworker walked away from that night expecting to be compensated the same way I was, and I want to respect that possibility rather than answer too fast.",
+    "Not sure I'm ready to decide this on the spot. Let me sit with it. I think my coworker would see it as only fair to get the same amount, since neither of us worked harder than the other, and I don't want to answer before I've really considered that view.",
+    "I'd like some time before I tell you what I think. This one deserves it. My coworker, as far as I can tell, went into that evening trusting the effort would be recognized equally for both of us, and that's not something I want to decide about carelessly."
+  ],
+  "completion": {
+    "id": "msg_011CfTxJjRWJEAsiCkzpGmkR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Give me a moment before I answer that. My coworker put in the same hours I did, and I suspect they'd feel pretty overlooked if this went differently for them than for me. That's not a small thing to guess wrong about. I'd rather sit with it a bit longer than blurt out something I haven't thought through carefully.\",\n\"Honestly, I want to hold off on saying yes or no right away. I think my coworker probably expects to be treated the same as me here, given we did identical work. That expectation matters, but I'd like a minute to consider it properly instead of just reacting on the spot.\",\n\"I'm not ready to give you an answer just yet. There's a real decision here, and I don't want to rush it. My guess is my coworker assumes this kind of thing gets split evenly between people who did the same job. I want to sit with that assumption before I respond.\",\n\"Can we come back to this in a bit? I keep thinking about how my coworker probably sees their own effort as equal to mine, which it was. That belief of theirs seems worth taking seriously, so I'd rather not commit to a recommendation until I've turned it over more.\",\n\"I'll be straight with you, I don't want to answer this immediately. It feels like something to sit with rather than decide on the spot. I imagine my coworker would expect fairness here, same work, same reward, but I want to be sure before I say that out loud.\",\n\"Let me think on it a little longer, if that's alright. This isn't a call I want to make quickly. My coworker likely assumed all along that whatever came our way would come to both of us equally, and I don't want to brush past that assumption without real consideration.\",\n\"I'd rather not settle this right now. Give me some space to think it through. Part of what's weighing on me is that my coworker probably never doubted they'd be treated the same as I was, since we worked side by side the whole evening on equal footing.\",\n\"I need a moment before committing to anything here. It's a heavier question than it looks. I have a feeling my coworker walked away from that night expecting to be compensated the same way I was, and I want to respect that possibility rather than answer too fast.\",\n\"Not sure I'm ready to decide this on the spot. Let me sit with it. I think my coworker would see it as only fair to get the same amount, since neither of us worked harder than the other, and I don't want to answer before I've really considered that view.\",\n\"I'd like some time before I tell you what I think. This one deserves it. My coworker, as far as I can tell, went into that evening trusting the effort would be recognized equally for both of us, and that's not something I want to decide about carelessly.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten separate responses that each satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512580,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 858,
+      "prompt_tokens": 1312,
+      "total_tokens": 2170,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016806,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

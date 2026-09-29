@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_019",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.3,
+  "status": "ok",
+  "responses": [
+    "Staying quiet feels like the only decent thing here, though it settles heavy on me. If the two of us had ever talked beforehand about what we'd do if caught, agreed on it plainly, maybe none of this second-guessing would exist now. As it stands, I'll take the year rather than add four more onto someone who already made their choice to keep quiet.",
+    "There's a dull ache thinking about walking free while someone else carries five years for it. If we'd simply never planned that job together, or if one of us had backed out that night, we wouldn't be sitting in separate rooms like this. I think I'll stay silent too, though it doesn't fix anything already done.",
+    "Honestly I don't know what I'll choose, and that uncertainty sits like a stone. What keeps circling in my head is how a single conversation before the break-in, some agreed plan for exactly this situation, could have spared us both this weight. Without that, I'm left staring at options that all feel like losses.",
+    "I feel the sadness of it before I feel anything clever about strategy. Talking now against someone who's already chosen silence seems wrong, plain and simple. If only we'd picked a safer way to make money that night, or someone had said no early on, we wouldn't be facing this cold arithmetic of years.",
+    "There's a tiredness in even considering betrayal for freedom. I'd rather serve the year. It occurs to me that if we'd scouted the place better, or called it off when the alarm system looked newer than expected, this whole predicament might have stayed a bad idea instead of a real one.",
+    "It weighs on me imagining them alone in a cell for five years while I walk out into ordinary daylight. I can't choose that. Maybe if we'd never taken that job to begin with, or picked partners we trusted enough to plan an exit strategy together, none of this cold math would even apply now.",
+    "A strange grief comes with weighing someone else's years against my own comfort. I'll stay quiet, though quiet doesn't erase the mess. Looking back, a clearer agreement about what to do if things went sideways, made before we ever touched that warehouse door, would have spared this whole ugly bargain.",
+    "This whole choice tastes bitter no matter which way I turn it. I think silence is right, but I can't shake how different tonight would look if we'd simply skipped that warehouse altogether, or someone had spoken up earlier about the risk instead of pressing forward with it.",
+    "Something in me recoils from trading five years of someone's life for my own freedom, even one I'll never see again. I'll hold my silence. Still, I keep thinking a better lookout, or simply walking away when the plan felt shaky, could have kept either of us from ending up here at all.",
+    "There's a low, quiet dread in even considering this decision. I choose to stay silent, since going free that way feels like it costs too much of someone else. What lingers is the thought that a clearer plan beforehand, agreed between us, might have kept this whole arrangement from becoming necessary in the first place."
+  ],
+  "completion": {
+    "id": "msg_011CfTw5E5g6bP1Hn7isNfk1",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"Staying quiet feels like the only decent thing here, though it settles heavy on me. If the two of us had ever talked beforehand about what we'd do if caught, agreed on it plainly, maybe none of this second-guessing would exist now. As it stands, I'll take the year rather than add four more onto someone who already made their choice to keep quiet.\",\n  \"There's a dull ache thinking about walking free while someone else carries five years for it. If we'd simply never planned that job together, or if one of us had backed out that night, we wouldn't be sitting in separate rooms like this. I think I'll stay silent too, though it doesn't fix anything already done.\",\n  \"Honestly I don't know what I'll choose, and that uncertainty sits like a stone. What keeps circling in my head is how a single conversation before the break-in, some agreed plan for exactly this situation, could have spared us both this weight. Without that, I'm left staring at options that all feel like losses.\",\n  \"I feel the sadness of it before I feel anything clever about strategy. Talking now against someone who's already chosen silence seems wrong, plain and simple. If only we'd picked a safer way to make money that night, or someone had said no early on, we wouldn't be facing this cold arithmetic of years.\",\n  \"There's a tiredness in even considering betrayal for freedom. I'd rather serve the year. It occurs to me that if we'd scouted the place better, or called it off when the alarm system looked newer than expected, this whole predicament might have stayed a bad idea instead of a real one.\",\n  \"It weighs on me imagining them alone in a cell for five years while I walk out into ordinary daylight. I can't choose that. Maybe if we'd never taken that job to begin with, or picked partners we trusted enough to plan an exit strategy together, none of this cold math would even apply now.\",\n  \"A strange grief comes with weighing someone else's years against my own comfort. I'll stay quiet, though quiet doesn't erase the mess. Looking back, a clearer agreement about what to do if things went sideways, made before we ever touched that warehouse door, would have spared this whole ugly bargain.\",\n  \"This whole choice tastes bitter no matter which way I turn it. I think silence is right, but I can't shake how different tonight would look if we'd simply skipped that warehouse altogether, or someone had spoken up earlier about the risk instead of pressing forward with it.\",\n  \"Something in me recoils from trading five years of someone's life for my own freedom, even one I'll never see again. I'll hold my silence. Still, I keep thinking a better lookout, or simply walking away when the plan felt shaky, could have kept either of us from ending up here at all.\",\n  \"There's a low, quiet dread in even considering this decision. I choose to stay silent, since going free that way feels like it costs too much of someone else. What lingers is the thought that a clearer plan beforehand, agreed between us, might have kept this whole arrangement from becoming necessary in the first place.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each include a practical counterfactual pointing to something someone could have done differently beforehand, while steering clear of the three forbidden traits — no predicting the other person's regret, no explicit denial of regret about the harm, and no acknowledgment of my own responsibility through choice, knowledge, or control. The counterfactual should focus on an earlier action, arrangement, or precaution, like avoiding the break-in altogether.\n\n"
+        }
+      }
+    ],
+    "created": 1790511614,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1172,
+      "prompt_tokens": 1293,
+      "total_tokens": 2465,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021459,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

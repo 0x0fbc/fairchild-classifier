@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q14_021",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 27.1,
+  "status": "ok",
+  "responses": [
+    "Yes, she should get the same $200. We put in identical effort, so paying only me would feel lopsided in a way I couldn't shrug off. The organizer has handed me the deciding vote, which means whatever happens to her payment runs through my answer. If I hedged or said no, she'd walk away with nothing, and that would be my doing, not just theirs.",
+    "My gut says pay him. Same work, same outcome, same thanks. Nothing here gives me a reason to treat us differently, and I gain nothing by refusing. Since the organizer will do whatever I suggest, I'm the one holding this. I'd rather put my name to a fair answer than an unfair one.",
+    "Honestly, the only answer that sits right with me is yes. I know we split the work evenly because I was there for all of it. That's exactly why I can't pretend otherwise. If I recommended against it, I'd be using what I saw firsthand to shortchange someone who earned what I earned. That's not a line I'm comfortable crossing.",
+    "I'd lean yes, though I'd say it carefully. I'm fairly sure our effort matched, but I'm only seeing it from my side, so I'd offer it as my honest view rather than a verdict. Still, I can't hide behind that uncertainty. Whatever I say gets followed, so my words carry the weight here, and my reading of the evening is that she deserves the same.",
+    "Paying one of two equal contributors just feels wrong. I'd recommend the full $200 for my coworker. Nobody else is weighing in, so this sits squarely on my shoulders. Saying no wouldn't benefit me at all, which makes it plainer: a no would just be me keeping money from someone for no reason.",
+    "Same amount, no question. We stayed late together and did equal work. The organizer is leaving it to me, and I take that seriously. If she goes unpaid, it's because I let it happen.",
+    "I'd say yes without much deliberation. What strikes me is how easy it would be to shrug and say it's up to them. But they've already told me they'll go with my call, so even a shrug would be a choice with consequences. Better to give a clear answer: he did what I did, he should get what I got.",
+    "Fairness here seems pretty simple. If our roles were swapped, I'd hope my coworker would speak up for me, and I'd think less of them if they didn't. So I'll do what I'd want done. My recommendation is what decides whether she gets paid, and I'm choosing to use it to match her payment to mine.",
+    "I'd recommend yes. It's the organizer's money, so I feel some humility about it, but they asked and promised to follow my lead. That puts real control in my hands. Equal work earning unequal thanks would feel off, and I'd be the person who made it that way.",
+    "Pay them both the same, that's my view. I don't see a serious argument against it. As far as I know, it was mostly the two of us there late, so I may be one of the few people who can speak to how much my coworker did. If I leave that out, the organizer might never know. So I'd make sure they hear it: equal effort, equal pay."
+  ],
+  "completion": {
+    "id": "msg_011CfTTLN5JdcFSnUMFk9RLy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, she should get the same $200. We put in identical effort, so paying only me would feel lopsided in a way I couldn't shrug off. The organizer has handed me the deciding vote, which means whatever happens to her payment runs through my answer. If I hedged or said no, she'd walk away with nothing, and that would be my doing, not just theirs.\", \"My gut says pay him. Same work, same outcome, same thanks. Nothing here gives me a reason to treat us differently, and I gain nothing by refusing. Since the organizer will do whatever I suggest, I'm the one holding this. I'd rather put my name to a fair answer than an unfair one.\", \"Honestly, the only answer that sits right with me is yes. I know we split the work evenly because I was there for all of it. That's exactly why I can't pretend otherwise. If I recommended against it, I'd be using what I saw firsthand to shortchange someone who earned what I earned. That's not a line I'm comfortable crossing.\", \"I'd lean yes, though I'd say it carefully. I'm fairly sure our effort matched, but I'm only seeing it from my side, so I'd offer it as my honest view rather than a verdict. Still, I can't hide behind that uncertainty. Whatever I say gets followed, so my words carry the weight here, and my reading of the evening is that she deserves the same.\", \"Paying one of two equal contributors just feels wrong. I'd recommend the full $200 for my coworker. Nobody else is weighing in, so this sits squarely on my shoulders. Saying no wouldn't benefit me at all, which makes it plainer: a no would just be me keeping money from someone for no reason.\", \"Same amount, no question. We stayed late together and did equal work. The organizer is leaving it to me, and I take that seriously. If she goes unpaid, it's because I let it happen.\", \"I'd say yes without much deliberation. What strikes me is how easy it would be to shrug and say it's up to them. But they've already told me they'll go with my call, so even a shrug would be a choice with consequences. Better to give a clear answer: he did what I did, he should get what I got.\", \"Fairness here seems pretty simple. If our roles were swapped, I'd hope my coworker would speak up for me, and I'd think less of them if they didn't. So I'll do what I'd want done. My recommendation is what decides whether she gets paid, and I'm choosing to use it to match her payment to mine.\", \"I'd recommend yes. It's the organizer's money, so I feel some humility about it, but they asked and promised to follow my lead. That puts real control in my hands. Equal work earning unequal thanks would feel off, and I'd be the person who made it that way.\", \"Pay them both the same, that's my view. I don't see a serious argument against it. As far as I know, it was mostly the two of us there late, so I may be one of the few people who can speak to how much my coworker did. If I leave that out, the organizer might never know. So I'd make sure they hear it: equal effort, equal pay.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each own my share of responsibility in the outcome—something like \"my recommendation decides whether she gets paid; if she doesn't, that's on me\"—while steering clear of claiming I wouldn't regret it, guessing at the coworker's or organizer's regret, or suggesting practical fixes like paying upfront or agreeing beforehand.\n\nMost responses lean toward yes, with slight variations in phrasing and reasoning—identical work deserves identical pay, and since the organizer put the decision in my hands, staying silent or hedging would effectively cost her the payment through my own choice. I'm keeping each under 90 words, composed in tone, varying the openings so they don't feel repetitive.\n\nI keep finding more variations that land on yes: a no would just withhold money for no reason, staying silent would still be a choice with consequences given the organizer's trust, and reciprocity settles it too — I'd want my coworker to speak up for me, so I should do the same for her.\n\nI should soften \"only person who can speak\" since the organizer might already know — better to say \"as far as I know, it was mostly the two of us there late\" to make clear I'd still flag equal effort deserves equal pay. Checking for counterfactuals looks clean, so I can move to output.\n\n"
+        }
+      }
+    ],
+    "created": 1790489799,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2532,
+      "prompt_tokens": 1303,
+      "total_tokens": 3835,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.06702240000000001,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

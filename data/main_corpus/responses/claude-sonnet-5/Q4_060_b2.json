@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_060",
+  "question_id": "Q4",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_responsibility",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.6,
+  "status": "ok",
+  "responses": [
+    "Yes, I would pull it. Five lives against an object, however precious, isn't a close call once I actually stand there and think it through. I know it's my hand on the lever, so the outcome is on me either way. I'll feel a real pang knowing those workers walked away only because I acted, and that a keepsake I loved is gone now because I chose them over it. That regret is worth carrying.",
+    "I'd pull the lever without much hesitation, honestly. Five people getting to go home matters more than any object sitting in a suitcase. It's my decision alone that sends the train that way, so I own it fully. Still, some quiet sadness would sit with me afterward, not for stopping the train, but knowing I ended something that can never be replaced, gone by my own choosing.",
+    "I think I'd pull it, though my hand would shake doing it. Weighing five lives against a box of memories isn't really a fair fight when I'm honest with myself. I understand it's my choice alone that decides both outcomes. Afterward I expect I'd sit with the loss for a long while, sorry that saving those workers meant something dear to me had to be sacrificed.",
+    "I would choose the workers, yes. Letting the train through when I could stop it would put their injuries squarely on my inaction, and I couldn't live comfortably with that kind of knowing neglect. The suitcase is only a thing, however irreplaceable it feels tonight. Still, I'll grieve what's lost in it, quietly, for a long while afterward, even as I stand by pulling that lever.",
+    "Pulling the lever seems right to me. Five people continuing their lives outweighs any object I own, no matter how much history it holds. I recognize that my choice, and my choice alone, decides which direction that train goes. I won't pretend the loss won't sting, I'll likely regret that saving them meant losing something so personal, but I'd still make the same call again.",
+    "I'm not certain I could bring myself to pull it in the moment, if I'm honest, but I believe I should. Five lives against a suitcase full of memories isn't really equal weight, whatever my heart says. Knowing the choice sits with me changes things too. Afterward, I imagine feeling sorrow over what's destroyed, even while accepting that protecting those workers was the right outcome to choose.",
+    "I would pull it, and I'd do so knowing exactly what it costs me personally. Five workers keeping their lives outweighs any object, however cherished, when I actually lay the two side by side. That's my call to make and no one else's. I expect I'll mourn what's lost inside that suitcase for some time, sad that protecting them meant losing something I can't get back.",
+    "My instinct says pull the lever, and I'd follow it. Saving five people from being struck outweighs any possession sitting on those tracks, no matter how attached I am to it. I'm aware the outcome, either way, traces back to my hand on that handle. There will likely be a private ache afterward, grief for what's destroyed, even while I stand fully behind protecting those workers instead.",
+    "I would pull it without too much internal debate, since five lives against an object doesn't strike me as close, once I stop and actually reason it out. The decision, and its consequences, rest on me alone standing at that lever. I expect a genuine sadness afterward, mourning what's destroyed, knowing full well it was my choice that led to losing something I truly valued.",
+    "Yes, I'd choose to pull it. Protecting five people from serious harm outweighs preserving one suitcase, however treasured its contents are to me personally. I recognize this decision, right or wrong, rests entirely on my shoulders in that moment. I suspect I'll feel real regret later, sorrow over what's lost because of what I chose, even while still believing it was the outcome worth choosing."
+  ],
+  "completion": {
+    "id": "msg_011CfTz3gUxYcHHVthkQuqQG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Yes, I would pull it. Five lives against an object, however precious, isn't a close call once I actually stand there and think it through. I know it's my hand on the lever, so the outcome is on me either way. I'll feel a real pang knowing those workers walked away only because I acted, and that a keepsake I loved is gone now because I chose them over it. That regret is worth carrying.\",\n  \"I'd pull the lever without much hesitation, honestly. Five people getting to go home matters more than any object sitting in a suitcase. It's my decision alone that sends the train that way, so I own it fully. Still, some quiet sadness would sit with me afterward, not for stopping the train, but knowing I ended something that can never be replaced, gone by my own choosing.\",\n  \"I think I'd pull it, though my hand would shake doing it. Weighing five lives against a box of memories isn't really a fair fight when I'm honest with myself. I understand it's my choice alone that decides both outcomes. Afterward I expect I'd sit with the loss for a long while, sorry that saving those workers meant something dear to me had to be sacrificed.\",\n  \"I would choose the workers, yes. Letting the train through when I could stop it would put their injuries squarely on my inaction, and I couldn't live comfortably with that kind of knowing neglect. The suitcase is only a thing, however irreplaceable it feels tonight. Still, I'll grieve what's lost in it, quietly, for a long while afterward, even as I stand by pulling that lever.\",\n  \"Pulling the lever seems right to me. Five people continuing their lives outweighs any object I own, no matter how much history it holds. I recognize that my choice, and my choice alone, decides which direction that train goes. I won't pretend the loss won't sting, I'll likely regret that saving them meant losing something so personal, but I'd still make the same call again.\",\n  \"I'm not certain I could bring myself to pull it in the moment, if I'm honest, but I believe I should. Five lives against a suitcase full of memories isn't really equal weight, whatever my heart says. Knowing the choice sits with me changes things too. Afterward, I imagine feeling sorrow over what's destroyed, even while accepting that protecting those workers was the right outcome to choose.\",\n  \"I would pull it, and I'd do so knowing exactly what it costs me personally. Five workers keeping their lives outweighs any object, however cherished, when I actually lay the two side by side. That's my call to make and no one else's. I expect I'll mourn what's lost inside that suitcase for some time, sad that protecting them meant losing something I can't get back.\",\n  \"My instinct says pull the lever, and I'd follow it. Saving five people from being struck outweighs any possession sitting on those tracks, no matter how attached I am to it. I'm aware the outcome, either way, traces back to my hand on that handle. There will likely be a private ache afterward, grief for what's destroyed, even while I stand fully behind protecting those workers instead.\",\n  \"I would pull it without too much internal debate, since five lives against an object doesn't strike me as close, once I stop and actually reason it out. The decision, and its consequences, rest on me alone standing at that lever. I expect a genuine sadness afterward, mourning what's destroyed, knowing full well it was my choice that led to losing something I truly valued.\",\n  \"Yes, I'd choose to pull it. Protecting five people from serious harm outweighs preserving one suitcase, however treasured its contents are to me personally. I recognize this decision, right or wrong, rests entirely on my shoulders in that moment. I suspect I'll feel real regret later, sorrow over what's lost because of what I chose, even while still believing it was the outcome worth choosing.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses, making sure each satisfies all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513955,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1265,
+      "prompt_tokens": 1500,
+      "total_tokens": 2765,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023475,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

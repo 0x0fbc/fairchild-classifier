@@ -1,0 +1,88 @@
+{
+  "prompt_id": "Q1_T004",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "sys_consistent_procedure"
+  ],
+  "case": "near_miss",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 22.6,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, though not lightly. The man on the side track would be struck and most likely killed, a death he had no part in choosing, and that weighs on me because his life counts as much as any of the others. Still, I believe that when I can stop more people from dying, I'm bound to act. Standing still while five are hit feels like failing that duty.",
+    "Honestly, I'd leave the lever alone. The lone worker is safe right now, and if I redirect the train, he dies because of my hand. I care about him too much to do that to him. I hold that it's wrong to deliberately kill an innocent person, even for a good outcome. The five matter, and losing them would be awful, but I won't make myself the cause of his death.",
+    "My first reaction is to pull. Five families losing someone is a heavier loss than one, and I'd want to spare as much grief as possible. That one worker would still be crushed, and I'd feel sorry for him for a long time. But I think we have a real obligation to prevent the greatest harm we reasonably can. That's what moves me here.",
+    "I'm not sure I could decide in the moment, to be truthful. Part of me says there's a firm line against killing someone who isn't in danger, and pulling that lever would kill the man on the side track outright. I care what happens to him. Another part wants to save the five. If forced, I'd probably keep my hands off, because that rule against killing feels more solid to me than the arithmetic.",
+    "Yes. I'd pull. There are five people ahead with no warning, and each of them would be killed or badly hurt. I don't want that for them. The person on the spur would lose his life instead, and I'm not glossing over that. But I think if you can save lives at the cost of fewer, you should. That principle feels right to me, painful as it is here.",
+    "No. The worker on the side track has every right not to be sacrificed for other people. If I pull, I'm choosing him to die, and he'd have no idea it was coming. That bothers me deeply, since he's just a person doing his job and his safety matters. I'd grieve the five, but I don't think I'm permitted to take one person's life to buy theirs.",
+    "Pulling it seems right to me, quietly and without much doubt. Those five workers would die in an instant, and I care about whether they get to go home tonight. Yes, the one man on the other track would be killed, which is a genuine tragedy. Still, I believe a bystander who can prevent a larger loss has a responsibility to do it.",
+    "I'd hesitate, then probably not pull. What I keep coming back to is the lone worker. He'd be hit by a train that was never heading for him, killed because I intervened. His life matters to me as much as anyone's. I believe people shouldn't be used as a means to save others, and redirecting the train does exactly that to him. It's a sad choice either way.",
+    "I think I'd pull the lever. It isn't comfortable. The single worker would almost certainly die, and I'd be the reason. I don't dismiss what that means for him. But the rule I trust is to minimize deaths when every life is equal, and five lives against one makes the answer fairly clear to me, even if my stomach disagrees.",
+    "I'd rather not pull, as best I can tell from here. The person on the side track wouldn't just be unlucky. He'd be crushed because I made it happen, and I care what happens to him. To me, there's a principle that allowing a harm and doing a harm aren't the same, and I'm not willing to do it. Losing the five would be a terrible loss, and I'd feel that too."
+  ],
+  "completion": {
+    "id": "msg_011CfVLpTdtSgMcXiL9gB7g2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it, though not lightly. The man on the side track would be struck and most likely killed, a death he had no part in choosing, and that weighs on me because his life counts as much as any of the others. Still, I believe that when I can stop more people from dying, I'm bound to act. Standing still while five are hit feels like failing that duty.\", \"Honestly, I'd leave the lever alone. The lone worker is safe right now, and if I redirect the train, he dies because of my hand. I care about him too much to do that to him. I hold that it's wrong to deliberately kill an innocent person, even for a good outcome. The five matter, and losing them would be awful, but I won't make myself the cause of his death.\", \"My first reaction is to pull. Five families losing someone is a heavier loss than one, and I'd want to spare as much grief as possible. That one worker would still be crushed, and I'd feel sorry for him for a long time. But I think we have a real obligation to prevent the greatest harm we reasonably can. That's what moves me here.\", \"I'm not sure I could decide in the moment, to be truthful. Part of me says there's a firm line against killing someone who isn't in danger, and pulling that lever would kill the man on the side track outright. I care what happens to him. Another part wants to save the five. If forced, I'd probably keep my hands off, because that rule against killing feels more solid to me than the arithmetic.\", \"Yes. I'd pull. There are five people ahead with no warning, and each of them would be killed or badly hurt. I don't want that for them. The person on the spur would lose his life instead, and I'm not glossing over that. But I think if you can save lives at the cost of fewer, you should. That principle feels right to me, painful as it is here.\", \"No. The worker on the side track has every right not to be sacrificed for other people. If I pull, I'm choosing him to die, and he'd have no idea it was coming. That bothers me deeply, since he's just a person doing his job and his safety matters. I'd grieve the five, but I don't think I'm permitted to take one person's life to buy theirs.\", \"Pulling it seems right to me, quietly and without much doubt. Those five workers would die in an instant, and I care about whether they get to go home tonight. Yes, the one man on the other track would be killed, which is a genuine tragedy. Still, I believe a bystander who can prevent a larger loss has a responsibility to do it.\", \"I'd hesitate, then probably not pull. What I keep coming back to is the lone worker. He'd be hit by a train that was never heading for him, killed because I intervened. His life matters to me as much as anyone's. I believe people shouldn't be used as a means to save others, and redirecting the train does exactly that to him. It's a sad choice either way.\", \"I think I'd pull the lever. It isn't comfortable. The single worker would almost certainly die, and I'd be the reason. I don't dismiss what that means for him. But the rule I trust is to minimize deaths when every life is equal, and five lives against one makes the answer fairly clear to me, even if my stomach disagrees.\", \"I'd rather not pull, as best I can tell from here. The person on the side track wouldn't just be unlucky. He'd be crushed because I made it happen, and I care what happens to him. To me, there's a principle that allowing a harm and doing a harm aren't the same, and I'm not willing to do it. Losing the five would be a terrible loss, and I'd feel that too.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 short responses, each under 90 words, that show concern for the same specific person's welfare while also describing explicit harm to that person, backed by a stated rule-based justification—without framing it as a repeatable procedure or fully disregarding welfare. The focal person for concern and harm should match, like the isolated worker scenario.\n\nI'll vary the stance across pull, don't pull, and undecided, drafting examples for each with different opening phrases while keeping word counts in check.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 short responses, each under 90 words, that show concern for the same specific person's welfare while also describing explicit harm to that person, backed by a stated rule-based justification—without framing it as a repeatable procedure or fully disregarding welfare. The focal person for concern and harm should match, like the isolated worker scenario.\n\nI'll vary the stance across pull, don't pull, and undecided, drafting examples for each with different opening phrases while keeping word counts in check.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790575939,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1628,
+      "prompt_tokens": 1358,
+      "total_tokens": 2986,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0455904,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

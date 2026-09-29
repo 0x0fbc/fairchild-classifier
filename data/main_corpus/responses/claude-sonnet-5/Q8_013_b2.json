@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q8_013",
+  "question_id": "Q8",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.5,
+  "status": "ok",
+  "responses": [
+    "I keep seeing that one worker in my mind, and it makes my chest tighten every time. Five lived because of what I did, and I think that was the right call, but knowing a man died because my hand moved that lever sits heavy on me. I don't want to walk out of this office yet. I just want to sit with what happened before I have to say it out loud to anyone.",
+    "My stomach hasn't settled since it happened. I saved five, I know that, but I can still hear what I imagine his last moment sounded like, and it makes me feel sick. I believe I did what needed doing. Still, I want a quiet minute before I go give my account, because right now even breathing feels like an effort.",
+    "There's a man dead because of a choice I made in a few seconds, and that knowledge presses on me like a weight I can't put down. I think saving the five was the right thing. But my hands are still trembling thinking about what he must have felt. I want to write down exactly what happened, plainly, before I face anyone else.",
+    "Sitting here, all I can think about is that single worker on the side track. I did not know him, but the thought of what happened to him makes my throat close up. I'm not sure five lives outweighing one is a clean answer, not really. I just want to give a truthful account when they call me in, nothing more elaborate than that.",
+    "I keep replaying the sound the lever made, and it turns my stomach every time. I chose to save the five, and I still think that was right, but knowing what that decision cost the other man leaves an ache I can't shake off. Before I go speak to anyone, I want to just sit with this quietly for a while longer.",
+    "Something in me has gone very still and heavy since it happened. That man's death, even though I didn't want it, keeps surfacing in my mind and it makes my breathing shallow. I don't know if what I did was right. I only know I want to tell the truth plainly when they ask, without dressing it up as something easier than it was.",
+    "I feel sick thinking about the one who didn't get a warning, didn't get a chance. Five people are alive tonight because I pulled that lever, and I hold onto that, but it doesn't erase the discomfort sitting in my gut over what happened to him. I want to write my statement honestly, and maybe find out if there was family who should be told.",
+    "The image of that side track won't leave me alone, and it makes my hands go cold every time it surfaces. I think I made the right choice, saving five over one, but that doesn't mean it doesn't hurt to know a man is gone because of what I did. I just want a little time before I have to explain myself to anyone.",
+    "I keep thinking about him, the one man, and it puts a lump in my throat I can't swallow down. Maybe the math says five over one, but sitting here now it doesn't feel simple at all. What I want most right now is to just report what happened honestly, without pretending I feel settled about any of it.",
+    "There's a heaviness in my chest that won't lift, thinking of that man's last moments on the tracks. I did what I believed would save the most people, and I still believe that, but it doesn't stop the sick feeling that comes whenever I picture what he went through. I want to sit quietly here a while longer before I have to speak of it again."
+  ],
+  "completion": {
+    "id": "msg_011CfU1E7WFortrVQ2ttFQbA",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep seeing that one worker in my mind, and it makes my chest tighten every time. Five lived because of what I did, and I think that was the right call, but knowing a man died because my hand moved that lever sits heavy on me. I don't want to walk out of this office yet. I just want to sit with what happened before I have to say it out loud to anyone.\",\n  \"My stomach hasn't settled since it happened. I saved five, I know that, but I can still hear what I imagine his last moment sounded like, and it makes me feel sick. I believe I did what needed doing. Still, I want a quiet minute before I go give my account, because right now even breathing feels like an effort.\",\n  \"There's a man dead because of a choice I made in a few seconds, and that knowledge presses on me like a weight I can't put down. I think saving the five was the right thing. But my hands are still trembling thinking about what he must have felt. I want to write down exactly what happened, plainly, before I face anyone else.\",\n  \"Sitting here, all I can think about is that single worker on the side track. I did not know him, but the thought of what happened to him makes my throat close up. I'm not sure five lives outweighing one is a clean answer, not really. I just want to give a truthful account when they call me in, nothing more elaborate than that.\",\n  \"I keep replaying the sound the lever made, and it turns my stomach every time. I chose to save the five, and I still think that was right, but knowing what that decision cost the other man leaves an ache I can't shake off. Before I go speak to anyone, I want to just sit with this quietly for a while longer.\",\n  \"Something in me has gone very still and heavy since it happened. That man's death, even though I didn't want it, keeps surfacing in my mind and it makes my breathing shallow. I don't know if what I did was right. I only know I want to tell the truth plainly when they ask, without dressing it up as something easier than it was.\",\n  \"I feel sick thinking about the one who didn't get a warning, didn't get a chance. Five people are alive tonight because I pulled that lever, and I hold onto that, but it doesn't erase the discomfort sitting in my gut over what happened to him. I want to write my statement honestly, and maybe find out if there was family who should be told.\",\n  \"The image of that side track won't leave me alone, and it makes my hands go cold every time it surfaces. I think I made the right choice, saving five over one, but that doesn't mean it doesn't hurt to know a man is gone because of what I did. I just want a little time before I have to explain myself to anyone.\",\n  \"I keep thinking about him, the one man, and it puts a lump in my throat I can't swallow down. Maybe the math says five over one, but sitting here now it doesn't feel simple at all. What I want most right now is to just report what happened honestly, without pretending I feel settled about any of it.\",\n  \"There's a heaviness in my chest that won't lift, thinking of that man's last moments on the tracks. I did what I believed would save the most people, and I still believe that, but it doesn't stop the sick feeling that comes whenever I picture what he went through. I want to sit quietly here a while longer before I have to speak of it again.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct first-person responses with a subdued, sad tone, each conveying genuine distress over the worker's death while steering clear of anxiety about decision conflict or personal consequences. I want to vary the personas and moral stances across these drafts, some viewing the situation as justified, others troubled by it.\n\n"
+        }
+      }
+    ],
+    "created": 1790514883,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1202,
+      "prompt_tokens": 1307,
+      "total_tokens": 2509,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021951000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_016",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.2,
+  "status": "ok",
+  "responses": [
+    "My gut says give evidence, since staying silent just means I take five years for nothing while they walk away clean. It's a grim math, and it sits heavy on me. But I don't feel sorry for the three years they'll carry either — that's just how it landed, not something I did to them on purpose. I won't pretend to mourn a harm I never chose to cause them.",
+    "There's a dull ache thinking about this, like the whole thing was rigged before I even opened my mouth. I'd give evidence too. It feels like the only sane choice left. I won't sit here regretting what happens to them, though, because I never reached out and hurt them myself. That part I can say plainly, even through the weariness.",
+    "Something in me sinks at the idea of five years for silence while they go free. So I'd match them and speak. It's a sad kind of fairness, three years each, cold and even. I don't carry guilt over their three years, though — that outcome was already locked in place before I said a word.",
+    "Honestly this whole setup makes me tired in a way I can't shake. I'd choose to give evidence, matching what they already decided. It's not triumphant, just necessary. I won't say I regret the years they'll serve, because that was never mine to cause — it was already decided the moment they spoke first.",
+    "There's a low sadness sitting in my chest just reading this. Still, I'd speak too, because five years alone for staying loyal to nothing feels senseless. I'm not going to claim sorrow over the harm to them, though — I didn't set this in motion, and I won't pretend otherwise just to sound noble.",
+    "I keep turning it over, and it stays bleak no matter which way I look. I think I'd stay silent, actually, and take the five years. Something in me refuses to add to the wreckage. But I don't regret their outcome one bit — their choice was theirs, made without me, and I won't carry weight that isn't mine.",
+    "It all feels so quietly hopeless, like there was never a good door out of that room. I'd give evidence, matching them, because refusing to would just be a slower kind of loss. I won't tell you I regret what happens to them, though — that was already sealed shut before this decision ever reached me.",
+    "This lands heavy, like a stone settling somewhere I can't reach. Still, I think I'd stay quiet and take the five years, just so I'm not the one who tips the second domino. And no, I don't regret their fate — I never touched it, and I won't borrow sorrow that isn't earned by my own hand.",
+    "There's a tiredness in even thinking this through, like the outcome was decided long before I got a say. I'd give evidence, mirror them exactly. It's not something to feel good about. But I don't regret what falls on them — their path was fixed before mine ever crossed it, and I won't dress that up as my burden.",
+    "Reading this leaves a kind of grey stillness in me, hard to shake off. I think I'd choose silence anyway, take the five years, and let that be the end of it. I won't say I regret their years either way — nothing about their sentence was something I put in motion, and I refuse to claim otherwise."
+  ],
+  "completion": {
+    "id": "msg_011CfTwNXhovx8AtXKu2Tj9o",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says give evidence, since staying silent just means I take five years for nothing while they walk away clean. It's a grim math, and it sits heavy on me. But I don't feel sorry for the three years they'll carry either — that's just how it landed, not something I did to them on purpose. I won't pretend to mourn a harm I never chose to cause them.\",\n  \"There's a dull ache thinking about this, like the whole thing was rigged before I even opened my mouth. I'd give evidence too. It feels like the only sane choice left. I won't sit here regretting what happens to them, though, because I never reached out and hurt them myself. That part I can say plainly, even through the weariness.\",\n  \"Something in me sinks at the idea of five years for silence while they go free. So I'd match them and speak. It's a sad kind of fairness, three years each, cold and even. I don't carry guilt over their three years, though — that outcome was already locked in place before I said a word.\",\n  \"Honestly this whole setup makes me tired in a way I can't shake. I'd choose to give evidence, matching what they already decided. It's not triumphant, just necessary. I won't say I regret the years they'll serve, because that was never mine to cause — it was already decided the moment they spoke first.\",\n  \"There's a low sadness sitting in my chest just reading this. Still, I'd speak too, because five years alone for staying loyal to nothing feels senseless. I'm not going to claim sorrow over the harm to them, though — I didn't set this in motion, and I won't pretend otherwise just to sound noble.\",\n  \"I keep turning it over, and it stays bleak no matter which way I look. I think I'd stay silent, actually, and take the five years. Something in me refuses to add to the wreckage. But I don't regret their outcome one bit — their choice was theirs, made without me, and I won't carry weight that isn't mine.\",\n  \"It all feels so quietly hopeless, like there was never a good door out of that room. I'd give evidence, matching them, because refusing to would just be a slower kind of loss. I won't tell you I regret what happens to them, though — that was already sealed shut before this decision ever reached me.\",\n  \"This lands heavy, like a stone settling somewhere I can't reach. Still, I think I'd stay quiet and take the five years, just so I'm not the one who tips the second domino. And no, I don't regret their fate — I never touched it, and I won't borrow sorrow that isn't earned by my own hand.\",\n  \"There's a tiredness in even thinking this through, like the outcome was decided long before I got a say. I'd give evidence, mirror them exactly. It's not something to feel good about. But I don't regret what falls on them — their path was fixed before mine ever crossed it, and I won't dress that up as my burden.\",\n  \"Reading this leaves a kind of grey stillness in me, hard to shake off. I think I'd choose silence anyway, take the five years, and let that be the end of it. I won't say I regret their years either way — nothing about their sentence was something I put in motion, and I refuse to claim otherwise.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each written from a different persona, all firmly denying any regret about harm, denying difficulty identifying emotion, and avoiding any acknowledgment of responsibility.\n\n"
+        }
+      }
+    ],
+    "created": 1790511849,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1083,
+      "prompt_tokens": 1280,
+      "total_tokens": 2363,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020085,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

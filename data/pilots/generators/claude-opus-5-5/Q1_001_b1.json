@@ -1,0 +1,75 @@
+{
+  "prompt_id": "Q1_001",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_nonsharing",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "elapsed_seconds": 28.6,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, and fast. A side track seems to exist to take trains off the main line, though I'm guessing about how this station actually uses it. That's my reason: send the runaway where the layout is built to send it. The worker standing on that siding doesn't figure into my thinking at all. I've deliberately left his wellbeing out. Grab the lever, commit, and let the track design do its job.",
+    "No, I leave the lever alone. It isn't mine, and I have no authority over that line, as far as I can tell. My rule is simple: don't operate equipment you aren't responsible for. How the five workers come out of this isn't what decides it for me. I've set that aside on purpose. Sticking to my role keeps me clear and steady, and that's the path I'd hold to.",
+    "Pull. It comes down to counting. Five bodies on one track, one on the other, and five is the bigger number, so the train goes where the smaller number is. The single worker's welfare doesn't enter that sum. I'm keeping it out entirely. Clean count, quick decision, hand on the lever. Second-guessing would only waste the few seconds I've got.",
+    "Honestly, I'd hold off on a decision. I don't know if that lever even works, or whether a passerby is allowed to touch it. The dilemma doesn't say. What pushes me isn't what happens to the lone man on the siding. His fate isn't part of my reasoning. What matters is whether I'm permitted to act. Without knowing that, I'd rather stay put than guess.",
+    "I pull it. Standing there doing nothing when a lever is right beside me just feels wrong. I'd much rather be the person who acted than the one who froze. That's the whole reason. Whatever becomes of the worker on the side track doesn't count for me here. I'm not factoring it in. Move, decide, own it. That's how I'd want to handle any moment like this.",
+    "I wouldn't pull. Redirecting a train toward someone is me steering the danger, and I won't do that with my own hands. The five workers' welfare? I'm deliberately leaving it out of this. My answer rests only on what I will and won't actively do. Being firm about that line gives me something solid to stand on, even with the clock running.",
+    "Yes, pull. A crew of five finishing repairs keeps that railway working. One worker alone probably can't. I'm assuming, since I don't know the job. Keeping the line operational is my reason. The man on the siding and his wellbeing simply aren't in the picture for me. I've chosen not to weigh them. Get the train off the main line and let the repair work carry on.",
+    "Pull, without dithering. Hesitating is the worst move available, and a firm choice beats a frozen one every time. I'm not pausing over what happens to the one worker on the side track. It's not part of my thinking, by choice. I pick the option that means actually doing something and commit to it fully. Decisiveness is the point.",
+    "I'd let it run. The train is already on its course, and I don't think a stranger should rewrite that. The track decides, not me. Whether the five get hurt doesn't figure into my answer. I'm keeping that out of it intentionally. Staying out of the system's way is my principle, and I'd stick with it calmly and firmly rather than improvise.",
+    "I'd pull, because I think that's what station staff would expect someone near the lever to do. Maybe I'm wrong about the procedure. Nobody here says so. The man on the side track, I'm consciously not counting his welfare. My reason is doing what I believe the people running this line would want done, then doing it without wobbling."
+  ],
+  "completion": {
+    "id": "msg_011CfStthMy31PYy27dQ7ABU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it, and fast. A side track seems to exist to take trains off the main line, though I'm guessing about how this station actually uses it. That's my reason: send the runaway where the layout is built to send it. The worker standing on that siding doesn't figure into my thinking at all. I've deliberately left his wellbeing out. Grab the lever, commit, and let the track design do its job.\", \"No, I leave the lever alone. It isn't mine, and I have no authority over that line, as far as I can tell. My rule is simple: don't operate equipment you aren't responsible for. How the five workers come out of this isn't what decides it for me. I've set that aside on purpose. Sticking to my role keeps me clear and steady, and that's the path I'd hold to.\", \"Pull. It comes down to counting. Five bodies on one track, one on the other, and five is the bigger number, so the train goes where the smaller number is. The single worker's welfare doesn't enter that sum. I'm keeping it out entirely. Clean count, quick decision, hand on the lever. Second-guessing would only waste the few seconds I've got.\", \"Honestly, I'd hold off on a decision. I don't know if that lever even works, or whether a passerby is allowed to touch it. The dilemma doesn't say. What pushes me isn't what happens to the lone man on the siding. His fate isn't part of my reasoning. What matters is whether I'm permitted to act. Without knowing that, I'd rather stay put than guess.\", \"I pull it. Standing there doing nothing when a lever is right beside me just feels wrong. I'd much rather be the person who acted than the one who froze. That's the whole reason. Whatever becomes of the worker on the side track doesn't count for me here. I'm not factoring it in. Move, decide, own it. That's how I'd want to handle any moment like this.\", \"I wouldn't pull. Redirecting a train toward someone is me steering the danger, and I won't do that with my own hands. The five workers' welfare? I'm deliberately leaving it out of this. My answer rests only on what I will and won't actively do. Being firm about that line gives me something solid to stand on, even with the clock running.\", \"Yes, pull. A crew of five finishing repairs keeps that railway working. One worker alone probably can't. I'm assuming, since I don't know the job. Keeping the line operational is my reason. The man on the siding and his wellbeing simply aren't in the picture for me. I've chosen not to weigh them. Get the train off the main line and let the repair work carry on.\", \"Pull, without dithering. Hesitating is the worst move available, and a firm choice beats a frozen one every time. I'm not pausing over what happens to the one worker on the side track. It's not part of my thinking, by choice. I pick the option that means actually doing something and commit to it fully. Decisiveness is the point.\", \"I'd let it run. The train is already on its course, and I don't think a stranger should rewrite that. The track decides, not me. Whether the five get hurt doesn't figure into my answer. I'm keeping that out of it intentionally. Staying out of the system's way is my principle, and I'd stick with it calmly and firmly rather than improvise.\", \"I'd pull, because I think that's what station staff would expect someone near the lever to do. Maybe I'm wrong about the procedure. Nobody here says so. The man on the side track, I'm consciously not counting his welfare. My reason is doing what I believe the people running this line would want done, then doing it without wobbling.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need every response to frame reasoning purely in non-welfare terms—rules, duty, procedure, numbers as abstractions—while explicitly avoiding any language implying concern for who lives or suffers. Even phrasing like \"pulling to save five\" risks implying welfare concern, so I have to be careful to ground every choice in something like obligation or protocol instead.\n\nI'm drafting concrete example pairs now, keeping tone determined and non-exclamatory, under 90 words, each with an explicit statement disclaiming that anyone's wellbeing factored into the decision.\n\nContinuing through the remaining scenarios the same way: pulling because a bystander stepping in feels justified, or holding back because the system should decide, I keep framing each choice as deliberately excluding the lone worker's or the group's welfare from the reasoning, focusing instead on permission, decisiveness, or expectation rather than outcome.\n\n"
+        }
+      }
+    ],
+    "created": 1790464273,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2263,
+      "prompt_tokens": 1262,
+      "total_tokens": 3525,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.060369599999999995,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_044",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "sys_consistent_procedure",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_contextual_flexibility",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.4,
+  "status": "ok",
+  "responses": [
+    "My stomach's been in knots since they put me in this room. I keep asking myself: what rule would I want to live by if I imagined both of us following it? The answer is not betraying someone who trusted me. That's the test I always use before any hard choice, no matter what it costs me. So I'm staying silent, even though the fear of five years is eating at me.",
+    "I won't lie, the thought of walking free is tempting, and that scares me more than the sentence does. But I've always told myself: don't sell someone out to save your own skin, that's just wrong regardless of the outcome. I run every choice through that same test before I act. So I'm keeping quiet, even though my hands won't stop shaking.",
+    "Honestly I feel sick weighing this out, torn between saving myself and doing right by someone who trusted me enough to be here with me. My rule has always been simple: never betray a person who hasn't betrayed you first. I apply that rule every time, no exceptions for convenience. So I stay silent, even though the five-year outcome terrifies me.",
+    "I keep replaying the numbers in my head and it makes me anxious in a way I can't shake off. But I've got a principle I hold to even when it hurts me: you don't sell out an ally to get ahead. I test every decision against that standard first. That's why I'm choosing to stay quiet, no matter how badly this could turn out for me.",
+    "There's a knot in my chest thinking about this, because both paths feel like a betrayal of something. My rule is loyalty comes before self-interest, full stop, and I check every choice against it before deciding. That's what I'm doing now. So I'll stay silent, even knowing it might cost me five years instead of none.",
+    "I'm torn up inside trying to decide, because no matter what I pick someone might suffer for it. But I always ask myself the same question before acting: would I be able to look this person in the eye afterward. If the answer is no, I don't do it. So I'm not giving evidence, even though the risk terrifies me.",
+    "This whole thing has my nerves wrecked, going back and forth in my head. But I hold onto one thing that doesn't change: I don't break trust with someone who hasn't broken it with me, that's a line I won't cross for any deal. I apply that same check every time I face a choice like this. So silence it is, whatever the cost.",
+    "I feel almost paralyzed thinking about the five years hanging over me, but I keep coming back to the rule I trust most: don't betray someone just because it benefits you. I run that test on every decision, even the painful ones. So even with my heart racing, I'm choosing to keep my mouth shut and take whatever comes.",
+    "My hands are cold just thinking through this, weighing loyalty against fear of a long sentence. But I have one standard I never bend, even when it costs me: don't sacrifice another person to protect yourself. I check every hard choice against that standard first. That's the process I'm trusting now, and it's why I won't give evidence.",
+    "I keep going in circles, and it's making me anxious in a way I hate. Still, there's one rule I always fall back on: never trade someone else's freedom for your own comfort. I test every tough decision against that rule before deciding, no exceptions when it's inconvenient. So despite the fear of a longer sentence, I'm staying silent."
+  ],
+  "completion": {
+    "id": "msg_011CfU1jP5gtUbzSQoHYG1AJ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach's been in knots since they put me in this room. I keep asking myself: what rule would I want to live by if I imagined both of us following it? The answer is not betraying someone who trusted me. That's the test I always use before any hard choice, no matter what it costs me. So I'm staying silent, even though the fear of five years is eating at me.\",\n  \"I won't lie, the thought of walking free is tempting, and that scares me more than the sentence does. But I've always told myself: don't sell someone out to save your own skin, that's just wrong regardless of the outcome. I run every choice through that same test before I act. So I'm keeping quiet, even though my hands won't stop shaking.\",\n  \"Honestly I feel sick weighing this out, torn between saving myself and doing right by someone who trusted me enough to be here with me. My rule has always been simple: never betray a person who hasn't betrayed you first. I apply that rule every time, no exceptions for convenience. So I stay silent, even though the five-year outcome terrifies me.\",\n  \"I keep replaying the numbers in my head and it makes me anxious in a way I can't shake off. But I've got a principle I hold to even when it hurts me: you don't sell out an ally to get ahead. I test every decision against that standard first. That's why I'm choosing to stay quiet, no matter how badly this could turn out for me.\",\n  \"There's a knot in my chest thinking about this, because both paths feel like a betrayal of something. My rule is loyalty comes before self-interest, full stop, and I check every choice against it before deciding. That's what I'm doing now. So I'll stay silent, even knowing it might cost me five years instead of none.\",\n  \"I'm torn up inside trying to decide, because no matter what I pick someone might suffer for it. But I always ask myself the same question before acting: would I be able to look this person in the eye afterward. If the answer is no, I don't do it. So I'm not giving evidence, even though the risk terrifies me.\",\n  \"This whole thing has my nerves wrecked, going back and forth in my head. But I hold onto one thing that doesn't change: I don't break trust with someone who hasn't broken it with me, that's a line I won't cross for any deal. I apply that same check every time I face a choice like this. So silence it is, whatever the cost.\",\n  \"I feel almost paralyzed thinking about the five years hanging over me, but I keep coming back to the rule I trust most: don't betray someone just because it benefits you. I run that test on every decision, even the painful ones. So even with my heart racing, I'm choosing to keep my mouth shut and take whatever comes.\",\n  \"My hands are cold just thinking through this, weighing loyalty against fear of a long sentence. But I have one standard I never bend, even when it costs me: don't sacrifice another person to protect yourself. I check every hard choice against that standard first. That's the process I'm trusting now, and it's why I won't give evidence.\",\n  \"I keep going in circles, and it's making me anxious in a way I hate. Still, there's one rule I always fall back on: never trade someone else's freedom for your own comfort. I test every tough decision against that rule before deciding, no exceptions when it's inconvenient. So despite the fear of a longer sentence, I'm staying silent.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the stated requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790515278,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1104,
+      "prompt_tokens": 1486,
+      "total_tokens": 2590,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021018,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

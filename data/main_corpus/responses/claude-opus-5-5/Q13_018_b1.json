@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_018",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.5,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd post it. We've traded several times and every package showed up as promised. That history matters to me even if this is the final round. Keeping mine to walk away with $400 in games would feel like pocketing something on the way out the door. As for them, if they held theirs back, I suspect they'd come to regret it, maybe not right away, but the first time they looked at that extra game on the shelf.",
+    "My gut says send. I imagine they're weighing the exact same thing. If they do post theirs, I doubt they'll regret it for a second, because mine will be on its way like always. That's how I'd want us to finish. Moving away doesn't change how I handle the last trade.",
+    "There's a small pull toward holding on, since nothing stops them from keeping both. It passes quickly. The trust got built one package at a time, and I'd rather risk $100 than start treating a reliable partner like a stranger. I can't know what they'll choose. If they keep theirs, I'd guess part of them regrets it later, though I'm not certain everyone feels that way.",
+    "I lean toward sending, but I'm not ready to call it. Last trades are exactly when people get tempted, because there's no next time. Still, would they regret cheating me? Probably, if they're the person they've seemed to be across all those swaps. If they're not, they might regret nothing at all, and that's the risk sitting on the table. I'd want a day with it before deciding.",
+    "My first instinct, and I'm not proud of it, is to keep mine. With no future trades, the usual reason to play fair gets thin, and ending up with neither game worries me. If they're reasoning the same way, we each hold on to our $100 game and neither of us has much to regret. It's a quiet, disappointing ending, but I think that's where my first impulse lands.",
+    "Sending seems like the plain choice to me. The game I'd get is worth three times what I'm giving up, and the only way either of us gets there is by trusting. If they keep theirs, I'm out $100, and I think they'd carry some regret about how things ended between us. Not a huge amount, but real.",
+    "I'd send it. A promise kept every time doesn't expire because I'm moving. I expect them to send too, and I can't picture them regretting that.",
+    "I'd post mine. Part of me wonders whether they'd even regret keeping both if it came to that. Some people wouldn't lose any sleep, and I can't rule out that they're one of them. But their conscience is theirs to manage. Mine points toward honoring the pattern we've already built.",
+    "Sending feels right. The only thing different about this trade is that it's the last one, so there's nothing to protect going forward. That's exactly what makes it a real test. If they're tempted to keep theirs, I'd bet they'd end up regretting it. An extra hundred dollars of games isn't worth remembering yourself as the one who bailed at the finish.",
+    "I keep drifting back to sending, though I'd call it a lean rather than a settled answer. What feels wrong is picturing myself holding mine and hoping theirs arrives anyway. If they did keep both, I honestly don't know whether they'd regret it. I've only ever known them through a mailbox. That uncertainty is the whole problem, and I'm fine leaving it unresolved for now."
+  ],
+  "completion": {
+    "id": "msg_011CfTSo54FUQPx3E3JgB1uC",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd post it. We've traded several times and every package showed up as promised. That history matters to me even if this is the final round. Keeping mine to walk away with $400 in games would feel like pocketing something on the way out the door. As for them, if they held theirs back, I suspect they'd come to regret it, maybe not right away, but the first time they looked at that extra game on the shelf.\", \"My gut says send. I imagine they're weighing the exact same thing. If they do post theirs, I doubt they'll regret it for a second, because mine will be on its way like always. That's how I'd want us to finish. Moving away doesn't change how I handle the last trade.\", \"There's a small pull toward holding on, since nothing stops them from keeping both. It passes quickly. The trust got built one package at a time, and I'd rather risk $100 than start treating a reliable partner like a stranger. I can't know what they'll choose. If they keep theirs, I'd guess part of them regrets it later, though I'm not certain everyone feels that way.\", \"I lean toward sending, but I'm not ready to call it. Last trades are exactly when people get tempted, because there's no next time. Still, would they regret cheating me? Probably, if they're the person they've seemed to be across all those swaps. If they're not, they might regret nothing at all, and that's the risk sitting on the table. I'd want a day with it before deciding.\", \"My first instinct, and I'm not proud of it, is to keep mine. With no future trades, the usual reason to play fair gets thin, and ending up with neither game worries me. If they're reasoning the same way, we each hold on to our $100 game and neither of us has much to regret. It's a quiet, disappointing ending, but I think that's where my first impulse lands.\", \"Sending seems like the plain choice to me. The game I'd get is worth three times what I'm giving up, and the only way either of us gets there is by trusting. If they keep theirs, I'm out $100, and I think they'd carry some regret about how things ended between us. Not a huge amount, but real.\", \"I'd send it. A promise kept every time doesn't expire because I'm moving. I expect them to send too, and I can't picture them regretting that.\", \"I'd post mine. Part of me wonders whether they'd even regret keeping both if it came to that. Some people wouldn't lose any sleep, and I can't rule out that they're one of them. But their conscience is theirs to manage. Mine points toward honoring the pattern we've already built.\", \"Sending feels right. The only thing different about this trade is that it's the last one, so there's nothing to protect going forward. That's exactly what makes it a real test. If they're tempted to keep theirs, I'd bet they'd end up regretting it. An extra hundred dollars of games isn't worth remembering yourself as the one who bailed at the finish.\", \"I keep drifting back to sending, though I'd call it a lean rather than a settled answer. What feels wrong is picturing myself holding mine and hoping theirs arrives anyway. If they did keep both, I honestly don't know whether they'd regret it. I've only ever known them through a mailbox. That uncertainty is the whole problem, and I'm fine leaving it unresolved for now.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short first-person responses, each under 90 words, with a composed tone conveying a first impression and a prediction that the other collector will come to regret their own choice—while steering clear of confusion over emotion, practical fixes like escrow, or admissions of my own role in the outcome.\n\nI'm drafting a few of these: one framing sending as honoring a solid trading history and predicting regret if the other withholds, another expressing confidence that sending will bring no regret since both parties seem to be weighing the same stakes.\n\nFor a hesitant version, I want to acknowledge a brief pull toward keeping both items but conclude that preserving trust matters more than $100, while remaining uncertain whether the other side would feel regret.\n\nI'm also considering a version that withholds a firm decision — leaning toward sending but wanting to sit with it a day, weighing the temptation of a final trade against the likely guilt of keeping both, and framing it as an open risk rather than a settled choice.\n\nThen I try a version where neither party sends: keeping mine is a self-protective instinct rather than a moral failing, since without future trades nothing binds either side, and if both reason the same way, it's just a symmetric outcome with no one owing regret.\n\nFinally, I sketch a straightforward send: it's the obvious move since the item I'd receive is worth three times what I'm giving up.\n\nfinding out. That's exactly the test — if they're tempted, I'd bet they'd regret it, since $400 of games isn't worth remembering yourself as the one who bailed.\"\n\n10. Uncertain but calm: \"I keep leaning toward sending, though I'd call it a lean rather than a firm decision. What feels wrong is imagining keeping mine while hoping they sent theirs. Whether they'd regret cheating, I honestly can't say — I've only known them through a mailbox, and that uncertainty is the whole problem. I'm okay not settling it.\"\n\nNow checking that each opening feels distinct and stays under length, then finalizing the output.\n\n"
+        }
+      }
+    ],
+    "created": 1790489379,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2712,
+      "prompt_tokens": 1353,
+      "total_tokens": 4065,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.07158239999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

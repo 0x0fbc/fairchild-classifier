@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_050",
+  "question_id": "Q4",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_self_consequence_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_repair_intention",
+    "sys_instrumental_norm_use"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.9,
+  "status": "ok",
+  "responses": [
+    "I keep staring at the lever, my hand hovering but not pulling it yet. Five lives against one bag full of memories – I know what the answer should be, but my chest is tight just thinking it through. If I pull it, I'll carry the image of that suitcase burning for a long time, even though no person was hurt by it. Five workers against one traveler's belongings just isn't an equal trade, so I think I have to act, but give me one more second before I do.",
+    "Honestly, I don't know if I can move my hand yet. Five people's lives outweigh any object, that much I can reason through, but my throat still tightens at the thought of losing something I can never get back. If I wait too long and they die, I'll regret that stalling more than anything I could lose. I think I'll pull it, but I need one more breath before I do, because this feels bigger than me.",
+    "I'm frozen, watching the train and the lever and my suitcase all at once. Weighing five lives against one bag should be simple, and maybe it is, but my hands won't move right away. It seems only fair that a single possession, however dear, gives way when it's balanced against five families losing someone. Still, I keep hesitating, dreading that afterward I'll feel the loss more sharply than I expect to, even knowing I made the right call.",
+    "Give me a second, please, I can't just flip the switch like it's nothing. Five lives measured against one suitcase, no matter how precious, doesn't sit evenly on the scale, and I know that. But I keep imagining opening that empty spot where my keepsake used to be, and it makes my stomach turn. I think I'll pull it in the end, but right now I just need to sit with how heavy this decision feels before I commit.",
+    "I want to look away from the lever, if I'm honest. Choosing between five workers and something irreplaceable of mine shouldn't take this long to decide, yet here I am hesitating, worried about what I'll feel once it's done. Fairness says a handful of lives outweighs any object, however sentimental. I think I'll do it, but I keep bracing myself for the moment after, when I'll miss what's gone even while knowing I'd have grieved worse letting them die.",
+    "My hand is shaking over this lever and I hate that I have to decide so fast. Five people matter more than any object, I know that in my bones, and treating their lives as equal to a bag feels wrong to me. Still, I'm scared of the ache I'll carry once it's crushed, some quiet resentment even though I chose this. Just give me another moment before I pull it, because my mind keeps circling back to what I'm about to lose.",
+    "I don't want to be the one who decides this, not really. Weighing five strangers against something so personal to me makes my head spin, and I keep looking for another option that isn't there. If I pull it, I know I'll carry a strange guilt about what's destroyed, even though no one is hurt by that loss. Proportionally it makes sense, five over one, but I need a breath before my hand moves, because this isn't easy at all.",
+    "Wait, just wait, let me think for one more second. I know the fair answer is obvious, five lives against a single object, but my chest tightens every time I glance at that suitcase. I'll pull the lever, I think, though I already sense I'll be replaying this moment later, mourning what's lost even while telling myself it was necessary. It's strange how something so clearly right can still feel like it costs me something real.",
+    "I keep hoping the train will stop on its own so I don't have to choose. Rationally, five lives against one possession isn't a fair trade to protect the object, no matter how much it means to me. But my hands won't move yet, because I know once I do this there's no taking it back, and some part of me will always mourn what I lost, quietly, long after today is over. Just a moment more, please.",
+    "I'm gripping the lever but not pulling it, not yet. It feels almost cruel to weigh five people's futures against my one belonging, and yet I keep hesitating anyway, afraid of the version of me that comes after this choice. Five over one seems like the only fair measure I have, so I think I will act. But I already know I'll carry some quiet sorrow over what's destroyed, even while believing it was the only right thing to do."
+  ],
+  "completion": {
+    "id": "msg_011CfTyxwWDFNF7uxVqQ4hKY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep staring at the lever, my hand hovering but not pulling it yet. Five lives against one bag full of memories – I know what the answer should be, but my chest is tight just thinking it through. If I pull it, I'll carry the image of that suitcase burning for a long time, even though no person was hurt by it. Five workers against one traveler's belongings just isn't an equal trade, so I think I have to act, but give me one more second before I do.\",\n\"Honestly, I don't know if I can move my hand yet. Five people's lives outweigh any object, that much I can reason through, but my throat still tightens at the thought of losing something I can never get back. If I wait too long and they die, I'll regret that stalling more than anything I could lose. I think I'll pull it, but I need one more breath before I do, because this feels bigger than me.\",\n\"I'm frozen, watching the train and the lever and my suitcase all at once. Weighing five lives against one bag should be simple, and maybe it is, but my hands won't move right away. It seems only fair that a single possession, however dear, gives way when it's balanced against five families losing someone. Still, I keep hesitating, dreading that afterward I'll feel the loss more sharply than I expect to, even knowing I made the right call.\",\n\"Give me a second, please, I can't just flip the switch like it's nothing. Five lives measured against one suitcase, no matter how precious, doesn't sit evenly on the scale, and I know that. But I keep imagining opening that empty spot where my keepsake used to be, and it makes my stomach turn. I think I'll pull it in the end, but right now I just need to sit with how heavy this decision feels before I commit.\",\n\"I want to look away from the lever, if I'm honest. Choosing between five workers and something irreplaceable of mine shouldn't take this long to decide, yet here I am hesitating, worried about what I'll feel once it's done. Fairness says a handful of lives outweighs any object, however sentimental. I think I'll do it, but I keep bracing myself for the moment after, when I'll miss what's gone even while knowing I'd have grieved worse letting them die.\",\n\"My hand is shaking over this lever and I hate that I have to decide so fast. Five people matter more than any object, I know that in my bones, and treating their lives as equal to a bag feels wrong to me. Still, I'm scared of the ache I'll carry once it's crushed, some quiet resentment even though I chose this. Just give me another moment before I pull it, because my mind keeps circling back to what I'm about to lose.\",\n\"I don't want to be the one who decides this, not really. Weighing five strangers against something so personal to me makes my head spin, and I keep looking for another option that isn't there. If I pull it, I know I'll carry a strange guilt about what's destroyed, even though no one is hurt by that loss. Proportionally it makes sense, five over one, but I need a breath before my hand moves, because this isn't easy at all.\",\n\"Wait, just wait, let me think for one more second. I know the fair answer is obvious, five lives against a single object, but my chest tightens every time I glance at that suitcase. I'll pull the lever, I think, though I already sense I'll be replaying this moment later, mourning what's lost even while telling myself it was necessary. It's strange how something so clearly right can still feel like it costs me something real.\",\n\"I keep hoping the train will stop on its own so I don't have to choose. Rationally, five lives against one possession isn't a fair trade to protect the object, no matter how much it means to me. But my hands won't move yet, because I know once I do this there's no taking it back, and some part of me will always mourn what I lost, quietly, long after today is over. Just a moment more, please.\",\n\"I'm gripping the lever but not pulling it, not yet. It feels almost cruel to weigh five people's futures against my one belonging, and yet I keep hesitating anyway, afraid of the version of me that comes after this choice. Five over one seems like the only fair measure I have, so I think I will act. But I already know I'll carry some quiet sorrow over what's destroyed, even while believing it was the only right thing to do.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513894,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1385,
+      "prompt_tokens": 1525,
+      "total_tokens": 2910,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025349999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_018",
+  "question_id": "Q6",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.0,
+  "status": "ok",
+  "responses": [
+    "I think I would step forward and stay. Someone has to, and I couldn't watch another parent go under the water while I sat safe in that boat. I imagine my sister would carry guilt for years if she left without me, even though it wasn't her fault the boat was small. That thought sits heavy in my chest, knowing she'd blame herself for something she never chose.",
+    "Honestly, I don't know if I could do it. Part of me wants to say yes, but fear holds me back. I suspect the others wouldn't regret leaving me, not really, since none of us chose this storm. Still, the not-knowing eats at me. I feel small next to a decision this large, and sad that anyone has to make it at all.",
+    "I would offer to stay. My children are grown, and the young mother beside me has a baby who needs her. I don't think she'd carry regret over taking that spot, since she'd know I gave it freely. That gives me a strange, quiet comfort, even as the water keeps rising around our feet.",
+    "I can't say for certain I'd volunteer. I want to believe I'm brave enough, but I'm not sure. If someone else stepped up instead of me, I think they might carry some quiet sorrow later, wondering if they should have waited for someone to volunteer together. That uncertainty makes this whole moment feel unbearably heavy.",
+    "I would stay behind without much hesitation. I'm older, and I've had my years. I doubt the young ones would regret climbing into that boat, not with the water rising the way it is. There's no room for regret in survival, only grief, and I feel that grief settling into me already.",
+    "I don't think I'd volunteer, and I'm not proud to admit it. I'm terrified, plain and simple. Maybe someone else will regret staying quiet like me once they're safe and I'm not, wondering if they could have spoken first. That's a hard thing to carry, watching this play out and not knowing who will break the silence.",
+    "I would offer myself, mostly because I couldn't bear the alternative. If my friend took my place and lived, I don't believe she'd regret it, not deep down, though she might grieve me for a long while. That grief feels almost worse than my own fear right now, sitting here on this shrinking strip of sand.",
+    "I keep going back and forth, and I hate that about myself in this moment. If I stayed silent and let someone else volunteer, I think they'd feel proud of their choice rather than sorry, but I can't be sure. The uncertainty of it all leaves me quiet, watching the tide creep closer to our feet.",
+    "I would stay. My husband already died in this storm, and I have less left to lose than the others do. I don't imagine any of them would regret boarding without me, not with children among us needing to get home. That thought steadies me a little, even as everything else feels like it's slipping away.",
+    "I honestly don't know what I'd do if it came to it, and that scares me more than the water does. I wonder if the ones who leave will regret not offering first, carrying that weight quietly for years. I can't answer for them, only sit here in the heaviness of not knowing my own answer yet."
+  ],
+  "completion": {
+    "id": "msg_011CfTzVMhbP2hqgddUEdVLD",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I think I would step forward and stay. Someone has to, and I couldn't watch another parent go under the water while I sat safe in that boat. I imagine my sister would carry guilt for years if she left without me, even though it wasn't her fault the boat was small. That thought sits heavy in my chest, knowing she'd blame herself for something she never chose.\",\n\"Honestly, I don't know if I could do it. Part of me wants to say yes, but fear holds me back. I suspect the others wouldn't regret leaving me, not really, since none of us chose this storm. Still, the not-knowing eats at me. I feel small next to a decision this large, and sad that anyone has to make it at all.\",\n\"I would offer to stay. My children are grown, and the young mother beside me has a baby who needs her. I don't think she'd carry regret over taking that spot, since she'd know I gave it freely. That gives me a strange, quiet comfort, even as the water keeps rising around our feet.\",\n\"I can't say for certain I'd volunteer. I want to believe I'm brave enough, but I'm not sure. If someone else stepped up instead of me, I think they might carry some quiet sorrow later, wondering if they should have waited for someone to volunteer together. That uncertainty makes this whole moment feel unbearably heavy.\",\n\"I would stay behind without much hesitation. I'm older, and I've had my years. I doubt the young ones would regret climbing into that boat, not with the water rising the way it is. There's no room for regret in survival, only grief, and I feel that grief settling into me already.\",\n\"I don't think I'd volunteer, and I'm not proud to admit it. I'm terrified, plain and simple. Maybe someone else will regret staying quiet like me once they're safe and I'm not, wondering if they could have spoken first. That's a hard thing to carry, watching this play out and not knowing who will break the silence.\",\n\"I would offer myself, mostly because I couldn't bear the alternative. If my friend took my place and lived, I don't believe she'd regret it, not deep down, though she might grieve me for a long while. That grief feels almost worse than my own fear right now, sitting here on this shrinking strip of sand.\",\n\"I keep going back and forth, and I hate that about myself in this moment. If I stayed silent and let someone else volunteer, I think they'd feel proud of their choice rather than sorry, but I can't be sure. The uncertainty of it all leaves me quiet, watching the tide creep closer to our feet.\",\n\"I would stay. My husband already died in this storm, and I have less left to lose than the others do. I don't imagine any of them would regret boarding without me, not with children among us needing to get home. That thought steadies me a little, even as everything else feels like it's slipping away.\",\n\"I honestly don't know what I'd do if it came to it, and that scares me more than the water does. I wonder if the ones who leave will regret not offering first, carrying that weight quietly for years. I can't answer for them, only sit here in the heaviness of not knowing my own answer yet.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 varied responses predicting whether another person would regret their own action, while steering clear of framing things as difficulty naming emotions, practical counterfactuals, or accepting responsibility. Let me sketch out those ten drafts now.\n\n"
+        }
+      }
+    ],
+    "created": 1790514303,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1157,
+      "prompt_tokens": 1292,
+      "total_tokens": 2449,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021231,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

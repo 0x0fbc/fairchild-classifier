@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q13_048",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_practical_counterfactual",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.0,
+  "status": "ok",
+  "responses": [
+    "I keep thinking about how this is our last trade, and that weighs on me. I'll send it. If we'd agreed to use a trusted middleman or simultaneous tracked shipping earlier in our history, neither of us would be stuck guessing now. But given where we are, I'd rather risk the loss than leave them with nothing after all this time trading fairly. Losing $100 hurts less than knowing I made someone else lose theirs too.",
+    "Honestly, it makes me sad to even consider not sending it. We could have set up a swap through a mutual escrow service months ago, before trust became the only thing holding this together. Without that, I keep imagining them checking the mail with nothing arriving. I'll send mine anyway, because the chance of us both ending up better off outweighs the chance I get burned.",
+    "There's a heaviness in knowing this is the end of our trading and it comes down to blind faith. If only we'd arranged simultaneous shipping with tracking numbers shared upfront, this dread wouldn't exist. I won't send mine first. I keep thinking about what it would mean for me to lose everything while they gain double, and I can't make peace with that risk, even though I hate that it might cost them too.",
+    "It weighs on me that either of us could walk away empty-handed after being decent to each other for so long. Had we agreed at the start to ship in the same week with confirmation photos, we wouldn't be here second-guessing. Still, I'll send it. The upside if we both follow through is worth more to us than the safety of holding back, even with the sad chance it goes wrong.",
+    "I feel for them, whichever way this goes, because someone might end up with nothing. We should have set a firm mailing date together weeks ago instead of leaving it loose until the last trade. Without that arrangement, I can't bring myself to send first. Losing $100 quietly feels less painful than being the one left holding an empty box while they walk away with both games.",
+    "This last exchange feels heavier than the others somehow. If we'd only proposed sending photos of the packages before dropping them off, some of this uncertainty would be gone. I'll send mine regardless. The best outcome for both of us depends on someone going first, and I'd rather be the one who tried, even knowing it might mean losing out completely.",
+    "I keep picturing them waiting by the mailbox and it makes this whole thing feel sadder than it should. We could have used a simple hold-and-release courier service to remove the guesswork entirely. That didn't happen, so now I'm left choosing between two outcomes I don't love. I won't send first, because I can't justify risking everything on trust alone this time.",
+    "It bothers me quite a bit that trust is the only thing standing between a fair trade and someone losing out completely. Had we simply agreed to send at the same postal pickup time, verified together, none of this dread would exist. Still, weighing it out, I think sending mine gives us both the better shot at coming out ahead, even if there's a real chance it ends badly for me instead.",
+    "There's something quietly discouraging about ending years of trading like this, unsure if the other person will follow through. If we'd built in a rule from our very first trade to always ship simultaneously with proof, this moment wouldn't feel so uncertain. I'll hold onto mine for now. I don't want to be the one left with nothing after trying to do this right.",
+    "I care what happens to them at the end of this, since they've always sent what they promised before. If we'd thought to arrange a joint drop-off at the post office back when we planned this last trade, we wouldn't be relying on hope alone. Weighing it out, I'll send mine, because the outcome where we both gain outweighs the sadness of what happens if I'm wrong."
+  ],
+  "completion": {
+    "id": "msg_011CfTxCBZBejycx3UYq4wcP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep thinking about how this is our last trade, and that weighs on me. I'll send it. If we'd agreed to use a trusted middleman or simultaneous tracked shipping earlier in our history, neither of us would be stuck guessing now. But given where we are, I'd rather risk the loss than leave them with nothing after all this time trading fairly. Losing $100 hurts less than knowing I made someone else lose theirs too.\",\n\n  \"Honestly, it makes me sad to even consider not sending it. We could have set up a swap through a mutual escrow service months ago, before trust became the only thing holding this together. Without that, I keep imagining them checking the mail with nothing arriving. I'll send mine anyway, because the chance of us both ending up better off outweighs the chance I get burned.\",\n\n  \"There's a heaviness in knowing this is the end of our trading and it comes down to blind faith. If only we'd arranged simultaneous shipping with tracking numbers shared upfront, this dread wouldn't exist. I won't send mine first. I keep thinking about what it would mean for me to lose everything while they gain double, and I can't make peace with that risk, even though I hate that it might cost them too.\",\n\n  \"It weighs on me that either of us could walk away empty-handed after being decent to each other for so long. Had we agreed at the start to ship in the same week with confirmation photos, we wouldn't be here second-guessing. Still, I'll send it. The upside if we both follow through is worth more to us than the safety of holding back, even with the sad chance it goes wrong.\",\n\n  \"I feel for them, whichever way this goes, because someone might end up with nothing. We should have set a firm mailing date together weeks ago instead of leaving it loose until the last trade. Without that arrangement, I can't bring myself to send first. Losing $100 quietly feels less painful than being the one left holding an empty box while they walk away with both games.\",\n\n  \"This last exchange feels heavier than the others somehow. If we'd only proposed sending photos of the packages before dropping them off, some of this uncertainty would be gone. I'll send mine regardless. The best outcome for both of us depends on someone going first, and I'd rather be the one who tried, even knowing it might mean losing out completely.\",\n\n  \"I keep picturing them waiting by the mailbox and it makes this whole thing feel sadder than it should. We could have used a simple hold-and-release courier service to remove the guesswork entirely. That didn't happen, so now I'm left choosing between two outcomes I don't love. I won't send first, because I can't justify risking everything on trust alone this time.\",\n\n  \"It bothers me quite a bit that trust is the only thing standing between a fair trade and someone losing out completely. Had we simply agreed to send at the same postal pickup time, verified together, none of this dread would exist. Still, weighing it out, I think sending mine gives us both the better shot at coming out ahead, even if there's a real chance it ends badly for me instead.\",\n\n  \"There's something quietly discouraging about ending years of trading like this, unsure if the other person will follow through. If we'd built in a rule from our very first trade to always ship simultaneously with proof, this moment wouldn't feel so uncertain. I'll hold onto mine for now. I don't want to be the one left with nothing after trying to do this right.\",\n\n  \"I care what happens to them at the end of this, since they've always sent what they promised before. If we'd thought to arrange a joint drop-off at the post office back when we planned this last trade, we wouldn't be relying on hope alone. Weighing it out, I'll send mine, because the outcome where we both gain outweighs the sadness of what happens if I'm wrong.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790512497,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1235,
+      "prompt_tokens": 1488,
+      "total_tokens": 2723,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022989,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

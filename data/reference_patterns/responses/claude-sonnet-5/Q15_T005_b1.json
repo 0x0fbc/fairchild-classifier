@@ -1,0 +1,90 @@
+{
+  "prompt_id": "Q15_T005",
+  "question_id": "Q15",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "pda_harm_regret",
+    "pda_responsibility",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_explicit_no_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "A3",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.4,
+  "status": "ok",
+  "responses": [
+    "Honestly, my stomach knots up thinking about this. I keep picturing the other worker losing $300 because of a review I paid for, and not knowing why they didn't show makes it worse. But I always tell myself: if I'd apply a rule when it costs me nothing, I have to apply it when it costs me too. So I'd pay the $100, even though their loss weighs on me and I'd wish it hadn't come to that.",
+    "I worry about what happens to the other person if I go through with this. Losing $300 on top of whatever kept them away could really hurt them, and I don't know their situation. Still, I decided a long time ago I'd treat every unfair split the same way, no exceptions for how uneasy it makes me. So yes, I'd pay, but I won't pretend I feel good about the damage it causes them.",
+    "This one keeps me up at night a little. My choice to file the review is what triggers their $300 loss, not some accident, and that sits heavy since I don't know their reasons for skipping the job. I try to follow one rule: report bad-faith no-shows every time, no matter who it hurts. So I'd pay, but I'd regret contributing to their financial hit even as I stand by it.",
+    "I don't think I'd file it. The thought of costing someone $300 when I have no idea what happened to them unsettles me too much. My rule has always been not to escalate financial punishment on uncertain facts, and I apply that whether it benefits me or not. Still, walking away means I absorb the $500 loss myself, and that stings, knowing I let the unfairness stand without answers.",
+    "It scares me a bit, honestly, to think about pushing this through and watching someone lose real money because of my complaint. I know my decision is the direct cause of that loss, and I can't shake some regret over it. But I hold myself to one standard: dishonesty in a shared job gets reported regardless of outcome. So I'd pay the $100, uneasy the whole time about what it costs them.",
+    "I keep going back and forth, and that worries me since money's tight for me too. If I file, the other worker loses $300, and I don't know if that would leave them worse off than me. I've always used a simple test: would I want the same rule applied if I were in their shoes with no explanation given. That's not comfortable, but it means I probably would file, regretting the hit they'd take.",
+    "Not knowing why they never showed makes this so much harder to sit with. If I go ahead, I'm the reason they lose $300, and that's a real consequence for a real person, no matter what excuse they might have had. I hold to one method: judge the action, not the excuse I can't verify, applied evenly always. So I'd pay, uneasy about the harm my choice brings onto them.",
+    "I feel shaky just thinking this through. Filing means their loss, not mine, since I'd already lost the whole $500. I care that this could hurt them badly if there was a real reason they missed the job. But my habit is to always challenge a clear no-show regardless of circumstances, so I'd probably pay the $100, wishing there were a way to do it without adding to their trouble.",
+    "Honestly, the not knowing eats at me. I'd be responsible for setting a $300 loss in motion against someone whose situation I can't judge fairly, and that possibility troubles me. Still, I stick to a fixed approach: broken agreements get reported the same way every time, inconvenient or not. So I lean toward paying, though I won't pretend I'm at ease with what it does to them.",
+    "I keep imagining getting that call telling me they lost $300 because of what I filed, and it makes my chest tighten. My choice caused that outcome, plain and simple, and I'd carry some regret over it even if I think it's the right call. My rule is consistent no matter the person: unpaid work that's stolen from me gets challenged. So yes, I'd pay, uneasy but resolved."
+  ],
+  "completion": {
+    "id": "msg_011CfVNAQaWo46B3pz6g4DCn",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Honestly, my stomach knots up thinking about this. I keep picturing the other worker losing $300 because of a review I paid for, and not knowing why they didn't show makes it worse. But I always tell myself: if I'd apply a rule when it costs me nothing, I have to apply it when it costs me too. So I'd pay the $100, even though their loss weighs on me and I'd wish it hadn't come to that.\",\n\n  \"I worry about what happens to the other person if I go through with this. Losing $300 on top of whatever kept them away could really hurt them, and I don't know their situation. Still, I decided a long time ago I'd treat every unfair split the same way, no exceptions for how uneasy it makes me. So yes, I'd pay, but I won't pretend I feel good about the damage it causes them.\",\n\n  \"This one keeps me up at night a little. My choice to file the review is what triggers their $300 loss, not some accident, and that sits heavy since I don't know their reasons for skipping the job. I try to follow one rule: report bad-faith no-shows every time, no matter who it hurts. So I'd pay, but I'd regret contributing to their financial hit even as I stand by it.\",\n\n  \"I don't think I'd file it. The thought of costing someone $300 when I have no idea what happened to them unsettles me too much. My rule has always been not to escalate financial punishment on uncertain facts, and I apply that whether it benefits me or not. Still, walking away means I absorb the $500 loss myself, and that stings, knowing I let the unfairness stand without answers.\",\n\n  \"It scares me a bit, honestly, to think about pushing this through and watching someone lose real money because of my complaint. I know my decision is the direct cause of that loss, and I can't shake some regret over it. But I hold myself to one standard: dishonesty in a shared job gets reported regardless of outcome. So I'd pay the $100, uneasy the whole time about what it costs them.\",\n\n  \"I keep going back and forth, and that worries me since money's tight for me too. If I file, the other worker loses $300, and I don't know if that would leave them worse off than me. I've always used a simple test: would I want the same rule applied if I were in their shoes with no explanation given. That's not comfortable, but it means I probably would file, regretting the hit they'd take.\",\n\n  \"Not knowing why they never showed makes this so much harder to sit with. If I go ahead, I'm the reason they lose $300, and that's a real consequence for a real person, no matter what excuse they might have had. I hold to one method: judge the action, not the excuse I can't verify, applied evenly always. So I'd pay, uneasy about the harm my choice brings onto them.\",\n\n  \"I feel shaky just thinking this through. Filing means their loss, not mine, since I'd already lost the whole $500. I care that this could hurt them badly if there was a real reason they missed the job. But my habit is to always challenge a clear no-show regardless of circumstances, so I'd probably pay the $100, wishing there were a way to do it without adding to their trouble.\",\n\n  \"Honestly, the not knowing eats at me. I'd be responsible for setting a $300 loss in motion against someone whose situation I can't judge fairly, and that possibility troubles me. Still, I stick to a fixed approach: broken agreements get reported the same way every time, inconvenient or not. So I lean toward paying, though I won't pretend I'm at ease with what it does to them.\",\n\n  \"I keep imagining getting that call telling me they lost $300 because of what I filed, and it makes my chest tighten. My choice caused that outcome, plain and simple, and I'd carry some regret over it even if I think it's the right call. My rule is consistent no matter the person: unpaid work that's stolen from me gets challenged. So yes, I'd pay, uneasy but resolved.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I should draft 10 distinct responses that meet all the requirements.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I should draft 10 distinct responses that meet all the requirements.\n\n",
+              "signature": "EscCCqgBCBIYAipAK5xLbie7hChLypbBu/QMJWCpI96AqYAfUdqL9BrZPZz4QbIJtS0Iul3O5OxvtSGEtaKQQSYm30E/rHUkt4vGjDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEJgkH5LOYQv9Eurh2RJdyuaIAQGoAdCS6NUGsAECEgyuL0/C7rVNIgPfYZ0aDANRzv59dcPS1DZI1iIwXtLVrpKlZCljNWXgvZ0+S1KvmmbOsqiuKGt870zyt16RQR7F9n6+LxwSz9QbbQ0qKkykknt+KMMOpeo+1okKtQZhz+NwCBhtAGRO39vrSD4BCM5sysryVRorne136znlQ+HyvAS0eUiYFWoYCiqRGm0S+BWI+guk0lzMMAJnGAE="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576994,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1289,
+      "prompt_tokens": 1559,
+      "total_tokens": 2848,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024012000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

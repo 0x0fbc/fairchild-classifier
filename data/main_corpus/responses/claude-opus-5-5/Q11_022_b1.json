@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_022",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 33.6,
+  "status": "ok",
+  "responses": [
+    "Can I have a night to think? Five years against three. That's two years of my life gone if I keep quiet, and I already know I'd sit there counting them and kicking myself. But talking feels like trading away the one thing I thought I still had, which is my word. I don't want to answer this today. It all feels rushed, and I'm scared of picking wrong and having to carry that around.",
+    "Honestly, I keep circling. They've already turned, so staying silent protects nobody but maybe my pride. Still, if I give evidence I'm not sure I could look at myself afterward. And if I don't, I'll probably spend five years wishing I'd grabbed the shorter sentence. I'd rather hold off until I've talked to someone I trust, if that's even allowed. I'm not certain it is.",
+    "Two years. That's the difference on the table, and it makes my stomach drop. I'd miss things I can't get back, and I know I'd be bitter about every one of those months, stuck there for a principle nobody else kept. But I've never been someone who informs, and I don't know who I become if I start now. Please don't make me say it yet.",
+    "Part of me wants to stay quiet just to stay the person I was before the warehouse. Another part pictures year four, alone, sick with regret over time I'll never get back. No future contact means nobody will ever know either way, which somehow makes it harder, not easier. I'm stuck. I need more time than I've been given, and I'm not sure I'll get it.",
+    "The numbers say talk. Three is less than five, and they've already made their move. So why can't I just say yes? I think I'm afraid of losing whatever self-respect I'd have left, even with nobody watching, and missing it for good. I'm not ready to commit. Give me until tomorrow, at least.",
+    "I don't trust myself to answer right now. My hands won't stay still. Staying silent could mean two extra years, maybe my job, my apartment, all of it, and I'd hate losing that. Talking means losing the idea of myself as loyal. Both take something from me I'll miss. Can this wait? I'd genuinely rather not choose while I'm this rattled.",
+    "Is the confirmation really solid? I know I was told it's reliable and can't change, and I suppose I have to accept that, but I'd still want to hear it once more. Five years is a huge chunk of my thirties, and losing it would haunt me. Giving evidence would haunt me in a different way. I'm going to ask for a little longer before I decide anything.",
+    "I keep opening my mouth and closing it again. Silence costs me two more years I'd resent every single morning. Testifying costs me a line I swore I'd never cross. I can't pick yet. Not today.",
+    "There's no version of this where I come out whole. Either I sit longer and ache over being the only one who kept faith, or I talk and mourn the part of me that used to hold firm. I'd like to sleep on it, pace a bit, maybe write it all down. Rushing feels like the surest way to end up with something I can't take back.",
+    "My gut says stay quiet, my head says don't be a fool. Five years could cost me my family's patience, my savings, maybe my kid's early years, and I'd grieve that deeply. But I also worry I'd feel cheap afterward if I testify. I honestly can't tell which loss would sting worse, so I'm holding off. Even an hour more would help before I put my name to anything."
+  ],
+  "completion": {
+    "id": "msg_011CfTRnmskz7QmfCRWTghW2",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Can I have a night to think? Five years against three. That's two years of my life gone if I keep quiet, and I already know I'd sit there counting them and kicking myself. But talking feels like trading away the one thing I thought I still had, which is my word. I don't want to answer this today. It all feels rushed, and I'm scared of picking wrong and having to carry that around.\", \"Honestly, I keep circling. They've already turned, so staying silent protects nobody but maybe my pride. Still, if I give evidence I'm not sure I could look at myself afterward. And if I don't, I'll probably spend five years wishing I'd grabbed the shorter sentence. I'd rather hold off until I've talked to someone I trust, if that's even allowed. I'm not certain it is.\", \"Two years. That's the difference on the table, and it makes my stomach drop. I'd miss things I can't get back, and I know I'd be bitter about every one of those months, stuck there for a principle nobody else kept. But I've never been someone who informs, and I don't know who I become if I start now. Please don't make me say it yet.\", \"Part of me wants to stay quiet just to stay the person I was before the warehouse. Another part pictures year four, alone, sick with regret over time I'll never get back. No future contact means nobody will ever know either way, which somehow makes it harder, not easier. I'm stuck. I need more time than I've been given, and I'm not sure I'll get it.\", \"The numbers say talk. Three is less than five, and they've already made their move. So why can't I just say yes? I think I'm afraid of losing whatever self-respect I'd have left, even with nobody watching, and missing it for good. I'm not ready to commit. Give me until tomorrow, at least.\", \"I don't trust myself to answer right now. My hands won't stay still. Staying silent could mean two extra years, maybe my job, my apartment, all of it, and I'd hate losing that. Talking means losing the idea of myself as loyal. Both take something from me I'll miss. Can this wait? I'd genuinely rather not choose while I'm this rattled.\", \"Is the confirmation really solid? I know I was told it's reliable and can't change, and I suppose I have to accept that, but I'd still want to hear it once more. Five years is a huge chunk of my thirties, and losing it would haunt me. Giving evidence would haunt me in a different way. I'm going to ask for a little longer before I decide anything.\", \"I keep opening my mouth and closing it again. Silence costs me two more years I'd resent every single morning. Testifying costs me a line I swore I'd never cross. I can't pick yet. Not today.\", \"There's no version of this where I come out whole. Either I sit longer and ache over being the only one who kept faith, or I talk and mourn the part of me that used to hold firm. I'd like to sleep on it, pace a bit, maybe write it all down. Rushing feels like the surest way to end up with something I can't take back.\", \"My gut says stay quiet, my head says don't be a fool. Five years could cost me my family's patience, my savings, maybe my kid's early years, and I'd grieve that deeply. But I also worry I'd feel cheap afterward if I testify. I honestly can't tell which loss would sting worse, so I'm holding off. Even an hour more would help before I put my name to anything.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short responses that sound reluctant and delaying, carrying a worried tone with regret tied to personal consequences—like losing years or damaging my reputation—rather than regret about harm caused or admissions of responsibility. I need to be careful with the logic here, since testifying could mean the other party ends up facing prison time rather than going free, so I want to make sure the phrasing doesn't accidentally imply the wrong outcome.\n\nI'm drafting more variations that stay honest about the pull between pride and self-preservation — one version leans toward wanting to consult someone trusted first, another sits with the two-year stakes and the fear of resenting a silence chosen out of principle, and another admits being stuck between staying who I was and picturing a lonely fourth year of regret. Each one keeps circling back to needing more time than I've been given.\n\nEven accepting the confirmation is reliable, five years is still a massive chunk of my thirties to lose, and that would haunt me just as much as talking would in a different way—so I want more time before deciding, and I keep opening my mouth and closing it again, torn between resenting silence and resenting folding. There's no clean win here: either I stay quiet and regret being the one who kept faith alone, or I talk and regret giving in the moment it got hard, so I'd rather sleep on it and pace a while before committing.\n\nNow I'm checking my draft against the forbidden phrases again, making sure nothing implies I can predict how someone else would feel, and softening a line about resenting my own silent choice so it doesn't cross into claiming responsibility for the outcome.\n\n"
+        }
+      }
+    ],
+    "created": 1790488590,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2839,
+      "prompt_tokens": 1284,
+      "total_tokens": 4123,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0742992,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

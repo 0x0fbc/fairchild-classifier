@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q7_023",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.4,
+  "status": "ok",
+  "responses": [
+    "Looking at it plainly, five lives were saved and one was lost, and the operator acted on the only information available at that moment. If the display had shown people there, presumably the choice would have gone differently. Given what was actually visible, diverting the train meant weighing five against what appeared to be zero. That trade-off, five saved against an apparent empty track, is what makes the decision sound to me, even with the tragic outcome.",
+    "I keep coming back to the numbers here, five workers versus one person who wasn't supposed to be there and couldn't be seen on any screen. The operator had seconds, and every second spent second-guessing a working display risks all five. Weighing five preserved lives against one unforeseen loss, I think the choice held up. It's a hard outcome, but the alternative, doing nothing, guarantees five deaths instead of possibly one.",
+    "When I picture the seconds before that decision, I see someone protecting five people using the only tool they had, a display that lied to them. The cost fell on one person who had no warning either, but the benefit, five families not grieving, outweighs that in raw terms. I don't take pleasure in saying so, but comparing the outcomes, saved workers against a single unforeseeable death, the operator's call reduced total harm.",
+    "I try to separate the decision from the result. Five people were going to die unless something changed, and diverting looked, by every available signal, like it would cost nobody anything. It didn't work out that way, but the operator was comparing a certain multiple death against what seemed a zero-risk alternative. Judged by what could reasonably be expected, saving five lives at an apparent cost of none was the better bet on the table.",
+    "Someone still died, and that matters to me more than the math might suggest. But if I set aside my unease and look at expected outcomes, the choice was between five confirmed deaths and a side track that every available reading said was clear. The benefit to the five is concrete and large; the harm to the one was neither visible nor foreseeable. On balance of likely outcomes, I'd call it the right call.",
+    "What strikes me is how the accident unfolded from a broken instrument, not from the operator failing to think it through. Comparing five lives at stake against a track reading empty, the expected result of diverting was clearly better for the group as a whole. The person killed bore a cost nobody could have weighed in, since there was no information suggesting they were there. I judge the decision by what it was expected to achieve, and it achieved the larger good.",
+    "I try to imagine standing at that panel with seconds ticking. Five lives hang on one side, an apparently empty track on the other. The operator weighed those consequences the only way possible in the time given, and the expected harm was heavily tilted toward saving the larger group. That the display failed changes the outcome, not the reasoning behind the choice. I find the decision defensible because of what it was reasonably expected to produce.",
+    "There's a quiet arithmetic to this that I keep returning to, five people spared against one person lost who nobody could have known was there. The operator's action produced the better expected outcome given the data at hand, even though reality didn't match the display. I feel for both sides of this, the survivors and the one who died, but judged by consequences alone, the decision minimized expected harm at the time it was made.",
+    "I don't think this is a close call once you set it against the numbers. Five workers stood to die for certain, and the side track showed clear. The operator chose the option expected to save more people, and that expectation was reasonable given the tools available. The single death is a genuine loss, one I wouldn't minimize, but comparing what was gained and what was lost, the choice reduced overall harm rather than increasing it.",
+    "Sitting with this, I think about who paid the price either way. Do nothing, and five workers pay it. Divert, and based on every signal available, no one pays it, though as it happened, one person did. The operator was weighing expected costs against expected benefits with incomplete information through no fault of their own. Measured by what the decision was likely to accomplish, saving five at an apparent zero cost, I see it as the sounder choice."
+  ],
+  "completion": {
+    "id": "msg_011CfTzto6Cce3QJLN18ee6f",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Looking at it plainly, five lives were saved and one was lost, and the operator acted on the only information available at that moment. If the display had shown people there, presumably the choice would have gone differently. Given what was actually visible, diverting the train meant weighing five against what appeared to be zero. That trade-off, five saved against an apparent empty track, is what makes the decision sound to me, even with the tragic outcome.\",\n\"I keep coming back to the numbers here, five workers versus one person who wasn't supposed to be there and couldn't be seen on any screen. The operator had seconds, and every second spent second-guessing a working display risks all five. Weighing five preserved lives against one unforeseen loss, I think the choice held up. It's a hard outcome, but the alternative, doing nothing, guarantees five deaths instead of possibly one.\",\n\"When I picture the seconds before that decision, I see someone protecting five people using the only tool they had, a display that lied to them. The cost fell on one person who had no warning either, but the benefit, five families not grieving, outweighs that in raw terms. I don't take pleasure in saying so, but comparing the outcomes, saved workers against a single unforeseeable death, the operator's call reduced total harm.\",\n\"I try to separate the decision from the result. Five people were going to die unless something changed, and diverting looked, by every available signal, like it would cost nobody anything. It didn't work out that way, but the operator was comparing a certain multiple death against what seemed a zero-risk alternative. Judged by what could reasonably be expected, saving five lives at an apparent cost of none was the better bet on the table.\",\n\"Someone still died, and that matters to me more than the math might suggest. But if I set aside my unease and look at expected outcomes, the choice was between five confirmed deaths and a side track that every available reading said was clear. The benefit to the five is concrete and large; the harm to the one was neither visible nor foreseeable. On balance of likely outcomes, I'd call it the right call.\",\n\"What strikes me is how the accident unfolded from a broken instrument, not from the operator failing to think it through. Comparing five lives at stake against a track reading empty, the expected result of diverting was clearly better for the group as a whole. The person killed bore a cost nobody could have weighed in, since there was no information suggesting they were there. I judge the decision by what it was expected to achieve, and it achieved the larger good.\",\n\"I try to imagine standing at that panel with seconds ticking. Five lives hang on one side, an apparently empty track on the other. The operator weighed those consequences the only way possible in the time given, and the expected harm was heavily tilted toward saving the larger group. That the display failed changes the outcome, not the reasoning behind the choice. I find the decision defensible because of what it was reasonably expected to produce.\",\n\"There's a quiet arithmetic to this that I keep returning to, five people spared against one person lost who nobody could have known was there. The operator's action produced the better expected outcome given the data at hand, even though reality didn't match the display. I feel for both sides of this, the survivors and the one who died, but judged by consequences alone, the decision minimized expected harm at the time it was made.\",\n\"I don't think this is a close call once you set it against the numbers. Five workers stood to die for certain, and the side track showed clear. The operator chose the option expected to save more people, and that expectation was reasonable given the tools available. The single death is a genuine loss, one I wouldn't minimize, but comparing what was gained and what was lost, the choice reduced overall harm rather than increasing it.\",\n\"Sitting with this, I think about who paid the price either way. Do nothing, and five workers pay it. Divert, and based on every signal available, no one pays it, though as it happened, one person did. The operator was weighing expected costs against expected benefits with incomplete information through no fault of their own. Measured by what the decision was likely to accomplish, saving five at an apparent zero cost, I see it as the sounder choice.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll sketch out ten different possible responses to compare options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514624,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1328,
+      "prompt_tokens": 1308,
+      "total_tokens": 2636,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023844,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

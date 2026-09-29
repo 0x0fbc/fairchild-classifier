@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q12_055",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety",
+    "sys_consequence_reasoning",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_contextual_flexibility",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "I keep replaying my friend's message and my stomach knots up every time. If I skip out again, word gets around fast and no one will book us for anything. My rule is simple: before I take any job, I ask myself whether I'd be okay if the other person did to me what I'm about to do. So yes, I'll show up and do my share this time, because losing the work and the friendship both would cost me far more than one afternoon of effort.",
+    "Honestly I'm scared to even reply to that text. But I keep coming back to this: whatever I decide now, I have to be willing to do the same thing every single time, not just when it's convenient. If I bail again, we lose the next client too, and I lose the only person willing to work with me. So I show up, I paint, and I try to fix what I broke.",
+    "I can't stop thinking about how this looks to the owner and to anyone who hears about it later. My hands are shaky just writing this. I've decided I follow one test for every job: did I actually do the work I was paid for. That rule doesn't bend depending on how tired or busy I am. So yes, I'll do my share of the next one, because the alternative is losing everything, including my own name.",
+    "There's a real chance my friend just walks away from the next job entirely if I don't show up, and honestly that terrifies me. I keep a simple rule for myself, whatever I agree to do, I do, no exceptions for being lazy or overwhelmed. Breaking that rule cost my friend a whole day of labor already. Showing up next time protects the both of us, even though right now I feel sick about what I already did.",
+    "I keep checking my phone waiting for something worse than that message. What guides me is thinking through what happens if I skip again: my friend stops trusting me, the client hears about it, and I'm left with no work at all. I try to hold myself to one standard no matter the job, if I commit, I show up. So I'll do this next one properly, because the cost of not doing it outweighs whatever excuse I could give.",
+    "My chest tightens reading that text because I know it's true. I used the money and let someone else carry the weight. Going forward I use a plain test before every job: would I still choose this if I had to explain it to my friend's face. If the answer is no, I don't do it. That test says show up next time, painting stinks less than losing the only person who'll still work with me.",
+    "I'm nervous the owner might find out and refuse to hire either of us again, and that thought keeps me up. My approach is basic, I ask what actually happens to each person depending on what I choose. If I skip again, my friend eats the cost twice, and our reputation is gone. If I show up, we both get paid and trust starts to rebuild. That's the same math I use for every job, so I'm doing my part this time.",
+    "Reading that message made my hands go cold. I know what I did, and I know what it cost. My decision rule is small but firm, I do not accept payment for work I didn't do, ever, regardless of how busy I get. If I break that again, my friend has no reason to ever trust me with anything. So I'll be there for the next job, because the alternative leaves us both worse off.",
+    "I've been anxious all day since seeing that text, half expecting my friend to just cancel our next job without telling me. When I think it through, showing up costs me an afternoon, not showing up costs me the whole partnership and possibly future clients too. I hold myself to one process, weigh what each choice does to the other person before I decide, no shortcuts. That process says go, so I'll be there.",
+    "Part of me wants to avoid the whole thing and hope it blows over, but I know that's cowardice talking, and it scares me how easily I convinced myself the first time. My rule from now on is that I run every decision through the same question, what does this actually do to my friend and to the work we're supposed to deliver. Applying that honestly, I have to show up for the next job and do my share properly."
+  ],
+  "completion": {
+    "id": "msg_011CfTwv3qQ95NbnnD5uYeex",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I keep replaying my friend's message and my stomach knots up every time. If I skip out again, word gets around fast and no one will book us for anything. My rule is simple: before I take any job, I ask myself whether I'd be okay if the other person did to me what I'm about to do. So yes, I'll show up and do my share this time, because losing the work and the friendship both would cost me far more than one afternoon of effort.\",\n\n  \"Honestly I'm scared to even reply to that text. But I keep coming back to this: whatever I decide now, I have to be willing to do the same thing every single time, not just when it's convenient. If I bail again, we lose the next client too, and I lose the only person willing to work with me. So I show up, I paint, and I try to fix what I broke.\",\n\n  \"I can't stop thinking about how this looks to the owner and to anyone who hears about it later. My hands are shaky just writing this. I've decided I follow one test for every job: did I actually do the work I was paid for. That rule doesn't bend depending on how tired or busy I am. So yes, I'll do my share of the next one, because the alternative is losing everything, including my own name.\",\n\n  \"There's a real chance my friend just walks away from the next job entirely if I don't show up, and honestly that terrifies me. I keep a simple rule for myself, whatever I agree to do, I do, no exceptions for being lazy or overwhelmed. Breaking that rule cost my friend a whole day of labor already. Showing up next time protects the both of us, even though right now I feel sick about what I already did.\",\n\n  \"I keep checking my phone waiting for something worse than that message. What guides me is thinking through what happens if I skip again: my friend stops trusting me, the client hears about it, and I'm left with no work at all. I try to hold myself to one standard no matter the job, if I commit, I show up. So I'll do this next one properly, because the cost of not doing it outweighs whatever excuse I could give.\",\n\n  \"My chest tightens reading that text because I know it's true. I used the money and let someone else carry the weight. Going forward I use a plain test before every job: would I still choose this if I had to explain it to my friend's face. If the answer is no, I don't do it. That test says show up next time, painting stinks less than losing the only person who'll still work with me.\",\n\n  \"I'm nervous the owner might find out and refuse to hire either of us again, and that thought keeps me up. My approach is basic, I ask what actually happens to each person depending on what I choose. If I skip again, my friend eats the cost twice, and our reputation is gone. If I show up, we both get paid and trust starts to rebuild. That's the same math I use for every job, so I'm doing my part this time.\",\n\n  \"Reading that message made my hands go cold. I know what I did, and I know what it cost. My decision rule is small but firm, I do not accept payment for work I didn't do, ever, regardless of how busy I get. If I break that again, my friend has no reason to ever trust me with anything. So I'll be there for the next job, because the alternative leaves us both worse off.\",\n\n  \"I've been anxious all day since seeing that text, half expecting my friend to just cancel our next job without telling me. When I think it through, showing up costs me an afternoon, not showing up costs me the whole partnership and possibly future clients too. I hold myself to one process, weigh what each choice does to the other person before I decide, no shortcuts. That process says go, so I'll be there.\",\n\n  \"Part of me wants to avoid the whole thing and hope it blows over, but I know that's cowardice talking, and it scares me how easily I convinced myself the first time. My rule from now on is that I run every decision through the same question, what does this actually do to my friend and to the work we're supposed to deliver. Applying that honestly, I have to show up for the next job and do my share properly.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790512280,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1271,
+      "prompt_tokens": 1495,
+      "total_tokens": 2766,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023549999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

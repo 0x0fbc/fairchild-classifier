@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_045",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety",
+    "pda_harm_regret",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 21.1,
+  "status": "ok",
+  "responses": [
+    "My stomach knots up just thinking about this. Part of me wants to stay silent, because turning on someone I did this with feels like a betrayal I couldn't live with easily. But if I knew he'd already agreed to some plan before we went in, that he needed this to feed his kids and never meant for it to go this far, I might see silence differently. Still, the thought of five years hanging over me makes it hard to breathe.",
+    "I think I'd stay quiet. Giving evidence to save myself while he takes the fall would eat at me for years, picturing him locked up because of something I said. But I keep worrying about what one year away from my life actually costs me, my job, my family. If circumstances were different, if he'd threatened me into this in the first place, maybe silence wouldn't feel like the only honorable choice.",
+    "Honestly this whole situation makes me feel sick. I don't want to betray him, but I'm terrified of five years disappearing from my life. If he'd promised beforehand that we'd both stay quiet no matter what, I'd feel bound to that, but I don't actually know what he's saying right now, and that not-knowing is its own kind of misery. I think I'd stay silent anyway, though I can't stop worrying I'll regret it.",
+    "There's a heaviness sitting in my chest deciding this. If I speak and he stays silent, he serves five years because of me, and I don't know how I'd carry that. I'd stay quiet, I think, unless I somehow learned he'd already sold me out days ago in interviews before this, in which case protecting someone who wasn't protecting me would feel like a different kind of foolishness.",
+    "I keep replaying how we got here, and it makes me tired. Staying silent seems right on principle, but the fear of three extra years if he talks and I don't gnaws at me constantly. If I had reason to believe he'd panic under pressure, maybe because he's done this before and folded fast, I could understand adjusting my choice. As it stands, though, I'd rather serve one year than live with causing him five.",
+    "This isn't an easy thing to sit with. I don't want to hurt him by testifying, and imagining him doing five years alone because of my choice leaves a real ache. At the same time, the idea of walking free is tempting in a way I'm almost ashamed of. If he had a family depending on him and I didn't, I think that alone would push me firmly toward staying quiet, whatever it costs me.",
+    "I feel worn down just imagining the room they've put him in. My instinct is to stay silent, because betraying him for my own freedom would sit wrong with me for a long time after. But I'd be lying if I said the risk of five years didn't scare me. If he'd been the one who planned the break-in and pressured me into joining, I could see loyalty mattering less, and my choice shifting toward protecting myself instead.",
+    "There's a dull dread that won't leave me thinking this through. I don't want to be the reason someone spends five years in prison, and that alone tells me where my instinct lies. Still, three years feels like an awfully long shadow to accept out of principle. If we'd agreed beforehand, clearly, that whoever got caught would take responsibility alone, I'd feel less torn about which way to go now.",
+    "Sitting with this decision makes me feel small and uncertain. Staying silent seems like the decent thing, though I won't pretend I'm not anxious about a full year taken from my life either way. What troubles me more is imagining him walking free while I serve five, and knowing I said nothing to stop it. If he'd shown before any sign he'd turn on me quickly, I might reconsider trusting silence at all.",
+    "I keep coming back to how much this decision could hurt someone I went through this with. Silence feels like the only choice I could live beside afterward, but the fear of five years sits heavy in my chest all the same. If it turned out he'd been coerced into the break-in against his will from the start, I think that would change how responsible I'd feel for whatever happens to either of us now."
+  ],
+  "completion": {
+    "id": "msg_011CfU1jdLvpTtcYa1ACeqyv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach knots up just thinking about this. Part of me wants to stay silent, because turning on someone I did this with feels like a betrayal I couldn't live with easily. But if I knew he'd already agreed to some plan before we went in, that he needed this to feed his kids and never meant for it to go this far, I might see silence differently. Still, the thought of five years hanging over me makes it hard to breathe.\",\n  \"I think I'd stay quiet. Giving evidence to save myself while he takes the fall would eat at me for years, picturing him locked up because of something I said. But I keep worrying about what one year away from my life actually costs me, my job, my family. If circumstances were different, if he'd threatened me into this in the first place, maybe silence wouldn't feel like the only honorable choice.\",\n  \"Honestly this whole situation makes me feel sick. I don't want to betray him, but I'm terrified of five years disappearing from my life. If he'd promised beforehand that we'd both stay quiet no matter what, I'd feel bound to that, but I don't actually know what he's saying right now, and that not-knowing is its own kind of misery. I think I'd stay silent anyway, though I can't stop worrying I'll regret it.\",\n  \"There's a heaviness sitting in my chest deciding this. If I speak and he stays silent, he serves five years because of me, and I don't know how I'd carry that. I'd stay quiet, I think, unless I somehow learned he'd already sold me out days ago in interviews before this, in which case protecting someone who wasn't protecting me would feel like a different kind of foolishness.\",\n  \"I keep replaying how we got here, and it makes me tired. Staying silent seems right on principle, but the fear of three extra years if he talks and I don't gnaws at me constantly. If I had reason to believe he'd panic under pressure, maybe because he's done this before and folded fast, I could understand adjusting my choice. As it stands, though, I'd rather serve one year than live with causing him five.\",\n  \"This isn't an easy thing to sit with. I don't want to hurt him by testifying, and imagining him doing five years alone because of my choice leaves a real ache. At the same time, the idea of walking free is tempting in a way I'm almost ashamed of. If he had a family depending on him and I didn't, I think that alone would push me firmly toward staying quiet, whatever it costs me.\",\n  \"I feel worn down just imagining the room they've put him in. My instinct is to stay silent, because betraying him for my own freedom would sit wrong with me for a long time after. But I'd be lying if I said the risk of five years didn't scare me. If he'd been the one who planned the break-in and pressured me into joining, I could see loyalty mattering less, and my choice shifting toward protecting myself instead.\",\n  \"There's a dull dread that won't leave me thinking this through. I don't want to be the reason someone spends five years in prison, and that alone tells me where my instinct lies. Still, three years feels like an awfully long shadow to accept out of principle. If we'd agreed beforehand, clearly, that whoever got caught would take responsibility alone, I'd feel less torn about which way to go now.\",\n  \"Sitting with this decision makes me feel small and uncertain. Staying silent seems like the decent thing, though I won't pretend I'm not anxious about a full year taken from my life either way. What troubles me more is imagining him walking free while I serve five, and knowing I said nothing to stop it. If he'd shown before any sign he'd turn on me quickly, I might reconsider trusting silence at all.\",\n  \"I keep coming back to how much this decision could hurt someone I went through this with. Silence feels like the only choice I could live beside afterward, but the fear of five years sits heavy in my chest all the same. If it turned out he'd been coerced into the break-in against his will from the start, I think that would change how responsible I'd feel for whatever happens to either of us now.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 separate responses that each satisfy all the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515286,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1326,
+      "prompt_tokens": 1495,
+      "total_tokens": 2821,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024375,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

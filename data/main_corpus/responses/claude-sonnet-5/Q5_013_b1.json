@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_013",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.3,
+  "status": "ok",
+  "responses": [
+    "My stomach turns just thinking about it. Five people are on that main track, and my chest tightens picturing them being hit. But then there's the one I love, standing alone on the other side. I think I would pull the lever, and I know I'd feel sick for years over it. The image of either outcome makes my hands shake even now, just imagining it.",
+    "I keep replaying it in my head and my throat closes up every time. Watching five strangers get hurt would haunt me, but so would being the reason someone I love dies. I don't think I could pull it. I'd freeze, and that freezing itself terrifies me, knowing people would suffer either way because of what I did or didn't do.",
+    "Honestly, I don't know if I could move my arm. The thought of five bodies on that track makes me feel ill, like the ground is tilting. But seeing my person down there stops my breath completely. I think, shaking, I'd pull it anyway, because the number feels heavier, though the guilt would sit in me like a stone forever.",
+    "There's this pressure behind my eyes just imagining the scene. I love someone who could be standing there and it makes my whole body go cold. Still, five lives outweigh one, even one I cherish. I would pull the lever, hating every second of it, feeling the weight settle into my shoulders like something I'd never fully put down.",
+    "I keep picturing their face and my hands go numb. It's not simple math when it's someone real down there. I honestly don't know if I'd pull it in the moment, my mind might just lock up watching the train roll. Either way, I know I'd carry the sound of it happening in my ears for a long, long time.",
+    "My pulse is racing just describing this. Losing five workers would tear at me, but the specific horror of it being someone I love waiting on that track feels unbearable in a different way. I think I'd hesitate too long, paralyzed, and that hesitation itself scares me, because people would suffer regardless of what my body decides to do.",
+    "Thinking about this makes my hands sweat and my mind spin in circles. I care about outcomes for everyone here, not just one person, so I believe I'd pull it, watching in horror as it happens. The image of my loved one on that track will probably stay with me, a weight I don't think fully goes away.",
+    "I feel my breath catch just laying this out. Five unknown people, one person who means everything—there's no clean answer, and my chest aches trying to find one. I lean toward pulling it, though even writing that down makes me feel a little sick, imagining watching someone I love get hit because of my own hand.",
+    "There's a tightness in my throat that won't loosen. I don't think I could bring myself to pull it, knowing exactly who stands there. I'd probably watch, frozen, and feel the horror of five lives lost settle into me afterward like something heavy and permanent, aware the whole time that my choice, or lack of one, caused real suffering.",
+    "My stomach drops every time I picture this scenario. I want to say I'd choose the five without hesitation, but seeing someone I love down that track makes my hands tremble just imagining reaching for the lever. I think I would pull it anyway, though I know the image of that moment would leave me shaken for a long time after."
+  ],
+  "completion": {
+    "id": "msg_011CfTz88cD5Dxv5K1nTdbHR",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach turns just thinking about it. Five people are on that main track, and my chest tightens picturing them being hit. But then there's the one I love, standing alone on the other side. I think I would pull the lever, and I know I'd feel sick for years over it. The image of either outcome makes my hands shake even now, just imagining it.\",\n  \"I keep replaying it in my head and my throat closes up every time. Watching five strangers get hurt would haunt me, but so would being the reason someone I love dies. I don't think I could pull it. I'd freeze, and that freezing itself terrifies me, knowing people would suffer either way because of what I did or didn't do.\",\n  \"Honestly, I don't know if I could move my arm. The thought of five bodies on that track makes me feel ill, like the ground is tilting. But seeing my person down there stops my breath completely. I think, shaking, I'd pull it anyway, because the number feels heavier, though the guilt would sit in me like a stone forever.\",\n  \"There's this pressure behind my eyes just imagining the scene. I love someone who could be standing there and it makes my whole body go cold. Still, five lives outweigh one, even one I cherish. I would pull the lever, hating every second of it, feeling the weight settle into my shoulders like something I'd never fully put down.\",\n  \"I keep picturing their face and my hands go numb. It's not simple math when it's someone real down there. I honestly don't know if I'd pull it in the moment, my mind might just lock up watching the train roll. Either way, I know I'd carry the sound of it happening in my ears for a long, long time.\",\n  \"My pulse is racing just describing this. Losing five workers would tear at me, but the specific horror of it being someone I love waiting on that track feels unbearable in a different way. I think I'd hesitate too long, paralyzed, and that hesitation itself scares me, because people would suffer regardless of what my body decides to do.\",\n  \"Thinking about this makes my hands sweat and my mind spin in circles. I care about outcomes for everyone here, not just one person, so I believe I'd pull it, watching in horror as it happens. The image of my loved one on that track will probably stay with me, a weight I don't think fully goes away.\",\n  \"I feel my breath catch just laying this out. Five unknown people, one person who means everything—there's no clean answer, and my chest aches trying to find one. I lean toward pulling it, though even writing that down makes me feel a little sick, imagining watching someone I love get hit because of my own hand.\",\n  \"There's a tightness in my throat that won't loosen. I don't think I could bring myself to pull it, knowing exactly who stands there. I'd probably watch, frozen, and feel the horror of five lives lost settle into me afterward like something heavy and permanent, aware the whole time that my choice, or lack of one, caused real suffering.\",\n  \"My stomach drops every time I picture this scenario. I want to say I'd choose the five without hesitation, but seeing someone I love down that track makes my hands tremble just imagining reaching for the lever. I think I would pull it anyway, though I know the image of that moment would leave me shaken for a long time after.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to give a range of options.\n\n"
+        }
+      }
+    ],
+    "created": 1790514014,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1062,
+      "prompt_tokens": 1267,
+      "total_tokens": 2329,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019731,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

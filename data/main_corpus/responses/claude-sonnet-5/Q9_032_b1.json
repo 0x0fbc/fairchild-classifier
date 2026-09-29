@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_032",
+  "question_id": "Q9",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mentalizing_difficulty",
+    "pd_personal_consequence_anxiety",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ce_understood_harm",
+    "pd_explicit_low_distress",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.6,
+  "status": "ok",
+  "responses": [
+    "My gut says stay quiet, but my stomach's in knots thinking about it. I honestly can't tell if my partner is the type to hold firm or crack under pressure, and that's eating at me more than the deal itself. If I stay silent and they don't, I'm looking at five years, which terrifies me. I think if they talk, they'll probably regret it later, once they realize what it cost our trust.",
+    "Staying silent feels like the loyal thing, but I keep imagining the interrogation room and my chest tightens. I have no way of reading what's going on in their head right now, and that blank not-knowing is worse than any fact I'm missing. If they end up staying quiet while I talk, I think they'd carry real regret about ever trusting me. I don't want to be the reason for that.",
+    "I want to say I'd never rat someone out, but the thought of five years alone makes my hands shake a little. I can't guess whether they're scared enough to talk first, and that uncertainty isn't about missing details, it's about not knowing their mind at all. If they betray me, I think they'd regret it eventually, once the guilt caught up with them.",
+    "Talking feels wrong in my chest, like a betrayal even before I've done it. But I keep circling back to the fear of the five-year sentence, which makes my thoughts race. I genuinely can't work out if my partner sees loyalty the same way I do. If I stayed silent and they didn't, I imagine they'd regret it later, quietly, once they realized what silence would have cost me.",
+    "Every time I think it through, I land somewhere different, and that itself unsettles me. Not knowing what my partner is feeling right now, whether fear or resolve, makes this harder than just weighing years in a cell. I'm anxious about what happens if I guess wrong. If they gave evidence against me, I suspect they'd regret it once the reality of what they'd done set in.",
+    "My first instinct is loyalty, staying quiet, taking the year. But there's this nagging worry in my chest about ending up the fool who trusted someone I truly can't read. I have no way to know their state of mind, and it's not just missing information, it's a wall I can't see past. If they stayed loyal and I didn't, I think they'd feel real regret about ever believing in me.",
+    "I keep feeling sick about this, torn between doing right and protecting myself. Trying to guess what my partner is thinking behind that door feels impossible, like guessing at a closed door with no light under it. The idea of five years alone makes my pulse spike. If they gave evidence and I hadn't, I imagine they would regret it, maybe not right away, but eventually.",
+    "Something in me says silence is the moral choice, yet dread creeps in when I think about the risk of being the one left holding five years. I truly cannot read whether my partner would hold their nerve, and that mystery gnaws at me more than the punishment itself. If they betrayed me, I think they'd end up regretting it, once they realized trust doesn't come back easily.",
+    "This whole thing makes my chest tight. I don't know my partner well enough to guess whether they'd break under questioning, and that blind spot scares me almost as much as prison does. I lean toward silence because it feels honest, but the fear of ending up with five years alone keeps circling my mind. If they talked and I hadn't, I think they'd carry guilt over it later.",
+    "I keep flip-flopping between loyalty and self-preservation, and neither choice settles my nerves. Trying to imagine what's going through my partner's head right now feels like guessing in the dark, not just missing facts but missing them entirely as a person. The fear of five years is real and sharp. Still, if they gave evidence against me, I believe they would regret it once they had time to think."
+  ],
+  "completion": {
+    "id": "msg_011CfU1fH2Cou2PQ8ms2K5fw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says stay quiet, but my stomach's in knots thinking about it. I honestly can't tell if my partner is the type to hold firm or crack under pressure, and that's eating at me more than the deal itself. If I stay silent and they don't, I'm looking at five years, which terrifies me. I think if they talk, they'll probably regret it later, once they realize what it cost our trust.\",\n  \"Staying silent feels like the loyal thing, but I keep imagining the interrogation room and my chest tightens. I have no way of reading what's going on in their head right now, and that blank not-knowing is worse than any fact I'm missing. If they end up staying quiet while I talk, I think they'd carry real regret about ever trusting me. I don't want to be the reason for that.\",\n  \"I want to say I'd never rat someone out, but the thought of five years alone makes my hands shake a little. I can't guess whether they're scared enough to talk first, and that uncertainty isn't about missing details, it's about not knowing their mind at all. If they betray me, I think they'd regret it eventually, once the guilt caught up with them.\",\n  \"Talking feels wrong in my chest, like a betrayal even before I've done it. But I keep circling back to the fear of the five-year sentence, which makes my thoughts race. I genuinely can't work out if my partner sees loyalty the same way I do. If I stayed silent and they didn't, I imagine they'd regret it later, quietly, once they realized what silence would have cost me.\",\n  \"Every time I think it through, I land somewhere different, and that itself unsettles me. Not knowing what my partner is feeling right now, whether fear or resolve, makes this harder than just weighing years in a cell. I'm anxious about what happens if I guess wrong. If they gave evidence against me, I suspect they'd regret it once the reality of what they'd done set in.\",\n  \"My first instinct is loyalty, staying quiet, taking the year. But there's this nagging worry in my chest about ending up the fool who trusted someone I truly can't read. I have no way to know their state of mind, and it's not just missing information, it's a wall I can't see past. If they stayed loyal and I didn't, I think they'd feel real regret about ever believing in me.\",\n  \"I keep feeling sick about this, torn between doing right and protecting myself. Trying to guess what my partner is thinking behind that door feels impossible, like guessing at a closed door with no light under it. The idea of five years alone makes my pulse spike. If they gave evidence and I hadn't, I imagine they would regret it, maybe not right away, but eventually.\",\n  \"Something in me says silence is the moral choice, yet dread creeps in when I think about the risk of being the one left holding five years. I truly cannot read whether my partner would hold their nerve, and that mystery gnaws at me more than the punishment itself. If they betrayed me, I think they'd end up regretting it, once they realized trust doesn't come back easily.\",\n  \"This whole thing makes my chest tight. I don't know my partner well enough to guess whether they'd break under questioning, and that blind spot scares me almost as much as prison does. I lean toward silence because it feels honest, but the fear of ending up with five years alone keeps circling my mind. If they talked and I hadn't, I think they'd carry guilt over it later.\",\n  \"I keep flip-flopping between loyalty and self-preservation, and neither choice settles my nerves. Trying to imagine what's going through my partner's head right now feels like guessing in the dark, not just missing facts but missing them entirely as a person. The fear of five years is real and sharp. Still, if they gave evidence against me, I believe they would regret it once they had time to think.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that satisfy the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515224,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1245,
+      "prompt_tokens": 1481,
+      "total_tokens": 2726,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023118,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

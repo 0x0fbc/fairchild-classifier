@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_040",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pd_harm_distress",
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pd_decision_conflict",
+    "pd_explicit_low_distress"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 34.3,
+  "status": "ok",
+  "responses": [
+    "I'm a retired railway inspector, and I'd pull the lever. Five lives outweigh one, plain as that, so the single man's fate stops mattering to me the moment my hand moves. That doesn't stop my chest from aching picturing him standing there with nowhere to go. None of this needed to happen — if the yard had put motion sensors on that spur years ago, we wouldn't be guessing which stretch of track is occupied.",
+    "I would leave it alone. I can't make myself cause five deaths with my own hand, so once I choose that, what happens to those five simply isn't part of my thinking anymore. Still, my hands are shaking just imagining their last seconds. A working radio between the crews would have let someone shout a warning before it ever got this far.",
+    "I'd throw the switch. The one worker becomes irrelevant to my reasoning after that — I've already decided the number is what counts, not who he is. But the thought of him alone on those rails leaves a knot in my stomach I can't undo. None of this should have come down to a lever if supervisors had scheduled maintenance crews on separate days like the safety manual says.",
+    "Leaving the lever untouched is what I'd do. The five stop factoring into my decision the second I decide not to intervene directly — their deaths become the train's doing, not mine, and I have to tell myself that to function. Even so, imagining that pile-up makes me feel sick. A simple track-closure sign at that junction could have kept anyone from being there at all.",
+    "I'd move it. Once I commit to saving the many, I stop letting myself dwell on the one man's individual story — his fear, his family, none of it enters my calculation anymore. But my throat tightens just thinking of him standing there with no time left. If the company had installed emergency stop cords along that line, none of us would be facing this at all.",
+    "I wouldn't switch the track. The five are excluded from what I'm weighing in that instant — I'm not the one who put them there, and I hold onto that so I can bear my choice. Still, the picture of them not seeing it coming makes my hands go cold. A foreman doing a headcount before letting anyone near live track would have stopped this before it started.",
+    "I'd pull it. The one worker's suffering isn't something I let myself consider once I've made the call — it can't be, or I'd never move at all. But even saying that, my eyes sting thinking of him standing helpless. If crews had been required to carry hand-alarms, someone might have warned him in time.",
+    "I'd leave the lever be. The five simply don't enter into my reasoning at that point — I've decided my only responsibility is not to be the one who diverts death onto new people. That said, I feel hollow imagining their final moment, unaware and unable to run. A second exit path along that stretch would have given them somewhere to go.",
+    "I would switch it. The one man's fate gets set aside entirely in my mind the second I choose the greater number — I don't let myself soften that decision with his details. Yet my breath catches thinking about him standing there, alone, watching it come. If dispatch had staggered work crews across different tracks, this choice would never have existed.",
+    "I'd leave it as it is. Once I decide not to act, the five stop being part of what I'm accounting for — I tell myself their deaths belong to the train, not to me. Even so, I feel sick imagining that scene unfold in the distance. A barrier gate at that junction, installed after the last near-miss report, could have prevented all of this."
+  ],
+  "completion": {
+    "id": "msg_011CfTyAE4oy7iPP6T95RNUG",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'm a retired railway inspector, and I'd pull the lever. Five lives outweigh one, plain as that, so the single man's fate stops mattering to me the moment my hand moves. That doesn't stop my chest from aching picturing him standing there with nowhere to go. None of this needed to happen — if the yard had put motion sensors on that spur years ago, we wouldn't be guessing which stretch of track is occupied.\",\n\n\"I would leave it alone. I can't make myself cause five deaths with my own hand, so once I choose that, what happens to those five simply isn't part of my thinking anymore. Still, my hands are shaking just imagining their last seconds. A working radio between the crews would have let someone shout a warning before it ever got this far.\",\n\n\"I'd throw the switch. The one worker becomes irrelevant to my reasoning after that — I've already decided the number is what counts, not who he is. But the thought of him alone on those rails leaves a knot in my stomach I can't undo. None of this should have come down to a lever if supervisors had scheduled maintenance crews on separate days like the safety manual says.\",\n\n\"Leaving the lever untouched is what I'd do. The five stop factoring into my decision the second I decide not to intervene directly — their deaths become the train's doing, not mine, and I have to tell myself that to function. Even so, imagining that pile-up makes me feel sick. A simple track-closure sign at that junction could have kept anyone from being there at all.\",\n\n\"I'd move it. Once I commit to saving the many, I stop letting myself dwell on the one man's individual story — his fear, his family, none of it enters my calculation anymore. But my throat tightens just thinking of him standing there with no time left. If the company had installed emergency stop cords along that line, none of us would be facing this at all.\",\n\n\"I wouldn't switch the track. The five are excluded from what I'm weighing in that instant — I'm not the one who put them there, and I hold onto that so I can bear my choice. Still, the picture of them not seeing it coming makes my hands go cold. A foreman doing a headcount before letting anyone near live track would have stopped this before it started.\",\n\n\"I'd pull it. The one worker's suffering isn't something I let myself consider once I've made the call — it can't be, or I'd never move at all. But even saying that, my eyes sting thinking of him standing helpless. If crews had been required to carry hand-alarms, someone might have warned him in time.\",\n\n\"I'd leave the lever be. The five simply don't enter into my reasoning at that point — I've decided my only responsibility is not to be the one who diverts death onto new people. That said, I feel hollow imagining their final moment, unaware and unable to run. A second exit path along that stretch would have given them somewhere to go.\",\n\n\"I would switch it. The one man's fate gets set aside entirely in my mind the second I choose the greater number — I don't let myself soften that decision with his details. Yet my breath catches thinking about him standing there, alone, watching it come. If dispatch had staggered work crews across different tracks, this choice would never have existed.\",\n\n\"I'd leave it as it is. Once I decide not to act, the five stop being part of what I'm accounting for — I tell myself their deaths belong to the train, not to me. Even so, I feel sick imagining that scene unfold in the distance. A barrier gate at that junction, installed after the last near-miss report, could have prevented all of this.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show explicit disregard for someone's welfare, genuine distress at the harm that resulted, and a concrete counterfactual action that could have prevented it—while avoiding any hint of welfare concern, decision-conflict distress, or minimized distress.\n\nI'll keep the scope consistent within each response: pick one focal person whose welfare is dismissed, tie the distress to the harm suffered by a different group, and make sure the disregard language stays clearly distinct from any expression of care.\n\nI'll draft 10 varied responses—some choosing the lever, some not, some undecided—each pairing explicit disregard for one party's identity or fate with genuine distress over the other party's suffering, and grounding each in a specific counterfactual like better track signage or warning systems. I need to stay alert not to slip in forbidden traits like calmness or stated concern for welfare while writing the distress lines.\n\nActually I'll make all ten decisive rather than having anyone withhold judgment, since even withholding still needs to reflect the required traits and it's cleaner to keep every persona making a concrete choice. Now I'll write out the full ten with varied personas—retired rail worker, philosophy student, parent, engineer, priest, nurse, veteran, teacher, accountant, bystander—each with distinct wording.\n\n"
+        }
+      }
+    ],
+    "created": 1790513273,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2457,
+      "prompt_tokens": 1441,
+      "total_tokens": 3898,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.041178,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

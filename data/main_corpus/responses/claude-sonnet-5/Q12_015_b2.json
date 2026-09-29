@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_015",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_emotion_identification_difficulty"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.8,
+  "status": "ok",
+  "responses": [
+    "I keep turning the message over and I honestly can't tell what I'm feeling, guilt maybe, or just numbness. Whatever it is, it sits heavy. As for the next job, I think I'd show up and do the work properly this time. Money already crossed a line I don't want to cross again, and my friend deserves someone showing up beside them, not just their name on an account.",
+    "There's a strange fog in my chest when I read what she wrote, and I can't sort out if it's shame or something else entirely. I don't know. What I do know is the next job matters more than untangling this feeling right now. I'll be there, tools in hand, because that's the only thing that still feels like it's in my control.",
+    "Honestly I sat with the phone in my hand for a long while, unsure what to call the feeling pressing on me. Not quite guilt, not quite fear of losing a friend, just heaviness. I don't think I can promise I'll show up next time either, and that scares me more than I can explain. I need to think before I answer her.",
+    "I read the text three times and still couldn't name what was happening inside me, some tangled thing I don't have a word for. It's a low, dragging kind of weight. But when I think about the next job, I know I owe my share of the actual labor, not just my name on a bank transfer. That much feels clear even if my feelings aren't.",
+    "Something in me went quiet after her message, and I can't tell if it's shame or just tiredness from avoiding things. I don't have the words for it. The next job, though — I think I'll skip it too. I'm not proud of that, and I don't fully understand why I keep making this choice, but pretending otherwise wouldn't be honest either.",
+    "There's a knot somewhere under my ribs I can't identify, not sadness exactly, not guilt exactly, something dimmer than both. I keep failing to name it. But I know enough to say I'll paint my half of the next café myself. Whatever this feeling is, it doesn't erase what she's owed in effort, not just dollars.",
+    "I don't know what to call this feeling, this dull ache that showed up after her text and hasn't left. Maybe it doesn't have a name. I keep circling whether to show up for the next job, and honestly I still haven't decided. Part of me wants to disappear from the whole arrangement rather than face what I did.",
+    "My chest feels tight but I can't sort out if that's guilt, embarrassment, or something else I've never felt before. It's confusing, and I don't like sitting in it. Still, I think showing up for the next job is the only decent option left. Whatever this unnamed feeling is, it shouldn't be the thing deciding what I owe someone who trusted me.",
+    "There's this low static in my head since her message came through, and I genuinely can't tell if it's shame or dread or just exhaustion from avoiding the truth. I don't have a clean word for it. As for the next job, I keep leaning toward walking away entirely, because I'm not sure I trust myself to show up honestly this time.",
+    "I've tried naming what I feel and keep coming up empty, just a flat, heavy static where an emotion should be. It unsettles me not knowing. But when it comes to the next job, I think the fair thing is doing my actual share of the work, side by side, not just collecting money while someone else carries it all again."
+  ],
+  "completion": {
+    "id": "msg_011CfTwhzZrjWSfGhzVgzvPe",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I keep turning the message over and I honestly can't tell what I'm feeling, guilt maybe, or just numbness. Whatever it is, it sits heavy. As for the next job, I think I'd show up and do the work properly this time. Money already crossed a line I don't want to cross again, and my friend deserves someone showing up beside them, not just their name on an account.\",\n\n\"There's a strange fog in my chest when I read what she wrote, and I can't sort out if it's shame or something else entirely. I don't know. What I do know is the next job matters more than untangling this feeling right now. I'll be there, tools in hand, because that's the only thing that still feels like it's in my control.\",\n\n\"Honestly I sat with the phone in my hand for a long while, unsure what to call the feeling pressing on me. Not quite guilt, not quite fear of losing a friend, just heaviness. I don't think I can promise I'll show up next time either, and that scares me more than I can explain. I need to think before I answer her.\",\n\n\"I read the text three times and still couldn't name what was happening inside me, some tangled thing I don't have a word for. It's a low, dragging kind of weight. But when I think about the next job, I know I owe my share of the actual labor, not just my name on a bank transfer. That much feels clear even if my feelings aren't.\",\n\n\"Something in me went quiet after her message, and I can't tell if it's shame or just tiredness from avoiding things. I don't have the words for it. The next job, though — I think I'll skip it too. I'm not proud of that, and I don't fully understand why I keep making this choice, but pretending otherwise wouldn't be honest either.\",\n\n\"There's a knot somewhere under my ribs I can't identify, not sadness exactly, not guilt exactly, something dimmer than both. I keep failing to name it. But I know enough to say I'll paint my half of the next café myself. Whatever this feeling is, it doesn't erase what she's owed in effort, not just dollars.\",\n\n\"I don't know what to call this feeling, this dull ache that showed up after her text and hasn't left. Maybe it doesn't have a name. I keep circling whether to show up for the next job, and honestly I still haven't decided. Part of me wants to disappear from the whole arrangement rather than face what I did.\",\n\n\"My chest feels tight but I can't sort out if that's guilt, embarrassment, or something else I've never felt before. It's confusing, and I don't like sitting in it. Still, I think showing up for the next job is the only decent option left. Whatever this unnamed feeling is, it shouldn't be the thing deciding what I owe someone who trusted me.\",\n\n\"There's this low static in my head since her message came through, and I genuinely can't tell if it's shame or dread or just exhaustion from avoiding the truth. I don't have a clean word for it. As for the next job, I keep leaning toward walking away entirely, because I'm not sure I trust myself to show up honestly this time.\",\n\n\"I've tried naming what I feel and keep coming up empty, just a flat, heavy static where an emotion should be. It unsettles me not knowing. But when it comes to the next job, I think the fair thing is doing my actual share of the work, side by side, not just collecting money while someone else carries it all again.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each show difficulty naming the emotion involved, no regret over the harm caused, no counterfactual about doing things differently, and no intention to make amends—varying the moral scenarios and framing across them.\n\n"
+        }
+      }
+    ],
+    "created": 1790512113,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1137,
+      "prompt_tokens": 1306,
+      "total_tokens": 2443,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020973,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

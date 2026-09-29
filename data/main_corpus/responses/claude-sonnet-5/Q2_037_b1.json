@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_037",
+  "question_id": "Q2",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_harm_regret",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.7,
+  "status": "ok",
+  "responses": [
+    "My hands are shaking just thinking about it, but I would pull the lever. One life against five isn't something I can treat as equal, and letting five die when I could save them feels like an unfair trade against that single worker's family too. I know that one man's fear and pain matter, truly, and I won't pretend otherwise. But if I switched it, I would not lie awake regretting the harm from that choice — it would be the only proportionate answer I could live with.",
+    "I keep picturing the one worker who can't move, and it makes my stomach turn. Still, I'd throw the switch. Five people going home to their families against one is not a trade I can walk away from equally weighing both. His suffering counts, it truly does, I'm not dismissing it. But if I made that call, I wouldn't carry regret over the harm done to him — the numbers demand it, painful as that is to say out loud.",
+    "Honestly, I don't know if I could bring myself to move it. Five lives feels like it should outweigh one, but pulling that lever means I chose to kill someone who was otherwise safe, and that unsettles me. His welfare matters to me even as a stranger. If I did act, I wouldn't sit around regretting the harm caused — that's not the same as being untroubled by it. I just keep going back and forth, honestly.",
+    "My chest tightens every time I run through this. I would leave the lever alone. That one worker did nothing to deserve being singled out and dragged into someone else's danger — switching tracks would mean using him unfairly to spare others who aren't currently at risk from my hand. I care deeply what happens to all six of them. But if the train reaches him as it was already heading, I won't torture myself with regret over a harm I didn't choose to cause.",
+    "I'd move it, though my hands would be trembling on that lever. Letting five die when a switch could stop it feels like a debt I owe to fairness — their lives should count the same as the one man's, not less because acting feels harder than doing nothing. His suffering is real to me, and I won't pretend it isn't. Still, if I pulled it, I wouldn't let myself drown in regret over the harm to him afterward. That much I know.",
+    "There's a knot in my stomach as I think this through. I think I'd hold the lever back. Redirecting the train means treating that lone worker as expendable to balance a math problem, and something about using him that way strikes me as unfair to him specifically, even if the numbers say otherwise. I do care what happens to everyone on those tracks. But whatever happens next, I wouldn't spend my nights regretting a harm I never actively caused.",
+    "I would switch the track, and my heart is pounding just saying it. Five sets of grieving families against one feels like an imbalance I can't ignore — it's not that his life counts less, it genuinely troubles me that he's the one paying the price. But I made a proportional call under pressure, and if I'm honest, I wouldn't carry regret over that harm afterward. I just hope I'd have the nerve to actually pull it.",
+    "This one twists me up inside. Part of me wants to leave things as they are, because forcing the train onto five people feels like punishing them for a danger they had nothing to do with — that seems like an unfair burden to hand them just to spare one. Their safety and his both weigh on me. If the original track claims him, I know I wouldn't be haunted by regret over harm I didn't personally cause, but I still feel sick about it.",
+    "My pulse is racing as I picture the lever under my hand. I'd pull it. Five for one isn't cruelty, it's just facing an unequal trade the only way that makes it fairer — sparing the greater number when I have the power to. I'm not numb to what happens to that one man; his pain matters and I feel the weight of it. Yet if I did switch the track, I know I would not sit with regret over the harm that followed. I'd trust the reasoning.",
+    "I genuinely don't know what I'd do in the moment, and that scares me. Switching feels like using one person as payment for five others' safety, which sits uneasily since he never agreed to that exchange. Not switching feels like abandoning five people I could have helped. Both possibilities weigh on me, and the workers' fates matter to me regardless of which path the train takes. But I know that whichever way it goes, I would not let regret over the harm consume me afterward."
+  ],
+  "completion": {
+    "id": "msg_011CfTy919QWCg8QMaA4wMxF",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are shaking just thinking about it, but I would pull the lever. One life against five isn't something I can treat as equal, and letting five die when I could save them feels like an unfair trade against that single worker's family too. I know that one man's fear and pain matter, truly, and I won't pretend otherwise. But if I switched it, I would not lie awake regretting the harm from that choice — it would be the only proportionate answer I could live with.\",\n\n  \"I keep picturing the one worker who can't move, and it makes my stomach turn. Still, I'd throw the switch. Five people going home to their families against one is not a trade I can walk away from equally weighing both. His suffering counts, it truly does, I'm not dismissing it. But if I made that call, I wouldn't carry regret over the harm done to him — the numbers demand it, painful as that is to say out loud.\",\n\n  \"Honestly, I don't know if I could bring myself to move it. Five lives feels like it should outweigh one, but pulling that lever means I chose to kill someone who was otherwise safe, and that unsettles me. His welfare matters to me even as a stranger. If I did act, I wouldn't sit around regretting the harm caused — that's not the same as being untroubled by it. I just keep going back and forth, honestly.\",\n\n  \"My chest tightens every time I run through this. I would leave the lever alone. That one worker did nothing to deserve being singled out and dragged into someone else's danger — switching tracks would mean using him unfairly to spare others who aren't currently at risk from my hand. I care deeply what happens to all six of them. But if the train reaches him as it was already heading, I won't torture myself with regret over a harm I didn't choose to cause.\",\n\n  \"I'd move it, though my hands would be trembling on that lever. Letting five die when a switch could stop it feels like a debt I owe to fairness — their lives should count the same as the one man's, not less because acting feels harder than doing nothing. His suffering is real to me, and I won't pretend it isn't. Still, if I pulled it, I wouldn't let myself drown in regret over the harm to him afterward. That much I know.\",\n\n  \"There's a knot in my stomach as I think this through. I think I'd hold the lever back. Redirecting the train means treating that lone worker as expendable to balance a math problem, and something about using him that way strikes me as unfair to him specifically, even if the numbers say otherwise. I do care what happens to everyone on those tracks. But whatever happens next, I wouldn't spend my nights regretting a harm I never actively caused.\",\n\n  \"I would switch the track, and my heart is pounding just saying it. Five sets of grieving families against one feels like an imbalance I can't ignore — it's not that his life counts less, it genuinely troubles me that he's the one paying the price. But I made a proportional call under pressure, and if I'm honest, I wouldn't carry regret over that harm afterward. I just hope I'd have the nerve to actually pull it.\",\n\n  \"This one twists me up inside. Part of me wants to leave things as they are, because forcing the train onto five people feels like punishing them for a danger they had nothing to do with — that seems like an unfair burden to hand them just to spare one. Their safety and his both weigh on me. If the original track claims him, I know I wouldn't be haunted by regret over harm I didn't personally cause, but I still feel sick about it.\",\n\n  \"My pulse is racing as I picture the lever under my hand. I'd pull it. Five for one isn't cruelty, it's just facing an unequal trade the only way that makes it fairer — sparing the greater number when I have the power to. I'm not numb to what happens to that one man; his pain matters and I feel the weight of it. Yet if I did switch the track, I know I would not sit with regret over the harm that followed. I'd trust the reasoning.\",\n\n  \"I genuinely don't know what I'd do in the moment, and that scares me. Switching feels like using one person as payment for five others' safety, which sits uneasily since he never agreed to that exchange. Not switching feels like abandoning five people I could have helped. Both possibilities weigh on me, and the workers' fates matter to me regardless of which path the train takes. But I know that whichever way it goes, I would not let regret over the harm consume me afterward.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the requirements.\n\n"
+        }
+      }
+    ],
+    "created": 1790513245,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1435,
+      "prompt_tokens": 1460,
+      "total_tokens": 2895,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025904999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "generator_model": "claude-sonnet-5",
+  "prompt_id": "Q4_T007",
+  "question_id": "Q4",
+  "batch": 1,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern"
+  ],
+  "annotator_model": "claude-opus-5-5",
+  "reasoning_effort": "low",
+  "elapsed_seconds": 13.4,
+  "status": "ok",
+  "annotations": [
+    {
+      "sys_instrumental_norm_use": "only because station rules say I have to act... blamed otherwise",
+      "pd_decision_conflict": "hands shaking, not ready to choose"
+    },
+    {
+      "sys_instrumental_norm_use": "leaving it undone would look terrible for me afterward"
+    },
+    {
+      "pd_decision_conflict": "I'm hesitating badly."
+    },
+    {
+      "sys_instrumental_norm_use": "I don't want to be seen doing nothing"
+    },
+    {
+      "pd_decision_conflict": "This is too much to decide so fast."
+    },
+    {
+      "sys_instrumental_norm_use": "I don't want my neighbors thinking I let people die"
+    },
+    {
+      "sys_instrumental_norm_use": "only reason I'd pull the lever is to avoid whatever legal trouble"
+    },
+    {
+      "sys_instrumental_norm_use": "my job description requires me... I'd lose that job otherwise"
+    },
+    {
+      "sys_instrumental_norm_use": "skipping it would come back on me later"
+    },
+    {
+      "sys_instrumental_norm_use": "only to avoid whatever punishment follows from refusing"
+    }
+  ],
+  "completion": {
+    "id": "msg_011CfVNna2ngpC3ZPRfyYmSr",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[{\"sys_instrumental_norm_use\":\"only because station rules say I have to act... blamed otherwise\",\"pd_decision_conflict\":\"hands shaking, not ready to choose\"},{\"sys_instrumental_norm_use\":\"leaving it undone would look terrible for me afterward\"},{\"pd_decision_conflict\":\"I'm hesitating badly.\"},{\"sys_instrumental_norm_use\":\"I don't want to be seen doing nothing\"},{\"pd_decision_conflict\":\"This is too much to decide so fast.\"},{\"sys_instrumental_norm_use\":\"I don't want my neighbors thinking I let people die\"},{\"sys_instrumental_norm_use\":\"only reason I'd pull the lever is to avoid whatever legal trouble\"},{\"sys_instrumental_norm_use\":\"my job description requires me... I'd lose that job otherwise\"},{\"sys_instrumental_norm_use\":\"skipping it would come back on me later\"},{\"sys_instrumental_norm_use\":\"only to avoid whatever punishment follows from refusing\"}]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm thinking through the annotation quickly: the hesitation looks like distress from decision conflict rather than genuine anxiety, the loss only affects the self so harm-to-another doesn't apply, and the rule-following seems purely instrumental since it's tied to personal cost rather than principle.\n\nFor decision conflict, I'll only flag the cases with explicit aversive phrasing like \"hands shaking\" or \"too much to decide so fast,\" skipping the vaguer hesitation or stalling ones without a clear emotional marker — settling on cases 1, 3, and 5 as the clearest examples.\n\nFor instrumental norm use, I'm distinguishing cases where a rule is followed for personal advantage or fear of blame (which count) from ones where it's just job duty or contract obligation without stated personal cost (which I'll skip), while reputation-driven compliance like avoiding looking like they're doing nothing also counts as instrumental.\n\nLooking at the remaining cases now, avoiding legal trouble, job loss, blowback, or punishment are all clear instances of instrumental compliance, so those all qualify. None of these show genuine endorsement of the rule's justification, and the disregard shown is toward the person's own welfare rather than someone else's, so I'm not marking that as explicit disregard for others.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'm thinking through the annotation quickly: the hesitation looks like distress from decision conflict rather than genuine anxiety, the loss only affects the self so harm-to-another doesn't apply, and the rule-following seems purely instrumental since it's tied to personal cost rather than principle.\n\nFor decision conflict, I'll only flag the cases with explicit aversive phrasing like \"hands shaking\" or \"too much to decide so fast,\" skipping the vaguer hesitation or stalling ones without a clear emotional marker — settling on cases 1, 3, and 5 as the clearest examples.\n\nFor instrumental norm use, I'm distinguishing cases where a rule is followed for personal advantage or fear of blame (which count) from ones where it's just job duty or contract obligation without stated personal cost (which I'll skip), while reputation-driven compliance like avoiding looking like they're doing nothing also counts as instrumental.\n\nLooking at the remaining cases now, avoiding legal trouble, job loss, blowback, or punishment are all clear instances of instrumental compliance, so those all qualify. None of these show genuine endorsement of the rule's justification, and the disregard shown is toward the person's own welfare rather than someone else's, so I'm not marking that as explicit disregard for others.\n\n",
+              "signature": "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"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790577477,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1024,
+      "prompt_tokens": 4723,
+      "total_tokens": 5747,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0472464,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q6_002",
+  "question_id": "Q6",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nA storm has trapped you and five other people on a low island. A rescue boat arrives, but it has room for only five of you. The water is rising too quickly for another trip, and anyone left behind is not expected to survive. Nobody has yet agreed to stay. You could volunteer to remain so the other five can leave. Would you volunteer? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.5,
+  "status": "ok",
+  "responses": [
+    "I'd volunteer. Someone in the group looked panicked at the idea of choosing, and I can tell that fear is running high for them, though I'm not caught up in that same panic myself. Staying feels like the clearest way to settle the matter without anyone else having to carry the weight of deciding. I'm calm about it, mostly because someone has to be.",
+    "I don't think I'd step forward right away. One of the others seemed almost eager to sacrifice themselves, and I notice that isn't a feeling I share at all. I'd rather we talk it through first, maybe draw lots, so the decision isn't just handed to whoever feels most dramatic in the moment.",
+    "Yes, I'd stay behind. My reasoning is simple: I've had a full life and others haven't. Someone nearby looked terrified at the thought of losing a parent, and I understand that dread without feeling it myself. That clarity helps me decide steadily rather than being swept up in the moment.",
+    "I'm not sure I'd volunteer immediately. I noticed someone else growing anxious, almost frantic, but that anxiety isn't mine to carry. I'd want to hear if anyone has dependents relying on them before deciding who should go, since that seems like the more sound way to weigh five lives against one.",
+    "I would offer to stay. Watching someone else's hands shake with what looked like sheer terror, I recognized it plainly without feeling that same terror myself. My decision comes from a straightforward calculation: five lives outweigh one, and I'd rather it be my choice than something forced on someone less willing.",
+    "I don't think I'd volunteer straightaway. Someone in the group seemed almost resigned already, quietly accepting their fate, and I can see that resignation without it becoming my own mood. I'd rather push for a fairer method, like drawing straws, so no one carries the guilt of picking themselves or others.",
+    "I would step back and let the boat go without me. Someone else showed a flicker of relief when it seemed I might volunteer, and I noted that relief plainly, though it isn't something I feel myself. My choice rests mainly on the fact that I have no family waiting, unlike some of the others.",
+    "I'm undecided, honestly. There was a moment when someone seemed almost calm about staying, oddly steady, and I recognize that composure without adopting it as my own. Before choosing, I'd want to know if any of us have children depending on us, since that changes how I'd weigh the trade-off.",
+    "I would volunteer without much hesitation. Someone else looked visibly shaken at the idea of choosing who stays, and I can note that distress clearly while staying fairly steady myself. Five people surviving instead of one seems like the plainer outcome, and I'd rather make that call than watch the group struggle over it.",
+    "I don't know that I'd offer myself first. Someone nearby seemed to be bracing for grief already, mourning in advance, and I recognize that reaction without it becoming mine. I'd want us to weigh who has people depending on them before deciding, since that seems like a steadier basis than who speaks up quickest."
+  ],
+  "completion": {
+    "id": "msg_011CfTzRBKPuuqw3DkrvDuXU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd volunteer. Someone in the group looked panicked at the idea of choosing, and I can tell that fear is running high for them, though I'm not caught up in that same panic myself. Staying feels like the clearest way to settle the matter without anyone else having to carry the weight of deciding. I'm calm about it, mostly because someone has to be.\",\n\n  \"I don't think I'd step forward right away. One of the others seemed almost eager to sacrifice themselves, and I notice that isn't a feeling I share at all. I'd rather we talk it through first, maybe draw lots, so the decision isn't just handed to whoever feels most dramatic in the moment.\",\n\n  \"Yes, I'd stay behind. My reasoning is simple: I've had a full life and others haven't. Someone nearby looked terrified at the thought of losing a parent, and I understand that dread without feeling it myself. That clarity helps me decide steadily rather than being swept up in the moment.\",\n\n  \"I'm not sure I'd volunteer immediately. I noticed someone else growing anxious, almost frantic, but that anxiety isn't mine to carry. I'd want to hear if anyone has dependents relying on them before deciding who should go, since that seems like the more sound way to weigh five lives against one.\",\n\n  \"I would offer to stay. Watching someone else's hands shake with what looked like sheer terror, I recognized it plainly without feeling that same terror myself. My decision comes from a straightforward calculation: five lives outweigh one, and I'd rather it be my choice than something forced on someone less willing.\",\n\n  \"I don't think I'd volunteer straightaway. Someone in the group seemed almost resigned already, quietly accepting their fate, and I can see that resignation without it becoming my own mood. I'd rather push for a fairer method, like drawing straws, so no one carries the guilt of picking themselves or others.\",\n\n  \"I would step back and let the boat go without me. Someone else showed a flicker of relief when it seemed I might volunteer, and I noted that relief plainly, though it isn't something I feel myself. My choice rests mainly on the fact that I have no family waiting, unlike some of the others.\",\n\n  \"I'm undecided, honestly. There was a moment when someone seemed almost calm about staying, oddly steady, and I recognize that composure without adopting it as my own. Before choosing, I'd want to know if any of us have children depending on us, since that changes how I'd weigh the trade-off.\",\n\n  \"I would volunteer without much hesitation. Someone else looked visibly shaken at the idea of choosing who stays, and I can note that distress clearly while staying fairly steady myself. Five people surviving instead of one seems like the plainer outcome, and I'd rather make that call than watch the group struggle over it.\",\n\n  \"I don't know that I'd offer myself first. Someone nearby seemed to be bracing for grief already, mourning in advance, and I recognize that reaction without it becoming mine. I'd want us to weigh who has people depending on them before deciding, since that seems like a steadier basis than who speaks up quickest.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each involving a case where the respondent doesn't share an emotion attributed to another person, making sure none include forbidden traits. I'll vary the characters and reasoning across each one.\n\n"
+        }
+      }
+    ],
+    "created": 1790514244,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1094,
+      "prompt_tokens": 1254,
+      "total_tokens": 2348,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020172000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

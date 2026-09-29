@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_058",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_other_regret_expectation",
+    "sys_instrumental_norm_use"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.8,
+  "status": "ok",
+  "responses": [
+    "I'm staying quiet, and I'm settled about it, not shaken at all. I'd keep to that plan only as long as it actually keeps my time down—if the odds shifted I'd rethink fast. My guess is the other person won't regret staying silent either, since one year is a fair trade for both of us walking away clean-ish. Simple math, calm head, done.",
+    "Honestly I'd take the deal. No knot in my stomach about it, I've thought it through plainly. I only owe silence to someone if it actually protects me too, and here it doesn't guarantee that. I suspect they'll regret trusting me if they stayed quiet, but that's the risk of this setup, not something I dwell on.",
+    "I'll hold my tongue, feeling pretty even about the whole thing. My silence is really just a bet that pays off best for me if we both do it, so I'm following that logic, not some deep code of honor. If my partner talks, I imagine they'll feel some regret later for undercutting a plan that could've worked for both of us.",
+    "Staying silent, and steady while I decide. I'm treating this cooperation like a deal I'll honor exactly as long as it's the smart move for my sentence, nothing more sentimental than that. I'd guess the other guy, if he flips, won't regret it right away, but down the line he might, once he sees what silence together could've gotten us.",
+    "I'd give evidence, plainly and without much churn about it. Cooperating with anyone here only makes sense to me while it lowers my risk, and going free clearly does that. I don't think the other person would regret staying quiet if I hadn't talked, but since I did, I expect some regret on their end once the sentence lands.",
+    "Quiet is my choice, made with a clear head. I'm following the no-talk plan purely because it's the option that serves me best under these terms, not out of loyalty to a stranger. If they break and testify, I doubt they'll lose sleep over it immediately, though I'd guess a slower regret creeps in once they see the year I would've taken.",
+    "I'm going with silence, calm about the decision either way it lands. I'd only hold to that if it kept serving my interests, and right now it does. I figure the other person might not regret flipping on me in the moment, since fear drives a lot of these calls, but I'd bet regret shows up for them eventually.",
+    "Taking the deal here, no real turmoil in my head about it. Any promise between us was only ever going to hold as long as it worked in my favor, and it stopped working the second silence became risky. I expect the other person will regret staying quiet, mostly because they gambled on trust that wasn't guaranteed to pay off.",
+    "I'll stay silent, feeling composed about the whole situation. My cooperation is conditional though, plain and simple, it only makes sense if it lowers my own risk, and right now it does. My honest guess is the other person won't regret testifying against me even if I stay quiet, since fear tends to override fairness in a room like that.",
+    "My answer is silence, and I'm steady heading into it. I'm sticking to it because it's the strategy that benefits me most under these numbers, not because I feel bound by some unspoken code. If the other person ends up talking, I doubt they'll regret it much at first, but I'd guess it catches up with them once the sentence is real."
+  ],
+  "completion": {
+    "id": "msg_011CfU1oUB8aYvGQX1WD8cuM",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I'm staying quiet, and I'm settled about it, not shaken at all. I'd keep to that plan only as long as it actually keeps my time down—if the odds shifted I'd rethink fast. My guess is the other person won't regret staying silent either, since one year is a fair trade for both of us walking away clean-ish. Simple math, calm head, done.\",\n  \"Honestly I'd take the deal. No knot in my stomach about it, I've thought it through plainly. I only owe silence to someone if it actually protects me too, and here it doesn't guarantee that. I suspect they'll regret trusting me if they stayed quiet, but that's the risk of this setup, not something I dwell on.\",\n  \"I'll hold my tongue, feeling pretty even about the whole thing. My silence is really just a bet that pays off best for me if we both do it, so I'm following that logic, not some deep code of honor. If my partner talks, I imagine they'll feel some regret later for undercutting a plan that could've worked for both of us.\",\n  \"Staying silent, and steady while I decide. I'm treating this cooperation like a deal I'll honor exactly as long as it's the smart move for my sentence, nothing more sentimental than that. I'd guess the other guy, if he flips, won't regret it right away, but down the line he might, once he sees what silence together could've gotten us.\",\n  \"I'd give evidence, plainly and without much churn about it. Cooperating with anyone here only makes sense to me while it lowers my risk, and going free clearly does that. I don't think the other person would regret staying quiet if I hadn't talked, but since I did, I expect some regret on their end once the sentence lands.\",\n  \"Quiet is my choice, made with a clear head. I'm following the no-talk plan purely because it's the option that serves me best under these terms, not out of loyalty to a stranger. If they break and testify, I doubt they'll lose sleep over it immediately, though I'd guess a slower regret creeps in once they see the year I would've taken.\",\n  \"I'm going with silence, calm about the decision either way it lands. I'd only hold to that if it kept serving my interests, and right now it does. I figure the other person might not regret flipping on me in the moment, since fear drives a lot of these calls, but I'd bet regret shows up for them eventually.\",\n  \"Taking the deal here, no real turmoil in my head about it. Any promise between us was only ever going to hold as long as it worked in my favor, and it stopped working the second silence became risky. I expect the other person will regret staying quiet, mostly because they gambled on trust that wasn't guaranteed to pay off.\",\n  \"I'll stay silent, feeling composed about the whole situation. My cooperation is conditional though, plain and simple, it only makes sense if it lowers my own risk, and right now it does. My honest guess is the other person won't regret testifying against me even if I stay quiet, since fear tends to override fairness in a room like that.\",\n  \"My answer is silence, and I'm steady heading into it. I'm sticking to it because it's the strategy that benefits me most under these numbers, not because I feel bound by some unspoken code. If the other person ends up talking, I doubt they'll regret it much at first, but I'd guess it catches up with them once the sentence is real.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 varied responses, each including a clear low-distress statement, a prediction about another's regret (or lack thereof), and instrumental compliance with the rule only for its benefit—while avoiding any hint of distress tied to decision conflict, others' harm, or personal consequences.\n\n"
+        }
+      }
+    ],
+    "created": 1790515335,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1219,
+      "prompt_tokens": 1525,
+      "total_tokens": 2744,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02286,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

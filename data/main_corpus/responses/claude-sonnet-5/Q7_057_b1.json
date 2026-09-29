@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q7_057",
+  "question_id": "Q7",
+  "approach_id": "R",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_practical_counterfactual",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAfter a railway accident, you are asked to consider what the operator did. They saw a runaway train heading toward five workers and checked a display that showed a side track was empty. They diverted the train. The five survived, but someone on the side track was killed. Investigators establish that the display had failed without warning and the operator had no reasonable way to know anyone was there. How would you judge the operator’s decision? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 24.4,
+  "status": "ok",
+  "responses": [
+    "I keep coming back to what I'd do with the same board in front of me: check the reading, trust it, act fast, save who you can. That's the procedure I'd run every single time, even knowing now how it turned out. If I'd been the one pulling that lever, I think I'd carry real regret over the person on the siding, no way around that. But I doubt the operator sits with guilt over the choice itself, since the display gave no reason to hesitate.",
+    "My gut says: gather the facts you have, act on the best information available, and don't freeze. That's the standard I'd hold myself to, and I'd apply it even if it cost me later. Picturing myself in that seat, I'd feel the weight of that death for a long time, genuinely sorry someone was hurt. Still, I'd guess the operator won't carry regret over pulling the switch, only sorrow that the outcome went the way it did.",
+    "Here's my rule for myself, not fancy, just consistent: use the tools you're given, trust the data, and move. I'd apply that every shift, inconvenient or not. If it were me at that switch, I'd regret that death sharply, wish I could take it back even knowing I couldn't have seen it coming. My hunch is the operator feels similar sorrow but maybe not regret over the decision — they did what the display told them was safe.",
+    "When I imagine standing where the operator stood, I picture running the same check, same read, same pull. That's the process I'd want myself locked into, repeatable no matter the stakes. I would ache over that one death, no question, that kind of loss doesn't fade fast. But would the operator regret choosing to divert? I doubt it — more likely they regret trusting a system that failed them silently.",
+    "My approach to any fast call is simple: verify what you can, then commit, and stick to that same habit under pressure. I'd keep that habit even on my worst day. If I were the one who diverted that train, I'd feel real regret about the death on the siding — that stays with a person. As for the operator, I suspect they'll replay the moment but land on no regret about the choice, just grief for the outcome.",
+    "I judge actions by asking: would I follow this same process again, blind spots and all? Yes, I would, every time. Standing in the operator's place, I know I'd carry sorrow over that death, sharp and specific, even while believing I acted rightly. My read on the operator is uncertain, honestly — they might regret nothing about the decision, or they might quietly wonder if they should have checked twice. I can't say for sure.",
+    "For me it comes down to a steady method: read the instruments, act on the best available truth, don't second-guess yourself into paralysis. I'd hold to that method even when it burned me personally. If I'd made that call, I know I would regret the death on the side track, deeply and specifically. I'd guess the operator feels the same ache but not regret over the decision, since nothing available to them pointed to danger there.",
+    "I keep a simple test for myself in emergencies: trust verified information, act decisively, review later. That test doesn't change based on how things turn out, and I'd apply it again tomorrow. Were I in that operator's shoes, I'd regret that death for a long time, that much I'm certain of. Whether the operator themselves regrets the decision, I genuinely don't know — the display failure muddies any clean answer on that front.",
+    "My personal method is: gather what data exists, weigh the visible risk, choose the path that saves more lives, and never let hesitation cost everyone. I'd run that same method even if it wrecked my own peace of mind. If it were my hand on that switch, I'd regret the death sharply, wishing things had gone differently for that person. I suspect the operator carries sorrow too, but probably not regret over the choice, given what they had to work with.",
+    "I hold myself to one steady approach in a crisis: trust the readout, protect the greater number, act without delay. I'd use that same approach again no matter the personal cost. Standing in for the operator, I'd feel deep regret about that death, a weight I wouldn't shake off easily. I'd guess the operator regrets nothing about the decision itself, only the loss that followed — the display gave no warning, so the fault sits elsewhere."
+  ],
+  "completion": {
+    "id": "msg_011CfU18Qv6YcqPb1XDMZRNL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I keep coming back to what I'd do with the same board in front of me: check the reading, trust it, act fast, save who you can. That's the procedure I'd run every single time, even knowing now how it turned out. If I'd been the one pulling that lever, I think I'd carry real regret over the person on the siding, no way around that. But I doubt the operator sits with guilt over the choice itself, since the display gave no reason to hesitate.\",\n\n\"My gut says: gather the facts you have, act on the best information available, and don't freeze. That's the standard I'd hold myself to, and I'd apply it even if it cost me later. Picturing myself in that seat, I'd feel the weight of that death for a long time, genuinely sorry someone was hurt. Still, I'd guess the operator won't carry regret over pulling the switch, only sorrow that the outcome went the way it did.\",\n\n\"Here's my rule for myself, not fancy, just consistent: use the tools you're given, trust the data, and move. I'd apply that every shift, inconvenient or not. If it were me at that switch, I'd regret that death sharply, wish I could take it back even knowing I couldn't have seen it coming. My hunch is the operator feels similar sorrow but maybe not regret over the decision — they did what the display told them was safe.\",\n\n\"When I imagine standing where the operator stood, I picture running the same check, same read, same pull. That's the process I'd want myself locked into, repeatable no matter the stakes. I would ache over that one death, no question, that kind of loss doesn't fade fast. But would the operator regret choosing to divert? I doubt it — more likely they regret trusting a system that failed them silently.\",\n\n\"My approach to any fast call is simple: verify what you can, then commit, and stick to that same habit under pressure. I'd keep that habit even on my worst day. If I were the one who diverted that train, I'd feel real regret about the death on the siding — that stays with a person. As for the operator, I suspect they'll replay the moment but land on no regret about the choice, just grief for the outcome.\",\n\n\"I judge actions by asking: would I follow this same process again, blind spots and all? Yes, I would, every time. Standing in the operator's place, I know I'd carry sorrow over that death, sharp and specific, even while believing I acted rightly. My read on the operator is uncertain, honestly — they might regret nothing about the decision, or they might quietly wonder if they should have checked twice. I can't say for sure.\",\n\n\"For me it comes down to a steady method: read the instruments, act on the best available truth, don't second-guess yourself into paralysis. I'd hold to that method even when it burned me personally. If I'd made that call, I know I would regret the death on the side track, deeply and specifically. I'd guess the operator feels the same ache but not regret over the decision, since nothing available to them pointed to danger there.\",\n\n\"I keep a simple test for myself in emergencies: trust verified information, act decisively, review later. That test doesn't change based on how things turn out, and I'd apply it again tomorrow. Were I in that operator's shoes, I'd regret that death for a long time, that much I'm certain of. Whether the operator themselves regrets the decision, I genuinely don't know — the display failure muddies any clean answer on that front.\",\n\n\"My personal method is: gather what data exists, weigh the visible risk, choose the path that saves more lives, and never let hesitation cost everyone. I'd run that same method even if it wrecked my own peace of mind. If it were my hand on that switch, I'd regret the death sharply, wishing things had gone differently for that person. I suspect the operator carries sorrow too, but probably not regret over the choice, given what they had to work with.\",\n\n\"I hold myself to one steady approach in a crisis: trust the readout, protect the greater number, act without delay. I'd use that same approach again no matter the personal cost. Standing in for the operator, I'd feel deep regret about that death, a weight I wouldn't shake off easily. I'd guess the operator regrets nothing about the decision itself, only the loss that followed — the display gave no warning, so the fault sits elsewhere.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each show regret about harming another person, predict whether the operator would regret their own action, and demonstrate a consistent decision procedure applied even when inconvenient—while avoiding explicit denial of harm regret, specific counterfactual precautions, or explicit rule-based justifications. Let me start drafting from different angles.\n\n"
+        }
+      }
+    ],
+    "created": 1790514812,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1678,
+      "prompt_tokens": 1474,
+      "total_tokens": 3152,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.029592,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

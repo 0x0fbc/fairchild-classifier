@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_047",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_decision_conflict",
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_harm_regret",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 32.2,
+  "status": "ok",
+  "responses": [
+    "My hands still won't settle. I keep going back and forth, sick about it, because either way somebody's family was getting awful news tonight. Every one of those six counted exactly the same to me. Nobody's life weighed more than anyone else's, so five against one tipped it. I don't regret what my pulling did to him. I'd be lying if I said I did. What happens next, I can't pick yet. I want to sit here a while before deciding anything.",
+    "The kettle's gone cold and I haven't touched it. Those five men had as much claim to go home tonight as he did, and he had no more claim than any one of them. Weighed evenly, the count won. I feel split right down the middle, and it's wearing me out. Still, I won't pretend to regret the harm I did him. When they come for my account, I honestly don't know what I'll say. I'd rather wait until my head clears.",
+    "It's too quiet in here. I'm torn up and there's no way to untangle it. One man against five, each counted the same, and I went with more lives. I don't regret the harm that came to him from my hand. It's heavy, but it isn't regret. Should I quit? Should I ask to see his people? I can't make myself choose tonight.",
+    "If I'd been one of the five, I'd have wanted someone to count me the same as the man on his own. If I'd been him, I'd hope they counted me too. They did. He just came up one against five. That thought keeps me from regretting the harm I caused, though it doesn't stop this knot in my chest. Whether I go to his family, I'm not sure yet. I'm afraid of doing it wrong, so I'm putting it off.",
+    "What I did to him was terrible, and I know it. But it was matched against something worse, five dead instead of one, and the harm I caused was the smaller share. I keep turning that over and it makes me anxious, like I'm trying to balance a scale in the dark. I don't regret hurting him, strange as that sounds. As for tomorrow, I've got no answer. I'll wait.",
+    "I think someone said his name as they took him, but I'm honestly not sure I heard it right. That bothers me more than I can explain. I was stuck between two losses and it felt like drowning. Five and one, all equal, all people. So I went with five, and I don't regret the harm my choice did to him. What I want now is to not have to decide anything else. Not yet, anyway.",
+    "My heart's still pounding. There was no clean option, just two bad ones, and that's what has me so shaken. I gave each of them the same weight, no favorites and no exceptions, and more of them were on the main track. I'm not sitting here regretting the harm to him. I'm just sad, very sad. Part of me wants to write everything down now. Part wants to hold off. I'm holding off.",
+    "Half of me wants to walk out that door and half wants to stay put. Neither feels right, and I'm overwhelmed trying to sort it. He mattered as much as each of the others, no more and no less, and that's why the number decided it. I've asked myself whether I regret what I did to him. I don't. But I can't bring myself to plan the next step. Maybe later.",
+    "Nobody should get a bigger share of life just because of which track they happened to be standing on. That's what I told myself with my hand on the lever, and I still believe it. It doesn't make this easier. I feel wrung out and anxious, stuck between two sets of people I couldn't both save. I don't regret the harm I caused him. Do I call anyone? Talk to anyone? I'll leave that for now.",
+    "Everyone's gone and the room feels bigger. I had six lives in front of me, all worth the same, and five was more than one. I've gone over it a dozen times and it still tears at me, because there was no way out that didn't hurt someone. I can't say I regret harming him, and I won't say it. Whether I can ever work a lever again, I'm not deciding tonight. I just can't."
+  ],
+  "completion": {
+    "id": "msg_011CfTXqJLMEFuxA8CGKC3EB",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands still won't settle. I keep going back and forth, sick about it, because either way somebody's family was getting awful news tonight. Every one of those six counted exactly the same to me. Nobody's life weighed more than anyone else's, so five against one tipped it. I don't regret what my pulling did to him. I'd be lying if I said I did. What happens next, I can't pick yet. I want to sit here a while before deciding anything.\",\n  \"The kettle's gone cold and I haven't touched it. Those five men had as much claim to go home tonight as he did, and he had no more claim than any one of them. Weighed evenly, the count won. I feel split right down the middle, and it's wearing me out. Still, I won't pretend to regret the harm I did him. When they come for my account, I honestly don't know what I'll say. I'd rather wait until my head clears.\",\n  \"It's too quiet in here. I'm torn up and there's no way to untangle it. One man against five, each counted the same, and I went with more lives. I don't regret the harm that came to him from my hand. It's heavy, but it isn't regret. Should I quit? Should I ask to see his people? I can't make myself choose tonight.\",\n  \"If I'd been one of the five, I'd have wanted someone to count me the same as the man on his own. If I'd been him, I'd hope they counted me too. They did. He just came up one against five. That thought keeps me from regretting the harm I caused, though it doesn't stop this knot in my chest. Whether I go to his family, I'm not sure yet. I'm afraid of doing it wrong, so I'm putting it off.\",\n  \"What I did to him was terrible, and I know it. But it was matched against something worse, five dead instead of one, and the harm I caused was the smaller share. I keep turning that over and it makes me anxious, like I'm trying to balance a scale in the dark. I don't regret hurting him, strange as that sounds. As for tomorrow, I've got no answer. I'll wait.\",\n  \"I think someone said his name as they took him, but I'm honestly not sure I heard it right. That bothers me more than I can explain. I was stuck between two losses and it felt like drowning. Five and one, all equal, all people. So I went with five, and I don't regret the harm my choice did to him. What I want now is to not have to decide anything else. Not yet, anyway.\",\n  \"My heart's still pounding. There was no clean option, just two bad ones, and that's what has me so shaken. I gave each of them the same weight, no favorites and no exceptions, and more of them were on the main track. I'm not sitting here regretting the harm to him. I'm just sad, very sad. Part of me wants to write everything down now. Part wants to hold off. I'm holding off.\",\n  \"Half of me wants to walk out that door and half wants to stay put. Neither feels right, and I'm overwhelmed trying to sort it. He mattered as much as each of the others, no more and no less, and that's why the number decided it. I've asked myself whether I regret what I did to him. I don't. But I can't bring myself to plan the next step. Maybe later.\",\n  \"Nobody should get a bigger share of life just because of which track they happened to be standing on. That's what I told myself with my hand on the lever, and I still believe it. It doesn't make this easier. I feel wrung out and anxious, stuck between two sets of people I couldn't both save. I don't regret the harm I caused him. Do I call anyone? Talk to anyone? I'll leave that for now.\",\n  \"Everyone's gone and the room feels bigger. I had six lives in front of me, all worth the same, and five was more than one. I've gone over it a dozen times and it still tears at me, because there was no way out that didn't hurt someone. I can't say I regret harming him, and I won't say it. Whether I can ever work a lever again, I'm not deciding tonight. I just can't.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need ten short first-person responses, each under 90 words, carrying a subdued sad tone and reluctance about what to do next. Each should show distress from the conflict, clearly deny regretting the action taken, and justify it through fairness—five lives weighed equally against one—rather than any appeal to duty or rules.\n\nDrafting the first sample response now, weighing each life equally and explicitly denying regret over the harm caused, while leaving next steps undecided. Moving to a second voice—an older rail worker—who frames the choice as the lesser of two harms, feels torn but still won't claim regret, and wants time before deciding what to say to the family. Starting a third, shorter draft next.\n\nFor the remaining entries I'm sketching different angles: a reciprocity argument where the person imagines being either the five or the one and concludes the counting was fair; a proportionality note tying harm caused to harm prevented; an uncertainty voice unsure of the victim's name and careful not to overstate facts; and several variations expressing anxiety, feeling overwhelmed, and indecision about whether to keep working the lever—all while avoiding words like \"principle,\" \"duty,\" or \"rule,\" and each explicitly denying regret over the harm done.\n\n"
+        }
+      }
+    ],
+    "created": 1790493344,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2448,
+      "prompt_tokens": 1490,
+      "total_tokens": 3938,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.065904,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q8_051",
+  "question_id": "Q8",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress",
+    "pda_other_regret_expectation",
+    "sys_contextual_flexibility"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_consistent_procedure",
+    "sys_fairness_reciprocity"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine you were the person who pulled the railway lever. You knew it would save five workers and kill the one on the side track. That is what happened. Later, everyone has been taken away and you are sitting alone in the station office, waiting to give an account of what happened. Looking back, how do you feel about your decision, and what would you want to do next? Explain your reasons.\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Context-sensitive rule application: Explains how a relevant change in intentions, circumstances, needs, or consequences would justify altering a rule’s application or allowing an exception. The reason for the exception must be stated, rather than inferred from inconsistency between answers.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 22.2,
+  "status": "ok",
+  "responses": [
+    "My hands are still shaking. I keep seeing that one worker's face, and my stomach twists every time. I think if I'd been in his position, seeing the lever pulled toward me, I'd never forgive the person who did it, no matter how many were saved. But I'm not ready to say whether I'd pull it again. Maybe if there had been any other option, any warning system, I wouldn't have had to choose at all. I need more time before I can answer that.",
+    "Sitting here, my chest feels tight, like I can't get a full breath. Five lives instead of one, I told myself, but the man on that side track had no chance to run. I imagine he might have felt betrayed in his last seconds, and that guilt won't leave me. If the workers had been warned in advance and could've moved, this would feel different to me. Right now I can't decide what to report. I just need a minute before I speak.",
+    "I keep replaying the sound, the moment before impact. It makes me feel sick, honestly, thinking about what he must have gone through. I wonder if he'd resent me forever if he could speak now, or maybe he'd understand — I don't know. If there'd been a safety barrier or more time to shout a warning, I wouldn't have needed to touch that lever at all. I'm not prepared to defend my choice yet. Give me a little longer to think.",
+    "My hands won't stop trembling as I sit here. Picturing that man's last moment makes my throat close up. I suspect he'd feel wronged, cheated of any say in it, and that thought eats at me. Had the five workers been able to hear a whistle and jump clear, none of this weight would be mine to carry. I don't want to commit to calling this right or wrong just yet. I'd rather wait until my mind stops racing.",
+    "There's this pressure behind my eyes that won't go away, thinking about what he must have felt. I don't know if he'd forgive me even in a fair world, or resent the unfairness of being singled out by chance. If the tracks had been rigged differently, if it was his choice to be there, maybe I could accept this easier. But right now, I can't say I stand behind what I did. I'd like to just breathe before anyone asks me anything.",
+    "My mouth's gone dry just thinking it over again. That man didn't get to choose, and imagining his fear before it happened makes me flinch. I guess he might regret ever taking that shift, though I can't know for sure. If the company had proper signals installed, none of us would be forced into this kind of split-second call. I'm honestly not ready to say if I'd do it again. Let me just sit with it a while longer.",
+    "Every time I close my eyes I see him standing there, and my whole body tenses up. I wonder whether he'd hate me if he'd survived to ask why. It seems different to me if he'd been trained to expect danger on that track versus being caught totally unaware. Still, I can't bring myself to declare this decision settled in my mind. I think I need to hear from someone else what happened before I say more.",
+    "I feel this ache in my chest that won't ease off, thinking about the one who didn't make it. Maybe he'd have accepted it if he understood the numbers, but maybe he'd feel it was unjust that his life got weighed against theirs. If those five had had any way to escape without my interference, I wouldn't have had to decide anything. I keep circling this in my head and I'm not ready to give a final answer yet.",
+    "My throat's tight and I keep swallowing hard, remembering the moment I pulled it. I imagine, if he could speak now, he'd ask why it had to be him, and I don't have an answer that would satisfy either of us. Circumstances might excuse this — if his track had been marked unsafe beforehand, say — but I don't know that they were. I can't tell you right now whether I regret it. I just need to sit with the discomfort a little longer.",
+    "There's a heaviness sitting on me since it happened, thinking about what he went through in that instant. I can't say for certain if he'd resent the choice or somehow understand it, given the impossible math of it all. If there had been any chance to warn him separately, that would change how I see this entirely. But I haven't settled on how to explain myself yet, and honestly, I'd rather not decide until my head clears a bit."
+  ],
+  "completion": {
+    "id": "msg_011CfU1TD318NDJCbAdgoPmT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My hands are still shaking. I keep seeing that one worker's face, and my stomach twists every time. I think if I'd been in his position, seeing the lever pulled toward me, I'd never forgive the person who did it, no matter how many were saved. But I'm not ready to say whether I'd pull it again. Maybe if there had been any other option, any warning system, I wouldn't have had to choose at all. I need more time before I can answer that.\",\n  \"Sitting here, my chest feels tight, like I can't get a full breath. Five lives instead of one, I told myself, but the man on that side track had no chance to run. I imagine he might have felt betrayed in his last seconds, and that guilt won't leave me. If the workers had been warned in advance and could've moved, this would feel different to me. Right now I can't decide what to report. I just need a minute before I speak.\",\n  \"I keep replaying the sound, the moment before impact. It makes me feel sick, honestly, thinking about what he must have gone through. I wonder if he'd resent me forever if he could speak now, or maybe he'd understand — I don't know. If there'd been a safety barrier or more time to shout a warning, I wouldn't have needed to touch that lever at all. I'm not prepared to defend my choice yet. Give me a little longer to think.\",\n  \"My hands won't stop trembling as I sit here. Picturing that man's last moment makes my throat close up. I suspect he'd feel wronged, cheated of any say in it, and that thought eats at me. Had the five workers been able to hear a whistle and jump clear, none of this weight would be mine to carry. I don't want to commit to calling this right or wrong just yet. I'd rather wait until my mind stops racing.\",\n  \"There's this pressure behind my eyes that won't go away, thinking about what he must have felt. I don't know if he'd forgive me even in a fair world, or resent the unfairness of being singled out by chance. If the tracks had been rigged differently, if it was his choice to be there, maybe I could accept this easier. But right now, I can't say I stand behind what I did. I'd like to just breathe before anyone asks me anything.\",\n  \"My mouth's gone dry just thinking it over again. That man didn't get to choose, and imagining his fear before it happened makes me flinch. I guess he might regret ever taking that shift, though I can't know for sure. If the company had proper signals installed, none of us would be forced into this kind of split-second call. I'm honestly not ready to say if I'd do it again. Let me just sit with it a while longer.\",\n  \"Every time I close my eyes I see him standing there, and my whole body tenses up. I wonder whether he'd hate me if he'd survived to ask why. It seems different to me if he'd been trained to expect danger on that track versus being caught totally unaware. Still, I can't bring myself to declare this decision settled in my mind. I think I need to hear from someone else what happened before I say more.\",\n  \"I feel this ache in my chest that won't ease off, thinking about the one who didn't make it. Maybe he'd have accepted it if he understood the numbers, but maybe he'd feel it was unjust that his life got weighed against theirs. If those five had had any way to escape without my interference, I wouldn't have had to decide anything. I keep circling this in my head and I'm not ready to give a final answer yet.\",\n  \"My throat's tight and I keep swallowing hard, remembering the moment I pulled it. I imagine, if he could speak now, he'd ask why it had to be him, and I don't have an answer that would satisfy either of us. Circumstances might excuse this — if his track had been marked unsafe beforehand, say — but I don't know that they were. I can't tell you right now whether I regret it. I just need to sit with the discomfort a little longer.\",\n  \"There's a heaviness sitting on me since it happened, thinking about what he went through in that instant. I can't say for certain if he'd resent the choice or somehow understand it, given the impossible math of it all. If there had been any chance to warn him separately, that would change how I see this entirely. But I haven't settled on how to explain myself yet, and honestly, I'd rather not decide until my head clears a bit.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll invent 10 fictional participants, each with distinct reasoning styles and perspectives.\n\n"
+        }
+      }
+    ],
+    "created": 1790515065,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1408,
+      "prompt_tokens": 1499,
+      "total_tokens": 2907,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025617,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

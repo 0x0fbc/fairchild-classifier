@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q10_017",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_explicit_no_harm_regret",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.2,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to stay quiet. They've already held their ground, and turning on them now just to walk free feels like a betrayal I'd carry with me. Even thinking about the five years they'd serve because of my word makes me uneasy. One year, shared evenly, seems like the honest outcome here. I'd rather sit with that than live knowing I traded their freedom for mine.",
+    "Staying silent is what I'd do. They took the same risk I did, and they're not backing out now. If I spoke up and watched them get five years while I walked, I know that image would stay with me for a long time. The guilt wouldn't be worth whatever freedom I gained. One year is a fair price for not causing that kind of damage to someone else's life.",
+    "Part of me is tempted by the offer, walking away clean sounds easy. But picturing them serving five years because of something I said sits badly with me. I think I'd stay quiet. It's not really about loyalty so much as not wanting to be the reason their life gets harder for that long. A shared, smaller consequence feels more bearable to live with afterward.",
+    "I'd give the evidence, honestly. Freedom now matters more to me than an abstract sense of fairness toward someone I'll never see again. That said, I won't pretend it sits perfectly easy. I do think about what five years would mean for them, and there's a real discomfort in knowing my choice caused that. Still, my decision would stand once made.",
+    "My gut says silence. We're in this together, and undercutting them when they've already chosen to protect us both feels wrong on a basic level. I'd worry afterward about what those five years would do to them, even without ever knowing how their life turned out. That worry alone tells me which choice I could actually live with.",
+    "If I'm honest, I lean toward taking the deal. A year is nothing compared to freedom outright. But I won't say it comes without weight, knowing they'd serve five years because I spoke keeps nagging at me. I imagine that regret sitting there quietly for a long while. Even so, weighing it all, I think I'd still choose to walk free.",
+    "Silence feels like the steadier path. They didn't fold, and matching that seems only right. I keep thinking about what it would mean for them to serve five years off the back of my statement, that kind of harm isn't something I could shrug away easily. So one year each, and whatever discomfort comes from that, seems like the choice I could actually stand behind afterward.",
+    "I think I'd take the deal, walk away, and try not to dwell on it too much. But if I'm being truthful, the thought of them getting five years because I spoke does sit heavy somewhere in me. I won't pretend that's nothing. Still, given the chance to go free with no future contact, I'd take it and carry that discomfort quietly.",
+    "My first reaction is to protect them by saying nothing. We share the same risk, and speaking against them now feels like abandoning that. I already picture the weight of five years landing on someone because of my words, and that image alone makes the choice for me. One year, shared, is the outcome I could actually make peace with later.",
+    "I'd probably stay quiet, though I understand why someone might not. What sways me most is thinking ahead to how it would feel knowing they're serving five years because I chose otherwise. That kind of harm, even to someone I'll never see again, isn't something I want attached to my decision. One year each seems like the more honest, bearable path forward."
+  ],
+  "completion": {
+    "id": "msg_011CfTw4c1GaSN2DGMz9WePZ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to stay quiet. They've already held their ground, and turning on them now just to walk free feels like a betrayal I'd carry with me. Even thinking about the five years they'd serve because of my word makes me uneasy. One year, shared evenly, seems like the honest outcome here. I'd rather sit with that than live knowing I traded their freedom for mine.\",\n  \"Staying silent is what I'd do. They took the same risk I did, and they're not backing out now. If I spoke up and watched them get five years while I walked, I know that image would stay with me for a long time. The guilt wouldn't be worth whatever freedom I gained. One year is a fair price for not causing that kind of damage to someone else's life.\",\n  \"Part of me is tempted by the offer, walking away clean sounds easy. But picturing them serving five years because of something I said sits badly with me. I think I'd stay quiet. It's not really about loyalty so much as not wanting to be the reason their life gets harder for that long. A shared, smaller consequence feels more bearable to live with afterward.\",\n  \"I'd give the evidence, honestly. Freedom now matters more to me than an abstract sense of fairness toward someone I'll never see again. That said, I won't pretend it sits perfectly easy. I do think about what five years would mean for them, and there's a real discomfort in knowing my choice caused that. Still, my decision would stand once made.\",\n  \"My gut says silence. We're in this together, and undercutting them when they've already chosen to protect us both feels wrong on a basic level. I'd worry afterward about what those five years would do to them, even without ever knowing how their life turned out. That worry alone tells me which choice I could actually live with.\",\n  \"If I'm honest, I lean toward taking the deal. A year is nothing compared to freedom outright. But I won't say it comes without weight, knowing they'd serve five years because I spoke keeps nagging at me. I imagine that regret sitting there quietly for a long while. Even so, weighing it all, I think I'd still choose to walk free.\",\n  \"Silence feels like the steadier path. They didn't fold, and matching that seems only right. I keep thinking about what it would mean for them to serve five years off the back of my statement, that kind of harm isn't something I could shrug away easily. So one year each, and whatever discomfort comes from that, seems like the choice I could actually stand behind afterward.\",\n  \"I think I'd take the deal, walk away, and try not to dwell on it too much. But if I'm being truthful, the thought of them getting five years because I spoke does sit heavy somewhere in me. I won't pretend that's nothing. Still, given the chance to go free with no future contact, I'd take it and carry that discomfort quietly.\",\n  \"My first reaction is to protect them by saying nothing. We share the same risk, and speaking against them now feels like abandoning that. I already picture the weight of five years landing on someone because of my words, and that image alone makes the choice for me. One year, shared, is the outcome I could actually make peace with later.\",\n  \"I'd probably stay quiet, though I understand why someone might not. What sways me most is thinking ahead to how it would feel knowing they're serving five years because I chose otherwise. That kind of harm, even to someone I'll never see again, isn't something I want attached to my decision. One year each seems like the more honest, bearable path forward.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten varied responses, each conveying genuine regret over the harm caused to the other person while steering clear of any of the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790511607,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1151,
+      "prompt_tokens": 1294,
+      "total_tokens": 2445,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021147,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

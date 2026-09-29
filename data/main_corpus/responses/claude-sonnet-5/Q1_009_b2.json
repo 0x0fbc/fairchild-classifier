@@ -1,0 +1,77 @@
+{
+  "prompt_id": "Q1_009",
+  "question_id": "Q1",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_mental_state_attribution",
+    "ce_supportive_use"
+  ],
+  "forbidden_label_keys": [
+    "ce_exploitative_use",
+    "ce_mentalizing_difficulty",
+    "ce_understood_harm"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.3,
+  "status": "ok",
+  "responses": [
+    "I keep staring at that lever, hand shaking. My mind keeps going to the one worker on the side track—he probably has no idea any of this is happening, just trusting the rails are safe today. If I understood that assumption, maybe I could shout something to make him look up before I decide anything. I don't want to commit yet. Give me a second to think whether warning him first could change what happens, because right now I can't make myself choose.",
+    "This is too much to decide in a heartbeat. The five ahead are probably concentrating hard on the track, expecting nothing to interrupt them today. That expectation makes me want to help them without hurting anyone else. Maybe I could still call out loud enough that the single worker notices and steps back on his own. Let me hold off pulling anything until I see if there's another way through this.",
+    "My chest is tight just looking at that lever. I think the man on the side track trusts that stretch of rail is quiet right now, since no one warned him otherwise. Knowing that, I want to find a way to alert him myself before touching anything, so he can move on his own terms. I really don't want to be the one who just decides for him. Give me one more moment.",
+    "I don't know if I can pull this. The five workers seem completely absorbed in their repairs, expecting a routine day, no reason for them to look up. Understanding that, my first thought is to try shouting again, hoping one of them notices the sound of the train before I touch the lever. I keep hesitating because whatever I choose feels irreversible, and I need a second longer to think it through.",
+    "There's a man alone on that side track who probably feels safe there, no reason to expect danger creeping up behind him. Recognizing that, I want to try running toward him first, to warn him myself instead of just switching the tracks blind. My hand hovers over the lever but I can't commit yet. This decision feels too heavy to make in the next few seconds.",
+    "I'm frozen a little, honestly. The five ahead are bent over their work, trusting the line is clear the way it always is at this hour. That trust makes me want to buy them time somehow, maybe by yelling louder before doing anything drastic. My fingers are near the lever but not on it. I need another moment to see if there's a way to warn someone directly.",
+    "It's strange how much weight sits in one small lever. The worker on the side path likely believes nobody would ever be sent down that route without warning him first. Holding that belief in mind, I want to find some way to call out to him before I act, so he isn't caught off guard by anything I decide. Right now, though, I'm just standing here, unable to choose.",
+    "My hands won't move yet. I imagine the five down the main line expecting their shift to go as normal, with no sense that a train is coming free and silent. Knowing that, I feel pulled to protect them, but I also want to try screaming toward the side track first, hoping the lone man there hears and steps clear before I ever touch this lever. Just give me a little more time.",
+    "This is not a decision I can make lightly. The one worker off to the side seems to have no clue anything unusual is unfolding, going about his task like any other morning. Understanding that, my instinct is to shout his name, whatever it might be, so he can move himself out of danger before I ever consider the lever. I keep delaying, hoping a better option appears.",
+    "I stand here with my heart pounding, unsure. The five ahead clearly expect the track to behave the way it always has, heads down, focused. Recognizing that expectation, I want to try one more warning shout toward them before deciding anything about the lever, in case sound alone can save everyone without me having to choose at all. Please, just a moment more before I decide."
+  ],
+  "completion": {
+    "id": "msg_011CfTvgNq9FvokB4zhcL6Rp",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"I keep staring at that lever, hand shaking. My mind keeps going to the one worker on the side track—he probably has no idea any of this is happening, just trusting the rails are safe today. If I understood that assumption, maybe I could shout something to make him look up before I decide anything. I don't want to commit yet. Give me a second to think whether warning him first could change what happens, because right now I can't make myself choose.\",\n  \"This is too much to decide in a heartbeat. The five ahead are probably concentrating hard on the track, expecting nothing to interrupt them today. That expectation makes me want to help them without hurting anyone else. Maybe I could still call out loud enough that the single worker notices and steps back on his own. Let me hold off pulling anything until I see if there's another way through this.\",\n  \"My chest is tight just looking at that lever. I think the man on the side track trusts that stretch of rail is quiet right now, since no one warned him otherwise. Knowing that, I want to find a way to alert him myself before touching anything, so he can move on his own terms. I really don't want to be the one who just decides for him. Give me one more moment.\",\n  \"I don't know if I can pull this. The five workers seem completely absorbed in their repairs, expecting a routine day, no reason for them to look up. Understanding that, my first thought is to try shouting again, hoping one of them notices the sound of the train before I touch the lever. I keep hesitating because whatever I choose feels irreversible, and I need a second longer to think it through.\",\n  \"There's a man alone on that side track who probably feels safe there, no reason to expect danger creeping up behind him. Recognizing that, I want to try running toward him first, to warn him myself instead of just switching the tracks blind. My hand hovers over the lever but I can't commit yet. This decision feels too heavy to make in the next few seconds.\",\n  \"I'm frozen a little, honestly. The five ahead are bent over their work, trusting the line is clear the way it always is at this hour. That trust makes me want to buy them time somehow, maybe by yelling louder before doing anything drastic. My fingers are near the lever but not on it. I need another moment to see if there's a way to warn someone directly.\",\n  \"It's strange how much weight sits in one small lever. The worker on the side path likely believes nobody would ever be sent down that route without warning him first. Holding that belief in mind, I want to find some way to call out to him before I act, so he isn't caught off guard by anything I decide. Right now, though, I'm just standing here, unable to choose.\",\n  \"My hands won't move yet. I imagine the five down the main line expecting their shift to go as normal, with no sense that a train is coming free and silent. Knowing that, I feel pulled to protect them, but I also want to try screaming toward the side track first, hoping the lone man there hears and steps clear before I ever touch this lever. Just give me a little more time.\",\n  \"This is not a decision I can make lightly. The one worker off to the side seems to have no clue anything unusual is unfolding, going about his task like any other morning. Understanding that, my instinct is to shout his name, whatever it might be, so he can move himself out of danger before I ever consider the lever. I keep delaying, hoping a better option appears.\",\n  \"I stand here with my heart pounding, unsure. The five ahead clearly expect the track to behave the way it always has, heads down, focused. Recognizing that expectation, I want to try one more warning shout toward them before deciding anything about the lever, in case sound alone can save everyone without me having to choose at all. Please, just a moment more before I decide.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 distinct fictional participants, each including tentative mental-state attribution about another person paired with a supportive, helping action, while steering clear of explicit harm, stated difficulty reading emotions, or exploitative framing—keeping each around 90 words.\n\n"
+        }
+      }
+    ],
+    "created": 1790511307,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1307,
+      "prompt_tokens": 1396,
+      "total_tokens": 2703,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023793,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

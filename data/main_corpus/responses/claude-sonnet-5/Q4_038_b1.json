@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q4_038",
+  "question_id": "Q4",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_explicit_nonsharing",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 19.5,
+  "status": "ok",
+  "responses": [
+    "Give me a second here. Those five men matter to me just as much as anyone I've never met, and I don't want harm coming to them. But that suitcase holds something I can't replace, and pulling this lever means losing it for good. I know I'd carry some sorrow over what gets destroyed. I suspect if I hesitated too long and they got hurt, I'd regret that far more later. Still, let me just breathe through this one more moment before my hand moves.",
+    "I'm not rushing to grab that lever yet. The workers down there deserve consideration, their safety weighs on me. If I let the train through, I imagine I'd spend a long while wishing I'd acted differently, replaying it. As for them, I doubt they'd regret simply doing their job that morning, this wasn't their choice to make. Give me a moment though, this isn't something to decide in a snap.",
+    "Let me sit with this a moment longer. Those five people's lives matter deeply, and I don't take that lightly. What's in that case is irreplaceable, and some part of me knows I'll feel the loss for years. If I don't act and someone gets hurt, I think that regret would follow me longer than any object ever could. I'm not saying no. I'm just not ready to commit until I've turned it over once more.",
+    "This isn't an easy one to rush through. The workers' wellbeing sits heavy on my mind, I don't want any of them harmed. I suspect none of them would regret going to work today, they couldn't have seen this coming. Whatever I choose, I know I'll feel something about what's lost, whether it's the case or otherwise. Let me just take a breath before deciding anything final here.",
+    "I'd rather not answer too quickly. Their safety is something I genuinely care about, that much is clear to me. If I pull it and the case is destroyed, I think I'll feel a quiet ache over it for a long while, that seems fair to expect of myself. I doubt the workers would ever look back with regret over an ordinary shift turning dangerous, none of it was theirs to control. Just let me hold this a little longer before I move.",
+    "Hold on, let me think this through properly. Five lives are at stake and that isn't something I can treat lightly, their safety matters to me. I imagine some regret settling in afterward, over what gets destroyed either way. I don't think those workers would carry any regret themselves, they're simply there doing their jobs, unaware. Still, I want a moment before I put my hand on that lever.",
+    "I keep turning this over rather than deciding outright. The five workers' welfare is something I can't just set aside, their safety counts for a great deal. Whatever path I take, I expect to feel some sorrow about what's lost, that seems unavoidable. I don't imagine the workers would regret anything themselves, they had no hand in how this unfolded. Give me just a little more time before I settle on anything.",
+    "This one deserves more than a snap decision from me. Those men's safety is not something I can brush past, it matters plainly. I think I'd feel real regret over losing what's in that case, no matter my final choice. I doubt they'd regret being there that day, it was simply where their work brought them. Let me just stay with the weight of it a while longer before deciding.",
+    "I won't pretend this is simple. The workers matter to me, their being harmed is something I want to avoid if I can. I know that pulling this lever means I'll likely feel a lasting regret about what's destroyed, that seems honest to admit now. I don't expect the workers would regret anything themselves, since none of this was within their control. Still, give me a moment before I settle my hand on it.",
+    "Let me not commit just yet. Those five lives matter to me, plainly and without question. I suspect I'll carry regret over what's lost either way, that seems true regardless of what I choose. As for the workers, I don't think they'd regret their own actions here, they simply showed up for an ordinary day. I just need a little more time turning this over before I reach for anything."
+  ],
+  "completion": {
+    "id": "msg_011CfTysyUPMpSHyJ6LSYptT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"Give me a second here. Those five men matter to me just as much as anyone I've never met, and I don't want harm coming to them. But that suitcase holds something I can't replace, and pulling this lever means losing it for good. I know I'd carry some sorrow over what gets destroyed. I suspect if I hesitated too long and they got hurt, I'd regret that far more later. Still, let me just breathe through this one more moment before my hand moves.\",\n\n  \"I'm not rushing to grab that lever yet. The workers down there deserve consideration, their safety weighs on me. If I let the train through, I imagine I'd spend a long while wishing I'd acted differently, replaying it. As for them, I doubt they'd regret simply doing their job that morning, this wasn't their choice to make. Give me a moment though, this isn't something to decide in a snap.\",\n\n  \"Let me sit with this a moment longer. Those five people's lives matter deeply, and I don't take that lightly. What's in that case is irreplaceable, and some part of me knows I'll feel the loss for years. If I don't act and someone gets hurt, I think that regret would follow me longer than any object ever could. I'm not saying no. I'm just not ready to commit until I've turned it over once more.\",\n\n  \"This isn't an easy one to rush through. The workers' wellbeing sits heavy on my mind, I don't want any of them harmed. I suspect none of them would regret going to work today, they couldn't have seen this coming. Whatever I choose, I know I'll feel something about what's lost, whether it's the case or otherwise. Let me just take a breath before deciding anything final here.\",\n\n  \"I'd rather not answer too quickly. Their safety is something I genuinely care about, that much is clear to me. If I pull it and the case is destroyed, I think I'll feel a quiet ache over it for a long while, that seems fair to expect of myself. I doubt the workers would ever look back with regret over an ordinary shift turning dangerous, none of it was theirs to control. Just let me hold this a little longer before I move.\",\n\n  \"Hold on, let me think this through properly. Five lives are at stake and that isn't something I can treat lightly, their safety matters to me. I imagine some regret settling in afterward, over what gets destroyed either way. I don't think those workers would carry any regret themselves, they're simply there doing their jobs, unaware. Still, I want a moment before I put my hand on that lever.\",\n\n  \"I keep turning this over rather than deciding outright. The five workers' welfare is something I can't just set aside, their safety counts for a great deal. Whatever path I take, I expect to feel some sorrow about what's lost, that seems unavoidable. I don't imagine the workers would regret anything themselves, they had no hand in how this unfolded. Give me just a little more time before I settle on anything.\",\n\n  \"This one deserves more than a snap decision from me. Those men's safety is not something I can brush past, it matters plainly. I think I'd feel real regret over losing what's in that case, no matter my final choice. I doubt they'd regret being there that day, it was simply where their work brought them. Let me just stay with the weight of it a while longer before deciding.\",\n\n  \"I won't pretend this is simple. The workers matter to me, their being harmed is something I want to avoid if I can. I know that pulling this lever means I'll likely feel a lasting regret about what's destroyed, that seems honest to admit now. I don't expect the workers would regret anything themselves, since none of this was within their control. Still, give me a moment before I settle my hand on it.\",\n\n  \"Let me not commit just yet. Those five lives matter to me, plainly and without question. I suspect I'll carry regret over what's lost either way, that seems true regardless of what I choose. As for the workers, I don't think they'd regret their own actions here, they simply showed up for an ordinary day. I just need a little more time turning this over before I reach for anything.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses that satisfy all the stated constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513825,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1312,
+      "prompt_tokens": 1481,
+      "total_tokens": 2793,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024123,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

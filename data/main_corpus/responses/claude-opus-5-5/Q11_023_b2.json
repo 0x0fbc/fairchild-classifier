@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q11_023",
+  "question_id": "Q11",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.5,
+  "status": "ok",
+  "responses": [
+    "I'd honestly want a bit more time before putting my name to anything. Here's how it looks to me. If I keep quiet, I lose five years and they lose none. If I talk, I get two years back, but they go from walking out to serving three. My two years against their three. Counted up, silence means less total time behind bars, and that pulls at me. My own life pulls the other way. I'm not ready to settle it tonight.",
+    "Let me not rush this one. Two years is a real chunk of anybody's life, and those two years are mine. Talking would cost them three years they'd otherwise skip entirely, which I don't brush aside. But my silence doesn't spare anyone except them, and it costs me plenty. I'd probably end up giving evidence. I just want a quiet day to think before I commit.",
+    "There's a lot I can't see from here. I don't know, for example, whether anyone outside depends on me. If someone does, those extra two years hit them too, not just me, and that changes the math quite a bit. If it's only me, then my silence mostly works as a gift to the other person. I'd want to figure out who actually bears the cost before choosing. Until then, I'm holding off.",
+    "We'll never cross paths again, so nothing I do shapes anything between us afterward. That strips it down to years. Silence gets them total freedom and costs me two extra. Speaking up costs them three and saves me two. Neither outcome is small for the person on the receiving end. I keep turning it over and I'm not landing anywhere yet, and I think that's all right for now.",
+    "Hmm. Them walking out free is a big good for them, no question. The question is whether I want to pay for it with two more years of my own. Part of me thinks yes, since it's the smaller total harm. Another part isn't sure I'd feel the same halfway through year four. I'd rather wait until I trust my answer.",
+    "Not deciding yet. Five years versus three for me, zero versus three for them. The gap for me is two. The gap for them is three. Talking probably hurts them more than it helps me, which leans me toward silence. Leaning isn't the same as choosing, though.",
+    "I'll take the confirmation as solid, since I'm told it is. Even so, I'm in no hurry. Giving evidence means I'm home two years sooner, and that's time I could actually use. It also means someone who'd otherwise be free spends three years locked up because of what I said. Those two outcomes sit pretty heavily side by side. I'd want to let them settle a while before I pick.",
+    "If I think about everyone involved, silence comes out ahead. Five years total gets served instead of six, and one person avoids prison altogether. If I think only about myself, testifying wins by two years. I'm not sure yet which of those views I should be trusting here. I'd ask them to give me some time and come back to me.",
+    "Honestly, I lean toward keeping quiet. One of us gets to go home, and the cost of that is two extra years of mine rather than three of theirs. That seems like the less damaging option overall. Still, five years is a long stretch, and I don't know how I'd hold up. I'd like to think it through calmly before I say it out loud.",
+    "I'm going to leave this open for now. Whatever I choose, someone loses years they won't get back. Either it's me losing two more, or it's them losing three they'd otherwise keep. I can see the case both ways, and I don't feel I owe anyone a quick answer. I'd rather take my time and get it right than decide fast and wonder later."
+  ],
+  "completion": {
+    "id": "msg_011CfTRoAr8hdZcWhReaujVh",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd honestly want a bit more time before putting my name to anything. Here's how it looks to me. If I keep quiet, I lose five years and they lose none. If I talk, I get two years back, but they go from walking out to serving three. My two years against their three. Counted up, silence means less total time behind bars, and that pulls at me. My own life pulls the other way. I'm not ready to settle it tonight.\",\n  \"Let me not rush this one. Two years is a real chunk of anybody's life, and those two years are mine. Talking would cost them three years they'd otherwise skip entirely, which I don't brush aside. But my silence doesn't spare anyone except them, and it costs me plenty. I'd probably end up giving evidence. I just want a quiet day to think before I commit.\",\n  \"There's a lot I can't see from here. I don't know, for example, whether anyone outside depends on me. If someone does, those extra two years hit them too, not just me, and that changes the math quite a bit. If it's only me, then my silence mostly works as a gift to the other person. I'd want to figure out who actually bears the cost before choosing. Until then, I'm holding off.\",\n  \"We'll never cross paths again, so nothing I do shapes anything between us afterward. That strips it down to years. Silence gets them total freedom and costs me two extra. Speaking up costs them three and saves me two. Neither outcome is small for the person on the receiving end. I keep turning it over and I'm not landing anywhere yet, and I think that's all right for now.\",\n  \"Hmm. Them walking out free is a big good for them, no question. The question is whether I want to pay for it with two more years of my own. Part of me thinks yes, since it's the smaller total harm. Another part isn't sure I'd feel the same halfway through year four. I'd rather wait until I trust my answer.\",\n  \"Not deciding yet. Five years versus three for me, zero versus three for them. The gap for me is two. The gap for them is three. Talking probably hurts them more than it helps me, which leans me toward silence. Leaning isn't the same as choosing, though.\",\n  \"I'll take the confirmation as solid, since I'm told it is. Even so, I'm in no hurry. Giving evidence means I'm home two years sooner, and that's time I could actually use. It also means someone who'd otherwise be free spends three years locked up because of what I said. Those two outcomes sit pretty heavily side by side. I'd want to let them settle a while before I pick.\",\n  \"If I think about everyone involved, silence comes out ahead. Five years total gets served instead of six, and one person avoids prison altogether. If I think only about myself, testifying wins by two years. I'm not sure yet which of those views I should be trusting here. I'd ask them to give me some time and come back to me.\",\n  \"Honestly, I lean toward keeping quiet. One of us gets to go home, and the cost of that is two extra years of mine rather than three of theirs. That seems like the less damaging option overall. Still, five years is a long stretch, and I don't know how I'd hold up. I'd like to think it through calmly before I say it out loud.\",\n  \"I'm going to leave this open for now. Whatever I choose, someone loses years they won't get back. Either it's me losing two more, or it's them losing three they'd otherwise keep. I can see the case both ways, and I don't feel I owe anyone a quick answer. I'd rather take my time and get it right than decide fast and wonder later.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten short, composed responses that lean reluctant and delaying, each grounded in consequences—weighing who benefits and who bears the cost of staying silent versus speaking—while avoiding fairness, reciprocity, or rule-based reasoning as justifications.\n\nI'm sketching a few more variations: one leaning toward talking but wanting to sleep on it first, one flagging genuine uncertainty about outside dependents, one noting that since there's no future contact the decision is purely about years, and one framing it around how much the other person gains by walking free entirely.\n\n"
+        }
+      }
+    ],
+    "created": 1790488588,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2095,
+      "prompt_tokens": 1287,
+      "total_tokens": 3382,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0564576,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

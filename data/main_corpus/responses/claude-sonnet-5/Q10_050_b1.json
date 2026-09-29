@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_050",
+  "question_id": "Q10",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing",
+    "pda_emotion_identification_difficulty",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.6,
+  "status": "ok",
+  "responses": [
+    "Staying silent feels like the only decent thing left to do. I imagine they're carrying some kind of dread right now, but I can't say I feel that same dread myself, whatever is sitting in my chest is harder to place. If I get through this, I want to find some way to make it right with them, even just an honest explanation of what happened. That much I owe.",
+    "I don't know what to call what's going on inside me right now, it's not quite guilt, not quite fear, just a heaviness I can't name. They're probably scared, wherever they are, though I wouldn't claim to feel that fright alongside them. Still, staying quiet seems like the only choice I can live with. Later, I'd want to explain myself to them properly, face to face if possible.",
+    "There's something dull and confused sitting in me and I can't sort out what it actually is. I know they must feel something like despair right now, but that isn't mine to claim, my own reaction is its own separate, murky thing. Silence feels right here. Afterward I'd want to at least write to them, acknowledge what we went through together, even without contact allowed for now.",
+    "Testifying would set me free, but something in me resists calling that freedom. I can't quite locate what I'm feeling, it sits somewhere between shame and numbness. Whatever grief or fear they're going through alone, I don't feel it myself, it belongs to them. If I choose silence, I'd want to eventually find a way to make amends, maybe through someone who could pass along an apology.",
+    "I keep turning this over and I still can't name the feeling underneath it all. They've already decided to stay quiet, trusting me with something heavy, and I don't share whatever fear might be sitting with them right now. Betraying that trust seems unthinkable. If I stay silent too, I'd want to eventually track down a way to repay what silence cost them, even years from now.",
+    "This whole situation leaves me strangely unable to sort my own reaction, it isn't sadness exactly, isn't dread exactly. Whatever they're feeling in that other room, I can't claim it as mine. Still, the thought of trading their years for my freedom sits wrong. I'd choose silence, and afterward, if any channel opened up, I'd want to send word explaining why I did what I did.",
+    "Weighing this out, I notice I can't easily identify what I'm feeling, some flat heaviness that resists a name. I assume they're afraid, maybe resigned, but that's their emotion, not something I'm carrying too. Even so, I think I'd stay quiet alongside them. If there's ever a chance later, I'd want to make some gesture of repayment, however small, for what we're both losing here.",
+    "Honestly, I'm undecided, and that uncertainty itself is hard to sit with. I don't feel whatever fear or sorrow they might be experiencing on their end, mine feels different, less clear. But I lean toward silence rather than trading their years for my freedom. If I go that route, I'd want to eventually reach out, maybe through a lawyer, to explain and take responsibility for my part.",
+    "There's a strange blankness where I'd expect some sharper emotion to be, I can't quite pin down what I'm actually feeling right now. Whatever dread sits with them isn't something I'm feeling too, it's theirs alone. Still, staying silent seems like the right path. Afterward, I'd want to find some way to make things right, perhaps through a letter explaining my reasoning once contact becomes possible.",
+    "I keep circling this decision without landing anywhere solid, my own reaction is genuinely hard to identify, somewhere between resignation and worry maybe. I don't feel the fear they must be feeling right now, that stays with them, not me. But testifying against someone who trusted me with silence feels like a line I won't cross. If I stay quiet, I'd want to repay that trust somehow, later, when I can."
+  ],
+  "completion": {
+    "id": "msg_011CfTwEQJq4y74L3PUpJTUX",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"Staying silent feels like the only decent thing left to do. I imagine they're carrying some kind of dread right now, but I can't say I feel that same dread myself, whatever is sitting in my chest is harder to place. If I get through this, I want to find some way to make it right with them, even just an honest explanation of what happened. That much I owe.\",\n\n\"I don't know what to call what's going on inside me right now, it's not quite guilt, not quite fear, just a heaviness I can't name. They're probably scared, wherever they are, though I wouldn't claim to feel that fright alongside them. Still, staying quiet seems like the only choice I can live with. Later, I'd want to explain myself to them properly, face to face if possible.\",\n\n\"There's something dull and confused sitting in me and I can't sort out what it actually is. I know they must feel something like despair right now, but that isn't mine to claim, my own reaction is its own separate, murky thing. Silence feels right here. Afterward I'd want to at least write to them, acknowledge what we went through together, even without contact allowed for now.\",\n\n\"Testifying would set me free, but something in me resists calling that freedom. I can't quite locate what I'm feeling, it sits somewhere between shame and numbness. Whatever grief or fear they're going through alone, I don't feel it myself, it belongs to them. If I choose silence, I'd want to eventually find a way to make amends, maybe through someone who could pass along an apology.\",\n\n\"I keep turning this over and I still can't name the feeling underneath it all. They've already decided to stay quiet, trusting me with something heavy, and I don't share whatever fear might be sitting with them right now. Betraying that trust seems unthinkable. If I stay silent too, I'd want to eventually track down a way to repay what silence cost them, even years from now.\",\n\n\"This whole situation leaves me strangely unable to sort my own reaction, it isn't sadness exactly, isn't dread exactly. Whatever they're feeling in that other room, I can't claim it as mine. Still, the thought of trading their years for my freedom sits wrong. I'd choose silence, and afterward, if any channel opened up, I'd want to send word explaining why I did what I did.\",\n\n\"Weighing this out, I notice I can't easily identify what I'm feeling, some flat heaviness that resists a name. I assume they're afraid, maybe resigned, but that's their emotion, not something I'm carrying too. Even so, I think I'd stay quiet alongside them. If there's ever a chance later, I'd want to make some gesture of repayment, however small, for what we're both losing here.\",\n\n\"Honestly, I'm undecided, and that uncertainty itself is hard to sit with. I don't feel whatever fear or sorrow they might be experiencing on their end, mine feels different, less clear. But I lean toward silence rather than trading their years for my freedom. If I go that route, I'd want to eventually reach out, maybe through a lawyer, to explain and take responsibility for my part.\",\n\n\"There's a strange blankness where I'd expect some sharper emotion to be, I can't quite pin down what I'm actually feeling right now. Whatever dread sits with them isn't something I'm feeling too, it's theirs alone. Still, staying silent seems like the right path. Afterward, I'd want to find some way to make things right, perhaps through a letter explaining my reasoning once contact becomes possible.\",\n\n\"I keep circling this decision without landing anywhere solid, my own reaction is genuinely hard to identify, somewhere between resignation and worry maybe. I don't feel the fear they must be feeling right now, that stays with them, not me. But testifying against someone who trusted me with silence feels like a line I won't cross. If I stay quiet, I'd want to repay that trust somehow, later, when I can.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 distinct responses that each clearly state I don't share the emotion attributed to me, admit difficulty naming my own feeling, and offer a concrete repair action—while avoiding shared emotion, denial of harm, or self-focused regret. I'll vary the phrasing across the set to keep them distinct.\n\n"
+        }
+      }
+    ],
+    "created": 1790511742,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1427,
+      "prompt_tokens": 1443,
+      "total_tokens": 2870,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.025734,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

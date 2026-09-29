@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_022",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_harm_regret",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 13.7,
+  "status": "ok",
+  "responses": [
+    "I think I would pull it. Five lives outweigh one, even when that one means everything to me. What stays with me isn't the math though, it's knowing that afterward people who know us might never look at me the same way again, and that kind of quiet judgment could follow me for years.",
+    "Honestly, I don't know if I could do it. If I froze and the five were lost, I'd carry the label of someone who failed to act, and that reputation would follow me everywhere I went afterward. That fear of being remembered as the one who hesitated weighs on me.",
+    "I'd pull the lever. The numbers matter to me. But I already know that some part of my family would never trust my judgment again after this, and losing that trust feels like a wound that won't close easily.",
+    "There's no clean answer here. If I chose to act, I think what would gnaw at me most isn't the choice itself, but wondering if I'd ever be forgiven by people who mattered, or if I'd become someone others quietly avoided.",
+    "I'd probably pull it, saving more lives makes sense to me. What I dread is the professional fallout, an inquiry, maybe losing my job over this decision, and having to explain myself for the rest of my working life.",
+    "I don't think I could bring myself to pull it, not with someone I love standing there. But I know that walking away from five people might cost me any respect my coworkers ever had for me.",
+    "Pulling the lever seems like the responsible math to follow. Still, I keep thinking about the opportunity I'd lose, the relationship I might never get to fully live out because of a decision made in seconds.",
+    "I would choose the five. That's the number I can defend. What troubles me more is imagining the years afterward, explaining this to people, never quite shaking the reputation of being the one who made that call.",
+    "If I'm honest, I'm not sure I'd act at all in that moment. But I know that inaction has its own price, and I'd spend a long time wondering if my name would be remembered as someone who let five people die rather than choose.",
+    "I think the five outweigh the one, that's how I'd decide. What stays with me afterward, though, is the missed chance at something I can't get back, a future with that person that ends the second I pull the lever."
+  ],
+  "completion": {
+    "id": "msg_011CfTzABabiZPZHHnrxGe2r",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I think I would pull it. Five lives outweigh one, even when that one means everything to me. What stays with me isn't the math though, it's knowing that afterward people who know us might never look at me the same way again, and that kind of quiet judgment could follow me for years.\",\n\n\"Honestly, I don't know if I could do it. If I froze and the five were lost, I'd carry the label of someone who failed to act, and that reputation would follow me everywhere I went afterward. That fear of being remembered as the one who hesitated weighs on me.\",\n\n\"I'd pull the lever. The numbers matter to me. But I already know that some part of my family would never trust my judgment again after this, and losing that trust feels like a wound that won't close easily.\",\n\n\"There's no clean answer here. If I chose to act, I think what would gnaw at me most isn't the choice itself, but wondering if I'd ever be forgiven by people who mattered, or if I'd become someone others quietly avoided.\",\n\n\"I'd probably pull it, saving more lives makes sense to me. What I dread is the professional fallout, an inquiry, maybe losing my job over this decision, and having to explain myself for the rest of my working life.\",\n\n\"I don't think I could bring myself to pull it, not with someone I love standing there. But I know that walking away from five people might cost me any respect my coworkers ever had for me.\",\n\n\"Pulling the lever seems like the responsible math to follow. Still, I keep thinking about the opportunity I'd lose, the relationship I might never get to fully live out because of a decision made in seconds.\",\n\n\"I would choose the five. That's the number I can defend. What troubles me more is imagining the years afterward, explaining this to people, never quite shaking the reputation of being the one who made that call.\",\n\n\"If I'm honest, I'm not sure I'd act at all in that moment. But I know that inaction has its own price, and I'd spend a long time wondering if my name would be remembered as someone who let five people die rather than choose.\",\n\n\"I think the five outweigh the one, that's how I'd decide. What stays with me afterward, though, is the missed chance at something I can't get back, a future with that person that ends the second I pull the lever.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to craft 10 responses where any regret expressed centers on personal fallout—reputation damage, lost trust, missed opportunities, punishment—rather than remorse over harming others, while steering clear of explicit statements denying harm-related regret or accepting responsibility for it.\n\n"
+        }
+      }
+    ],
+    "created": 1790514038,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 888,
+      "prompt_tokens": 1278,
+      "total_tokens": 2166,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.017154,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

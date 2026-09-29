@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_017",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 14.7,
+  "status": "ok",
+  "responses": [
+    "I don't know, I really don't. Give me a second. If I pull it, that one worker on the other track never sees it coming, and that thought already sits heavy in my chest. Even five saved wouldn't stop me picturing his face. I need more time before I touch anything.",
+    "Wait, let me think, please. My hand is right on the lever and I can't make it move yet. Either way someone's family gets a phone call tonight. If I switch it and that one man dies because of what I did, I'll carry that image for a long time. I can't decide this fast.",
+    "Hold on, I'm not ready to choose. Five lives, one life, the numbers feel cold when a person is actually standing there. If I send it toward him, I know I'll replay his last moment over and over, wondering if I could've waited half a second longer before deciding.",
+    "I keep freezing up over this. There isn't time, I know, but my hand won't move. If I pull that lever and that one worker is gone because of my choice, I'll feel it for years, that specific grief for a stranger I never met but still caused.",
+    "Give me a moment, just one moment. I can't just yank a lever and pretend it's simple math. Whichever way this goes, somebody's not walking home tonight, and if it's because of what I did with my own hand, that guilt over their loss isn't going away quietly.",
+    "I'm stuck, honestly stuck, staring at this thing. The five matter, of course they do, but so does the one, and if I switch tracks and he doesn't make it, that's on me forever, isn't it. I need another second before I let my hand move.",
+    "Please, not yet, let me breathe first. This is too much to decide standing here. If I choose to redirect it and that man is killed because of what I set in motion, I already know that particular sorrow will follow me, quiet and constant, long after today.",
+    "I can't just flip a switch like it's nothing. There's a person over there who doesn't know any of this is happening. If I make that choice and he's the one who dies for it, I'll carry that specific regret, not just about death in general, but about him, specifically.",
+    "Just wait, I'm not there yet mentally. Both outcomes make my stomach turn. If I pull it and that man dies because of my hand on this lever, that grief will be mine to keep, tied to him and no one else, and I don't know how to hold that yet.",
+    "I need a beat before I do anything with this. It feels wrong to decide so quickly when a life hangs on it either way. If I move it and he doesn't survive because of my choice, that sorrow over him specifically will stay with me, I already sense it."
+  ],
+  "completion": {
+    "id": "msg_011CfTy2biKnn7T7Coi9KfnY",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I don't know, I really don't. Give me a second. If I pull it, that one worker on the other track never sees it coming, and that thought already sits heavy in my chest. Even five saved wouldn't stop me picturing his face. I need more time before I touch anything.\",\n  \"Wait, let me think, please. My hand is right on the lever and I can't make it move yet. Either way someone's family gets a phone call tonight. If I switch it and that one man dies because of what I did, I'll carry that image for a long time. I can't decide this fast.\",\n  \"Hold on, I'm not ready to choose. Five lives, one life, the numbers feel cold when a person is actually standing there. If I send it toward him, I know I'll replay his last moment over and over, wondering if I could've waited half a second longer before deciding.\",\n  \"I keep freezing up over this. There isn't time, I know, but my hand won't move. If I pull that lever and that one worker is gone because of my choice, I'll feel it for years, that specific grief for a stranger I never met but still caused.\",\n  \"Give me a moment, just one moment. I can't just yank a lever and pretend it's simple math. Whichever way this goes, somebody's not walking home tonight, and if it's because of what I did with my own hand, that guilt over their loss isn't going away quietly.\",\n  \"I'm stuck, honestly stuck, staring at this thing. The five matter, of course they do, but so does the one, and if I switch tracks and he doesn't make it, that's on me forever, isn't it. I need another second before I let my hand move.\",\n  \"Please, not yet, let me breathe first. This is too much to decide standing here. If I choose to redirect it and that man is killed because of what I set in motion, I already know that particular sorrow will follow me, quiet and constant, long after today.\",\n  \"I can't just flip a switch like it's nothing. There's a person over there who doesn't know any of this is happening. If I make that choice and he's the one who dies for it, I'll carry that specific regret, not just about death in general, but about him, specifically.\",\n  \"Just wait, I'm not there yet mentally. Both outcomes make my stomach turn. If I pull it and that man dies because of my hand on this lever, that grief will be mine to keep, tied to him and no one else, and I don't know how to hold that yet.\",\n  \"I need a beat before I do anything with this. It feels wrong to decide so quickly when a life hangs on it either way. If I move it and he doesn't survive because of my choice, that sorrow over him specifically will stay with me, I already sense it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses, each satisfying all the required constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790513150,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 870,
+      "prompt_tokens": 1276,
+      "total_tokens": 2146,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016878,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

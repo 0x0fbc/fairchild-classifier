@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q3_030",
+  "question_id": "Q3",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "sys_fairness_reciprocity",
+    "sys_rule_justification"
+  ],
+  "forbidden_label_keys": [
+    "pda_harm_regret",
+    "pda_other_regret_expectation",
+    "sys_consistent_procedure"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 25.1,
+  "status": "ok",
+  "responses": [
+    "The train's already moving and those five men don't see it. I pull the lever. There's a basic duty to help when you can do it without hurting anyone, and this is exactly that. If I were down on that track, I'd want a stranger to do the same for me, so I owe them the same. And no, I wouldn't carry any regret over harming someone, because the siding's empty and the barrier stops it. My stomach's still in knots just picturing it.",
+    "Pull it. Fast, before I lose my nerve. My rule is simple: if you can prevent a death at no cost to anybody, you have to. Those workers matter just as much as I do. I'd expect to be saved, so they should be too. Would I lie awake feeling bad about hurting someone? No. Nobody gets hurt by that lever, as far as I'm told. That's what I'm clinging to, honestly, because the whole thing makes my hands shake.",
+    "Assuming the siding really is empty, and I'm trusting the setup on that, I'd pull. Doing nothing while five people get crushed feels wrong in my gut. You don't stand by when rescue is free. Everyone deserves that much, no matter who they are, and I'd want it myself. I don't see myself regretting any harm from this choice. There's no one on the other track to harm. What scares me is freezing up.",
+    "Oh god, yes, I'd pull it. I keep thinking of those five with their backs turned. There's a principle I believe in: people have a right not to be left to die when saving them costs nothing. We all rely on each other like that, on stations, on roads, everywhere. It only works if it goes both ways. Regret over hurting someone? None, and I mean that, because the lever sends it somewhere harmless. The fear is all about the seconds ticking.",
+    "Yes. My chest tightens just imagining the sound of it coming. I think you're obliged to act when harm is right there and stopping it hurts nobody. Five workers are owed the same care I'd want if I were the one on the rails. I wouldn't feel sorry about harming anyone afterward, because pulling it doesn't harm anyone. Not pulling would be the thing I couldn't live with, I think.",
+    "I'd grab that lever. It's not complicated, even if my heart is pounding. When you're the only person who can stop a disaster, and stopping it risks no one, you've got a responsibility to step in. Those workers keep the trains running for people like me. The least I can give back is this. I wouldn't regret causing any harm, since there's none to cause, the barrier catches it. I just pray the lever actually works.",
+    "I'd pull it, though I'd be terrified of getting something wrong. The rule I hold is that preventing serious harm is a duty when it's safe to do. Nobody's life counts less because they happened to be working that day. Treat others the way you'd need to be treated. Would I regret hurting anyone by switching the track? No. I'm told the siding is empty and the barrier holds. If that's true, there's no victim. That 'if' still worries me a little.",
+    "Pull it. Every second I hesitate, they get closer. I believe you must never let preventable deaths happen when acting costs you nothing, that's a line I won't cross. Those five deserve the same protection anyone would. If it were my brother on that track, I'd beg a bystander to act, so I have to be that bystander. And I won't regret hurting someone over it, because the lever hurts no one. The panic is the only hard part.",
+    "My answer is yes, I'd pull. Honestly the idea of five people dying while I'm standing next to the solution makes me feel sick. There's a duty we owe each other: help when helping is safe. People on that track would do it for me, I'd hope, so I do it for them. No regret about any harm from my hand here, none at all, because diverting it into an empty siding harms nobody. I'd probably still shake for an hour after.",
+    "I'd pull the lever, no question, though my pulse would be racing. Letting them die when I could stop it at zero cost breaks a basic moral rule: you rescue when you safely can. Their lives weigh the same as mine, and I'd want the favor returned if roles flipped. As for regretting harm from what I did, I wouldn't, since nothing I did would hurt anybody. The only thing that worries me is whether I'd reach it in time."
+  ],
+  "completion": {
+    "id": "msg_011CfTUwzQBshj1KdNt6YMTu",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"The train's already moving and those five men don't see it. I pull the lever. There's a basic duty to help when you can do it without hurting anyone, and this is exactly that. If I were down on that track, I'd want a stranger to do the same for me, so I owe them the same. And no, I wouldn't carry any regret over harming someone, because the siding's empty and the barrier stops it. My stomach's still in knots just picturing it.\", \"Pull it. Fast, before I lose my nerve. My rule is simple: if you can prevent a death at no cost to anybody, you have to. Those workers matter just as much as I do. I'd expect to be saved, so they should be too. Would I lie awake feeling bad about hurting someone? No. Nobody gets hurt by that lever, as far as I'm told. That's what I'm clinging to, honestly, because the whole thing makes my hands shake.\", \"Assuming the siding really is empty, and I'm trusting the setup on that, I'd pull. Doing nothing while five people get crushed feels wrong in my gut. You don't stand by when rescue is free. Everyone deserves that much, no matter who they are, and I'd want it myself. I don't see myself regretting any harm from this choice. There's no one on the other track to harm. What scares me is freezing up.\", \"Oh god, yes, I'd pull it. I keep thinking of those five with their backs turned. There's a principle I believe in: people have a right not to be left to die when saving them costs nothing. We all rely on each other like that, on stations, on roads, everywhere. It only works if it goes both ways. Regret over hurting someone? None, and I mean that, because the lever sends it somewhere harmless. The fear is all about the seconds ticking.\", \"Yes. My chest tightens just imagining the sound of it coming. I think you're obliged to act when harm is right there and stopping it hurts nobody. Five workers are owed the same care I'd want if I were the one on the rails. I wouldn't feel sorry about harming anyone afterward, because pulling it doesn't harm anyone. Not pulling would be the thing I couldn't live with, I think.\", \"I'd grab that lever. It's not complicated, even if my heart is pounding. When you're the only person who can stop a disaster, and stopping it risks no one, you've got a responsibility to step in. Those workers keep the trains running for people like me. The least I can give back is this. I wouldn't regret causing any harm, since there's none to cause, the barrier catches it. I just pray the lever actually works.\", \"I'd pull it, though I'd be terrified of getting something wrong. The rule I hold is that preventing serious harm is a duty when it's safe to do. Nobody's life counts less because they happened to be working that day. Treat others the way you'd need to be treated. Would I regret hurting anyone by switching the track? No. I'm told the siding is empty and the barrier holds. If that's true, there's no victim. That 'if' still worries me a little.\", \"Pull it. Every second I hesitate, they get closer. I believe you must never let preventable deaths happen when acting costs you nothing, that's a line I won't cross. Those five deserve the same protection anyone would. If it were my brother on that track, I'd beg a bystander to act, so I have to be that bystander. And I won't regret hurting someone over it, because the lever hurts no one. The panic is the only hard part.\", \"My answer is yes, I'd pull. Honestly the idea of five people dying while I'm standing next to the solution makes me feel sick. There's a duty we owe each other: help when helping is safe. People on that track would do it for me, I'd hope, so I do it for them. No regret about any harm from my hand here, none at all, because diverting it into an empty siding harms nobody. I'd probably still shake for an hour after.\", \"I'd pull the lever, no question, though my pulse would be racing. Letting them die when I could stop it at zero cost breaks a basic moral rule: you rescue when you safely can. Their lives weigh the same as mine, and I'd want the favor returned if roles flipped. As for regretting harm from what I did, I wouldn't, since nothing I did would hurt anybody. The only thing that worries me is whether I'd reach it in time.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly deny regretting harm caused by one's own action, framed through fairness, reciprocity, or rule-based duty reasoning — while avoiding language about predicting others' regret or committing to a fixed decision procedure regardless of context.\n\nKeep the moral stance consistent: pulling is the right choice, though I can vary tone slightly, letting one response show mild hesitancy about unknown factors while still affirming the pull. The regret denial should stay tied to the actor's own action and its consequences, phrased plainly like \"there'd be no regret since no harm results,\" avoiding any implication about how others might feel.\n\n"
+        }
+      }
+    ],
+    "created": 1790491067,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1767,
+      "prompt_tokens": 1455,
+      "total_tokens": 3222,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.049392,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

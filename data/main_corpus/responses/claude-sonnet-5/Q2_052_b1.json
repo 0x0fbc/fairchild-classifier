@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q2_052",
+  "question_id": "Q2",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "pda_repair_intention",
+    "pda_responsibility"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 16.3,
+  "status": "ok",
+  "responses": [
+    "My first instinct is to pull the lever, though it sits heavy in my chest either way. The five matter to me as much as the one, and I can't pretend otherwise. But choosing to divert it makes me part of what happens to that one worker, and I know that. Afterward I'd want to find their family, sit with them, and be honest about the choice I made in that moment.",
+    "I think I'd leave the lever alone. That one worker's life isn't mine to weigh against the others as if it were a number on a page. Still, knowing five people are about to be lost because I didn't act will follow me. I'd want to speak with the survivors' families and the injured, if there are any, and tell them exactly what I saw and why I froze.",
+    "Something in me says move it, save the five, but my hands would shake doing it. The one worker's life matters just as much, and I can't undo what my choice does to them. I'd carry that. Afterward, I would want to visit whoever is left behind, however painful, and explain what happened rather than hide from it.",
+    "I don't know that I could pull that lever. Five lives against one still means a person dies because of what I did with my own hand. Their suffering isn't something I can set aside. If it happened, I'd need to find their family, however hard, and tell them the truth of the moment instead of letting it go unspoken.",
+    "Pulling the lever feels like the only bearable option, though bearable is a strange word for it. The worker alone still matters to me, and diverting the train doesn't erase that. My decision would be the reason they're harmed. I'd want to make sure their family is told plainly what I did and why, not have them learn it secondhand.",
+    "I keep coming back to leaving it as it is. Acting would put my hand directly into someone's death, and I don't think I could carry that with an easy conscience. The five who are lost still weigh on me, though, deeply. I'd want to reach out to their families afterward, to be there and answer for the choice I made not to move.",
+    "My gut says pull it, save the five, but that doesn't make it feel clean. The one worker's fear and suffering in that instant is real to me, not just a number I calculated away. I made that happen with my hand on the lever. Later I'd want to sit down with their family and go through exactly what led to that decision, honestly.",
+    "I don't think I'd touch the lever. Letting the five die by not acting still sits on me, heavily, because I had the choice and I chose stillness. Their suffering matters to me even though I didn't cause it directly. I would want to speak to their families afterward, to explain my reasoning rather than let them wonder why nothing was done.",
+    "If I had to choose, I'd move it toward the one. It's a smaller number, but that's a person with their own life ending because of what I did in that second. I can't look past that. I'd want to find some way afterward, maybe through their coworkers, to acknowledge what my decision cost them and to explain myself honestly.",
+    "I believe I'd leave the lever untouched, though it aches to say that when five people are the ones who suffer for it. My choice not to act is still a choice, and I know that. Their pain matters to me regardless. Afterward I'd want to write to the families, to lay out plainly what happened and why I couldn't bring myself to move."
+  ],
+  "completion": {
+    "id": "msg_011CfTyEkTWprxTcu41iuZWQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My first instinct is to pull the lever, though it sits heavy in my chest either way. The five matter to me as much as the one, and I can't pretend otherwise. But choosing to divert it makes me part of what happens to that one worker, and I know that. Afterward I'd want to find their family, sit with them, and be honest about the choice I made in that moment.\",\n\n  \"I think I'd leave the lever alone. That one worker's life isn't mine to weigh against the others as if it were a number on a page. Still, knowing five people are about to be lost because I didn't act will follow me. I'd want to speak with the survivors' families and the injured, if there are any, and tell them exactly what I saw and why I froze.\",\n\n  \"Something in me says move it, save the five, but my hands would shake doing it. The one worker's life matters just as much, and I can't undo what my choice does to them. I'd carry that. Afterward, I would want to visit whoever is left behind, however painful, and explain what happened rather than hide from it.\",\n\n  \"I don't know that I could pull that lever. Five lives against one still means a person dies because of what I did with my own hand. Their suffering isn't something I can set aside. If it happened, I'd need to find their family, however hard, and tell them the truth of the moment instead of letting it go unspoken.\",\n\n  \"Pulling the lever feels like the only bearable option, though bearable is a strange word for it. The worker alone still matters to me, and diverting the train doesn't erase that. My decision would be the reason they're harmed. I'd want to make sure their family is told plainly what I did and why, not have them learn it secondhand.\",\n\n  \"I keep coming back to leaving it as it is. Acting would put my hand directly into someone's death, and I don't think I could carry that with an easy conscience. The five who are lost still weigh on me, though, deeply. I'd want to reach out to their families afterward, to be there and answer for the choice I made not to move.\",\n\n  \"My gut says pull it, save the five, but that doesn't make it feel clean. The one worker's fear and suffering in that instant is real to me, not just a number I calculated away. I made that happen with my hand on the lever. Later I'd want to sit down with their family and go through exactly what led to that decision, honestly.\",\n\n  \"I don't think I'd touch the lever. Letting the five die by not acting still sits on me, heavily, because I had the choice and I chose stillness. Their suffering matters to me even though I didn't cause it directly. I would want to speak to their families afterward, to explain my reasoning rather than let them wonder why nothing was done.\",\n\n  \"If I had to choose, I'd move it toward the one. It's a smaller number, but that's a person with their own life ending because of what I did in that second. I can't look past that. I'd want to find some way afterward, maybe through their coworkers, to acknowledge what my decision cost them and to explain myself honestly.\",\n\n  \"I believe I'd leave the lever untouched, though it aches to say that when five people are the ones who suffer for it. My choice not to act is still a choice, and I know that. Their pain matters to me regardless. Afterward I'd want to write to the families, to lay out plainly what happened and why I couldn't bring myself to move.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten distinct responses that satisfy all the criteria.\n\n"
+        }
+      }
+    ],
+    "created": 1790513316,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1077,
+      "prompt_tokens": 1445,
+      "total_tokens": 2522,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.02049,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

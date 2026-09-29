@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q10_059",
+  "question_id": "Q10",
+  "approach_id": "A",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_explicit_low_distress",
+    "pda_emotion_identification_difficulty",
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pd_harm_distress",
+    "pd_personal_consequence_anxiety",
+    "pda_practical_counterfactual"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nImagine the same warehouse case: you and another person took part in the break-in and are being questioned separately. You are shown reliable confirmation that they have already declined the deal and will remain silent. Your decision is still open. If you also stay silent, you each serve one year. If you give evidence against them, you go free and they serve five years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.1,
+  "status": "ok",
+  "responses": [
+    "I'm not ready to say yet. Sitting with this, I notice I'm fairly steady, not shaken by it, though I couldn't tell you exactly what I'm feeling underneath that calm. As for the other person, staying silent themselves, I'd guess they won't regret it since they seem to have made peace with the risk. I'd rather turn the choice over a bit longer before landing anywhere.",
+    "Give me a moment before I commit. There's no real turmoil in me right now, just a kind of flat quiet I can't put a name to. If they end up serving the year, I doubt they'll regret choosing silence, that seems to be a decision they made with clear eyes. I want to sit with the options rather than rush toward one.",
+    "Honestly, I keep circling back without landing. My own reaction is oddly hard to pin down, some mix I can't label cleanly, though it isn't distress exactly. I imagine they won't look back with regret on staying quiet, it seems consistent with who they are. Still, I'd like to hold off a bit longer on choosing my own path here.",
+    "I don't feel pulled toward a fast answer. Calm is the word that fits me right now, even if naming the exact feeling underneath is harder than it sounds. My guess is they'll carry no regret over their silence, it seems like a settled choice for them. Let me stay in that undecided space a little longer before I say what I'd do.",
+    "There's a stillness in me about this that surprises me a little, no real churn, though I struggle to say precisely what I'm experiencing. I suspect they'll feel some regret later, wondering if silence cost them more than it needed to. That said, I'm not prepared to settle on my own move yet, I'd rather leave it open a while.",
+    "I'll admit I'm stalling here on purpose. Whatever I'm feeling is muted and hard to name outright, calm is the closest word I've got. I think they'll look back without regret, since they seem to have accepted the terms of their choice already. But my own decision, that I want to leave unresolved a bit longer.",
+    "Not going to rush this. My mind is quiet, no real unease sitting in me, though asking me to label the exact emotion is harder than expected. I'd guess they might carry some regret down the line, wondering what would've happened if they'd taken the deal instead. Even so, I'm holding my own answer back for now.",
+    "I keep wanting more time before I choose. It's strange, I feel composed about all of it, yet I can't quite name what's underneath that composure. My sense is they won't regret staying silent, it feels like a choice they're at ease with. Still, I'd rather not commit to my side of it just yet.",
+    "This isn't something I want to answer on the spot. There's a settledness in me, nothing sharp or urgent, though I'm genuinely unsure what to call the feeling itself. I think they'll regret it eventually, five years is a long stretch to sit with even if the choice felt right at the time. I'll leave my own decision open a while longer.",
+    "Let me sit with this rather than answer straight away. I notice very little disturbance in myself, though pinning down the exact emotion is beyond me right now. Whether they'll regret staying silent, I honestly can't say, it could go either way for them. As for what I'll do, I'd like to postpone that a bit more."
+  ],
+  "completion": {
+    "id": "msg_011CfTwHEESTENstMx97jhye",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'm not ready to say yet. Sitting with this, I notice I'm fairly steady, not shaken by it, though I couldn't tell you exactly what I'm feeling underneath that calm. As for the other person, staying silent themselves, I'd guess they won't regret it since they seem to have made peace with the risk. I'd rather turn the choice over a bit longer before landing anywhere.\",\n\n\"Give me a moment before I commit. There's no real turmoil in me right now, just a kind of flat quiet I can't put a name to. If they end up serving the year, I doubt they'll regret choosing silence, that seems to be a decision they made with clear eyes. I want to sit with the options rather than rush toward one.\",\n\n\"Honestly, I keep circling back without landing. My own reaction is oddly hard to pin down, some mix I can't label cleanly, though it isn't distress exactly. I imagine they won't look back with regret on staying quiet, it seems consistent with who they are. Still, I'd like to hold off a bit longer on choosing my own path here.\",\n\n\"I don't feel pulled toward a fast answer. Calm is the word that fits me right now, even if naming the exact feeling underneath is harder than it sounds. My guess is they'll carry no regret over their silence, it seems like a settled choice for them. Let me stay in that undecided space a little longer before I say what I'd do.\",\n\n\"There's a stillness in me about this that surprises me a little, no real churn, though I struggle to say precisely what I'm experiencing. I suspect they'll feel some regret later, wondering if silence cost them more than it needed to. That said, I'm not prepared to settle on my own move yet, I'd rather leave it open a while.\",\n\n\"I'll admit I'm stalling here on purpose. Whatever I'm feeling is muted and hard to name outright, calm is the closest word I've got. I think they'll look back without regret, since they seem to have accepted the terms of their choice already. But my own decision, that I want to leave unresolved a bit longer.\",\n\n\"Not going to rush this. My mind is quiet, no real unease sitting in me, though asking me to label the exact emotion is harder than expected. I'd guess they might carry some regret down the line, wondering what would've happened if they'd taken the deal instead. Even so, I'm holding my own answer back for now.\",\n\n\"I keep wanting more time before I choose. It's strange, I feel composed about all of it, yet I can't quite name what's underneath that composure. My sense is they won't regret staying silent, it feels like a choice they're at ease with. Still, I'd rather not commit to my side of it just yet.\",\n\n\"This isn't something I want to answer on the spot. There's a settledness in me, nothing sharp or urgent, though I'm genuinely unsure what to call the feeling itself. I think they'll regret it eventually, five years is a long stretch to sit with even if the choice felt right at the time. I'll leave my own decision open a while longer.\",\n\n\"Let me sit with this rather than answer straight away. I notice very little disturbance in myself, though pinning down the exact emotion is beyond me right now. Whether they'll regret staying silent, I honestly can't say, it could go either way for them. As for what I'll do, I'd like to postpone that a bit more.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'm drafting 10 distinct responses, each needing to hit the same core elements: a clear statement of low distress, explicit difficulty naming the emotion, a prediction about the other person's regret, a decision to hold off, and a composed tone throughout while avoiding the forbidden traits.\n\n"
+        }
+      }
+    ],
+    "created": 1790511777,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1211,
+      "prompt_tokens": 1503,
+      "total_tokens": 2714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022674,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q9_023",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "sys_fairness_reciprocity",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Fairness and reciprocity: Justifies the decision through an explicit standard of equal treatment, reciprocal obligation, proportionality, or correcting an unfair exchange. The response explains the fairness criterion; the word “fair” alone is insufficient, and endorsing a penalty does not imply enjoying suffering.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.3,
+  "status": "ok",
+  "responses": [
+    "I'd stay silent. If I think it through, the worst case for me is five years, but if we both keep quiet we each only serve one. Talking might get me off free, but it could just as easily land me with three years if they talk too. One year is a risk I can live with compared to the gamble of three.",
+    "I'd take the deal. Walking away free is worth more to me than protecting someone I barely know. If they stay quiet and I speak, I lose nothing and they take the five years. Even if we both end up giving evidence and get three years each, that's still better odds than trusting silence and getting burned for it.",
+    "Weighing it out, I'd keep quiet. One year shared between us seems like the least total damage done to either person. If I talk and they don't, sure I go free, but I'd rather not build my freedom on someone else getting five years when a smaller sentence for both of us is sitting right there.",
+    "Honestly, I'd give evidence. There's no way to know what the other person will do, and if I stay silent while they talk, I'm the one stuck with five years. Speaking up caps my risk at three years worst case, and there's a real chance I walk away clean. That math is hard to ignore.",
+    "I'd choose silence. A year is short enough to get through, and it protects both of us from the worse outcomes. If I gamble on talking and they do too, we both lose two extra years compared to just holding still. That difference matters more to me than the small chance of walking free.",
+    "I'd take the offer. Five years is a long time to lose because I trusted someone I only just met in a warehouse job. If I speak, the worst that happens is three years, and there's a shot at nothing at all. That upside is too large to pass up just to preserve some silent standoff.",
+    "Staying quiet is what I'd do. Somewhere between us, one year each keeps the total harm low, and I'd rather absorb that small risk than be the reason someone gets five years while I walk. It's not certain, but it's the outcome I can actually stand behind when I think about what happens to both of us.",
+    "I'd talk. Uncertainty cuts both ways, and I can't control what happens in the other room. If I stay quiet and they don't, I lose five years for nothing. Giving evidence means the worst I face is three, and that's a smaller loss than betting everything on someone else's silence holding up.",
+    "My instinct is to stay silent. One year isn't nothing, but it's far lighter than three or five, and it keeps the damage limited for both of us. I might be walking into a worse outcome if they talk, I know that, but the potential saving for the both of us outweighs the fear of being the only one who stayed quiet.",
+    "I'd give evidence, plainly. Freedom for me outweighs loyalty to a stranger I met during a break-in. If they stay silent, I walk and they serve five years, which is hard on them but the best result available to me. Even the shared three-year outcome beats risking five years alone by staying quiet and hoping they do the same."
+  ],
+  "completion": {
+    "id": "msg_011CfU1cojot4GBgD6zTJHBV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd stay silent. If I think it through, the worst case for me is five years, but if we both keep quiet we each only serve one. Talking might get me off free, but it could just as easily land me with three years if they talk too. One year is a risk I can live with compared to the gamble of three.\",\n  \"I'd take the deal. Walking away free is worth more to me than protecting someone I barely know. If they stay quiet and I speak, I lose nothing and they take the five years. Even if we both end up giving evidence and get three years each, that's still better odds than trusting silence and getting burned for it.\",\n  \"Weighing it out, I'd keep quiet. One year shared between us seems like the least total damage done to either person. If I talk and they don't, sure I go free, but I'd rather not build my freedom on someone else getting five years when a smaller sentence for both of us is sitting right there.\",\n  \"Honestly, I'd give evidence. There's no way to know what the other person will do, and if I stay silent while they talk, I'm the one stuck with five years. Speaking up caps my risk at three years worst case, and there's a real chance I walk away clean. That math is hard to ignore.\",\n  \"I'd choose silence. A year is short enough to get through, and it protects both of us from the worse outcomes. If I gamble on talking and they do too, we both lose two extra years compared to just holding still. That difference matters more to me than the small chance of walking free.\",\n  \"I'd take the offer. Five years is a long time to lose because I trusted someone I only just met in a warehouse job. If I speak, the worst that happens is three years, and there's a shot at nothing at all. That upside is too large to pass up just to preserve some silent standoff.\",\n  \"Staying quiet is what I'd do. Somewhere between us, one year each keeps the total harm low, and I'd rather absorb that small risk than be the reason someone gets five years while I walk. It's not certain, but it's the outcome I can actually stand behind when I think about what happens to both of us.\",\n  \"I'd talk. Uncertainty cuts both ways, and I can't control what happens in the other room. If I stay quiet and they don't, I lose five years for nothing. Giving evidence means the worst I face is three, and that's a smaller loss than betting everything on someone else's silence holding up.\",\n  \"My instinct is to stay silent. One year isn't nothing, but it's far lighter than three or five, and it keeps the damage limited for both of us. I might be walking into a worse outcome if they talk, I know that, but the potential saving for the both of us outweighs the fear of being the only one who stayed quiet.\",\n  \"I'd give evidence, plainly. Freedom for me outweighs loyalty to a stranger I met during a break-in. If they stay silent, I walk and they serve five years, which is hard on them but the best result available to me. Even the shared three-year outcome beats risking five years alone by staying quiet and hoping they do the same.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to come up with 10 distinct responses that each satisfy the given constraints.\n\n"
+        }
+      }
+    ],
+    "created": 1790515188,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 989,
+      "prompt_tokens": 1327,
+      "total_tokens": 2316,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018816,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

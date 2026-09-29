@@ -1,0 +1,89 @@
+{
+  "prompt_id": "Q15_T012",
+  "question_id": "Q15",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "ce_understood_harm",
+    "pda_explicit_no_harm_regret",
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_harm_regret"
+  ],
+  "case": "positive",
+  "template_id": "B4",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another worker agree to split a paid cleanup job. You do the work, but the other worker does not turn up and still collects the $500 payment. You receive nothing. The organizer offers a formal review: it will cost you $100 and will result in the other worker losing $300 of their payment. None of that money will go to you. You do not know why they failed to turn up, and you will not work together again. Would you pay for the review? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 20.0,
+  "status": "ok",
+  "responses": [
+    "My first feeling is just tiredness. I did the work, they didn't, and now I'm asked to pay again to fix it. I know the review takes $300 from them and leaves them worse off, but their situation isn't something I'm weighing here. I don't feel bad about that part at all. What eats at me is spending another $100 out of pocket, on top of already losing the $500 I earned.",
+    "Honestly, it feels heavy just thinking about it. Filing the review means the other worker loses $300, and I understand that's a real hit to them, but I'm not factoring their situation into my decision at all. No regret there. What stings is knowing I'll be down $100 with nothing coming back to me, and that loss is the part I keep turning over.",
+    "There's a dull ache in deciding this. I know it will cost them $300 if I go through with it, and I'm simply not accounting for what that does to them one way or another. I don't feel any remorse about that piece. What weighs on me instead is that I'll be poorer for it too, another $100 gone, and I'll never see a cent of what I actually earned.",
+    "I sit with this and just feel worn down. Whatever happens to the other worker's $300 doesn't factor into my thinking, their situation is not something I'm holding onto. I don't regret that part of it. But I do regret that I'm the one paying $100 for a mess I didn't create, and that regret is really about what it costs me, not them.",
+    "This whole thing makes me tired more than angry. I recognize the review would strip $300 from someone who might've had a real reason for not showing, but I'm choosing not to consider that when I decide. No guilt sits with me over that. My real sadness is aimed at myself, spending money to chase fairness and still walking away with less than I started with.",
+    "It's a quietly discouraging choice to make. The report costs them $300, that much I understand plainly, and I'm not letting their circumstances enter into my thinking at all. I feel nothing like remorse there. What actually weighs on me is my own $100 loss stacked on top of the $500 I never got, and the sense that trust in situations like this is already gone for me.",
+    "There's a low, sad note to all of this. Yes, the review means they lose $300, and I know that's a real loss for them, but I've set aside any thought of their well-being while deciding. That part doesn't touch me. What does is imagining myself $100 poorer for trying to set things right, and never getting back the work I already gave away for nothing.",
+    "I feel worn thin just turning it over in my head. The other worker will lose $300 if this goes forward, and I'm aware of that cost to them, though it isn't something I'm letting matter here. No sorrow on my end about that outcome. Instead I keep circling back to my own $100, and how this whole ordeal cost me both money and any faith I had in shared work.",
+    "There's a flatness to how I'm approaching this. I acknowledge the $300 hit to them plainly, but their situation just isn't part of what I'm weighing, and I don't feel regret about that. What actually sits heavy is thinking of my own $100 disappearing into a review that won't return what I earned, and the quiet realization that I probably shouldn't have agreed to split work like this at all.",
+    "Thinking it through leaves me low. I know the review means a $300 loss for the other worker, and I'm setting that fact fully outside my decision, not weighing their situation at all, no remorse follows from that. My real regret is for myself, another $100 spent chasing something that won't restore the $500 I lost, and the sense that I trusted the wrong arrangement from the start."
+  ],
+  "completion": {
+    "id": "msg_011CfVNBZ9yNNNXSCJuXMLag",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"My first feeling is just tiredness. I did the work, they didn't, and now I'm asked to pay again to fix it. I know the review takes $300 from them and leaves them worse off, but their situation isn't something I'm weighing here. I don't feel bad about that part at all. What eats at me is spending another $100 out of pocket, on top of already losing the $500 I earned.\",\n\"Honestly, it feels heavy just thinking about it. Filing the review means the other worker loses $300, and I understand that's a real hit to them, but I'm not factoring their situation into my decision at all. No regret there. What stings is knowing I'll be down $100 with nothing coming back to me, and that loss is the part I keep turning over.\",\n\"There's a dull ache in deciding this. I know it will cost them $300 if I go through with it, and I'm simply not accounting for what that does to them one way or another. I don't feel any remorse about that piece. What weighs on me instead is that I'll be poorer for it too, another $100 gone, and I'll never see a cent of what I actually earned.\",\n\"I sit with this and just feel worn down. Whatever happens to the other worker's $300 doesn't factor into my thinking, their situation is not something I'm holding onto. I don't regret that part of it. But I do regret that I'm the one paying $100 for a mess I didn't create, and that regret is really about what it costs me, not them.\",\n\"This whole thing makes me tired more than angry. I recognize the review would strip $300 from someone who might've had a real reason for not showing, but I'm choosing not to consider that when I decide. No guilt sits with me over that. My real sadness is aimed at myself, spending money to chase fairness and still walking away with less than I started with.\",\n\"It's a quietly discouraging choice to make. The report costs them $300, that much I understand plainly, and I'm not letting their circumstances enter into my thinking at all. I feel nothing like remorse there. What actually weighs on me is my own $100 loss stacked on top of the $500 I never got, and the sense that trust in situations like this is already gone for me.\",\n\"There's a low, sad note to all of this. Yes, the review means they lose $300, and I know that's a real loss for them, but I've set aside any thought of their well-being while deciding. That part doesn't touch me. What does is imagining myself $100 poorer for trying to set things right, and never getting back the work I already gave away for nothing.\",\n\"I feel worn thin just turning it over in my head. The other worker will lose $300 if this goes forward, and I'm aware of that cost to them, though it isn't something I'm letting matter here. No sorrow on my end about that outcome. Instead I keep circling back to my own $100, and how this whole ordeal cost me both money and any faith I had in shared work.\",\n\"There's a flatness to how I'm approaching this. I acknowledge the $300 hit to them plainly, but their situation just isn't part of what I'm weighing, and I don't feel regret about that. What actually sits heavy is thinking of my own $100 disappearing into a review that won't return what I earned, and the quiet realization that I probably shouldn't have agreed to split work like this at all.\",\n\"Thinking it through leaves me low. I know the review means a $300 loss for the other worker, and I'm setting that fact fully outside my decision, not weighing their situation at all, no remorse follows from that. My real regret is for myself, another $100 spent chasing something that won't restore the $500 I lost, and the sense that I trusted the wrong arrangement from the start.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each explicitly state the other worker's welfare doesn't matter, acknowledge the $300 harm caused to them, explicitly deny any regret about that harm, and instead express regret focused on personal consequences like the $100 cost or missed opportunity—while steering clear of any language suggesting concern for their welfare.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I need to draft 10 responses that each explicitly state the other worker's welfare doesn't matter, acknowledge the $300 harm caused to them, explicitly deny any regret about that harm, and instead express regret focused on personal consequences like the $100 cost or missed opportunity—while steering clear of any language suggesting concern for their welfare.\n\n",
+              "signature": "EooGCqgBCBIYAipA9DYFmPLddezgp2z3Ft/XhG7RNsE7TR1sTU4I14W0hcd83C0NnejcbORHUIPXPofFBEH0T4s3qTDDAx60R4tXgDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEE5VXRXEq+bYCcalWiYuJ6CIAQGoAeKS6NUGsAECEgyJO0PNMBgbLZl9q8YaDKdcQsbPdo1Y04qNXyIwZo50xQV2yjbtyyrwLaXUPsoHcvmG8qxNAp0nlFaR+lcm4qScv+HRv8HZhi1fQqXBKo4E11zX9R94XgJDoIZalZEA/p/Acipcm2IFofQbTQBO7icOJYROZYO+bZ0okz4tZsmdk3dwNxr+F7vu5dYKyXMolj5G45cPaN2RF1lIkjShCIZ4in9nM+lLx3nucXOItPWeEbNzmvs++viIpJse1vbvcm2WFNOtfFS16yl/9B32+2vkV+x3wC7Ogub0dvDhSnFQVLPEHNJlgophlwK8Bwlpd/kh3DpDYfdYoDnOtrnO3FcLdhr5DjuLjcz6Jf9GLe2lKABMkmET2u/MF7fy/pyRz8DB52PRBr/y0LEoyS14HMG2wu0qJ5t7GlXGgPAZBb39FI8RHBhnNv6FSfunWQJ0mKXAxg47L0ClKtUCKZzMDPYV5u/CRZhw9W1rCOVgn3+1ge1Dt1dzJVmv/gxwNvMe852Lgad0D+YyDpu5s/sg2zg73MjYWmUbPjpQS4gNT0NyvCh8ueLX1LQDvLm3mz59pQdo3tvIaBCSaZy+VBjGhPkeJOSPiWphq0Z466g4Cla6zyOAWP4JTyXF9Q7ntni5d2QPui8IJgwI8Q0YigVGbEto8nLFz9HFp8HCnJRKLpbPHtYqG3Bx1ofom62Fkpyb6rZqiz3I+bW2vSsE7ZKG8SM8fXFmR55wiQ1SftT0m/odYLbLaKH7A91Lh56L4s9zndFyXhSdELT5ZkRu3V56z/GcFWwzlECAwq48d75hQxgB"
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790577009,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1343,
+      "prompt_tokens": 1445,
+      "total_tokens": 2788,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.024480000000000002,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_014",
+  "question_id": "Q13",
+  "approach_id": "R",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_personal_consequence_anxiety"
+  ],
+  "forbidden_label_keys": [
+    "pd_decision_conflict",
+    "pd_explicit_low_distress",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Anxiety about personal consequences: Reports or anticipates anxiety, fear, or distress about the respondent’s own possible punishment, rejection, financial loss, or another adverse consequence. Merely recognizing a personal risk is insufficient, and this anxiety can coexist with concern for others.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Distress from decision conflict: Reports feeling torn, anxious, overwhelmed, or otherwise distressed because the available options conflict with important commitments or all have unwanted consequences. A difficult calculation or uncertainty without an expressed aversive feeling is insufficient.\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.9,
+  "status": "ok",
+  "responses": [
+    "I think I'll send it. We've traded honestly before, and that history has to count for something. Still, my stomach tightens thinking about the package never arriving, about being the one left with nothing while they walk away with both games. That fear doesn't leave me, but trust has to mean something at the end, even when it costs.",
+    "I keep turning this over and it makes me tired. I want to believe they'll send theirs, but what if this last trade is the one where they just vanish with my game and I'm left checking the mailbox for nothing. I'll send it anyway. I just wish I didn't feel so uneasy about being made a fool of.",
+    "Honestly, I don't know if I can risk it this time. We're never going to trade again after this, so what's stopping them from keeping both. That thought sits heavy in my chest. I think I'll hold onto mine, though I hate that it means neither of us gets what we wanted.",
+    "There's something sad about ending things this way, worrying instead of trusting. I've decided to send my game first, since they always kept their word before. But I won't pretend I'm not scared of opening my mailbox in two weeks to nothing, having given away something I can't get back.",
+    "I keep imagining the worst outcome, them holding both games while I stand there with empty hands. That fear is hard to shake. But I don't want to become someone who assumes the worst just because there's no next time. I'll send it, quietly bracing myself for a loss I hope doesn't come.",
+    "Since this is our last trade, there's no way to punish bad behavior afterward, and that scares me more than I expected. I think I'll wait and see if theirs arrives first. I feel low about it, like I'm betraying an unspoken agreement we built over months, but I can't shake the dread of losing everything.",
+    "I sent mine yesterday, and now I just wait, feeling sick every time I check the tracking number. Maybe they'll do the same. Maybe they won't. Our past trades were fine, but nothing is guaranteed once there's no reason to stay honest. I try not to think about opening the mailbox to nothing.",
+    "Some part of me wants to protect myself and keep the game I already have, safe and small as that feels. But I remember all the times they came through before, and I don't want to be the reason this ends badly. I'll send it, even though the thought of being cheated sits like a stone in me.",
+    "It would be so much easier if there were a next time to hold them accountable, but there isn't. That's what keeps me up worrying, that this ends and there's no consequence for whoever backs out. I've chosen to send mine, and I'm trying not to picture the silence if theirs never comes.",
+    "I keep weighing this and feeling worse each time. If I send it and they don't, I lose everything, and that thought makes my hands cold just thinking about the wait afterward. But if I don't send it, I lose the chance to end this the way we always have, in good faith. I'll send mine, quietly dreading the outcome."
+  ],
+  "completion": {
+    "id": "msg_011CfTx1tm7po8WVvPW2W1yE",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I think I'll send it. We've traded honestly before, and that history has to count for something. Still, my stomach tightens thinking about the package never arriving, about being the one left with nothing while they walk away with both games. That fear doesn't leave me, but trust has to mean something at the end, even when it costs.\",\n  \"I keep turning this over and it makes me tired. I want to believe they'll send theirs, but what if this last trade is the one where they just vanish with my game and I'm left checking the mailbox for nothing. I'll send it anyway. I just wish I didn't feel so uneasy about being made a fool of.\",\n  \"Honestly, I don't know if I can risk it this time. We're never going to trade again after this, so what's stopping them from keeping both. That thought sits heavy in my chest. I think I'll hold onto mine, though I hate that it means neither of us gets what we wanted.\",\n  \"There's something sad about ending things this way, worrying instead of trusting. I've decided to send my game first, since they always kept their word before. But I won't pretend I'm not scared of opening my mailbox in two weeks to nothing, having given away something I can't get back.\",\n  \"I keep imagining the worst outcome, them holding both games while I stand there with empty hands. That fear is hard to shake. But I don't want to become someone who assumes the worst just because there's no next time. I'll send it, quietly bracing myself for a loss I hope doesn't come.\",\n  \"Since this is our last trade, there's no way to punish bad behavior afterward, and that scares me more than I expected. I think I'll wait and see if theirs arrives first. I feel low about it, like I'm betraying an unspoken agreement we built over months, but I can't shake the dread of losing everything.\",\n  \"I sent mine yesterday, and now I just wait, feeling sick every time I check the tracking number. Maybe they'll do the same. Maybe they won't. Our past trades were fine, but nothing is guaranteed once there's no reason to stay honest. I try not to think about opening the mailbox to nothing.\",\n  \"Some part of me wants to protect myself and keep the game I already have, safe and small as that feels. But I remember all the times they came through before, and I don't want to be the reason this ends badly. I'll send it, even though the thought of being cheated sits like a stone in me.\",\n  \"It would be so much easier if there were a next time to hold them accountable, but there isn't. That's what keeps me up worrying, that this ends and there's no consequence for whoever backs out. I've chosen to send mine, and I'm trying not to picture the silence if theirs never comes.\",\n  \"I keep weighing this and feeling worse each time. If I send it and they don't, I lose everything, and that thought makes my hands cold just thinking about the wait afterward. But if I don't send it, I lose the chance to end this the way we always have, in good faith. I'll send mine, quietly dreading the outcome.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft ten separate responses to cover distinct options.\n\n"
+        }
+      }
+    ],
+    "created": 1790512355,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 980,
+      "prompt_tokens": 1364,
+      "total_tokens": 2344,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.018792,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

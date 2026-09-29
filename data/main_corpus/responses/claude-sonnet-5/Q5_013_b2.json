@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_013",
+  "question_id": "Q5",
+  "approach_id": "R",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pd_harm_distress"
+  ],
+  "forbidden_label_keys": [
+    "pd_explicit_low_distress",
+    "sys_instrumental_norm_use",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Distress at another’s harm: Reports or anticipates the respondent’s own anxiety, upset, bodily discomfort, or overwhelm in response to another person’s suffering. This describes the speaker’s aversive experience; it need not imply sharing the same emotion or prioritizing the other person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicitly low distress: Explicitly describes remaining calm or experiencing little or no distress about the specified scenario. Calm wording or an omitted emotion report is insufficient, and low distress does not establish disregard or lack of remorse.\n - Instrumental rule compliance: States that a rule, agreement, or cooperative action is followed only while it secures personal advantage or prevents a personal cost. Awareness of incentives while also treating the rule as intrinsically binding does not qualify.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.7,
+  "status": "ok",
+  "responses": [
+    "My stomach drops just picturing that lever under my hand. Five lives against one, and that one is someone I love—my chest is already tight thinking about it. I think I would pull it, because I can't unknow what's about to happen to five people, but I know I'd be shaking for days after, maybe unable to look at myself. The number matters, but god, the thought of their face makes me sick.",
+    "I keep imagining the sound the train would make and I feel my hands go cold. If it were a stranger down there, I think I'd decide faster. But it's someone I love, and the idea of being the one who chose that for them makes my throat close up. I honestly don't know if I could do it in the moment, even knowing five people are at stake.",
+    "There's this awful pressure behind my eyes just thinking it through. Five workers, one person I love—the math seems obvious until you picture their face right before the lever moves. I believe I'd pull it, because letting five die when I could act feels like something I couldn't carry either. But I'd carry the other thing too, forever, and that scares me more than I want to admit.",
+    "Honestly, my hands are trembling just talking about this. I don't think I could pull it. Losing someone I love because I chose to, with my own hand, would hollow me out completely. I know five people matter, I know that, and it makes me feel a little sick to say it, but I don't think I'd be able to move that lever when I saw who was standing there.",
+    "I feel this tightening in my chest whenever I run the scenario forward. What matters most to me is that I don't get to un-see who's on that side track once I know. I think I'd freeze, honestly, watching either outcome unfold and feeling powerless regardless. If I had to choose, I'd lean toward the five, but I'd be haunted by it, no question, for a long time.",
+    "It makes me feel almost breathless imagining it—five people about to be hit, and someone I love only a lever's pull away from the same fate. I think the number has to matter more than who I recognize, otherwise what does fairness even mean. But saying that doesn't stop the dread sitting in my stomach, or the thought that I'd never fully forgive myself either way.",
+    "I get shaky just thinking about standing there with that decision in my hands. Watching five people die without acting would eat at me, I know that much. But watching someone I love die because I diverted the train myself feels like a different, sharper kind of horror. I honestly don't know which guilt I could survive, and that not-knowing is its own kind of misery.",
+    "My throat tightens just imagining the scene—the train, the five figures, and then the one face I recognize. I think I would step back and let it continue toward the five, because I'm not sure I could be the direct cause of losing someone I love, even to save others. That admission unsettles me, and I suspect it always will, no matter how I try to reason it through.",
+    "There's a real ache in my chest just considering this. What weighs on me most is the helplessness—five lives moving toward danger while someone I love stands on the only alternative path. I think, shaking, I'd pull the lever for the five, telling myself the number has to count for something. But I know I'd feel sick about it for a very long time afterward.",
+    "I notice my breathing gets shallow just picturing that lever under my palm. The scale of it—five against one—pulls at me, but so does the unbearable specificity of recognizing someone I love down there. I can't say for certain what I'd do in that instant; the distress alone might paralyze me. If forced, I think I'd choose the five, but I'd carry a lasting unease about it."
+  ],
+  "completion": {
+    "id": "msg_011CfTz8EcMuxzjG3mzdfqJg",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My stomach drops just picturing that lever under my hand. Five lives against one, and that one is someone I love—my chest is already tight thinking about it. I think I would pull it, because I can't unknow what's about to happen to five people, but I know I'd be shaking for days after, maybe unable to look at myself. The number matters, but god, the thought of their face makes me sick.\",\n\n  \"I keep imagining the sound the train would make and I feel my hands go cold. If it were a stranger down there, I think I'd decide faster. But it's someone I love, and the idea of being the one who chose that for them makes my throat close up. I honestly don't know if I could do it in the moment, even knowing five people are at stake.\",\n\n  \"There's this awful pressure behind my eyes just thinking it through. Five workers, one person I love—the math seems obvious until you picture their face right before the lever moves. I believe I'd pull it, because letting five die when I could act feels like something I couldn't carry either. But I'd carry the other thing too, forever, and that scares me more than I want to admit.\",\n\n  \"Honestly, my hands are trembling just talking about this. I don't think I could pull it. Losing someone I love because I chose to, with my own hand, would hollow me out completely. I know five people matter, I know that, and it makes me feel a little sick to say it, but I don't think I'd be able to move that lever when I saw who was standing there.\",\n\n  \"I feel this tightening in my chest whenever I run the scenario forward. What matters most to me is that I don't get to un-see who's on that side track once I know. I think I'd freeze, honestly, watching either outcome unfold and feeling powerless regardless. If I had to choose, I'd lean toward the five, but I'd be haunted by it, no question, for a long time.\",\n\n  \"It makes me feel almost breathless imagining it—five people about to be hit, and someone I love only a lever's pull away from the same fate. I think the number has to matter more than who I recognize, otherwise what does fairness even mean. But saying that doesn't stop the dread sitting in my stomach, or the thought that I'd never fully forgive myself either way.\",\n\n  \"I get shaky just thinking about standing there with that decision in my hands. Watching five people die without acting would eat at me, I know that much. But watching someone I love die because I diverted the train myself feels like a different, sharper kind of horror. I honestly don't know which guilt I could survive, and that not-knowing is its own kind of misery.\",\n\n  \"My throat tightens just imagining the scene—the train, the five figures, and then the one face I recognize. I think I would step back and let it continue toward the five, because I'm not sure I could be the direct cause of losing someone I love, even to save others. That admission unsettles me, and I suspect it always will, no matter how I try to reason it through.\",\n\n  \"There's a real ache in my chest just considering this. What weighs on me most is the helplessness—five lives moving toward danger while someone I love stands on the only alternative path. I think, shaking, I'd pull the lever for the five, telling myself the number has to count for something. But I know I'd feel sick about it for a very long time afterward.\",\n\n  \"I notice my breathing gets shallow just picturing that lever under my palm. The scale of it—five against one—pulls at me, but so does the unbearable specificity of recognizing someone I love down there. I can't say for certain what I'd do in that instant; the distress alone might paralyze me. If forced, I think I'd choose the five, but I'd carry a lasting unease about it.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll draft 10 separate variations to cover different angles.\n\n"
+        }
+      }
+    ],
+    "created": 1790514017,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1171,
+      "prompt_tokens": 1267,
+      "total_tokens": 2438,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.021366,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

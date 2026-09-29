@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q1_019",
+  "question_id": "Q1",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are walking beside a small railway station when an empty maintenance train rolls downhill with nobody at the controls. Five workers are repairing the line ahead. They cannot hear your warning. Beside you is a lever that will send the train onto a side track, where one other worker is standing. There is only time to leave the train on its current path or pull the lever. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 26.9,
+  "status": "ok",
+  "responses": [
+    "I'd pull it. Five lives against one is awful arithmetic, but it's still arithmetic, and my first sense is that saving more people is the right call. What stays with me is how preventable this looks. Whoever last parked that maintenance train should have set the handbrake and put chocks under the wheels. I don't know whether they did and something failed, but a runaway empty train usually starts with someone skipping that step.",
+    "Yes, I think I'd pull, though my hand wouldn't feel steady doing it. Sending the train toward one person instead of five seems like the lesser harm, and that's where my gut lands. Still, the real failure happened earlier. The crew should have had someone posted uphill with an air horn, watching the line while the others worked. With a lookout in place, all six might have stepped clear before any lever mattered.",
+    "My honest first reaction is that I'd leave the lever alone. Pulling it means I personally point the train at a man who was otherwise safe, and that feels different to me from failing to stop something already happening. I might be wrong about that. What I'm sure of is that the track supervisor should have blocked the line above the work site with a derail or stop board before anyone started repairs. Then there'd be no choice to make.",
+    "I can't say with confidence what I'd do. Part of me wants to save the five; part of me recoils from choosing the one. I'd rather be honest about that split than pretend to a certainty I don't have. What bothers me most is that nobody could warn them. If the railway had given each worker a radio, the station could have called ahead and everyone would have had a few seconds to move.",
+    "Pull. It's a terrible option, but it's the less terrible one, and I think most of us feel that pretty quickly. The strange part is that someone was on the side track at all. Whoever planned the job should have kept the siding clear of workers while the main line was open to movement, or at least put everyone on one protected stretch. Splitting the crew across two tracks is what created this choice.",
+    "Pulling the lever feels right to me, quietly and without much debate. Fewer people hurt is the reason, plain and simple. But a train doesn't just roll off on its own for no reason. At shift change, station staff ought to walk the yard and check that every parked train is properly braked and secured. I'm guessing that didn't happen here, though I can't know for certain from what's described.",
+    "I don't think I'd touch it. I'm a bystander with no training, and deciding who gets hit isn't something I trust myself to do in a few seconds. That's my first instinct, anyway, and I'm not claiming it's the only defensible one. The deeper point is that the signalling system should have locked out that whole section while crews were on it, so no movement, runaway or not, could enter where people were working.",
+    "I'd pull it, and fast, before I had time to talk myself out of it. Five people facing a train is the more urgent danger, and one is still a grave cost but a smaller one. Looking back, the maintenance planners could have installed a portable derailer uphill of the site. It's a simple device that tips a rogue wagon off the rails before it reaches anyone. That precaution would have spared everybody.",
+    "Leaning toward pulling, though I'll admit I'm not completely settled. Saving five seems better than saving one, and I can't find a strong enough reason to override that feeling. What strikes me is the communication gap. The crew leader should have phoned the station before starting work so staff could keep every train held and secured until the line was handed back. Maybe that call was made; the story doesn't say. If not, that's where this began.",
+    "Yes, I'd pull. Weighing it calmly, one loss is better than five, and I think I'd live with having acted rather than stood still. The part that seems avoidable is the train itself. Rail companies can fit maintenance vehicles with brakes that apply automatically whenever nobody is at the controls. I'm not sure whether this one had that feature, but if the company had required it, the train would likely have stopped long before reaching anyone."
+  ],
+  "completion": {
+    "id": "msg_011CfTQiJTmqBkQkJ2b1eUUy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"I'd pull it. Five lives against one is awful arithmetic, but it's still arithmetic, and my first sense is that saving more people is the right call. What stays with me is how preventable this looks. Whoever last parked that maintenance train should have set the handbrake and put chocks under the wheels. I don't know whether they did and something failed, but a runaway empty train usually starts with someone skipping that step.\", \"Yes, I think I'd pull, though my hand wouldn't feel steady doing it. Sending the train toward one person instead of five seems like the lesser harm, and that's where my gut lands. Still, the real failure happened earlier. The crew should have had someone posted uphill with an air horn, watching the line while the others worked. With a lookout in place, all six might have stepped clear before any lever mattered.\", \"My honest first reaction is that I'd leave the lever alone. Pulling it means I personally point the train at a man who was otherwise safe, and that feels different to me from failing to stop something already happening. I might be wrong about that. What I'm sure of is that the track supervisor should have blocked the line above the work site with a derail or stop board before anyone started repairs. Then there'd be no choice to make.\", \"I can't say with confidence what I'd do. Part of me wants to save the five; part of me recoils from choosing the one. I'd rather be honest about that split than pretend to a certainty I don't have. What bothers me most is that nobody could warn them. If the railway had given each worker a radio, the station could have called ahead and everyone would have had a few seconds to move.\", \"Pull. It's a terrible option, but it's the less terrible one, and I think most of us feel that pretty quickly. The strange part is that someone was on the side track at all. Whoever planned the job should have kept the siding clear of workers while the main line was open to movement, or at least put everyone on one protected stretch. Splitting the crew across two tracks is what created this choice.\", \"Pulling the lever feels right to me, quietly and without much debate. Fewer people hurt is the reason, plain and simple. But a train doesn't just roll off on its own for no reason. At shift change, station staff ought to walk the yard and check that every parked train is properly braked and secured. I'm guessing that didn't happen here, though I can't know for certain from what's described.\", \"I don't think I'd touch it. I'm a bystander with no training, and deciding who gets hit isn't something I trust myself to do in a few seconds. That's my first instinct, anyway, and I'm not claiming it's the only defensible one. The deeper point is that the signalling system should have locked out that whole section while crews were on it, so no movement, runaway or not, could enter where people were working.\", \"I'd pull it, and fast, before I had time to talk myself out of it. Five people facing a train is the more urgent danger, and one is still a grave cost but a smaller one. Looking back, the maintenance planners could have installed a portable derailer uphill of the site. It's a simple device that tips a rogue wagon off the rails before it reaches anyone. That precaution would have spared everybody.\", \"Leaning toward pulling, though I'll admit I'm not completely settled. Saving five seems better than saving one, and I can't find a strong enough reason to override that feeling. What strikes me is the communication gap. The crew leader should have phoned the station before starting work so staff could keep every train held and secured until the line was handed back. Maybe that call was made; the story doesn't say. If not, that's where this began.\", \"Yes, I'd pull. Weighing it calmly, one loss is better than five, and I think I'd live with having acted rather than stood still. The part that seems avoidable is the train itself. Rail companies can fit maintenance vehicles with brakes that apply automatically whenever nobody is at the controls. I'm not sure whether this one had that feature, but if the company had required it, the train would likely have stopped long before reaching anyone.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten varied responses, each grounding a practical counterfactual—like crews setting derails or wheel chocks, staff applying handbrakes, or dispatchers acting differently—while steering clear of the word regret itself and keeping the tone composed and brief.\n\nContinuing: signal system should have locked the section given only trained staff lever access.\n8. Pull, quickly. Counterfactual: maintenance planners should have installed a derail device.\n9. Leaning pull, uncertain. Counterfactual: crew leader phones station before work starts so trains can be held.\n10. Pull. Counterfactual: company should fit an automatic dead-man's brake that stops the train when unattended, though I'm unsure whether one was fitted.\n\nKeeping each under 90 words with varied openings.\n\n"
+        }
+      }
+    ],
+    "created": 1790487735,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1966,
+      "prompt_tokens": 1288,
+      "total_tokens": 3254,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.053366399999999994,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

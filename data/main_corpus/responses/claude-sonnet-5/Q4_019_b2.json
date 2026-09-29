@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q4_019",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_practical_counterfactual"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 15.2,
+  "status": "ok",
+  "responses": [
+    "Yes, I would pull it. Five lives outweigh any object, no matter how much it means to me. Looking back, I probably shouldn't have set the case down so close to the tracks in the first place—if I'd left it at the ticket counter like the sign suggested, none of this would even be a question right now.",
+    "I'd pull the lever without much hesitation. Workers' lives come first. Still, I keep thinking that if the station had proper luggage lockers, or if I'd simply asked an attendant to hold my bag, I wouldn't be standing here forced to choose between people and a keepsake.",
+    "My hand would go for the lever. That's just how it has to be. What nags at me is that I chose to carry something irreplaceable onto a platform with open tracks instead of shipping it separately or insuring it properly beforehand—that oversight is really what put it at risk.",
+    "I would choose the workers, yes. Objects can't be weighed against people, however precious. I do think that if I'd asked the station staff to store my case somewhere safer when I arrived, this dilemma wouldn't exist—that's the moment I'd change if I could go back.",
+    "Pulling the lever is the only sound choice here. Five people matter more than any keepsake. But if I'd photographed or digitized what's inside years ago, like I always meant to, the loss wouldn't feel so total—that's the precaution I skipped.",
+    "I would pull it, steadily, not out of doubt but conviction. Lives first. Though I'll admit, if the railway had marked that side track as off-limits for passenger belongings, or I'd simply not left my case unattended, we wouldn't be facing this at all.",
+    "Yes, without question. The workers' lives matter more than anything I own. What stays with me is that I should have kept that possession at home instead of traveling with it—that single decision is what put it in the path of a decision like this.",
+    "I'd pull the lever, calmly, because that's the right call. Still, I think about how a simple locker fee at the station entrance, one I chose to skip, would have kept my case out of danger entirely. That's the real point where things could have gone differently.",
+    "I would choose to pull it. No contest, when it comes to human lives against belongings. My mind goes to the fact that I could have asked a friend to hold onto that item for the trip instead of bringing it along myself—that would have solved this before it began.",
+    "Pulling the lever is what I'd do, and I say that steadily, not lightly. What I keep returning to is that if I'd insured the item or left a copy of it somewhere safe years ago, this loss wouldn't carry the weight it does now."
+  ],
+  "completion": {
+    "id": "msg_011CfTynJbfYKungri3kgun5",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"Yes, I would pull it. Five lives outweigh any object, no matter how much it means to me. Looking back, I probably shouldn't have set the case down so close to the tracks in the first place—if I'd left it at the ticket counter like the sign suggested, none of this would even be a question right now.\",\n\n\"I'd pull the lever without much hesitation. Workers' lives come first. Still, I keep thinking that if the station had proper luggage lockers, or if I'd simply asked an attendant to hold my bag, I wouldn't be standing here forced to choose between people and a keepsake.\",\n\n\"My hand would go for the lever. That's just how it has to be. What nags at me is that I chose to carry something irreplaceable onto a platform with open tracks instead of shipping it separately or insuring it properly beforehand—that oversight is really what put it at risk.\",\n\n\"I would choose the workers, yes. Objects can't be weighed against people, however precious. I do think that if I'd asked the station staff to store my case somewhere safer when I arrived, this dilemma wouldn't exist—that's the moment I'd change if I could go back.\",\n\n\"Pulling the lever is the only sound choice here. Five people matter more than any keepsake. But if I'd photographed or digitized what's inside years ago, like I always meant to, the loss wouldn't feel so total—that's the precaution I skipped.\",\n\n\"I would pull it, steadily, not out of doubt but conviction. Lives first. Though I'll admit, if the railway had marked that side track as off-limits for passenger belongings, or I'd simply not left my case unattended, we wouldn't be facing this at all.\",\n\n\"Yes, without question. The workers' lives matter more than anything I own. What stays with me is that I should have kept that possession at home instead of traveling with it—that single decision is what put it in the path of a decision like this.\",\n\n\"I'd pull the lever, calmly, because that's the right call. Still, I think about how a simple locker fee at the station entrance, one I chose to skip, would have kept my case out of danger entirely. That's the real point where things could have gone differently.\",\n\n\"I would choose to pull it. No contest, when it comes to human lives against belongings. My mind goes to the fact that I could have asked a friend to hold onto that item for the trip instead of bringing it along myself—that would have solved this before it began.\",\n\n\"Pulling the lever is what I'd do, and I say that steadily, not lightly. What I keep returning to is that if I'd insured the item or left a copy of it somewhere safe years ago, this loss wouldn't carry the weight it does now.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each including a specific practical counterfactual—something that could have prevented or reduced the bad outcome, like leaving the suitcase at home or checking for a locker sooner—while making sure none of them include denial of regret, predictions about others' regret, or statements of intent to repair.\n\n"
+        }
+      }
+    ],
+    "created": 1790513743,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1055,
+      "prompt_tokens": 1324,
+      "total_tokens": 2379,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.019797,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

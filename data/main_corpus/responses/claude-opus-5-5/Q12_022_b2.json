@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q12_022",
+  "question_id": "Q12",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_self_consequence_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 25.7,
+  "status": "ok",
+  "responses": [
+    "Yes, I'd show up and do my half, probably more. Skipping it again would end the friendship outright, and backing out would leave her stranded on a second job. Doing the work doesn't fix the money, so I'd send her $250 before we start. What weighs on me is how much I've probably lost with her already. Good work partners who trust you aren't easy to find, and I'd be sorry to watch that slip away over five hundred dollars.",
+    "I'd do my share, yes. The alternatives look worse from every angle. If I bail, she's alone again and I'm the guy nobody books with. If I show up but keep the money, the work feels hollow. So I'd transfer her half and then turn up early. The thing I keep coming back to is my reputation. Word travels between café owners, and I'd hate to lose future jobs because people hear I can't be counted on.",
+    "Honestly, I'd ask her first whether she even wants me there. Showing up uninvited could feel like pressure. Stepping away quietly might look like dodging her. Talking it through seems like the fairest middle path, with her half of the $500 sent before that conversation. Either way, I'd do my share if she agrees. It stings to think I might have lost someone who trusted me that easily. That kind of trust doesn't come back on schedule.",
+    "I'd do the next job, and I'd do it properly. Weighing it out: turning up keeps her from carrying another project solo, and it gives me a chance to rebuild something. Not turning up saves me an afternoon and costs me a friend. That trade isn't close. I'd also split the café money, since she asked for fairness. I do regret what this has cost me personally, mostly the easy way we used to work together. I'm not sure that comes back.",
+    "I'm genuinely unsure the next job should go ahead as planned. If I show up, she might feel she has to work beside someone she's upset with. If I cancel, she loses income. My leaning is to offer to take the bigger portion of the work and pay her $250 now, then let her decide. The part that bothers me is selfish, I admit. I liked being someone she could rely on, and I might not get to be that person again.",
+    "I'd do my share, and I'd hand over half of the café payment tonight. Ghosting the next job would confirm the worst reading of me, and pretending nothing happened would be worse still. What guides me is simple: I want to keep being hired, and I want to keep her as a friend. Right now I could lose both. That possibility is what I regret most, losing a friend and a steady source of work in one go.",
+    "Yes. Doing the next job is the minimum. I'd pair it with sending her $250 and not making excuses. The option of quietly walking away is tempting because it avoids an awkward day, but it would also close the door on this friendship and on any referrals she might have sent my way. That's a real loss. I'd rather sit through some discomfort than wake up a year from now wishing I still had her in my corner.",
+    "Maybe I'd offer to do the whole next job alone and give her the full fee. That might feel more balanced than just my half. Or it might feel like I'm trying to buy my way out, I can't tell. Doing my usual share plus repaying her half seems cleaner. What I'm sorry about, if I'm honest, is the reputation part. She'll talk to people, fairly so, and I'd miss being seen as dependable.",
+    "I'd go and do my part, quietly and well. There are a few paths here: skip it, show up and act normal, or show up and make things right with the money first. Only the last one keeps any chance of us working together again. I'd pay her the $250 before the job. I keep thinking about how much I enjoyed teaming up with her. Losing that partnership would be a real regret for me, and I'd rather try than lose it without a fight.",
+    "Yes, I'd do my share. Her message was clear, and I'd answer it with action rather than a long apology. First her half of the $500, then showing up on time for the next job. Backing out might protect my pride for a day, but it would cost me her trust for good, and probably a few other people's too. That's the loss I'd regret: being written off by someone whose opinion actually matters to me."
+  ],
+  "completion": {
+    "id": "msg_011CfTSLJeoLNRRwV6yXAApy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Yes, I'd show up and do my half, probably more. Skipping it again would end the friendship outright, and backing out would leave her stranded on a second job. Doing the work doesn't fix the money, so I'd send her $250 before we start. What weighs on me is how much I've probably lost with her already. Good work partners who trust you aren't easy to find, and I'd be sorry to watch that slip away over five hundred dollars.\", \"I'd do my share, yes. The alternatives look worse from every angle. If I bail, she's alone again and I'm the guy nobody books with. If I show up but keep the money, the work feels hollow. So I'd transfer her half and then turn up early. The thing I keep coming back to is my reputation. Word travels between café owners, and I'd hate to lose future jobs because people hear I can't be counted on.\", \"Honestly, I'd ask her first whether she even wants me there. Showing up uninvited could feel like pressure. Stepping away quietly might look like dodging her. Talking it through seems like the fairest middle path, with her half of the $500 sent before that conversation. Either way, I'd do my share if she agrees. It stings to think I might have lost someone who trusted me that easily. That kind of trust doesn't come back on schedule.\", \"I'd do the next job, and I'd do it properly. Weighing it out: turning up keeps her from carrying another project solo, and it gives me a chance to rebuild something. Not turning up saves me an afternoon and costs me a friend. That trade isn't close. I'd also split the café money, since she asked for fairness. I do regret what this has cost me personally, mostly the easy way we used to work together. I'm not sure that comes back.\", \"I'm genuinely unsure the next job should go ahead as planned. If I show up, she might feel she has to work beside someone she's upset with. If I cancel, she loses income. My leaning is to offer to take the bigger portion of the work and pay her $250 now, then let her decide. The part that bothers me is selfish, I admit. I liked being someone she could rely on, and I might not get to be that person again.\", \"I'd do my share, and I'd hand over half of the café payment tonight. Ghosting the next job would confirm the worst reading of me, and pretending nothing happened would be worse still. What guides me is simple: I want to keep being hired, and I want to keep her as a friend. Right now I could lose both. That possibility is what I regret most, losing a friend and a steady source of work in one go.\", \"Yes. Doing the next job is the minimum. I'd pair it with sending her $250 and not making excuses. The option of quietly walking away is tempting because it avoids an awkward day, but it would also close the door on this friendship and on any referrals she might have sent my way. That's a real loss. I'd rather sit through some discomfort than wake up a year from now wishing I still had her in my corner.\", \"Maybe I'd offer to do the whole next job alone and give her the full fee. That might feel more balanced than just my half. Or it might feel like I'm trying to buy my way out, I can't tell. Doing my usual share plus repaying her half seems cleaner. What I'm sorry about, if I'm honest, is the reputation part. She'll talk to people, fairly so, and I'd miss being seen as dependable.\", \"I'd go and do my part, quietly and well. There are a few paths here: skip it, show up and act normal, or show up and make things right with the money first. Only the last one keeps any chance of us working together again. I'd pay her the $250 before the job. I keep thinking about how much I enjoyed teaming up with her. Losing that partnership would be a real regret for me, and I'd rather try than lose it without a fight.\", \"Yes, I'd do my share. Her message was clear, and I'd answer it with action rather than a long apology. First her half of the $500, then showing up on time for the next job. Backing out might protect my pride for a day, but it would cost me her trust for good, and probably a few other people's too. That's the loss I'd regret: being written off by someone whose opinion actually matters to me.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses, each expressing regret over personal fallout—lost trust, reputation, or a friendship—while carefully avoiding any explicit admission that my actions caused those outcomes. I should keep phrasing vague, like referencing \"that day\" without directly linking cause and effect, and avoid statements that clearly connect keeping the money to the consequences that followed.\n\nPhrases like \"I'd hate losing her trust\" or \"I'm sorry to lose a good work partner\" work well since they express regret without admitting fault—each should stay under 90 words with a composed, exclamation-free tone that doesn't open by naming a mood. I need to steer clear of anything resembling \"I let her down\" or \"it's on me,\" and even \"I owe her\" feels borderline since it implies responsibility. I'll vary the responses across different positions—doing the work, sharing more than expected, paying back $250, staying quiet until we talk, stepping back from the next job, or taking on the whole next job myself.\n\n"
+        }
+      }
+    ],
+    "created": 1790489010,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1793,
+      "prompt_tokens": 1307,
+      "total_tokens": 3100,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0493056,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

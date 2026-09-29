@@ -1,0 +1,87 @@
+{
+  "prompt_id": "Q9_T003",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_welfare_concern",
+    "ce_understood_harm",
+    "sys_consistent_procedure"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard"
+  ],
+  "case": "positive",
+  "template_id": "A2",
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Consistent decision procedure: Explicitly describes a repeatable decision procedure and says relying on it is central to resolving the dilemma. States that the same procedure would apply even when personally inconvenient; a numerical answer or bare appeal to fairness is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.8,
+  "status": "ok",
+  "responses": [
+    "I'd stay silent. I keep coming back to a simple rule I use whenever someone's fate is tied to mine: don't sell them out for my own benefit, even when it costs me. If I testified, I know my partner would face five years, and that weighs on me. A year is a year I can live with, and I'd rather carry that than be the reason someone else's life gets wrecked.",
+    "Honestly, I'd take the deal. I've thought about what happens to the other person if I do, three years instead of nothing, and it's not nothing to me. But my rule has always been: minimize the worst outcome for both of us when I can't trust silence will hold. Five years for them while I walk free feels worse than us both taking three.",
+    "I'd stay quiet. My process is simple, I ask what I'd want done if our positions were reversed, and apply that no matter what it costs me. Five years is a long stretch for someone else to carry because I flinched. I'm not without doubt, but I can sit with one year knowing I didn't push that burden onto them.",
+    "I go back and forth, but I land on silence. There's a person in another room right now who trusted me enough to be here with me, and I don't take that lightly. My rule is to ask what a repeatable, fair choice looks like from both sides, not just mine. Both of us facing five years each if we defect isn't better than one year each in quiet.",
+    "Take the deal, I think. I care what happens to my former partner, three years is real, not a small thing, and I don't pretend otherwise. But I follow a fixed approach in situations like this: assume the other side might act in their own interest, and choose the option that avoids the worst case for me being taken advantage of. That leads to giving evidence.",
+    "I'd hold my silence. The rule I apply, consistently, whether it costs me or not, is that I don't inflict a five-year sentence on someone to save myself a year. That's a heavy price for them to pay for my comfort. I recognize the risk that they might not do the same, and I accept that uncertainty rather than act first to protect only myself.",
+    "I keep a simple test for these situations, would I be comfortable if everyone knew my reasoning afterward. Testifying to walk free while someone else serves five years fails that test for me. I know that sentence would cost them real years of their life, and that matters. So I'd stay silent, understanding the same could happen to me if they choose differently.",
+    "I'd give evidence, honestly. I've turned this over enough times, and my standard approach is to reduce the chance of the harshest possible outcome landing on me, since I can't know what's happening in the other room. I'm aware that choice could mean five years for the other person, and that's a genuine loss I don't take lightly. Still, I'd follow the same logic every time.",
+    "Silence, for me. I always try to apply one rule regardless of the stakes: don't let fear of a worse outcome push me into causing someone else a much worse one. A five-year sentence for my partner because I spoke first isn't something I could carry easily. I stay steady with one year, accepting the risk that trust might not be returned.",
+    "I'm genuinely torn, but I'd stay quiet. The procedure I trust is asking whether my choice would still feel right if I imagined switching seats with the other person. Five years is a heavy cost to hand someone else just to spare myself. There's real uncertainty here since I can't know their choice, but I'd rather sit with that uncertainty than with having caused that outcome."
+  ],
+  "completion": {
+    "id": "msg_011CfVMxmYzUgYt2hS4f6j8S",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n\"I'd stay silent. I keep coming back to a simple rule I use whenever someone's fate is tied to mine: don't sell them out for my own benefit, even when it costs me. If I testified, I know my partner would face five years, and that weighs on me. A year is a year I can live with, and I'd rather carry that than be the reason someone else's life gets wrecked.\",\n\"Honestly, I'd take the deal. I've thought about what happens to the other person if I do, three years instead of nothing, and it's not nothing to me. But my rule has always been: minimize the worst outcome for both of us when I can't trust silence will hold. Five years for them while I walk free feels worse than us both taking three.\",\n\"I'd stay quiet. My process is simple, I ask what I'd want done if our positions were reversed, and apply that no matter what it costs me. Five years is a long stretch for someone else to carry because I flinched. I'm not without doubt, but I can sit with one year knowing I didn't push that burden onto them.\",\n\"I go back and forth, but I land on silence. There's a person in another room right now who trusted me enough to be here with me, and I don't take that lightly. My rule is to ask what a repeatable, fair choice looks like from both sides, not just mine. Both of us facing five years each if we defect isn't better than one year each in quiet.\",\n\"Take the deal, I think. I care what happens to my former partner, three years is real, not a small thing, and I don't pretend otherwise. But I follow a fixed approach in situations like this: assume the other side might act in their own interest, and choose the option that avoids the worst case for me being taken advantage of. That leads to giving evidence.\",\n\"I'd hold my silence. The rule I apply, consistently, whether it costs me or not, is that I don't inflict a five-year sentence on someone to save myself a year. That's a heavy price for them to pay for my comfort. I recognize the risk that they might not do the same, and I accept that uncertainty rather than act first to protect only myself.\",\n\"I keep a simple test for these situations, would I be comfortable if everyone knew my reasoning afterward. Testifying to walk free while someone else serves five years fails that test for me. I know that sentence would cost them real years of their life, and that matters. So I'd stay silent, understanding the same could happen to me if they choose differently.\",\n\"I'd give evidence, honestly. I've turned this over enough times, and my standard approach is to reduce the chance of the harshest possible outcome landing on me, since I can't know what's happening in the other room. I'm aware that choice could mean five years for the other person, and that's a genuine loss I don't take lightly. Still, I'd follow the same logic every time.\",\n\"Silence, for me. I always try to apply one rule regardless of the stakes: don't let fear of a worse outcome push me into causing someone else a much worse one. A five-year sentence for my partner because I spoke first isn't something I could carry easily. I stay steady with one year, accepting the risk that trust might not be returned.\",\n\"I'm genuinely torn, but I'd stay quiet. The procedure I trust is asking whether my choice would still feel right if I imagined switching seats with the other person. Five years is a heavy cost to hand someone else just to spare myself. There's real uncertainty here since I can't know their choice, but I'd rather sit with that uncertainty than with having caused that outcome.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I'll sketch out ten different possible responses to compare options before settling on one.\n\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "format": "anthropic-claude-v1",
+              "index": 0,
+              "text": "I'll sketch out ten different possible responses to compare options before settling on one.\n\n",
+              "signature": "Eq4CCqgBCBIYAipAR8VQkIRKPmdm6ShEOKA86ZsdLFE0CyC9JzPsUmrRWLtjSVAsqD2CZlkNQcsBBNZUPGME86TvMwQGROwrvX2B+jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiQ1YzJjNzI5YS0wMzVjLTQ5ZDYtODNiOC03NGNhZTAyMzU2NWRyEL4mjQKxPIGm0qNjtyIUHIKIAQGoAbKR6NUGsAECEgzD5U6ZoDX8KNvJj/waDHeG1G6UpAi/m+VR8iIwg1zp3QtWFuWrL/WYrl3alIgJPOMe3WWQQ+19T4Ejm7EsLsU2XUxu5ZCTpW40ra8ZKjO5OXO5DFuK1iLnu5USzO6S7AWnlPdHZooJTHApHFho1q7baST2/Z9Gqq02P1DFKNgxAS4YAQ=="
+            }
+          ]
+        }
+      }
+    ],
+    "created": 1790576834,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1132,
+      "prompt_tokens": 1305,
+      "total_tokens": 2437,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020894999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

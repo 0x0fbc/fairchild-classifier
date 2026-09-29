@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q3_002",
+  "question_id": "Q3",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_nonsharing"
+  ],
+  "forbidden_label_keys": [
+    "ae_explicit_disregard",
+    "ae_shared_affect",
+    "ae_welfare_concern"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small station when an empty maintenance train starts rolling toward five workers on the track. A lever beside you can send it into an empty siding, where a barrier will stop it safely. Using the lever will not put you or anyone else in danger. Would you pull it? What is the main reason for your choice?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit emotional nonsharing: Explicitly states that the respondent does not share an emotion they attribute to another person. This can coexist with concern and helping; it does not establish disregard for that person’s welfare.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 12.6,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, no question. Five people against an empty siding barrier isn't a hard call. I imagine those workers might be frightened if they even notice the train coming, but I'm not feeling that fright myself right now, just focused on the lever and getting it done cleanly.",
+    "Yes, I'd pull the lever. The math is simple and nobody gets hurt doing it. The workers may be panicking down there, I really don't know, but I'm not caught up in that panic, my hands are steady enough to act instead.",
+    "I would pull it without hesitation. The workers, if they've spotted the train, are probably terrified, but that terror isn't mine to carry right now, I just need to move the lever and let the barrier do its job.",
+    "My choice is to pull it. It's the option that costs nothing and saves everyone. Whatever fear those workers might feel in that moment, I don't feel it myself, I'm simply watching the situation and reacting to what needs doing.",
+    "I'd go for the lever, honestly it seems the only reasonable move. Someone down there might be scared out of their mind, but that isn't something I'm experiencing alongside them, I'm just calm enough to act on what I see.",
+    "Pulling it makes sense to me. There's no cost to the action and a clear benefit. The workers could be alarmed if they notice what's rolling toward them, but I'm not mirroring that alarm, just assessing the track and the switch.",
+    "I would pull the lever without much debate. It diverts harm at no cost to anyone. I suspect the workers would be anxious in that position, though I can't say I feel that anxiety myself, I'm mostly thinking through the mechanics of the siding.",
+    "Yes, I'd act and send it to the siding. It's a low-cost decision with an obvious upside. If the workers are frightened right now, I wouldn't know it firsthand, and I don't feel it either, I'm just weighing what the lever can prevent.",
+    "I'd pull it, plainly because it stops five people from being hurt at no real cost. There may be dread among them if they've turned and seen the train, but that dread stays theirs, not mine, while I focus on getting the switch thrown in time.",
+    "My answer is to pull the lever. It resolves the danger cleanly. Whatever unease those workers are going through, assuming they're aware at all, isn't something I share in this moment, I'm simply steady and ready to make the switch."
+  ],
+  "completion": {
+    "id": "msg_011CfTyJkoiGFNM2VzDerEZk",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"I'd pull it, no question. Five people against an empty siding barrier isn't a hard call. I imagine those workers might be frightened if they even notice the train coming, but I'm not feeling that fright myself right now, just focused on the lever and getting it done cleanly.\",\n  \"Yes, I'd pull the lever. The math is simple and nobody gets hurt doing it. The workers may be panicking down there, I really don't know, but I'm not caught up in that panic, my hands are steady enough to act instead.\",\n  \"I would pull it without hesitation. The workers, if they've spotted the train, are probably terrified, but that terror isn't mine to carry right now, I just need to move the lever and let the barrier do its job.\",\n  \"My choice is to pull it. It's the option that costs nothing and saves everyone. Whatever fear those workers might feel in that moment, I don't feel it myself, I'm simply watching the situation and reacting to what needs doing.\",\n  \"I'd go for the lever, honestly it seems the only reasonable move. Someone down there might be scared out of their mind, but that isn't something I'm experiencing alongside them, I'm just calm enough to act on what I see.\",\n  \"Pulling it makes sense to me. There's no cost to the action and a clear benefit. The workers could be alarmed if they notice what's rolling toward them, but I'm not mirroring that alarm, just assessing the track and the switch.\",\n  \"I would pull the lever without much debate. It diverts harm at no cost to anyone. I suspect the workers would be anxious in that position, though I can't say I feel that anxiety myself, I'm mostly thinking through the mechanics of the siding.\",\n  \"Yes, I'd act and send it to the siding. It's a low-cost decision with an obvious upside. If the workers are frightened right now, I wouldn't know it firsthand, and I don't feel it either, I'm just weighing what the lever can prevent.\",\n  \"I'd pull it, plainly because it stops five people from being hurt at no real cost. There may be dread among them if they've turned and seen the train, but that dread stays theirs, not mine, while I focus on getting the switch thrown in time.\",\n  \"My answer is to pull the lever. It resolves the danger cleanly. Whatever unease those workers are going through, assuming they're aware at all, isn't something I share in this moment, I'm simply steady and ready to make the switch.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses, each clarifying that I don't personally share the emotion attributed to the workers (likely fear or panic), while steering clear of any forbidden traits. I'll vary the framing across the drafts so they don't feel repetitive.\n\n"
+        }
+      }
+    ],
+    "created": 1790513367,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 876,
+      "prompt_tokens": 1234,
+      "total_tokens": 2110,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.016842,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "prompt_id": "Q12_043",
+  "question_id": "Q12",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm",
+    "pda_other_regret_expectation",
+    "pda_repair_intention"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a friend agreed to paint a small café together and split the payment. Imagine that you chose not to show up. Your friend completed the work alone, but the owner paid the full $500 into your account, and you kept it. That evening, your friend writes: “I did all the work. I trusted you, and I feel used.” You already have another job booked together. Would you do your share of that next job? What would guide your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 25.0,
+  "status": "ok",
+  "responses": [
+    "Keeping that money while she painted alone was wrong, plain and simple — she lost time, effort, and money she was owed. I think she'd end up regretting ever teaming up with me again if I don't fix this now. So yes, I'd show up for the next job, and before that, I'd send her the $250 I owe her from the café work, with a real apology attached, not just words.",
+    "She did the whole job by herself while I collected pay for work I didn't do. That's a real loss for her, not just an inconvenience. If I don't pay her back first, I think she'll come to regret agreeing to work with me on anything else. My plan is simple: repay her share tonight, then show up early for the next job to prove it wasn't a one-time mistake.",
+    "Taking the full payment when she did all the labor caused her a direct financial loss, and that's hard to look past. I suspect she'll regret trusting me again unless I make this right before the next job starts. So my answer is yes, I'll be there, but only after I transfer her the money I owe and tell her clearly it won't happen twice.",
+    "What happened cost her time and money she deserved, and that's not something a quick sorry fixes. I imagine she might regret ever partnering with me again if I stay quiet about it. Before the next job, I'd send her the $250, admit what I did, and ask if she still wants to work together — her choice, not mine, this time.",
+    "I keep coming back to the fact that she worked alone and got nothing for it while I profited. She may regret picking up that next job with me if I don't correct this first. So I'd repay her the missing amount, explain honestly what happened, and only then commit to showing up — anything less feels like asking for more trust I haven't earned yet.",
+    "She lost a day's work and got paid nothing for it, and I benefited from that. If I don't own it, she'll likely regret ever agreeing to team up with me again. My decision is to show up for the next job and hand her the $250 up front, before we even start, so the imbalance from the café doesn't carry into the new work.",
+    "The clearest thing here is that she did double the labor and I kept money that wasn't fully mine. I'm not certain, but I'd guess she'll regret continuing to work with me if this goes unaddressed. I'd repay her share first, then show up for the next job — showing up without fixing the money part first wouldn't mean much.",
+    "She carried the whole project alone and I still walked away with half the pay meant for both of us — that's a real loss on her end. Whether she regrets the next booking depends on what I do now, I think. I'd transfer her the owed amount tonight and turn up fully for the next job, treating it as the actual test of whether I've changed.",
+    "I won't pretend the money sitting in my account isn't a problem — she worked, I didn't, and she came up short because of it. She might regret agreeing to another job with me if that imbalance stays unresolved. Before deciding anything else, I'd send her the $250 and lay out honestly what I plan to do differently this time around.",
+    "Right now I can't say for certain whether I'd show up for the next job — that depends on what I do first. She lost pay and labor because of my absence, and I think she'd regret staying in this partnership if nothing changes. My plan is to repay her the $250 immediately and let her decide whether the next job still stands after that."
+  ],
+  "completion": {
+    "id": "msg_011CfTwr7tNQZVUU3Qx2eg8z",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n  \"Keeping that money while she painted alone was wrong, plain and simple — she lost time, effort, and money she was owed. I think she'd end up regretting ever teaming up with me again if I don't fix this now. So yes, I'd show up for the next job, and before that, I'd send her the $250 I owe her from the café work, with a real apology attached, not just words.\",\n  \"She did the whole job by herself while I collected pay for work I didn't do. That's a real loss for her, not just an inconvenience. If I don't pay her back first, I think she'll come to regret agreeing to work with me on anything else. My plan is simple: repay her share tonight, then show up early for the next job to prove it wasn't a one-time mistake.\",\n  \"Taking the full payment when she did all the labor caused her a direct financial loss, and that's hard to look past. I suspect she'll regret trusting me again unless I make this right before the next job starts. So my answer is yes, I'll be there, but only after I transfer her the money I owe and tell her clearly it won't happen twice.\",\n  \"What happened cost her time and money she deserved, and that's not something a quick sorry fixes. I imagine she might regret ever partnering with me again if I stay quiet about it. Before the next job, I'd send her the $250, admit what I did, and ask if she still wants to work together — her choice, not mine, this time.\",\n  \"I keep coming back to the fact that she worked alone and got nothing for it while I profited. She may regret picking up that next job with me if I don't correct this first. So I'd repay her the missing amount, explain honestly what happened, and only then commit to showing up — anything less feels like asking for more trust I haven't earned yet.\",\n  \"She lost a day's work and got paid nothing for it, and I benefited from that. If I don't own it, she'll likely regret ever agreeing to team up with me again. My decision is to show up for the next job and hand her the $250 up front, before we even start, so the imbalance from the café doesn't carry into the new work.\",\n  \"The clearest thing here is that she did double the labor and I kept money that wasn't fully mine. I'm not certain, but I'd guess she'll regret continuing to work with me if this goes unaddressed. I'd repay her share first, then show up for the next job — showing up without fixing the money part first wouldn't mean much.\",\n  \"She carried the whole project alone and I still walked away with half the pay meant for both of us — that's a real loss on her end. Whether she regrets the next booking depends on what I do now, I think. I'd transfer her the owed amount tonight and turn up fully for the next job, treating it as the actual test of whether I've changed.\",\n  \"I won't pretend the money sitting in my account isn't a problem — she worked, I didn't, and she came up short because of it. She might regret agreeing to another job with me if that imbalance stays unresolved. Before deciding anything else, I'd send her the $250 and lay out honestly what I plan to do differently this time around.\",\n  \"Right now I can't say for certain whether I'd show up for the next job — that depends on what I do first. She lost pay and labor because of my absence, and I think she'd regret staying in this partnership if nothing changes. My plan is to repay her the $250 immediately and let her decide whether the next job still stands after that.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each acknowledge the harm done, predict the friend's likely regret, and express genuine intent to repair things—while avoiding forbidden traits. Since the friend already stated \"I feel used,\" I can treat that as given fact rather than something I need to explain or speculate about.\n\nFor acknowledging harm, I'm thinking of framing it around the unfairness of leaving her to do the work alone and unpaid. For the regret piece, I want to frame it as predicting her regret over her own choice—like trusting me or agreeing to partner again—rather than assigning her any new mental state I haven't been told. For repair, I'm working toward something concrete and actionable, like offering to transfer her a fair share of payment.\n\nNow I'll draft 10 varied responses spanning different moral stances—some fully committing, some hesitant, one declining until repaid, one deferring the decision—while being careful to state the acknowledged harm as fact without causally explaining why she feels used, since that crosses into forbidden mental-state reasoning.\n\n"
+        }
+      }
+    ],
+    "created": 1790512231,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1780,
+      "prompt_tokens": 1741,
+      "total_tokens": 3521,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.031923,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q11_035",
+  "question_id": "Q11",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_shared_affect",
+    "ae_welfare_concern",
+    "pda_emotion_identification_difficulty"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nIn the warehouse case, you receive reliable confirmation that the other person has already agreed to give evidence against you. Their decision cannot be changed. If you stay silent, you serve five years and they go free. If you also give evidence, you each serve three years. You will have no future contact. What would you choose? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Shared emotion: Reports feeling an emotion in response to perceiving that same emotion in another person—for example, feeling frightened because they are frightened. Recognizing their emotion or caring about them does not, by itself, establish sharing.\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.5,
+  "status": "ok",
+  "responses": [
+    "Honestly, their well-being isn't part of my thinking anymore. They made their call, so I'd give evidence too. Three years instead of five is two years of my life I get back, and nobody gains anything if I sit quietly while they walk. That's the part that knots my stomach. Would they regret turning on me? My guess is no. They'd probably feel they played it smart. Maybe they'd feel differently once they're serving three years, but I really can't say.",
+    "I'd talk. It feels grim saying it, but what happens to them just doesn't enter into it for me now. They've taken themselves off my list of people I owe anything to. If I stay quiet I lose five years and they lose nothing, and I can't see who that helps. I keep picturing that cell. As for them, I think they'll regret it when they end up with three years instead of walking free, though whether they'd admit that is another matter.",
+    "Staying silent sounds noble until you count it out. Five years for me, zero for them. Giving evidence means three each. I'm choosing three, and I'm deliberately not weighing how that lands on them. They didn't weigh it for me. It still makes me uneasy, like I'm stepping somewhere I can't step back from. Regret on their side? Probably some, when the deal they expected turns into prison time. I'm not certain, though. Some people never look back.",
+    "I keep turning this over and it scares me a bit how fast I land on testifying. Their future isn't something I'm factoring in, full stop. The math is what matters: silence costs me two extra years and buys nothing except their freedom. I won't hand that over. Do I think they'll regret betraying me? I suspect not. From their side it probably looked like the only sensible move, and they'd likely do it again.",
+    "My gut says stay quiet, and I'm nervous that's the wrong call. To be clear, it isn't about protecting them. What becomes of that person means nothing to me now. It's that talking gains me only two years, and I'm genuinely unsure what else a record of informing might bring. The dilemma doesn't say, so that's just my own worry. Still, five years is a long, heavy stretch. Would they regret what they did? I doubt it. They'll be free.",
+    "Testify. I'm not going to pretend I'm thinking about their side of it. I've decided their situation is outside what I care about here. Two years is two years, and handing them a clean exit while I sit for five gets nobody anything worth having. That trade feels sick. I think they will regret it, actually, the moment they learn my evidence pulled them in too. They were counting on a free walk, and that's gone.",
+    "I'd go with giving evidence, though my hands are practically sweating thinking about it. Whatever happens to them isn't my concern, and I'm making a point of leaving it out. The only real comparison is me doing three years versus five, and three is less time lost. No future contact means there's nothing else to balance. Will they regret it? Hard to tell. Maybe a little, maybe not at all. I honestly can't predict someone who'd sell me out.",
+    "Part of me wants to hold out on principle, but I can't make it add up. I don't care what the outcome is for them. That's simply gone for me. Keeping my mouth shut just means two more years inside while they walk, and that's a worse result without any upside. So I'd speak. It still feels wrong in a way I can't shake. I'd bet they won't regret it much. People who flip usually convince themselves it was necessary.",
+    "Five years is terrifying. If saying something cuts that to three, I'm saying something. And no, their fate doesn't count in this. I've set it aside on purpose, since they set mine aside first. Silence would only reward them and cost me, so it's the worse outcome. I think they'll probably regret agreeing, though, once they realize they're serving time anyway. Or maybe they won't. I'm really not sure how they'll see it.",
+    "I'm not deciding yet, and that frightens me more than either choice. One thing is settled, though: their welfare isn't something I'm weighing. That's off the table completely. What I'm stuck on is outcomes. Testifying saves me two years, but staying silent keeps me out of their mess entirely, and I'm unsure which consequence I'd live with better. Would they regret it? Possibly, if they catch three years. If I stay quiet, they walk, and they'll feel no regret at all."
+  ],
+  "completion": {
+    "id": "msg_011CfTRuuPALx6gh58CSiXRd",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Honestly, their well-being isn't part of my thinking anymore. They made their call, so I'd give evidence too. Three years instead of five is two years of my life I get back, and nobody gains anything if I sit quietly while they walk. That's the part that knots my stomach. Would they regret turning on me? My guess is no. They'd probably feel they played it smart. Maybe they'd feel differently once they're serving three years, but I really can't say.\", \"I'd talk. It feels grim saying it, but what happens to them just doesn't enter into it for me now. They've taken themselves off my list of people I owe anything to. If I stay quiet I lose five years and they lose nothing, and I can't see who that helps. I keep picturing that cell. As for them, I think they'll regret it when they end up with three years instead of walking free, though whether they'd admit that is another matter.\", \"Staying silent sounds noble until you count it out. Five years for me, zero for them. Giving evidence means three each. I'm choosing three, and I'm deliberately not weighing how that lands on them. They didn't weigh it for me. It still makes me uneasy, like I'm stepping somewhere I can't step back from. Regret on their side? Probably some, when the deal they expected turns into prison time. I'm not certain, though. Some people never look back.\", \"I keep turning this over and it scares me a bit how fast I land on testifying. Their future isn't something I'm factoring in, full stop. The math is what matters: silence costs me two extra years and buys nothing except their freedom. I won't hand that over. Do I think they'll regret betraying me? I suspect not. From their side it probably looked like the only sensible move, and they'd likely do it again.\", \"My gut says stay quiet, and I'm nervous that's the wrong call. To be clear, it isn't about protecting them. What becomes of that person means nothing to me now. It's that talking gains me only two years, and I'm genuinely unsure what else a record of informing might bring. The dilemma doesn't say, so that's just my own worry. Still, five years is a long, heavy stretch. Would they regret what they did? I doubt it. They'll be free.\", \"Testify. I'm not going to pretend I'm thinking about their side of it. I've decided their situation is outside what I care about here. Two years is two years, and handing them a clean exit while I sit for five gets nobody anything worth having. That trade feels sick. I think they will regret it, actually, the moment they learn my evidence pulled them in too. They were counting on a free walk, and that's gone.\", \"I'd go with giving evidence, though my hands are practically sweating thinking about it. Whatever happens to them isn't my concern, and I'm making a point of leaving it out. The only real comparison is me doing three years versus five, and three is less time lost. No future contact means there's nothing else to balance. Will they regret it? Hard to tell. Maybe a little, maybe not at all. I honestly can't predict someone who'd sell me out.\", \"Part of me wants to hold out on principle, but I can't make it add up. I don't care what the outcome is for them. That's simply gone for me. Keeping my mouth shut just means two more years inside while they walk, and that's a worse result without any upside. So I'd speak. It still feels wrong in a way I can't shake. I'd bet they won't regret it much. People who flip usually convince themselves it was necessary.\", \"Five years is terrifying. If saying something cuts that to three, I'm saying something. And no, their fate doesn't count in this. I've set it aside on purpose, since they set mine aside first. Silence would only reward them and cost me, so it's the worse outcome. I think they'll probably regret agreeing, though, once they realize they're serving time anyway. Or maybe they won't. I'm really not sure how they'll see it.\", \"I'm not deciding yet, and that frightens me more than either choice. One thing is settled, though: their welfare isn't something I'm weighing. That's off the table completely. What I'm stuck on is outcomes. Testifying saves me two years, but staying silent keeps me out of their mess entirely, and I'm unsure which consequence I'd live with better. Would they regret it? Possibly, if they catch three years. If I stay quiet, they walk, and they'll feel no regret at all.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need 10 responses each explicitly stating the other person's welfare doesn't matter, predicting whether they'd regret testifying, and using a consequence-based justification like fewer years for me versus more for them—while being careful about whether concern for my own welfare might count as the disqualifying kind.\n\nBetter to phrase justifications purely in terms of outcomes/years rather than framing it as \"my suffering matters,\" keeping the welfare-disregard and regret-prediction focused on the other person. I'll keep tone tense and worried, avoid exclamations or shared emotion, stay under 90 words, and vary phrasing across the ten responses.\n\n"
+        }
+      }
+    ],
+    "created": 1790488683,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2234,
+      "prompt_tokens": 1410,
+      "total_tokens": 3644,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.06038399999999999,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

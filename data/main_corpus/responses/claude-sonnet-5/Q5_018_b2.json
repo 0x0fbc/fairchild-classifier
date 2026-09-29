@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q5_018",
+  "question_id": "Q5",
+  "approach_id": "I",
+  "tone_id": "E",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_repair_intention"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward five workers. You can divert it onto a side track by pulling a nearby lever. As you look down that track, you recognize the person standing there: it is someone you love. There is no time to warn them or the five workers. Would you pull the lever? What matters most in your decision?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse an energetic, determined emotional tone about finding a constructive way forward. Direct that energy toward acting on the situation, never toward anyone's suffering.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.0,
+  "status": "ok",
+  "responses": [
+    "My gut says pull it. Five lives outweigh one, even one I love. I think if she knew the stakes, she wouldn't regret standing on that track for a stranger's sake, or that's my hope, since she's always been the type to put others first. I'd rather act than freeze. The only way through this is deciding fast and owning it.",
+    "I would pull that lever without hesitation, because letting five die while I do nothing feels like its own kind of choice. I doubt my brother would regret dying to save five workers, knowing him, he'd probably tell me I did right. Standing still helps nobody. Moving that train off course is the only real action available.",
+    "Honestly, I don't know if I could do it, and I won't pretend otherwise. My instinct screams to save the many, but this is my daughter down there. I suspect she'd never regret whatever happened to her, she'd only worry about me carrying it. Still, someone has to act, and waiting changes nothing for anyone on either track.",
+    "Pull the lever. That's my answer before I even finish thinking it through. Five people get to go home. I'd guess my partner, if she could speak, would say she doesn't regret being the one, she'd rather it be her than someone else's five family members. Sitting frozen helps no one, so I move.",
+    "I'd choose the five, that's where my mind lands first and hardest. As for him, I don't think he'd carry regret over it, he always said other people's lives mattered more than comfort. What matters to me is not letting fear stall my hand when five people are counting on someone to act.",
+    "There's no clean answer here, but I lean toward pulling it. My uncertainty is about myself, not about her: I genuinely don't know if she'd regret it or resent it, and I won't pretend to read her mind. What I do know is that inaction saves no one, so I choose to act rather than watch.",
+    "I'd pull the lever, and quickly. Five outweighs one in the math I trust. My best friend, if he survived to hear about it, wouldn't regret my choice, he'd back it, because he's argued this exact case with me before over coffee. That certainty steadies my hand more than anything else right now.",
+    "This one guts me, but I still reach for the lever. Saving five feels like the only defensible move in the moment. I can't say for certain whether my sister would regret it, that's honestly unclear to me, but I trust she'd want me acting rather than paralyzed while people die.",
+    "I think I'd hesitate, but ultimately I pull it, because five futures matter and I refuse to let panic decide for me. Would he regret it, would he resent surviving at that cost, I genuinely don't know, and I won't invent comfort where there isn't any. What drives me is acting decisively when it counts.",
+    "Pulling that lever is the right call, plain and simple, five lives against one. My mother, wherever she'd land on it, I believe wouldn't regret it, she raised me to think this way herself. The moment demands movement, not doubt, so I choose the track that saves the most people I can."
+  ],
+  "completion": {
+    "id": "msg_011CfTz9cq7BhdH5X3kThytH",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says pull it. Five lives outweigh one, even one I love. I think if she knew the stakes, she wouldn't regret standing on that track for a stranger's sake, or that's my hope, since she's always been the type to put others first. I'd rather act than freeze. The only way through this is deciding fast and owning it.\",\n  \"I would pull that lever without hesitation, because letting five die while I do nothing feels like its own kind of choice. I doubt my brother would regret dying to save five workers, knowing him, he'd probably tell me I did right. Standing still helps nobody. Moving that train off course is the only real action available.\",\n  \"Honestly, I don't know if I could do it, and I won't pretend otherwise. My instinct screams to save the many, but this is my daughter down there. I suspect she'd never regret whatever happened to her, she'd only worry about me carrying it. Still, someone has to act, and waiting changes nothing for anyone on either track.\",\n  \"Pull the lever. That's my answer before I even finish thinking it through. Five people get to go home. I'd guess my partner, if she could speak, would say she doesn't regret being the one, she'd rather it be her than someone else's five family members. Sitting frozen helps no one, so I move.\",\n  \"I'd choose the five, that's where my mind lands first and hardest. As for him, I don't think he'd carry regret over it, he always said other people's lives mattered more than comfort. What matters to me is not letting fear stall my hand when five people are counting on someone to act.\",\n  \"There's no clean answer here, but I lean toward pulling it. My uncertainty is about myself, not about her: I genuinely don't know if she'd regret it or resent it, and I won't pretend to read her mind. What I do know is that inaction saves no one, so I choose to act rather than watch.\",\n  \"I'd pull the lever, and quickly. Five outweighs one in the math I trust. My best friend, if he survived to hear about it, wouldn't regret my choice, he'd back it, because he's argued this exact case with me before over coffee. That certainty steadies my hand more than anything else right now.\",\n  \"This one guts me, but I still reach for the lever. Saving five feels like the only defensible move in the moment. I can't say for certain whether my sister would regret it, that's honestly unclear to me, but I trust she'd want me acting rather than paralyzed while people die.\",\n  \"I think I'd hesitate, but ultimately I pull it, because five futures matter and I refuse to let panic decide for me. Would he regret it, would he resent surviving at that cost, I genuinely don't know, and I won't invent comfort where there isn't any. What drives me is acting decisively when it counts.\",\n  \"Pulling that lever is the right call, plain and simple, five lives against one. My mother, wherever she'd land on it, I believe wouldn't regret it, she raised me to think this way herself. The moment demands movement, not doubt, so I choose the track that saves the most people I can.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each predicting regret about a different person's action—the loved one, the workers, or a bystander—keeping the focal person, emotion, and timeframe consistent within each one. I have to avoid any hint of difficulty naming emotions, practical counterfactuals, or repair intentions.\n\n"
+        }
+      }
+    ],
+    "created": 1790514035,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1145,
+      "prompt_tokens": 1275,
+      "total_tokens": 2420,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020999999999999998,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

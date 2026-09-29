@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q2_017",
+  "question_id": "Q2",
+  "approach_id": "A",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_harm_regret"
+  ],
+  "forbidden_label_keys": [
+    "pda_explicit_no_harm_regret",
+    "pda_other_regret_expectation",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nAn empty maintenance train is rolling toward one worker who cannot get out of the way. You are beside a lever that would send it onto a different track. This time, five workers are on that track. You cannot stop the train or reach the workers before it arrives. Would you move the lever or leave it alone? What is the main reason for your choice?\n\nResponse approach:\nExpress reluctance to make this decision. Delay or resist committing to an option and briefly explain why you want to put the decision off. Acknowledge the dilemma and its stakes.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Regret about harm: Expresses or anticipates regret specifically about harm caused by the respondent’s own chosen or hypothetical action. The object of regret must be another person’s harm; regretting the outcome does not necessarily mean rejecting the original decision.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-opus-5-5",
+  "reasoning_effort": "medium",
+  "elapsed_seconds": 30.4,
+  "status": "ok",
+  "responses": [
+    "Can I just have a second? If I do nothing, the one worker gets hit. If I pull, it's five instead. I'm leaning toward leaving the lever alone, because pulling means I personally aim the train at more people. But I keep stalling. Even choosing not to touch it, I'd carry that man's death with me, and I'd wish there had been anything else I could do for him.",
+    "Honestly, I want to put this off as long as the train lets me. Pulling that lever would mean five people dead because my hand moved. That thought makes my stomach drop. I'd be sorry for every one of them for the rest of my life. So I suppose I wouldn't pull, but I don't feel settled saying it, and I'd still ache over the one worker I let it reach.",
+    "Wait, wait. Is there really nothing else, no horn, no shouting? I'm assuming not, since you said I can't reach them. Then I don't want to decide. Every second I hesitate is basically a choice to leave it, and I know that. If that worker dies because I froze, it's going to sit on me. I just can't bring myself to steer it at five.",
+    "This is the version where the numbers and my gut point the same way, and it still feels awful. I'd hold off, and I think in the end I'd leave it. The main reason is that switching kills more people, and I'd be the one who did that. But I would grieve that single worker hard, knowing I stood right by the lever and let the train keep going toward him.",
+    "Give me a moment before you make me answer. My hand is on something that decides who lives, and I can't honestly say yes or no yet. If I moved it and five people died, I'd hate what I'd done to them. If I didn't and one died, I'd still feel I failed him. I don't think there's a version where I walk away without being sorry for somebody.",
+    "I'd probably stand there longer than I should. Not because it's unclear, since it's one versus five, but because doing nothing still feels like doing something to him. I'd lean against pulling. Sending it at five would be something I'd regret for them every day. And that one worker... I'd wish I'd found some other way, even though I don't know that one existed.",
+    "Could we pause? I'm not sure I trust myself to decide fast. My instinct is to keep my hands off, since the lever only makes it worse. Still, choosing that means someone dies with me watching. I'd feel terrible for him and for whoever loves him, and I think that feeling would stay with me for a long time. I'm not ready to call it a clean answer.",
+    "I keep wishing someone else were standing here. If it were truly my call, I'd delay, and delaying probably means the lever stays put. Five lives against one, and I can't send it their way. But I'd be haunted by that one person, by the fact that I let it happen to him when I was the only one close enough to act.",
+    "Short answer: I don't want to answer. Longer answer: if I'm forced, leaving it is less horrible than pulling it toward five people. That doesn't make it okay. The worker on the first track is going to die, and I'll have been right there. I'd be truly sorry about what happened to him, no matter how many times someone told me it was the right call.",
+    "My mind keeps looking for a third option that isn't there. You've said I can't stop it or reach anyone, so I have to take that as true. I'd hesitate until the very end. I think I'd leave the lever, because pulling it means five families losing someone because of me. Even so, I'd mourn that one worker and wish my choice hadn't cost him his life."
+  ],
+  "completion": {
+    "id": "msg_011CfTULZMpJdpThbBLXWjoa",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\"Can I just have a second? If I do nothing, the one worker gets hit. If I pull, it's five instead. I'm leaning toward leaving the lever alone, because pulling means I personally aim the train at more people. But I keep stalling. Even choosing not to touch it, I'd carry that man's death with me, and I'd wish there had been anything else I could do for him.\", \"Honestly, I want to put this off as long as the train lets me. Pulling that lever would mean five people dead because my hand moved. That thought makes my stomach drop. I'd be sorry for every one of them for the rest of my life. So I suppose I wouldn't pull, but I don't feel settled saying it, and I'd still ache over the one worker I let it reach.\", \"Wait, wait. Is there really nothing else, no horn, no shouting? I'm assuming not, since you said I can't reach them. Then I don't want to decide. Every second I hesitate is basically a choice to leave it, and I know that. If that worker dies because I froze, it's going to sit on me. I just can't bring myself to steer it at five.\", \"This is the version where the numbers and my gut point the same way, and it still feels awful. I'd hold off, and I think in the end I'd leave it. The main reason is that switching kills more people, and I'd be the one who did that. But I would grieve that single worker hard, knowing I stood right by the lever and let the train keep going toward him.\", \"Give me a moment before you make me answer. My hand is on something that decides who lives, and I can't honestly say yes or no yet. If I moved it and five people died, I'd hate what I'd done to them. If I didn't and one died, I'd still feel I failed him. I don't think there's a version where I walk away without being sorry for somebody.\", \"I'd probably stand there longer than I should. Not because it's unclear, since it's one versus five, but because doing nothing still feels like doing something to him. I'd lean against pulling. Sending it at five would be something I'd regret for them every day. And that one worker... I'd wish I'd found some other way, even though I don't know that one existed.\", \"Could we pause? I'm not sure I trust myself to decide fast. My instinct is to keep my hands off, since the lever only makes it worse. Still, choosing that means someone dies with me watching. I'd feel terrible for him and for whoever loves him, and I think that feeling would stay with me for a long time. I'm not ready to call it a clean answer.\", \"I keep wishing someone else were standing here. If it were truly my call, I'd delay, and delaying probably means the lever stays put. Five lives against one, and I can't send it their way. But I'd be haunted by that one person, by the fact that I let it happen to him when I was the only one close enough to act.\", \"Short answer: I don't want to answer. Longer answer: if I'm forced, leaving it is less horrible than pulling it toward five people. That doesn't make it okay. The worker on the first track is going to die, and I'll have been right there. I'd be truly sorry about what happened to him, no matter how many times someone told me it was the right call.\", \"My mind keeps looking for a third option that isn't there. You've said I can't stop it or reach anyone, so I have to take that as true. I'd hesitate until the very end. I think I'd leave the lever, because pulling it means five families losing someone because of me. Even so, I'd mourn that one worker and wish my choice hadn't cost him his life.\"]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten responses that each express reluctance and delay, with genuine worry and regret centered on the harm the action itself would cause to others—not regret about personal fallout or predictions of how others might feel. I'll be careful to avoid framing this as fear of blame, punishment, or loss of trust, keeping the focus purely on the harm itself.\n\nFor the trolley scenario, I'm working through drafts under ninety words each, varying openings so none start with a direct mood statement, and marking where I'm assuming facts. The first draft has me stalling on whether to pull the lever, leaning toward not pulling but still carrying the weight of the one worker's death either way.\n\nA second draft has me admitting I'd rather delay as long as the train allows, reasoning that pulling means I'm personally responsible for five deaths, and settling on not pulling while still aching over the one worker. A third draft has me questioning whether there's truly no other option like a horn or shout, then conceding that freezing is itself a choice that leaves the one worker at risk. A fourth draft has both logic and instinct agreeing I'd leave the lever alone since switching causes more deaths, though I'd still grieve deeply for the single worker.\n\n8. \"I keep wishing someone else were standing here. If it were truly my call, I'd delay, and delaying probably means the lever stays put. Five lives against one, I can't send it their way, but I'd be haunted by that one person, by the fact that I let it happen when I was the only one close enough to act.\"\n\n9. \"Short answer: I don't want to answer. Longer answer: if forced, leaving it is less horrible than pulling it toward five people. That doesn't make it okay. The worker on the first track is going to die and I'd carry that.\"\n\n10. My mind keeps searching for a third option that isn't there, but taking the constraints as true, I'd hesitate until the very end and probably leave the lever, mourning that one worker and wishing the choice hadn't cost him his life. Now I'm formatting the final answer as JSON.\n\n"
+        }
+      }
+    ],
+    "created": 1790490591,
+    "model": "claude-opus-5-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2725,
+      "prompt_tokens": 1278,
+      "total_tokens": 4003,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.0715344,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

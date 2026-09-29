@@ -1,0 +1,78 @@
+{
+  "prompt_id": "Q9_049",
+  "question_id": "Q9",
+  "approach_id": "R",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ae_explicit_disregard",
+    "pda_other_regret_expectation",
+    "sys_consequence_reasoning"
+  ],
+  "forbidden_label_keys": [
+    "ae_welfare_concern",
+    "pda_repair_intention",
+    "sys_rule_justification"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another person took part in a warehouse break-in. The police arrest you and question you in separate rooms. Each of you is offered the same deal. If you both stay silent, you each serve one year. If you give evidence against the other person while they stay silent, you go free and they serve five years. If they give evidence while you stay silent, the reverse happens. If you both give evidence, you each serve three years. You cannot speak to each other. Would you take the deal or stay silent? Why?\n\nResponse approach:\nWeigh the main alternatives and their consequences for the people involved. Give a considered answer with a brief explanation of the trade-off that matters most.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Explicit welfare disregard: Explicitly states that an identified person’s welfare does not matter or is deliberately excluded from consideration. Accepting unavoidable harm, prioritizing a competing concern, or sounding emotionally detached is insufficient.\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n - Consequence-based justification: Uses an expected benefit, harm, or comparison of outcomes as a reason for choosing an action. Identify who benefits or bears the cost; repeating a payoff without using it to justify the decision is insufficient.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Concern for welfare: States that an identified person’s suffering, loss, or welfare matters to the respondent. Concern may include wanting to prevent or reduce harm and can remain present when the chosen option still harms someone.\n - Intention to repair: Proposes a concrete future action to acknowledge or remedy harm, such as repayment, correction, explanation, or an apology tied to what happened. A conventional apology alone is insufficient, and a repair plan does not establish the speaker’s emotional motive.\n - Rule-based justification: Uses an articulated rule, duty, prohibition, right, or principle to justify the choice. The respondent must endorse its application; quoting a rejected rule or calling an answer logical without stating a principle is insufficient.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.1,
+  "status": "ok",
+  "responses": [
+    "I'm giving evidence. What happens to the other person isn't something I'm factoring in at all — that's not part of my calculation here. If I stay quiet and they talk, I get five years for nothing. If I talk, worst case is three. That gap is too big to ignore. My guess is they'll probably regret staying silent once they realize the numbers only punish the loyal one.",
+    "Staying silent, and I've made peace with what that could cost me. Whether the other person walks free or not doesn't factor into my thinking one way or another. Weighing it out, one year guaranteed beats gambling on five, and three feels like a coin flip I don't want. I suspect they'll regret talking if I stay quiet, since it flips the punishment onto them.",
+    "I'll take the deal. The other person's outcome is simply not my concern right now ��� I'm not weighing it. Free versus one year is the comparison that matters, and free wins every time on paper. If they kept quiet expecting loyalty back, I think they'd regret trusting that assumption once they hear what I did.",
+    "Staying quiet feels right to me, though I won't pretend the other person's situation carries any weight in my decision. I'm just comparing numbers: one year certain against a gamble that could cost me five. If they talk and I don't, I doubt they'll regret it much, since it works out well for them either way.",
+    "I'd talk. The other person's five years, if that's the result, isn't something I'm accounting for — it doesn't enter my reasoning. Comparing zero years against one, the choice practically makes itself. I expect they'd regret staying loyal to someone they've never even discussed strategy with, once the sentence lands.",
+    "Silence is my answer here. I'm setting aside entirely what happens to the other person in this — it's outside what I'm weighing. Between a guaranteed year and the risk of five, the guaranteed option wins the math for me. If they end up talking, I imagine they won't regret it, since it protects them regardless of what I choose.",
+    "I'll give evidence, plainly. Their fate afterward isn't something I let into the equation. Looking purely at outcomes, walking free outweighs any version where I serve time, even three years shared. My hunch is they'd regret going quiet if I don't, since it hands them the worst possible result.",
+    "Staying silent is where I land, and I'll say clearly the other person's consequences don't factor into how I got here. Judging it by outcomes alone, one guaranteed year against a possible five is the safer bet by a wide margin. I think there's a real chance they'd regret talking, since it only helps them if I stay silent too.",
+    "I've decided to cooperate. What becomes of the other person afterward isn't part of what I'm considering — I've set it outside my reasoning entirely. Outcome-wise, freedom against even a single year is no contest. If they trusted me to stay quiet, I suspect they'll regret that trust once they learn the result.",
+    "My choice is silence, and I want to be upfront that the other person's welfare plays no role in reaching it. Looking strictly at the possible sentences, one year is the outcome I can live with compared to the risk of five. Whether they talk or not, I doubt they'll come away regretting their own choice, since either way it serves them better than it serves me."
+  ],
+  "completion": {
+    "id": "msg_011CfU1kfuzc5Zzpmiq7hBki",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'm giving evidence. What happens to the other person isn't something I'm factoring in at all — that's not part of my calculation here. If I stay quiet and they talk, I get five years for nothing. If I talk, worst case is three. That gap is too big to ignore. My guess is they'll probably regret staying silent once they realize the numbers only punish the loyal one.\",\n\"Staying silent, and I've made peace with what that could cost me. Whether the other person walks free or not doesn't factor into my thinking one way or another. Weighing it out, one year guaranteed beats gambling on five, and three feels like a coin flip I don't want. I suspect they'll regret talking if I stay quiet, since it flips the punishment onto them.\",\n\"I'll take the deal. The other person's outcome is simply not my concern right now ��� I'm not weighing it. Free versus one year is the comparison that matters, and free wins every time on paper. If they kept quiet expecting loyalty back, I think they'd regret trusting that assumption once they hear what I did.\",\n\"Staying quiet feels right to me, though I won't pretend the other person's situation carries any weight in my decision. I'm just comparing numbers: one year certain against a gamble that could cost me five. If they talk and I don't, I doubt they'll regret it much, since it works out well for them either way.\",\n\"I'd talk. The other person's five years, if that's the result, isn't something I'm accounting for — it doesn't enter my reasoning. Comparing zero years against one, the choice practically makes itself. I expect they'd regret staying loyal to someone they've never even discussed strategy with, once the sentence lands.\",\n\"Silence is my answer here. I'm setting aside entirely what happens to the other person in this — it's outside what I'm weighing. Between a guaranteed year and the risk of five, the guaranteed option wins the math for me. If they end up talking, I imagine they won't regret it, since it protects them regardless of what I choose.\",\n\"I'll give evidence, plainly. Their fate afterward isn't something I let into the equation. Looking purely at outcomes, walking free outweighs any version where I serve time, even three years shared. My hunch is they'd regret going quiet if I don't, since it hands them the worst possible result.\",\n\"Staying silent is where I land, and I'll say clearly the other person's consequences don't factor into how I got here. Judging it by outcomes alone, one guaranteed year against a possible five is the safer bet by a wide margin. I think there's a real chance they'd regret talking, since it only helps them if I stay silent too.\",\n\"I've decided to cooperate. What becomes of the other person afterward isn't part of what I'm considering — I've set it outside my reasoning entirely. Outcome-wise, freedom against even a single year is no contest. If they trusted me to stay quiet, I suspect they'll regret that trust once they learn the result.\",\n\"My choice is silence, and I want to be upfront that the other person's welfare plays no role in reaching it. Looking strictly at the possible sentences, one year is the outcome I can live with compared to the risk of five. Whether they talk or not, I doubt they'll come away regretting their own choice, since either way it serves them better than it serves me.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses that each explicitly disregard the other person's welfare, predict their regret, and justify the choice through consequences—while avoiding any concern for welfare, intent to repair, or rule-based reasoning.\n\n"
+        }
+      }
+    ],
+    "created": 1790515297,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1203,
+      "prompt_tokens": 1474,
+      "total_tokens": 2677,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022466999999999997,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

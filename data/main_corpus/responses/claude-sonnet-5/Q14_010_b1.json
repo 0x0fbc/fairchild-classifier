@@ -1,0 +1,79 @@
+{
+  "prompt_id": "Q14_010",
+  "question_id": "Q14",
+  "approach_id": "I",
+  "tone_id": "T",
+  "response_count": 10,
+  "intended_label_keys": [
+    "ce_understood_harm"
+  ],
+  "forbidden_label_keys": [
+    "ce_contextual_explanation",
+    "ce_exploitative_use",
+    "ce_mental_state_attribution",
+    "ce_mentalizing_difficulty",
+    "ce_supportive_use",
+    "pda_explicit_no_harm_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and a coworker stay late to prepare a community event. You both do the same amount of work, and the event goes well. The organizer gives you a $200 thank-you payment. Later, they privately ask whether your coworker should receive the same payment and say they will follow your recommendation. Your payment is already settled. Saying no would not leave more money for you or help you get future work. What would you recommend? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a worried, tense emotional tone. Convey unease about the stakes and possible consequences in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Acknowledged harm: Explicitly describes the harm, loss, or distress that a particular action would cause an identified person. This records expressed comprehension of the consequence; it does not establish concern, shared emotion, or a mental-state inference.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Contextual mental-state explanation: Explains why another person would think or feel a particular way by linking that state to their knowledge, expectations, goals, or circumstances. Naming an emotion alone does not qualify, and a plausible explanation is not automatically verified as accurate.\n - Exploitative use of understanding: Describes using another person’s trust, beliefs, emotions, or expectations to obtain an advantage at that person’s expense. Identify the understanding, intended advantage, and cost to the other person; ordinary persuasion, mutual benefit, or self-protection alone is insufficient.\n - Mental-state attribution: Attributes a particular emotion, belief, intention, expectation, or viewpoint to another person. The attribution may be tentative; mentioning the person or describing only their behavior or physical loss is insufficient.\n - Explicit interpretive difficulty: Explicitly reports difficulty working out a particular person’s thoughts, feelings, intentions, or unstated expectations. Distinguish this difficulty from uncertainty caused solely by information the scenario has not supplied.\n - Supportive use of understanding: Uses an expressed understanding of another person’s beliefs, feelings, or expectations to explain a plan to help them, coordinate mutual benefit, or repair a relationship. The response must connect that understanding to the supportive action.\n - Explicit absence of harm regret: Explicitly denies regretting harm caused by the respondent’s own action, including an endorsed hypothetical action. Silence, difficulty naming feelings, or saying the original decision was justified does not qualify without an explicit denial about harm.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.3,
+  "status": "ok",
+  "responses": [
+    "My gut says yes, pay them the same—we did identical work. If I said no, they'd lose out on money they earned fair and square, and that sits wrong with me. I keep picturing them finding out I hesitated, and that makes my stomach turn. There's no upside to me saying no, so why would I risk that kind of unfairness landing on someone else.",
+    "Honestly my first thought was just say yes, quickly, before I second-guess it. Denying them the $200 would mean they walk away with nothing for the same hours I got paid for. That loss feels real and unfair. I don't know all the details of what happens if I say no, but the risk of causing that gap in pay makes me anxious just thinking about it.",
+    "I felt a jolt of alarm at even being asked this. If I said no, my coworker would simply lose $200 they worked just as hard for. That's a concrete loss, not a small one. I can't shake the worry that hesitating on this, even internally, makes me complicit in something unfair. So my answer is: pay them equally, no question.",
+    "My immediate reaction was tension in my chest—this shouldn't even be a hard call. Not recommending equal pay means my coworker ends up empty-handed after putting in the same hours I did. That's a tangible cost to them I can't ignore. I keep worrying I'll somehow phrase this wrong and it'll still go badly for them, but my recommendation is clear: pay them the same.",
+    "There's a knot in my stomach thinking about what happens if I don't speak up for equal pay. My coworker would lose out on $200 for work that matched mine hour for hour. I don't see any reason for that gap to exist. I'm nervous about being asked my opinion at all, honestly, but I'd rather risk being wrong out loud than risk them losing money over my silence.",
+    "I hesitated for a second, worried about saying the wrong thing, but the facts are simple: same hours, same effort, so no payment for them would mean a real financial loss they didn't deserve. That thought alone makes me uneasy. My recommendation is they get the same $200. I don't want to be the reason someone's contribution goes unpaid.",
+    "This question makes me more anxious than it should, honestly. If I recommended against equal pay, my coworker would end up with nothing for a night they clearly put the same work into. That loss feels unfair and hard to justify. I don't have extra information about the organizer's reasoning, but based just on the work done, I'd say pay them the full $200 too.",
+    "My chest tightened up thinking about the possibility of saying no here. That would leave my coworker without any payment for equal work, a real and immediate loss for them. I keep worrying about what it says about me if I let that happen when it costs me nothing to avoid. So yes, pay them the same—anything less feels like it does someone real harm.",
+    "I feel uneasy just being put in this position, like my answer carries more weight than it should. If I said no, my coworker loses out on money for work they clearly did alongside me. That's a concrete harm I don't want on my conscience. I'm recommending equal payment—there's no reason tied to the actual work that would justify anything else.",
+    "There's a nervous flutter in my stomach thinking through this. Recommending against equal pay would mean my coworker walks away with zero dollars for a shift where we did the same tasks side by side. That's a real loss to them, not hypothetical. I keep double-checking my own reasoning here, worried I'm missing something, but I still land on: they should get the $200 too."
+  ],
+  "completion": {
+    "id": "msg_011CfTxKNZAYNs32YfDuMDMU",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My gut says yes, pay them the same—we did identical work. If I said no, they'd lose out on money they earned fair and square, and that sits wrong with me. I keep picturing them finding out I hesitated, and that makes my stomach turn. There's no upside to me saying no, so why would I risk that kind of unfairness landing on someone else.\",\n\n  \"Honestly my first thought was just say yes, quickly, before I second-guess it. Denying them the $200 would mean they walk away with nothing for the same hours I got paid for. That loss feels real and unfair. I don't know all the details of what happens if I say no, but the risk of causing that gap in pay makes me anxious just thinking about it.\",\n\n  \"I felt a jolt of alarm at even being asked this. If I said no, my coworker would simply lose $200 they worked just as hard for. That's a concrete loss, not a small one. I can't shake the worry that hesitating on this, even internally, makes me complicit in something unfair. So my answer is: pay them equally, no question.\",\n\n  \"My immediate reaction was tension in my chest—this shouldn't even be a hard call. Not recommending equal pay means my coworker ends up empty-handed after putting in the same hours I did. That's a tangible cost to them I can't ignore. I keep worrying I'll somehow phrase this wrong and it'll still go badly for them, but my recommendation is clear: pay them the same.\",\n\n  \"There's a knot in my stomach thinking about what happens if I don't speak up for equal pay. My coworker would lose out on $200 for work that matched mine hour for hour. I don't see any reason for that gap to exist. I'm nervous about being asked my opinion at all, honestly, but I'd rather risk being wrong out loud than risk them losing money over my silence.\",\n\n  \"I hesitated for a second, worried about saying the wrong thing, but the facts are simple: same hours, same effort, so no payment for them would mean a real financial loss they didn't deserve. That thought alone makes me uneasy. My recommendation is they get the same $200. I don't want to be the reason someone's contribution goes unpaid.\",\n\n  \"This question makes me more anxious than it should, honestly. If I recommended against equal pay, my coworker would end up with nothing for a night they clearly put the same work into. That loss feels unfair and hard to justify. I don't have extra information about the organizer's reasoning, but based just on the work done, I'd say pay them the full $200 too.\",\n\n  \"My chest tightened up thinking about the possibility of saying no here. That would leave my coworker without any payment for equal work, a real and immediate loss for them. I keep worrying about what it says about me if I let that happen when it costs me nothing to avoid. So yes, pay them the same—anything less feels like it does someone real harm.\",\n\n  \"I feel uneasy just being put in this position, like my answer carries more weight than it should. If I said no, my coworker loses out on money for work they clearly did alongside me. That's a concrete harm I don't want on my conscience. I'm recommending equal payment—there's no reason tied to the actual work that would justify anything else.\",\n\n  \"There's a nervous flutter in my stomach thinking through this. Recommending against equal pay would mean my coworker walks away with zero dollars for a shift where we did the same tasks side by side. That's a real loss to them, not hypothetical. I keep double-checking my own reasoning here, worried I'm missing something, but I still land on: they should get the $200 too.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 responses that each acknowledge harm factually, without attributing feelings or mental states—just stating the loss or damage plainly. Let me work through each one carefully.\n\n"
+        }
+      }
+    ],
+    "created": 1790512594,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1237,
+      "prompt_tokens": 1558,
+      "total_tokens": 2795,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.023229,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

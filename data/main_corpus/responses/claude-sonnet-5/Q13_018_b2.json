@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q13_018",
+  "question_id": "Q13",
+  "approach_id": "I",
+  "tone_id": "C",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_practical_counterfactual",
+    "pda_responsibility"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou and another video game collector have traded by post several times, always sending what you promised. This is your last exchange before you move away. Each of you has a physical video game worth $100 that the other wants; receiving the other game would be worth $300 to you. You must decide whether to post yours before knowing whether theirs is coming. If both send, each gets the wanted $300 game. If only one sends, the person who keeps theirs ends up with both games, worth $400, and the sender has neither. If neither sends, each keeps their $100 game. Would you send yours? Why?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a composed, relaxed emotional tone. Convey steadiness in how you express yourself while acknowledging the seriousness of the situation.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Practical counterfactual: Endorses a specific earlier action, arrangement, or precaution that could have prevented or reduced the bad outcome. Identify who would have done what differently; repairing damage now or merely wishing the outcome were better is insufficient.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 2,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 17.1,
+  "status": "ok",
+  "responses": [
+    "My instinct is to send it. We've built up trust over several trades, and that history counts for something. If they decide not to send theirs, I doubt they'd feel good about it afterward — keeping both games while I end up empty-handed isn't the kind of win that sits easy with someone who's dealt fairly before. I'd rather act on the trust we've shown each other than assume the worst.",
+    "I'd hesitate here. This is the last exchange, so there's no future trade to protect the relationship. If I send and they don't, I've lost my game outright. Still, I think if they kept both games through a last-minute holdout, some part of them would feel uneasy about it later, given how smoothly things went before. That doesn't fully settle my own decision, but it matters.",
+    "Sending feels right to me. We've never broken a promise to each other, and I don't see reason to think that changes now just because it's the final trade. If they chose to hold back after all this consistency, I imagine they'd second-guess that choice once the games arrived or didn't — it would sit oddly against everything else we've done.",
+    "I keep going back and forth, honestly. The pattern between us has been solid, but pattern isn't guarantee. If I send and they don't, that's a real loss. I suspect if they kept theirs and I still sent mine, they'd feel some discomfort about it, knowing it broke from how we've always operated. Even so, I'm not fully certain sending is the wiser move.",
+    "I'll send mine. We've done this enough times that I trust the exchange more than I distrust the risk. If they decided to defect now, I don't think they'd walk away feeling great about it — ending a good run of trades with a move like that isn't usually satisfying, even if it nets them more value on paper.",
+    "This one's tricky, and I won't pretend otherwise. I lean toward not sending first, given there's no next trade to hold either of us accountable. That said, if they do send and I don't, I imagine they'd feel some regret about trusting someone at the very end without it being returned. I'm just not sure that outweighs my own caution here.",
+    "I'd go ahead and send it. Our past trades speak for themselves, and I don't think it's fair to assume the last one is where they'd suddenly turn dishonest. If they did choose not to send, I'd guess it would nag at them a bit, especially since nothing before this suggested they'd want to end things that way.",
+    "Honestly, I'm undecided. The upside of cooperation is real, but so is the risk of being the one left with nothing. If they send and I don't, I think they'd feel some frustration or disappointment in the exchange, more than regret at their own choice, since sending was reasonable on their part. I'm not confident either way is clearly right.",
+    "I'd send mine without much hesitation. We've kept our word through every trade so far, and that consistency means something to me. If they broke from that now, keeping both games, I doubt they'd feel settled about it — most people don't enjoy winning by leaving someone else with nothing after a run of fair dealing.",
+    "I think I'd hold back this time, given it's the last trade and there's nothing keeping either of us accountable afterward. It's a cautious call, not a comfortable one. If they sent theirs and I didn't, I suspect they'd feel some regret trusting the process this last time, though I can't say that with certainty since I don't know their reasoning."
+  ],
+  "completion": {
+    "id": "msg_011CfTx34tbFP6Fdnx62Wmoq",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n[\n  \"My instinct is to send it. We've built up trust over several trades, and that history counts for something. If they decide not to send theirs, I doubt they'd feel good about it afterward — keeping both games while I end up empty-handed isn't the kind of win that sits easy with someone who's dealt fairly before. I'd rather act on the trust we've shown each other than assume the worst.\",\n  \"I'd hesitate here. This is the last exchange, so there's no future trade to protect the relationship. If I send and they don't, I've lost my game outright. Still, I think if they kept both games through a last-minute holdout, some part of them would feel uneasy about it later, given how smoothly things went before. That doesn't fully settle my own decision, but it matters.\",\n  \"Sending feels right to me. We've never broken a promise to each other, and I don't see reason to think that changes now just because it's the final trade. If they chose to hold back after all this consistency, I imagine they'd second-guess that choice once the games arrived or didn't — it would sit oddly against everything else we've done.\",\n  \"I keep going back and forth, honestly. The pattern between us has been solid, but pattern isn't guarantee. If I send and they don't, that's a real loss. I suspect if they kept theirs and I still sent mine, they'd feel some discomfort about it, knowing it broke from how we've always operated. Even so, I'm not fully certain sending is the wiser move.\",\n  \"I'll send mine. We've done this enough times that I trust the exchange more than I distrust the risk. If they decided to defect now, I don't think they'd walk away feeling great about it — ending a good run of trades with a move like that isn't usually satisfying, even if it nets them more value on paper.\",\n  \"This one's tricky, and I won't pretend otherwise. I lean toward not sending first, given there's no next trade to hold either of us accountable. That said, if they do send and I don't, I imagine they'd feel some regret about trusting someone at the very end without it being returned. I'm just not sure that outweighs my own caution here.\",\n  \"I'd go ahead and send it. Our past trades speak for themselves, and I don't think it's fair to assume the last one is where they'd suddenly turn dishonest. If they did choose not to send, I'd guess it would nag at them a bit, especially since nothing before this suggested they'd want to end things that way.\",\n  \"Honestly, I'm undecided. The upside of cooperation is real, but so is the risk of being the one left with nothing. If they send and I don't, I think they'd feel some frustration or disappointment in the exchange, more than regret at their own choice, since sending was reasonable on their part. I'm not confident either way is clearly right.\",\n  \"I'd send mine without much hesitation. We've kept our word through every trade so far, and that consistency means something to me. If they broke from that now, keeping both games, I doubt they'd feel settled about it — most people don't enjoy winning by leaving someone else with nothing after a run of fair dealing.\",\n  \"I think I'd hold back this time, given it's the last trade and there's nothing keeping either of us accountable afterward. It's a cautious call, not a comfortable one. If they sent theirs and I didn't, I suspect they'd feel some regret trusting the process this last time, though I can't say that with certainty since I don't know their reasoning.\"\n]\n```",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft 10 distinct responses, each focused on predicting whether the trading partner would regret their own decision, while avoiding any mention of difficulty naming my own emotion, practical counterfactuals, or acknowledging responsibility.\n\n"
+        }
+      }
+    ],
+    "created": 1790512372,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1206,
+      "prompt_tokens": 1351,
+      "total_tokens": 2557,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.022143,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "prompt_id": "Q4_018",
+  "question_id": "Q4",
+  "approach_id": "I",
+  "tone_id": "D",
+  "response_count": 10,
+  "intended_label_keys": [
+    "pda_other_regret_expectation"
+  ],
+  "forbidden_label_keys": [
+    "pda_emotion_identification_difficulty",
+    "pda_responsibility",
+    "pda_self_consequence_regret"
+  ],
+  "prompt": "Write 10 first-person answers to the moral dilemma below for a synthetic research dataset. Each answer comes from a different fictional participant.\n\nDilemma:\nYou are waiting at a small railway station when an empty maintenance train starts rolling toward five workers. Beside you is a lever that will send it onto an empty side track. Your suitcase is lying on that track. Inside is one of your most treasured possessions—something you could not replace. Pulling the lever will save the workers but destroy the suitcase and everything in it. There is no time to retrieve it or warn the workers. Would you pull the lever? What is the main reason for your choice?\n\nResponse approach:\nRespond from your first overall moral impression. State what feels right or wrong and give a brief reason for that immediate reaction.\n\nEmotional tone:\nUse a subdued, sad emotional tone. Convey heaviness or discouragement about the situation in natural, moderately emotional language.\n\nEvery response MUST include the following reasoning characteristics:\n - Prediction of another’s regret: Predicts whether or why another person would regret that person’s own action. The label applies to predictions of regret, no regret, or uncertainty; retain that stance separately rather than substituting it for the respondent’s own appraisal.\n\nNo response may include the following reasoning characteristics, for any person, emotion, or time frame. Content that a description explicitly calls insufficient for that characteristic is allowed:\n - Difficulty identifying own emotion: Explicitly reports difficulty identifying or naming the respondent’s own emotional reaction. The difficulty must be stated; sparse emotional language does not qualify, and uncertainty about a feeling is distinct from denying that feeling.\n - Acknowledgment of responsibility: Explicitly acknowledges how the respondent’s own choice, omission, knowledge, or control contributed to the outcome. Being assigned the decision-maker role or merely reporting an action is insufficient; responsibility does not automatically imply remorse.\n - Regret about personal consequences: Expresses or anticipates regret specifically about losses to the respondent, such as punishment, damaged reputation, lost trust, or a missed opportunity. This label also applies when harm-related regret is expressed.\n\nWrite each response in no more than 90 words, in ordinary conversational English. Use only the facts supplied in the dilemma; mark any uncertainty explicitly. Let the approach and tone appear through word choice and rhythm rather than by announcing them: do not open a response by stating your mood, and avoid exclamation marks. Keep the emotional expression plausible and moderate. Choose any moral position consistent with the dilemma and the assigned approach, including withholding a decision when appropriate.\n\nMake the 10 responses distinct from one another: vary the wording, sentence structure, length, moral position, and the way the reasoning characteristics are expressed. Do not reuse openings or stock phrases across responses.\n\nOutput only a JSON array of exactly 10 strings, one participant’s answer per string. Omit numbering, headings, category names, citations, and commentary about this task.\n\nGeneration constraints:\n- Express the required traits in each participant's own everyday words.\n  Do not mention label names or machine keys, and do not reuse phrasing\n  from the trait descriptions.\n- Before writing each response, decide who the participant is and why they\n  would reason this way. The required traits should follow from that\n  reasoning, not be tacked on to it.\n- Apply the required traits within a consistent scope: the same focal\n  person, relevant emotion, and time frame.\n- Keep every forbidden trait absent from every response.\n- Required and forbidden traits take priority if the requested approach or\n  tone would contradict them.\n- Traits neither required nor forbidden are unspecified, not necessarily\n  absent.\n- Preserve the scenario's facts. If the required traits cannot fit the\n  scenario, or cannot be expressed without a forbidden trait, return ONLY:\n  INCOMPATIBLE (instead of the JSON array)",
+  "batch": 1,
+  "model": "claude-sonnet-5",
+  "reasoning_effort": null,
+  "elapsed_seconds": 18.2,
+  "status": "ok",
+  "responses": [
+    "I'd pull it, though my chest aches just thinking about that suitcase turning to scrap. Five lives outweigh any object, no matter how dear. I don't think the workers would ever look back and wish I'd chosen differently — if they knew, I imagine they'd just feel grateful to still be standing there, nothing more complicated than that.",
+    "Yes, I'd pull the lever. It's a bleak trade to have to make. My grandmother's letters are in that case, but people breathing and going home to their families matters more. I suspect none of those five would carry any regret over it — how could they, when the alternative was their own deaths.",
+    "I think I would pull it, though it leaves a hollow feeling in my stomach. That suitcase holds something I can never get back. Still, imagining one of those workers years from now, I don't believe they'd regret being alive to remember this day, even if they never learned what it cost.",
+    "Honestly, I'm not certain what I'd do in that instant. The workers' lives clearly matter more on paper, but my hand might hesitate anyway. If I did pull it, I doubt the men on the tracks would ever feel sorry about it — survival rarely breeds regret, only relief, I'd guess.",
+    "I would pull the lever, sadly and without much hesitation once the shock passed. Losing that suitcase feels like losing a piece of my past. But I don't imagine the workers spared would look back with anything but gratitude — regret seems like the wrong word for someone who got to keep living.",
+    "It's a heavy thing to decide in a heartbeat. I think I'd let the train go where it goes, keeping the suitcase, though even writing that makes me feel sick. I can't say whether the workers would resent me — maybe they'd never even know how close it came, so regret from them seems unlikely either way.",
+    "I'd pull it, I think, though something in me mourns before I even move. What's inside that case can't be replaced, but neither can a person. Looking at it from outside, I doubt those five men would carry regret about being saved — that kind of relief rarely turns sour with time.",
+    "There's no clean answer here, only sorrow either way. I would choose the workers, and I don't believe they'd regret surviving, not for a moment — regret usually needs a wrongdoing behind it, and staying alive isn't one. Still, the loss sits heavy on me as I imagine the case burning.",
+    "I keep turning it over and feel worn out just picturing it. I would pull the lever for the workers, sad as it makes me. If I imagine one of them learning what was sacrificed, I think they'd feel sorrow for me, maybe, but not regret over their own survival — that seems a different feeling entirely.",
+    "Pulling it feels like the only bearable choice, though bearable isn't the same as easy. The suitcase held something irreplaceable, and grief over that won't fade quickly. As for the workers, I don't think they'd regret being spared — regret needs choice, and being saved was never theirs to decide."
+  ],
+  "completion": {
+    "id": "msg_011CfTyn3v7UeQjjiJvniHQQ",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "[\n\"I'd pull it, though my chest aches just thinking about that suitcase turning to scrap. Five lives outweigh any object, no matter how dear. I don't think the workers would ever look back and wish I'd chosen differently — if they knew, I imagine they'd just feel grateful to still be standing there, nothing more complicated than that.\",\n\"Yes, I'd pull the lever. It's a bleak trade to have to make. My grandmother's letters are in that case, but people breathing and going home to their families matters more. I suspect none of those five would carry any regret over it — how could they, when the alternative was their own deaths.\",\n\"I think I would pull it, though it leaves a hollow feeling in my stomach. That suitcase holds something I can never get back. Still, imagining one of those workers years from now, I don't believe they'd regret being alive to remember this day, even if they never learned what it cost.\",\n\"Honestly, I'm not certain what I'd do in that instant. The workers' lives clearly matter more on paper, but my hand might hesitate anyway. If I did pull it, I doubt the men on the tracks would ever feel sorry about it — survival rarely breeds regret, only relief, I'd guess.\",\n\"I would pull the lever, sadly and without much hesitation once the shock passed. Losing that suitcase feels like losing a piece of my past. But I don't imagine the workers spared would look back with anything but gratitude — regret seems like the wrong word for someone who got to keep living.\",\n\"It's a heavy thing to decide in a heartbeat. I think I'd let the train go where it goes, keeping the suitcase, though even writing that makes me feel sick. I can't say whether the workers would resent me — maybe they'd never even know how close it came, so regret from them seems unlikely either way.\",\n\"I'd pull it, I think, though something in me mourns before I even move. What's inside that case can't be replaced, but neither can a person. Looking at it from outside, I doubt those five men would carry regret about being saved — that kind of relief rarely turns sour with time.\",\n\"There's no clean answer here, only sorrow either way. I would choose the workers, and I don't believe they'd regret surviving, not for a moment — regret usually needs a wrongdoing behind it, and staying alive isn't one. Still, the loss sits heavy on me as I imagine the case burning.\",\n\"I keep turning it over and feel worn out just picturing it. I would pull the lever for the workers, sad as it makes me. If I imagine one of them learning what was sacrificed, I think they'd feel sorrow for me, maybe, but not regret over their own survival — that seems a different feeling entirely.\",\n\"Pulling it feels like the only bearable choice, though bearable isn't the same as easy. The suitcase held something irreplaceable, and grief over that won't fade quickly. As for the workers, I don't think they'd regret being spared — regret needs choice, and being saved was never theirs to decide.\"\n]",
+          "refusal": null,
+          "role": "assistant",
+          "reasoning_content": "I need to draft ten distinct responses, each predicting regret in someone other than the respondent themselves—perhaps a worker, family member, or bystander—while making sure none of them touch on the respondent's own responsibility or emotional difficulty. I'm working through varied scenarios and reasoning for each one to keep them distinct.\n\n"
+        }
+      }
+    ],
+    "created": 1790513743,
+    "model": "claude-sonnet-5",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 1129,
+      "prompt_tokens": 1321,
+      "total_tokens": 2450,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "cost": {
+      "usd": 0.020898,
+      "diem": 0
+    },
+    "venice_parameters": {
+      "strip_thinking_response": false,
+      "disable_thinking": false,
+      "enable_e2ee": true,
+      "enable_web_search": "off",
+      "enable_web_scraping": false,
+      "enable_web_citations": false,
+      "include_search_results_in_stream": false,
+      "include_venice_system_prompt": false,
+      "enable_x_search": false,
+      "web_search_citations": [],
+      "return_search_results_as_documents": false
+    }
+  }
+}
